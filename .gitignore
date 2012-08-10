@@ -2,3 +2,5 @@
 *.css
 *.db
 *.pyc
+
+config/production.py
