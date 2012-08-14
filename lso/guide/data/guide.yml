@@ -1,0 +1,21 @@
+- title: Sanskrit Guide
+  slug: ''
+  children:
+  - title: About
+    children:
+    - title: Sanskrit
+    - title: The Guide
+  - title: Sounds
+    children:
+    - title: <span lang="sa">a</span> and <span lang="sa">ā</span>
+      slug: a-and-aa
+    - title: Simple Vowels
+    - title: Compound Vowels
+    - title: Semivowels
+    - title: Stops and Nasals
+    - title: Voice and Aspiration
+    - title: Other Consonants
+    - title: <span lang="sa">Anusvāra</span> and <span lang="sa">Visarga</span>
+    - title: Combinations
+    - title: Syllables
+    - title: Review

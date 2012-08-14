@@ -3,3 +3,4 @@ flask-assets
 flask-restless
 fabric
 sqlalchemy
+sqlamp
