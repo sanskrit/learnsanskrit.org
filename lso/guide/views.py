@@ -1,10 +1,7 @@
-from flask import Blueprint, render_template
+from flask import render_template
 
-guide = Blueprint('guide', __name__,
-                  static_folder='static',
-                  template_folder='templates')
+from . import guide
                   
 @guide.route('/')
 def index():
-    print 'aoeu'
     return render_template('guide/index.html')
