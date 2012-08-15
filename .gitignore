@@ -4,3 +4,4 @@
 *.pyc
 
 config/production.py
+lso/static/.webassets-cache

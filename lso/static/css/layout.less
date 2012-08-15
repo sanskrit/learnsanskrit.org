@@ -1,0 +1,63 @@
+/* Basic page layout */
+
+body {
+    background: #fff;
+    color: @dark-gray;
+    font-family: @en-font-family;
+    font-size: @en-font-size;
+    margin: 0;
+    padding: 3em 0 0;
+}
+
+nav#top {
+    .box-shadow(0px 3px 6px rgba(0,0,0,0.25));
+    
+    background: #111;
+    color: #fff;
+    left: 0;
+    line-height: 3;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 1000;
+    
+    a {
+        border: 0;
+        color: @gray;
+        text-decoration: none;
+
+        &:hover {
+            color: #fff;
+        }
+        &.brand {
+            color: #fff;
+            font-size: 1.5em;
+            float: left;
+            line-height: 2;
+            display: block;
+            padding: 0 @en-font-size;
+            text-shadow: 0px 0px 1px @gray;
+
+            span {
+                color: @yellow;
+            }
+        }
+    }
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        li {
+            float: left;
+
+            a {
+                display: block;
+                padding: 0 @en-font-size;
+            }
+        }
+        &.user-links {
+            float: right;
+        }
+    }
+}

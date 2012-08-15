@@ -1,12 +1,20 @@
 <!doctype html>
 <html>
     <head>
-        <title>{% block title %}{% endblock %}</title>
+        <title>{% block title %}learnsanskrit.org{% endblock %}</title>
+        {% assets "all-css" %}
+		<link rel="stylesheet" type="text/css" href="{{ ASSET_URL }}">
+        {% endassets %}
     </head>
     <body>
-        <header id="top">
-            <h1>learn<span class="yellow">sanskrit</span>.org</h1> 
-        </header>
+        <nav id="top">
+            <a class="brand" href="{{ url_for('index') }}">learn<span class="yellow">sanskrit</span>.org</a>
+	        <ul>
+		        <li><a href="{{ url_for('guide.index') }}">Guide</a></li>
+		        <li><a href="#">Tools</a></li>
+		        <li><a href="#">Meta</a></li>
+	        </ul>
+	    </nav>
         {% block content %}
         {% endblock %}
     </body>

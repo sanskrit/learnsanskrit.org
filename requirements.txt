@@ -4,3 +4,4 @@ flask-restless
 fabric
 sqlalchemy
 sqlamp
+webassets==dev
