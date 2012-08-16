@@ -4,4 +4,15 @@
 <header class="masthead">
     <h1>Sanskrit Guide</h1>    
 </header>
+
+{% for unit in units %}
+<section class="unit">
+    <h2><a href="{{ url_for('guide.unit', unit=unit.slug) }}">{{ unit.title|safe }}</a></h2>
+    {% include 'guide/include/unit-contents.html' %}
+</section>
+{% endfor %}
+
+<header>
+    <h1>Appendices</h1>
+</header>
 {% endblock %}
