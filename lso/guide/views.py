@@ -1,5 +1,6 @@
-from flask import render_template
+from flask import redirect, render_template, url_for
 
+import filters
 from . import guide
 from .models import Lesson
 
@@ -22,9 +23,35 @@ def index():
     return render_template('guide/index.html', units=units)
 
 @guide.route('/<unit>')
-def unit(unit):
-    pass
+def unit(**kwargs):
+    unit_slug = kwargs.pop('unit')
+
+    unit = Lesson.query.filter(Lesson.slug==unit_slug).first()
+    if unit:
+        unit.children = unit.mp.query_descendants().all()
+        return render_template('guide/unit.html', unit=unit)
+    else:
+        return redirect(url_for('guide.index'))
 
 @guide.route('/<unit>/<lesson>')
-def lesson(unit, lesson):
-    pass
+def lesson(**kwargs):
+    unit_slug = kwargs.pop('unit')
+    lesson_slug = kwargs.pop('lesson')
+
+    unit = Lesson.query.filter(Lesson.slug==unit_slug).first()
+    if unit:
+        unit.children = unit.mp.query_descendants().all()
+    else:
+        return redirect(url_for('guide.index'))
+
+    lesson = None
+    for L in unit.children:
+        if L.slug == lesson_slug:
+            lesson = L
+            break
+
+    if not lesson:
+        return redirect(url_for('guide.unit', unit=unit_slug))
+
+    template = 'guide/%s/%s.html' % (unit.slug, lesson.slug)
+    return render_template(template, lesson=lesson, unit=unit)

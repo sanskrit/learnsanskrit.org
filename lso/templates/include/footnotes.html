@@ -1,0 +1,10 @@
+{% if notes %}
+<section class="footnotes">
+	<h2>Footnotes</h2>
+	<ol class="footnotes">
+	{% for note in notes %}
+		<li id="fnote-{{ loop.index }}"><b><a href="#fref-{{ loop.index }}">^</a></b> {{ note }}</li>
+	{% endfor %}
+	</ol>
+</section>
+{% endif %}

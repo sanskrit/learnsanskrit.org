@@ -1,13 +1,14 @@
-import sqlamp
-
-from ..database import engine, session
+import re
 from sqlalchemy import Column, Integer, ForeignKey, MetaData, String
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relation
+from sqlamp import DeclarativeMeta
+
+from ..database import engine, session
 
 metadata = MetaData(engine)
 BaseNode = declarative_base(metadata=metadata,
-                            metaclass=sqlamp.DeclarativeMeta)
+                            metaclass=DeclarativeMeta)
 BaseNode.query = session.query_property()
 
 class Lesson(BaseNode):
@@ -20,6 +21,10 @@ class Lesson(BaseNode):
     parent_id = Column(ForeignKey('lessons.id'))
 
     parent = relation('Lesson', remote_side=[id])
+
+    @property
+    def stripped_title(self):
+        return re.sub('<.*?>', '', self.title)
 
     def __repr__(self):
         return '<Lesson(%s,%s)>' % (self.id, self.slug)

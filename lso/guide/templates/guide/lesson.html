@@ -1,0 +1,12 @@
+{% extends 'layout.html' %}
+
+{% block title %}{{ lesson.stripped_title }} | learnsanskrit.org{% endblock %}
+{% block content %}
+<article>
+    <h1>{{ lesson.title|safe }}</h1>
+    {% block lesson %}
+    {% endblock %}
+</article>
+
+{% include 'include/footnotes.html' %}
+{% endblock %}
