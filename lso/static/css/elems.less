@@ -3,9 +3,25 @@
 .r {color: @red;}
 .o {color: @orange;}
 .y {color: @yellow;}
-.g {}
-.b {}
-.p {}
+.g {color: @green;}
+.b {color: @blue;}
+.p {color: @purple;}
+
+a {
+    color: #024A68;
+    &:hover {
+        color: @blue;
+    }
+}
+
+b a {
+    text-decoration: none;
+}
+
+dfn {
+  color: darken(@red, 25%);
+  font-weight: bold;
+}
 
 h1, h2, h3 {
     font-weight: normal;
@@ -16,4 +32,8 @@ h1 {
     font-size: 3em;
     line-height: 1;
     text-align: center;
+}
+
+p {
+    line-height: 2 / @en-font-size;
 }

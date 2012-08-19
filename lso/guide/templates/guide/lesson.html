@@ -1,13 +1,16 @@
 {% extends 'layout.html' %}
 
 {% block title %}{{ lesson.stripped_title }} | learnsanskrit.org{% endblock %}
+
 {% block content %}
+<div id="content">
 <article>
     <h1>{{ lesson.title|safe }}</h1>
     {% block lesson %}
     {% endblock %}
     {% include 'include/footnotes.html' %}
 </article>
+</div>
 
 <div id="sidebar">
     <h2><a href="{{ url_for('guide.unit', unit=unit.slug) }}">{{ unit.title|safe }}</a></h2>

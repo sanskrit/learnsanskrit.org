@@ -1,0 +1,23 @@
+section.unit {
+    a {
+        text-decoration: none;
+    }
+    li {
+        display: block;
+        font-size: 1.2em;
+        line-height: 2em/1.2em;
+
+        &:before {
+            content: counter(item) "  ";
+            counter-increment: item;
+            display: block;
+            float: left;
+            padding-right: 1em;
+            width: 1em;
+        }
+    }
+    ol {
+        counter-reset: item;
+        list-style-type: none;
+    }
+}
