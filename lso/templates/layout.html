@@ -6,7 +6,7 @@
 		<link rel="stylesheet" type="text/css" href="{{ ASSET_URL }}">
         {% endassets %}
     </head>
-    <body>
+    <body id="{% block body_id %}general{% endblock %}">
         <nav id="top">
             <a class="brand" href="{{ url_for('index') }}">learn<span class="y">sanskrit</span>.org</a>
 	        <ul>

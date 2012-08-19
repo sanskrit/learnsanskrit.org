@@ -1,0 +1,28 @@
+body {
+    &#two-column {
+        background: @body-background;
+    }
+}
+
+#two-column {
+    #content {
+        float: left;
+        margin-right: -@sidebar-width;
+        width: 100%;
+    }
+
+    article {
+        background: #fff;
+        margin: 0 @sidebar-width 0 0;
+        padding: 5%;
+    }
+    h1 {
+        margin-top: 0;
+    }
+}
+
+#sidebar {
+    background: @body-background;
+    float: left;
+    width: 400px;
+}
