@@ -12,7 +12,9 @@ body {
     }
 
     article {
+        @border-color: darken(@body-background, 10%);
         background: #fff;
+        border-right: @sidebar-border-width @border-color solid;
         margin: 0 @sidebar-width 0 0;
         padding: 5%;
     }
@@ -24,5 +26,16 @@ body {
 #sidebar {
     background: @body-background;
     float: left;
-    width: 400px;
+    width: @sidebar-width - @sidebar-border-width;
+
+    section {
+        padding: 20px;
+
+        a {
+            text-decoration: none;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
 }
