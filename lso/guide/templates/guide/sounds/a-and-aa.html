@@ -1,4 +1,89 @@
 {% extends 'guide/lesson.html' %}
 
 {% block lesson %}
+<p>Almost any language resource will start by describing its language's <dfn>sounds</dfn>. This guide will do the same. But unlike most other languages, Sanskrit requires total mastery of its different sounds. They shift, blend, and transform constantly, and unless you are very familiar with them, Sanskrit will be difficult to understand.</p>
+
+<p>Fortunately, the Sanskrit sound system is easy to master. It has remained nearly the same for thousands of years, and we know almost exactly how Sanskrit once sounded.</p>
+
+<h2>{{ 'a'|i }}</h2>
+<p>Let's start with the very first sound in the Sanskrit alphabet. It is a fundamental sound that we can produce effortlessly:</p>
+
+<ul class="letters">
+    <li>{{ 'a'|i }} <span>"u" in "but"</span></li>
+</ul>
+
+<p>When you produce this sound, let your breath flow cleanly through your mouth, without any breaks or stops. Such sounds are called <dfn>vowels</dfn>.</p>
+
+<p class="note">As you learn the Sanskrit sounds, study the recordings carefully and consult the knowledgeable people around you. Use the English approximations as a last resort.</p>
+
+<h2>{{ 'A'|i }}</h2>
+<p>To get the second sound of the alphabet, we make {{ 'a'|i }} <strong>twice as long</strong> as it was before. The sound of the vowel changes slightly:</p>
+
+<ul class="letters">
+    <li>{{ 'A'|i }} <span>"a" in "father"</span></li>
+</ul>
+
+<p>{{ 'a'|i }} is called <dfn>short</dfn> because it is not as long as {{ 'a'|i }}. {{ 'A'|i }} is called <dfn>long</dfn> because it is longer than {{ 'a'|i }}. As you pronounce these vowels, try to make {{ 'A'|i }} exactly twice as long as {{ 'a'|i }}.</p>
+
+<h2>Blended sounds</h2>
+<h3>Background</h3>
+<p>Some languages, like English, have writing systems that do not match the sounds of the language well. For example, the English word "enough" does not have a "g" sound, but a "g" is added anyway.</p>
+
+<p>Other languages, like Spanish or Italian, have writing systems that match the sounds of the language very well. Even if you do not know either of these languages, you can pronounce words like <span lang="es">plaza</span> or <span lang="it">numero</span> fairly well.</p>
+
+<p>But Sanskrit goes one step further. In almost every text, written Sanskrit is a perfect record of the sounds that appear in spoken Sanskrit.</p>
+
+<p>This might be confusing. Let's see some examples.</p>
+
+<h3>Examples</h3>
+<p>Here are two simple Sanskrit sentences:</p>
+
+<ul class="examples">
+	{{ ex('bAlAya Aha', 'He speaks for the boy.', iast=true) }}
+	{{ ex('sA Apnoti', 'She obtains.', iast=true) }}
+</ul>
+
+<p>Try reading the first sentence out loud ten times.</p>
+
+<p>As you might have noticed, it is tiresome to keep stopping after {{ 'bAlAya'|i }} and keep starting again at {{ 'Aha'|i }}. That pause is difficult to pronounce, and it takes too much extra time. Because of these pauses, speaking Sanskrit can feel hard and slow.</p>
+
+<p>The earliest Sanskrit speakers solved this problem by <dfn>blending</dfn> words together. Blended words are easier to say, and it takes much less time to say them. In {{ 'bAlAya Aha'|i }}, for example, it is so much easier to blend {{ 'a'|i }} and {{ 'A'|i }} into {{ 'bAlAyAha'|i }}.</p>
+
+<p>This is how Sanskrit is usually written down, too. Even if two words are supposed to be separate, they are blended wherever possible:</p>
+
+<ul class="examples">
+	{{ ex('bAlAya Aha -> bAlAyAha', 'He spoke for the boy.', iast=true) }}
+	{{ ex('sA Apnoti -> sApnoti', 'She obtains.', iast=true) }}
+</ul>
+
+<h3>In the wild</h3>
+<p>This blending occurs almost everywhere. Try to blend the words in the sentences below:</p>
+
+<ul class="examples">
+	{{ ex('pUrNam eva avaziSyate', iast=true) }}
+	{{ ex('na anuzocanti paNDitAH', iast=true) }}
+	{{ ex('nityazabdena atra anityatvasya abhAvaH', iast=true) }}
+</ul>
+
+<p>These sentences are all from real Sanskrit texts, like the Upanishads:</p>
+
+<ul class="examples">
+	{{ ex('pUrNamevAvaziSyate', '(Taking the full from the full,) the full itself remains.', cite='<cite lang="sa">Īśa Upaniṣad</cite>', iast=true) }}
+</ul>
+
+<p>the Bhagavad Gita:</p>
+
+<ul class="examples">
+	{{ ex('nAnuzocanti paNDitAH', 'The learned do not grieve (for the dead or the living).', cite='<cite>Bhagavad Gita</cite> 1.11', iast=true) }}
+</ul>
+
+<p>and technical works, like this logical treatise from the 6th century:</p>
+
+<ul class="examples">
+	{{ ex('nityazabdenAtrAnityatvasyAbhAvaH', 'By the word "permanent" here (is meant) the absence of impermanence.',
+	cite='<cite lang="sa">Nyāyapraveśa</cite> 2.3',
+	iast=true) }}
+</ul>
+
+<p>So even though blending comes from <em>spoken</em> Sanskrit, it can appear in <em>written</em> Sanskrit as well.</p>
 {% endblock %}
