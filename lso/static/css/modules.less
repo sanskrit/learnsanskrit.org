@@ -21,3 +21,48 @@ section.unit {
         list-style-type: none;
     }
 }
+
+ul.examples {
+    background: @off-white;
+    border: 1px @light-gray solid;
+    border-left: 0;
+    border-right: 0;
+    list-style: none;
+    margin: 0 -@two-column-article-padding;
+    padding: 0 @two-column-article-padding;
+
+    .sa1 {
+        font-size: 1.5em;
+    }
+    cite:before {
+        content: "— ";
+    }
+    li {
+        margin-bottom: 1em;
+    }
+    mark {
+        background: transparent;
+        color: darken(@red, 15%);
+    }
+    p {
+        margin: 0;
+
+        &.cite {
+            color: @gray;
+        }
+    }
+}
+
+ul.letters {
+    list-style: none;
+    padding: 0;
+
+    span {
+        display: block;
+        text-align: center;
+
+        &.sa2 {
+            font-size: 2em;
+        }
+    }
+}
