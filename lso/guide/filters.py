@@ -10,6 +10,7 @@ from lso.filters import sa1, sa2
 
 def raw_text(elem, text):
     """Insert text into an Element without escaping it."""
+    text = text.replace('&', '&amp;')
     wrapper = ET.fromstring(('<w>%s</w>' % text).encode('utf-8'))
     elem.text = wrapper.text
     elem.extend(wrapper.getchildren())
@@ -19,8 +20,8 @@ def inject_notes():
     return {'notes':[]}
 
 @app.template_filter()
-def d(text, tag='span'):
-    return sa1(text, sanscript.HARVARD_KYOTO, tag=tag)
+def d(text, to=sanscript.DEVANAGARI, tag='span'):
+    return sa1(text, sanscript.HARVARD_KYOTO, to, tag=tag)
 
 def ex(sa=None, en=None, **kwargs):
     aside = kwargs.get('aside')
@@ -45,13 +46,13 @@ def ex(sa=None, en=None, **kwargs):
     if aside is not None:
         elem = ET.SubElement(li, 'p')
         raw_text(elem, render(aside))
-
     if cite is not None:
         elem = ET.SubElement(li, 'p', {'class': 'cite'})
         raw_text(elem, render(cite))
 
     returned = ET.tostring(li, encoding='utf-8')
-    returned = returned.decode('utf-8').replace('-&gt;', u'→')
+    returned = returned.decode('utf-8')
+    returned = returned.replace('-&gt;', u'→').replace('&amp;', '&')
     return Markup(returned)
 
 @app.template_filter()
