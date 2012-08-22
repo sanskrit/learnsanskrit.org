@@ -55,8 +55,14 @@ ul.examples {
 
 ul.letters {
     list-style: none;
+    overflow: hidden;
     padding: 0;
+    width: 100%;
 
+    li {
+        float: left;
+        width: 100%;
+    }
     span {
         display: block;
         text-align: center;
@@ -64,5 +70,11 @@ ul.letters {
         &.sa2 {
             font-size: 2em;
         }
+    }
+    &.grid-2 li {
+        width: 50%;
+    }
+    &.grid-5 li {
+        width: 20%;
     }
 }
