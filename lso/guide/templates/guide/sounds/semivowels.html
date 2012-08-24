@@ -1,4 +1,90 @@
 {% extends 'guide/lesson.html' %}
 
 {% block lesson %}
+<p>How do two vowels blend together? If they are similar, they become long:</p>
+
+<ul class="examples">
+    {{ ex('bAlAya Aha -> bAlAyAha', 'He spoke for the boy.', iast=true) }}
+</ul>
+
+<p>If they are not similar, the blend depends on the first vowel. {{ 'a'|i }} and {{ 'A'|i }}, for example, combine to create compound vowels:</p>
+
+<ul class="examples">
+    {{ ex('sA icchati -> secchati', 'She wants.', iast=true) }}
+</ul>
+
+<p>But there are other combinations that are more puzzling:</p>
+
+<ul class="examples">
+    {{ ex('gacchati azvaH', 'The horse goes.', iast=true) }}
+    {{ ex('sAdhu Aste', 'He sits well.', iast=true) }}
+</ul>
+
+<p>To blend the vowels in these sentences, we need a new kind of letter.</p>
+
+<h2>Semivowels</h2>
+<p>Consider the combinations {{ 'i'|i }} + {{ 'a'|i }} and {{ 'u'|i }} + {{ 'a'|i }}. These combine in an obvious way:</p>
+
+<ul class="examples">
+    {{ ex('i + a -> ia', dev=false, iast=true) }}
+    {{ ex('u + a -> ua', dev=false, iast=true) }}
+</ul>
+
+<p>It can be tiresome to keep these two sounds separate. But these sounds do not blend easily. They fight for space, like two wrestlers in the ring. And only one of them can remain.</p>
+
+<p>Instead of <em>blending</em>, one of the sounds collapses and becomes <strong>shorter</strong>. Wherever possible, the first sound is the one that shortens:</p>
+
+<ul class="examples">
+    {{ ex('i + a -> ya', dev=false, iast=true) }}
+    {{ ex('u + a -> va', dev=false, iast=true) }}
+</ul>
+
+<p>These shortened vowels are called <dfn>semivowels</dfn>. And apart from {{ 'a'|i }} and {{ 'A'|i }}, every vowel has one:</p>
+
+<ul class="letters grid-4">
+    <li>{{ 'ya'|i }} <span>"y" in "yellow"</span></li>
+    <li>{{ 'ra'|i }} <span>(no match)</span></li>
+    <li>{{ 'la'|i }} <span>"l" in "loose"</span></li>
+    <li>{{ 'va'|i }} <span>"v" in "vase"</span></li>
+</ul>
+
+<p>Since semivowels can only exist around other vowels, they are all listed with the vowel {{ 'a'|i }}. As you pronounce these letters, keep them as short as possible.</p>
+
+<h2>Blending vowels</h2>
+<p>When vowels cannot blend or combine, one of them becomes a semivowel:</p>
+<ul class="examples">
+    {{ ex('gacchati azvaH -> gacchaty azvaH', 'The horse goes.', iast=true) }}
+    {{ ex('sAdhu Aste -> sAdhv Aste', 'He sits well.', iast=true) }}
+</ul>
+
+<h3>With compound vowels</h3>
+<p>This applies to compound vowels, too. We just have to remember where they come from. For example, {{ 'au'|i }} comes from {{ 'a + a + u'|i }}, or {{ 'Au'|i }}. So, we get:</p>
+
+<ul class="examples">
+    {{ ex('azvau icchati -> azvAu icchati -> azvAv icchati', 'He wants the two horses.', iast=true) }}
+</ul>
+
+<h3>In the wild</h3>
+<p>Try to blend the words in the phrases below:</p>
+
+<ul class="examples">
+    {{ ex('bhavati iti anuzuzruma', iast=true) }}
+    {{ ex('na tu eva ahaM jAtu na Asam', iast=true) }}
+    {{ ex('tejasvi nau adhItam astu', iast=true) }}
+    {{ ex('yadi api ete na pazyanti', iast=true) }}
+</ul>
+
+<p>These words blend as you would expect:</p>
+
+<ul class="examples">
+    {{ ex('bhavatIty anuzuzruma', '(They dwell eternally in hell) &mdash; so we have heard.', cite='<cite>Bhagavad Gita</cite> 1.44', iast=true) }}
+    {{ ex('na tv evAhaM jAtu nAsam', 'Never was I ever not.', cite='<cite>Bhagavad Gita</cite> 2.12', iast=true) }}
+    {{ ex('tejasvi nAv adhItam astu', 'May our studies be glorious.', cite='<cite>Upanishads</cite> (various)', iast=true) }}
+    {{ ex('yady apy ete na pazyanti', 'But even if they do not see, &hellip;', cite='<cite>Bhagavad Gita</cite> 1.38', iast=true) }}
+</ul>
+
+<h2>Other sounds</h2>
+<p>We can now describe how the Sanskrit vowels blend and interact. This knowledge is highly useful and will be especially important later on.</p>
+
+<p>But there are still many other sounds to consider. Let's take a break from the vowels and see what some of these sounds are. These sounds are much simpler, and they will be much easier to learn.</p>
 {% endblock %}
