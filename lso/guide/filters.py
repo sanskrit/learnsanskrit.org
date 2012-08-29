@@ -1,6 +1,7 @@
 #!/usr/bin/python
 # -*- encoding: utf-8 -*-
 
+from flask import url_for
 from jinja2 import Markup
 from sanskrit.letters import sanscript
 from xml.etree import ElementTree as ET
@@ -18,6 +19,10 @@ def raw_text(elem, text):
 @app.context_processor
 def inject_notes():
     return {'notes':[]}
+
+@app.context_processor
+def inject_functions():
+    return {'ex': ex, 'img': img}
 
 @app.template_filter()
 def d(text, to=sanscript.DEVANAGARI, tag='span'):
@@ -59,6 +64,11 @@ def ex(sa=None, en=None, **kwargs):
 def i(text, tag='span'):
     return sa2(text, sanscript.HARVARD_KYOTO, tag=tag)
 
+def img(filename, alt):
+    full_path = url_for('guide.static', filename='img/%s' % filename)
+    img = ET.Element('img', {'src': full_path, 'alt': alt})
+    return Markup(ET.tostring(img))
+
 @app.template_filter()
 def foot(text, notes):
     notes.append(text)
@@ -68,5 +78,3 @@ def foot(text, notes):
 @app.template_filter()
 def render(text):
     return app.jinja_env.from_string(text).render()
-
-app.jinja_env.globals[ex.__name__] = ex
