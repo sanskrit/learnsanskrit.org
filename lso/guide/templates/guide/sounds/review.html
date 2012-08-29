@@ -1,4 +1,101 @@
 {% extends 'guide/lesson.html' %}
 
 {% block lesson %}
+<p>And that is all! We have learned virtually everything we need to know about pronouncing Sanskrit <strong>sounds</strong> correctly. We  have also learned why and how sounds blend together. Finally, we learned a small bit about syllables and meter.</p>
+
+<p>This knowledge is extremely useful, and it will make many parts of Sanskrit much easier.</p>
+
+<p>In the next unit, we will finally start with <strong>real Sanskrit</strong>. We will create simple sentences, learn how words are used together, and create new words of our own.</p>
+
+<p>But before you go on, take a moment to review the material from this unit.</p>
+
+<h2>Sounds</h2>
+
+<p>Instead of just <a href="lesson_url('sounds', 'anusvara-and-visarga') }}">reviewing the alphabet</a>, we can rearrange the sounds in a more meaningful way:</p>
+
+<table class="letter-chart">
+    <tr><th>Soft palate</th><th>Hard palate</th><th>Hard bump</th><th>Teeth</th><th>Lips</th></tr>
+    {{ '<td>a</td><td>i</td><td>R</td><td>lR</td><td>u</td>'|i('tr') }}
+    {{ '<td>A</td><td>I</td><td>RR</td><td /><td>U</td>'|i('tr') }}
+    {{ '<td /><td>e</td><td /><td /><td>o</td>'|i('tr') }}
+    {{ '<td /><td>ai</td><td /><td /><td>au</td>'|i('tr') }}
+    {{ '<td /><td>ya</td><td>ra</td><td>la</td><td>va</td>'|i('tr') }}
+    {{ '<td>ka</td><td>ca</td><td>Ta</td><td>ta</td><td>pa</td>'|i('tr') }}
+    {{ '<td>kha</td><td>cha</td><td>Tha</td><td>tha</td><td>pha</td>'|i('tr') }}
+    {{ '<td>ga</td><td>ja</td><td>Da</td><td>da</td><td>ba</td>'|i('tr') }}
+    {{ '<td>gha</td><td>jha</td><td>Dha</td><td>dha</td><td>bha</td>'|i('tr') }}
+    {{ '<td>Ga</td><td>Ja</td><td>Na</td><td>na</td><td>ma</td>'|i('tr') }}
+    {{ '<td /><td>za</td><td>Sa</td><td>sa<td />'|i('tr') }}
+    {{ '<td>ha</td><td /><td /><td /><td />'|i('tr') }}
+</table>
+
+<h2>Blending</h2>
+
+<p>Sometimes, it can be tiresome to pronounce certain sounds next to each other. The earliest Sanskrit speakers solved this problem by <strong>blending words together</strong>.</p>
+
+<h3>Blending vowels</h3>
+<p>It is easy to blend vowels. <a href="{{ lesson_url('sounds', 'simple-vowels') }}">Simple vowels</a> are the easiest:</p>
+
+<ul class="examples">
+    {{ ex('bAlAya Aha -> bAlAyAha', 'He spoke for the boy.', iast=true) }}
+    {{ ex('sA Apnoti -> sApnoti', 'She obtains.', iast=true) }}
+    {{ ex('gacchati IzvaraH -> gacchatIzvaraH', 'The lord goes.', iast=true) }}
+    {{ ex('gacchati madhu udakam -> gacchati madhUdakam', 'He goes to the sweet water.', iast=true) }}
+</ul>
+
+<p>Otherwise, vowels can blend in several ways. They can <a href="{{ lesson_url('sounds', 'compound-vowels') }}">combine</a>:</p>
+
+<ul class="examples">
+    {{ ex('sA icchati -> secchati', 'She wants.', iast=true) }}
+    {{ ex('tasya udakam -> tasyodakam', 'his water', iast=true) }}
+    {{ ex('bAlasya odanam -> bAlasyaudanam', "the boy's rice", iast=true)}}
+    {{ ex('tasya aizvaryam  -> tasyaizvaryam', "his power", iast=true)}}
+</ul>
+
+<p>or one can <a href="{{ lesson_url('sounds', 'semivowels') }}">become a semivowel</a>:</p>
+
+<ul class="examples">
+    {{ ex('gacchati azvaH -> gacchaty azvaH', 'The horse goes.', iast=true) }}
+    {{ ex('sAdhu Aste -> sAdhv Aste', 'He sits well.', iast=true) }}
+    {{ ex('tejasvi nAv adhItam astu', 'May our studies be glorious.', cite='<cite>Upanishads</cite> (various)', iast=true) }}
+</ul>
+
+<h3>Blending consonants</h3>
+<p>It is easy to blend consonants, too. Stops can <a href="{{ lesson_url('sounds', 'stops-and-nasals') }}">become nasals</a>:</p>
+
+<ul class="examples">
+    {{ ex('tat na Asyam -> tan nAsyam', 'That is not a mouth.', iast=true) }}
+    {{ ex('rAT naraH -> rAN naraH', 'The king is a man.', iast=true) }}
+</ul>
+
+<p>or they can just <a href="{{ lesson_url('sounds', 'voice-and-aspiration') }}">become voiced</a>:</p>
+
+<ul class="examples">
+    {{ ex('vAk eva -> vAg eva', 'speech itself', iast=true) }}
+    {{ ex('tat yacchati -> tad yacchati', 'He restrains it.', iast=true) }}
+    {{ ex('sa rAT bhavati -> sa rAD bhavati', 'He becomes a king.', iast=true) }}
+    {{ ex('na asat AsIt na u sat AsIt tadAnIm -> nAsad AsIn no sad AsIt tadAnIm', 'Then there was neither nothing nor anything.', cite='<cite>Nāsadīya Sūkta</cite>', iast=true) }}
+</ul>
+
+<p>{{ 't'|i }}, especially, <a href="{{ lesson_url('sounds', 'other-consonants') }}">blends very easily</a>:</p>
+
+<ul class="examples">
+    {{ ex('tat cApam -> tac cApam', 'That is a bow.', iast=true) }}
+    {{ ex('tat TIkAsu -> taT TIkAsu', 'That is in the commentaries.', iast=true) }}
+    {{ ex('tat jAyate -> taj jAyate', 'That is born.', iast=true) }}
+    {{ ex('tat Damarau -> taD Damarau', 'That is in the drum.', iast=true) }}
+</ul>
+
+<h3>Blending the {{ 'visarga'|i }}</h3>
+
+<p>Just like {{ 't'|i }}, the {{ 'visarga'|i }} <a href="{{ lesson_url('sounds', 'anusvara-and-visarga') }}">blends often and easily</a>:</p>
+
+<ul class="examples">
+    {{ ex('naraH carati -> naraz carati', 'The man walks.', iast=true) }}
+    {{ ex('naraH tarati -> naras tarati', 'The man crosses.', iast=true) }}
+    {{ ex('tAH TIkAH -> tAS TIkAH', 'Those are commentaries.', iast=true) }}
+</ul>
+
+<h2>Meter</h2>
+<p>We studied Sanskrit <a href="{{ lesson_url('sounds', 'syllables') }}">syllables</a> and learned how they affect the way Sanskrit is spoken.</p>
 {% endblock %}
