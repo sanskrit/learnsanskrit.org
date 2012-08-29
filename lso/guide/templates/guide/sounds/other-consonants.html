@@ -1,4 +1,107 @@
 {% extends 'guide/lesson.html' %}
 
 {% block lesson %}
+<p>Generally, any sound that is not a vowel is called a <dfn>consonant</dfn>. Sanskrit has 33 consonants in all: the 25 stops and nasals, the 4 semivowels, and the 4 sounds that we will study in this lesson.</p>
+
+<h2>The consonants</h2>
+<p>Like all Sanskrit consonants, these four use the following "points of sound":</p>
+
+{% include 'guide/include/sound-points.html' %}
+
+<p>As you pronounce these letters, be mindful of these five points.</p>
+
+<h3>"s" sounds</h3>
+<p>Once more, picture the flow of air that makes the vowel {{ 'a'|i }}. It starts in the lungs, moves through the throat, and flows cleanly through the mouth, like a river flowing straight.</p>
+
+<p>Normally, the air flows simply and straight. But when this air flow becomes <em>turbulent</em>, we get a "hissing" sound, like the "s" in "snake" or the "sh" in "shore." For convenience, let us call these sounds <dfn>"s" sounds</dfn>.</p>
+
+<p>English has two "s" sounds: the "s" in "snake" and the "sh" in "shore." But Sanskrit has three:</p>
+
+<ul class="grid-3 letters">
+    {{ 'za'|sound('(no match)') }}
+    {{ 'Sa'|sound('(no match)') }}
+    {{ 'sa'|sound('"s" in "snake"') }}
+</ul>
+
+<p>{{ 'za'|i }} uses the hard palate. {{ 'Sa'|i }} is retroflexed. {{ 'sa'|i }} is just like the English "s".</p>
+
+<h3>{{ 'ha'|i }}</h3>
+
+<p>If you breathe out and make your breath voiced, you'll hear a sound like "haaa." That "h" is our last consonant:</p>
+
+<ul class="letters">
+    {{ 'ha'|sound('(no match)') }}
+</ul>
+
+<p>{{ 'ha'|i }} is the same breathy sound that you hear in {{ 'gha'|i }}, {{ 'jha'|i }}, {{ 'Dha'|i }}, {{ 'dha'|i }}, and {{ 'bha'|i }}. {{ 'ha'|i }} is pronounced with the soft palate, at the back of the mouth.</p>
+
+{{ 'zavarga'|i('h3') }}
+<p>Together, these four sounds are called {{ 'zavarga'|i('dfn') }}.</p>
+
+<h3>Special combinations</h3>
+<p>Three consonant combinations are pronounced in a distinct way. {{ 'jJa'|i }} is pronounced more like {{ 'gJa'|i }}. {{ 'hma'|i }} and {{ 'hna'|i }} are pronounced like {{ 'mha'|i }} and {{ 'nha'|i }}.</p>
+
+<p>The history of these special pronunciations is uncertain. But this is how Sanskrit is pronounced today.</p>
+
+<h2>A new convention</h2>
+<p>The {{ 'a'|i }} at the end of a consonant makes the consonant easy to pronounce. But this {{ 'a'|i }} can also be confusing sometimes. So let us create a <strong>new convention</strong>. From now on, this  guide will not add {{ 'a'|i }} to the end of consonants.</p>
+
+<h2>Blending {{ 't'|i }}</h2>
+<p>Of all consonants, {{ 't'|i }} blends the most. Just as water spreads to fill its container, {{ 't'|i }} changes to blend with the letter after it.</p>
+
+<p>Like other stops, {{ 't'|i }} can become nasal:</p>
+
+<ul class="examples">
+    {{ ex('tat na Asyam -> tan nAsyam', 'That is not a mouth.', iast=true) }}
+    {{ ex('tat mantram -> tan mantram', 'That is a mantra.', iast=true) }}
+</ul>
+
+<p>and voiced:</p>
+
+<ul class="examples">
+    {{ ex('tat asat -> tad asat', 'That is false.', iast=true) }}
+</ul>
+
+<p>We have seen these changes already.</p>
+
+<p>But {{ 't'|i }} can also change its point of sound. If the next sound is a stop that <strong>uses the tongue</strong>, then it changes:</p>
+
+<ul class="examples">
+    {{ ex('tat cApam -> tac cApam', 'That is a bow.', iast=true) }}
+    {{ ex('tat TIkAsu -> taT TIkAsu', 'That is in the commentaries.', iast=true) }}
+    {{ ex('tat tanoti', 'He spreads that.', iast=true) }}
+</ul>
+
+<p>even if those sounds are voiced:</p>
+
+<ul class="examples">
+    {{ ex('tat jAyate -> taj jAyate', 'That is born.', iast=true) }}
+    {{ ex('tat Damarau -> taD Damarau', 'That is in the drum.', iast=true) }}
+    {{ ex('tat dahati -> tad dahati', 'That burns.', iast=true) }}
+</ul>
+
+<p>For other stops ({{ 'kavarga'|i }} and {{ 'pavarga'|i }}), the point of sound does not change:</p>
+
+<ul class="examples">
+    {{ ex('tat kaThoram', 'That is hard.', iast=true) }}
+    {{ ex('tat gurum -> tad gurum', 'That is heavy.', iast=true) }}
+    {{ ex('tat phalam', 'That is a fruit.', iast=true) }}
+    {{ ex('tat bIjam -> tad bIjam', 'That is a seed.', iast=true) }}
+</ul>
+
+<h3>In the wild</h3>
+
+<p>Try to blend the words in the phrase below:</p>
+
+<ul class="examples">
+    {{ ex('yat bhUtaM yat ca bhavyam', iast=true) }}
+</ul>
+
+<p>This phrase is from the <a href="http://en.wikipedia.org/wiki/Purusha_sukta"><cite>Puruṣa Sūkta</cite></a>, one of the most popular Vedic hymns:</p>
+
+<ul class="examples">
+    {{ ex('yad bhUtaM yac ca bhavyam', '(He is all of this) which has been and which is yet to be.', iast=true, cite='<cite>Puruṣa Sūkta</cite>') }}
+</ul>
+
+<p>Our Sanskrit alphabet is almost complete. Only two sounds remain.</p>
 {% endblock %}
