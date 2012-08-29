@@ -1,0 +1,15 @@
+{% from 'guide/macros.html' import row -%}
+
+<table class="letter-chart">
+    <caption>Consonants</caption>
+    <thead>
+        <tr class="top"><th><th colspan="4">Stops</th><th>Nasals</th><th>Semivowels</th><th>"s"</th><th>{{ 'ha'|i }}</th></tr>
+    </thead>
+    <tbody>
+        {{ row('Soft palate', ['ka', 'kha', 'ga', 'gha', 'Ga', '', '', 'ha']) }}
+        {{ row('Hard palate', ['ca', 'cha', 'ja', 'jha', 'Ja', 'ya', 'za', '']) }}
+        {{ row('Hard bump', ['Ta', 'Tha', 'Da', 'Dha', 'Na', 'ra', 'Sa', '']) }}
+        {{ row('Teeth', ['ta', 'tha', 'da', 'dha', 'na', 'la', 'sa', '']) }}
+        {{ row('Lips', ['pa', 'pha', 'ba', 'bha', 'ma', 'va', '', '']) }}
+    </tbody>
+</table>

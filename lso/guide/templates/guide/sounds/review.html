@@ -13,21 +13,8 @@
 
 <p>Instead of just <a href="lesson_url('sounds', 'anusvara-and-visarga') }}">reviewing the alphabet</a>, we can rearrange the sounds in a more meaningful way:</p>
 
-<table class="letter-chart">
-    <tr><th>Soft palate</th><th>Hard palate</th><th>Hard bump</th><th>Teeth</th><th>Lips</th></tr>
-    {{ '<td>a</td><td>i</td><td>R</td><td>lR</td><td>u</td>'|i('tr') }}
-    {{ '<td>A</td><td>I</td><td>RR</td><td /><td>U</td>'|i('tr') }}
-    {{ '<td /><td>e</td><td /><td /><td>o</td>'|i('tr') }}
-    {{ '<td /><td>ai</td><td /><td /><td>au</td>'|i('tr') }}
-    {{ '<td /><td>ya</td><td>ra</td><td>la</td><td>va</td>'|i('tr') }}
-    {{ '<td>ka</td><td>ca</td><td>Ta</td><td>ta</td><td>pa</td>'|i('tr') }}
-    {{ '<td>kha</td><td>cha</td><td>Tha</td><td>tha</td><td>pha</td>'|i('tr') }}
-    {{ '<td>ga</td><td>ja</td><td>Da</td><td>da</td><td>ba</td>'|i('tr') }}
-    {{ '<td>gha</td><td>jha</td><td>Dha</td><td>dha</td><td>bha</td>'|i('tr') }}
-    {{ '<td>Ga</td><td>Ja</td><td>Na</td><td>na</td><td>ma</td>'|i('tr') }}
-    {{ '<td /><td>za</td><td>Sa</td><td>sa<td />'|i('tr') }}
-    {{ '<td>ha</td><td /><td /><td /><td />'|i('tr') }}
-</table>
+{% include 'guide/include/vowel-chart-iast.html' %}
+{% include 'guide/include/consonant-chart-iast.html' %}
 
 <h2>Blending</h2>
 

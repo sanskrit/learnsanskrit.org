@@ -1,0 +1,15 @@
+{% from 'guide/macros.html' import row -%}
+
+<table class="letter-chart">
+    <caption>Vowels</caption>
+    <thead>
+        <tr class="top"><th /><th>Short</th><th colspan="3">Long</th></tr>
+    </thead>
+    <tbody>
+        {{ row('Soft palate', ['a', 'A', '', '']) }}
+        {{ row('Hard palate', ['i', 'I', 'e', 'ai']) }}
+        {{ row('Hard bump', ['R', 'RR', '', '']) }}
+        {{ row('Teeth', ['lR', '', '', '']) }}
+        {{ row('Lips', ['u', 'U', 'o', 'au']) }}
+    </tbody>
+</table>

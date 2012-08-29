@@ -1,0 +1,12 @@
+{% macro row(category, letters) %}
+    <tr>
+        <th>{{ category }}</th>
+        {% for L in letters %}
+            {%- if L -%}
+                {{ L|i('td') }}
+            {%- else -%}
+                <td />
+            {%- endif %}
+        {% endfor %}
+    </tr>
+{%- endmacro %}
