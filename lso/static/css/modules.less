@@ -87,3 +87,47 @@ ul.letters {
         width: 16.666%;
     }
 }
+
+
+table.letter-chart {
+    border-spacing: 0.3em;
+    margin: 1em 0;
+    text-align: center;
+    width: 100%;
+
+    caption {
+        font-size: 1.2em;
+        line-height: 1.5em;
+    }
+    th {
+        color: @gray;
+        font-weight: normal;
+    }
+    tbody {
+        th {
+            width: 5em;
+        }
+    }
+    thead {
+        th {
+            border-bottom: 1px solid @light-gray;
+            line-height: 2em;
+
+            &:first-child {
+                border: 0;
+            }
+        }
+    }
+    td {
+        .border-radius(10px);
+
+        background: @off-white;
+        border: 1px @light-gray solid;
+        box-shadow: 1px 1px 3px rgba(0,0,0,0.05);
+        height: 2.5em;
+        overflow: hidden;
+        &.sa2 {
+            font-size: 1.3em;
+        }
+    }
+}
