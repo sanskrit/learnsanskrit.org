@@ -1,4 +1,138 @@
 {% extends 'guide/lesson.html' %}
 
 {% block lesson %}
+<p>The two sounds here are <strong>fundamentally different</strong> from the others we have studied. They appear only because of blending. They can be pronounced in multiple ways. They must follow vowels. And although they seem to be consonants, the tradition calls them something else. Each sound has its own special term.</p>
+
+{{ 'anusvAra'|i('h2') }}
+<ul class="letters">
+{{ 'aM'|sound('(no match)') }}
+</ul>
+
+<p></p>
+
+<p>This sound is called the {{ 'anusvAra'|i('dfn') }} ("after-sound"). It is a "pure nasal" sound that appears only in front of consonants.</p>
+
+<p>It is difficult to pronounce a "pure nasal." But the {{ 'anusvAra'|i }} is easy to pronounce. Generally, it uses the same point of sound as the sound that follows it:</p>
+
+<table class="columns">
+    <tr><th>Written as</th><th>Sounds like</th></tr>
+    {{ '<td>zaMkara</td><td>zaGkara</td>'|i('tr') }}
+    {{ '<td>saMjaya</td><td>saJjaya</td>'|i('tr') }}
+    {{ '<td>saMskRta</td><td>sanskRta</td>'|i('tr') }}
+    {{ '<td>saMbuddha</td><td>sambuddha</td>'|i('tr') }}
+</table>
+
+<p>Because of this behavior, {{ 'saMskRta'|i }} is spelled in English as "Sanskrit."</p>
+
+{{ 'visarga'|i('h2') }}
+<ul class="letters">
+{{ 'aH'|sound('(no match)') }}
+</ul>
+
+<p>This sound is called the {{ 'visarga'|i('dfn') }} ("release").</p>
+
+<p>Originally, the {{ 'visarga'|i }} was probably just like the "h" in "house." We could think of it as an "s" sound pronounced at the soft palate. But today, it is usually pronounced as an echo of the vowel before it: {{ 'aH'|i }} like {{ 'aha'|i }}, and {{ 'iH'|i }} like {{ 'ihi'|i }}.</p>
+
+<h2>Blending the {{ 'visarga'|i }}</h2>
+<p>The {{ 'visarga'|i }} is a difficult sound. So wherever possible, it blends with the letters around it. In front of unvoiced consonants, the {{ 'visarga'|i }} becomes the "s" sound with the same point of sound:</p>
+
+<ul class="examples">
+    {{ ex('naraH carati -> naraz carati', 'The man walks.', iast=true) }}
+    {{ ex('naraH tarati -> naras tarati', 'The man crosses.', iast=true) }}
+    {{ ex('tAH TIkAH -> tAS TIkAH', 'Those are commentaries.', iast=true) }}
+</ul>
+
+<p>This change also occurs in front of other "s" sounds, like {{ 'z'|i }} and {{ 's'|i }}. But surprisingly, the change is rarely written out:</p>
+
+<ul class="examples">
+    {{ ex('naraH zocati (naraz zocati)', 'The man grieves.', iast=true) }}
+    {{ ex('naraH smarati (naras smarati)', 'The man remembers.', iast=true) }}
+</ul>
+
+<h2>The Sanskrit alphabet</h2>
+<p>We have now studied <strong>every sound in the alphabet.</strong>. Unlike the English alphabet, the Sanskrit alphabet is intuitive and easy to remember:</p>
+
+<h3>Vowels</h3>
+<p>We start with the thirteen vowels:</p>
+
+<ul class="grid-2 letters">
+    {{ 'a'|sound }}
+    {{ 'A'|sound }}
+    {{ 'i'|sound }}
+    {{ 'I'|sound }}
+    {{ 'u'|sound }}
+    {{ 'U'|sound }}
+    {{ 'R'|sound }}
+    {{ 'RR'|sound }}
+    {{ 'lR'|sound }}
+    <li><span class="sa2">&nbsp;</span></li>
+    {{ 'e'|sound }}
+    {{ 'ai'|sound }}
+    {{ 'o'|sound }}
+    {{ 'au'|sound }}
+</ul>
+
+<h3>{{ 'anusvAra'|i }} and {{ 'visarga'|i }}</h3>
+<p>The {{ 'anusvAra'|i }} and {{ 'visarga'|i }} are not quite the same as normal consonants, so they are listed with the vowels:</p>
+
+<ul class="grid-2 letters">
+    {{ 'aM'|sound }}
+    {{ 'aH'|sound }}
+</ul>
+
+<h3>Stops and nasals</h3>
+<p>Next come the stops and nasals:</p>
+
+<ul class="grid-5 letters">
+    {{ 'ka'|sound }}
+    {{ 'kha'|sound }}
+    {{ 'ga'|sound }}
+    {{ 'gha'|sound }}
+    {{ 'Ga'|sound }}
+
+    {{ 'ca'|sound }}
+    {{ 'cha'|sound }}
+    {{ 'ja'|sound }}
+    {{ 'jha'|sound }}
+    {{ 'Ja'|sound }}
+
+    {{ 'Ta'|sound }}
+    {{ 'Tha'|sound }}
+    {{ 'Da'|sound }}
+    {{ 'Dha'|sound }}
+    {{ 'Na'|sound }}
+
+    {{ 'ta'|sound }}
+    {{ 'tha'|sound }}
+    {{ 'da'|sound }}
+    {{ 'dha'|sound }}
+    {{ 'na'|sound }}
+
+    {{ 'pa'|sound }}
+    {{ 'pha'|sound }}
+    {{ 'ba'|sound }}
+    {{ 'bha'|sound }}
+    {{ 'ma'|sound }}
+</ul>
+
+<h3>Semivowels</h3>
+<p>Then the semivowels:</p>
+
+<ul class="grid-4 letters">
+    {{ 'ya'|sound }}
+    {{ 'ra'|sound }}
+    {{ 'la'|sound }}
+    {{ 'va'|sound }}
+</ul>
+
+<h3>"s" sounds and {{ 'ha'|i }}</h3>
+<p>And, finally, the "s" sounds and {{ 'ha'|i }}.</p>
+
+<ul class="grid-4 letters">
+    {{ 'za'|sound }}
+    {{ 'Sa'|sound }}
+    {{ 'sa'|sound }}
+    {{ 'ha'|sound }}
+</ul>
+
 {% endblock %}
