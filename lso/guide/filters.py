@@ -22,7 +22,7 @@ def inject_notes():
 
 @app.context_processor
 def inject_functions():
-    return {'ex': ex, 'img': img}
+    return {'ex': ex, 'img': img, 'lesson_url': lesson_url}
 
 @app.template_filter()
 def d(text, to=sanscript.DEVANAGARI, tag='span'):
@@ -74,6 +74,13 @@ def foot(text, notes):
     notes.append(text)
     i = len(notes)
     return '<sup><a id="fref-%s" href="#fnote-%s">[%s]</a></sup>' % (i, i, i)
+
+def lesson_url(unit, lesson=None):
+    """URL helper for linking to lessons and units."""
+    if lesson:
+        return url_for('guide.lesson', unit=unit, lesson=lesson)
+    else:
+        return url_for('guide.unit', unit=unit)
 
 @app.template_filter()
 def render(text):
