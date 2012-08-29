@@ -1,4 +1,136 @@
 {% extends 'guide/lesson.html' %}
 
 {% block lesson %}
+<p>The stop letters are simple sounds produced in a simple way:</p>
+
+<ul class="letters">
+    {{ 'ka'|sound('"k" in "skill"') }}
+</ul>
+
+<p>But as with many things in life, these letters become more interesting when they become more complex. For one, we can make a stop <dfn>voiced</dfn>:</p>
+
+<ul class="letters">
+    {{ 'ga'|sound('"g" in "gill"') }}
+</ul>
+
+<p>or <dfn>unvoiced</dfn>, like {{ 'ka'|i }}. These letters are in English, too. You can feel the difference between these two letters by touching your windpipe while you produce them.</p>
+
+<p>But Sanskrit complicates the stops letters in a second way. Recall that a stop is produced when the flow of air stops then quickly resumes. In {{ 'ka'|i }}, this flow resumes normally, like water from a tap. But this flow can also resume explosively, like water bursting through a dam:</p>
+
+<ul class="letters">
+    {{ 'kha'|sound('"k" in "kill"') }}
+</ul>
+
+<p>Sounds like {{ 'kha'|i }} are <dfn>aspirated</dfn> ("breathy"), and sounds like {{ 'ka'|i }} are <dfn>unaspirated</dfn> ("not breathy"). And of course, these aspirated letters can be voiced, too:</p>
+
+<ul class="letters">
+    {{ 'gha'|sound('(no match)') }}
+</ul>
+
+<h2>The stops and nasals</h2>
+
+<p>Each of the five points of sound has <strong>four</strong> stops and one nasal. Together, these give us the following 25 sounds:</p>
+
+<ul class="grid-5 letters">
+    {{ 'ka'|sound('"k" in "skill"') }}
+    {{ 'kha'|sound('"k" in "kill"') }}
+    {{ 'ga'|sound('"g" in "gill"') }}
+    {{ 'gha'|sound('(no match)') }}
+    {{ 'Ga'|sound('"ng" in "lung"') }}
+
+    {{ 'ca'|sound('(no match)') }}
+    {{ 'cha'|sound('(no match)') }}
+    {{ 'ja'|sound('(no match)') }}
+    {{ 'jha'|sound('(no match)') }}
+    {{ 'Ja'|sound('(no match)') }}
+
+    {{ 'Ta'|sound('(no match)') }}
+    {{ 'Tha'|sound('(no match)') }}
+    {{ 'Da'|sound('(no match)') }}
+    {{ 'Dha'|sound('(no match)') }}
+    {{ 'Na'|sound('(no match)') }}
+
+    {{ 'ta'|sound('"th" in "thumb"') }}
+    {{ 'tha'|sound('(no match)') }}
+    {{ 'da'|sound('"th" in "this"') }}
+    {{ 'dha'|sound('(no match)') }}
+    {{ 'na'|sound('"n" in "nose"') }}
+
+    {{ 'pa'|sound('"p" in "spill"') }}
+    {{ 'pha'|sound('"p" in "pill"') }}
+    {{ 'ba'|sound('"b" in "bill"') }}
+    {{ 'bha'|sound('(no match)') }}
+    {{ 'ma'|sound('"m" in "mill"') }}
+</ul>
+
+<p>This arrangement is over 2800 years old. It stands at the beginning of the Indian linguistic tradition.</p>
+
+{{ 'varga'|i('h3') }}
+<p>The word {{ 'varga'|i('dfn') }} lets us create a shortcut to refer to certain groups of consonants. The stops and nasals at the soft palate ({{ 'ka, kha, ga, gha, Ga'|i }}) are together called {{ 'kavarga'|i('dfn') }}. And we have names for the other groups of stops and nasals, too:</p>
+
+<dl>
+    <dt>{{ 'cavarga'|i }}</dt>
+    <dd>{{ 'ca, cha, ja, jha, Ja'|i }}</dd>
+    <dt>{{ 'Tavarga'|i }}</dt>
+    <dd>{{ 'Ta, Tha, Da, Dha, Na'|i }}</dd>
+    <dt>{{ 'tavarga'|i }}</dt>
+    <dd>{{ 'ta, tha, da, dha, na'|i }}</dd>
+    <dt>{{ 'pavarga'|i }}</dt>
+    <dd>{{ 'pa, pha, ba, bha, ma'|i }}</dd>
+</dl>
+
+<p>We can also refer to the semivowels with the term {{ 'yavarga'|i('dfn') }}.</p>
+
+<h2>Blending stops</h2>
+<p>Stops blend very easily, whether with nasals:</p>
+
+<ul class="examples">
+    {{ ex('tat na Asyam', 'That is not a mouth.', iast=true) }}
+    {{ ex('rAT naraH', 'The king is a man.', iast=true) }}
+</ul>
+
+<p>or with most other letters. Stops become <strong>voiced</strong> in front of any voiced letter, including vowels:</p>
+
+<ul class="examples">
+    {{ ex('tat asat -> tad asat', 'That is false.', iast=true) }}
+    {{ ex('vAk eva -> vAg eva', 'speech itself', iast=true) }}
+</ul>
+
+<p>semivowels:</p>
+
+<ul class="examples">
+    {{ ex('tat yacchati -> tad yacchati', 'He restrains it.', iast=true) }}
+</ul>
+
+<p>and other stops:</p>
+
+<ul class="examples">
+    {{ ex('sa rAT bhavati -> sa rAD bhavati', 'He becomes a king.', iast=true) }}
+</ul>
+
+<p>but like a diamond in the mud, these stops keep their value: they use the same point of sound.</p>
+
+<p>As before, stops only blend <em>between</em> words, not inside them. Otherwise, we would become hopelessly confused:</p>
+
+<ul class="examples">
+    {{ ex('tan mantram', 'That is a mantra.', iast=true) }}
+    {{ ex('tan ma<mark>ndra</mark>m', 'That is charming.', iast=true) }}
+</ul>
+
+<h3>In the wild</h3>
+<p>Try to blend the words in the phrases below:</p>
+
+<ul class="examples">
+    {{ ex('na asat AsIt na u sat AsIt tadAnIm', iast=true) }}
+    {{ ex('uta amRtatvasya IzAno yat annena atirohati', iast=true) }}
+</ul>
+
+<p>These are lines from various Vedic hymns:{% filter foot(notes) %}Like most all Vedic Sanskrit, the lines here are open to some interpretation.{% endfilter %}</p>
+
+<ul class="examples">
+    {{ ex('nAsad AsIn no sad AsIt tadAnIm', 'Then there was neither nothing nor anything.', cite='<cite>Nāsadīya Sūkta</cite>', iast=true) }}
+    {{ ex('utAmRtatvasyezAno yad annenAtirohati', 'And he is the lord of immortality, who grows further by food.', cite='<cite>Purusha Sukta</cite>', iast=true) }}
+</ul>
+
+<p>The first example is from one of the most popular Vedic hymns. The line had all of its blending undone, but we were able to fully restore it.</p>
 {% endblock %}
