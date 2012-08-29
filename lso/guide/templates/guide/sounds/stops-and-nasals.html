@@ -1,4 +1,151 @@
 {% extends 'guide/lesson.html' %}
 
 {% block lesson %}
+<h2>Other sounds</h2>
+<p>In the Vedic tradition, the Vedas are divine and "otherworldly."
+
+{%- filter foot(notes) %}
+{{ 'alaukika'|i }} "not of (this) world" or {{ 'apauruSeya'|i }} "not of mankind".
+{% endfilter %}
+
+And as the language of the Vedas, Sanskrit was seen this way, too. As a result, some saw Sanskrit as a metaphor for a deeper divine truth. Thus Krishna says:</p>
+
+<blockquote>
+    <p>Of sounds I am <span lang="sa">a</span>. Of compounds I am the dual.<br />
+    I alone am unending time, the Founder facing every side.
+    <p class="cite">&mdash; <cite>Bhagavad Gita</cite> 10.33</p>
+</blockquote>
+
+<p>To understand the metaphor, we must think about the vowel {{ 'a'|i }}. It is a simple and effortless sound, and it is the sound we make when we breathe out. So when seen in this way, {{ 'a'|i }} is the basis of all speech.</p>
+
+<p>But we can take that metaphor and apply it to something more practical.</p>
+
+<h3>Vowels and semivowels</h3>
+<p>Picture the flow of air that makes the vowel {{ 'a'|i }}. It starts in the lungs, moves through the throat, and flows cleanly through the mouth, like a river flowing straight.</p>
+
+<p>By changing the shape of this flow, we change the sound of the vowel. This is what the tongue does. It creates simple vowels like {{ 'i'|i }} and {{ 'I'|i }}. And if we change from one flow to another, we get the compound vowels, like {{ 'ai'|i }} and {{ 'au'|i }}.</p>
+
+<p>By squeezing this flow tight, we change the sound again. This creates the semivowels, like {{ 'ya'|i }} and {{ 'va'|i }}. Although the flow of air is pressed tight, it still flows cleanly through the mouth, with no breaks or obstacles.</p>
+
+<p>But we can alter this flow in more drastic ways.</p>
+
+<h3>Stops and nasals</h3>
+<p>Try pronouncing the vowel {{ 'a'|i }}. While pronouncing the vowel, <strong>stop</strong> the flow of air entirely, then quickly let it flow again. This produces sounds like {{ 'ka'|i }} and {{ 'ta'|i }} and {{ 'pa'|i }}. We can call such sounds <dfn>stops</dfn>, since they are made when the air flow stops.</p>
+
+<p>Once more, try pronouncing the vowel {{ 'a'|i }}. While pronouncing the vowel, stop the flow of air entirely &mdash; then <strong>redirect</strong> it through your nose. Then let the air flow normally. This produces sounds like {{ 'na'|i }} and {{ 'ma'|i }}. We can call such sounds <dfn>nasals</dfn>, since they are made with help from the nasal cavity.</p>
+
+<p>Let us study these stops and nasals. They are much simpler than the vowels, so they will take much less time.</p>
+
+<p>But you might be wondering: do simple sounds like {{ 'ka'|i }} and {{ 'na'|i }} really need so much introduction? Not quite. But by learning to become aware of how sounds are formed and why they sound the way they do, you will have less trouble learning Sanskrit.</p>
+
+<h2>Stopping the flow of air</h2>
+<p>The mouth is a large cavern with a long roof. We can stop the flow of air at many points. Sanskrit uses <strong>five</strong> of these points, and you can see them below:</p>
+
+{% include 'guide/include/sound-points.html' %}
+
+<p>These five points are:</p>
+
+<ul>
+    <li>The <dfn class="r">soft palate</dfn></li>
+    <li>The <dfn class="o">hard palate</dfn></li>
+    <li>The <dfn class="y">hard bump</dfn> on the roof of the mouth</li>
+    <li>The <dfn class="g">base of the teeth</dfn></li>
+    <li>The <dfn class="b">lips</dfn></li>
+</ul>
+
+<p>Together, we can call these places <dfn>points of sound</dfn>. These five are used to create the stops and nasals:</p>
+
+<h3>Soft palate</h3>
+<p>We start at the <dfn>soft palate</dfn>, at the back of the mouth:</p>
+
+<ul class="grid-2 letters">
+    {{ 'ka'|sound('"k" in "skill"') }}
+    {{ 'Ga'|sound('"ng" in "lung"') }}
+</ul>
+
+<h3>Hard palate</h3>
+<p>Moving forward, we reach the <dfn>hard palate</dfn>:</p>
+
+<ul class="grid-2 letters">
+    {{ 'ca'|sound('(no match)') }}
+    {{ 'Ja'|sound('(no match)') }}
+</ul>
+
+<p>{{ 'ca'|i }} looks and sounds similar to the English "ch" sound. But the two are distinct. The English "ch" is pronounced near the teeth. {{ 'ca'|i }} is pronounced much further back. Getting this sound right can take some practice.</p>
+
+<h3>Hard bump</h3>
+<p>Further still, we reach the <dfn>hard bump</dfn> on the roof of the mouth:</p>
+
+<ul class="grid-2 letters">
+    {{ 'Ta'|sound('(no match)') }}
+    {{ 'Na'|sound('(no match)') }}
+</ul>
+
+<p>For convenience, let us say that these sounds are <dfn>retroflexed</dfn>. This word evokes a tongue that has bent ("flex") backward ("retro") to produce the sound.</p>
+
+<p>Retroflexed sounds do not exist in English. If you have trouble pronouncing them, try curling your tongue further back.</p>
+
+<h3>Base of the teeth</h3>
+<p>A little further, we reach the base of the <dfn>teeth</dfn>:</p>
+
+<ul class="grid-2 letters">
+    {{ 'ta'|sound('"t" in "thumb"') }}
+    {{ 'na'|sound('"n" in "nose"') }}
+</ul>
+
+<p>This is the <strong>base</strong> of the teeth, not the tip. At the tip, you get the English "th". At the base, you get the Sanskrit {{ 'ta'|i }}. The difference is small but still noticeable.</p>
+
+<h3>Lips</h3>
+<p>And finally, we reach the <dfn>lips</dfn>:</p>
+
+<ul class="grid-2 letters">
+    {{ 'pa'|sound('"p" in "spill"') }}
+    {{ 'ma'|sound('"m" in "mill"') }}
+</ul>
+
+<h2>Blending stops and nasals</h2>
+<p>We have seen that vowels blend with each other in several ways. But stops and nasals are much simpler.</p>
+
+<p>Here are a few simple sentences:</p>
+
+<ul class="examples">
+    {{ ex('tat na Asyam', 'That is not a mouth.', iast=true) }}
+    {{ ex('rAT naraH', 'The king is a man.', iast=true) }}
+</ul>
+
+<p>Try reading the first sentence out loud ten times.</p>
+
+<p>As you might have noticed, it is tiresome to shift from {{ 't'|i }} to {{ 'n'|i }} when pronouncing {{ 'tat na'|i }}. Because of clustered sounds like these, speaking Sanskrit can feel hard and slow.</p>
+
+<p>But as you might have guessed, the earliest Sanskrit speakers solved this problem by blending stops and nasals together. Whenever a stop is in front of a nasal, it becomes nasal, too:</p>
+
+<ul class="examples">
+    {{ ex('tat na Asyam -> tan nAsyam', 'That is not a mouth.', iast=true) }}
+</ul>
+
+<p>When a stop becomes nasal like this, it keeps its point of pronunciation. It is like a diamond dropped in the mud; it may be dirty, but it is still a gem:</p>
+
+<ul class="examples">
+    {{ ex('rAT naraH -> rAN naraH', 'The king is a man.', iast=true) }}
+</ul>
+
+<p>Still, too much blending can be a bad thing. Letters help to make one word <strong>distinct</strong> from another. This is the main job of the stop letters. So, stops only blend <strong>between words</strong>, not inside them.</p>
+
+<h3>In the wild</h3>
+<p>Try to blend the words in the phrases below:</p>
+
+<ul class="examples">
+    {{ ex('tasmAt na arhA vayaM hantum', iast=true) }}
+    {{ ex('yac chreyaH syAt nizcitaM brUhi tat me', iast=true) }}
+    {{ ex('tvatprasAdAt mayA acyuta', iast=true) }}
+</ul>
+
+<p>These phrases are from the <cite>Bhagavad Gita</cite>:</p>
+
+<ul class="examples">
+    {{ ex('tasmAn nArhA vayaM hantum', 'Thus it is not right that we kill &hellip;', cite='<cite>Bhagavad Gita</cite> 1.37', iast=true) }}
+    {{ ex('yac chreyaH syAn nizcitaM brUhi tan me', 'Truly, tell me that which would be best.', cite='<cite>Bhagavad Gita</cite> 2.7', iast=true) }}
+    {{ ex('tvatprasAdAn mayAcyuta', "My (delusion is gone, and I've come to wisdom,) by your favor, O Krishna.", cite='<cite>Bhagavad Gita</cite> 18.73', iast=true) }}
+</ul>
+
 {% endblock %}
