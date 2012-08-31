@@ -4,13 +4,13 @@
 <p>The stop letters are simple sounds produced in a simple way:</p>
 
 <ul class="letters">
-    {{ 'ka'|sound('"k" in "skill"') }}
+    {{ sound('ka', '"k" in "skill"') }}
 </ul>
 
 <p>But as with many things in life, these letters become more interesting when they become more complex. For one, we can make a stop <dfn>voiced</dfn>:</p>
 
 <ul class="letters">
-    {{ 'ga'|sound('"g" in "gill"') }}
+    {{ sound('ga', '"g" in "gill"') }}
 </ul>
 
 <p>or <dfn>unvoiced</dfn>, like {{ 'ka'|i }}. These letters are in English, too. You can feel the difference between these two letters by touching your windpipe while you produce them.</p>
@@ -18,13 +18,13 @@
 <p>But Sanskrit complicates the stops letters in a second way. Recall that a stop is produced when the flow of air stops then quickly resumes. In {{ 'ka'|i }}, this flow resumes normally, like water from a tap. But this flow can also resume explosively, like water bursting through a dam:</p>
 
 <ul class="letters">
-    {{ 'kha'|sound('"k" in "kill"') }}
+    {{ sound('kha', '"k" in "kill"') }}
 </ul>
 
 <p>Sounds like {{ 'kha'|i }} are <dfn>aspirated</dfn> ("breathy"), and sounds like {{ 'ka'|i }} are <dfn>unaspirated</dfn> ("not breathy"). And of course, these aspirated letters can be voiced, too:</p>
 
 <ul class="letters">
-    {{ 'gha'|sound('(no match)') }}
+    {{ sound('gha', '(no match)') }}
 </ul>
 
 <h2>The stops and nasals</h2>
@@ -32,35 +32,35 @@
 <p>Each of the five points of sound has <strong>four</strong> stops and one nasal. Together, these give us the following 25 sounds:</p>
 
 <ul class="grid-5 letters">
-    {{ 'ka'|sound('"k" in "skill"') }}
-    {{ 'kha'|sound('"k" in "kill"') }}
-    {{ 'ga'|sound('"g" in "gill"') }}
-    {{ 'gha'|sound('(no match)') }}
-    {{ 'Ga'|sound('"ng" in "lung"') }}
+    {{ sound('ka', '"k" in "skill"') }}
+    {{ sound('kha', '"k" in "kill"') }}
+    {{ sound('ga', '"g" in "gill"') }}
+    {{ sound('gha', '(no match)') }}
+    {{ sound('Ga', '"ng" in "lung"', 'na_k') }}
 
-    {{ 'ca'|sound('(no match)') }}
-    {{ 'cha'|sound('(no match)') }}
-    {{ 'ja'|sound('(no match)') }}
-    {{ 'jha'|sound('(no match)') }}
-    {{ 'Ja'|sound('(no match)') }}
+    {{ sound('ca', '(no match)') }}
+    {{ sound('cha', '(no match)') }}
+    {{ sound('ja', '(no match)') }}
+    {{ sound('jha', '(no match)') }}
+    {{ sound('Ja', '(no match)', 'na_j') }}
 
-    {{ 'Ta'|sound('(no match)') }}
-    {{ 'Tha'|sound('(no match)') }}
-    {{ 'Da'|sound('(no match)') }}
-    {{ 'Dha'|sound('(no match)') }}
-    {{ 'Na'|sound('(no match)') }}
+    {{ sound('Ta', '(no match)', 'ta1') }}
+    {{ sound('Tha', '(no match)', 'tha1') }}
+    {{ sound('Da', '(no match)', 'da1') }}
+    {{ sound('Dha', '(no match)', 'dha1') }}
+    {{ sound('Na', '(no match)', 'na1') }}
 
-    {{ 'ta'|sound('"th" in "thumb"') }}
-    {{ 'tha'|sound('(no match)') }}
-    {{ 'da'|sound('"th" in "this"') }}
-    {{ 'dha'|sound('(no match)') }}
-    {{ 'na'|sound('"n" in "nose"') }}
+    {{ sound('ta', '"th" in "thumb"') }}
+    {{ sound('tha', '(no match)') }}
+    {{ sound('da', '"th" in "this"') }}
+    {{ sound('dha', '(no match)') }}
+    {{ sound('na', '"n" in "nose"') }}
 
-    {{ 'pa'|sound('"p" in "spill"') }}
-    {{ 'pha'|sound('"p" in "pill"') }}
-    {{ 'ba'|sound('"b" in "bill"') }}
-    {{ 'bha'|sound('(no match)') }}
-    {{ 'ma'|sound('"m" in "mill"') }}
+    {{ sound('pa', '"p" in "spill"') }}
+    {{ sound('pha', '"p" in "pill"') }}
+    {{ sound('ba', '"b" in "bill"') }}
+    {{ sound('bha', '(no match)') }}
+    {{ sound('ma', '"m" in "mill"') }}
 </ul>
 
 <p>This arrangement is over 2800 years old. It stands at the beginning of the Indian linguistic tradition.</p>

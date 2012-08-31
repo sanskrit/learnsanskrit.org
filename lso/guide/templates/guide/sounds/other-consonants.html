@@ -18,9 +18,9 @@
 <p>English has two "s" sounds: the "s" in "snake" and the "sh" in "shore." But Sanskrit has three:</p>
 
 <ul class="grid-3 letters">
-    {{ 'za'|sound('(no match)') }}
-    {{ 'Sa'|sound('(no match)') }}
-    {{ 'sa'|sound('"s" in "snake"') }}
+    {{ sound('za', '(no match)', 'sha') }}
+    {{ sound('Sa', '(no match)', 'shha') }}
+    {{ sound('sa', '"s" in "snake"') }}
 </ul>
 
 <p>{{ 'za'|i }} uses the hard palate. {{ 'Sa'|i }} is retroflexed. {{ 'sa'|i }} is just like the English "s".</p>
@@ -30,7 +30,7 @@
 <p>If you breathe out and make your breath voiced, you'll hear a sound like "haaa." That "h" is our last consonant:</p>
 
 <ul class="letters">
-    {{ 'ha'|sound('(no match)') }}
+    {{ sound('ha', '(no match)') }}
 </ul>
 
 <p>{{ 'ha'|i }} is the same breathy sound that you hear in {{ 'gha'|i }}, {{ 'jha'|i }}, {{ 'Dha'|i }}, {{ 'dha'|i }}, and {{ 'bha'|i }}. {{ 'ha'|i }} is pronounced with the soft palate, at the back of the mouth.</p>

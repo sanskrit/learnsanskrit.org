@@ -5,7 +5,7 @@
 
 {{ 'anusvAra'|i('h2') }}
 <ul class="letters">
-{{ 'aM'|sound('(no match)') }}
+    {{ sound('aM', '(no match)', 'anusvara') }}
 </ul>
 
 <p></p>
@@ -26,7 +26,7 @@
 
 {{ 'visarga'|i('h2') }}
 <ul class="letters">
-{{ 'aH'|sound('(no match)') }}
+    {{ sound('aH', '(no match)', 'visarga') }}
 </ul>
 
 <p>This sound is called the {{ 'visarga'|i('dfn') }} ("release").</p>
@@ -56,83 +56,83 @@
 <p>We start with the thirteen vowels:</p>
 
 <ul class="grid-2 letters">
-    {{ 'a'|sound }}
-    {{ 'A'|sound }}
-    {{ 'i'|sound }}
-    {{ 'I'|sound }}
-    {{ 'u'|sound }}
-    {{ 'U'|sound }}
-    {{ 'R'|sound }}
-    {{ 'RR'|sound }}
-    {{ 'lR'|sound }}
+    {{ sound('a') }}
+    {{ sound('A') }}
+    {{ sound('i') }}
+    {{ sound('I') }}
+    {{ sound('u') }}
+    {{ sound('U') }}
+    {{ sound('R') }}
+    {{ sound('RR') }}
+    {{ sound('lR') }}
     <li><span class="sa2">&nbsp;</span></li>
-    {{ 'e'|sound }}
-    {{ 'ai'|sound }}
-    {{ 'o'|sound }}
-    {{ 'au'|sound }}
+    {{ sound('e') }}
+    {{ sound('ai') }}
+    {{ sound('o') }}
+    {{ sound('au') }}
 </ul>
 
 <h3>{{ 'anusvAra'|i }} and {{ 'visarga'|i }}</h3>
 <p>The {{ 'anusvAra'|i }} and {{ 'visarga'|i }} are not quite the same as normal consonants, so they are listed with the vowels:</p>
 
 <ul class="grid-2 letters">
-    {{ 'aM'|sound }}
-    {{ 'aH'|sound }}
+    {{ sound('aM') }}
+    {{ sound('aH') }}
 </ul>
 
 <h3>Stops and nasals</h3>
 <p>Next come the stops and nasals:</p>
 
 <ul class="grid-5 letters">
-    {{ 'ka'|sound }}
-    {{ 'kha'|sound }}
-    {{ 'ga'|sound }}
-    {{ 'gha'|sound }}
-    {{ 'Ga'|sound }}
+    {{ sound('ka') }}
+    {{ sound('kha') }}
+    {{ sound('ga') }}
+    {{ sound('gha') }}
+    {{ sound('Ga') }}
 
-    {{ 'ca'|sound }}
-    {{ 'cha'|sound }}
-    {{ 'ja'|sound }}
-    {{ 'jha'|sound }}
-    {{ 'Ja'|sound }}
+    {{ sound('ca') }}
+    {{ sound('cha') }}
+    {{ sound('ja') }}
+    {{ sound('jha') }}
+    {{ sound('Ja') }}
 
-    {{ 'Ta'|sound }}
-    {{ 'Tha'|sound }}
-    {{ 'Da'|sound }}
-    {{ 'Dha'|sound }}
-    {{ 'Na'|sound }}
+    {{ sound('Ta') }}
+    {{ sound('Tha') }}
+    {{ sound('Da') }}
+    {{ sound('Dha') }}
+    {{ sound('Na') }}
 
-    {{ 'ta'|sound }}
-    {{ 'tha'|sound }}
-    {{ 'da'|sound }}
-    {{ 'dha'|sound }}
-    {{ 'na'|sound }}
+    {{ sound('ta') }}
+    {{ sound('tha') }}
+    {{ sound('da') }}
+    {{ sound('dha') }}
+    {{ sound('na') }}
 
-    {{ 'pa'|sound }}
-    {{ 'pha'|sound }}
-    {{ 'ba'|sound }}
-    {{ 'bha'|sound }}
-    {{ 'ma'|sound }}
+    {{ sound('pa') }}
+    {{ sound('pha') }}
+    {{ sound('ba') }}
+    {{ sound('bha') }}
+    {{ sound('ma') }}
 </ul>
 
 <h3>Semivowels</h3>
 <p>Then the semivowels:</p>
 
 <ul class="grid-4 letters">
-    {{ 'ya'|sound }}
-    {{ 'ra'|sound }}
-    {{ 'la'|sound }}
-    {{ 'va'|sound }}
+    {{ sound('ya') }}
+    {{ sound('ra') }}
+    {{ sound('la') }}
+    {{ sound('va') }}
 </ul>
 
 <h3>"s" sounds and {{ 'ha'|i }}</h3>
 <p>And, finally, the "s" sounds and {{ 'ha'|i }}.</p>
 
 <ul class="grid-4 letters">
-    {{ 'za'|sound }}
-    {{ 'Sa'|sound }}
-    {{ 'sa'|sound }}
-    {{ 'ha'|sound }}
+    {{ sound('za') }}
+    {{ sound('Sa') }}
+    {{ sound('sa') }}
+    {{ sound('ha') }}
 </ul>
 
 {% endblock %}

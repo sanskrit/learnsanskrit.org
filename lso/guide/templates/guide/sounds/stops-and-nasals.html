@@ -59,16 +59,16 @@ And as the language of the Vedas, Sanskrit was seen this way, too. As a result, 
 <p>We start at the <dfn>soft palate</dfn>, at the back of the mouth:</p>
 
 <ul class="grid-2 letters">
-    {{ 'ka'|sound('"k" in "skill"') }}
-    {{ 'Ga'|sound('"ng" in "lung"') }}
+    {{ sound('ka', '"k" in "skill"') }}
+    {{ sound('Ga', '"ng" in "lung"', 'na_k') }}
 </ul>
 
 <h3>Hard palate</h3>
 <p>Moving forward, we reach the <dfn>hard palate</dfn>:</p>
 
 <ul class="grid-2 letters">
-    {{ 'ca'|sound('(no match)') }}
-    {{ 'Ja'|sound('(no match)') }}
+    {{ sound('ca', '(no match)') }}
+    {{ sound('Ja', '(no match)', 'na_j') }}
 </ul>
 
 <p>{{ 'ca'|i }} looks and sounds similar to the English "ch" sound. But the two are distinct. The English "ch" is pronounced near the teeth. {{ 'ca'|i }} is pronounced much further back. Getting this sound right can take some practice.</p>
@@ -77,8 +77,8 @@ And as the language of the Vedas, Sanskrit was seen this way, too. As a result, 
 <p>Further still, we reach the <dfn>hard bump</dfn> on the roof of the mouth:</p>
 
 <ul class="grid-2 letters">
-    {{ 'Ta'|sound('(no match)') }}
-    {{ 'Na'|sound('(no match)') }}
+    {{ sound('Ta', '(no match)') }}
+    {{ sound('Na', '(no match)', 'na1') }}
 </ul>
 
 <p>For convenience, let us say that these sounds are <dfn>retroflexed</dfn>. This word evokes a tongue that has bent ("flex") backward ("retro") to produce the sound.</p>
@@ -89,8 +89,8 @@ And as the language of the Vedas, Sanskrit was seen this way, too. As a result, 
 <p>A little further, we reach the base of the <dfn>teeth</dfn>:</p>
 
 <ul class="grid-2 letters">
-    {{ 'ta'|sound('"t" in "thumb"') }}
-    {{ 'na'|sound('"n" in "nose"') }}
+    {{ sound('ta', '"t" in "thumb"') }}
+    {{ sound('na', '"n" in "nose"') }}
 </ul>
 
 <p>This is the <strong>base</strong> of the teeth, not the tip. At the tip, you get the English "th". At the base, you get the Sanskrit {{ 'ta'|i }}. The difference is small but still noticeable.</p>
@@ -99,8 +99,8 @@ And as the language of the Vedas, Sanskrit was seen this way, too. As a result, 
 <p>And finally, we reach the <dfn>lips</dfn>:</p>
 
 <ul class="grid-2 letters">
-    {{ 'pa'|sound('"p" in "spill"') }}
-    {{ 'ma'|sound('"m" in "mill"') }}
+    {{ sound('pa', '"p" in "spill"') }}
+    {{ sound('ma', '"m" in "mill"') }}
 </ul>
 
 <h2>Blending stops and nasals</h2>

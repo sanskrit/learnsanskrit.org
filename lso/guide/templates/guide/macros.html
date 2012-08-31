@@ -13,7 +13,7 @@
 
 {% macro sound(text, desc, f) %}
 <li>
-    {% if f is none %}
+    {% if f is none or not desc %}
         {{ text|i }} {% if desc %}<div>{{ desc }}</div>{% endif %}
     {% else %}
         {% set filename = (f or text)|lower %}

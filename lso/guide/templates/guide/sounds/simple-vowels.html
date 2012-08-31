@@ -42,18 +42,18 @@
 <p>Four of these vowels have English counterparts:</p>
 
 <ul class="grid-2 letters">
-    <li>{{ 'i'|i }} <span>"i" in "bit"</span></li>
-    <li>{{ 'I'|i }} <span>"ee" in "teeth"</span></li>
-    <li>{{ 'u'|i }} <span>"u" in "put"</span></li>
-    <li>{{ 'U'|i }} <span>"oo" in "mood"</span></li>
+    {{ sound('i', '"i" in "bit"') }}
+    {{ sound('I', '"ee" in "teeth"', 'ii') }}
+    {{ sound('u', '"u" in "put"') }}
+    {{ sound('U', '"oo" in "mood"', 'uu') }}
 </ul>
 
 <p>Three do not:</p>
 
 <ul class="grid-2 letters">
-    <li>{{ 'R'|i }} <span>(no match)</span></li>
-    <li>{{ 'RR'|i }} <span>(no match)</span></li>
-    <li>{{ 'lR'|i }} <span>(no match)</span></li>
+    {{ sound('R', '(no match)', 'r') }}
+    {{ sound('RR', '(no match)', 'rr') }}
+    {{ sound('lR', '(no match)', none) }}
 </ul>
 
 <p>{{ 'lR'|i }} is extremely rare. Most texts do not have it, and it does not have a long form. Generally, you can pronounce it however you like.</p>
