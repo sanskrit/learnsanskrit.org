@@ -90,6 +90,10 @@ ul.letters {
 
 
 table.letter-chart {
+    @row-bg: #ffffb6;
+    @col-bg: #9dd3d3;
+    @both-bg: #e0f4b7;
+    @hover-bg: darken(@both-bg, 10%);
     border-spacing: 0.3em;
     margin: 1em 0;
     text-align: center;
@@ -98,6 +102,34 @@ table.letter-chart {
     caption {
         font-size: 1.2em;
         line-height: 1.5em;
+    }
+    td {
+        .border-radius(10px);
+
+        background: @off-white;
+        border: 1px @light-gray solid;
+        box-shadow: 1px 1px 3px rgba(0,0,0,0.05);
+        height: 2.5em;
+
+        &:hover {
+            .box-shadow(0px 0px 4px rgba(0,0,0,0.4));
+            border-color: darken(@both-bg, 30%);
+        }
+        &, &.hover-row, &.hover-col {
+            .transition(0.15s);
+        }
+        &.hover-row {
+            background: @row-bg;
+        }
+        &.hover-col {
+            background: @col-bg;
+        }
+        &.hover-row.hover-col {
+            background: @both-bg;
+        }
+        &.sa2 {
+            font-size: 1.3em;
+        }
     }
     th {
         color: @gray;
@@ -116,18 +148,6 @@ table.letter-chart {
             &:first-child {
                 border: 0;
             }
-        }
-    }
-    td {
-        .border-radius(10px);
-
-        background: @off-white;
-        border: 1px @light-gray solid;
-        box-shadow: 1px 1px 3px rgba(0,0,0,0.05);
-        height: 2.5em;
-        overflow: hidden;
-        &.sa2 {
-            font-size: 1.3em;
         }
     }
 }
