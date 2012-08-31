@@ -10,3 +10,20 @@
         {% endfor %}
     </tr>
 {%- endmacro %}
+
+{% macro sound(text, desc, f) %}
+<li>
+    {% if f is none %}
+        {{ text|i }} {% if desc %}<div>{{ desc }}</div>{% endif %}
+    {% else %}
+        {% set filename = (f or text)|lower %}
+        <a href="{{ url_for('guide.static',
+            filename='audio/%s.mp3' | format(filename)) }}">
+        <div>{{ text|i }} <span class="play">▶</span></div>
+        {% if desc -%}
+            <div>{{ desc }}</div>
+        {%- endif -%}
+        </a>
+    {% endif %}
+</li>
+{% endmacro %}

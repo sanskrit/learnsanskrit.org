@@ -85,11 +85,3 @@ def lesson_url(unit, lesson=None):
 @app.template_filter()
 def render(text):
     return app.jinja_env.from_string(text).render()
-
-@app.template_filter()
-def sound(text, description=None):
-    if description:
-        result = '<li>%s <span>%s</span></li>' % (i(text), description)
-    else:
-        result = '<li>%s</li>' % i(text)
-    return Markup(result)
