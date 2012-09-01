@@ -25,4 +25,6 @@ assets.register('all-css', less)
 import lso.common.views
 
 from guide import guide
+from tools import tools
 app.register_blueprint(guide, url_prefix='/guide')
+app.register_blueprint(tools, url_prefix='/tools')
