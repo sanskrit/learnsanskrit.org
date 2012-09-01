@@ -57,19 +57,39 @@ ul.letters {
     list-style: none;
     overflow: hidden;
     padding: 0;
+    text-align: center;
     width: 100%;
 
+    a {
+        display: inline-block;
+        text-decoration: none;
+
+        &:hover span.play {
+            background: #0b0;
+        }
+    }
+    div {
+        position: relative;
+    }
     li {
         float: left;
         width: 100%;
     }
-    span {
-        display: block;
-        text-align: center;
+    span.play {
+        @len: 1.6em;
 
-        &.sa2 {
-            font-size: 2em;
-        }
+        background: @light-gray;
+        color: #fff;
+        font-size: 0.7em;
+        height: @len;
+        line-height: @len;
+        margin: 1em 0.5em;
+        position: absolute;
+        top: 0;
+        width: @len;
+    }
+    span.sa2 {
+        font-size: 2em;
     }
     &.grid-2 li {
         width: 50%;
