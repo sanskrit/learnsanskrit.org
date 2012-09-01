@@ -1,0 +1,3 @@
+[submodule "lso/lib/sanscript"]
+	path = lso/lib/sanscript
+	url = git@github.com:akprasad/sanscript.git

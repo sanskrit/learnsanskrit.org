@@ -3,6 +3,7 @@
 *.db
 *.pyc
 audio/
+gen/
 
 config/production.py
 lso/static/.webassets-cache

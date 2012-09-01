@@ -1,0 +1,15 @@
+{% extends 'tools/layout.html' %}
+
+{% block name %}Sanscript{% endblock %}
+
+{% block content %}
+<h1>Sanscript</h1>
+<script src="{{ url_for('tools.static', filename='js/sanscript-app.js') }}"></script>
+<form method="" action="POST">
+    {{ form.input }}
+    {{ form.output(readonly=true) }}
+    {{ form.from_script }}
+    {{ form.to_script }}
+    <input id="submit" type="submit" value="Go!" />
+</form>
+{% endblock %}

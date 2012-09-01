@@ -1,6 +1,7 @@
 flask >= 0.9
 flask-assets
 flask-restless
+flask-wtf
 fabric
 sqlalchemy
 sqlamp
