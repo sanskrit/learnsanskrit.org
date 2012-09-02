@@ -43,4 +43,13 @@
 
 $(function() {
     App.init();
+
+    $('a', '#sanscript').click(function(e) {
+        var $this = $(this),
+            href = $this.attr('href');
+        if (href && href[0] === '#') {
+            $(href).spotlight();
+            e.preventDefault();
+        }
+    });
 });

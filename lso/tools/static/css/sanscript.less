@@ -1,6 +1,6 @@
 @import "../../../static/css/lib.less";
 
-@height: 20em;
+@height: 15em;
 @panel-height: 4em;
 @field-height: 3em;
 @textbox-width: 49%;
@@ -67,4 +67,21 @@ textarea {
     height: @height;
     padding: 0;
     width: 100%;
+}
+
+#spotlight {
+    background: #000;
+    bottom: 0;
+    display: none;
+    left: 0;
+    opacity: 0.9;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 2000;
+}
+
+.spotlighted {
+    position: relative;
+    z-index: 3000;
 }
