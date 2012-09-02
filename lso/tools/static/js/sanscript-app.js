@@ -48,7 +48,7 @@ $(function() {
         var $this = $(this),
             href = $this.attr('href');
         if (href && href[0] === '#') {
-            $(href).spotlight();
+            $(href).spotlight(200);
             e.preventDefault();
         }
     });
