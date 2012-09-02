@@ -1,0 +1,70 @@
+@import "../../../static/css/lib.less";
+
+@height: 20em;
+@panel-height: 4em;
+@field-height: 3em;
+@textbox-width: 49%;
+@textbox-gap: 100% - 2 * @textbox-width;
+@submit-ratio: 0.85;
+
+#sanscript {
+    margin: auto;
+    max-width: 960px;
+    width: 80%;
+}
+
+#sa-panel {
+    .border-radius(5px);
+
+    background: @off-white;
+    border: 1px @light-gray solid;
+    height: @panel-height;
+    line-height: @panel-height;
+    margin: 0 0 1em;
+    padding: 0 1em;
+
+    div.buttons {
+        float: right;
+        input, button {
+            height: @field-height;
+        }
+    }
+    select {
+        height: @field-height;
+    }
+}
+
+#submit, #swap, select {
+    font-size: 0.8em;
+}
+
+#submit {
+    width: 3 * @field-height;
+}
+
+#swap {
+    width: @field-height;
+}
+
+.textbox {
+    float: left;
+    width: @textbox-width;
+
+    &.readonly {
+        margin-left: @textbox-gap;
+
+        textarea {
+            background: @light-gray;
+
+            &:focus {
+                outline: 0;
+            }
+        }
+    }
+}
+textarea {
+    border-color: @body-background;
+    height: @height;
+    padding: 0;
+    width: 100%;
+}

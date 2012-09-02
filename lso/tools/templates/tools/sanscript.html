@@ -11,12 +11,23 @@
 {% block content %}
 <h1>Sanscript</h1>
 <script src="{{ url_for('tools.static', filename='js/sanscript-app.js') }}"></script>
+<div id="sanscript">
 <form method="" action="POST">
-    {{ form.input }}
-    {{ form.output(readonly=true) }}
-    {{ form.from_script }}
-    {{ form.to_script }}
-    <input id="submit" type="submit" value="Go!" />
-    <button id="swap">↔</button>
+    <div id="sa-panel">
+        {{ form.from_script(class='span6') }}
+        &rarr;
+        {{ form.to_script }}
+        <div class="buttons">
+            <input id="submit" type="submit" value="Run" />
+            <button id="swap">↔</button>
+        </div>
+    </div>
+    <div class="textbox">
+       {{ form.input }}
+    </div>
+    <div class="readonly textbox">
+        {{ form.output(readonly=true) }}
+    </div>
 </form>
+</div>
 {% endblock %}
