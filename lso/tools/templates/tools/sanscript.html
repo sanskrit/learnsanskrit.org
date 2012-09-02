@@ -14,13 +14,15 @@
 <div id="sanscript">
 <form method="" action="POST">
     <div id="sa-panel">
-        {{ form.from_script(class='span6') }}
+        {{ form.from_script }}
         &rarr;
         {{ form.to_script }}
         <div class="buttons">
-            <input id="submit" type="submit" value="Run" />
+            <input id="submit" type="submit" value="Transliterate" />
             <button id="swap">↔</button>
         </div>
+        <input id="live-type" name="live-type" type="checkbox" checked />
+        <label for="live-type">Transliterate as I type</label>
     </div>
     <div class="textbox">
        {{ form.input }}
@@ -36,7 +38,7 @@
 <ol>
     <li>Choose your <a href="#sa-panel">options</a>.</li>
     <li>Put text in the <a href="#input">left box</a>.</li>
-    <li>Click <a href="#submit">"Run"</a>.</li>
+    <li>Click the <a href="#submit">"Transliterate" button</a>.</li>
 </ol>
 </div>
 {% endblock %}

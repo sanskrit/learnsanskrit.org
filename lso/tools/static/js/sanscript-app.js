@@ -1,10 +1,10 @@
 (function(App) {
     var run = function() {
-        var from = App.from.$el.val(),
-            to = App.to.$el.val(),
+        var options = App.options,
+            from = options.from,
+            to = options.to,
             output = Sanscript.t(App.input.$el.val(), from, to);
         App.output.$el.val(output);
-        return false;
     };
 
     $.fn.swapVal = function($b) {
@@ -13,30 +13,71 @@
         $b.val(temp);
     }
 
-    var swap = function() {
-        App.from.$el.swapVal(App.to.$el);
+    var swap = function(e) {
+        e.preventDefault();
         App.input.$el.swapVal(App.output.$el);
+        App.$to.swapVal(App.$from);
         return false;
     };
 
-    var SelectView = Backbone.View.extend({
+    var PanelView = Backbone.View.extend({
+        initialize: function() {
+            this.$check = $(':checkbox', this.$el);
+            this.$select = $('select', this.$el);
+            this.gather();
+        },
         events: {
-            'change': 't'
+            'change': 'gather'
         },
 
-        t: run
-    });
-    var TextView = Backbone.View.extend({
+        gather: function(e) {
+            var data = App.options = this.data = this.data || {};
 
+            this.$check.each(function() {
+                var $this = $(this);
+                data[$this.attr('name')] = $this.is(':checked');
+            });
+            this.$select.each(function() {
+                var $this = $(this);
+                data[$this.attr('name')] = $this.val();
+            });
+
+            data['from'] = data['from_script']
+            data['to'] = data['to_script']
+            if (e && $(e.target).attr('name') !== 'live-type') {
+                run();
+            }
+        }
     });
+
+    var InputView = Backbone.View.extend({
+        events: {
+            'keyup': function() {
+                if (App.options['live-type']) {
+                    run();
+                }
+            }
+        }
+    });
+
+    var OutputView = Backbone.View.extend({
+        events: {
+            'click': run
+        }
+    });
+
     App.init = function() {
-        this.$el = $('form');
-        this.from = new SelectView({ el: $('#from_script') });
-        this.to = new SelectView({ el: $('#to_script') });
-        this.input = new TextView({ el: $('#input').blur(run) });
-        this.output = new TextView({ el: $('#output') });
+        this.input = new InputView({ el: $('#input') });
+        this.output = new OutputView({ el: $('#output') });
+        this.panel = new PanelView({ el: $('form') });
 
-        $('#submit').click(run);
+        this.$from = $('#from_script');
+        this.$to = $('#to_script');
+
+        $('#submit').click(function(e) {
+            run();
+            e.preventDefault();
+        });
         $('#swap').click(swap);
     }
 }(window.App = window.App || {}));
