@@ -1,3 +1,48 @@
+/* Tabs
+ * ----
+ * Used with $.fn.tabs
+ */
+
+ul.tab-links {
+    @bc: darken(@light-gray, 10%);
+
+    .clearfix;
+    border-bottom: 1px @bc solid;
+    list-style: none;
+    padding: 0;
+
+    &:after {
+        clear: both;
+        content: "";
+        display: table;
+        line-height: 0;
+    }
+    a {
+        display: block;
+        padding: 0.5em;
+        text-decoration: none;
+    }
+    li {
+        background: @off-white;
+        border: 1px @bc solid;
+        display: block;
+        float: left;
+        margin-bottom: -1px;
+
+        &.active {
+            background: #fff;
+            border-bottom-color: transparent;
+            a {
+                color: @dark-gray;
+                cursor: default;
+            }
+        }
+        & + li {
+            border-left: 0;
+        }
+    }
+}
+
 section.unit {
     a {
         text-decoration: none;
