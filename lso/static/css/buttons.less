@@ -1,0 +1,35 @@
+.button-base(@color, @bg1, @bg2) {
+    .border-radius(5px);
+    border: 1px solid;
+    box-shadow: 0px 2px 4px rgba(0,0,0,0.3);
+    text-shadow: 0 1px 1px rgba(0,0,0,0.4);
+
+    &:hover {
+        cursor: pointer;
+    }
+    &:active {
+        position: relative;
+        top: 2px;
+    }
+
+    .button-colors(@color, @bg1, @bg2);
+}
+
+.button-colors(@color, @bg1, @bg2) {
+    #gradient.vertical(@bg1, @bg2);
+    border-color: @bg2 @bg2 darken(@bg2, 15%);
+    color: @color;
+
+    &:hover {
+        background: @bg2;
+        border-color: darken(@bg2, 10%);
+    }
+}
+
+input[type='submit'], button, a.btn {
+    .button-base(#000, @off-white, darken(@light-gray, 15%));
+}
+
+input[type='submit'] {
+    .button-colors(#fff, lighten(@orange, 15%), @orange);
+}
