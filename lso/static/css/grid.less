@@ -1,0 +1,51 @@
+/* 12-column fluid grid, from Twitter Bootstrap */
+
+#grid {
+    .fluid (@grid-column-width, @grid-gutter-width) {
+        .spanX (@index) when (@index > 0) {
+            (~".span@{index}") { .span(@index); }
+            .spanX(@index - 1);
+        }
+        .spanX (0) {}
+
+        .offsetX (@index) when (@index > 0) {
+            (~'.offset@{index}') { .offset(@index); }
+            (~'.offset@{index}:first-child') { .offsetFirstChild(@index); }
+            .offsetX(@index - 1);
+        }
+        .offsetX (0) {}
+
+        .offset (@columns) {
+            margin-left: (@grid-column-width * @columns) + (@grid-gutter-width * (@columns - 1)) + (@grid-gutter-width*2);
+            *margin-left: (@grid-column-width * @columns) + (@grid-gutter-width * (@columns - 1)) - (.5 / @grid-row-width * 100 * 1%) + (@grid-gutter-width*2) - (.5 / @grid-row-width * 100 * 1%);
+        }
+
+        .offsetFirstChild (@columns) {
+            margin-left: (@grid-column-width * @columns) + (@grid-gutter-width * (@columns - 1)) + (@grid-gutter-width);
+            *margin-left: (@grid-column-width * @columns) + (@grid-gutter-width * (@columns - 1)) - (.5 / @grid-row-width * 100 * 1%) + @grid-gutter-width - (.5 / @grid-row-width * 100 * 1%);
+        }
+
+        .span (@columns) {
+            width: (@grid-column-width * @columns) + (@grid-gutter-width * (@columns - 1));
+            *width: (@grid-column-width * @columns) + (@grid-gutter-width * (@columns - 1)) - (.5 / @grid-row-width * 100 * 1%);
+        }
+
+        .grid {
+            width: 100%;
+            [class*="span"] {
+                float: left;
+                margin-left: @grid-gutter-width;
+                *margin-left: @grid-gutter-width - (.5 / @grid-row-width * 100 * 1%);
+                }
+                [class*="span"]:first-child {
+                    margin-left: 0;
+                }
+
+            // generate .spanX and .offsetX
+            .spanX (@grid-columns);
+            .offsetX (@grid-columns);
+        }
+    }
+}
+
+#grid > .fluid(@grid-column-width, @grid-gutter-width);
