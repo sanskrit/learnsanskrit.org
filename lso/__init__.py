@@ -9,12 +9,6 @@ app.config.from_object('config.development')
 assets = Environment(app)
 assets.url = '/static'
 
-# Force automatic updates in development
-if app.debug:
-    assets.manifest = None
-    assets.cache = False
-    assets.updater = False
-
 less_files = ['css/%s.less' % x
               for x in 'base'.split()]
 less = Bundle(*less_files, filters='less', output='gen/style.css', debug=False)

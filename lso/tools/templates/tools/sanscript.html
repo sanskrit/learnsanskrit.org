@@ -1,5 +1,11 @@
 {% extends 'tools/layout.html' %}
 
+{% block extrahead %}
+    {% assets filters="less", output="gen/sanscript.css", "tools/css/sanscript.less" %}
+        <link rel="stylesheet" type="text/css" href="{{ ASSET_URL }}" />
+    {% endassets %}
+{% endblock %}
+
 {% block name %}Sanscript{% endblock %}
 
 {% block content %}
