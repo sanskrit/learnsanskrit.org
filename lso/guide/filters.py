@@ -25,7 +25,7 @@ def inject_functions():
     return {'ex': ex, 'img': img, 'lesson_url': lesson_url}
 
 @app.template_filter()
-def d(text, to=sanscript.DEVANAGARI, tag='span'):
+def d(text, tag='span', to=sanscript.DEVANAGARI):
     return sa1(text, sanscript.HARVARD_KYOTO, to, tag=tag)
 
 def ex(sa=None, en=None, **kwargs):
