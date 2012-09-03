@@ -23,8 +23,8 @@ b a {
 }
 
 dfn {
-  color: darken(@red, 25%);
-  font-weight: bold;
+    color: darken(@red, 25%);
+    font-weight: bold;
 }
 
 figure {
@@ -49,6 +49,27 @@ h1 {
     text-align: center;
 }
 
+kbd, samp {
+    background: #fff;
+    border: 1px @light-gray solid;
+    padding: 0.2em;
+    .border-radius(0.2em);
+}
+
+label {
+    display: block;
+    margin: 0 0 1em;
+}
+
 p {
     line-height: 2 / @en-font-size;
+}
+
+select {
+    background: #fff;
+    border-color: @light-gray;
+}
+
+textarea {
+    font-family: inherit;
 }
