@@ -84,8 +84,9 @@
 
 $(function() {
     App.init();
+    $('div.tabs').tabs();
 
-    $('a', '#sanscript').click(function(e) {
+    $('a', 'div.directions').click(function(e) {
         var $this = $(this),
             href = $this.attr('href');
         if (href && href[0] === '#') {

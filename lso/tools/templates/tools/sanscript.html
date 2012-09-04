@@ -32,13 +32,54 @@
     </div>
 </form>
 
-<p><dfn>Sanscript</dfn> transliterates text from one script to another. Sanscript supports all Indian scripts and the most popular romanizations. It focuses on Sanskrit, but it has <strong>partial support for other languages</strong>.</p>
+<div class="tabs">
+<section id="t-intro">
+    <h1>Sanscript</h1>
+    <div class="directions">
+        <ol>
+            <li>Choose some <a href="#sa-panel">options</a>.</li>
+            <li>Type some <a href="#input">text</a>.</li>
+            <li>Click the <a href="#submit">button</a>.</li>
+        </ol>
+    </div>
 
-<p>It's easy to use Sanscript:</p>
-<ol>
-    <li>Choose your <a href="#sa-panel">options</a>.</li>
-    <li>Put text in the <a href="#input">left box</a>.</li>
-    <li>Click the <a href="#submit">"Transliterate" button</a>.</li>
-</ol>
+    <p><dfn>Sanscript</dfn> transliterates text from one script to another. Sanscript supports all Indian scripts and the most popular romanizations. It focuses on Sanskrit, but it has strong support for other languages.</p>
+</section>
+
+<section id="t-details">
+    <h1>Details</h1>
+
+    <h2>Disabling transliteration</h2>
+    <p>Sometimes, you might prefer to leave parts of your text as they are. You can tell Sanscript to start ignoring your text by typing <kbd>##</kbd>. You can type <kbd>##</kbd> again to resume transliterating:</p>
+
+    <ul class="examples">
+        <li><kbd>saMjaya ##Sanjaya## uvAca ##said##</kbd>
+        &rarr; <samp>{{ 'saMjaya'|d('') }} Sanjaya {{ 'uvAca'|d('') }} said</samp></li>
+    </ul>
+
+    <h2>ITRANS features</h2>
+    <p>Sanscript supports some special ITRANS-specific behavior:</p>
+
+    <h3>Backslash escape</h3>
+    <ul class="examples">
+        <li><kbd>a \a</kbd>
+        &rarr; <samp>{{ 'a'|d('') }} a</samp></li>
+    </ul>
+
+    <h3>Separating letters</h3>
+    <p>You can separate consonants with <kbd>{}</kbd> and vowels with <kbd>_</kbd>.</p>
+
+    <ul class="examples">
+        <li><kbd>kShetra k{}Shetra</kbd>
+        &rarr; <samp>{{ 'kSetra'|d('') }} {{ 'k'|d('') }}&zwj;{{ 'Setra'|d('') }}</samp></li>
+        <li><kbd>barau bara_u</kbd>
+        &rarr; <samp>{{ 'barau'|d('') }} {{ 'bara'|d('') }}{{ 'u'|d('') }}</samp></li>
+    </ul>
+</section>
+
+<section id="t-code">
+    <h1>Code</h1>
+    <p>Sanscript is available as a standalone JavaScript file. It is comprehensive and extremely easy to use. You can grab the source code and help improve it <a href="http://github.com/akprasad/sanscript">on GitHub</a>.</p>
+</section>
 </div>
 {% endblock %}
