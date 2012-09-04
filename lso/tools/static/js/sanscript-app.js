@@ -1,56 +1,42 @@
-(function(App) {
+(function() {
     var t = Sanscript.t;
 
-    var run = function() {
-        var options = App.options,
-            from = options.from_script,
-            to = options.to_script,
-            output = t(App.input.$el.val(), from, to, options);
-        App.output.$el.val(output);
-    };
-
-    $.fn.swapVal = function($b) {
-        var $a = $(this), temp = $a.val();
-        $a.val($b.val());
-        $b.val(temp);
-    }
-
-    var swap = function(e) {
-        e.preventDefault();
-        App.input.$el.swapVal(App.output.$el);
-        App.$to.swapVal(App.$from);
-
-        App.panel.gather();
-        App.panel.updateExamples();
-        App.map.render();
-    };
+    var Settings = Backbone.Model;
 
     var PanelView = Backbone.View.extend({
         initialize: function() {
             var $el = this.$el;
+            this.$from = $('#from_script');
+            this.$to = $('#to_script');
             this.$check = $(':checkbox', $el);
             this.$select = $('select', $el);
             this.$kbd = $('kbd', $el);
             this.$samp = $('samp', $el);
-            this.gather();
+
+            var $options = $('#options').hide();
+
+            $('a[href=#options]').toggle(
+                function(e) {
+                    e.preventDefault();
+                    $options.fadeIn();
+                    $(this).data('text', $(this).text());
+                    $(this).text('Too many options?');
+                },
+                function(e) {
+                    e.preventDefault();
+                    $options.fadeOut();
+                    $(this).text($(this).data('text'));
+                }
+            );
+            this.model.bind('change', this.render, this);
         },
+
         events: {
-            'change': 'update'
+            'change': 'gather'
         },
 
-        update: function(e) {
-            this.gather();
-            this.updateExamples();
-            App.map.render();
-            if (e && $(e.target).attr('name') !== 'live-type') {
-                run();
-            }
-        },
-
-        // Store all options in App.options.
         gather: function() {
-            var data = App.options = this.data = this.data || {};
-
+            var data = {}
             this.$check.each(function() {
                 var $this = $(this);
                 data[$this.attr('name')] = $this.is(':checked');
@@ -59,39 +45,23 @@
                 var $this = $(this);
                 data[$this.attr('name')] = $this.val();
             });
+            this.model.set(data);
         },
 
-        // Update panel examples
-        updateExamples: function() {
-            var options = App.options,
-                from = options.from_script,
-                to = options.to_script;
+        render: function() {
+            var settings = this.model.attributes,
+                from = settings.from_script,
+                to = settings.to_script;
             var $kbd = this.$kbd,
                 $samp = this.$samp;
             $kbd.each(function(i) {
                 var $this = $(this),
                     raw = $this.data('raw'),
-                    input = t(raw, 'hk', from, {'skip_sgml': true}),
-                    output = t(raw, 'hk', to, options);
+                    input = t(raw, 'hk', from, {skip_sgml: true}),
+                    output = t(raw, 'hk', to, settings);
                 $this.text(input);
                 $samp.eq(i).text(output);
             });
-        }
-    });
-
-    var InputView = Backbone.View.extend({
-        events: {
-            'keyup': function() {
-                if (App.options['live-type']) {
-                    run();
-                }
-            }
-        }
-    });
-
-    var OutputView = Backbone.View.extend({
-        events: {
-            'click': run
         }
     });
 
@@ -100,64 +70,91 @@
             var template = ('<span class="sa1"><%= to %></span> '
                             + '<span class="sa2"><%= from %></span>');
             this.template = _.template(template);
+            this.model.bind('change', this.render, this);
         },
         render: function() {
             var self = this,
-                options = App.options;
+                settings = this.model.attributes;
             this.$('li').each(function() {
                 var $this = $(this),
                     raw = $this.data('raw').toString(),
-                    to = t(raw, 'itrans', App.options.to_script),
-                    from = t(raw, 'itrans', App.options.from_script);
+                    to = t(raw, 'itrans', settings.to_script),
+                    from = t(raw, 'itrans', settings.from_script);
                 $this.html(self.template({ to: to, from: from }));
             });
+            return this;
         }
     });
 
-    App.init = function() {
-        var $form = $('form'),
-            $options = $('#options', $form);
-        this.input = new InputView({ el: $('#input') });
-        this.map = new MapView({ el: $('#t-map') });
-        this.output = new OutputView({ el: $('#output') });
-        this.panel = new PanelView({ el: $form });
+    window.App = Backbone.View.extend({
+        initialize: function() {
+            this.$input = $('#input');
+            this.$output = $('#output');
 
-        this.map.render();
-        this.$from = $('#from_script');
-        this.$to = $('#to_script');
+            var model = this.model = new Settings;
 
-        $('#submit').click(function(e) {
-            run();
-            e.preventDefault();
-        });
-        $('#swap').click(swap);
+            this.panel = new PanelView({ el: $('form'), model: model });
+            this.map = new MapView({ el: $('#t-map'), model: model });
 
-        $options.hide();
-        $('a[href=#options]', $form).toggle(
-            function(e) {
-                e.preventDefault();
-                $options.fadeIn();
-                $(this).data('text', $(this).text());
-                $(this).text('Too many options?');
-            },
-            function(e) {
-                e.preventDefault();
-                $options.fadeOut();
-                $(this).text($(this).data('text'));
+            var $tabs = $('div.tabs').tabs();
+            $('section', $tabs).on('click', 'a', function(e) {
+                var selector = $(this).data('spotlight');
+                if (selector) {
+                    $(selector).spotlight(200);
+                    e.preventDefault();
+                }
+            });
+
+            this.model.bind('change', this.render, this);
+            this.panel.gather();
+        },
+
+        events: {
+            'keyup #input': 'render',
+            'click #submit': 'run',
+            'click #output': 'run',
+            'click #swap': 'swap',
+        },
+
+        render: function() {
+            if (this.model.get('live-type')) {
+                this.run();
             }
-        );
-    }
-}(window.App = window.App || {}));
+        },
+
+        run: function(e) {
+            var settings = this.model.attributes,
+                from = settings.from_script,
+                to = settings.to_script,
+                output = t(this.$input.val(), from, to, settings);
+            this.$output.val(output);
+            if (e) {
+                e.preventDefault();
+            }
+        },
+
+        swap: function(e) {
+            e.preventDefault();
+
+            var $input = this.$input,
+                $output = this.$output,
+                $from = this.panel.$from,
+                $to = this.panel.$to,
+                temp;
+
+            temp = $input.val();
+            $input.val($output.val());
+            $output.val(temp);
+
+            temp = $from.val();
+            $from.val($to.val());
+            $to.val(temp);
+
+            this.panel.gather();
+        },
+    });
+}());
 
 $(function() {
-    App.init();
-    var $tabs = $('div.tabs').tabs();
-
-    $('section', $tabs).on('click', 'a', function(e) {
-        var selector = $(this).data('spotlight');
-        if (selector) {
-            $(selector).spotlight(200);
-            e.preventDefault();
-        }
-    });
+    new App({ el: $('#sanscript') });
 });
