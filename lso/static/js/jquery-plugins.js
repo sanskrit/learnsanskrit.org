@@ -35,6 +35,7 @@ $.fn.spotlight = function(duration, easing) {
             $this.spotlightOff(duration, easing);
         });
     });
+    return this;
 };
 
 $.fn.tabs = function() {
@@ -70,4 +71,5 @@ $.fn.tabs = function() {
             $(id).fadeIn(200);
         });
     });
+    return this;
 };

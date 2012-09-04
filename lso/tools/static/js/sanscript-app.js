@@ -128,13 +128,12 @@
 
 $(function() {
     App.init();
-    $('div.tabs').tabs();
+    var $tabs = $('div.tabs').tabs();
 
-    $('a', 'div.directions').click(function(e) {
-        var $this = $(this),
-            href = $this.attr('href');
-        if (href && href[0] === '#') {
-            $(href).spotlight(200);
+    $('section', $tabs).on('click', 'a', function(e) {
+        var selector = $(this).data('spotlight');
+        if (selector) {
+            $(selector).spotlight(200);
             e.preventDefault();
         }
     });

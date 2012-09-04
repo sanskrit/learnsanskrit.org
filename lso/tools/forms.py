@@ -24,6 +24,9 @@ class SanscriptForm(Form):
                         (S.ORIYA, u'Oriya (ଅ)'),
                         (S.TAMIL, u'Tamil (அ)'),
                         (S.TELUGU, u'Telugu (అ)')
+                    ]],
+                    ['Variants', [
+                        ('itrans_dravidian', 'ITRANS (Dravidian)')
                     ]]
                 ]
     from_script = OptSelectField('From', choices=languages, default=S.ITRANS)

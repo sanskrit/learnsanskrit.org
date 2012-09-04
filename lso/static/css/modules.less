@@ -65,6 +65,33 @@ ul.tab-links {
     }
 }
 
+/* FAQ
+ * ---
+ */
+
+dl.faq {
+    @m: 3em;
+    dt {
+        @f: 1.2em;
+        font-size: @f;
+        font-style: italic;
+        line-height: 2em / @f;
+        margin-left: @m / @f;
+        position: relative;
+
+        &:before {
+            content: "Q ";
+            position: absolute;
+            left: -1.5em;
+            font-size: 1.5em / @f;
+            font-weight: 700;
+        }
+    }
+    dd {
+        margin-left: @m;
+    }
+}
+
 section.unit {
     a {
         text-decoration: none;

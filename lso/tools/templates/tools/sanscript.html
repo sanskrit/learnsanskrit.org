@@ -61,9 +61,9 @@
     <h1>Sanscript</h1>
     <div class="directions">
         <ol>
-            <li>Choose some <a href="#sa-panel">options</a>.</li>
-            <li>Type some <a href="#input">text</a>.</li>
-            <li>Click the <a href="#submit">button</a>.</li>
+            <li>Choose some <a href="#sa-panel" data-spotlight="#sa-panel">options</a>.</li>
+            <li>Type some <a href="#input" data-spotlight="#input">text</a>.</li>
+            <li>Click the <a href="#submit" data-spotlight="#submit">button</a>.</li>
         </ol>
     </div>
 
@@ -99,6 +99,21 @@
         <li><kbd>barau bara_u</kbd>
         &rarr; <samp>{{ 'barau'|d('') }} {{ 'bara'|d('') }}{{ 'u'|d('') }}</samp></li>
     </ul>
+</section>
+
+<section id="t-help">
+    <h1>Help</h1>
+    <dl class="faq">
+        <dt>Scripts like Tamil have shorter versions of <i>e</i> and <i>o</i>. Can Sanscript handle these?</dt>
+        <dd><p>Yes, it can! These vowels are supported by two romanizations:</p>
+
+        <ul>
+            <li>ITRANS</li>
+            <li>Kolkata</li>
+        </ul>To use these vowels from ITRANS, <a href="#from_script" data-spotlight="select">select</a> the <b>ITRANS (Dravidian)</b> option under <b>Variants</b>.</p>
+
+        </dd>
+    </dl>
 </section>
 
 <section id="t-code">
