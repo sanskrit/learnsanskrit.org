@@ -67,9 +67,11 @@
     });
 
     App.init = function() {
+        var $form = $('form'),
+            $options = $('#options', $form);
         this.input = new InputView({ el: $('#input') });
         this.output = new OutputView({ el: $('#output') });
-        this.panel = new PanelView({ el: $('form') });
+        this.panel = new PanelView({ el: $form });
 
         this.$from = $('#from_script');
         this.$to = $('#to_script');
@@ -79,6 +81,21 @@
             e.preventDefault();
         });
         $('#swap').click(swap);
+
+        $options.hide();
+        $('a[href=#options]', $form).toggle(
+            function(e) {
+                e.preventDefault();
+                $options.fadeIn();
+                $(this).data('text', $(this).text());
+                $(this).text('Too many options?');
+            },
+            function(e) {
+                e.preventDefault();
+                $options.fadeOut();
+                $(this).text($(this).data('text'));
+            }
+        );
     }
 }(window.App = window.App || {}));
 

@@ -60,6 +60,12 @@ ul.examples {
     select {
         height: @field-height;
     }
+    ul.examples {
+        border: 0;
+        // Size w.r.t. base font size.
+        font-size: @examples-font-size * @en-font-size;
+        margin-left: 1em;
+    }
 }
 
 #submit, #swap, label, select {
@@ -72,6 +78,10 @@ ul.examples {
 
 #swap {
     width: @field-height;
+}
+
+#options {
+    margin-top: @panel-padding;
 }
 
 label {
