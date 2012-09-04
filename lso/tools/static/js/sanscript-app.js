@@ -22,6 +22,7 @@
 
         App.panel.gather();
         App.panel.updateExamples();
+        App.map.render();
     };
 
     var PanelView = Backbone.View.extend({
@@ -39,10 +40,11 @@
 
         update: function(e) {
             this.gather();
+            this.updateExamples();
+            App.map.render();
             if (e && $(e.target).attr('name') !== 'live-type') {
                 run();
             }
-            this.updateExamples();
         },
 
         // Store all options in App.options.
@@ -93,13 +95,34 @@
         }
     });
 
+    var MapView = Backbone.View.extend({
+        initialize: function() {
+            var template = ('<span class="sa1"><%= to %></span> '
+                            + '<span class="sa2"><%= from %></span>');
+            this.template = _.template(template);
+        },
+        render: function() {
+            var self = this,
+                options = App.options;
+            this.$('li').each(function() {
+                var $this = $(this),
+                    raw = $this.data('raw').toString(),
+                    to = t(raw, 'itrans', App.options.to_script),
+                    from = t(raw, 'itrans', App.options.from_script);
+                $this.html(self.template({ to: to, from: from }));
+            });
+        }
+    });
+
     App.init = function() {
         var $form = $('form'),
             $options = $('#options', $form);
         this.input = new InputView({ el: $('#input') });
+        this.map = new MapView({ el: $('#t-map') });
         this.output = new OutputView({ el: $('#output') });
         this.panel = new PanelView({ el: $form });
 
+        this.map.render();
         this.$from = $('#from_script');
         this.$to = $('#to_script');
 

@@ -8,10 +8,9 @@
 @textbox-width: 49%;
 @textbox-gap: 100% - 2 * @textbox-width;
 
-#sanscript {
-    margin: auto;
-    max-width: 960px;
-    width: 90%;
+form {
+    font-family: sans-serif;
+    font-size: (1 / @en-font-size);
 }
 
 h1 {
@@ -25,9 +24,15 @@ h1 {
     }
 }
 
-form {
-    font-family: sans-serif;
-    font-size: (1 / @en-font-size);
+label {
+    color: darken(@gray, 20%);
+}
+
+textarea {
+    border-color: @body-background;
+    height: @height;
+    padding: 0;
+    width: 100%;
 }
 
 ul.examples {
@@ -40,6 +45,27 @@ ul.examples {
         margin: 1em;
         padding: 0;
     }
+}
+
+ul.letters {
+    li {
+        margin-bottom: 0.5em;
+    }
+    span {
+        display: block;
+        &.sa1 {
+            font-size: 1.7em;
+        }
+        &.sa2 {
+            font-size: 1em;
+        }
+    }
+}
+
+#sanscript {
+    margin: auto;
+    max-width: 960px;
+    width: 90%;
 }
 
 #sa-panel {
@@ -84,18 +110,7 @@ ul.examples {
     margin-top: @panel-padding;
 }
 
-label {
-    color: darken(@gray, 20%);
-}
-
-textarea {
-    border-color: @body-background;
-    height: @height;
-    padding: 0;
-    width: 100%;
-}
-
-.textbox {
+div.textbox {
     float: left;
     margin-bottom: 1em;
     width: @textbox-width;

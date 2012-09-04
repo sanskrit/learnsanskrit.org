@@ -70,6 +70,55 @@
     <p><dfn>Sanscript</dfn> transliterates text from one script to another. Sanscript supports all Indian scripts and the most popular romanizations. It focuses on Sanskrit, but it has strong support for other languages.</p>
 </section>
 
+<section id="t-map">
+    {% macro script_key_row(letters) -%}
+        {% for L in letters %}<li data-raw="{{ L }}" />{% endfor -%}
+    {% endmacro %}
+    <h1>Script Key</h1>
+
+    <h2>Vowels and marks</h2>
+    <ul class="grid-6 letters">
+        {{ script_key_row('a A i I u U'.split()) }}
+    </ul>
+    <ul class="grid-4 letters">
+        {{ script_key_row('RRi RRI LLi LLI'.split()) }}
+        {{ script_key_row('e ai o au'.split()) }}
+        {{ script_key_row('kaM kaH ka.N ka.c'.split()) }}
+    </ul>
+
+    <h2>Consonants</h2>
+    <h3>Stops and nasals</h3>
+    <ul class="grid-5 letters">
+        {{ script_key_row('ka kha ga gha ~Na'.split()) }}
+        {{ script_key_row('ca cha ja jha ~na'.split()) }}
+        {{ script_key_row('Ta Tha Da Dha Na'.split()) }}
+        {{ script_key_row('ta tha da dha na'.split()) }}
+        {{ script_key_row('pa pha ba bha ma'.split()) }}
+    </ul>
+    <h3>Other</h3>
+    <ul class="grid-4 letters">
+        {{ script_key_row('ya ra la va'.split()) }}
+    </ul>
+    <ul class="grid-4 letters">
+        {{ script_key_row('sha Sha sa ha'.split()) }}
+    </ul>
+    <ul class="grid-4 letters">
+        {{ script_key_row('La kSha GYa'.split()) }}
+    </ul>
+    <h3>Non-Sanskrit</h3>
+    <ul class="grid-9 letters">
+        {{ script_key_row('qa Ka Ga za .Da .Dha fa Ya Ra'.split()) }}
+    </ul>
+
+    <h2>Symbols and punctuation</h2>
+    <ul class="grid-10 letters">
+        {{ script_key_row('0 1 2 3 4 5 6 7 8 9'.split()) }}
+    </ul>
+    <ul class="grid-6 letters">
+        {{ script_key_row("OM ~ | || a\_ a\'".split()) }}
+    </ul>
+</section>
+
 <section id="t-details">
     <h1>Details</h1>
 
@@ -101,8 +150,8 @@
     </ul>
 </section>
 
-<section id="t-help">
-    <h1>Help</h1>
+<section id="t-faq">
+    <h1>FAQ</h1>
     <dl class="faq">
         <dt>Scripts like Tamil have shorter versions of <i>e</i> and <i>o</i>. Can Sanscript handle these?</dt>
         <dd><p>Yes, it can! These vowels are supported by two romanizations:</p>
