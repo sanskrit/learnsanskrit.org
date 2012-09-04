@@ -96,8 +96,7 @@
             this.panel = new PanelView({ el: $('form'), model: model });
             this.map = new MapView({ el: $('#t-map'), model: model });
 
-            var $tabs = $('div.tabs').tabs();
-            $('section', $tabs).on('click', 'a', function(e) {
+            $('section', 'div.tabs').on('click', 'a', function(e) {
                 var selector = $(this).data('spotlight');
                 if (selector) {
                     $(selector).spotlight(200);
