@@ -1,9 +1,11 @@
 (function(App) {
+    var t = Sanscript.t;
+
     var run = function() {
         var options = App.options,
-            from = options.from,
-            to = options.to,
-            output = Sanscript.t(App.input.$el.val(), from, to);
+            from = options.from_script,
+            to = options.to_script,
+            output = t(App.input.$el.val(), from, to, options);
         App.output.$el.val(output);
     };
 
@@ -17,20 +19,34 @@
         e.preventDefault();
         App.input.$el.swapVal(App.output.$el);
         App.$to.swapVal(App.$from);
-        return false;
+
+        App.panel.gather();
+        App.panel.updateExamples();
     };
 
     var PanelView = Backbone.View.extend({
         initialize: function() {
-            this.$check = $(':checkbox', this.$el);
-            this.$select = $('select', this.$el);
+            var $el = this.$el;
+            this.$check = $(':checkbox', $el);
+            this.$select = $('select', $el);
+            this.$kbd = $('kbd', $el);
+            this.$samp = $('samp', $el);
             this.gather();
         },
         events: {
-            'change': 'gather'
+            'change': 'update'
         },
 
-        gather: function(e) {
+        update: function(e) {
+            this.gather();
+            if (e && $(e.target).attr('name') !== 'live-type') {
+                run();
+            }
+            this.updateExamples();
+        },
+
+        // Store all options in App.options.
+        gather: function() {
             var data = App.options = this.data = this.data || {};
 
             this.$check.each(function() {
@@ -41,12 +57,23 @@
                 var $this = $(this);
                 data[$this.attr('name')] = $this.val();
             });
+        },
 
-            data['from'] = data['from_script']
-            data['to'] = data['to_script']
-            if (e && $(e.target).attr('name') !== 'live-type') {
-                run();
-            }
+        // Update panel examples
+        updateExamples: function() {
+            var options = App.options,
+                from = options.from_script,
+                to = options.to_script;
+            var $kbd = this.$kbd,
+                $samp = this.$samp;
+            $kbd.each(function(i) {
+                var $this = $(this),
+                    raw = $this.data('raw'),
+                    input = t(raw, 'hk', from, {'skip_sgml': true}),
+                    output = t(raw, 'hk', to, options);
+                $this.text(input);
+                $samp.eq(i).text(output);
+            });
         }
     });
 
