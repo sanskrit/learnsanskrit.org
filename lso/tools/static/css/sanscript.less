@@ -8,6 +8,11 @@
 @textbox-width: 49%;
 @textbox-gap: 100% - 2 * @textbox-width;
 
+body {
+    // Prevents jump caused by expanding #options panel
+    overflow-y: scroll;
+}
+
 form {
     font-family: sans-serif;
     font-size: (1 / @en-font-size);
@@ -104,6 +109,10 @@ ul.letters {
 
 #swap {
     width: @field-height;
+}
+
+#swap-link {
+    text-decoration: none;
 }
 
 #options {

@@ -18,13 +18,13 @@
             $('a[href=#options]').toggle(
                 function(e) {
                     e.preventDefault();
-                    $options.fadeIn();
+                    $options.slideDown(200);
                     $(this).data('text', $(this).text());
                     $(this).text('Too many options?');
                 },
                 function(e) {
                     e.preventDefault();
-                    $options.fadeOut();
+                    $options.slideUp(200);
                     $(this).text($(this).data('text'));
                 }
             );
@@ -114,6 +114,7 @@
             'click #submit': 'run',
             'click #output': 'run',
             'click #swap': 'swap',
+            'click #swap-link': 'swap',
         },
 
         render: function() {
