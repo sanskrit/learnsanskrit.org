@@ -20,8 +20,32 @@
             <input id="submit" type="submit" value="Transliterate" />
             <button id="swap">↔</button>
         </div>
-        <input id="live-type" name="live-type" type="checkbox" checked />
-        <label for="live-type">Transliterate as I type</label>
+        <div id="options">
+            <label id="live-type">
+                <input name="live-type" type="checkbox" checked />
+                Transliterate while I'm typing
+            </label>
+
+            <label id="syncope" class="span6">
+                <input name="syncope" type="checkbox" />
+                Use Hindi-style transliteration
+            </label>
+
+            <ul class="examples">
+                <li><kbd>ajay</kbd>
+                &rarr; <samp>{{ 'ajaya'|d('') }}</samp></li>
+            </ul>
+
+            <label id="skip_sgml">
+                <input name="skip_sgml" type="checkbox" checked />
+                Skip HTML tags
+            </label>
+
+            <ul class="examples">
+                <li><kbd>&lt;b&gt;aham&lt;/b&gt;</kbd>
+                &rarr; <samp>&lt;b&gt;{{ 'aham'|d('') }}&lt;/b&gt;</samp></li>
+            </ul>
+        </div>
     </div>
     <div class="textbox">
        {{ form.input }}
