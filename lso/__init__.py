@@ -20,9 +20,11 @@ assets.register('all-js', js)
 
 # Views
 # -----
-import lso.common.views
+import views
 
 from guide import guide
+from site import site
 from tools import tools
 app.register_blueprint(guide, url_prefix='/guide')
+app.register_blueprint(site)
 app.register_blueprint(tools, url_prefix='/tools')
