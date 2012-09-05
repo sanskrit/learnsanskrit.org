@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
     <head>
-        <title>{% block title %}learnsanskrit.org{% endblock %}</title>
+        <title>{% block title_full %}{% block title %}{% endblock %} | learnsanskrit.org{% endblock %}</title>
         {% assets "all-css" %}
         <link rel="stylesheet" type="text/css" href="{{ ASSET_URL }}">
         {% endassets %}
