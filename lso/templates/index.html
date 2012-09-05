@@ -3,7 +3,42 @@
 {% block title_full %}learnsanskrit.org{% endblock %}
 
 {% block content %}
-<header class="masthead">
-    <h1>learn<span class="y">sanskrit</span>.org</h1>
-</header>
+
+<section class="grid">
+    <div class="span6">
+        <h1>Sanskrit Guide</h1>
+    </div>
+    <nav class="span6">
+        <ul>
+            <li><a href="{{ url_for('guide.lesson', unit='about', lesson='sanskrit') }}">About Sanskrit</a></li>
+            <li><a href="{{ url_for('guide.lesson', unit='about', lesson='the-guide') }}">About the guide</a></li>
+            <li><a href="{{ url_for('guide.index') }}">Contents</a></li>
+        </ul>
+    </nav>
+</section>
+
+<section class="grid">
+    <div class="span6">
+        <h1>Tools</h1>
+    </div>
+    <nav class="span6">
+        <ul>
+            <li><a href="{{ url_for('tools.sanscript') }}">Sanscript</a></li>
+        </ul>
+    </nav>
+</section>
+
+<section class="grid">
+    <div class="span6">
+        <h1>Site</h1>
+    </div>
+    <nav class="span6">
+        <ul>
+            <li><a href="{{ url_for('site.resources') }}">Resources</a></li>
+            <li><a href="{{ url_for('site.about') }}">About</a></li>
+            <li><a href="{{ url_for('site.contact') }}">Contact</a></li>
+        </ul>
+    </nav>
+</section>
+
 {% endblock %}
