@@ -41,7 +41,8 @@ $.fn.spotlight = function(duration, easing) {
 $.fn.tabs = function() {
     var $this = $(this),
         $panes = $('> section, > div', $this).hide(),
-        $tabs = $('ul.tab-links li', $this);
+        $links = $('ul.tab-links'),
+        $tabs = $('li', $links);
 
     // If the list of tabs is not defined, cerate a new list by inspecting
     // panes and their headers.
@@ -63,9 +64,15 @@ $.fn.tabs = function() {
 
     $links.on('click', 'a', function(e) {
         e.preventDefault();
-        var id = this.hash;
-        $tabs.removeClass('active');
-        $(this).closest('li').addClass('active');
+        var id = this.hash,
+            $li = $(this).closest('li'),
+            active = 'active';
+        if ($li.hasClass(active)) {
+            return;
+        } else {
+            $tabs.removeClass(active);
+        }
+        $li.addClass(active);
 
         $.when($panes.fadeOut(200)).then(function() {
             $(id).fadeIn(200);
