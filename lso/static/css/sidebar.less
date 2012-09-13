@@ -1,10 +1,6 @@
-body {
-    &#two-column {
-        background: @body-background;
-    }
-}
+body#lesson {
+    background: @sidebar-background;
 
-#two-column {
     #content {
         float: left;
         margin-right: -@sidebar-width;
@@ -12,7 +8,7 @@ body {
     }
 
     article {
-        @border-color: darken(@body-background, 10%);
+        @border-color: darken(@sidebar-background, 10%);
         background: #fff;
         border-right: @sidebar-border-width @border-color solid;
         margin: 0 @sidebar-width 0 0;
@@ -20,21 +16,71 @@ body {
     }
     h1 {
         margin-top: 0;
+        text-align: center;
     }
 }
 
 #sidebar {
-    background: @body-background;
+    background: @sidebar-background;
     float: left;
     width: @sidebar-width - @sidebar-border-width;
 
     section {
-        padding: 20px;
+        padding: 10px;
 
         a {
             text-decoration: none;
             &:hover {
                 text-decoration: underline;
+            }
+        }
+    }
+}
+
+#nav-pane {
+    @d5: darken(@sidebar-background, 5%);
+    @d10: darken(@sidebar-background, 10%);
+    @l5: lighten(@sidebar-background, 5%);
+    ol {
+        list-style: none;
+        padding: 0;
+    }
+    span.num {
+        display: inline-block;
+        padding: 0 1em 0 0;
+        text-align: right;
+        width: 1.5em;
+    }
+    li {
+        line-height: 2em;
+        padding: 0;
+
+        &:first-child a {
+            border-top: 0;
+        }
+        &:last-child a {
+            border-bottom: 0;
+        }
+        &:before {
+            content: ""
+        }
+        a {
+            border-bottom: 1px @d5 solid;
+            border-top: 1px @l5 solid;
+            display: block;
+
+            &:hover {
+                background: @d5;
+                border-bottom-color: @d10;
+                color: @dark-gray;
+                text-decoration: none;
+            }
+        }
+        &.active {
+            border-color: darken(@blue, 5%);
+            a {
+                background: @blue;
+                color: #fff;
             }
         }
     }

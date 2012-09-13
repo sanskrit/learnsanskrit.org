@@ -3,8 +3,6 @@
 @examples-font-size: 1.3em;
 @field-height: 3em;
 @height: 15em;
-@panel-padding: 1em;
-@submit-ratio: 0.85;
 @textbox-width: 49%;
 @textbox-gap: 100% - 2 * @textbox-width;
 
@@ -34,10 +32,10 @@ label {
 }
 
 textarea {
-    border-color: @body-background;
+    font-size: 0.9em;
     height: @height;
     padding: 0;
-    width: 100%;
+    margin: 0;
 }
 
 ul.examples {
@@ -74,13 +72,8 @@ ul.letters {
 }
 
 #sa-panel {
-    .border-radius(5px);
-
-    background: @off-white;
-    border: 1px @light-gray solid;
     clear: both;
     margin: 1em 0;
-    padding: @panel-padding;
 
     div.buttons {
         float: right;
@@ -104,6 +97,8 @@ ul.letters {
 }
 
 #submit {
+    float: left;
+    margin-right: 0.3em;
     width: 3 * @field-height;
 }
 
@@ -116,7 +111,10 @@ ul.letters {
 }
 
 #options {
-    margin-top: @panel-padding;
+    margin-top: 1em;
+    label:first-child {
+        margin-top: 0;
+    }
 }
 
 div.textbox {
@@ -128,7 +126,7 @@ div.textbox {
         margin-left: @textbox-gap;
 
         textarea {
-            background: @light-gray;
+            background: @off-white;
 
             &:focus {
                 outline: 0;
@@ -138,6 +136,7 @@ div.textbox {
 }
 
 div.directions {
+    margin-bottom: 1em;
     text-align: center;
 
     ol {

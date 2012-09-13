@@ -1,4 +1,4 @@
-<ol>
+<ol class="dotless">
 {% for lesson in unit.children %}
     <li><a href="{{ url_for('guide.lesson', unit=unit.slug, lesson=lesson.slug) }}">{{ lesson.title|safe }}</a></li>
 {% endfor %}

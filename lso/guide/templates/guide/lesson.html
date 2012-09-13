@@ -3,7 +3,7 @@
 
 {% block title %}{{ lesson.stripped_title }}{% endblock %}
 
-{% block body_id %}two-column{% endblock %}
+{% block body_id %}lesson{% endblock %}
 
 {% block content %}
 <div id="content">
@@ -16,9 +16,19 @@
 </div>
 
 <div id="sidebar">
-    <section>
-    <h2><a href="{{ url_for('guide.unit', unit=unit.slug) }}">{{ unit.title|safe }}</a></h2>
-    {% include 'guide/include/unit-contents.html' %}
+    <section id="nav-pane">
+    <h2>{{ unit.title }}</h2>
+    <ol>
+    {%- for L in unit.children %}
+        {% if L.id == lesson.id -%}
+            <li class="active">
+        {%- else -%}
+            <li>
+        {%- endif -%}
+        <a href="{{ lesson_url(unit.slug, L.slug) }}">
+        <span class="num">{{ loop.index }}</span> {{ L.title|safe }}</a></li>
+    {%- endfor %}
+    </ol>
     </section>
 </div>
 {% endblock %}
