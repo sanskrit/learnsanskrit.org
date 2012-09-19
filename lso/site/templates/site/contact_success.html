@@ -1,0 +1,11 @@
+{% extends 'layout.html' %}
+
+{% block title %}Message sent!{% endblock %}
+
+{% block content %}
+<h1>Message sent!</h1>
+
+<p>Thanks for your feedback! We will act on it as best we can. {% if form.email.data %}We will also do our best to reply. Please forgive us if we cannot.{% endif %}</p>
+
+<p></p>
+{% endblock %}

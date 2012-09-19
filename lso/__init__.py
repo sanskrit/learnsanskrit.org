@@ -1,5 +1,6 @@
 from flask import Flask
 from flask.ext.assets import Bundle, Environment
+from flask.ext.mail import Mail
 
 app = Flask(__name__)
 app.config.from_object('config.development')
@@ -17,6 +18,10 @@ assets.register('all-css', less)
 js = Bundle('js/jquery-plugins.js', 'js/sanscript.js',
             'js/setup.js', output='gen/scripts.js')
 assets.register('all-js', js)
+
+# Mail
+# ----
+mail = Mail(app)
 
 # Views
 # -----
