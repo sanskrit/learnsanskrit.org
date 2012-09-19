@@ -30,3 +30,7 @@ def db(command):
 def server():
     """Run the site locally."""
     local('python runserver.py')
+
+def test():
+    """Run unit tests."""
+    local('python lso_tests.py')
