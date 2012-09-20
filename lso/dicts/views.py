@@ -1,5 +1,6 @@
 from flask import render_template
 
+from lso.forms import QueryForm
 from . import dicts
 
 @dicts.route('/')
@@ -8,4 +9,5 @@ def index():
 
 @dicts.route('/mw/')
 def mw():
-    return render_template('dicts/mw/index.html')
+    form = QueryForm()
+    return render_template('dicts/mw/index.html', form=form)

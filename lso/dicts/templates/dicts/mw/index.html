@@ -1,5 +1,16 @@
 {% extends 'tools/layout.html' %}
 
+{% set title = "Monier-Williams Dictionary" %}
+
+{% block title %}{{ title }}{% endblock %}
+
 {% block content %}
-<h1>Monier-Williams Dictionary</h1>
+<h1>{{ title }}</h1>
+
+<form method="GET" action="">
+    {{ form.input }}
+    {{ form.from_script }}
+    {{ form.to_script }}
+    <input type="submit" value="Search" />
+</form>
 {% endblock %}
