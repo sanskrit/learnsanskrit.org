@@ -38,4 +38,4 @@ class SanskritForm(Form):
 
 
 class QueryForm(SanskritForm):
-    input = TextField()
+    q = TextField()
