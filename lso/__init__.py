@@ -27,9 +27,11 @@ mail = Mail(app)
 # -----
 import views
 
+from dicts import dicts
 from guide import guide
 from site import site
 from tools import tools
+app.register_blueprint(dicts, url_prefix='/dict')
 app.register_blueprint(guide, url_prefix='/guide')
 app.register_blueprint(site)
 app.register_blueprint(tools, url_prefix='/tools')
