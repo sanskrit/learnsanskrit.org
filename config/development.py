@@ -9,3 +9,6 @@ SECRET_KEY = 'development'
 DEFAULT_MAIL_SENDER = 'form@learnsanskrit.org'
 
 DEFAULT_MAIL_RECIPIENT = 'info@learnsanskrit.org'
+
+# Large data
+MONIER_PATH = 'data/monier.xml'

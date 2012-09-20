@@ -24,8 +24,10 @@ def init():
         # If a model extends `Base`, then `create_all` will account for it.
         # For other cases, try calling a custom init function:
         try:
-            blue.init()
+            fn = blue.init
         except AttributeError:
-            pass
+            fn = None
+        if fn is not None:
+            fn()
 
     Base.metadata.create_all(bind=engine)
