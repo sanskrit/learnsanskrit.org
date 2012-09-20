@@ -35,3 +35,7 @@ class SanskritForm(Form):
                 ]
     from_script = OptSelectField('From', choices=languages, default=S.ITRANS)
     to_script = OptSelectField('To', choices=languages, default=S.DEVANAGARI)
+
+
+class QueryForm(SanskritForm):
+    input = TextField()
