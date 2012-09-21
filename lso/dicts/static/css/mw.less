@@ -1,0 +1,42 @@
+@import "../../../static/css/lib.less";
+
+abbr {
+    color: darken(@yellow, 20%);
+}
+
+cite {
+    background: @off-white;
+    border: 1px @light-gray solid;
+    color: #000;
+    padding: 0 0.3em;
+}
+
+dt {
+    font-size: 2em;
+}
+
+form {
+    input, select
+    {
+        font-size: 1em;
+        height: 3em;
+    }
+}
+
+p {
+    margin: 0;
+}
+
+span {
+    &.lex {
+        color: darken(@red, 10%);
+        font-style: italic;
+        font-weight: bold;
+    }
+    &.paren {
+        color: darken(@gray, 10%);
+    }
+    &.sa2 {
+        color: #268;
+    }
+}

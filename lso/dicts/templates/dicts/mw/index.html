@@ -4,14 +4,19 @@
 
 {% block title %}{{ title }}{% endblock %}
 
+{% block extrahead %}
+    {% assets filters="less", output="gen/mw.css", "dicts/css/mw.less" %}
+        <link rel="stylesheet" type="text/css" href="{{ ASSET_URL }}" />
+    {% endassets %}
+{% endblock %}
+
 {% block content %}
 <h1>{{ title }}</h1>
 
-<form method="GET" action="">
+<form method="GET" action="" class="inset">
     {{ form.q }}
-    {{ form.from_script }}
-    {{ form.to_script }}
-    <input type="submit" value="Search" />
+    {{ form.from_script }} → {{ form.to_script }}
+    <input id="submit" type="submit" value="Search" />
 </form>
 
 {% if results %}
