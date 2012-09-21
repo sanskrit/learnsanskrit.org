@@ -1,7 +1,8 @@
 from collections import OrderedDict
-from flask import render_template, request
+from flask import render_template, request, jsonify
 from sanskrit.letters import sanscript as S
 
+from lso import app
 from ..database import session
 from ..forms import QueryForm
 from . import dicts
@@ -31,6 +32,13 @@ def mw():
                                                       results=results)
     else:
         return render_template('dicts/mw/index.html', form=form)
+
+@app.route('/api/mw/<slp_query>')
+def mw_api(slp_query):
+    results = mw_results(slp_query)
+    for key in results:
+        results[key]  = [mw_transform(x, None) for x in results[key]]
+    return jsonify(results)
 
 def mw_results(q):
     """For the given (SLP1) query string, returned an OrderedDict of results

@@ -71,4 +71,7 @@ def mw_transform(data, to_script):
     clean_data = re.sub('[~_]', ' ', data)
     clean_data = re.sub(' ([,;])', '\\1', clean_data)
     result = translate(clean_data, mw)
-    return S.transliterate('##' + result, S.SLP1, to_script)
+    if to_script:
+        return S.transliterate('##' + result, S.SLP1, to_script)
+    else:
+        return result
