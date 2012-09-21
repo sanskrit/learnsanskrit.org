@@ -2,8 +2,10 @@ from collections import OrderedDict
 from flask import render_template, request
 from sanskrit.letters import sanscript as S
 
-from lso.forms import QueryForm
+from ..database import session
+from ..forms import QueryForm
 from . import dicts
+from .lib import mw_transform
 from .models import MonierEntry
 
 @dicts.route('/')
@@ -21,6 +23,8 @@ def mw():
 
         slp_query = S.transliterate(q, from_script, S.SLP1)
         results = mw_results(slp_query)
+        for key in results:
+            results[key]  = [mw_transform(x, to_script) for x in results[key]]
 
         return render_template('dicts/mw/index.html', form=form,
                                                       to_script=to_script,
@@ -35,7 +39,7 @@ def mw_results(q):
     q_list = q.replace('+', ' ').replace(',', ' ').split()
 
     entries = MonierEntry.query.filter(MonierEntry.entry.in_(q_list))
-    entries = entries.order_by('id')
+    entries = entries.order_by('id').all()
 
     results = OrderedDict()
     for entry in q_list:
