@@ -11,6 +11,7 @@
 {% endblock %}
 
 {% block content %}
+<div id="mw">
 <h1>{{ title }}</h1>
 
 <form method="GET" action="" class="inset">
@@ -19,16 +20,32 @@
     <input id="submit" type="submit" value="Search" />
 </form>
 
-{% if results %}
-<dl>
+<dl id="mw-entries">
     {% for key in results %}
     <dt>{{ key|sa1('slp1', to_script) }}</dt>
+    <dd>
         <ul>
         {% for e in results[key] %}
-            <li>{{ e|safe }}
+            <li>{{ e|safe }}</li>
         {% endfor %}
         </ul>
+    </dd>
     {% endfor %}
 </dl>
-{% endif %}
+</div>
+
+<script type="text/template" id="t-entry">
+<dt>
+    <span class="sa1">##<%= entry %>##</span>
+</dt>
+<dd>
+    <ul>
+    <% _.each(definitions, function(d) { %>
+        <li><%= d %></li>
+    <% }); %>
+    </ul>
+</dd>
+</script>
+
+<script src="{{ url_for('.static', filename='js/mw-app.js') }}"></script>
 {% endblock %}
