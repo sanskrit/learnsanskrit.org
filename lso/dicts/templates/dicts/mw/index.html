@@ -15,9 +15,14 @@
 <h1>{{ title }}</h1>
 
 <form method="GET" action="" class="inset">
-    {{ form.q }}
+    <div id="form-secondary">
     {{ form.from_script }} → {{ form.to_script }}
-    <input id="submit" type="submit" value="Search" />
+    </div>
+
+    <div id="form-main">
+    {{ form.q }}
+    <input id="submit" type="submit" value="Search" class="right" />
+    </div>
 </form>
 
 <dl id="mw-entries">

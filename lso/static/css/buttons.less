@@ -1,5 +1,7 @@
+@button-border-radius: 5px;
+
 .button-base(@color, @bg1, @bg2) {
-    .border-radius(5px);
+    .border-radius(@button-border-radius);
     border: 1px solid;
     box-shadow: 0px 1px 3px rgba(0,0,0,0.3);
     text-shadow: 0 1px 1px rgba(0,0,0,0.4);
@@ -28,6 +30,10 @@
 
 input[type='submit'], button, a.btn {
     .button-base(#000, @off-white, darken(@light-gray, 15%));
+
+    &.right {
+        border-radius: 0 @button-border-radius @button-border-radius 0;
+    }
 }
 
 input[type='submit'] {

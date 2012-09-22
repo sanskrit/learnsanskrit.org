@@ -33,7 +33,7 @@ mw = {
     'etc': TextRule('&c'),                    # "etc."
     'etc1': TextRule('&c'),                   # "etc."
     'etcetc': TextRule('&c'),                 # "etc."
-    'etym': TextRule('i',),                   # (Skt.?) etymology
+    'etym': Rule('i'),                        # etymology or cognate
     'euml': TextRule(u'ë'),                   # 'e' umlaut
     'fcom': TextRule(u'°'),                   # "Rare; significance unclear"
     'fs': TextRule('/'),                      # separates entry senses
