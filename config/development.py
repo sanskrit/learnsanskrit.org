@@ -1,6 +1,6 @@
 # Flask settings
 # --------------
-DATABASE_URI = 'sqlite:///development.db'
+DATABASE_URI = 'postgresql:///learnsanskrit'
 DEBUG = True
 SECRET_KEY = 'development'
 
