@@ -5,6 +5,6 @@
 audio/
 gen/
 /lso/data/
+production/
 
-config/production.py
 lso/static/.webassets-cache

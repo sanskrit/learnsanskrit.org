@@ -3,7 +3,7 @@ from flask.ext.assets import Bundle, Environment
 from flask.ext.mail import Mail
 
 app = Flask(__name__)
-app.config.from_object('config.development')
+app.config.from_object('development.config')
 
 # Assets
 # ------
