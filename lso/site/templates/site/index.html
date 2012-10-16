@@ -3,4 +3,22 @@
 {% block title %}Site{% endblock %}
 
 {% block content %}
+<article class="narrow">
+    <h1>Site information</h1>
+
+    <a class="block" href="{{ url_for('.resources') }}">
+    <h2>Resources</h2>
+    <p>Links to dictionaries, texts, textbooks, tools, and other Sanskrit resources</p>
+    </a>
+
+    <a class="block" href="{{ url_for('.about') }}">
+    <h2>About the site</h2>
+    <p>A bit of background about learnsanskrit.org and how it was created</p>
+    </a>
+
+    <a class="block" href="{{ url_for('.contact') }}">
+    <h2>Contact us</h2>
+    <p>Let us know what we're doing right and what we're doing wrong. We'll do our best to put your feedback to work. Together, we can make this site even better.</p>
+    </a>
+</article>
 {% endblock %}

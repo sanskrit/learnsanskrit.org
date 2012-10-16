@@ -16,6 +16,27 @@ a {
     &:hover {
         color: @blue;
     }
+
+    &.block {
+        display: block;
+        border: 1px transparent solid;
+        padding: 0;
+        text-decoration: none;
+        .transition(0.2s);
+
+        h2 {
+            color: #024a68;
+        }
+        p {
+            color: @dark-gray;
+        }
+
+        &:hover {
+            background: @off-white;
+            border: 1px @light-gray solid;
+            padding: 0 1em;
+        }
+    }
 }
 
 b a {
