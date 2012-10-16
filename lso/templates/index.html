@@ -1,45 +1,22 @@
-{% extends 'layout.html' %}
+{% extends 'narrow.html' %}
 
 {% block title_full %}learnsanskrit.org{% endblock %}
 
 {% block content %}
-
-<section class="grid">
-    <div class="span6">
-        <h1>Sanskrit Guide</h1>
-    </div>
-    <nav class="span6">
-        <ul>
-            <li><a href="{{ url_for('guide.lesson', unit='about', lesson='sanskrit') }}">About Sanskrit</a></li>
-            <li><a href="{{ url_for('guide.lesson', unit='about', lesson='the-guide') }}">About the guide</a></li>
-            <li><a href="{{ url_for('guide.index') }}">Contents</a></li>
-        </ul>
-    </nav>
+<p><dfn>learnsanskrit.org</dfn> was created to help people learn Sanskrit. Despite its simple appearance, it has a wealth of information:</p>
+<section>
+    <h1>Sanskrit Guide</h1>
+    <p>A <a href="{{ url_for('guide.index') }}">comprehensive grammar guide</a>. Or, learn more <a href="{{ url_for('guide.lesson', unit='about', lesson='sanskrit') }}">about Sanskrit</a> and <a href="{{ url_for('guide.lesson', unit='about', lesson='the-guide') }}">about the guide</a>. This is the oldest and most popular part of the site.</p>
 </section>
 
-<section class="grid">
-    <div class="span6">
-        <h1>Tools</h1>
-    </div>
-    <nav class="span6">
-        <ul>
-            <li><a href="{{ url_for('tools.sanscript') }}">Sanscript</a></li>
-            <li><a href="{{ url_for('dicts.mw') }}">Monier-Williams Dictionary</a></li>
-        </ul>
-    </nav>
+<section>
+    <h1>Tools</h1>
+    <p><a href="{{ url_for('tools.sanscript') }}">Sanscript</a> is our most popular tool, but you should also check out the <a href="{{ url_for('dicts.mw') }}">Monier-Williams Dictionary</a>.</p>
 </section>
 
-<section class="grid">
-    <div class="span6">
-        <h1>Site</h1>
-    </div>
-    <nav class="span6">
-        <ul>
-            <li><a href="{{ url_for('site.resources') }}">Resources</a></li>
-            <li><a href="{{ url_for('site.about') }}">About</a></li>
-            <li><a href="{{ url_for('site.contact') }}">Contact</a></li>
-        </ul>
-    </nav>
+<section>
+    <h1>Site information</h1>
+    <p>Other assorted pages, including various <a href="{{ url_for('site.resources') }}">Sanskrit resources</a> and a bit of information <a href="{{ url_for('site.about') }}">about the site</a>. You can also <a href="{{ url_for('site.contact') }}">contact us</a> if you have something to say.</p>
 </section>
 
 {% endblock %}
