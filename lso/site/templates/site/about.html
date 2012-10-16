@@ -1,6 +1,64 @@
-{% extends 'layout.html' %}
+{% extends 'general.html' %}
 
-{% block title %}About{% endblock %}
+{% block title %}About the site{% endblock %}
 
 {% block content %}
+<h1>About the site</h1>
+
+<div class="tabs">
+<section id="overview">
+    <h1>Overview</h1>
+    <p><dfn>learnsanskrit.org</dfn> was created in late 2009 as a set of study notes for Sanskrit students. Since then, it has continued to grow bit by bit, although it's due for a large update one of these days.</p>
+
+    <p>Its main feature is the Sanskrit <dfn>grammar guide</dfn>, which aims to help others learn Sanskrit as quickly as possible. Although this is the site's main feature, it has also been in continuous flux. The guide should grow more stable and comprehensive in the coming months.</p>
+
+    <p>In addition to the grammar guide, the site also features a few powerful Sanskrit <dfn>tools</dfn>, including <a href="{{ url_for('tools.sanscript') }}">Sanscript</a> (a transliteration program) and an interface to the <a href="{{ url_for('dicts.mw') }}">Monier-Williams Sanskrit-English Dictionary</a>.</p>
+
+    <p>More interesting things are soon to come. But for the time being, we hope these tide you over.</p>
+</section>
+
+<section id="helpful-books">
+    <h1>Helpful books</h1>
+    <p>This site was built with the help of the following books:</p>
+    <h2>Grammars</h2>
+    <ul>
+        <li>M.R. Kale's <cite>A Higher Sanskrit Grammar</cite></li>
+        <li>A. A. MacDonnell's <cite>Sanskrit Grammar</cite></li>
+        <li>Panini's <cite>Ashtadhyayi</cite></li>
+        <li>William Dwight Whitney's <cite>Sanskrit Grammar</cite></li>
+    </ul>
+
+    <h2>Textbooks</h2>
+    <ul>
+        <li>Michael Coulson's <cite>Teach Yourself Sanskrit</cite></li>
+        <li>Thomas Egenes' <cite>Introduction to Sanskrit Part One</cite> and <cite>Part Two</cite></li>
+        <li>Robert Goldman's <cite lang="sa">Devavāṅīpraveśikā</cite></li>
+        <li>Charles Wikner's <cite>A Practical Sanskrit Introductory</cite></li>
+    </ul>
+
+    <h2>Dictionaries and Lexica</h2>
+    <ul>
+        <li>Monier Monier-Williams's <cite>Sanskrit-English Dictionary</cite></li>
+        <li>V.S. Apte's <cite>Sanskrit-English Dictionary</cite></li>
+        <li>Amarasimha's <cite lang="sa">nāmaliṅgānuśāsanam</cite></li>
+    </ul>
+</section>
+
+<section id="technical-notes">
+    <h1>Technical notes</h1>
+    <h2>Code</h2>
+    <p>This site exists as a <a href="http://flask.pocoo.org">Flask</a> app hosted on <a href="http://www.webfaction.com/">WebFaction.com</a>. The site also uses <a href="http://lesscss.org/">Less</a>, <a href="http://jquery.com">jQuery</a>, and several Python packages, including <a href="http://www.sqlalchemy.org/">SQLAlchemy</a>.</p>
+
+    <p>The site was first created as a set of PHP files hosted on <a href="http://ibiblio.org">ibiblio.org</a>, who generously provided free hosting. If you have a project about something of cultural significance, i.e. about something you could find in a library, and you are looking for a web host, check the <a href="http://ibiblio.org/collection.html">ibiblio.org Collection Criteria</a> and see if your project could find a free home.</p>
+
+    <h2>Typesetting</h2>
+    <p>All English text was set with the Dvorak Simplified Keyboard, which was created more than 70 years ago for faster and more comfortable typing. Devanagari text was originally set with Baraha Direct, part of the <a href="http://baraha.com/">Baraha</a> text-setting suite for Indic scripts. Today, most of this site's Devanagari is transliterated from Harvard-Kyoto, which is a little easier to type.</p>
+</section>
+
+<section id="acnowledgments">
+    <h1>Acknowledgments</h1>
+    <p>This site is old enough that it difficult to thank all of the people who have contributed their wisdom, expertise, excitement, and good will to make it more effective. Thank you for your time, energy, and zeal, which have kept this project moving along even during some busy and hectic times.</p>
+</section>
+</div>
+
 {% endblock %}
