@@ -33,3 +33,7 @@ def index():
 @site.route('/resources')
 def resources():
     return render_template('site/resources.html')
+
+@site.route('/source')
+def source():
+    return render_template('site/source.html')
