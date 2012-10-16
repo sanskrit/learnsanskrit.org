@@ -1,0 +1,21 @@
+/* Table with <th> only along the columns */
+table.columns {
+    border: 1px @light-gray solid;
+    caption-side: bottom;
+    margin: 1em 0;
+    table-layout: fixed;
+    width: 100%;
+
+    caption, td, th {
+        line-height: @en-line-height;
+    }
+    caption {
+        color: @gray;
+    }
+    td, th {
+        text-align: center;
+    }
+    th {
+        font-size: 1.1em;
+    }
+}
