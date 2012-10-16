@@ -64,6 +64,7 @@ $.fn.tabs = function() {
 
     $links.on('click', 'a', function(e) {
         e.preventDefault();
+        e.stopPropagation();
         var id = this.hash,
             $li = $(this).closest('li'),
             active = 'active';

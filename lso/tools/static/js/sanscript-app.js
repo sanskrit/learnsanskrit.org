@@ -157,4 +157,6 @@
 
 $(function() {
     new App({ el: $('#sanscript') });
+    // Remove autoscroll for same-page links
+    $(document).off('click', 'a[href*="#"]');
 });
