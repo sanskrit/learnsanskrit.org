@@ -1,7 +1,84 @@
-{% extends 'layout.html' %}
+{% extends 'general.html' %}
 
 {% block title %}Resources{% endblock title %}
 
 {% block content %}
+<h1>Resources</h1>
 
+<div class="tabs">
+<section id="t-sanskrit">
+    <h1>Learning Sanskrit</h1>
+
+    <h2>Reference</h2>
+    <ul>
+        <li><p><a href="http://www.archive.org/details/sanskritgrammarf014425mbp">A Sanskrit Grammar for Students</a> by A. A. MacDonnell &mdash; Michael Coulson recommends this grammar in <i>Teach Yourself Sanskrit</i>, and with good reason; it is among the more readable and user-friendly grammars available.</p>
+        </li>
+        <li><p><a href="http://www.sanskrit-lexicon.uni-koeln.de/scans/KALEScan/disp1/index1.php?sfx=png">A Higher Sanskrit Grammar</a> by M. R. Kale &mdash; This is the only Sanskrit grammar in English that copiously refers to Panini's system. If you do not care for the web interface here, you can also download a PDF of the entire book, available <a href="http://sanskritebooks.wordpress.com/2009/11/03/a-higher-sanskrit-grammar-m-r-kale/">here</a>.</p></li>
+        <li><p><a href="http://www.archive.org/details/sanskritgrammari00whituoft">Sanskrit Grammar</a> by W. D. Whitney &mdash; Michael Coulson describes W. D. Whitney best, as a <q cite="Teach Yourself Sanskrit xix">great but startingly arrogant</q> Sanskrit scholar, and his book gives the same impression. But if you are looking for a complete account of Sanskrit grammar in English, this is probably the best resource available to you.</p>
+        <p>A scanned copy of the book is linked above, but you can also <a href="http://en.wikisource.org/wiki/Sanskrit_Grammar">read a plain text version</a> online.</p>
+        </li>
+    </ul>
+
+    <h2>Traditional</h2>
+    <p>If your goal is just to read Sanskrit texts, traditional grammar is too complex. But for your curiosity:</p>
+    <ul>
+        <li>[book] <a href="http://www.wilbourhall.org/index.html#panini">The Ashtadhayi of Panini</a>. It consists of eight parts:
+        <ol>
+            <li>Technical terms and rules of interpretation</li>
+            <li>Nouns, compounds, and cases</li>
+            <li>Attaching suffixes to verb roots</li>
+            <li>Attaching suffixes to noun stems (1)</li>
+            <li>Attaching suffixes to noun stems (2)</li>
+            <li>Accent and phonetic changes (1)</li>
+            <li>Accent and phonetic changes (2)</li>
+            <li>Sentences</li>
+        </ol>
+        <p>This is the foundation of Sanskrit grammar. The translation by Srisa Chandra Vasu has all of the rules in Sanskrit, a Sanskrit commentary, his English translation, and his English commentary.</p>
+        <p>To access the files, you should right-click on the link and select "Save Link As" or whatever similar option your web browser shows you. If you click directly on the link, the file may not appear, and your browser might freeze.</p></li>
+    </ul>
+
+    <h2>Vedic</h2>
+    <ul>
+        <li>[book] <a href="http://www.archive.org/details/vedicgrammarfor00macduoft">A Vedic Grammar for Students</a> &mdash; A. A. MacDonnell.</li>
+        <li>[book] <a href="http://www.archive.org/details/cu31924023050325">Vedic Grammar</a> &mdash; A. A. MacDonnell.
+    </ul>
+
+    <h2>Conversational</h1>
+    <ul>
+        <li><p><a href="http://acharya.iitm.ac.in/lessons.php">Learn Sanskrit through self-study</a> &mdash; For years, this has been the most popular and well-loved Sanskrit resource on the Internet.</p></li>
+        <li><p><a href="http://www.samskritabharati.org/">Samskrita Bharati</a> &mdash; By teaching Sanskrit in a conversational setting. Samskrita Bharati hopes to illustrate that Sanskrit is a viable conversational language that can bring <q>cultural renaissance,</q> <q>social harmony,</q> and <q>national integration,</q> presumably to the Indian community. The organization is best known for its classes and workshops.</p></li>
+    </ul>
+
+    <h2>Supplementary</h2>
+    <ul>
+        <li><p><a href="http://www.ubcsanskrit.ca">UBC Sanskrit</a> &mdash; Parts of the site are incomplete, but what it does offer is gracefully taught. It is refreshing to see the cleanliness and care with which the examples are constructed. Sound included.</p></li>
+    </ul>
+</section>
+
+<section id="t-dictionaries">
+    <h1>Dictionaries</h1>
+    <h2>Sanskrit to English</h1>
+    <ul>
+        <li><a href="{{ url_for('dicts.mw') }}">Monier Williams Online Dictionary</a>
+            <p>If you continue in your Sanskrit studies, this dictionary will become one of your dearest and most indispensable resources. The version provided above is a smoother version of <a href="http://www.sanskrit-lexicon.uni-koeln.de/monier/">the original</a>. A reader has also recommended the version <a href="http://lexica.indica-et-buddhica.org/dict/lexica">here</a>, which offers spelling corrections if you make a mistake.</p></li>
+        <li><a href="http://dsal.uchicago.edu/dictionaries/apte/">Apte's Sanskrit-English Dictionary</a></li>
+    </ul>
+    <h2>English to Sanskrit</h2>
+    <ul>
+        <li><a href="http://webapps.uni-koeln.de/tamil/">Monier Williams Online Dictionary</a></li>
+        <li><a href="http://www.sanskrit-lexicon.uni-koeln.de/scans/AEScan/index.php?sfx=pdf">Apte's English-Sanskrit Dictionary</a></li>
+    </ul>
+</section>
+
+<section id="t-texts">
+    <h1>Texts</h1>
+    <p>Hundreds of Sanskrit texts are online:</p>
+    <ul>
+        <li><p><a href="http://sanskritdocuments.org/">Sanskrit Documents</a> is home to hundreds of different Sanskrit texts. Texts are available as PDF files, but by using this site's <a href="tools/sanscript">Sanscript</a> tool, you can convert the ITX versions into any script you like.</p></li>
+        <li><p><a href="http://www.sub.uni-goettingen.de/ebene_1/fiindolo/gretil.htm">GRETIL</a> (Göttingen Register of Electronic Texts in Indian Languages) contains a large number of Sanskrit texts. These texts are in IAST, but you can convert them to Devanagari or another script by using <a href="{{ url_for('tools.sanscript') }}">Sanscript</a>.</p></li>
+        <li><p><a href="http://www.archive.org/details/freeindological">The Free Indological Collection</a> contains more than fifty rarer and more unusual Sanskrit texts, including a list of Sanskrit verb roots and a translation of the <a href="http://en.wikipedia.org/wiki/New_Testament">New Testament</a> into Sanskrit. Some texts are more interesting than others.</p></li>
+    </ul>
+</section>
+
+</div>
 {% endblock %}

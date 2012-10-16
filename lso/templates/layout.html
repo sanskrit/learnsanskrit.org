@@ -22,7 +22,8 @@
                 <li><a href="{{ url_for('site.index') }}">Site</a></li>
             </ul>
         </nav>
-        {% block content %}
+        {% block body %}
+        {% block content %}{% endblock %}
         {% endblock %}
     </body>
 </html>
