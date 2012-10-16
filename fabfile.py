@@ -5,6 +5,10 @@ learnsanskrit.org fabric file
 import lso
 import os
 from fabric.api import *
+try:
+    from production.fabfile import *
+except ImportError:
+    pass
 
 PROJECT_DIR = os.path.dirname(__file__)
 APP_DIR = 'lso'
