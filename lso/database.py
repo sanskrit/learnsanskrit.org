@@ -41,6 +41,24 @@ def create(*names):
             if name not in extant:
                 print '  [ c ] {0}'.format(name)
 
+def drop(*names):
+    """Drop tables from the database.
+
+    :param names: the tables to create. If blank, drop all tables.
+    """
+    if names:
+        for name in names:
+            table = metadata.tables.get(name, None)
+            if table is None:
+                print '  [ ? ] {0}'.format(name)
+            else:
+                table.drop()
+                print '  [ d ] {0}'.format(name)
+    else:
+        metadata.drop_all()
+        for name in metadata.sorted_tables:
+            print '  [ d ] {0}'.format(name)
+
 def seed(*names):
     """Seed tables in the database, by way of their blueprints.
 
