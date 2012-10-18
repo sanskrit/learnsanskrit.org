@@ -1,15 +1,9 @@
 import re
-from sqlalchemy import Column, Integer, ForeignKey, MetaData, String
+from sqlalchemy import Column, Integer, ForeignKey, String
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relation
-from sqlamp import DeclarativeMeta
 
-from ..database import engine, session
-
-metadata = MetaData(engine)
-BaseNode = declarative_base(metadata=metadata,
-                            metaclass=DeclarativeMeta)
-BaseNode.query = session.query_property()
+from ..database import engine, session, BaseNode
 
 class Lesson(BaseNode):
     __tablename__ = 'lessons'
