@@ -19,23 +19,50 @@ BaseNode = declarative_base(metadata=metadata,
                             metaclass=DeclarativeMeta)
 BaseNode.query = session.query_property()
 
-def init():
-    # Import models from all registered blueprints
-    for name in app.blueprints:
-        print '    %s' % name
+def create(*names):
+    """Create tables in the database.
+
+    :param names: the tables to create. If blank, create all tables.
+    """
+    if names:
+        for name in names:
+            table = metadata.tables.get(name, None)
+            if table is None:
+                print '  [ ? ] {0}'.format(name)
+            elif table.exists():
+                print '  [ e ] {0}'.format(name)
+            else:
+                table.create()
+                print '  [ c ] {0}'.format(name)
+    else:
+        extant = {t.name for t in metadata.tables.values() if t.exists()}
+        metadata.create_all()
+        for name in metadata.sorted_tables:
+            if name not in extant:
+                print '  [ c ] {0}'.format(name)
+
+def seed(*names):
+    """Seed tables in the database, by way of their blueprints.
+
+    For a blueprint `bp`, this function will try to call `bp.setup.run()`.
+
+    Due to interdependencies, it's not always clear how a model should be
+    initialized or where its seed code should live. So, the details of this
+    are left to blueprints.
+
+    :param blueprints: the blueprint containing the tables to seed.
+    """
+
+    names = names or app.blueprints
+
+    for name in names:
+        path = 'lso.{0}.setup'.format(name)
+        run = None
+
         try:
-            path = 'lso.%s.models' % name
-            blue = __import__(path, fromlist=[path])
+            print '  {0}\n  {1}'.format(name, '-' * len(name))
+            setup = __import__(path, fromlist=[path])
+            setup.run()
+            print
         except ImportError:
-            continue
-
-        # If a model extends `Base`, then `create_all` will account for it.
-        # For other cases, try calling a custom init function:
-        try:
-            fn = blue.init
-        except AttributeError:
-            fn = None
-        if fn is not None:
-            fn()
-
-    Base.metadata.create_all(bind=engine)
+            print '  No setup code found!\n'

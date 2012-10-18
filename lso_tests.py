@@ -10,7 +10,6 @@ class LSOTestCase(unittest.TestCase):
         lso.app.config['TESTING'] = True
         lso.app.config['CSRF_ENABLED'] = False
         self.app = lso.app.test_client()
-        lso.database.init()
 
     def tearDown(self):
         os.close(self.db_file)
