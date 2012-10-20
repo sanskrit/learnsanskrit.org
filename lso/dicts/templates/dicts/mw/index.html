@@ -29,13 +29,17 @@
     {% for key in results %}
     <dt>{{ key|sa1('slp1', to_script) }}</dt>
     <dd>
-        <ul>
-        {% for e in results[key] %}
-            <li>{{ e|safe }}</li>
-        {% endfor %}
-        </ul>
+        {% if results[key] -%}
+            <ul>
+            {% for e in results[key] -%}
+                <li>{{ e|safe }}</li>
+            {% endfor -%}
+            </ul>
+        {%- else %}
+            <p>No results found.</p>
+        {% endif %}
     </dd>
-    {% endfor %}
+    {%- endfor %}
 </dl>
 </div>
 
@@ -44,11 +48,15 @@
     <span class="sa1">##<%= entry %>##</span>
 </dt>
 <dd>
-    <ul>
-    <% _.each(definitions, function(d) { %>
-        <li><%= d %></li>
-    <% }); %>
-    </ul>
+    <% if (_.isEmpty(definitions)) { %>
+        <p>No results found.</p>
+    <% } else { %>
+        <ul>
+        <% _.each(definitions, function(d) { %>
+            <li><%= d %></li>
+        <% }); %>
+        </ul>
+    <% } %>
 </dd>
 </script>
 
