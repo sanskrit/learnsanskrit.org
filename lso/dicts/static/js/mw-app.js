@@ -8,13 +8,40 @@
     var EntryView = Backbone.View.extend({
         initialize: function() {
             this.template = _.template($('#t-entry').html());
+            this.link_template = _.template($('#t-reflink').html());
         },
 
         render: function() {
-            var attr = this.model.attributes;
-            this.$el.html(this.template({ entry: attr.entry,
-                                          definitions: attr.definitions }));
+            var model = this.model;
+            this.$el.html(this.template({ entry: model.get('entry'),
+                                          definitions: model.get('definitions') }));
+            this.addLinks();
             return this;
+        },
+
+        addLinks: function() {
+            var view = this,
+                entry = this.model.get('entry');
+            $('span.sa2', this.$el).each(function() {
+                var $span = $(this),
+                    text = $span.text().replace(/#/g, '');
+
+                // Difficult cases
+                if (text.match(/[ *°]/g)) {
+                    return;
+                }
+
+                // Join with searched word
+                if (text.charAt(0) == '-') {
+                    text = entry + text;
+                } else if (text.charAt(text.length-1) == '-') {
+                    text = text + entry;
+                }
+
+                text = text.replace(/\W/g, '');
+
+                $span.wrapInner(view.link_template({ text: text }));
+            });
         }
     });
 
@@ -38,7 +65,8 @@
         },
 
         events: {
-            'click #submit': 'query'
+            'click #submit': 'form_query',
+            'click a.reflink': 'link_query',
         },
 
         render: function() {
@@ -55,14 +83,23 @@
                 .fadeIn(200);
         },
 
-        query: function(e) {
+        form_query: function(e) {
             e.preventDefault();
-            var self = this,
-                q = this.form.$q.val(),
+            var q = this.form.$q.val(),
                 from = this.form.$from.val(),
-                slp_query = t(q, from, 'slp1');
+                slp_query = t(q, from, 'slp1').replace(/\W/g, '+');
 
-            slp_query = slp_query.replace(/[,; ]/g, '+');
+            this.query(slp_query);
+        },
+
+        link_query: function(e) {
+            e.preventDefault();
+            var $link = $(e.currentTarget);
+            this.query($link.data('text'));
+        },
+
+        query: function(slp_query) {
+            var self = this;
             $.getJSON('/api/mw/' + slp_query, function(data) {
                 var terms = slp_query.split('+'),
                     sorted_data = [];
