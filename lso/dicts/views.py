@@ -1,5 +1,5 @@
 from collections import OrderedDict
-from flask import render_template, request, jsonify
+from flask import redirect, render_template, request, url_for, jsonify
 from sanskrit.letters import sanscript as S
 
 from lso import app
@@ -32,6 +32,23 @@ def mw():
                                                       results=results)
     else:
         return render_template('dicts/mw/index.html', form=form)
+
+@dicts.route('/mw/q-<from_script>/<q>')
+def mw_pretty(from_script, q):
+    form = QueryForm(csrf_enabled=False)
+    to_script = S.DEVANAGARI
+
+    if from_script not in S.SCHEMES:
+        return redirect(url_for('.mw'))
+
+    slp_query = S.t(q, from_script, S.SLP1)
+    results = mw_results(slp_query)
+    for key in results:
+        results[key]  = [mw_transform(x, to_script) for x in results[key]]
+
+    return render_template('dicts/mw/index.html', form=form,
+                                                  to_script=to_script,
+                                                  results=results)
 
 @app.route('/api/mw/<slp_query>')
 def mw_api(slp_query):
