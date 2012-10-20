@@ -1,3 +1,5 @@
+import os
+
 # Flask settings
 # --------------
 DATABASE_URI = 'postgresql:///learnsanskrit'
@@ -11,4 +13,5 @@ DEFAULT_MAIL_SENDER = 'form@learnsanskrit.org'
 DEFAULT_MAIL_RECIPIENT = 'info@learnsanskrit.org'
 
 # Large data
-MONIER_PATH = 'data/monier.xml'
+SANSKRIT_PATH = os.path.expanduser('~/sanskrit/data')
+MONIER_XML = os.path.join(SANSKRIT_PATH, 'mw', 'monier.xml')

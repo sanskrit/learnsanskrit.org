@@ -27,8 +27,7 @@ def init_monier():
     exp_key2 = re.compile('<key2>(.*?)</key2>')
     exp_body = re.compile('<body>.*</body>')
 
-    MONIER_FILE = os.path.join(app.root_path, app.config['MONIER_PATH'])
-    f = open(MONIER_FILE, 'r')
+    f = open(app.config['MONIER_XML'], 'r')
     i = 0
 
     for line in f.readlines():
