@@ -41,20 +41,21 @@
     {{ ex('dharmaH -> dha-rmaH, dhar-maH', iast=true) }}
 </ul>
 
-<p>We need one more rule to account for this. Traditional grammar has one, but it is difficult. So let us make our own, simpler rule:</p>
+<p>In these cases, you can divide the phrases however you like. Traditional grammar tries to make syllables end in vowels ({{ 'dha-rmaH'|i }}). But this makes some parts of Sanskrit more difficult later on. So let us make our own convention:</p>
 
-<blockquote><p>A syllable should end with a consonant if possible, without breaking the rules above.</p></blockquote>
+<p class="rule">A syllable should end with a consonant if possible, without breaking the rules above.</p>
+
+<p>With this convention, all phrases can be divided in only one way:</p>
 
 <ul class="examples">
     {{ ex('putraH -> put-raH', iast=true) }}
     {{ ex('dharmaH -> dhar-maH', iast=true) }}
 </ul>
 
-<p>With these definitions, we can split any Sanskrit phrase into syllables:</p>
+<p>Now we can split any Sanskrit phrase into syllables:</p>
 
 <ul class="examples">
     {{ ex('anekavaktranayanam -> a-ne-ka-vak-tra-na-ya-nam', iast=true) }}
-    {{ ex('dharmaH -> dha-rmaH, dhar-maH', iast=true) }}
 </ul>
 
 <h2>Light and heavy</h2>
@@ -63,15 +64,15 @@
 <p>Let's see some examples. In this sentence, every syllable here is heavy:</p>
 
 <ul class="examples">
-    {{ ex('vRddho vRkSas tiSThaty agre (vRd-dho-vRk-Sas-tiS-That-yag-re)', 'An ancient tree stands ahead.') }}
+    {{ ex('vRddho vRkSas tiSThaty agre -> vRd-dho-vRk-Sas-tiS-That-yag-re', 'An ancient tree stands ahead.', iast=true) }}
 </ul>
 
-<p>Even though some of these syllables have short vowels, each lasts the same amount of time.</p>
+<p>Even though some of these syllables have short vowels, each syllable lasts the same amount of time.</p>
 
 <p>Here is another example. In this sentence, every syllable is light:</p>
 
 <ul class="examples">
-    {{ ex('sa zukam api girati', 'It swallows the parrot, too.', iast=true) }}
+    {{ ex('sa zukam api girati -> sa-zu-ka-ma-pi-gi-ra-ti', 'It swallows the parrot, too.', iast=true) }}
 </ul>
 
 <p>Like the previous example, this example has eight syllables. But since every syllable here is light, this example lasts exactly half as long.</p>
@@ -79,10 +80,10 @@
 <p>Finally, consider this example:</p>
 
 <ul class="examples">
-    {{ ex('arjuna', 'Arjuna', iast=true) }}
+    {{ ex('arjuna -> ar-ju-na', 'Arjuna', iast=true) }}
 </ul>
 
 <p>"{{ 'ar'|i }}" and "{{ 'juna'|i }}" last for exactly the same amount of time, even though all of these vowels are short.</p>
 
-<p>As you read Sanskrit, try to be mindful of these light and heavy syllables. They do more than control how Sanskrit is pronounced; they give Sanskrit poetry some of its beauty and power.</p>
+<p>As you read Sanskrit, try to be mindful of these light and heavy syllables. They do more than control how Sanskrit is pronounced; they also give Sanskrit poetry some of its beauty and power.</p>
 {% endblock %}
