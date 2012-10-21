@@ -64,12 +64,11 @@ mw = {
     'to': None,                               # infinitive marker
     'usage': Rule(None),                      # experimental
     'uuml': TextRule(u'ü'),                   # 'u' umlaut
-    'vlex': Rule('span', {'class': 'vlex'}),  # lexical category
+    'vlex': Rule('span', {'class': 'lex'}),   # lexical category
 }
 
 def mw_transform(data, to_script):
     clean_data = re.sub('[~_]', ' ', data)
-    clean_data = re.sub(' ([,;])', '\\1', clean_data)
 
     xml = ET.fromstring(clean_data)
     for gk in xml.findall('.//gk'):
@@ -77,6 +76,7 @@ def mw_transform(data, to_script):
     translate(xml, mw)
 
     result = ET.tostring(xml, 'utf-8').decode('utf-8')
+    result = re.sub(' ([,;])', '\\1', result)
     if to_script:
         return S.transliterate('##' + result, S.SLP1, to_script)
     else:

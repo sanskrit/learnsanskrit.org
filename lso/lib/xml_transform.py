@@ -25,7 +25,6 @@ class TextRule(Rule):
         super(TextRule, self).__init__(after_open=after_open,
                                        before_close=before_close)
 
-
 def translate(xml, rules):
     """Destructively transform `xml` according to the rules given. Since the
     structure of the XML element remains intact, this is less a transformation
@@ -38,7 +37,7 @@ def translate(xml, rules):
         try:
             rule = rules[elem.tag]
             if rule is None:
-                elem.tag = elem.text = elem.tail = None
+                elem.tag = elem.text = None
         except KeyError:
             continue
 
