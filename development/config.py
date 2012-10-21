@@ -14,4 +14,4 @@ DEFAULT_MAIL_RECIPIENT = 'info@learnsanskrit.org'
 
 # Large data
 SANSKRIT_PATH = os.path.expanduser('~/sanskrit/data')
-MONIER_XML = os.path.join(SANSKRIT_PATH, 'mw', 'monier.xml')
+MONIER_DIR = os.path.join(SANSKRIT_PATH, 'mw')

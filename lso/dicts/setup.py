@@ -1,12 +1,23 @@
 import os
 import re
+import yaml
+from xml.etree import ElementTree as ET
 
 from lso import app
 from ..database import session
 from .models import MonierEntry
 
+MONIER_XML = 'monier.xml'
+GREEK_YML = 'greek.yml'
+
 def init_monier():
     """Initialize the Monier-Williams dictionary."""
+
+    # Map from line numbers to lists of Greek words in beta code
+    MONIER_DIR = app.config['MONIER_DIR']
+    with open(os.path.join(MONIER_DIR, GREEK_YML)) as f:
+        greek = yaml.load(f)
+        greek = {x['num']: x['greek'] for x in greek}
 
     # MW entries are at 4 hierarchical levels, plus a "null" level.
     # All entries are wrapped in one of these levels.
@@ -21,23 +32,27 @@ def init_monier():
         levels[k] = 4
     levels['HPW'] = 0
 
-    entry_tags = levels.keys()
-
-    exp_key1 = re.compile('<key1>(.*?)</key1>')
-    exp_key2 = re.compile('<key2>(.*?)</key2>')
-    exp_body = re.compile('<body>.*</body>')
-
-    f = open(app.config['MONIER_XML'], 'r')
+    f = open(os.path.join(MONIER_DIR, MONIER_XML), 'r')
     i = 0
 
     for line in f.readlines():
         try:
-            unaccented_entry = exp_key1.search(line).group(1)
-            accented_entry = exp_key2.search(line).group(1)
-            data = exp_body.search(line).group(0)
-        except AttributeError:
+            xml = ET.fromstring(line)
+        except ET.ParseError:
             continue
 
+        h = xml.find('h')
+        body = xml.find('body')
+        unaccented_entry = h.find('key1').text
+        accented_entry = h.find('key2').text
+
+        # Set beta code
+        L = xml.find('tail/L').text
+        betas = greek.get(L, []) or greek.get(L + '0', [])
+        for b, gk in zip(betas, body.findall('.//gk')):
+            gk.text = b
+
+        data = ET.tostring(body)
         e = MonierEntry(entry=unaccented_entry, accented=accented_entry,
                         data=data, parent=None)
         session.add(e)

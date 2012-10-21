@@ -20,8 +20,8 @@
         },
 
         addLinks: function() {
-            var view = this,
-                entry = this.model.get('entry');
+            var entry = this.model.get('entry'),
+                link_template = this.link_template;
             $('span.sa2', this.$el).each(function() {
                 var $span = $(this),
                     text = $span.text().replace(/#/g, '');
@@ -40,7 +40,13 @@
 
                 text = text.replace(/\W/g, '');
 
-                $span.wrapInner(view.link_template({ text: text }));
+                $span.wrapInner(link_template({ text: text,
+                    url: '/dict/mw/q-slp1/' }));
+            });
+            $('span.gk', this.$el).each(function() {
+                var $span = $(this);
+                $span.wrapInner(link_template({ text: $span.text(),
+                    url: 'http://www.perseus.tufts.edu/hopper/morph?l=' }));
             });
         }
     });

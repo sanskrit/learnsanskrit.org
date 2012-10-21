@@ -26,15 +26,14 @@ class TextRule(Rule):
                                        before_close=before_close)
 
 
-def translate(doc, rules):
+def translate(xml, rules):
     """Destructively transform `xml` according to the rules given. Since the
     structure of the XML element remains intact, this is less a transformation
     and more a translation.
 
-    :param doc: an XML document, in text
+    :param xml: an XML document
     :param rules: a dict of that maps a tag name to a Rule
     """
-    xml = ET.fromstring(doc)
     for elem in xml.getiterator():
         try:
             rule = rules[elem.tag]
@@ -56,4 +55,3 @@ def translate(doc, rules):
                     elem.text = (elem.text or '') + rule.before_close
         except (AttributeError, TypeError):
             pass
-    return ET.tostring(xml, 'utf-8').decode('utf-8')

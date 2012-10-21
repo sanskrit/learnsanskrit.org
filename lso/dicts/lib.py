@@ -3,7 +3,7 @@
 
 import re
 import xml.etree.ElementTree as ET
-from sanskrit.letters import sanscript as S
+from sanskrit.letters import sanscript as S, beta2unicode as B
 
 from lso.lib.xml_transform import Rule, TextRule, translate
 
@@ -37,7 +37,7 @@ mw = {
     'euml': TextRule(u'ë'),                   # 'e' umlaut
     'fcom': TextRule(u'°'),                   # "Rare; significance unclear"
     'fs': TextRule('/'),                      # separates entry senses
-    'gk': Rule('b'),                          # Greek
+    'gk': Rule('span', {'class': 'gk'}),      # Greek
     'lex': Rule('span', {'class': 'lex'}),    # lexical info
     'ls': Rule('cite'),                       # textual citation
     'msc': TextRule(';'),                     # separates verb senses
@@ -70,7 +70,13 @@ mw = {
 def mw_transform(data, to_script):
     clean_data = re.sub('[~_]', ' ', data)
     clean_data = re.sub(' ([,;])', '\\1', clean_data)
-    result = translate(clean_data, mw)
+
+    xml = ET.fromstring(clean_data)
+    for gk in xml.findall('.//gk'):
+        gk.text = B.t(gk.text)
+    translate(xml, mw)
+
+    result = ET.tostring(xml, 'utf-8').decode('utf-8')
     if to_script:
         return S.transliterate('##' + result, S.SLP1, to_script)
     else:
