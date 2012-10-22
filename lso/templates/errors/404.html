@@ -1,5 +1,22 @@
-{% extends 'layout.html' %}
+{% extends 'narrow.html' %}
+
+{% block title %}Page not found{% endblock %}
 
 {% block content %}
-404
+<h1>Page not found! <span style="color: #d00">(404)</span></h1>
+
+<p>We couldn't find the page you were looking for. The link you followed might be incorrect or out of date. Such things happen from time to time.</p>
+
+<p>But that doesn't mean you should give up hope! Perhaps you were looking for one of these:</p>
+
+<ul>
+    <li><a href="{{ url_for('tools.sanscript') }}">Sanscript</a></li>
+    <li><a href="{{ url_for('guide.index') }}">Sanskrit Guide</a></li>
+    <li><a href="{{ url_for('dicts.mw') }}">Monier-Williams Dictionary</a>.</li>
+</ul>
+
+<p>If not, you can use the menu bar at the top of the page to try finding what you were looking for.</p>
+
+<p>If you came here by clicking a link <strong>on this site</strong>, please do <a href="{{ url_for('site.contact') }}">let us know how it happened</a>. We'll do our best to fix the error as soon as possible.</p>
+
 {% endblock %}
