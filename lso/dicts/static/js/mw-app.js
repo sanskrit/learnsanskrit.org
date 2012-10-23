@@ -1,5 +1,6 @@
 (function() {
-    var t = Sanscript.t;
+    var t = Sanscript.t,
+        GREEK_URL = 'http://www.perseus.tufts.edu/hopper/morph?l=';
 
     var Entries = Backbone.Collection.extend({
         model: Backbone.Model
@@ -44,9 +45,9 @@
                     url: '/dict/mw/q-slp1/' }));
             });
             $('span.gk', this.$el).each(function() {
-                var $span = $(this);
-                $span.wrapInner(link_template({ text: $span.text(),
-                    url: 'http://www.perseus.tufts.edu/hopper/morph?l=' }));
+                var $span = $(this),
+                    url = GREEK_URL + $span.text();
+                $span.wrapInner($('<a/>').attr({href: url, target: '_blank'}));
             });
         }
     });
