@@ -54,3 +54,5 @@ def translate(xml, rules):
                     elem.text = (elem.text or '') + rule.before_close
         except (AttributeError, TypeError):
             pass
+        if not (elem.text or len(elem)):
+            elem.tag = elem.text = None
