@@ -1,4 +1,13 @@
-{% extends 'layout.html' %}
+{% extends 'narrow.html' %}
+
+{% block title %}Dictionaries{% endblock %}
 
 {% block content %}
+<h1>Dictionaries</h1>
+
+<a class="block" href="{{ url_for('.mw') }}">
+<h2>Monier-Williams Sanskrit-English Dictionary</h2>
+<p>The most comprehensive Sanskrit-English dictionary available, with nearly 300,000 entries.</p>
+</a>
+
 {% endblock %}
