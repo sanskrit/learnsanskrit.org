@@ -61,13 +61,22 @@
         }
     });
 
+    window.Routes = Backbone.Router.extend({
+        routes: {
+            'dict/mw/q-:from/:query': 'search',
+        },
+
+        search: function(from, q) {
+            MW.app.query(q, Sanscript.t(q, from, 'slp1'));
+        }
+    });
+
     window.App = Backbone.View.extend({
         initialize: function() {
             this.$entries = $('#mw-entries');
-
-            var collection = this.collection = new Entries();
             this.form = new FormView({ el: $('form', this.$el) });
 
+            var collection = this.collection = new Entries();
             this.collection.on('all', this.render, this);
         },
 
@@ -96,13 +105,14 @@
                 from = this.form.$from.val(),
                 slp_query = t(q, from, 'slp1').replace(/\W/g, '+');
 
-            this.query(slp_query);
+            var url = 'dict/mw/q-slp1/' + slp_query;
+            MW.routes.navigate(url, {trigger: true, replace: true});
         },
 
         link_query: function(e) {
             e.preventDefault();
-            var $link = $(e.currentTarget);
-            this.query($link.data('text'));
+            var url = 'dict/mw/q-slp1/' + $(e.currentTarget).data('text');
+            MW.routes.navigate(url, {trigger: true});
         },
 
         query: function(slp_query) {
@@ -120,5 +130,8 @@
 }());
 
 $(function() {
-    new App({ el: $('#mw') });
+    var MW = window.MW = {};
+    MW.app = new App({ el: $('#mw') });
+    MW.routes = new Routes();
+    Backbone.history.start({ pushState: true });
 });
