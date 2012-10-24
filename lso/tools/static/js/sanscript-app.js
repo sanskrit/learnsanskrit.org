@@ -46,21 +46,30 @@
                 data[$this.attr('name')] = $this.val();
             });
             this.model.set(data);
+            $.cookie('sanscript', this.model.toJSON());
         },
 
         render: function() {
-            var settings = this.model.attributes,
+            // Make view conform to model
+            var settings = this.model.toJSON();
+            _.each(settings, function(v, k) {
+                var $s = $('#' + k);
+                if ($s.is(':checkbox')) {
+                    $s.prop('checked', v);
+                } else {
+                    $s.val(v);
+                }
+            });
+
+            // Update examples
+            var $samp = this.$samp,
                 from = settings.from_script,
                 to = settings.to_script;
-            var $kbd = this.$kbd,
-                $samp = this.$samp;
-            $kbd.each(function(i) {
+            this.$kbd.each(function(i) {
                 var $this = $(this),
-                    raw = $this.data('raw'),
-                    input = t(raw, 'hk', from, {skip_sgml: true}),
-                    output = t(raw, 'hk', to, settings);
-                $this.text(input);
-                $samp.eq(i).text(output);
+                    raw = $this.data('raw');
+                $this.text( t(raw, 'hk', from, {skip_sgml: true}) ),
+                $samp.eq(i).text( t(raw, 'hk', to, settings) );
             });
         }
     });
@@ -92,7 +101,6 @@
             this.$output = $('#output');
 
             var model = this.model = new Settings;
-
             this.panel = new PanelView({ el: $('form'), model: model });
             this.map = new MapView({ el: $('#t-map'), model: model });
 
@@ -104,8 +112,14 @@
                 }
             });
 
+            var cookie = $.cookie('sanscript');
+            if (cookie) {
+                model.set(cookie);
+            } else {
+                this.panel.gather();
+            }
+
             this.model.bind('change', this.render, this);
-            this.panel.gather();
         },
 
         events: {

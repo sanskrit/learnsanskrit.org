@@ -1,5 +1,7 @@
 $(function() {
     $('div.tabs').tabs();
+    $.cookie.defaults.expires = 365;
+    $.cookie.json = true;
 });
 
 $(document).on('click', 'a[href*="#"]', function(e) {
