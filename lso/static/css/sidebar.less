@@ -84,3 +84,23 @@ ol.unit-nav {
         }
     }
 }
+
+ul.step-nav {
+    border-top: 1px @darker-background solid;
+    list-style: none;
+    padding: 0;
+
+    li {
+        float: left;
+        text-align: center;
+        width: 50%;
+        &:hover {
+            background: @darker-background;
+            color: #000;
+        }
+    }
+    a {
+        display: block;
+        line-height: 2 * @en-line-height;
+    }
+}

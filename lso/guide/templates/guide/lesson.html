@@ -29,6 +29,12 @@
         {%- endif -%}
     {%- endfor %}
     </ol>
+
+    <ul class="step-nav">
+        <li>{% if prev %}<a href="{{ lesson_url(unit.slug, prev.slug) }}">&laquo; Previous</a>{% else %}&nbsp;{% endif %}</li>
+        <li>{% if next %}<a href="{{ lesson_url(unit.slug, next.slug) }}">Next &raquo;</a>{% else %}&nbsp;{% endif %}</li>
+    </ul>
+    </nav>
     </section>
 </div>
 {% endblock %}

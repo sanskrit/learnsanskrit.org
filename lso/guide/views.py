@@ -44,14 +44,19 @@ def lesson(**kwargs):
     else:
         return redirect(url_for('guide.index'))
 
-    lesson = None
+    lesson = prev = next = None
     for L in unit.children:
-        if L.slug == lesson_slug:
-            lesson = L
+        if lesson:
+            next = L
             break
+        elif L.slug == lesson_slug:
+            lesson = L
+        else:
+            prev = L
 
     if not lesson:
         return redirect(url_for('guide.unit', unit=unit_slug))
 
     template = 'guide/%s/%s.html' % (unit.slug, lesson.slug)
-    return render_template(template, lesson=lesson, unit=unit)
+    return render_template(template, lesson=lesson, prev=prev, next=next,
+                           unit=unit)
