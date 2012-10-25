@@ -44,15 +44,6 @@ b a {
     text-decoration: none;
 }
 
-button, input[type=submit] {
-    display: block;
-
-    &.large {
-        height: 3em;
-        padding: 0 1em;
-    }
-}
-
 dfn {
     color: darken(@red, 25%);
     font-weight: bold;
@@ -79,26 +70,11 @@ h1 {
     line-height: 1;
 }
 
-input[type=text], input[type=email], input[type=password], textarea {
-    border: 1px #ddd solid;
-    box-sizing: border-box;
-    font: inherit;
-    margin: 0 0 1em;
-    padding: 0.5em;
-    width: 100%;
-}
-
 kbd, samp {
     background: #fff;
     border: 1px @light-gray solid;
     padding: 0.2em;
     .border-radius(0.2em);
-}
-
-label {
-    display: block;
-    line-height: @en-line-height;
-    margin: 0 0 1em;
 }
 
 li {
@@ -112,9 +88,4 @@ ol {
 p {
     line-height: @en-line-height;
     margin: 0 0 1em;
-}
-
-select {
-    background: #fff;
-    border-color: @light-gray;
 }
