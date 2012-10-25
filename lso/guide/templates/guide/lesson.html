@@ -18,16 +18,15 @@
 
 <div id="sidebar">
     <section id="nav-pane">
-    <h2>{{ unit.title }}</h2>
-    <ol>
+    <h2><a href="{{ lesson_url(unit.slug) }}">{{ unit.title }}</a></h2>
+    <ol class="unit-nav">
     {%- for L in unit.children %}
         {% if L.id == lesson.id -%}
-            <li class="active">
+            <li class="active"><span class="num">{{ loop.index }}</span> {{ L.title|safe }}</li>
         {%- else -%}
-            <li>
+            <li><a href="{{ lesson_url(unit.slug, L.slug) }}">
+            <span class="num">{{ loop.index }}</span> {{ L.title|safe }}</a></li>
         {%- endif -%}
-        <a href="{{ lesson_url(unit.slug, L.slug) }}">
-        <span class="num">{{ loop.index }}</span> {{ L.title|safe }}</a></li>
     {%- endfor %}
     </ol>
     </section>
