@@ -16,7 +16,7 @@ less = Bundle(*less_files, filters='less', output='gen/style.css', debug=False)
 assets.register('all-css', less)
 
 js = Bundle('js/jquery-plugins.js', 'js/jquery.cookie.js', 'js/sanscript.js',
-            'js/setup.js', output='gen/scripts.js')
+            'js/site.js', 'js/setup.js', output='gen/scripts.js')
 assets.register('all-js', js)
 
 # Mail

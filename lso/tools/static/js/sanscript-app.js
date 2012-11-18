@@ -35,6 +35,7 @@
             'change': 'gather'
         },
 
+        // Build model from DOM defaults
         gather: function() {
             var data = {}
             this.$check.each(function() {
@@ -45,8 +46,7 @@
                 var $this = $(this);
                 data[$this.attr('name')] = $this.val();
             });
-            this.model.set(data);
-            $.cookie('sanscript', this.model.toJSON());
+            this.model.save(data);
         },
 
         render: function() {
@@ -83,12 +83,12 @@
         },
         render: function() {
             var self = this,
-                settings = this.model.attributes;
+                model = this.model;
             this.$('li').each(function() {
                 var $this = $(this),
                     raw = $this.data('raw').toString(),
-                    to = t(raw, 'itrans', settings.to_script),
-                    from = t(raw, 'itrans', settings.from_script);
+                    to = t(raw, 'itrans', model.get('to_script')),
+                    from = t(raw, 'itrans', model.get('from_script'));
                 $this.html(self.template({ to: to, from: from }));
             });
             return this;
@@ -100,7 +100,7 @@
             this.$input = $('#input');
             this.$output = $('#output');
 
-            var model = this.model = new Settings;
+            var model = this.model = new LSO.LocalData({ id: 'sanscript' });
             this.panel = new PanelView({ el: $('form'), model: model });
             this.map = new MapView({ el: $('#t-map'), model: model });
 
@@ -112,14 +112,12 @@
                 }
             });
 
-            var cookie = $.cookie('sanscript');
-            if (cookie) {
-                model.set(cookie);
-            } else {
+            if (model.isEmpty()) {
                 this.panel.gather();
             }
 
-            this.model.bind('change', this.render, this);
+            model.bind('change', this.render, this);
+            this.panel.render();
         },
 
         events: {
