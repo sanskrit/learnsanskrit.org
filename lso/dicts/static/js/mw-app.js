@@ -6,6 +6,9 @@
         model: Backbone.Model
     });
 
+    /**
+     * Dictionary entry
+     */
     var EntryView = Backbone.View.extend({
         initialize: function() {
             this.template = _.template($('#t-entry').html());
@@ -17,6 +20,7 @@
             this.$el.html(this.template({ entry: model.get('entry'),
                                           definitions: model.get('definitions') }));
             this.addLinks();
+            this.addTooltips();
             return this;
         },
 
@@ -49,6 +53,17 @@
                     url = GREEK_URL + $span.text();
                 $span.wrapInner($('<a/>').attr({href: url, target: '_blank'}));
             });
+        },
+
+
+        addTooltips: function() {
+            $('abbr', this.$el).each(function() {
+                var $elem = $(this),
+                    abbr = $elem.text().replace(/[^A-z]/g, ''),
+                    title = MW.app.abbr[abbr] || '(unknown)';
+                $elem.attr('title', title);
+                $elem.data("aoeu", 'bcde');
+            });
         }
     });
 
@@ -73,8 +88,14 @@
 
     window.App = Backbone.View.extend({
         initialize: function() {
+            var self = this;
             this.$entries = $('#mw-entries');
             this.form = new FormView({ el: $('form', this.$el) });
+
+            // Normal abbreviations, like 'nom.'
+            $.getJSON('/dict/static/data/mw-abbr.json', function(data) {
+                self.abbr = data;
+            });
 
             var collection = this.collection = new Entries();
             this.collection.on('all', this.render, this);
@@ -82,7 +103,7 @@
 
         events: {
             'click #submit': 'form_query',
-            'click a.reflink': 'link_query',
+            'click a.reflink': 'link_query'
         },
 
         render: function() {
@@ -120,7 +141,7 @@
             $.getJSON('/api/mw/' + slp_query, function(data) {
                 var terms = slp_query.split('+'),
                     sorted_data = [];
-                for (var i = 0, t; t = terms[i]; i++) {
+                for (var i = 0, t; (t = terms[i]); i++) {
                     sorted_data.push({ entry: t, definitions: data[t] });
                 }
                 self.collection.reset(sorted_data);
