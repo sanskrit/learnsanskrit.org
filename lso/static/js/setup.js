@@ -2,6 +2,7 @@ $(function() {
     $('div.tabs').tabs();
     $.cookie.defaults.expires = 365;
     $.cookie.json = true;
+    $.tooltips('[title]', 'body');
 });
 
 $(document).on('click', 'a[href*="#"]', function(e) {
