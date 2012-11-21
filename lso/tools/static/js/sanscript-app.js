@@ -37,7 +37,7 @@
 
         // Build model from DOM defaults
         gather: function() {
-            var data = {}
+            var data = {};
             this.$check.each(function() {
                 var $this = $(this);
                 data[$this.attr('name')] = $this.is(':checked');
@@ -76,8 +76,8 @@
 
     var MapView = Backbone.View.extend({
         initialize: function() {
-            var template = ('<span class="sa1"><%= to %></span> '
-                            + '<span class="sa2"><%= from %></span>');
+            var template = ('<span class="sa1"><%= to %></span> ' +
+                            '<span class="sa2"><%= from %></span>');
             this.template = _.template(template);
             this.model.bind('change', this.render, this);
         },
@@ -163,7 +163,7 @@
             $to.val(temp);
 
             this.panel.gather();
-        },
+        }
     });
 }());
 
