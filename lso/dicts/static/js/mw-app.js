@@ -1,6 +1,7 @@
 (function() {
     var t = Sanscript.t,
-        GREEK_URL = 'http://www.perseus.tufts.edu/hopper/morph?l=';
+        GREEK_URL = 'http://www.perseus.tufts.edu/hopper/morph?l=',
+        CITE_URL = '/dict/mw/works-and-authors';
 
     var Entries = Backbone.Collection.extend({
         model: Backbone.Model
@@ -52,6 +53,15 @@
                 var $span = $(this),
                     url = GREEK_URL + $span.text();
                 $span.wrapInner($('<a/>').attr({href: url, target: '_blank'}));
+            });
+            $('cite', this.$el).each(function() {
+                var $this = $(this),
+                    code = $this.text().split(' ')[0].replace(/[^A-z0-9]/g, ''),
+                    $link = $('<a/>').attr({
+                        'class': 'mw-cite',
+                        'href': CITE_URL + '#' + code,
+                        target: 'citations' });
+                $this.wrap($link);
             });
         },
 

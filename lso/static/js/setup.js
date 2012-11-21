@@ -5,7 +5,7 @@ $(function() {
     $.tooltips('[title]', 'body');
 });
 
-$(document).on('click', 'a[href*="#"]', function(e) {
+$(document).on('click', 'a[href^="#"]', function(e) {
     e.preventDefault();
     var $this = $(this);
     $('html, body').stop().animate({

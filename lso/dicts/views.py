@@ -9,9 +9,11 @@ from . import dicts
 from .lib import mw_transform
 from .models import MonierEntry
 
+
 @dicts.route('/')
 def index():
     return render_template('dicts/index.html')
+
 
 @dicts.route('/mw/')
 def mw():
@@ -25,13 +27,14 @@ def mw():
         slp_query = S.transliterate(q, from_script, S.SLP1)
         results = mw_results(slp_query)
         for key in results:
-            results[key]  = [mw_transform(x, to_script) for x in results[key]]
+            results[key] = [mw_transform(x, to_script) for x in results[key]]
 
         return render_template('dicts/mw/index.html', form=form,
                                                       to_script=to_script,
                                                       results=results)
     else:
         return render_template('dicts/mw/index.html', form=form)
+
 
 @dicts.route('/mw/q-<from_script>/<q>')
 def mw_pretty(from_script, q):
@@ -44,22 +47,29 @@ def mw_pretty(from_script, q):
     slp_query = S.t(q, from_script, S.SLP1)
     results = mw_results(slp_query)
     for key in results:
-        results[key]  = [mw_transform(x, to_script) for x in results[key]]
+        results[key] = [mw_transform(x, to_script) for x in results[key]]
 
     return render_template('dicts/mw/index.html', form=form,
                                                   to_script=to_script,
                                                   results=results)
 
+
+@dicts.route('/mw/works-and-authors')
+def mw_works():
+    return render_template('dicts/mw/works-and-authors.html')
+
+
 @app.route('/api/mw/<slp_query>')
 def mw_api(slp_query):
     results = mw_results(slp_query)
     for key in results:
-        results[key]  = [mw_transform(x, None) for x in results[key]]
+        results[key] = [mw_transform(x, None) for x in results[key]]
     return jsonify(results)
 
+
 def mw_results(q):
-    """For the given (SLP1) query string, returned an OrderedDict of results
-    from the Monier-Williams dictionary.
+    """For the given (SLP1) query string, returned an OrderedDict of
+    results from the Monier-Williams dictionary.
     """
     q_list = q.replace('+', ' ').replace(',', ' ').split()
 

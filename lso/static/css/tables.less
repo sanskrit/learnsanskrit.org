@@ -1,3 +1,7 @@
+table {
+    border-collapse: collapse;
+}
+
 /* Table with <th> only along the columns */
 table.columns {
     border: 1px @light-gray solid;
@@ -17,5 +21,12 @@ table.columns {
     }
     th {
         font-size: 1.1em;
+    }
+}
+
+// Alternately colored rows
+table.zebra {
+    tr:nth-child(2n) {
+        background: @off-white;
     }
 }
