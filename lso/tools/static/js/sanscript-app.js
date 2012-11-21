@@ -117,6 +117,8 @@
             }
 
             model.bind('change', this.render, this);
+
+            this.map.render();
             this.panel.render();
         },
 
