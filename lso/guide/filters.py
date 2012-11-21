@@ -1,6 +1,8 @@
 #!/usr/bin/python
 # -*- encoding: utf-8 -*-
 
+import functools
+
 from flask import url_for
 from jinja2 import Markup
 from sanskrit.letters import sanscript
@@ -9,6 +11,7 @@ from xml.etree import ElementTree as ET
 from lso import app
 from lso.filters import sa1, sa2
 
+
 def raw_text(elem, text):
     """Insert text into an Element without escaping it."""
     text = text.replace('&', '&amp;')
@@ -16,17 +19,41 @@ def raw_text(elem, text):
     elem.text = wrapper.text
     elem.extend(wrapper.getchildren())
 
+
+def to_template(path):
+    """Render the output of the decorated function into the template
+    located at the given path. Paths are resolved using the Flask app,
+    so any path that can be found by Flask is valid.
+
+    :param path: the template path"""
+    def decorator(func):
+        @functools.wraps(func)
+        def newfunc(*a, **kw):
+            data = func(*a, **kw)
+            return Markup(app.jinja_env.get_template(path).render(**data))
+        return newfunc
+    return decorator
+
+
 @app.context_processor
 def inject_notes():
-    return {'notes':[]}
+    return {'notes': []}
+
 
 @app.context_processor
 def inject_functions():
-    return {'ex': ex, 'img': img, 'lesson_url': lesson_url}
+    return {'ex': ex,
+            'iex': iex,
+            'img': img,
+            'lesson_url': lesson_url,
+            'noun': noun,
+            'verb': verb}
+
 
 @app.template_filter()
 def d(text, tag='span', to=sanscript.DEVANAGARI):
     return sa1(text, sanscript.HARVARD_KYOTO, to, tag=tag)
+
 
 def ex(sa=None, en=None, **kwargs):
     aside = kwargs.get('aside')
@@ -60,20 +87,29 @@ def ex(sa=None, en=None, **kwargs):
     returned = returned.replace('-&gt;', u'→').replace('&amp;', '&')
     return Markup(returned)
 
-@app.template_filter()
-def i(text, tag='span'):
-    return sa2(text, sanscript.HARVARD_KYOTO, tag=tag)
 
-def img(filename, alt):
-    full_path = url_for('guide.static', filename='img/%s' % filename)
-    img = ET.Element('img', {'src': full_path, 'alt': alt})
-    return Markup(ET.tostring(img))
+def iex(*args, **kwargs):
+    kwargs['iast'] = True
+    return ex(*args, **kwargs)
+
 
 @app.template_filter()
 def foot(text, notes):
     notes.append(text)
     i = len(notes)
     return '<sup><a id="fref-%s" href="#fnote-%s">[%s]</a></sup>' % (i, i, i)
+
+
+@app.template_filter()
+def i(text, tag='span'):
+    return sa2(text, sanscript.HARVARD_KYOTO, tag=tag)
+
+
+def img(filename, alt):
+    full_path = url_for('guide.static', filename='img/%s' % filename)
+    img = ET.Element('img', {'src': full_path, 'alt': alt})
+    return Markup(ET.tostring(img))
+
 
 def lesson_url(unit, lesson=None):
     """URL helper for linking to lessons and units."""
@@ -82,6 +118,19 @@ def lesson_url(unit, lesson=None):
     else:
         return url_for('guide.unit', unit=unit)
 
+
+@to_template('include/charts/noun.html')
+def noun(stem, genders):
+    forms = {(p, n): '[%s%s]' % (p, n) for p in '12345678' for n in 'sdp'}
+    return {'stem': stem, 'forms': forms}
+
+
 @app.template_filter()
 def render(text):
     return app.jinja_env.from_string(text).render()
+
+
+@to_template('include/charts/verb.html')
+def verb(root, vclass, mode, voice):
+    forms = {(p, n): '[%s%s]' % (p, n) for p in '123' for n in 'sdp'}
+    return {'root': root, 'forms': forms}

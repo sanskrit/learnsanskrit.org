@@ -1,0 +1,18 @@
+{% macro row(r) %}
+    <tr>
+        <td>{{ forms[(r, 's')] }}</td>
+        <td>{{ forms[(r, 'd')] }}</td>
+        <td>{{ forms[(r, 'p')] }}</td>
+    </tr>
+{% endmacro %}
+
+<table>
+    {{ row('1') }}
+    {{ row('2') }}
+    {{ row('3') }}
+    {{ row('4') }}
+    {{ row('5') }}
+    {{ row('6') }}
+    {{ row('7') }}
+    {{ row('8') }}
+</table>

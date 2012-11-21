@@ -4,6 +4,7 @@ import filters
 from . import guide
 from .models import Lesson
 
+
 @guide.route('/')
 def index():
     roots = Lesson.query.filter(Lesson.parent_id==None).all()
@@ -22,6 +23,7 @@ def index():
 
     return render_template('guide/index.html', units=units)
 
+
 @guide.route('/<unit>')
 def unit(**kwargs):
     unit_slug = kwargs.pop('unit')
@@ -32,6 +34,7 @@ def unit(**kwargs):
         return render_template('guide/unit.html', unit=unit)
     else:
         return redirect(url_for('guide.index'))
+
 
 @guide.route('/<unit>/<lesson>')
 def lesson(**kwargs):
