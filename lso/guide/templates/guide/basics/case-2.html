@@ -1,4 +1,55 @@
 {% extends 'guide/lesson.html' %}
 
 {% block lesson %}
+<p>Using the Sanskrit we know already, we can write a variety of sentences:</p>
+<ul class="examples">
+    {{ ihex('pazyati', 'He sees.') }}
+    {{ ihex('labhe', 'I obtain.') }}
+    {{ ihex('pacase', 'You cook.') }}
+</ul>
+
+<p>By using <em>nouns</em>, we can describe the things involved with this action. We just learned about case 1, which generally describes <strong>who performs the action</strong>:</p>
+
+<ul class="examples">
+    {{ ihex('gajaz carati', 'The elephant walks.') }}
+    {{ ihex('narau labhete', 'The two men obtain.') }}
+    {{ ihex('azvA gacchanti', 'The horses go.') }}
+</ul>
+
+<p>Meanwhile, <dfn>case 2</dfn> usually defines the <strong>"object" of the action</strong>:</p>
+
+<ul class="examples">
+    {{ iex('<mark>gajaM</mark> labhadhve', 'You all obtain <mark>an elephant</mark>.', aside="({{'m'|i }} blends with {{ 'p'|i }} to form {{ 'M'|i }}.)") }}
+    {{ iex('<mark>gajau</mark> pazyasi', 'You see <mark>two elephants</mark>.', aside="({{'gajau'|i }} is the same in case 1 and case 2!)") }}
+    {{ iex('<mark>gajAn</mark> pazyathaH', 'The two of you see <mark>elephants</mark>.') }}
+</ul>
+
+<p>With verbs that imply movement (like "go," "come," "walk," and so on), case 2 also defines the <strong>destination</strong>:</p>
+
+<ul class="examples">
+    {{ iex('<mark>naraM</mark> gacchatha', 'You all go <mark>to the man</mark>.') }}
+    {{ ihex('<mark>narau</mark> gacchAmi', 'I go <mark>to the two men</mark>.') }}
+    {{ ihex('<mark>narAn</mark> gacchAvaH', 'The two of us go <mark>to the men</mark>.') }}
+</ul>
+
+<h2>Ambiguity</h2>
+<p>Above, we saw that {{ 'gajau'|i }} appears in case 1 and case 2. This can create <dfn>ambiguities</dfn> in Sanskrit, where multiple meanings are possible:</p>
+
+<ul class="examples">
+    {{ iex('gajau labhete', '(a) The two of them obtain the two elephants.<br />(b) The two elephants obtain.') }}
+</ul>
+
+<p>These ambiguities disappear if we know more about this sentence's context. If we do not have enough context, then there is nothing we can do. But fortunately, these sorts of ambiguities are also quite rare. They go away if the verb changes even slightly:</p>
+
+<ul class="examples">
+    {{ ihex('gajau labhethe', 'The two of you obtain the two elephants.') }}
+    {{ ihex('gajau labhante', 'They obtain the two elephants.') }}
+</ul>
+
+<h2>Table of forms</h2>
+<p>No Sanskrit textbook is complete without putting the different noun forms in a table:</p>
+
+{{ noun('gaja', 'm', cases='12') }}
+
+<p>But we have already seen all of these forms, and there is no need to linger on a table like this.</p>
 {% endblock %}
