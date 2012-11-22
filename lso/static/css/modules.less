@@ -144,7 +144,7 @@ ul.examples {
     border-right: 0;
     list-style: none;
     margin: 0 -@two-column-article-padding 1em;
-    padding: 0 @two-column-article-padding;
+    padding: 0;
 
     .sa1 {
         font-size: 1.5em;
@@ -152,11 +152,32 @@ ul.examples {
     cite:before {
         content: "— ";
     }
+    input[type=text] {
+        margin: 0;
+        width: 50%;
+    }
     li {
         margin: 1em 0;
+        padding: 0 @two-column-article-padding;
     }
-    li.hint p.en {
-        color: @gray;
+    li.hint {
+        p.en {
+            color: @gray;
+        }
+
+        &.complete {
+            .transition(background 1s);
+            background: lighten(#62e200, 10%);
+            margin: 0;
+
+            p.en {
+                color: inherit;
+            }
+
+            & + li.complete {
+                padding-top: 1em;
+            }
+        }
     }
     p {
         margin: 0;
