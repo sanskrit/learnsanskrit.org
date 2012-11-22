@@ -44,10 +44,12 @@ def inject_notes():
 def inject_functions():
     return {'ex': ex,
             'iex': iex,
+            'ihex': ihex,
             'img': img,
             'lesson_url': lesson_url,
             'noun': noun,
-            'verb': verb}
+            'verb': verb
+            }
 
 
 @app.template_filter()
@@ -93,6 +95,12 @@ def iex(*args, **kwargs):
     return ex(*args, **kwargs)
 
 
+def ihex(*args, **kwargs):
+    kwargs['iast'] = True
+    kwargs['hint'] = True
+    return ex(*args, **kwargs)
+
+
 @app.template_filter()
 def foot(text, notes):
     notes.append(text)
@@ -120,8 +128,8 @@ def lesson_url(unit, lesson=None):
 
 
 @to_template('include/charts/noun.html')
-def noun(stem, genders):
-    forms = {(p, n): '[%s%s]' % (p, n) for p in '12345678' for n in 'sdp'}
+def noun(stem, genders, cases='12345678'):
+    forms = {(p, n): '[%s%s]' % (p, n) for p in cases for n in 'sdp'}
     return {'stem': stem, 'forms': forms}
 
 

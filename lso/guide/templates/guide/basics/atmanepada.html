@@ -1,4 +1,87 @@
 {% extends 'guide/lesson.html' %}
 
 {% block lesson %}
+<p>The verbs we just studied are called {{ 'parasmaipada'|i('dfn') }} verbs. The verbs we will study below are called {{ 'Atmanepada'|i('dfn') }} verbs. But what makes one verb different from another? And just what do {{ 'parasmaipada'|i }} and {{ 'Atmanepada'|i }} mean, anyway?</p>
+
+<p>Both questions have roughly the same answer. Traditionally, {{ 'Atmanepada'|i }} verbs are used when the action <strong>benefits the person who performs it</strong> ({{ 'Atmane'|i }}, "for the self"; {{ 'pada'|i }} just means "word"), and {{ 'parasmaipada'|i }} verbs are used <strong>everywhere else</strong> ({{ 'parasmai'|i }}, "for another"). We show this difference in meaning by using different verb endings:</p>
+
+<ul class="examples">
+    {{ iex('pacati', 'He cooks.') }}
+    {{ iex('<mark>pacate</mark>', "He cooks for himself. (He's cooking himself a meal.)") }}
+    {{ ihex('pacataH', "The two of them cook.") }}
+    {{ iex('<mark>pacete</mark>', "The two of them cook for themselves.") }}
+    {{ ihex('pacanti', "They cook.") }}
+    {{ iex('<mark>pacante</mark>', "They cook for themselves.") }}
+</ul>
+
+<p>The stem is the same, but the endings are different. Just as two different flowers can sometimes grow from the same stalk, so too can {{ 'parasmaipada'|i }} and {{ 'Atmanepada'|i }} forms grow from the same verb stem.</p>
+
+<h2>Endings</h2>
+<p>The {{ 'Atmanepada'|i }} endings are closely related to the {{ 'parasmaipada'|i }} endings. They follow similar patterns:</p>
+
+<ul class="examples">
+    {{ ihex('pacati', 'He cooks.') }}
+    {{ ihex('pacate', "He cooks for himself. (He's cooking himself a meal.)") }}
+    {{ ihex('pacanti', "They cook.") }}
+    {{ ihex('pacante', "They cook for themselves.") }}
+    {{ ihex('pacasi', "You cook.") }}
+    {{ iex('pacase', "You cook for yourself.") }}
+</ul>
+
+<p>Even when these patterns are not immediately clear:</p>
+
+<ul class="examples">
+    {{ ihex('pacataH', "The two of them cook.") }}
+    {{ iex('pacete', "The two of them cook for themselves.") }}
+    {{ ihex('pacathaH', "You two cook") }}
+    {{ iex('pacethe', "You two cook for yourselves.") }}
+    {{ ihex('pacAvaH', "The two of us cook.") }}
+    {{ iex('pacAvahe', "The two of us cook for ourselves.") }}
+    {{ ihex('pacAmaH', "We all cook.") }}
+    {{ iex('pacAmahe', "We all cook for ourselves.") }}
+</ul>
+
+<p>But in two instances, there is no pattern at all:</p>
+
+<ul class="examples">
+    {{ ihex('pacatha', "You all cook.") }}
+    {{ iex('pacadhve', "You all cook for yourselves.") }}
+    {{ ihex('pacAmi', "I cook.") }}
+    {{ iex('pace', "I cook for myself.") }}
+</ul>
+
+<h2>Weak distinctions</h2>
+<p>The distinction between {{ 'parasmaipada'|i }} and {{ 'Atmanepada'|i }} is not always strong. Some {{ 'Atmanepada'|i }} verbs act just like the ones we have seen so far, without any strong sense of acting "for the self":</p>
+
+<ul class="examples">
+    {{ iex('labhate', 'He obtains.') }}
+    {{ ihex('labhete', 'The two of them obtain.') }}
+    {{ ihex('labhante', 'They obtain.') }}
+    {{ ihex('labhase', 'You obtain.') }}
+    {{ ihex('labhethe', 'The two of you obtain.') }}
+    {{ ihex('labhadhve', 'You all obtain.') }}
+    {{ ihex('labhe', 'I obtain.') }}
+    {{ ihex('labhAvahe', 'The two of us obtain.') }}
+    {{ ihex('labhAmahe', 'We all obtain.') }}
+</ul>
+
+<p>But generally these verbs do describe things that affect us, like being born, enjoying something, dying, or simply thinking:</p>
+
+<ul class="examples">
+    {{ iex('manyate', 'He thinks.') }}
+    {{ ihex('manyAvahe', 'The two of us think.') }}
+    {{ ihex('manyadhve', 'You all think.') }}
+    {{ ihex('manyete', 'The two of them think.') }}
+    {{ ihex('manyethe', 'The two of you think.') }}
+    {{ ihex('manyAmahe', 'We all think.') }}
+    {{ ihex('manyase', 'You think.') }}
+    {{ ihex('manye', 'I think.') }}
+    {{ ihex('manyante', 'They think.') }}
+</ul>
+
+<p>Traditionally, verbs are presented in a table, like the one below:</p>
+
+{{ verb('laB', '1', 'pres', 'A') }}
+
+<p>But we have already seen all of these forms, and there is no need to linger on a table like this.</p>
 {% endblock %}
