@@ -42,10 +42,10 @@
         }
     });
 
-
     $(function() {
         $('li.hint', 'ul.examples').each(function() {
             new HintExample({ el: this });
         });
+        $('#sidebar').pin();
     });
 }());

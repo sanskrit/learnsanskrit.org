@@ -1,4 +1,33 @@
 /**
+ * Pin any matching element when the window is scrolled beyond its
+ * starting point.
+ */
+$.fn.pin = function() {
+    var $this = $(this),
+        $window = $(window);
+
+    if (!$this.data('y')) {
+        var offset = $this.offset();
+        $this.data({
+            y: offset.top,
+            height: $this.height()
+        });
+    }
+
+    $window.scroll(function() {
+        var objY = $this.data('y'),
+            objHeight = $this.data('h'),
+            y = $window.scrollTop();
+
+        if (y > objY) {
+            $this.addClass('pinned');
+        } else {
+            $this.removeClass('pinned');
+        }
+    });
+};
+
+/**
  * Basic spotlight
  */
 
@@ -9,7 +38,7 @@ $.fn.spotlightOn = function(duration, easing, callback) {
         $spotlight = $('<div id="spotlight" />').appendTo('body');
     }
 
-    $this.addClass('spotlighted')
+    $this.addClass('spotlighted');
     $spotlight.fadeIn(duration, easing, callback);
     return this;
 };
