@@ -1,4 +1,121 @@
 {% extends 'guide/lesson.html' %}
 
 {% block lesson %}
+<p>Generally, every Sanskrit sentence is just some <em>action</em>. The simplest sentences are just actions and nothing else:</p>
+<ul class="examples">
+    {{ ihex('pazyati', 'He sees.')}}
+    {{ ihex('labhethe', 'The two of you obtain.')}}
+    {{ ihex('manyAmahe', 'We all think.')}}
+    {{ ihex('tiSThasi', 'You stand.')}}
+</ul>
+
+<p>Unfortunately, these sentences tell us very little. If we see just {{ 'pazyati'|i }}, how can we tell who sees, or what is seen? And how and where does this "seeing" happen?</p>
+
+<p>To fill these gaps, we use <dfn>nouns</dfn>. Nouns describe ideas as simple as elephants and fruits, and as complex as places and concepts. Just like verbs, nouns are <em>inflected</em>:</p>
+
+<ul class="examples">
+    {{ iex('<mark>gajaH</mark> pazyati', '<mark>The elephant</mark> sees.') }}
+    {{ iex('<mark>gajau</mark> pazyataH', '<mark>The two elephants</mark> see.') }}
+    {{ iex('<mark>gajAH</mark> pazyanti', '<mark>The elephants</mark> see.') }}
+</ul>
+
+<p>And just like verbs, nouns have a <dfn>stem</dfn>. Here, the stem is {{ 'gaja'|i }}. Just as many flowers bloom from the same plant stem, many nouns are formed from the same noun stem. And as with verbs, we add an <dfn>ending</dfn> to a noun to make a complete word:</p>
+
+<ul class="examples">
+    {{ ihex('gajaH pazyati', 'The elephant sees.') }}
+    {{ ihex('gajau pazyataH', 'The two elephants see.') }}
+    {{ ihex('gajAH pazyanti', 'The elephants see.') }}
+    {{ iex('naraH pacate', 'The man cooks for himself.') }}
+    {{ ihex('narau pacete', 'The two men cook for themselves.') }}
+    {{ ihex('narAH pacante', 'The men cook for themselves.') }}
+    {{ iex('azvas tiSThati (azvaH tiSThati)', 'The horse stands.') }}
+    {{ ihex('azvau tiSThataH', 'The two horses stand.') }}
+    {{ ihex('azvAs tiSThanti (azvAH tiSThanti)', 'The horses stand.') }}
+</ul>
+
+<p>Note the blending that occurs in {{ 'azvas tiSThati'|i }} and {{ 'azvAs tiSThati'|i }}. Now that our sentences have multiple words, we have to be mindful of how the sounds in the two words affect each other.</p>
+
+<h2>Noun roles</h2>
+<p>In each example above, the noun defines what performs the verb action. But nouns can define other parts of the action, too. With {{ 'pazyati'|i }}, for example, we can define what is seen:</p>
+
+<ul class="examples">
+    {{ iex('gajaH pazyati <mark>naram</mark>', 'The elephant sees <mark>the man</mark>.') }}
+</ul>
+
+<p>Or where the elephant sees:</p>
+
+<ul class="examples">
+    {{ iex('<mark>grAme</mark> gajaH pazyati', 'The elephant sees <mark>in the village</mark>.') }}
+</ul>
+
+<p>Or what the elephant sees with:</p>
+
+<ul class="examples">
+    {{ iex('<mark>nayanena</mark> gajaH pazyati', 'The elephant sees <mark>with his eye</mark>.') }}
+</ul>
+
+<p>Here, the role of the noun changes when we change the noun ending. So in addition to showing the <em>number</em> of items involved, the noun ending shows the noun's role. Generally, these roles are called <dfn>cases</dfn>. Still, roles and cases are not quite the same thing.</p>
+
+<h2>Case 1</h2>
+<p><dfn>Case 1</dfn> usually defines <strong>what performs the action</strong>:</p>
+
+<ul class="examples">
+    {{ iex('<mark>gajaH</mark> pazyati', '<mark>The elephant</mark> sees.') }}
+    {{ iex('<mark>gajau</mark> pazyataH', '<mark>The two elephants</mark> see.') }}
+    {{ iex('<mark>gajAH</mark> pazyanti', '<mark>The elephants</mark> see.') }}
+</ul>
+
+<p>{{ 'pazyati'|i }} implies that <strong>only one</strong> thing sees. {{ 'gajaH'|i }} implies that <strong>only one</strong> elephant performs the action. Each word implies the same number of things (one), so they are used together. A verb and a word in case 1 must always imply the same number of things.</p>
+
+<section class="sandhi">
+    <h2>Blended sounds</h2>
+    <p><a href="{{ lesson_url('sounds', 'anusvara-and-visarga') }}">Recall</a> that {{ 'visarga'|i }} blends with the sounds that follow it:</p>
+
+    <ul class="examples">
+        {{ iex('azvazcarati', 'The horse walks.') }}
+        {{ ihex('azvau carataH', 'The two horses walk.') }}
+        {{ ihex('azvAzcaranti', 'The horses walk.') }}
+        {{ iex('gajastiSThati', 'The elephant stands.') }}
+        {{ ihex('gajau tiSThataH', 'The two elephants stand.') }}
+        {{ ihex('gajAstiSThanti', 'The elephants stand.') }}
+    </ul>
+
+    <p>In these examples, the consonant that comes after the {{ 'visarga'|i }} is not voiced. What if the consonant is <em>voiced</em> instead?</p>
+
+    <ul class="examples">
+        {{ iex('naraH labhate', 'The man obtains.') }}
+        {{ iex('narAH labhante', 'The men obtain.') }}
+    </ul>
+
+    <p>Try repeating these entences ten or twenty times. Eventually it will become tiresome to transition between the unvoiced {{ 'visarga'|i }} in {{ 'naraH'|i }} and {{ 'narAH'|i }} and the voiced {{ 'l'|i }} in {{ 'labhate'|i }} and {{ 'labhante'|i }}. It is much easier to <strong>blend</strong> the two words.</p>
+
+    <p>For the first sentence, this blending is against all of our intuitions. It is the sort of change we must just accept.</p>
+    <ul class="examples">
+        {{ ihex('naraH labhate -> naro labhate', 'The man obtains.') }}
+    </ul>
+
+    <p>The {{ '-aH'|i }} ending became {{ 'o'|i }}. This happens in front of <strong>voiced consonants</strong> of any kind.</p>
+
+    <p>For the second sentence, the blending is much more reasonable:</p>
+
+    <ul class="examples">
+        {{ ihex('narAH labhante -> narA labhante', 'The men obtain.') }}
+    </ul>
+
+    <p>Here the troublesome {{ 'visarga'|i }} is simply removed. Sometimes the best solution to a problem is the easiest one.</p>
+</section>
+
+<p>With these changes in mind, we can now write many more sentences:</p>
+
+<ul class="examples">
+    {{ ihex('naro manyate', 'The man thinks.') }}
+    {{ ihex('narau pazyataH', 'The two men see.') }}
+    {{ ihex('narA manyante', 'The men think.') }}
+    {{ ihex('gajo labhate', 'The elephant obtains.') }}
+    {{ ihex('gajau labhete', 'The two elephants obtain.') }}
+    {{ ihex('gajA labhante', 'The elephants obtain.') }}
+    {{ ihex('azvo gacchati', 'The horse goes.') }}
+    {{ ihex('azvau tiSThataH', 'The two horses stand.') }}
+    {{ ihex('azvA gacchanti', 'The horses go.') }}
+</ul>
 {% endblock %}
