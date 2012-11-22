@@ -1,4 +1,106 @@
 {% extends 'guide/lesson.html' %}
 
 {% block lesson %}
+
+<p>Generally, every Sanskrit sentence is just some <dfn>action</dfn>. The simplest sentences are just actions and nothing else:</p>
+
+<ul class="examples">
+    {{ ex('gacchati', 'He goes.', iast=true)}}
+</ul>
+
+<p>Words that describe actions are called <dfn>verbs</dfn>. {{ 'gacchati'|i }} is a verb. So is the word below:</p>
+
+<ul class="examples">
+    {{ ex('gacchataH', 'The two of them go.', iast=true) }}
+</ul>
+
+<p>{{ 'gacchati'|i }} and {{ 'gacchataH'|i }} both start the same way, with {{ 'gaccha'|i }}. This part of the verb is called the <dfn>stem</dfn>; just as many flowers bloom from the same plant stem, many verbs are formed from the same verb stem. We add an <dfn>ending</dfn> to a stem to make a complete word:</p>
+
+<ul class="examples">
+    {{ ex('gaccha + ti -> gacchati', 'He goes.', iast=true) }}
+    {{ ex('gaccha + taH -> gacchataH', 'The two of them go.', iast=true) }}
+    {{ ex('gaccha + nti -> gacchanti', 'They go.', iast=true) }}
+    {{ ex('tiSTha + ti -> tiSThati', 'He stands.', iast=true) }}
+    {{ ex('tiSTha + taH -> tiSThataH', 'The two of them stand.', iast=true, hint=true) }}
+    {{ ex('tiSTha + nti -> tiSThanti', 'They stand.', iast=true, hint=true) }}
+    {{ ex('pazya + ti -> pazyati', 'He sees.', iast=true) }}
+    {{ ex('pazya + taH -> pazyataH', 'The two of them see.', iast=true, hint=true) }}
+    {{ ex('pazya + nti -> pazyanti', 'They see.', iast=true, hint=true) }}
+</ul>
+
+<p>And of course, we can talk about other sorts of people. We can talk about you:</p>
+
+<ul class="examples">
+    {{ ex('gacchasi', 'You go.', iast=true) }}
+    {{ ex('gacchathaH', 'The two of you go.', iast=true) }}
+    {{ ex('gacchatha', 'You all go.', iast=true) }}
+    {{ ex('tiSThasi', 'You stand.', iast=true, hint=true) }}
+    {{ ex('tiSThathaH', 'The two of you stand.', iast=true, hint=true) }}
+    {{ ex('tiSThatha', 'You all stand.', iast=true, hint=true) }}
+    {{ ex('pazyasi', 'You see.', iast=true, hint=true) }}
+    {{ ex('pazyathaH', 'The two of you see.', iast=true, hint=true) }}
+    {{ ex('pazyatha', 'You all see.', iast=true, hint=true) }}
+</ul>
+
+<p>And we can talk about me:</p>
+
+<ul class="examples">
+    {{ ex('gacchAmi', 'I go.', iast=true) }}
+    {{ ex('gacchAvaH', 'The two of us go.', iast=true) }}
+    {{ ex('gacchAmaH', 'We all go.', iast=true) }}
+    {{ ex('tiSThAmi', 'I stand.', iast=true, hint=true) }}
+    {{ ex('tiSThAvaH', 'The two of us stand.', iast=true, hint=true) }}
+    {{ ex('tiSThAmaH', 'We all stand.', iast=true, hint=true) }}
+    {{ ex('pazyAmi', 'I see.', iast=true, hint=true) }}
+    {{ ex('pazyAvaH', 'The two of us see.', iast=true, hint=true) }}
+    {{ ex('pazyAmaH', 'We see.', iast=true, hint=true) }}
+</ul>
+
+<p>In this way, Sanskrit lets us talk about some action and the people who perform it.</p>
+
+<h2>Present Tense Verbs</h2>
+
+<p>The verbs above let us describe what is happening <strong>right now</strong>. In English, these verbs are called <dfn>present tense</dfn> verbs.</p>
+
+<ul class="examples">
+    {{ iex('gacchati', 'He goes.', hint=true) }}
+    {{ iex('pazyAvaH', 'The two of us see.', hint=true) }}
+    {{ iex('tiSThasi', 'You stand.', hint=true) }}
+    {{ iex('pazyAmaH', 'We all see.', hint=true) }}
+    {{ iex('gacchataH', 'The two of them go.', hint=true) }}
+    {{ iex('tiSThatha', 'You all stand.', hint=true) }}
+    {{ iex('tiSThathaH', 'The two of you stand.', hint=true) }}
+    {{ iex('gacchanti', 'They go.', hint=true) }}
+    {{ iex('pazyAmi', 'I see.', hint=true) }}
+</ul>
+
+<p>These Sanskrit verbs have a broader meaning than their English counterparts:</p>
+
+<ul class="examples">
+    {{ iex('gacchati', 'He is going.') }}
+    {{ iex('tiSThataH', 'The two of them are standing.') }}
+    {{ iex('pazyanti', 'They are seeing.') }}
+</ul>
+
+<p>And they have many others too. As much as possible, we should focus on <em>Sanskrit</em> words and sentences, not their counterparts in English. The more we rely on English, the less we learn about Sanskrit itself.</p>
+
+<p>The forms of this verb are often presented in a table, like the one below:</p>
+
+{{ verb('gam', '1', 'pres', 'P') }}
+
+<p>But we have seen all of these forms already, and there is no need to linger on a table like this.</p>
+
+<h2>In the wild</h2>
+<p>Our goal is to read Sanskrit texts. So along the way, we will study many examples of real Sanskrit. As we read these examples, we see new concepts in a real setting. And we can measure how much we have learned so far.</p>
+
+<p>So consider the text below. We know enough to pronounce it correctly. But how much can we understand?</p>
+
+<ul class="verse examples">
+{{ iex('aprApya yogasaMsiddhiM kAM gatiM kRSNa <mark>gacchati</mark>', 'If he has not attained perfection in yoga, Krishna, on which path <mark>does he go</mark>?<cite>Bhagavad Gita 6.37</cite>') }}
+</ul>
+
+<p>Focus on the highlighted words above; the rest of the example is too difficult right now. But even this difficult example teaches us something about Sanskrit. Note that {{ 'gacchati'|i }} appears at the end of the sentence. Most verbs do. Note, too, that the {{ 'anusvAra'|i }} appears in {{ 'yogasaMsiddhim'|i }} without a space after it. This indicates that the {{ 'anusvAra'|i }} can appear within a word, not just at the end of it.</p>
+
+<p>We can also recognize some familiar words, like {{ 'yoga'|i }} and {{ 'kRSNa'|i }}. These words appear throughout the Bhagavad Gita, and we will see them many times.</p>
+
 {% endblock %}
