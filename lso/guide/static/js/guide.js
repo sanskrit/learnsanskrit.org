@@ -9,7 +9,13 @@
         },
 
         events: {
+            'click button': 'finish',
             'keyup': 'render'
+        },
+
+        finish: function() {
+            this.done = true;
+            this.$p.text(this.raw);
         },
 
         render: function() {
@@ -18,21 +24,15 @@
             } else if (this.$input) {
                 var guess = this.simplify(this.$input.val());
                 if (this.answer == guess) {
-                    this.done = true;
-                    this.$p.text(this.raw);
-                    this.$input.remove();
-                    this.$el.addClass('flash')
-                        .delay(1000)
-                        .queue(function(n) {
-                            $(this).removeClass('flash');
-                            next();
-                        })
-                        .addClass('complete');
+                    this.finish();
+                    this.$el.addClass('complete');
                 }
             }
             else {
                 this.$input = $('<input type="text"/>');
-                this.$p.html(this.$input);
+                this.$p.text('')
+                    .append(this.$input)
+                    .append($('<button>Give up?</button>'));
             }
             return this;
         },
