@@ -1,4 +1,5 @@
 @darker-background: darken(@sidebar-background, 5%);
+@sidebar-link-hover: darken(@link-hover-color, 10%);
 
 body#lesson {
     background: @sidebar-background;
@@ -27,10 +28,6 @@ body#lesson {
     float: left;
     width: @sidebar-width;
 
-    section {
-        padding: 1em;
-    }
-
     &.pinned {
         position: fixed;
         right: 0;
@@ -39,27 +36,28 @@ body#lesson {
 }
 
 #nav-pane {
+    color: @dark-gray;
+
     a {
         display: block;
         text-decoration: none;
-        .transition(0.2s);
-        &:hover {
-            background: @darker-background;
-            color: @dark-gray;
-            text-shadow: 0 0 1px rgba(0,0,0,0.5);
-        }
     }
     h2 {
         margin: 0;
+        padding-left: 0.666em;
         a {
             padding: 0.75em 0;
+            &:hover {
+                color: @sidebar-link-hover;
+            }
         }
     }
     span.num {
         display: inline-block;
         padding: 0 1em 0 0;
         text-align: right;
-        width: 1.5em;
+        margin-left: 2em;
+        width: 1em;
     }
 }
 
@@ -69,24 +67,54 @@ ol.unit-nav {
     padding: 0;
 
     a {
-        border: 1px transparent solid;
-        border-width: 1px 0;
-        &:hover {
-            border-color: darken(@darker-background, 5%);
-        }
+        color: inherit;
     }
     li {
+        border: 1px transparent solid;
+        border-width: 1px 0;
         line-height: 2em;
         padding: 0;
+
+        &:hover {
+            background: @blue;
+            border: 1px darken(@blue, 5%) solid;
+            border-width: 1px 0;
+            color: #fff;
+            .transition(0.2s);
+        }
 
         &:before {
             content: ""
         }
+
         &.active {
-            border: 1px darken(@blue, 5%) solid;
-            border-width: 1px 0;
-            background: @blue;
-            color: #fff;
+            background: @darker-background;
+            @border-color: darken(@darker-background, 5%);
+            border-color: @border-color;
+
+            &:hover, li:hover {
+                border-color: @border-color;
+                color: inherit;
+            }
+            li:hover {
+                background: inherit;
+                border-color: transparent;
+            }
+            a {
+                color: @link-color;
+                &:hover {
+                    color: @sidebar-link-hover;
+                }
+            }
+        }
+    }
+    ul.headings {
+        margin: 0 0 0.5em 2em;
+        li {
+            line-height: 1.3em;
+            &:before {
+                content: none;
+            }
         }
     }
 }
@@ -106,6 +134,7 @@ ul.step-nav {
         }
     }
     a {
+        color: inherit;
         display: block;
         line-height: 2 * @en-line-height;
     }

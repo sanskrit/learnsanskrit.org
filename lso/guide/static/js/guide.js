@@ -42,10 +42,27 @@
         }
     });
 
+    var gatherHeadings = function() {
+        var $links = $('<ul>').addClass('headings');
+        $('h2', '#content').each(function() {
+            var $this = $(this),
+                id = LSO.toID($this.text()),
+                html = $this.html();
+            $this.attr('id', id);
+            $('<li>')
+                .wrapInner(
+                    $('<a>').attr('href', '#' + id).html(html)
+                )
+                .appendTo($links);
+        });
+        $links.appendTo($('li.active', '#sidebar'));
+    };
+
     $(function() {
         $('li.hint', 'ul.examples').each(function() {
             new HintExample({ el: this });
         });
         $('#sidebar').pin();
+        gatherHeadings();
     });
 }());

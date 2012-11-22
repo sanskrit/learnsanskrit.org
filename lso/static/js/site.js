@@ -1,12 +1,13 @@
 (function(LSO) {
+    var store;
     if (localStorage) {
-        var store = localStorage;
+        store = localStorage;
     } else {
-        var store = {
+        store = {
             getItem: $.cookie,
             setItem: $.cookie,
             removeItem: $.cookie
-        }
+        };
     }
 
     /**
@@ -34,4 +35,12 @@
             return (_.size(this.attributes) <= 1); // just 'id'
         }
     });
+
+    /**
+     * Convert the given string to a valid ID.
+     */
+    LSO.toID = function(s) {
+        return s.toLowerCase().replace(/\s/g, '-');
+    };
+
 }(window.LSO = window.LSO || {}));
