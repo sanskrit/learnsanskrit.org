@@ -14,7 +14,7 @@ $.fn.pin = function() {
         });
     }
 
-    $window.scroll(function() {
+    var pinFn = function() {
         var objY = $this.data('y'),
             objHeight = $this.data('h'),
             y = $window.scrollTop();
@@ -24,7 +24,10 @@ $.fn.pin = function() {
         } else {
             $this.removeClass('pinned');
         }
-    });
+    };
+
+    pinFn();
+    $window.scroll(pinFn);
 };
 
 /**
