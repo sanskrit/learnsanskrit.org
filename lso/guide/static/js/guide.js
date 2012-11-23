@@ -26,6 +26,7 @@
                 if (this.answer == guess) {
                     this.finish();
                     this.$el.addClass('complete');
+                    this.$el.closest('ul').find('input').first().focus();
                 }
             }
             else {
