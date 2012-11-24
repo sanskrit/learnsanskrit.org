@@ -81,7 +81,6 @@ ol.unit-nav {
             border: 1px darken(@blue, 5%) solid;
             border-width: 1px 0;
             color: #fff;
-            .transition(0.2s);
         }
 
         &:before {
@@ -128,7 +127,7 @@ ul.step-nav {
     li {
         float: left;
         text-align: center;
-        width: 50%;
+        width: 33.33%;
         &:hover {
             background: @darker-background;
             color: #000;
@@ -139,4 +138,17 @@ ul.step-nav {
         display: block;
         line-height: 2 * @en-line-height;
     }
+}
+
+#back-to-top {
+    cursor: default;
+    opacity: 0;
+    pointer-events: none;
+    .transition(opacity 1s);
+}
+
+#sidebar.pinned #back-to-top {
+    cursor: auto;
+    opacity: 1;
+    pointer-events: auto;
 }
