@@ -27,7 +27,7 @@ body {
 nav#top {
     #gradient.vertical(#102632, #000A16);
     .box-shadow(0px 3px 6px rgba(0,0,0,0.25));
-    
+
     color: #fff;
     left: 0;
     line-height: 3;
@@ -35,18 +35,18 @@ nav#top {
     right: 0;
     top: 0;
     z-index: 1000;
-    
+
     a {
-        border: 0;
+        .transition(0.4s);
         color: #fff;
         text-decoration: none;
 
-        &, &:hover {
-            .transition(0.2s);
-        }
         &:hover {
-            background: @black;
-            color: @yellow;
+            @bg: @blue;
+            background: @bg;
+            box-shadow: inset 0px 0px 3px #000;
+            color: #fff;
+            text-shadow: 0px 0px 3px #000;
         }
         &.brand {
             color: #fff;
