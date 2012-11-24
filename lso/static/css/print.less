@@ -1,0 +1,98 @@
+@page {
+    margin: 0.75in;
+    size: 8.5in 11in;
+
+    @bottom-right {
+        content: counter(page);
+    }
+}
+
+@media print {
+    #top, #sidebar, footer {
+        display: none;
+    }
+    ul.examples, body#lesson, body#lesson #content, body#lesson article, mark, p.rule {
+        background: transparent;
+        border: 0;
+        color: #000;
+        float: none;
+        margin: 0;
+        padding: 0;
+    }
+    .sa1 {
+        font-family: "Sanskrit 2003";
+    }
+    a {
+        color: #000;
+        &[href^="/"] {
+            text-decoration: none;
+            :after {
+                content: ' [' attr(href) ']';
+                color: #999;
+            }
+        }
+        &[href^="/guide/static"] {
+            :after {
+                content: none;
+            }
+        }
+    }
+    dfn {
+        color: inherit;
+        font-weight: normal;
+    }
+    h1 {
+        page-break-before: always;
+        text-decoration: underline;
+    }
+    h2 {
+        border-bottom: 1px #777 solid;
+    }
+    h3 {
+        text-decoration: underline;
+    }
+    mark {
+        text-decoration: underline;
+    }
+    p {
+        font-size: 12pt;
+        line-height: 1.333em;
+        text-align: justify;
+    }
+    p.rule {
+        margin: 1em 2em;
+        font-style: italic;
+    }
+    sup a {
+        text-decoration: none;
+    }
+    ul.examples {
+        li {
+            page-break-inside: avoid;
+        }
+        li.hint p.en {
+            color: #000;
+        }
+    }
+    ul.letters {
+        font-size: 0;  // avoid spaces between inline blocks
+        margin-bottom: 12pt;
+
+        a {
+            display: block;
+        }
+        li {
+            font-size: 12pt;
+            display: inline-block;
+            float: none;
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+        span.play {
+            display: none;
+        }
+        span.sa2 {
+            font-size: 1.5em;
+        }
+    }
+}
