@@ -65,5 +65,9 @@
         });
         $('#sidebar').pin();
         gatherHeadings();
+
+        var settings = LSO.settings;
+        $('.sa1', '#content').sanscript('devanagari', settings.get('sa1'));
+        $('.sa2', '#content').sanscript('iast', settings.get('sa2'));
     });
 }());

@@ -31,6 +31,17 @@ $.fn.pin = function() {
 };
 
 /**
+ * Transliterate all text in the matched elements.
+ */
+$.fn.sanscript = function(from, to) {
+    this.each(function() {
+        var $this = $(this),
+            text = $this.html();
+        $this.html(Sanscript.t(text, from, to, { skip_sgml: true }));
+    });
+};
+
+/**
  * Basic spotlight
  */
 

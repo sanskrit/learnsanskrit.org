@@ -5,9 +5,11 @@ from lso import app, mail
 import forms
 from . import site
 
+
 @site.route('/about')
 def about():
     return render_template('site/about.html')
+
 
 @site.route('/contact', methods=['GET', 'POST'])
 def contact():
@@ -26,13 +28,22 @@ def contact():
     else:
         return render_template('site/contact.html', form=form)
 
+
 @site.route('/site')
 def index():
     return render_template('site/index.html')
 
+
+@site.route('/preferences')
+def preferences():
+    form = forms.PreferencesForm()
+    return render_template('site/preferences.html', form=form)
+
+
 @site.route('/resources')
 def resources():
     return render_template('site/resources.html')
+
 
 @site.route('/source')
 def source():

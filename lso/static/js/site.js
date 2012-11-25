@@ -43,4 +43,16 @@
         return s.toLowerCase().replace(/\s/g, '-');
     };
 
+    /**
+     * Global site settings
+     */
+    var Settings = LSO.LocalData.extend({
+        defaults: {
+            sa1: 'devanagari',
+            sa2: 'iast',
+            input: 'hk'
+        }
+    });
+    LSO.settings = new Settings({ id: 'settings' });
+
 }(window.LSO = window.LSO || {}));

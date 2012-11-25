@@ -1,0 +1,26 @@
+{% extends 'general.html' %}
+
+{% block title %}Preferences{% endblock %}
+
+{% block content %}
+<h1>Preferences</h1>
+
+<form id="preferences" class="inset">
+    <noscript>
+        <p>To set preferences for the site, you must enable JavaScript in your browser. <a href="http://enable-javascript.com/">Click here to find out how to enable JavaScript in your browser.</a></p>
+    </noscript>
+</form>
+
+<script type="text/template" id="prefs-form">
+    <fieldset>
+        <legend>Scripts</legend>
+        {{ form.sa1.label }} {{ form.sa1 }}
+        {{ form.sa2.label }} {{ form.sa2 }}
+        {{ form.input.label }} {{ form.input }}
+    </fieldset>
+</script>
+
+<p></p>
+
+<script src="{{ url_for('.static', filename='js/preferences.js') }}"></script>
+{% endblock %}
