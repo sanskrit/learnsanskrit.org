@@ -24,6 +24,11 @@ def index():
     return render_template('guide/index.html', units=units)
 
 
+@guide.route('/help')
+def help():
+    return render_template('guide/help.html')
+
+
 @guide.route('/<unit>')
 def unit(**kwargs):
     unit_slug = kwargs.pop('unit')

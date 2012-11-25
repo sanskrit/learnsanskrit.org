@@ -1,15 +1,20 @@
-.box(@color) {
+.box() {
+    border: solid;
+    border-width: 1px 0 1px 0;
+    margin-bottom: 1em;
+}
+
+.box-colors(@color) {
     background: lighten(@color, 10%);
     border-color: darken(@color, 10%);
     color: darken(@color, 60%);
 }
 
 p.rule {
-    border: solid;
-    border-width: 1px 0 1px 0;
-    padding: @en-line-height/2;
+    .box();
 }
 
 p.rule {
-    .box(#D6F78B);
+    .box-colors(#D6F78B);
+    padding: @en-line-height/2;
 }

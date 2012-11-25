@@ -4,7 +4,8 @@
 
 {% block content %}
 <header class="masthead">
-    <h1>Sanskrit Guide</h1>    
+    <h1>Sanskrit Guide</h1>
+    (<a href="{{ url_for('.help') }}">Need help? Want to download the guide? Click here!</a>)
 </header>
 
 {% for unit in units %}

@@ -1,0 +1,66 @@
+{% extends 'narrow.html' %}
+
+{% block title %}Using the Sanskrit grammar guide{% endblock %}
+
+{% block content %}
+<h1>Using the Sanskrit grammar guide</h1>
+
+<p>This page is here to help you have the best experience possible when using the Sanskrit grammar guide. It also has information about using the guide offline. If you've read through this page and have some questions, <a href="{{ url_for('site.contact') }}">let us know what we can do to help</a>.</p>
+
+<div class="inset" style="padding: 0;">
+<ul>
+    <li><a href="#software">Programs and software</a></li>
+    <li><a href="#download">Downloading the guide</a></li>
+</ul>
+</div>
+
+<h2 id="software"2>Programs and software</h2>
+
+<p>For the best possible experience, please <a href="http://browsehappy.com/">use a modern web browser</a>. Other than that, there's little to do.</p>
+
+<p>If you're using a very old operating system (before Mac OS 10.3 or Windows 2000), then you should also make sure that you have Devanagari installed. If this:</p>
+
+<blockquote>
+    <p class="sa1" style="font-size: 1.5em">{{ 'kazcitkAntAvirahaguruNA svAdhikArapramattaH<br />zApenAstaMgamitamahimA varSabhogyeNa bhartuH |'|d }}</p>
+</blockquote>
+
+<p>looks like rubbish, then you probably don't have Devanagari installed. For help, you can <a href="http://en.wikipedia.org/wiki/Help:Multilingual_support_(Indic)">consult this FAQ page from Wikipedia</a>. Once you have Devanagari installed, you can use the site normally.</p>
+
+<h2 id="download">Downloading the guide</h2>
+
+<p>By popular request, you can now download the grammar guide for offline use. These files can be used with printers and e-readers, and they can be used in any situation where an ordinary website is too difficult to handle. Of course, these files are missing some of the things that make web pages so special: sound and video, interactive content, color, and so on.</p>
+
+<p>If you want to dowload the guide, you have two options available:</p>
+
+<h3>Option 1: PDFs from learnsanskrit.org</h3>
+
+<p>The easier option is to use PDFs that have been created by learnsanskrit.org. These PDFs render Sanskrit in Devanagari and IAST. They are updated regularly, but they are not always as up-to-date as the online lessons.</p>
+
+<div class="download">
+<ul>
+    <li><p>
+        <a href="{{ url_for('.static', filename='pdf/guide.pdf') }}">Grammar guide</a><br />
+        The complete grammar guide. Devanagari and IAST.
+    </p></li>
+    <li><p>
+        <a href="{{ url_for('.static', filename='pdf/sounds.pdf') }}">Sounds</a><br />
+        All lessons from the "Sounds" unit of the guide. Devanagari and IAST.
+    </p></li>
+    <li><p>
+        <a href="{{ url_for('.static', filename='pdf/basics.pdf') }}">Basics</a><br />
+        All lessons from the "Basics" unit of the guide. Devanagari and IAST.
+    </p></li>
+</ul>
+</div>
+
+<h3>Option 2: Make your own PDFs</h3>
+<p>The more powerful option is to create your own PDFs. You can use whatever scripts you like, and your PDFs are guaranteed to be as up-to-date as possible.</p>
+
+<p>First, you should <a href="{{ url_for('site.preferences') }}">set your settings</a> and make sure the guide looks as you expect. If you select <kbd>File -&gt; Print</kbd> in your browser, the current page will format itself to be printer-friendly.</p>
+
+<p>(More detailed instructions will be here soon.)</p>
+
+<p class="inset" style="font-weight: bold; text-align: center; font-size: 1.2em"><a href="{{ lesson_url('basics', 'present-tense-verbs') }}" onclick="var w = window.open('{{ lesson_url('basics', 'present-tense-verbs') }}'); w.print();">Click here to try printing a lesson</a></p>
+
+<p>If you see any strong differences between the ready-made PDFs above and the results you get on your own, please <a href="{{ url_for('site.contact') }}">let us know</a> what differences you see.</p>
+{% endblock %}
