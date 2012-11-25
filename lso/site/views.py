@@ -34,10 +34,10 @@ def index():
     return render_template('site/index.html')
 
 
-@site.route('/preferences')
-def preferences():
-    form = forms.PreferencesForm()
-    return render_template('site/preferences.html', form=form)
+@site.route('/settings')
+def settings():
+    form = forms.SettingsForm()
+    return render_template('site/settings.html', form=form)
 
 
 @site.route('/resources')

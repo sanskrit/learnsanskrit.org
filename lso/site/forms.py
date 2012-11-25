@@ -14,7 +14,7 @@ class ContactForm(Form):
     message = TextAreaField('Message', [Required()])
 
 
-class PreferencesForm(Form):
+class SettingsForm(Form):
     languages = [
             ['Indian', [
                 (S.BENGALI, u'Bengali (অ)'),

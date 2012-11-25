@@ -1,7 +1,7 @@
 (function(ns) {
-    ns.PreferencesApp = Backbone.View.extend({
+    ns.SettingsApp = Backbone.View.extend({
         initialize: function() {
-            var template = $('#prefs-form').html();
+            var template = $('#settings-form').html();
             this.$el.html(template);
             this.$sa1 = $('#sa1');
             this.$sa2 = $('#sa2');
@@ -26,5 +26,5 @@
 }(window));
 
 $(function() {
-    new PreferencesApp({ el: $('#preferences'), model: LSO.settings });
+    new SettingsApp({ el: $('#settings'), model: LSO.settings });
 });
