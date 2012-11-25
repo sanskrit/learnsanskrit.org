@@ -12,7 +12,7 @@
     {{ sound('a', '"u" in "but"') }}
 </ul>
 
-<p>When you produce this sound, let your breath flow cleanly through your mouth, without any breaks or stops. Such sounds are called <dfn>vowels</dfn>.</p>
+<p>When you produce this sound, let your breath flow cleanly through your mouth, without any breaks or stops.  Sounds produced in this way are called <dfn>vowels</dfn>.</p>
 
 <p class="note">As you learn the Sanskrit sounds, study the recordings carefully and consult the knowledgeable people around you. Use the English approximations as a last resort.</p>
 
@@ -23,13 +23,13 @@
     {{ sound('A', '"a" in "father"', 'aa') }}
 </ul>
 
-<p>{{ 'a'|i }} is called <dfn>short</dfn> because it is not as long as {{ 'a'|i }}. {{ 'A'|i }} is called <dfn>long</dfn> because it is longer than {{ 'a'|i }}. As you pronounce these vowels, try to make {{ 'A'|i }} exactly twice as long as {{ 'a'|i }}.</p>
+<p>{{ 'a'|i }} is called <dfn>short</dfn> because it is not as long as {{ 'A'|i }}. {{ 'A'|i }} is called <dfn>long</dfn> because it is longer than {{ 'a'|i }}. As you pronounce these vowels, try to make {{ 'A'|i }} exactly twice as long as {{ 'a'|i }}.</p>
 
 <h2>Blended sounds</h2>
 <h3>Background</h3>
-<p>Some languages, like English, have writing systems that do not match the sounds of the language well. For example, the English word "enough" does not have a "g" sound, but a "g" is added anyway.</p>
+<p>Some languages, such as English, have writing systems that do not match the sounds of the language well. For example, the English word "enough" does not have a "g" sound, but a "g" is added anyway.</p>
 
-<p>Other languages, like Spanish or Italian, have writing systems that match the sounds of the language very well. Even if you do not know either of these languages, you can pronounce words like <span lang="es">plaza</span> or <span lang="it">numero</span> fairly well.</p>
+<p>Other languages, such as Spanish or Italian, have writing systems that match the sounds of the language very well. Even if you do not know either of these languages, you can probably pronounce words like <span lang="es">plaza</span> or <span lang="it">numero</span> fairly well.</p>
 
 <p>But Sanskrit goes one step further. In almost every text, written Sanskrit is a perfect record of the sounds that appear in spoken Sanskrit.</p>
 
@@ -39,8 +39,8 @@
 <p>Here are two simple Sanskrit sentences:</p>
 
 <ul class="examples">
-	{{ ex('bAlAya Aha', 'He speaks for the boy.', iast=true) }}
-	{{ ex('sA Apnoti', 'She obtains.', iast=true) }}
+    {{ iex('bAlAya Aha', 'He speaks for the boy.') }}
+    {{ iex('sA Apnoti', 'She obtains.') }}
 </ul>
 
 <p>Try reading the first sentence out loud ten times.</p>
@@ -52,37 +52,37 @@
 <p>This is how Sanskrit is usually written down, too. Even if two words are supposed to be separate, they are blended wherever possible:</p>
 
 <ul class="examples">
-	{{ ex('bAlAya Aha -> <mark>bAlAyAha</mark>', 'He spoke for the boy.', iast=true) }}
-	{{ ex('sA Apnoti -> <mark>sApnoti</mark>', 'She obtains.', iast=true) }}
+    {{ iex('bAlAya Aha -> <mark>bAlAyAha</mark>', 'He spoke for the boy.') }}
+    {{ iex('sA Apnoti -> <mark>sApnoti</mark>', 'She obtains.') }}
 </ul>
 
 <h3>In the wild</h3>
 <p>This blending occurs almost everywhere. Try to blend the words in the sentences below:</p>
 
 <ul class="examples">
-	{{ ex('pUrNam eva avaziSyate', iast=true) }}
-	{{ ex('na anuzocanti paNDitAH', iast=true) }}
-	{{ ex('nityazabdena atra anityatvasya abhAvaH', iast=true) }}
+    {{ iex('pUrNam eva avaziSyate') }}
+    {{ iex('na anuzocanti paNDitAH') }}
+    {{ iex('nityazabdena atra anityatvasya abhAvaH') }}
 </ul>
 
 <p>These sentences are all from real Sanskrit texts, like the Upanishads:</p>
 
 <ul class="examples">
-	{{ ex('pUrNamevAvaziSyate', '(Taking the full from the full,) the full itself remains.', cite='<cite lang="sa">Īśa Upaniṣad</cite>', iast=true) }}
+    {{ iex('(pUrNasya pUrNam AdAya) pUrNamevAvaziSyate', '(Taking the full from the full,) the full itself remains.', cite='<cite lang="sa">Īśa Upaniṣad</cite>') }}
 </ul>
 
 <p>the Bhagavad Gita:</p>
 
 <ul class="examples">
-	{{ ex('nAnuzocanti paNDitAH', 'The learned do not grieve (for the dead or the living).', cite='<cite>Bhagavad Gita</cite> 1.11', iast=true) }}
+    {{ iex('(gatAsUn agatAsUMzca) nAnuzocanti paNDitAH', 'The learned do not grieve (for the dead or the living).', cite='<cite>Bhagavad Gita</cite> 1.11') }}
 </ul>
 
 <p>and technical works, like this logical treatise from the 6th century:</p>
 
 <ul class="examples">
-	{{ ex('nityazabdenAtrAnityatvasyAbhAvaH', 'By the word "permanent" here (is meant) the absence of impermanence.',
-	cite='<cite lang="sa">Nyāyapraveśa</cite> 2.3',
-	iast=true) }}
+    {{ ex('nityazabdenAtrAnityatvasyAbhAvaH (ucyate)', 'By the word "permanent" here (is meant) the absence of impermanence.',
+    cite='<cite lang="sa">Nyāyapraveśa</cite> 2.3',
+    iast=true) }}
 </ul>
 
 <p>So even though blending comes from <em>spoken</em> Sanskrit, it can appear in <em>written</em> Sanskrit as well.</p>
