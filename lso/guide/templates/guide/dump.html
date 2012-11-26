@@ -1,0 +1,45 @@
+{% extends 'layout.html' %}
+{% from 'guide/macros.html' import sound %}
+
+{% block title %}Units{% endblock %}
+{% block body_id %}lesson{% endblock %}
+{% block footer_class%}night{% endblock %}
+
+{% block content %}
+<div id="content">
+    <article style="margin: 0;">
+    {% if units|length > 1 %}
+    <header class="guide">
+        <h1>Sanskrit Guide</h1>
+        <p>
+            learnsanskrit.org<br />
+            {{ '%B %d, %Y'|date }}
+        </p>
+    </header>
+    {% endif %}
+    {% for unit in units %}
+        <header class="unit">
+            <h1>{{ unit.title }}</h1>
+            <p>
+                learnsanskrit.org<br />
+                {{ '%B %d, %Y'|date }}
+            </p>
+        </header>
+
+        {% for child in unit.children %}
+            {% set lesson = child.title %}
+            {% set standalone = true %}
+            {% set sound = sound %}
+            <h1>{{ child.title|safe }}</h1>
+            {% include 'guide/' + unit.slug + '/' + child.slug + '.html' %}
+        {% endfor %}
+
+        {% if notes %}
+            <h1>End matter</h1>
+            {% include 'include/footnotes.html' %}
+            {% set notes = [] %}
+        {% endif %}
+    {% endfor %}
+    </article>
+</div>
+{% endblock %}

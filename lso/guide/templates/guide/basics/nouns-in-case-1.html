@@ -1,4 +1,4 @@
-{% extends 'guide/lesson.html' %}
+{% if not standalone %}{% extends 'guide/lesson.html' %}{% endif %}
 
 {% block lesson %}
 <p>Generally, every Sanskrit sentence is just some <em>action</em>. The simplest sentences are just actions and nothing else:</p>

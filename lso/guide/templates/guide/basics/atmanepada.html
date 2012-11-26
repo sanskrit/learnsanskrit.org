@@ -1,4 +1,4 @@
-{% extends 'guide/lesson.html' %}
+{% if not standalone %}{% extends 'guide/lesson.html' %}{% endif %}
 
 {% block lesson %}
 <p>The verbs we just studied are called {{ 'parasmaipada'|i('dfn') }} verbs. The verbs we will study below are called {{ 'Atmanepada'|i('dfn') }} verbs. But what makes one verb different from another? And just what do {{ 'parasmaipada'|i }} and {{ 'Atmanepada'|i }} mean, anyway?</p>

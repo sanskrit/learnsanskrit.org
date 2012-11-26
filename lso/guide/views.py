@@ -5,8 +5,7 @@ from . import guide
 from .models import Lesson
 
 
-@guide.route('/')
-def index():
+def lesson_tree():
     roots = Lesson.query.filter(Lesson.parent_id==None).all()
     guide_root = next(x for x in roots if x.slug == '')
 
@@ -20,7 +19,12 @@ def index():
             unit.children = []
         else:
             unit.children.append(L)
+    return units
 
+
+@guide.route('/')
+def index():
+    units = lesson_tree()
     return render_template('guide/index.html', units=units)
 
 
@@ -66,5 +70,24 @@ def lesson(**kwargs):
         return redirect(url_for('guide.unit', unit=unit_slug))
 
     template = 'guide/%s/%s.html' % (unit.slug, lesson.slug)
-    return render_template(template, lesson=lesson, prev=prev, next=next,
+    return render_template(template,
+                           lesson=lesson, prev=prev, next=next,
                            unit=unit)
+
+
+@guide.route('/<unit>/all')
+def unit_dump(**kwargs):
+    unit_slug = kwargs.pop('unit')
+
+    unit = Lesson.query.filter(Lesson.slug==unit_slug).first()
+    if unit:
+        unit.children = unit.mp.query_descendants().all()
+        return render_template('guide/dump.html', units=[unit])
+    else:
+        return redirect(url_for('guide.index'))
+
+
+@guide.route('/all')
+def guide_dump(**kwargs):
+    units = lesson_tree()
+    return render_template('guide/dump.html', units=units)

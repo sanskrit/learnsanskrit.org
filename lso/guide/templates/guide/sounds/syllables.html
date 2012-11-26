@@ -1,4 +1,4 @@
-{% extends 'guide/lesson.html' %}
+{% if not standalone %}{% extends 'guide/lesson.html' %}{% endif %}
 
 {% block lesson %}
 <p>We have now studied every sound in later Sanskrit (with one small exception). But although real language is made of sounds chained <em>together</em>, we have studied these sounds in <em>isolation</em>. If we cannot pronounce these sounds together, we will be like those musicians who can play beautiful notes but no songs.</p>

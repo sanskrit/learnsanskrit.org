@@ -1,4 +1,4 @@
-{% extends 'guide/lesson.html' %}
+{% if not standalone %}{% extends 'guide/lesson.html' %}{% endif %}
 
 {% block lesson %}
 <h2>Other sounds</h2>

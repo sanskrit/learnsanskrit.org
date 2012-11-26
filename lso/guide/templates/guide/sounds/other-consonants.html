@@ -1,4 +1,4 @@
-{% extends 'guide/lesson.html' %}
+{% if not standalone %}{% extends 'guide/lesson.html' %}{% endif %}
 
 {% block lesson %}
 <p>Generally, any sound that is not a vowel is called a <dfn>consonant</dfn>. Sanskrit has 33 consonants in all: the 25 stops and nasals, the 4 semivowels, and the 4 sounds that we will study in this lesson.</p>
