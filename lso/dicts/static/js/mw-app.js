@@ -83,6 +83,8 @@
             this.$q = $('#q', $el);
             this.$from = $('#from_script', $el);
             this.$to = $('#to_script', $el);
+            this.$from.val(LSO.settings.get('input'));
+            this.$to.val(LSO.settings.get('sa1'));
         }
     });
 
