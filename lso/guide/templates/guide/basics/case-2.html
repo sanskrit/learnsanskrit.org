@@ -1,11 +1,12 @@
-{% extends 'guide/lesson.html' %}
+{% if not standalone %}{% extends 'guide/lesson.html' %}{% endif %}
 
 {% block lesson %}
+<h2>Introduction</h2>
 <p>Using the Sanskrit we know already, we can write a variety of sentences:</p>
 <ul class="examples">
-    {{ ihex('pazyati', 'He sees.') }}
-    {{ ihex('labhe', 'I obtain.') }}
-    {{ ihex('pacase', 'You cook.') }}
+    {{ ihex('tiSThanti', 'They stand.') }}
+    {{ ihex('manye', 'I think.') }}
+    {{ ihex('pacadhve', 'You all cook.') }}
 </ul>
 
 <p>By using <em>nouns</em>, we can describe the things involved with this action. We just learned about case 1, which generally describes <strong>who performs the action</strong>:</p>
@@ -24,19 +25,38 @@
     {{ iex('<mark>gajAn</mark> pazyathaH', 'The two of you see <mark>elephants</mark>.') }}
 </ul>
 
-<p>With verbs that imply movement (like "go," "come," "walk," and so on), case 2 also defines the <strong>destination</strong>:</p>
+<p>Of course, we can use multiple cases at once:</p>
+
+<ul class="examples">
+    {{ iex('vIro gajaM rakSati', 'The hero protects the elephant.') }}
+    {{ ihex('vIrau narAn gacchataH', 'The two heroes go to the men.') }}
+    {{ ihex('vIraM pazyasi', 'You see the hero.') }}
+</ul>
+
+<p>And the words in the sentences can appear in any order:</p>
+
+<ul class="examples">
+    {{ iex('siMhaM vIro jayati', 'The hero conquers the lion.') }}
+    {{ ihex('vIrA jayanti siMhau', 'The heroes conquer the two lions.') }}
+    {{ ihex('jayato vIrau siMhAn', 'The two heroes conquer the lions.') }}
+</ul>
+
+<h2>Other uses</h2>
+<p>With verbs that imply movement (like "go" and "walk"), case 2 also defines the <strong>destination</strong>:</p>
 
 <ul class="examples">
     {{ iex('<mark>naraM</mark> gacchatha', 'You all go <mark>to the man</mark>.') }}
-    {{ ihex('<mark>narau</mark> gacchAmi', 'I go <mark>to the two men</mark>.') }}
-    {{ ihex('<mark>narAn</mark> gacchAvaH', 'The two of us go <mark>to the men</mark>.') }}
+    {{ ihex('<mark>narau</mark> carAmi', 'I walk <mark>to the two men</mark>.') }}
+    {{ ihex('<mark>azvAn</mark> gacchAvaH', 'The two of us go <mark>to the horses</mark>.') }}
 </ul>
+
 
 <h2>Ambiguity</h2>
 <p>Above, we saw that {{ 'gajau'|i }} appears in case 1 and case 2. This can create <dfn>ambiguities</dfn> in Sanskrit, where multiple meanings are possible:</p>
 
 <ul class="examples">
     {{ iex('gajau labhete', '(a) The two of them obtain the two elephants.<br />(b) The two elephants obtain.') }}
+    {{ ihex('vIrau narau rakSataH', '(a) The two heroes protect the two men.<br />(b) The two men protect the two heroes') }}
 </ul>
 
 <p>These ambiguities disappear if we know more about this sentence's context. If we do not have enough context, then there is nothing we can do. But fortunately, these sorts of ambiguities are also quite rare. They go away if the verb changes even slightly:</p>
@@ -45,6 +65,7 @@
     {{ ihex('gajau labhethe', 'The two of you obtain the two elephants.') }}
     {{ ihex('gajau labhante', 'They obtain the two elephants.') }}
 </ul>
+
 
 <h2>Table of forms</h2>
 <p>No Sanskrit textbook is complete without putting the different noun forms in a table:</p>
