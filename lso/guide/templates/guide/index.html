@@ -18,4 +18,12 @@
 <header>
     <h1>Appendices</h1>
 </header>
+
+{% for unit in supp %}
+<section class="unit">
+    <h2><a href="{{ url_for('guide.unit', unit=unit.slug) }}">{{ unit.title|safe }}</a></h2>
+    {% include 'guide/include/unit-contents.html' %}
+</section>
+{% endfor %}
+
 {% endblock %}
