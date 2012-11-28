@@ -1,4 +1,18 @@
-{% extends 'guide/lesson.html' %}
+{% if not standalone %}{% extends 'guide/lesson.html' %}{% endif %}
+{% from 'guide/macros.html' import dev_row as row %}
 
 {% block lesson %}
+<p>Although vowel marks are very common in Sanskrit, vowel letters are very rare. They only appear in a few circumstances, which we won't detail here.</p>
+
+<h2>The letters</h2>
+<ul class="grid-4 letters">
+    {{ row('a A i I') }}
+    {{ row('u U R RR') }}
+    {{ row('e ai o au') }}
+</ul>
+
+<p>The letters below are so rare that they are listed separately. {{ 'lR'|d }}  appears occasionally in some grammatical texts, and {{ 'lRR'|d }}  is even less frequent.</p>
+<ul class="grid-2 letters">
+    {{ row('lR lRR') }}
+</ul>
 {% endblock %}
