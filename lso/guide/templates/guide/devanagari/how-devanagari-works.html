@@ -1,0 +1,58 @@
+{% if not standalone %}{% extends 'guide/lesson.html' %}{% endif %}
+
+{% block lesson %}
+<p>This appendix to the Sanskrit grammar guide is a full description of the <dfn>Devanagari</dfn> script. The script is introduced over several lessons.</p>
+
+<p>Although Devanagari is used for several languages, these lessons focus on how it is used in Sanskrit. For that reason, these lessons assume that you are familiar with <dfn>IAST</dfn>, the main transliteration scheme for Sanskrit:</p>
+
+<ul class="examples">
+    {{ iex('tejasvi nAvadhItamastu', dev=false) }}
+</ul>
+
+<p>If you are not familiar with IAST or want a refresher, consult the <a href="{{ url_for('guide.unit', unit='sounds') }}">Sounds</a> unit of the guide.</p>
+
+<h2>Overview</h2>
+<p>The English writing system is an <dfn>alphabet</dfn> containing 26 letters. A single word, like "pots," is read as a sequence of letters, each describing a particular sound.</p>
+
+<ul class="examples">
+    {{ ex(en='pots -> p o t s') }}
+</ul>
+
+<p>For the most part, Devanagari works the same way. The difference is that the different letters are <em>clustered together into units</em>. These units end in vowels wherever possible:</p>
+
+<ul class="examples">
+    {{ iex('zabdaH -> za bdaH', 'word') }}
+    {{ iex('kArtsnyam -> kA rtsnya m', 'totality') }}
+    {{ iex('mAmakAH -> mA ma kAH', 'mine') }}
+</ul>
+
+<h2>Default vowels</h2>
+<p>With just these three examples, we can see some of the important qualities of Devanagari. Let's focus on the letter {{ 'm'|i }} as used in the examples above.</p>
+
+<ul class="examples">
+    {{ iex('m') }}
+    {{ iex('mA') }}
+    {{ iex('ma') }}
+</ul>
+
+<p>Plain {{ 'ma'|i }} is the simplest of these four letters. In fact, to say just {{ 'm'|i }}, we have to add an extra stroke to the letter. In Devanagari, all consonants have a <strong>default {{ 'a'|i }} vowel</strong> that always follows it. This is appropriate, since {{ 'a'|i }} is by far the most common letter in Sanskrit.</p>
+
+<p>To remove this default {{ 'a'|i }} vowel, we must use a special stroke, as seen in the second example. We have to do the same thing to change the consonant's vowel.</p>
+
+<h2>Tricky parts of Devanagari</h2>
+<p>In some regards, Devanagari is a clumsy script. If a group of consonants appears, the group is usually written by mashing the individual letters together:</p>
+
+<ul class="examples">
+    {{ ex('rtsnya -> r t s n ya', iast=true)}}
+</ul>
+
+<p>Moreover, certain consonants also look rather similar to each other. And when they do, they usually don't correspond in any meaningful way:</p>
+
+<ul class="examples">
+    {{ ex('Ga Da', iast=true)}}
+    {{ ex('gha dha', iast=true)}}
+    {{ ex('kha rava', iast=true)}}
+</ul>
+
+<p>These are just some things to keep in mind as you go forward.</p>
+{% endblock %}

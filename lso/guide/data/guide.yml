@@ -32,3 +32,16 @@
     - title: Adding Emphasis
     - title: The <span lang="sa">tatpuruṣa</span>
     - title: Review
+- title: Appendices
+  slug: ''
+  children:
+  - title: 'Devanagari'
+    children:
+    - title: How Devanagari Works
+    - title: Consonants
+    - title: Vowel Marks
+    - title: Vowels
+    - title: Punctuation
+    - title: Conjunct Consonants
+    - title: Numerals
+    - title: Vedic Devanagari
