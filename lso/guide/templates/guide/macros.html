@@ -1,3 +1,10 @@
+<!-- Devanagari letters -->
+{% macro dev_row(items) %}
+{% for item in items.split() %}
+<li><div class="letter">{{ item|d }}</div>{{ item|i }}</li>
+{% endfor %}
+{% endmacro %}
+
 {% macro row(category, letters) %}
     <tr>
         <th>{{ category }}</th>
@@ -19,7 +26,7 @@
         {% set filename = (f or text)|lower %}
         <a href="{{ url_for('guide.static',
             filename='audio/%s.mp3' | format(filename)) }}">
-        <div>{{ text|i }} <span class="play">▶</span></div>
+        <div class="letter">{{ text|i }}</div>
         {% if desc -%}
             <div>{{ desc }}</div>
         {%- endif -%}
