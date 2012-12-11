@@ -43,6 +43,16 @@
         return s.toLowerCase().replace(/\s/g, '-');
     };
 
+    LSO.sa1 = function(text, from) {
+        from = from || 'slp1';
+        return Sanscript.t(text, from, LSO.settings.get('sa1'));
+    }
+
+    LSO.sa2 = function(text, from) {
+        from = from || 'slp1';
+        return Sanscript.t(text, from, LSO.settings.get('sa2'));
+    }
+
     /**
      * Global site settings
      */

@@ -21,8 +21,16 @@
     {{ row('za Sa sa ha') }}
 </ul>
 
-<h2>Memorizing letters</h2>
-<p>Memorize these letters however you feel comfortable. If you are having trouble, consider students of Japanese and Chinese, who have to memorize thousands of characters. To help them remember particular characters, these students create <em>vivid stories</em> about the different letters that relate to their shape. These stories serve as reminders of how different letters sound.</p>
+<h2>Common letters</h2>
+<p>Usually, students try to memorize the consonants in order, starting with {{ 'ka'|d }} and ending with {{ 'ha'|d }}. This is slow and unrewarding. Some consonants are so rare that they appear in Sanskrit only rarely. Others are so common that they appear in almost every other word. By focusing on common consonants first, you can start reading Devanagari even if you don't know the complete script:</p>
+
+<figure>
+    {{ svg('consonant-distribution') }}
+    <figcaption>Distribution of Devanagari consonants in the Bhagavad Gita. The larger a circle is, the more times its letter appears. {{ 'jha'|i }} is so rare that it appears just once. <span class="js">(Hover over a circle to see how many times it appears in the text.)</span></figcaption>
+</figure>
+
+<h2>How to memorize a letter</h2>
+<p>If you are having trouble memorizing a letter, consider the students of Japanese and Chinese, who have to memorize thousands of characters. To help them remember particular characters, these students create <em>vivid stories</em> about the different letters that relate to their shape. These stories serve as reminders of how different letters sound.</p>
 
 <ul class="examples">
     {{ ex('gha', iast=true, aside='This looks like a <em>guy</em> with a <em>goiter</em> and a <em>gut</em> full of <em>gas</em>.') }}
@@ -39,4 +47,6 @@
     {{ ex('Ga, Da', iast=true) }}
     {{ ex('Ta, Tha, Dha, da', iast=true) }}
 </ul>
+
+
 {% endblock %}

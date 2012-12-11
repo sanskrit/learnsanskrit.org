@@ -34,3 +34,10 @@
     {% endif %}
 </li>
 {% endmacro %}
+
+{% macro svg(path) %}
+<div id="{{ path }}"></div>
+{% assets output="gen/d3/"+path+".js", "guide/d3/"+path+".js" %}
+    <script type="text/javascript" src="{{ ASSET_URL }}"></script>
+{% endassets %}
+{% endmacro %}
