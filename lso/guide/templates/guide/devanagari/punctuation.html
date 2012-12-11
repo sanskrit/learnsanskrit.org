@@ -1,4 +1,12 @@
 {% extends 'guide/lesson.html' %}
+{% from 'guide/macros.html' import dev_row as row %}
 
 {% block lesson %}
+<p>English has a variety of different punctuation marks. When writing Sanskrit, Devanagari has only three:</p>
+
+<ul class="grid-3 letters">
+    {{ row("| || '") }}
+</ul>
+
+<p>The first is the {{ 'daNDa'|i('dfn') }}, or "stick." This marks the end of a sentence or half-verse. The second can be called a <dfn>double {{ 'daNDa'|i }}</dfn>. This marks the end of a paragraph or verse. The third is the {{ 'avagraha'|i('dfn') }}. This is sometimes used to indicate a vowel sound that is removed due to blending. The {{ 'avagraha'|i }} is discussed in more detail in the grammar guide.</p>
 {% endblock %}
