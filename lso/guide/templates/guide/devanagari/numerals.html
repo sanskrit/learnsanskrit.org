@@ -1,4 +1,19 @@
 {% extends 'guide/lesson.html' %}
+{% from 'guide/macros.html' import dev_row as row %}
 
 {% block lesson %}
+<p>Devanagari <dfn>numerals</dfn> are descended from the same Indian system that gives us the <a href="http://en.wikipedia.org/wiki/Hindu-Arabic_numerals">Hindu-Arabic numerals</a> that we use in English:</p>
+
+<ul class="grid-10 letters">
+    {{ row('0 1 2 3 4 5 6 7 8 9') }}
+</ul>
+
+<p>These numerals are used as you would expect:</p>
+
+<ul class="examples">
+    {{ ex('3', '3')}}
+    {{ ex('108', '108')}}
+    {{ ex('2719', '2719')}}
+</ul>
+
 {% endblock %}
