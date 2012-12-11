@@ -1,5 +1,39 @@
 {% extends 'narrow.html' %}
 
+{% macro pdf(slug, name) %}
+<a href="{{ url_for('.static', filename='pdf/' + slug + '.pdf') }}">{{ name }}</a> [PDF]
+{% endmacro %}
+
+{% macro dump(slug, name) %}
+{% if slug == 'guide' %}
+    <a href="{{ url_for('guide.guide_dump') }}">{{ name }}</a> [HTML]
+{% else %}
+    <a href="{{ url_for('guide.unit_dump', unit=slug) }}">{{ name }}</a> [HTML]
+{% endif %}
+{% endmacro %}
+
+{% macro outline(fn) %}
+<ul>
+    <li>
+        <p>{{ fn('guide', 'Grammar guide') }}<br /> The complete grammar guide.</p>
+        <ul>
+            <li>
+                <p>{{ fn('about', 'About') }}<br />
+                All content from the "About" unit of the guide.</p>
+            </li>
+            <li>
+                <p>{{ fn('sounds', 'Sounds') }}<br />
+                All content from the "Sounds" unit of the guide.</p>
+            </li>
+            <li>
+                <p>{{ fn('basics', 'Basics') }}<br />
+                All content from the "Basics" unit of the guide.</p>
+            </li>
+        </ul>
+    </li>
+</ul>
+{% endmacro %}
+
 {% block title %}Using the Sanskrit grammar guide{% endblock %}
 
 {% block content %}
@@ -37,30 +71,23 @@
 <p>The easier option is to use PDFs that have been created by learnsanskrit.org. These PDFs render Sanskrit in Devanagari and IAST. They are updated regularly, but they are not always as up-to-date as the online lessons.</p>
 
 <div class="download">
-<ul>
-    <li><p>
-        <a href="{{ url_for('.static', filename='pdf/guide.pdf') }}">Grammar guide</a><br />
-        The complete grammar guide. Devanagari and IAST.
-    </p></li>
-    <li><p>
-        <a href="{{ url_for('.static', filename='pdf/sounds.pdf') }}">Sounds</a><br />
-        All lessons from the "Sounds" unit of the guide. Devanagari and IAST.
-    </p></li>
-    <li><p>
-        <a href="{{ url_for('.static', filename='pdf/basics.pdf') }}">Basics</a><br />
-        All lessons from the "Basics" unit of the guide. Devanagari and IAST.
-    </p></li>
-</ul>
+{{ outline(pdf) }}
 </div>
 
 <h3>Option 2: Make your own PDFs</h3>
 <p>The more powerful option is to create your own PDFs. You can use whatever scripts you like, and your PDFs are guaranteed to be as up-to-date as possible.</p>
 
-<p>First, you should <a href="{{ url_for('site.settings') }}">set your settings</a> and make sure the guide looks as you expect. If you select <kbd>File -&gt; Print</kbd> in your browser, the current page will format itself to be printer-friendly.</p>
-
-<p>(More detailed instructions will be here soon.)</p>
-
-<p class="inset" style="font-weight: bold; text-align: center; font-size: 1.2em"><a href="{{ lesson_url('basics', 'present-tense-verbs') }}" onclick="var w = window.open('{{ lesson_url('basics', 'present-tense-verbs') }}'); w.print();">Click here to try printing a lesson</a></p>
+<ol>
+    <li><p><a href="{{ url_for('site.settings') }}">Set your settings</a> to make sure that the guide will display as you expect it to.</p></li>
+    <li>
+        <p>Visit one of the following pages. These pages display multiple lessons at a time, which makes it much easier to print your own PDFs:</p>
+        <div class="download">
+        {{ outline(dump) }}
+        </div>
+    </li>
+    <li><p>Select <kbd>File -&gt; Print</kbd> to print your content. If you want to save the file as a PDF, select "Save to PDF" or whatever similar option your browser gives you.</p></li>
+</ol>
+</p>
 
 <p>If you see any strong differences between the ready-made PDFs above and the results you get on your own, please <a href="{{ url_for('site.contact') }}">let us know</a> what differences you see.</p>
 {% endblock %}
