@@ -94,7 +94,7 @@
         },
 
         search: function(from, q) {
-            MW.app.query(q, Sanscript.t(q, from, 'slp1'));
+            MW.app.query(Sanscript.t(q, from, 'slp1'));
         }
     });
 
@@ -138,7 +138,7 @@
                 from = this.form.$from.val(),
                 slp_query = t(q, from, 'slp1').replace(/\W/g, '+');
 
-            var url = 'dict/mw/q-slp1/' + slp_query;
+            var url = 'dict/mw/q-' + from + '/' + slp_query;
             MW.routes.navigate(url, {trigger: true, replace: true});
         },
 
