@@ -1,7 +1,7 @@
-*.*~
 *.css
 *.db
-*.pyc
+*.pdf
+*.py[cod]
 audio/
 gen/
 /lso/data/
