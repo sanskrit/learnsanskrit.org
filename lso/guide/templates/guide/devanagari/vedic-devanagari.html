@@ -1,4 +1,33 @@
 {% extends 'guide/lesson.html' %}
+{% from 'guide/macros.html' import dev_row as row %}
 
 {% block lesson %}
+<p>When used to write Vedic texts, Devanagari can be very complex. This lesson introduces a few simple symbols that can help you passably read Vedic Devanagari.</p>
+
+<h2>{{ 'La'|d }} and {{ 'Lha'|d }}</h2>
+
+<p>Between vowels, {{ 'Da'|d }} and {{ 'Dha'|d }} usually become {{ 'La'|d }} and {{ 'Lha'|d }}:</p>
+
+<ul class="grid-2 letters">
+    {{ row('La Lha') }}
+</ul>
+
+<h2>Accent</h2>
+
+<p>Unlike "ordinary" Sanskrit, Vedic Sanskrit has an <dfn>accent</dfn> system, where some vowels are spoken with a higher pitch than others. We denote these accents with some special marks:</p>
+
+<ul class="grid-3 letters">
+    <li>
+        <div class="letter"><span class="sa1">क</span></div>
+    </li>
+    <li>
+        <div class="letter"><span class="sa1">क॒</span></div>
+    </li>
+    <li>
+        <div class="letter"><span class="sa1">क॑</span></div>
+    </li>
+</ul>
+
+
+<p>Each of these symbols denotes a different accent on the letter {{ 'ka'|sa1 }}. Usually, the first example is the {{ 'udAtta'|i('dfn') }}, the second is the {{ 'anudAtta'|i('dfn') }}, and the third is the {{ 'svarita'|i('dfn') }}.</p>
 {% endblock %}
