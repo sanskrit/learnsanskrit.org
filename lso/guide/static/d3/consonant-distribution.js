@@ -34,5 +34,5 @@ data = LSO.d3.keyvalue({
     "Ja": 1
 });
 
-var bubbles = LSO.d3.bubbleGraph(data);
+var bubbles = LSO.d3.bubbleChart(data);
 bubbles('#consonant-distribution');

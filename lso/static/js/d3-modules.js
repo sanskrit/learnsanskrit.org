@@ -152,7 +152,7 @@
         return my;
     };
 
-    ns.bubbleGraph = function(data) {
+    ns.bubbleChart = function(data) {
         function my(selector) {
             var diameter = 480,
                 format = d3.format(",d"),

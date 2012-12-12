@@ -175,5 +175,5 @@ data = LSO.d3.keyvalue({
     "mra": 1
 });
 
-var bubbles = LSO.d3.bubbleGraph(data);
+var bubbles = LSO.d3.bubbleChart(data);
 bubbles('#conjunct-distribution');
