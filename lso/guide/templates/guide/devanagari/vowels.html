@@ -12,7 +12,16 @@
 </ul>
 
 <p>The letters below are so rare that they are listed separately. {{ 'lR'|d }}  appears occasionally in some grammatical texts, and {{ 'lRR'|d }}  is even less frequent.</p>
+
 <ul class="grid-2 letters">
     {{ row('lR lRR') }}
 </ul>
+
+<h2>Common vowels</h2>
+<p>Usually, students try to memorize the vowels in order. This is slow and unrewarding. Some vowels are so rare that they almost never appear in Sanskrit. By focusing on common vowels first, you can save yourself quite a bit of wasted effort:</p>
+
+<figure>
+    {{ svg('vowel-distribution') }}
+    <figcaption>Distribution of Devanagari vowels in the Bhagavad Gita. The larger a circle is, the more times its letter appears. Some vowels don't appear in the text. <span class="js">(Hover over a circle to see how many times it appears in the text.)</span></figcaption>
+</figure>
 {% endblock %}
