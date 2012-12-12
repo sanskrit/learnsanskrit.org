@@ -1,4 +1,121 @@
 {% if not standalone %}{% extends 'guide/lesson.html' %}{% endif %}
 
 {% block lesson %}
+
+<p>All Sanskrit words fall into one of three categories: those that use verb endings, those that use noun endings, and those that use no ending at all. We have seen examples from all three of these categories already, and every Sanskrit concept we study from here onward will be based on one of these three categories. The sentence below has a word from each of these three categories:</p>
+
+<ul class="examples">
+    {{ ihex('naraiH saha pazyanti', 'They see with the men.') }}
+</ul>
+
+<p>Words that use verb endings are <em>verbs</em>. But words that use noun endings are not always nouns; they <em>resemble</em> nouns, but they have very different meanings.</p>
+
+<p>Let's make this discussion more concrete. We already know how to describe the things involved with an action:</p>
+
+<ul class="examples">
+    {{ iex('gajo siMhena grAmaM carati', 'The elephant walks to the village with the lion.') }}
+</ul>
+
+<p>But what if we want to describe the nouns themselves? We can use special <em>descriptive words</em>:</p>
+
+<ul class="examples">
+    {{ iex('<mark>kRSNo</mark> gajo siMhena grAmaM carati', 'The <mark>black</mark> elephant walks to the village with the lion.') }}
+    {{ iex('gajo <mark>zvetena</mark> siMhena grAmaM carati', 'The elephant walks to the village with the <mark>white</mark> lion.') }}
+    {{ iex('gajo siMhena <mark>sundaraM</mark> grAmaM carati', 'The elephant walks to the <mark>beautiful</mark> village with the lion.') }}
+</ul>
+
+<p>These words are called <dfn>adjectives</dfn>, and they describe some quality in a certain noun. Adjectives use the same endings as nouns, and they <strong>must</strong> have the same case and number as the things they describe. Small changes can cause great differences in meaning:</p>
+
+<ul class="examples">
+    {{ ihex('sundaraM siMho naraM pazyati kRSNaH', 'The black lion sees the beautiful man.') }}
+    {{ ihex('sundaraH siMho naraM pazyati kRSNam', 'The beautiful lion sees the black man.') }}
+</ul>
+
+<h2>Using adjectives</h2>
+<p>Like most Sanskrit words, adjectives can appear anywhere:</p>
+
+<ul class="examples">
+    {{ ihex('sundaro gajaH siMhaM jayati.', 'The beautiful elephant conquers the lion.') }}
+    {{ ihex('gajaH sundaraH siMhaM jayati', 'The beautiful elephant conquers the lion.') }}
+    {{ ihex('gajaH siMhaM sundaro jayati.', 'The beautiful elephant conquers the lion.') }}
+    {{ ihex('gajaH siMhaM jayati sundaraH.', 'The beautiful elephant conquers the lion.') }}
+</ul>
+
+<p>And we can use several of them at once:</p>
+
+<ul class="examples">
+    {{ ihex('sundarau siMhau naraM pazyati kRSNau', 'The two beautiful black lions see the man.') }}
+</ul>
+
+<p>Since adjectives are so similar to nouns, they can be used even if no noun is present:</p>
+
+<ul class="examples">
+    {{ iex('kRSNaH zvetaM rakSati', 'The black one protects the white one.') }}
+</ul>
+
+<p>And they can even become nouns in their own right:</p>
+
+<ul class="examples">
+    {{ iex('kRSNaH zvetaM rakSati', 'Krishna protects the white one.') }}
+</ul>
+
+<section class="sandhi">
+    <h2>Sandhi, or "blended sounds" by another name</h2>
+    <p>Sounds blend nearly everywhere in Sanskrit. Sanskrit grammarians noticed this as well, and they gave these various blendings a single collective name: {{ 'sandhi'|i('dfn') }}. The word means something like "combination," and it refers to the <em>combination</em> of two sounds when they are close together. Now that we are learning more about Sanskrit, we might as well use a few Sanskrit terms. But although the term is different, the concepts involved are exactly the same.</p>
+
+    <p>We can talk about certain changes based on the first letter involved. For blends where the {{ 'visarga'|i }} comes first, we can use the term <dfn>{{ 'visarga'|i }} sandhi</dfn>.</p>
+
+    <p>In fact, let us revisit {{ 'visarga'|i }} sandhi one last time. If those are unwelcome words to you, don't worry &mdash; this is the last time that the guide will discuss {{ 'visarga'|i }} sandhi.</p>
+
+    <p>We have already seen a variety of changes, for both {{ '-aH'|i }}:</p>
+    <ul class="examples">
+        {{ ihex('azvaz carati', 'The horse walks.') }}
+        {{ ihex('zvetas tiSThati', 'The white one stands.') }}
+        {{ ihex('naro labhate', 'The man obtains.') }}
+        {{ ihex("gajo 'zvaM carati", 'The elephant walks to the horse.') }}
+        {{ ihex('siMha icchati', 'The lion wants.') }}
+    </ul>
+
+    <p>And {{ '-AH'|i }}:</p>
+
+    <ul class="examples">
+        {{ ihex('sundarAz caranti', 'The beautiful ones walk.') }}
+        {{ ihex('kRSNAs tiSThanti', 'The black ones stand.') }}
+        {{ ihex('narA labhante', 'The men obtain.') }}
+        {{ ihex('siMhA icchanti', 'The lions want.') }}
+    </ul>
+
+    <p>But what if the {{ 'visarga'|i }} is used with some other vowel, as in {{ 'naraiH'|i }}? The changes are mostly the same:</p>
+
+    <ul class="examples">
+        {{ ihex('gajaiH carasi -> gajaiz carasi', 'You walk with the elephants.') }}
+        {{ ihex('gajaiH tiSThAmaH -> gajais tiSThAmaH', 'We stand with the elephants.') }}
+    </ul>
+
+    <p>But there are two other changes we have to consider. Both are easy to understand.</p>
+
+    <h3>The first change</h3>
+    <p>In front of voiced sounds of any kind, the {{ 'visarga'|i }} becomes {{ 'r'|i }}:</p>
+
+    <ul class="examples">
+        {{ ihex('vIraiH icchasi -> vIrair icchasi', 'You want with the heroes.') }}
+        {{ ihex('vIraiH gacchathaH -> vIrair gacchathaH', 'The two of you go with the heroes.') }}
+    </ul>
+
+    <h3>The second change</h3>
+    <p>Consider the sentence below, before blending occurs:</p>
+
+    <ul class="examples">
+        {{ ihex('naraiH rakSati', 'The two of you protect with the men.') }}
+    </ul>
+
+    <p>We can guess that the result will be {{ 'narair ramate'|i }}. But try saying this phrase ten or twenty times. Notice how difficult it is to say {{ 'r'|i }} twice in a row. It would be much easier to pronounce this phrase if we just removed one of the {{ 'r'|i }} sounds. Sanskrit speakers thought so too:</p>
+
+    <ul class="examples">
+        {{ ihex('naraiH rakSati -> narai rakSati', 'The two of you protect with the men.') }}
+    </ul>
+
+    <h3>The end of {{ 'visarga'|i }} sandhi</h3>
+    <p>We have already seen almost all of the sandhi changes that occur between Sanskrit words. And indeed, we have come to the end of {{ 'visarga'|i }} sandhi, which explains how these blendings occur.</p>
+</section>
 {% endblock %}
