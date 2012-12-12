@@ -134,11 +134,10 @@
 
         form_query: function(e) {
             e.preventDefault();
-            var q = this.form.$q.val(),
-                from = this.form.$from.val(),
-                slp_query = t(q, from, 'slp1').replace(/\W/g, '+');
+            var q = this.form.$q.val().replace(/\W/g, '+'),
+                from = this.form.$from.val();
 
-            var url = 'dict/mw/q-' + from + '/' + slp_query;
+            var url = 'dict/mw/q-' + from + '/' + q;
             MW.routes.navigate(url, {trigger: true, replace: true});
         },
 
