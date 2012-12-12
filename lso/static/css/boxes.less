@@ -10,11 +10,17 @@
     color: darken(@color, 60%);
 }
 
-p.rule {
+p.rule, aside.warning {
     .box();
 }
 
 p.rule {
     .box-colors(#D6F78B);
     padding: @en-line-height/2;
+}
+
+aside.warning {
+    background: @light-gray;
+    border-color: darken(@light-gray, 10%);
+    padding: 1em 1em 0;
 }

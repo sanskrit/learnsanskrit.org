@@ -1,4 +1,123 @@
 {% extends 'guide/lesson.html' %}
+{% from 'guide/macros.html' import dev_row as row %}
 
 {% block lesson %}
+
+<aside class="warning">
+    <p>Many of the examples below will depend on your computer's support for Devanagari. Ordinary Devanagari fonts usually do not support more complicated clusters, perhaps with good reason.</p>
+</aside>
+
+<p>Sanskrit sounds are grouped together into <dfn>clusters</dfn>:</p>
+
+<ul class="examples">
+    {{ iex('mAmakAH -> mA ma kAH') }}
+</ul>
+
+<p>These clusters can have more than one consonant. And in Devanagari, these consonants are mashed together:</p>
+
+<ul class="examples">
+    {{ iex('kRSNa -> kR SNa')}}
+</ul>
+
+<p>Unfortunately, consonant clusters can be even more difficult than in this example. Some clusters are so densely combined that the original letters are unrecognizable. And there are simply too many to memorize:</p>
+
+<figure>
+    {{ svg('conjunct-distribution') }}
+    <figcaption>Distribution of Devanagari consonant clusters in the Bhagavad Gita. The larger a circle is, the more times its cluster appears. <span class="js">(Hover over a circle to see how many times it appears in the text.)</figcaption>
+</figure>
+
+
+<p>Fortunately, most consonant clusters fall into simple patterns. By understanding these patterns, we can learn these clusters much more quickly.</p>
+
+<p>This lesson will cover the basic patterns behind consonant clusters. By learning these patterns, you should be able to figure out most all of the clusters you will see in Sanskrit.</p>
+
+<h2>Basic patterns</h2>
+<h3>Horizontal</h3>
+
+<p>Most Devanagari letters have a vertical bar that goes down the side or middle of the letter.</p>
+
+<ul class="verse examples">
+    {{ iex('kha, ga, gha, ca, ja, jha, Ja, Na, ta, tha, dha, na, pa, ba, bha, ma, ya, la, va, za, Sa, sa') }}
+    {{ iex('ka, pha') }}
+</ul>
+
+<p>In the simplest sort of conjunct, this stick and everything to the right of it is removed. The letters are then attached horizontally.</p>
+
+<ul class="examples">
+    {{ iex('s ya -> sya', iast=true) }}
+    {{ iex('g dha -> gdha', iast=true) }}
+    {{ iex('t m ya -> tmya', iast=true) }}
+</ul>
+
+<h3>Vertical</h3>
+<p>In some characters &mdash; especially where this vertical "stick" is missing &mdash; the two letters attach vertically:</p>
+
+<ul class="examples">
+    {{ iex('S Ta -> STa', iast=true) }}
+    {{ iex('p ta -> pta', iast=true) }}
+    {{ iex('G ga -> Gga', iast=true) }}
+    {{ iex('d bha -> dbha', iast=true) }}
+</ul>
+
+<p>Some of these combinations are rather tricky:</p>
+
+<ul class="examples">
+    {{ iex('d ya -> dya', iast=true) }}
+    {{ iex('d ma -> dma', iast=true) }}
+    {{ iex('h ya -> hya', iast=true) }}
+    {{ iex('h ma -> hma', iast=true) }}
+</ul>
+
+<h3>Horizontal and vertical</h3>
+<p>In longer clusters, letters may come together both horizontally and vertically:</p>
+
+<ul class="examples">
+    {{ ex('G kh ya -> Gkhya', iast=true) }}
+</ul>
+
+<h2>Irregular combinations</h2>
+<p>Some clusters are difficult enough that they cannot be read correctly on the first try:</p>
+
+<h3>{{ 'kSa'|d }} and {{ 'jJa'|d }}</h3>
+<p>These two clusters are very common. Note that the individual letters are unrecognizable:</p>
+
+<ul class="grid-2 letters">
+    {{ row('kSa jJa') }}
+</ul>
+
+<h3>Consonant + {{ 'ra'|d }}</h3>
+<p>When {{ 'ra'|i }} appear before a consonant, the combination is simple:</p>
+
+<ul class="examples">
+    {{ iex('r + pa -> rpa') }}
+</ul>
+
+<p>When {{ 'ra'|d }} appears <em>after</em> a consonant, the combination is slightly trickier. {{ 'ra'|d }} is attached as a tick-mark on the "stick" part of the cluster before it:</p>
+
+<ul class="examples">
+    {{ iex('p + ra -> pra') }}
+    {{ iex('m + ra -> mra') }}
+</ul>
+
+<p>If no stick is available, {{ 'ra'|d }} is written slightly differently:</p>
+
+<ul class="examples">
+    {{ iex('ST + ra -> STra') }}
+</ul>
+
+<h3>{{ 'tta'|d }}, {{ 'kta'|d }}, {{ 'tra'|d }}, and {{ 'ktra'|d }}</h3>
+<p>These conjuncts just barely show the original letters.</p>
+
+<ul class="grid-4 letters">
+    {{ row('tta kta tra ktra') }}
+</ul>
+
+<h3>{{ 'za'|d }} + various</h3>
+
+<ul class="examples">
+    {{ ex('z ra -> zra', iast=true) }}
+    {{ ex('z va -> zva', iast=true) }}
+    {{ ex('z ca -> zca', iast=true) }}
+</ul>
+
 {% endblock %}
