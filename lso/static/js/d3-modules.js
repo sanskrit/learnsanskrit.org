@@ -180,13 +180,13 @@
               .style("fill", function(d) { return color(d.key); });
 
             node.append("text")
-              .text(function(d) { return LSO.sa1(d.key, 'hk'); })
+              .text(function(d) { return LSO.sa1(d.key); })
               .attr("dy", function(d) { return d.r / 4; })
               .style("font-size", function(d) { return d.r; })
               .style("text-anchor", "middle");
 
             node.append("title")
-              .text(function(d) { return LSO.sa2(d.key, 'hk') + ": " + format(d.value); }); };
+              .text(function(d) { return LSO.sa2(d.key) + ": " + format(d.value); }); };
 
         return my;
     };
