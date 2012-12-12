@@ -10,8 +10,9 @@
     color: darken(@color, 60%);
 }
 
-p.rule, aside.warning {
+p.rule, aside.note, aside.warning {
     .box();
+    padding: 1em 1em 0;
 }
 
 p.rule {
@@ -19,8 +20,13 @@ p.rule {
     padding: @en-line-height/2;
 }
 
-aside.warning {
-    background: @light-gray;
-    border-color: darken(@light-gray, 10%);
-    padding: 1em 1em 0;
+aside {
+    &.note {
+        .box-colors(lighten(@yellow, 15%));
+    }
+
+    &.warning {
+        background: @light-gray;
+        border-color: darken(@light-gray, 10%);
+    }
 }
