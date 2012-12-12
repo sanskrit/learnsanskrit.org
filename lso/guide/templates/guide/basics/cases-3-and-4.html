@@ -1,4 +1,137 @@
 {% if not standalone %}{% extends 'guide/lesson.html' %}{% endif %}
 
 {% block lesson %}
+<p>By using <em>nouns</em>, we can describe the things involved with an action. We have already studied case 1 and case 2:</p>
+
+<ul class="examples">
+    {{ iex('grAmaM rakSanti vIrAH', 'The heroes protect the village.') }}
+    {{ iex('gRhaM pazyAmi', 'I see the house.') }}
+    {{ ihex('siMhAs tiSThanti', 'The lions stand.') }}
+</ul>
+
+<p>Case 1 and case 2 define very basic relationships. But the remaining cases are more interesting.</p>
+
+<h2>Case 3</h2>
+
+<p><dfn>Case 3</dfn> has two important senses. More commonly, case 3 defines <strong>something used in the action</strong>:
+
+{%- filter foot(notes) %}
+<cite>Ashtadhyayi 1.4.42</cite> : {{ 'sAdhakatamaM karaNam'|i }} "What is most useful is called {{ 'karaNa'|i }}," or "instrument." This is one of the roles that case 3 expresses.
+{% endfilter -%}
+</p>
+
+<ul class="examples">
+    {{ iex('<mark>gajena</mark> gacchAmi grAmam', 'I go <mark>by means of the elephant</mark> to the village.') }}
+    {{ iex('gacchatho grAmAn <mark>rathAbhyAm</mark> ', 'The two of you go <mark>by means of the two chariots</mark> to the villages.') }}
+    {{ iex('azvaM labhante <mark>naraiH</mark>', 'They obtain a horse <mark>by means of the men</mark>.') }}
+</ul>
+
+<p>Less commonly, case 3 defines <strong>a second performer in the action</strong>:</p>
+
+<ul class="examples">
+    {{ iex('<mark>azvena</mark> tiSThAvaH',
+    'The two of us stand <mark>with the horse</mark>.') }}
+    {{ ihex('<mark>vIrAbhyAM</mark> jayasi',
+    'You conquer <mark>with the two heroes</mark>.') }}
+    {{ ihex('manyadhve <mark>vIraiH</mark>',
+    'You all think <mark>with the heroes</mark>.') }}
+</ul>
+
+<p>This second sense can be reinforced by using {{ 'saha'|i('dfn') }}:</p>
+
+<ul class="examples">
+    {{ iex('gajena <mark>saha</mark> gacchAmi grAmAn',
+    'I go <mark>with</mark> the elephant to the villages.') }}
+    {{ ihex('<mark>sahA</mark>zvAbhyAM tiSThanti',
+    'They stand <mark>with</mark> the two horses.') }}
+</ul>
+
+<p>And it can be reversed by {{ 'vinA'|i('dfn') }}:</p>
+
+<ul class="examples">
+    {{ iex('caranti <mark>vinA</mark> vIraiH',
+    'They walk <mark>without</mark> the heroes.') }}
+    {{ ihex('gajena <mark>vinA</mark> gacchAmi',
+    'I go <mark>without</mark> the elephant.') }}
+</ul>
+
+<p>{{ 'saha'|i }} and {{ 'vinA'|i }} should be very close to the word in case 3. Usually, they appear right after. These words are also <dfn>uninflected</dfn> words: they never take endings of any kind.</p>
+
+<section class="sandhi">
+    <h2>Stem-ending blending: {{ 'n'|i }} to {{ 'N'|i }}</h2>
+    <p>We have already seen many different kinds of blending. All of the examples we've seen have one thing in common: blending occurred <em>between words</em>:</p>
+
+    <ul class="examples">
+        {{ ihex('vIraH rathau labhate -> vIro rathau labhate', 'The hero obtains the two chariots.') }}
+    </ul>
+
+    <p>But blending can also occur <strong>within</strong> a word. Consider the words below:</p>
+
+    <ul class="examples">
+        {{ iex('narena', 'with the man') }}
+        {{ iex('vIrena', 'with the hero') }}
+    </ul>
+
+    <p>Try repeating the first word ten or twenty times. Eventually it will become tiresome to pronounce the retroflex {{ 'r'|i }} right before shifting to the non-retroflex {{ 'n'|i }}. It is much easier to <strong>blend</strong> the two sounds by using the same <a href="{{ lesson_url('sounds', 'stops-and-nasals') }}">point of sound</a> for both:</p>
+
+    <ul class="examples">
+        {{ ihex('narena -> nareNa', 'with the man') }}
+        {{ ihex('vIrena -> vIreNa', 'with the hero') }}
+    </ul>
+
+    <p>With this in mind, we can understand the sentences below:</p>
+
+    <ul class="examples">
+        {{ ihex('saha nareNAzvAn rakSAmi', 'I protect the horses with the man.') }}
+        {{ ihex('vIreNa vinA pacase', 'You cook without the hero.') }}
+    </ul>
+</section>
+
+<h2>Case 4</h2>
+
+<p><dfn>Case 4</dfn> usually defines the <strong>person meant to benefit</strong> from the action:
+
+{%- filter foot(notes) %}
+<cite>Ashtadhyayi 1.4.32</cite> : {{ 'karmaNA yam abhipraiti sa saMpradAnam'|i }} "What the agent has in mind when performing the action is called {{ 'saMpradAna'|i }}," or "presentation." This is one of the roles that case 4 expresses.
+{% endfilter -%}
+</p>
+
+<ul class="examples">
+    {{ iex('<mark>gajAya</mark> pace', 'I cook <mark>for the man</mark>.') }}
+    {{ iex('naraH pacati <mark>vIrAbhyAm</mark> ', 'The man cooks <mark>for the two heroes</mark>.') }}
+    {{ iex('siMhaM jayAvaH <mark>gRhebhyaH</mark>', 'The two of us conquer the lion <mark>for villages</mark>.') }}
+</ul>
+
+<p>Compared to the other noun cases, case 4 is uncommon. But you should still know it well!</p>
+
+<ul class="examples">
+    {{ ihex('pacate grAmAya gajam', 'He cooks the elephant for the village.') }}
+    {{ ihex('vIrAbhyAM grAmaM gacchathaH', 'The two of you go to the village for the two heroes.') }}
+    {{ ihex('narebhyo vIrAH siMhaM jayanti', 'The heroes conquer the lion for the men.') }}
+</ul>
+
+<h2>Ambiguities</h2>
+
+<p>Like most languages, Sanskrit can be <em>ambiguous</em>. We have seen ambiguous behavior before:</p>
+
+<ul class="examples">
+    {{ iex('gajau labhete', '(a) The two of them obtain the two elephants.<br />(b) The two elephants obtain.') }}
+</ul>
+
+<p>Words like {{ 'gajAbhyAm'|i }} and {{ 'narAbhyAm'|i }} are ambiguous, too:</p>
+
+<ul class="examples">
+    {{ iex('narAbhyAM pacanti', '(a) They cook for the two men.<br />(b) They cook with the two men.') }}
+</ul>
+
+<p>Usually, common sense is enough to tell what a word should mean:</p>
+
+<ul class="examples">
+    {{ ihex('gajAbhyAM pacanti', 'They cook for the two elephants.') }}
+</ul>
+
+<h2>Table of forms</h2>
+{{ noun('gaja', 'm', cases='1234') }}
+<p>We have already seen all of these forms, and there is no need to linger on a table like this.</p>
+
 {% endblock %}
