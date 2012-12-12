@@ -124,8 +124,8 @@
 
         events: {
             'keyup #input': 'render',
-            'click #submit': 'run',
-            'click #output': 'run',
+            'click #submit': 'select_and_run',
+            'click #output': 'select_and_run',
             'click #swap': 'swap',
             'click #swap-link': 'swap',
         },
@@ -145,6 +145,11 @@
             if (e) {
                 e.preventDefault();
             }
+        },
+
+        select_and_run: function(e) {
+            this.run(e);
+            this.$output.select();
         },
 
         swap: function(e) {
