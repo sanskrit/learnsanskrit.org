@@ -56,7 +56,9 @@
                 )
                 .appendTo($links);
         });
-        $links.appendTo($('li.active', '#sidebar'));
+        if ($links.children().length) {
+            $links.appendTo($('li.active', '#sidebar'));
+        }
     };
 
     $(function() {
