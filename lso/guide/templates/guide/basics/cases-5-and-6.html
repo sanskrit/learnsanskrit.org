@@ -1,4 +1,124 @@
 {% if not standalone %}{% extends 'guide/lesson.html' %}{% endif %}
 
 {% block lesson %}
+
+<p>Cases 3 and 4 allow us to express some interesting relationships between nouns and verbs. This lesson discusses two cases that are just as interesting, if not more so.</p>
+
+<h2>Case 5</h2>
+
+<p>Case 5 represents the abstract idea of <strong>movement away from something</strong>.
+{%- filter foot(notes) %}
+<cite>Ashtadhyayi 1.4.24</cite> : {{ "dhruvam apAye 'pAdAnam"|i }} "When moving away, the fixed point is called {{ 'apAdAna'|i }}," or "separation." This is the most important role of case 5.
+{% endfilter %}
+Generally, we can translate it with the English word "from":</p>
+
+<ul class="examples">
+    {{ iex('mRgAz caranti <mark>grAmAt</mark>', 'The deer walk <mark>from the village</mark>.') }}
+    {{ iex('putrau gacchato <mark>gRhAbhyam</mark>', 'The two sons go <mark>from the two houses</mark>.') }}
+    {{ iex('zvetA zarA gacchanti <mark>narebhyaH</mark>', 'The white arrows go <mark>from the men</mark>.') }}
+</ul>
+
+<p>Like case 4, case 5 is uncommon in ordinary texts. Case 5 can have several more nuanced meanings, but we'll leave the discussion here for now.</p>
+
+<h3>{{ '-t'|i }} sandhi</h3>
+<p>Some of the words in case 5 end in {{ '-t'|i }}. <a href="{{ lesson_url('sounds', 'other-consonants') }}">As you might remember</a>, words ending in {{ 't'|i }} follow some interesting sandhi rules:</p>
+
+<ul class="examples">
+    {{ iex("kRSNAt mRgAt jAyate -> kRSNAn mRgAj jAyate", 'It is born from the black deer.') }}
+    {{ ihex('grAmAt carati -> grAmAc carati', 'He walks from the village.') }}
+    {{ ihex('gRhAt labhate -> gRhAl labhate', 'He obtains from the house.') }}
+</ul>
+
+<h2>Case 6</h2>
+<p>So far, each case has connected a noun to some action:</p>
+
+<ul class="examples">
+    {{ ihex('gajo jAyate', 'The elephant is born.') }}
+    {{ ihex('naraM pazyatha sundaram', 'You all see the beautiful man.') }}
+    {{ ihex('zvetaiH siMhair jayAmaH', 'We conquer with the white lions.') }}
+    {{ ihex('vIrebhyaH pacAvahe', 'The two of us cook for the heroes.') }}
+    {{ ihex('gRhAc carati', 'He walks from the house.') }}
+</ul>
+
+<p><dfn>Case 6</dfn> does not. Instead, case 6 shows that there is a <strong>connection</strong> between one noun and another. This connection is abstract and can mean almost anything:</p>
+
+<ul class="examples">
+    {{ iex('<mark>narasya</mark> putro jAyate', "The son <mark>of the man</mark> is born.") }}
+    {{ iex('zvetaM tudanti zarA <mark>vIrayoH</mark>', 'The arrows <mark>of the two heroes</mark> strike the white one.') }}
+    {{ iex('<mark>vIrANAM</mark> rathA gacchanti', 'The chariots <mark>of the heroes</mark> go.', aside='Note the sandhi change in {{ "vIrANAm"|i }}.') }}
+</ul>
+
+<p>Case 6 is one of the most common Sanskrit cases, and you'll see it frequently.</p>
+
+<ul class="examples">
+    {{ iex('vIrasya gajaM tudasi', "You strike the hero's elephant.") }}
+    {{ iex('sundarayoH putraz carati', 'The son of the two beautiful ones walks.') }}
+    {{ iex('putro zarair mRgAn grAmANAM tudati', 'The son strikes the deer of the village with arrows.') }}
+</ul>
+
+<section class="sandhi">
+    <h2>{{ '-n'|i }} sandhi</h2>
+    <p>Sanskrit words blend together in various ways. Collectively, these blendings are called <em>sandhi</em>. And although sandhi is usually simple, it can seem complicated. Sanskrit students usually struggle with three types of sandhi:</p>
+
+    <ul>
+        <li>{{ 'visarga'|i }} sandhi</li>
+        <li>{{ '-t'|i }} sandhi</li>
+        <li>{{ '-n'|i }} sandhi</li>
+    </ul>
+
+    <p>We have already finished {{ 'visarga'|i }} sandhi. And we have already finished {{ '-t'|i }} sandhi, too. By approaching these rules in the right way, we disposed of them quickly and without much effort.</p>
+
+    <p>That leaves {{ '-n'|i }} sandhi, which we'll discuss now. <strong>Don't try to memorize these rules</strong>. Just focus on understanding them.</p>
+
+    <p>As always, remember to <strong>speak these changes out loud</strong>. Sandhi changes first occurred in spoken language, and they are easiest to observe when speaking them yourself.</p>
+
+    <p>Now, {{ '-n'|i }} changes in three ways:</p>
+
+    <h3>A hidden {{ 's'|i }}</h3>
+    <p>There is one odd part about {{ '-n'|i }} sandhi. In some contexts, {{ '-n'|i }} behaves like {{ 'Ms'|i }}. It behaves like {{ 'Ms'|i }} whenever an "s" sound could be formed. In this way, it behaves just like the {{ 'visarga'|i }}:</p>
+
+    <ul class="examples">
+        {{ ihex('grAmAn caranti -> grAmAMz caranti', 'They walk to the villages.') }}
+        {{ ihex('gajAn tudati -> gajAMs tudAmi', 'I strike the elephants.') }}
+    </ul>
+
+    <h3>Points of sound</h3>
+    <p>{{ 'j'|i }}, {{ 'jh'|i }}, {{ 'z'|i }}, {{ 'D'|i }}, and {{ 'Dh'|i }} shift {{ 'n'|i }} to their point of sound:</p>
+
+    <ul class="examples">
+        {{ ihex('siMhAn jayasi -> You conquer the lions.', 'You conquer the lions') }}
+        {{ ihex('vIrAn zarAH tudanti -> vIrAJ zarAs tudanti', 'The arrows strike the heroes.') }}
+    </ul>
+
+    <p>Words starting with {{ 'D'|i }} are rare, so here's a fake example:</p>
+
+    <ul class="examples">
+        {{ iex('narAn Da -> narAN Da') }}
+    </ul>
+
+    <h3>Change to nasal {{ '-l'|i }}</h3>
+
+    <p>Consonants pronounced at the teeth, such as {{ '-t'|i }}, tend to blend easily:</p>
+
+    <ul class="examples">
+        {{ ihex('grAmAt labhate -> grAmAl labhate', 'He obtains from the village.') }}
+    </ul>
+
+    <p>{{ '-n'|i }} is the same way:</p>
+
+    <ul class="examples">
+        {{ ihex('azvAn labhe -> azvA~l labhe', 'I obtain the horses.') }}
+    </ul>
+
+    <p>{{ '~'|i }} indicates a nasal vowel; it is <strong>not</strong> pronounced as {{ 'm'|i }} or any other letter. In ordinary Sanskrit, this is the only place where {{ '~'|i }} is used.</p>
+
+    <h3>No change</h3>
+    <p>Otherwise, we just use plain {{ '-n'|i }}:</p>
+
+    <ul class="examples">
+        {{ ihex('narAn azvo gacchati', 'The horse goes to the men.') }}
+        {{ ihex('gajAn icchasi', 'You want the elephants.') }}
+    </ul>
+</section>
+
 {% endblock %}

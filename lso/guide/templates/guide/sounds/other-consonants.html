@@ -52,41 +52,45 @@
 <p>Like other stops, {{ 't'|i }} can become nasal:</p>
 
 <ul class="examples">
-    {{ ex('tat na Asyam -> tan nAsyam', 'That is not a mouth.', iast=true) }}
-    {{ ex('tat mantram -> tan mantram', 'That is a mantra.', iast=true) }}
+    {{ iex('tat na Asyam -> tan nAsyam', 'That is not a mouth.') }}
+    {{ iex('tat mantram -> tan mantram', 'That is a mantra.') }}
 </ul>
 
 <p>and voiced:</p>
 
 <ul class="examples">
-    {{ ex('tat asat -> tad asat', 'That is false.', iast=true) }}
+    {{ iex('tat asat -> tad asat', 'That is false.') }}
 </ul>
 
-<p>We have seen these changes already.</p>
-
-<p>But {{ 't'|i }} can also change its point of sound. If the next sound is a stop that <strong>uses the tongue</strong>, then it changes:</p>
+<p>We have seen these changes already. But {{ 't'|i }} can change in other ways, too. It can become {{ 'l'|i }}:</p>
 
 <ul class="examples">
-    {{ ex('tat cApam -> tac cApam', 'That is a bow.', iast=true) }}
-    {{ ex('tat TIkAsu -> taT TIkAsu', 'That is in the commentaries.', iast=true) }}
-    {{ ex('tat tanoti', 'He spreads that.', iast=true) }}
+    {{ iex('tat labhate -> tal labhate', 'He obtains that.') }}
+</ul>
+
+<p>and it can also change its point of sound. If the next sound is a stop that <strong>uses the tongue</strong>, then it changes:</p>
+
+<ul class="examples">
+    {{ iex('tat cApam -> tac cApam', 'That is a bow.') }}
+    {{ iex('tat TIkAsu -> taT TIkAsu', 'That is in the commentaries.') }}
+    {{ iex('tat tanoti', 'He spreads that.') }}
 </ul>
 
 <p>even if those sounds are voiced:</p>
 
 <ul class="examples">
-    {{ ex('tat jAyate -> taj jAyate', 'That is born.', iast=true) }}
-    {{ ex('tat Damarau -> taD Damarau', 'That is in the drum.', iast=true) }}
-    {{ ex('tat dahati -> tad dahati', 'That burns.', iast=true) }}
+    {{ iex('tat jAyate -> taj jAyate', 'That is born.') }}
+    {{ iex('tat Damarau -> taD Damarau', 'That is in the drum.') }}
+    {{ iex('tat dahati -> tad dahati', 'That burns.') }}
 </ul>
 
 <p>For other stops ({{ 'kavarga'|i }} and {{ 'pavarga'|i }}), the point of sound does not change:</p>
 
 <ul class="examples">
-    {{ ex('tat kaThoram', 'That is hard.', iast=true) }}
-    {{ ex('tat gurum -> tad gurum', 'That is heavy.', iast=true) }}
-    {{ ex('tat phalam', 'That is a fruit.', iast=true) }}
-    {{ ex('tat bIjam -> tad bIjam', 'That is a seed.', iast=true) }}
+    {{ iex('tat kaThoram', 'That is hard.') }}
+    {{ iex('tat gurum -> tad gurum', 'That is heavy.') }}
+    {{ iex('tat phalam', 'That is a fruit.') }}
+    {{ iex('tat bIjam -> tad bIjam', 'That is a seed.') }}
 </ul>
 
 <h3>In the wild</h3>
@@ -94,13 +98,13 @@
 <p>Try to blend the words in the phrase below:</p>
 
 <ul class="examples">
-    {{ ex('yat bhUtaM yat ca bhavyam', iast=true) }}
+    {{ iex('yat bhUtaM yat ca bhavyam') }}
 </ul>
 
 <p>This phrase is from the <a href="http://en.wikipedia.org/wiki/Purusha_sukta"><cite>Puruṣa Sūkta</cite></a>, one of the most popular Vedic hymns:</p>
 
 <ul class="examples">
-    {{ ex('yad bhUtaM yac ca bhavyam', '(He is all of this) which has been and which is yet to be.', iast=true, cite='<cite>Puruṣa Sūkta</cite>') }}
+    {{ iex('yad bhUtaM yac ca bhavyam', '(He is all of this) which has been and which is yet to be.', cite='<cite>Puruṣa Sūkta</cite>') }}
 </ul>
 
 <p>Our Sanskrit alphabet is almost complete. Only two sounds remain.</p>
