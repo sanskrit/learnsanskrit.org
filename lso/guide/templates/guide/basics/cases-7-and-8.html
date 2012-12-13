@@ -1,4 +1,126 @@
 {% if not standalone %}{% extends 'guide/lesson.html' %}{% endif %}
 
 {% block lesson %}
+<p>Now we bring our study of the eight cases to a close. Together, the eight cases express a variety of relationships and can fill in the details of some action.</p>
+
+<h2>Case 7</h2>
+<p>Case 7 defines the <strong>location</strong> of the action.</p>
+
+<ul class="examples">
+    {{ iex('<mark>loke</mark> caranti mRgAH', 'The deer roam <mark>in the world</mark>.') }}
+    {{ iex('bhavanti siMhA <mark>grAmayoH</mark>', 'Lions are <mark>in the two villages</mark>.') }}
+    {{ iex('<mark>gRheSu</mark> jAyante putrAH', 'Sons are born <mark>in the houses</mark>.') }}
+</ul>
+
+<p>As usual, we can use multiple cases at once:</p>
+
+<ul class="examples">
+    {{ ihex('gRhe devaM pazyAmi', 'I see the god in the house.') }}
+    {{ ihex('loke narA bhavanti', 'The men are in the world.') }}
+    {{ iex('grAme devAH putrAMz corayanti', 'The gods steal the sons in the village.') }}
+</ul>
+
+<p>As an aside, note that {{ 'bhavati'|i }} can use two nouns in case 1:</p>
+
+<ul class="examples">
+    {{ iex('narasya putrA devA bhavanti', "The man's sons are gods.") }}
+</ul>
+
+<section class="sandhi">
+    <h2>{{ '-e'|i }} sandhi</h2>
+
+    <p>The letter {{ 'e'|i }} behaves simple enough:</p>
+    <ul class="examples">
+        {{ iex('gRhe pacadhve', 'You all cook for yourselves in the house', hint=true) }}
+        {{ iex('gRhe jAyete putrau', "The two sons are born in the house.", hint=true) }}
+        {{ iex('gRhe manyAmahe', 'We think in the house.', hint=true) }}
+    </ul>
+
+    <p>Still, what happens when {{ 'e'|i }} is near vowels? This, too, is <a href="{{ lesson_url('sounds', 'semivowels') }}">familiar to us already</a>: a sentence like {{ 'grAme icchanti'|i }} will become {{ 'grAmayicchanti'|i }}. But when this blending occurred between two words, Sanskrit speakers went one step further. They thought {{ 'y'|i }} was a tiresome letter to have to say between these two words, so they removed it entirely:</p>
+
+    <ul class="examples">
+        {{ iex('grAme icchanti -> grAma icchanti', 'They want in the village.', hint=true) }}
+    </ul>
+
+    <p>But consider a phrase like {{ 'kRSNaH azvaH'|i }}, which becomes {{ "kRSNo 'zvaH"|i }}. {{ 'aH'|i }} overwhelms the {{ 'a'|i }}, and {{ 'e'|i }} does the same.</p>
+
+    <ul class="examples">
+        {{ iex("gRhe azvaH bhavati -> gRhe 'zvo bhavati", 'The horse is in the house.', hint=true) }}
+    </ul>
+
+    <p>This change is unusual and against our Sanskrit intuition. But it is the sort of change that we must just accept.</p>
+</section>
+
+<h2>Case 8</h2>
+
+<p>Apart from case 6, the cases we have seen so far all define different parts of a given action. But case 8 steps beyond this action and defines <strong>the person who hears the sentence</strong>. We could also say that it defines the person we refer to with the word "you."</p>
+
+<ul class="examples">
+    {{ iex('<mark>putra</mark> vIro bhavasi', '<mark>Son</mark>, you are a hero.') }}
+    {{ iex('<mark>narau</mark> siMhAn pazyAmi', '<mark>O you (two) men</mark>, I see the lions.') }}
+    {{ iex('icchAmy azvaM <mark>devAH</mark> ', "<mark>O gods</mark>, I want a horse.") }}
+</ul>
+
+<p>The forms of case 8 are largely identical to the forms of case 1. But instead of {{ 'naraH'|i }}, we have {{ 'nara'|i }}. This means that {{ 'nara'|i }} can blend with the words that follow it:</p>
+
+<ul class="examples">
+    {{ ihex('narAzvaM corayati', 'O man, he is stealing a horse.') }}
+</ul>
+
+<h2>The eight cases</h2>
+<p>We have now studied all eight of the Sanskrit noun cases. Apart from case 6 and case 8, these cases define the <strong>roles</strong> that certain nouns play in the verb action:</p>
+
+<ul class="examples">
+    {{ iex('vIrA gacchanti gRhAd azvair grAmAn narAya', 'The heroes go with the horses from the house to the villages for the man.') }}
+</ul>
+
+<p>Case 6 <em>connects</em> two nouns:</p>
+
+<ul class="examples">
+    {{ iex('narasya gajam pazyAmaH', "We see the man's elephant.") }}
+</ul>
+
+<p>And case 8 <em>addresses</em> the listener:</p>
+
+<ul class="examples">
+    {{ iex('nara pazyAmi sundaram', "O man, I see a beautiful one.") }}
+</ul>
+
+<p>Usually, these forms are assembled in a table, like so:</p>
+
+{{ noun('gaja', 'm') }}
+
+<p>You know all of these forms already. But for the sake of practice, learn to recite these forms in order, from {{ 'gajaH'|i }} and {{ 'gajau'|i }} in case 1 all the way to {{ 'gajAH'|i }} in case 8. Doing so will fix these forms in your mind.</p>
+
+<h3>Ambiguity</h3>
+<p>Tables are not a fun way to study Sanskrit, but they can make certain trends very clear. Here, for example, we see all of the forms that are used multiple times:</p>
+
+<ul class="examples">
+    {{ iex('gajau', '(a) The two elephants (case 1)<br />(b) The two elephants (case 2)<br />(c) The two elephants (case 8)',) }}
+    {{ iex('gajAH', '(a) The elephants (case 1)<br />(b) The elephants (case 8)') }}
+    {{ iex('gajAbhyAm', '(a) With the two elephants (case 3)<br />(b) For the two elephants (case 4)<br />(c) From the two elephants (case 5)') }}
+    {{ iex('gajebhyaH', '(a) For the elephants (case 4)<br />(b) From the elephants (case 5)') }}
+    {{ iex('gajayoH', '(a) Of the two elephants (case 6)<br />(b) In the two elephants (case 7)') }}
+</ul>
+
+<p>As always, we should rely on context and common sense to help us:</p>
+
+<ul class="examples">
+    {{ ihex('nara icchati', 'The man wants.') }}
+</ul>
+
+<h3>Distribution</h3>
+
+<p>Sanskrit has a reputation for being a tough language. People tend to believe this reputation because Sanskrit has thousands of details and it is difficult to tell which ones are important. So when you study some Sanskrit concept, you should always ask: how often is this used?</p>
+
+<p>For example, how often are the different noun cases used? Which are the most important ones to know? This answer can vary from text to text. But in the Bhagavad Gita, the results are quite clear:</p>
+
+<figure>
+    {{ svg('case-distribution') }}
+    <figcaption>Distribution of cases in the Bhagavad Gita. Case 1 is by far the most common, followed by case 2. Cases 4 and 5 are by far the most rare.</figcaption>
+</figure>
+
+
+<p>Of course, you should know the basics of each of the eight cases. But these cases all have subtleties and extra meanings, and it is difficult to study them all at once. So as you continue to study Sanskrit, whether here or elsewhere, be sure to give more time to common patterns! You'll thank yourself later.</p>
+
 {% endblock %}
