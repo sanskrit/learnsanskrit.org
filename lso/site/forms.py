@@ -5,7 +5,7 @@ from flask.ext.wtf import (Form, TextField, TextAreaField,
 from flask.ext.wtf.html5 import EmailField
 
 from lso.forms.optgroup import OptSelectField
-from sanskrit.letters import sanscript as S
+from sanskrit import sanscript as S
 
 
 class ContactForm(Form):
@@ -35,7 +35,7 @@ class SettingsForm(Form):
 
     inputs = [
             ['Roman', [
-                (S.HARVARD_KYOTO, 'Harvard-Kyoto'),
+                (S.HK, 'Harvard-Kyoto'),
                 (S.IAST, 'IAST'),
                 (S.ITRANS, 'ITRANS'),
                 (S.KOLKATA, 'Kolkata'),
@@ -64,4 +64,4 @@ class SettingsForm(Form):
     sa2 = OptSelectField('Second script', choices=languages,
         default=S.IAST)
     input = OptSelectField('Input script', choices=inputs,
-        default=S.HARVARD_KYOTO)
+        default=S.HK)

@@ -1,6 +1,6 @@
 from collections import OrderedDict
 from flask import redirect, render_template, request, url_for, jsonify
-from sanskrit.letters import sanscript as S
+from sanskrit import sanscript as S
 
 from lso import app
 from ..database import session
@@ -44,7 +44,7 @@ def mw_pretty(from_script, q):
     if from_script not in S.SCHEMES:
         return redirect(url_for('.mw'))
 
-    slp_query = S.t(q, from_script, S.SLP1)
+    slp_query = S.transliterate(q, from_script, S.SLP1)
     results = mw_results(slp_query)
     for key in results:
         results[key] = [mw_transform(x, to_script) for x in results[key]]

@@ -1,7 +1,7 @@
 import datetime
 
 from jinja2 import Markup
-from sanskrit.letters import sanscript
+from sanskrit import sanscript
 
 from lso import app
 

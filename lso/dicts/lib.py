@@ -3,7 +3,7 @@
 
 import re
 import xml.etree.ElementTree as ET
-from sanskrit.letters import sanscript as S, beta2unicode as B
+from sanskrit import sanscript as S, betacode as B
 
 from lso.lib.xml_transform import Rule, TextRule, translate
 
@@ -67,12 +67,13 @@ mw = {
     'vlex': Rule('span', {'class': 'lex'}),   # lexical category
 }
 
+
 def mw_transform(data, to_script):
     clean_data = re.sub('[~_]', ' ', data)
 
     xml = ET.fromstring(clean_data)
     for gk in xml.findall('.//gk'):
-        gk.text = B.t(gk.text)
+        gk.text = B.transliterate(gk.text)
     translate(xml, mw)
 
     result = ET.tostring(xml, 'utf-8').decode('utf-8')

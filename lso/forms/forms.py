@@ -1,7 +1,7 @@
 # -*- encoding: utf-8 -*-
 
 from flask.ext.wtf import Form, TextField, Required
-from sanskrit.letters import sanscript as S
+from sanskrit import sanscript as S
 
 from optgroup import OptSelectField
 
@@ -12,7 +12,7 @@ class SanskritForm(Form):
     """Generic form for handling Sanskrit."""
     languages = [
                     ['Roman', [
-                        (S.HARVARD_KYOTO, 'Harvard-Kyoto'),
+                        (S.HK, 'Harvard-Kyoto'),
                         (S.IAST, 'IAST'),
                         (S.ITRANS, 'ITRANS'),
                         (S.KOLKATA, 'Kolkata'),

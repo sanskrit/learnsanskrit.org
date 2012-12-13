@@ -5,7 +5,7 @@ import functools
 
 from flask import url_for
 from jinja2 import Markup
-from sanskrit.letters import sanscript
+from sanskrit import sanscript
 from xml.etree import ElementTree as ET
 
 from lso import app
@@ -54,7 +54,7 @@ def inject_functions():
 
 @app.template_filter()
 def d(text, tag='span', to=sanscript.DEVANAGARI):
-    return sa1(text, sanscript.HARVARD_KYOTO, to, tag=tag)
+    return sa1(text, sanscript.HK, to, tag=tag)
 
 
 def ex(sa=None, en=None, **kwargs):
@@ -110,7 +110,7 @@ def foot(text, notes):
 
 @app.template_filter()
 def i(text, tag='span'):
-    return sa2(text, sanscript.HARVARD_KYOTO, tag=tag)
+    return sa2(text, sanscript.HK, tag=tag)
 
 
 def img(filename, alt):
