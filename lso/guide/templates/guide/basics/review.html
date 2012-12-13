@@ -1,4 +1,21 @@
 {% if not standalone %}{% extends 'guide/lesson.html' %}{% endif %}
 
 {% block lesson %}
+<p>And that is all! Starting from ordinary Sanskrit sounds, we have built up our knowledge of how Sanskrit works. We learned that <a href="{{ lesson_url('basics', 'present-tense') }}">verbs</a> describe some action and that <a href="{{ lesson_url('basics', 'nouns-in-case-1') }}">nouns</a> describe the different parts of that action. We also learned that <a href="{{ lesson_url('basics', 'adjectives') }}">adjectives</a> describe nouns and that <a href="{{ lesson_url('basics', 'cases-3-and-4') }}">uninflected words</a> have various functions.</p>
+
+<p>Most importantly, we have built a strong foundation for exploring the rest of Sanskrit. Now the lessons will become much more interesting. Soon we will start reading lines from the Bhagavad Gita.</p>
+
+<p>But before you go on, take a moment to review the material from this unit.</p>
+
+<h2>Verbs</h2>
+
+<h3>{{ 'parasmaipada'|i }}</h3>
+{{ verb('gam', '1', 'pres', 'P') }}
+
+<h3>{{ 'Atmanepada'|i }}</h3>
+{{ verb('laB', '1', 'pres', 'A') }}
+
+<h2>Nouns</h2>
+{{ noun('gaja', 'm') }}
+
 {% endblock %}
