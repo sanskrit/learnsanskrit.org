@@ -11,6 +11,8 @@ $(function() {
     });
 
     var chart = LSO.d3.pieChart(data)
-        .text(function(d) { return 'Case ' + d.data.key; });
+        .width(600)
+        .showLegend(true)
+        .text(function(d) { return 'Case ' + d.key; });
     chart('#case-distribution');
 }());
