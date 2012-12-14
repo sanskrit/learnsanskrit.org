@@ -6,7 +6,7 @@ $.tooltips = function(selector, scope) {
     scope = scope || 'body';
     // Bind to titled elements if no selector provided
     selector = selector || '[title]';
-    var fadeSpeed = 200;
+    var fadeSpeed = 100;
 
     $(scope).on({
         mouseover: function() {
@@ -38,7 +38,7 @@ $.tooltips = function(selector, scope) {
             });
         },
         mouseout: function() {
-            $(this).data('tooltip').fadeOut(100, function() {
+            $(this).data('tooltip').fadeOut(fadeSpeed, function() {
                 $(this).remove();
             });
         }
