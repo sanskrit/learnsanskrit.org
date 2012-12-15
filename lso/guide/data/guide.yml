@@ -31,6 +31,18 @@
     - title: Cases 7 and 8
     - title: The <span lang="sa">tatpuruṣa</span>
     - title: Review
+  - title: Roots
+    children:
+    - title: Roots and Stems
+    - title: '<span lang="sa">-a</span>, <span lang="sa">-ya</span>, and <span lang="sa">-aya</span>'
+    - title: '<span lang="sa">-no</span>, <span lang="sa">-o</span>, and <span lang="sa">-nā</span>'
+    - title: The Near Future
+    - title: Passive and Stative Verbs
+    - title: Causal Verbs
+    - title: Root Suffixes
+    - title: '<span lang="sa">-ta</span>'
+    - title: '<span lang="sa">-tvā</span>'
+    - title: Review
 - title: Appendices
   slug: ''
   children:
