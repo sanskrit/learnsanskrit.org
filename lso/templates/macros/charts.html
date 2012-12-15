@@ -1,0 +1,38 @@
+{% macro thead(key, caption, labels) %}
+    {% if caption %}<caption>{{ caption }}</caption>{% endif %}
+    <tr>
+        <th>{{ key|sa1 }}</th>
+        {% for num in 'sdp' %}
+        <th>{{ labels[num] }}</th>
+        {% endfor %}
+    </tr>
+{% endmacro %}
+
+{% macro row(r, forms, label) %}
+    <tr>
+        {% if label %}<th>{{ label }}</th>{% endif %}
+        {% for num in 'sdp' %}
+        <td>{{ forms[(r, num)]|sa1 }}<br />{{ forms[(r, num)]|sa2 }}</td>
+        {% endfor %}
+    </tr>
+{% endmacro %}
+
+<!-- Display nominal data -->
+{% macro nominal_paradigm(basis, forms, caption=none, labels={}, cases='12345678') %}
+<table class="paradigm">
+    {{ thead(basis, caption, labels) }}
+    {% for c in cases %}
+    {{ row(c, forms, labels[c]) }}
+    {% endfor %}
+</table>
+{% endmacro %}
+
+<!-- Display verb data -->
+{% macro verb_paradigm(basis, forms, caption=none, labels={}) %}
+<table class="paradigm">
+    {{ thead(basis, caption, labels) }}
+    {% for p in '321' %}
+    {{ row(p, forms, labels[p]) }}
+    {% endfor %}
+</table>
+{% endmacro %}

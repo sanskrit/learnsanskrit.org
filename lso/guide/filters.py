@@ -1,15 +1,58 @@
 #!/usr/bin/python
 # -*- encoding: utf-8 -*-
 
-import functools
+from xml.etree import ElementTree as ET
 
 from flask import url_for
 from jinja2 import Markup
-from sanskrit import sanscript
-from xml.etree import ElementTree as ET
+from sanskrit import query, sanscript, sounds
 
-from lso import app
+from lso import app, ctx
 from lso.filters import sa1, sa2
+
+from . import guide as blue
+
+
+@blue.context_processor
+def inject_notes():
+    return {'notes': []}
+
+
+@blue.context_processor
+def inject_functions():
+    return {
+        'ex': ex,
+        'iex': iex,
+        'ihex': ihex,
+        'img': img,
+        'lesson_url': lesson_url,
+        'nominal_data': nominal_data,
+        'verb_data': verb_data,
+        }
+
+
+@app.template_filter()
+def d(text, tag='span', to=sanscript.DEVANAGARI):
+    """Transliterate Harvard-Kyoto (primary)."""
+    return sa1(text, sanscript.HK, to, tag=tag)
+
+
+@app.template_filter()
+def foot(text, notes):
+    notes.append(text)
+    i = len(notes)
+    return '<sup><a id="fref-%s" href="#fnote-%s">[%s]</a></sup>' % (i, i, i)
+
+
+@app.template_filter()
+def i(text, tag='span'):
+    """Transliterate Harvard-Kyoto (secondary)."""
+    return sa2(text, sanscript.HK, tag=tag)
+
+
+@app.template_filter()
+def render(text):
+    return app.jinja_env.from_string(text).render()
 
 
 def raw_text(elem, text):
@@ -20,44 +63,14 @@ def raw_text(elem, text):
     elem.extend(wrapper.getchildren())
 
 
-def to_template(path):
-    """Render the output of the decorated function into the template
-    located at the given path. Paths are resolved using the Flask app,
-    so any path that can be found by Flask is valid.
-
-    :param path: the template path"""
-    def decorator(func):
-        @functools.wraps(func)
-        def newfunc(*a, **kw):
-            data = func(*a, **kw)
-            return Markup(app.jinja_env.get_template(path).render(**data))
-        return newfunc
-    return decorator
-
-
-@app.context_processor
-def inject_notes():
-    return {'notes': []}
-
-
-@app.context_processor
-def inject_functions():
-    return {'ex': ex,
-            'iex': iex,
-            'ihex': ihex,
-            'img': img,
-            'lesson_url': lesson_url,
-            'noun': noun,
-            'verb': verb
-            }
-
-
-@app.template_filter()
-def d(text, tag='span', to=sanscript.DEVANAGARI):
-    return sa1(text, sanscript.HK, to, tag=tag)
-
-
 def ex(sa=None, en=None, **kwargs):
+    """Display an example.
+
+    :param sa: a Sanskrit string in Harvard-Kyoto
+    :param en: an English string
+    :key aside: a digression on the example
+    :key cite: a citation
+    """
     aside = kwargs.get('aside')
     cite = kwargs.get('cite')
     dev = kwargs.get('dev', True)
@@ -101,18 +114,6 @@ def ihex(*args, **kwargs):
     return ex(*args, **kwargs)
 
 
-@app.template_filter()
-def foot(text, notes):
-    notes.append(text)
-    i = len(notes)
-    return '<sup><a id="fref-%s" href="#fnote-%s">[%s]</a></sup>' % (i, i, i)
-
-
-@app.template_filter()
-def i(text, tag='span'):
-    return sa2(text, sanscript.HK, tag=tag)
-
-
 def img(filename, alt):
     full_path = url_for('guide.static', filename='img/%s' % filename)
     img = ET.Element('img', {'src': full_path, 'alt': alt})
@@ -127,18 +128,64 @@ def lesson_url(unit, lesson=None):
         return url_for('guide.unit', unit=unit)
 
 
-@to_template('include/charts/noun.html')
-def noun(stem, genders, cases='12345678'):
-    forms = {(p, n): '[%s%s]' % (p, n) for p in cases for n in 'sdp'}
-    return {'stem': stem, 'forms': forms}
+def nominal_data(stem, gender, cases=None):
+    """Gather data for displaying a nominal paradigm.
+
+    :param stem: the nominal stem
+    :param gender: the gender to use
+    """
+    Q = query.SimpleQuery(ctx)
+    forms = Q.noun(stem, gender)
+    for key, value in forms.items():
+        forms[key] = value[:-1] + sounds.simplify(value[-1])
+
+    labels = {
+        's': 'One',
+        'd': 'Two',
+        'p': 'Many',
+        '1': 'Case 1',
+        '2': 'Case 2',
+        '3': 'Case 3',
+        '4': 'Case 4',
+        '5': 'Case 5',
+        '6': 'Case 6',
+        '7': 'Case 7',
+        '8': 'Case 8',
+    }
+    return {
+        'basis': stem,
+        'cases': cases,
+        'forms': forms,
+        'labels': labels,
+        }
 
 
-@app.template_filter()
-def render(text):
-    return app.jinja_env.from_string(text).render()
+def verb_data(root, mode, voice, vclass=None, basis=None):
+    """Gather data for displaying a verb paradigm.
 
+    :param root: the root
+    :param mode: the mode to use
+    :paam voice: the voice to use
+    :param vclass: the verb class to use, if applicable
+    :param basis: the "basis" to use when displaying the data.
+                  If not provided, use the verb root.
+    """
+    Q = query.SimpleQuery(ctx)
+    forms = Q.verb(root, mode, voice)
+    for parse, form in forms.items():
+        forms[parse] = form[:-1] + sounds.simplify(form[-1])
 
-@to_template('include/charts/verb.html')
-def verb(root, vclass, mode, voice):
-    forms = {(p, n): '[%s%s]' % (p, n) for p in '123' for n in 'sdp'}
-    return {'root': root, 'forms': forms}
+    basis = basis or root
+    labels = {
+        's': 'One',
+        'd': 'Two',
+        'p': 'Many',
+        '3': '"He"',
+        '2': '"You"',
+        '1': '"I"',
+    }
+    return {
+        'basis': basis,
+        'forms': forms,
+        'labels': labels,
+        }

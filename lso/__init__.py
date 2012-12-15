@@ -2,6 +2,8 @@ from flask import Flask
 from flask.ext.assets import Bundle, Environment
 from flask.ext.mail import Mail
 
+from sanskrit import Context
+
 app = Flask(__name__)
 app.config.from_object('development.config')
 
@@ -23,6 +25,11 @@ assets.register('all-js', js)
 # Mail
 # ----
 mail = Mail(app)
+
+# Sanskrit
+# --------
+ctx = Context(dict(DATABASE_URI=app.config['DATABASE_URI'],
+              DATA_PATH=app.config['SANSKRIT_PATH']))
 
 # Views
 # -----

@@ -1,3 +1,5 @@
+{% import 'macros/charts.html' as charts %}
+
 <!-- Devanagari letters -->
 {% macro dev_row(items) %}
 {% for item in items.split() %}
@@ -17,6 +19,12 @@
         {% endfor %}
     </tr>
 {%- endmacro %}
+
+<!-- Noun paradigm -->
+{% macro nominal(stem, gender, cases='12345678') %}
+    {% set data = nominal_data(stem, gender, cases) %}
+    {{ charts.nominal_paradigm(**data) }}
+{% endmacro %}
 
 {% macro sound(text, desc, f) %}
 <li>
@@ -40,4 +48,10 @@
 {% assets output="gen/d3/"+path+".js", "guide/d3/"+path+".js" %}
     <script type="text/javascript" src="{{ ASSET_URL }}"></script>
 {% endassets %}
+{% endmacro %}j
+
+<!-- Verb paradigm -->
+{% macro verb(root, mode, voice, vclass=none, basis=none) %}
+    {% set data = verb_data(root, mode, voice, vclass, basis) %}
+    {{ charts.verb_paradigm(**data) }}
 {% endmacro %}
