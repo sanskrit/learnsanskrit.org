@@ -1,5 +1,8 @@
 /* Basic page layout */
 
+@nav-bg: lighten(#102632, 3%);
+@nav-hover-bg: #B7410E;
+
 body {
     color: @dark-gray;
     font-family: @en-font-family;
@@ -7,7 +10,7 @@ body {
     margin: 0;
     padding: 3em 0 0;
 
-    &#general {
+    &#general, &#guide, &#tools, &#site, &#settings {
         article {
             margin: 3em 10%;
             &.narrow {
@@ -15,7 +18,7 @@ body {
             }
         }
     }
-    &#tool {
+    &#application {
         article {
             margin: auto;
             max-width: 960px;
@@ -25,9 +28,9 @@ body {
 }
 
 nav#top {
-    #gradient.vertical(#102632, #000A16);
-    .box-shadow(0px 3px 6px rgba(0,0,0,0.25));
 
+    background: @nav-bg;
+    .box-shadow(0px 3px 6px rgba(0,0,0,0.3));
     color: #fff;
     left: 0;
     line-height: 3;
@@ -38,44 +41,45 @@ nav#top {
 
     a {
         .transition(0.4s);
+
         color: #fff;
+        outline: none;
+        padding: 0 @en-font-size;
         text-decoration: none;
 
-        &:hover {
-            @bg: @blue;
-            background: @bg;
-            box-shadow: inset 0px 0px 3px #000;
-            color: #fff;
-            text-shadow: 0px 0px 3px #000;
+        &:hover, &.active:hover {
+            background: @nav-hover-bg;
         }
         &.brand {
-            color: #fff;
             font-size: 1.5em;
-            float: left;
             line-height: 2;
-            display: block;
-            padding: 0 @en-font-size;
             text-shadow: 0px 0px 2px @gray;
         }
     }
+    a {
+        display: block;
+        line-height: 3;
+    }
     li {
         float: left;
-
-        a {
-            display: block;
-            line-height: 3;
-            padding: 0 @en-font-size;
-        }
     }
     ul {
         list-style: none;
-        padding: 0;
         margin: 0;
+        padding: 0;
 
         &.user-links {
             float: right;
         }
     }
+}
+
+// Active nav link
+#guide #nav-guide, #lesson #nav-guide, #tools #nav-tools,
+#application #nav-tools, #site #nav-site, #settings #nav-settings {
+    background: darken(@nav-bg, 7%);
+    border: 1px lighten(@nav-bg, 3%) solid;
+    border-width: 0 1px;
 }
 
 header {

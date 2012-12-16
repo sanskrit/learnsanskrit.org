@@ -26,5 +26,5 @@
 }(window));
 
 $(function() {
-    new SettingsApp({ el: $('#settings'), model: LSO.settings });
+    new SettingsApp({ el: $('#app'), model: LSO.settings });
 });

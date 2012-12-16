@@ -16,12 +16,16 @@
     </head>
     <body id="{% block body_id %}general{% endblock %}">
         <nav id="top">
-            <a class="brand" href="{{ url_for('index') }}">learn<span class="y">sanskrit</span>.org</a>
+            {% macro sec(name, path, id) %}
+                {% set url = url_for(path) %}
+                <li><a id="nav-{{ id }}" href="{{ url }}">{{ name }}</a></li>
+            {% endmacro %}
             <ul>
-                <li><a href="{{ url_for('guide.index') }}">Guide</a></li>
-                <li><a href="{{ url_for('tools.index') }}">Tools</a></li>
-                <li><a href="{{ url_for('site.index') }}">Site</a></li>
-                <li><a href="{{ url_for('site.settings') }}">Settings</a></li>
+                <li><a class="brand" href="{{ url_for('index') }}">learn<span class="y">sanskrit</span>.org</a></li>
+                {{ sec('Guide', 'guide.index', 'guide') }}
+                {{ sec('Tools', 'tools.index', 'tools') }}
+                {{ sec('Site', 'site.index', 'site') }}
+                {{ sec('Settings', 'site.settings', 'settings') }}
             </ul>
         </nav>
         {% block body %}
