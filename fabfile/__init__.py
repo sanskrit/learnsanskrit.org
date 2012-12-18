@@ -12,6 +12,7 @@ APP_DIR = 'lso'
 
 import db
 import pdf
+import sa
 
 
 @task

@@ -3,6 +3,7 @@ from fabric.api import *
 import lso
 from . import FIRM_YES
 
+
 @task
 def create(*tables):
     """Create tables in the database.
@@ -10,6 +11,7 @@ def create(*tables):
     :param tables: the tables to create. If blank, create all tables.
     """
     lso.database.create(*tables)
+
 
 @task
 def drop(*tables):
@@ -20,6 +22,7 @@ def drop(*tables):
     if confirm_drop(*tables):
         lso.database.drop(*tables)
 
+
 @task
 def recreate(*tables):
     """Drop tables from the database then recreate them.
@@ -29,6 +32,7 @@ def recreate(*tables):
     drop(*tables)
     create(*tables)
 
+
 @task
 def seed(*blueprints):
     """Seed tables is the database, by way of their blueprints.
@@ -36,6 +40,7 @@ def seed(*blueprints):
     :param blueprints: the blueprints containing the tables to seed.
     """
     lso.database.seed(*blueprints)
+
 
 @task
 def rebuild(*blueprints):
@@ -61,6 +66,7 @@ def rebuild(*blueprints):
 
     recreate(*all_tables)
     seed(*blueprints)
+
 
 def confirm_drop(*tables):
     """Ask the user to confirm a table drop"""

@@ -28,8 +28,7 @@ mail = Mail(app)
 
 # Sanskrit
 # --------
-ctx = Context(dict(DATABASE_URI=app.config['DATABASE_URI'],
-              DATA_PATH=app.config['SANSKRIT_PATH']))
+ctx = Context(app.config)
 
 # Views
 # -----
