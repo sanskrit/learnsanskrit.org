@@ -6,14 +6,10 @@
 {% block content %}
 <h1>Tools</h1>
 
-<div class="tabs">
-<section id="t-trans">
-    <h1>Transliteration</h1>
-    <p><a href="{{ url_for('.sanscript') }}">Sanscript</a>  transliterates text from one script to another. Sanscript supports all Indian scripts and the most popular romanizations. It focuses on Sanskrit, but it has strong support for other languages.</p>
-</section>
-<section id="t-dictionaries">
-    <h1>Dictionaries</h1>
-    <p>The <a href="{{ url_for('dicts.mw') }}">Monier-Williams Sanskrit-English Dictionary</a> is the largest and most commonly used Sanskrit-English dictionary. Dictionary data comes from the <a href="http://www.sanskrit-lexicon.uni-koeln.de/">Cologne Digital Sanskrit Lexicon</a> project.</p>
-</section>
-</div>
+<h2>Transliteration</h2>
+<p><a href="{{ url_for('.sanscript') }}">Sanscript</a>  transliterates text from one script to another. Sanscript supports all Indian scripts and the most popular romanizations. It focuses on Sanskrit, but it has strong support for other languages.</p>
+
+<h2>Dictionaries</h2>
+<p>The <a href="{{ url_for('dicts.mw') }}">Monier-Williams Sanskrit-English Dictionary</a> is the largest and most commonly used Sanskrit-English dictionary. Dictionary data comes from the <a href="http://www.sanskrit-lexicon.uni-koeln.de/">Cologne Digital Sanskrit Lexicon</a> project.</p>
+
 {% endblock %}
