@@ -1,4 +1,152 @@
 {% if not standalone %}{% extends 'guide/lesson.html' %}{% endif %}
 
 {% block lesson %}
+
+<h2>Complex classes</h2>
+<p>All verbs come from a basic root, which can grow into different stems. In the present tense, roots become stems by following the patterns of one of ten verb classes. We have seen four classes so far: the strong {{ 'a'|i }} class:</p>
+
+{{ verb('BU', 'pres', 'P', vclass='4') }}
+
+<p>the weak {{ 'a'|i }} class:</p>
+
+{{ verb('tud', 'pres', 'P', vclass='6') }}
+
+<p>the {{ 'ya'|i }} class:</p>
+
+{{ verb('muh', 'pres', 'P', vclass='4') }}
+
+<p>and the {{ 'aya'|i }} class:</p>
+
+{{ verb('cur', 'pres', 'P', vclass='10') }}
+
+<p>These four classes are simple to use, and they don't cause any major sandhi changes. Together, we can call these four classes the <dfn>simple classes</dfn>.</p>
+
+<p>But there are six other classes to consider. Together, we can call these classes the <dfn>complex classes</dfn>. The complex classes are complex for two reasons:</p>
+
+<h3>Sandhi changes</h3>
+<p>Consider the examples below:</p>
+
+<ul class="examples">
+    {{ ex('tiSTha + si -> tiSThasi', 'You stand.') }}
+    {{ ex('karo + si -> karoSi', 'You do.') }}
+    {{ ex('zRNo + si -> zRNoSi', 'You hear.') }}
+</ul>
+
+<p>The simple classes all end with {{ 'a'|i }}. {{ 'a'|i }} and {{ 'A'|i }} use simple sandhi rules, <a href="{{ lesson_url('sounds', 'review') }}">which we have studied already</a>. This is part of why the simple classes are simple. But other vowels are more complicated. This is part of why the complex classes are complex.</p>
+
+<p>For these examples, the rule is a simple one:</p>
+
+<p class="rule">If {{ 's'|i }} comes after a vowel other than {{ 'a'|i }} or {{ 'A'|i }}, it becomes {{ 'S'|i }}.</p>
+
+<p>This rule also explains why we have words like {{ 'gajeSu'|i }} instead of {{ '*gajesu'|i }}.</p>
+
+<h3>Multiple stems</h3>
+<p>By using a root and some basic knowledge of a root's class, we can create verb stems. The simple classes use just one stem:</p>
+
+<ul class="examples">
+    {{ ex('corayati', 'He steals.') }}
+    {{ ex('corayataH', 'The two of them steal.') }}
+</ul>
+
+<p>But the complex classes often use <strong>two</strong>:</p>
+
+<ul class="examples">
+    {{ ex('zRNoti', 'You hear.') }}
+    {{ ex('zRNutaH', 'The two of them hear.') }}
+</ul>
+
+<p>The difference between the two is always just a change in the stem's vowel. We can call the stem with the stronger vowel the <dfn>strong stem</dfn> and the stem with the weaker vowel the <dfn>weak stem</dfn>.</p>
+
+<p>This system might seem complicated. But in truth, it's quite simple. Let's look at some examples.</p>
+
+<h2>{{ 'no'|i }}</h2>
+
+<p>As usual, we start with a root:</p>
+
+<ul class="examples">
+    {{ ex('su', 'press out, extract') }}
+</ul>
+
+<p>This root belongs to what we could call the <dfn>{{ 'no'|i }} class</dfn>. To make the strong stem, we add {{ 'no'|i }} to the root. To make the weak stem, we add {{ 'nu'|i }} to the root:
+
+<ul class="examples">
+    {{ ex('su -> suno') }}
+    {{ ex('su -> sunu') }}
+</ul>
+
+<p>Now it's a matter of using the right stem:</p>
+
+{{ verb('su', 'pres', 'P', vclass='5') }}
+
+<p>In {{ 'parasmaipada'|i }}, verbs referring to one object use the strong stem and all others use the weak stem. In {{ 'Atmanepada'|i }}, all forms use the weak stem. All complex classes follow this pattern:</p>
+
+{{ verb('su', 'pres', 'A', vclass='5') }}
+
+<p>The {{ 'no'|i }} class has only a few irregular verbs. One of the most important is {{ 'zru'|i }}:</p>
+
+{{ verb('Sru', 'pres', 'P', vclass='5') }}
+
+<p>{{ 'zRnu'|i }} becomes {{ 'zRNu'|i }} due to sandhi. This is <a href="{{ lesson_url('basics', 'cases-3-and-4') }}">the same rule</a> that turns {{ 'narena'|i }} into {{ 'nareNa'|i }}. As a reminder, this change occurs whenever an "r" sound is close to {{ 'n'|i }}.</p>
+
+<h2>{{ 'o'|i }}</h2>
+
+<p>Consider the words below:</p>
+
+<ul class="examples">
+    {{ ex('tanoti', 'He extends.') }}
+    {{ ex('tanomi', 'I extend.') }}
+    {{ ex('tanute', 'He extends.') }}
+    {{ ex('tanuSe', 'You extend.') }}
+</ul>
+
+<p>Based on these forms, we can guess that the root is {{ 'ta'|i }} and that it belongs to the {{ 'no'|i }} class. But Panini chose a different model: he defined the root as {{ 'tan'|i }} and created a new class for it. We can just call this class the <dfn>{{ 'o'|i }} class</dfn>:</p>
+
+{{ verb('tan', 'pres', 'P', vclass='8') }}
+
+<p>The {{ 'o'|i }} class is the smallest verb class by far, with about 10 roots overall. And the verbs in this class are all quite rare. So why should we study this class at all? Because it contains {{ 'kR'|i }}, one of the most common and powerful Sanskrit verbs:</p>
+
+<ul class="examples">
+    {{ ex('karoti', 'He does.') }}
+    {{ ex('kurvanti', 'They do.') }}
+    {{ ex('kurute', 'He does for himself.') }}
+    {{ ex('kurve', 'I do for myself.') }}
+</ul>
+
+<p>As you can see, {{ 'kR'|i }} is irregular. Its strong stem is {{ 'karo'|i }} and its weak stem is {{ 'kuru'|i }}.</p>
+
+<p>It is difficult to imagine a verb more basic than {{ 'kR'|i }}. The whole point of verbs is to describe action &mdash; and what action is more basic than just <em>doing</em> something? {{ 'kR'|i }} also gives us words like <a href="http://en.wikipedia.org/wiki/Karma">{{ 'karma'|i }}</a>, <a href="http://en.wikipedia.org/wiki/Sanskrit">{{ 'saMskRta'|i }}</a>, and <a href="http://en.wikipedia.org/wiki/Vyākaraṇa">{{ 'vyAkaraNa'|i }}</a>. Along with {{ 'bhU'|i }}, {{ 'kR'|i }} is one of the most common roots in Sanskrit.</p>
+
+<p>{{ 'kR'|i }} is also one of the oldest roots in Sanskrit. Especially in Vedic Sanskrit, {{ 'kR'|i }} follows the pattern of the {{ 'no'|i }} class:</p>
+
+<ul class="examples">
+    {{ ex('kRNoti', 'He does.') }}
+    {{ ex('kRNute', 'He does for himself.') }}
+</ul>
+
+<h2>{{ 'nA'|i }}</h2>
+
+<p>Our last class is similar to the {{ 'no'|i }} class. Its strong stem is made with {{ 'nA'|i }} and its weak stem is made with {{ 'nI'|i }}. We could just call this the {{ 'nA'|i }} class:</p>
+
+{{ verb('krI', 'pres', 'P', vclass='9') }}
+
+<p>The {{ 'nA'|i }} class has a few irregular verbs, but the most important one is {{ 'jJA'|i }}, which means "know." Its strong stem is {{ 'jAnA'|i }}, and its weak stem is {{ 'jAnI'|i }}.</p>
+
+<h2>{{ 'as'|i }} and the root class</h2>
+
+<p>This unit has already discussed seven different classes. That's enough for the time being. But it's also worth mentioning the <dfn>root class</dfn>, a basic class that contains some <em>very</em> popular verbs. One of the most popular verbs in this class is {{ 'as'|i }}, which just means "be." Its strong stem is {{ 'as'|i }} and its weak stem is just the letter {{ 's'|i }}:</p>
+
+{{ verb('as', 'pres', 'P', vclass='2') }}
+
+<p>{{ 'as'|i }} sounds like "is," and that's not a coincidence; {{ 'as'|i }} and "is" both come from the same source. They are distant cousins in a large family tree. In fact, many Sanskrit words have relatives in English: {{ 'sthA'|i }} and "stand," {{ 'bhU'|i }} and "be," {{ 'man'|i }} and "mental," {{ 'jan'|i }} and "generate," {{ 'jJA'|i }} and know, {{ 'vIra'|i }} and "virile," {{ 'zveta'|i }} and "white," and hundreds of others.</p>
+
+<h2>Using classes</h2>
+
+<p>As a reminder, roots use certain classes only <em>by convention</em>. If we have some verb root, it is often impossible to determine what classes it will use. For example, we could create some fake root {{ 'vRb'|i }} and treat it like a member of any of the three classes above:</p>
+
+<ul class="examples">
+    {{ ex('vRb -> vRbNo -> vRbNoti') }}
+    {{ ex('vRb -> vRbo -> vRboti') }}
+    {{ ex('vRb -> vRbNA -> vRbNAti') }}
+</ul>
+
 {% endblock %}
