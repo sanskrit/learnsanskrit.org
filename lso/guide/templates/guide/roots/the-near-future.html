@@ -1,4 +1,143 @@
 {% if not standalone %}{% extends 'guide/lesson.html' %}{% endif %}
 
 {% block lesson %}
+
+<p>Sanskrit roots can grow into dozens of different stems. So far, we have focused on only one stem: the one used in the present tense. This "present stem" falls into ten different classes, and we have studied seven of these classes so far. But despite this complexity, our picture of the Sanskrit verb is still quite basic:</p>
+
+<figure>
+{{ svg('bhu-present') }}
+<figcaption>{{ 'bhU'|i }} in the present tense</figcaption>
+</figure>
+
+<p>So let's start making this picture more interesting:</p>
+
+<figure>
+{{ svg('bhu-simple-future') }}
+<figcaption>{{ 'bhU'|i }} in a new tense</figcaption>
+</figure>
+
+<p>Now we have a new stem to consider. It's similar to the ones we've seen already. And it even uses the same endings. But it means something quite different:</p>
+
+<ul class="examples">
+    {{ ex('narasya putro vIro <mark>bhaviSyati</mark>', "The man's son <mark>will be</mark> a hero.") }}
+</ul>
+
+<p>These verbs let us describe what <em>will happen</em>. Such verbs are called <dfn>future tense</dfn> verbs. But since Sanskrit has several verbs that describe the future tense, let's say that these verbs describe the <dfn>near future</dfn>. That is, they describe <strong>what will happen soon</strong>.</p>
+
+<p>The near future appears almost 60 times in the Bhagavad Gita. Some of these verbs are below. These examples aren't very exciting, but they do show some of the variety that these forms have:</p>
+
+<ul class="examples">
+    {{ ex('jJAsyasi', 'You will know', cite='BG 7.1') }}
+    {{ ex('drakSyasi', 'You will see', cite='Bhagavad Gita 4.35') }}
+    {{ ex('kariSye', 'I will do', cite='BG 18.61') }}
+</ul>
+
+<h2>Creating future stems</h2>
+
+<p>It is easy to create the future stem:</p>
+
+<ol>
+    <li>Strengthen the root.</li>
+    <li>Add the suffix {{ 'sya'|i }}.</li>
+</ol>
+
+<p>The future stem uses the same endings as the present tense. We use {{ 'parasmaipada'|i }} or {{ 'Atmanepada'|i }} endings depending on what the verb uses in the present tense. For example, {{ 'jJA'|i }} uses both {{ 'parasmaipada'|i }} ({{ 'jAnAti'|i }}) and {{ 'Atmanepada'|i }} ({{ 'jAnIte'|i }}), so it uses both in the near future as well:</p>
+
+<ul class="examples">
+    {{ ex('jJA -> jJAsyati', 'know -> He will know.') }}
+    {{ ex('jJA -> jJAsyate', 'know -> He will know.') }}
+</ul>
+
+<p>But this description is incomplete. Several stems seem to do something else instead:</p>
+
+<ul class="examples">
+    {{ ex('corayiSyAmi', 'I will steal') }}
+    {{ ex('drakSyasi', 'You will see') }}
+    {{ ex('kariSye', 'I will do') }}
+</ul>
+
+<p>Three different issues are involved here:</p>
+
+<h3>Roots in the {{ 'aya'|i }} class</h3>
+<p>Roots in the {{ 'aya'|i }} class are strange. Even though all other roots form future stems <em>without</em> using information from their verb classes, roots in the {{ 'aya'|i }} class use this information anyway:</p>
+
+<ul class="examples">
+    {{ ex('cintayati', 'He thinks.') }}
+    {{ ex('cintayiSyanti', 'They will think.') }}
+</ul>
+
+<h3>Sandhi</h3>
+<p>{{ 'drakSya'|i }} is the future stem of {{ 'dRz'|i }}. {{ 'dRz'|i }} irregularly strengthens to {{ 'draz'|i }} instead of *{{ 'darz'|i }}. But even if that's the case, we would expect that the future stem would be {{ 'drazsya'|i }}. Why isn't this the case?</p>
+
+<p>The answer is that {{ 'drazsya'|i }} is just difficult to pronounce. The shift from {{ 'z'|i }} to {{ 's'|i }} is tricky and unclear, especially when speaking quickly. The earliest Sanskrit speakers felt the same way, and they solved this problem by combining {{ 'z'|i }} and {{ 's'|i }} into something simpler:</p>
+
+<p class="rule">Within a word, {{ 'z'|i }} and {{ 's'|i }} combine to {{ 'kS'|i }}.</p>
+
+<p>{{ 'kS'|i }} is clearer than {{ 'zs'|i }} and does not require such a nimble tongue. The change from {{ 's'|i }} to {{ 'S'|i }} is common throughout Sanskrit (as in {{ 'sunosi → sunoSi'|i }}), and we will see more examples of it soon.</p>
+
+<h3>Inserted {{ 'i'|i }}</h3>
+<p>A significant number of future stems insert an {{ 'i'|i }} vowel between the root and {{ 'sya'|i }}. {{ 'isya'|i }} becomes {{ 'iSya'|i }} due to sandhi:</p>
+
+<ul class="examples">
+    {{ ex('car -> cariSyati', 'He will walk.') }}
+</ul>
+
+<p>Why do some roots use this {{ 'i '|i }} vowel, and how can we tell which ones use it? These are important questions that deserve a good answer. But it will take some time to create that good answer. So, we will explore these questions over the next few lessons. As you work your way through the unit, keep these two questions in mind.</p>
+
+<section>
+<h2>{{ 'na'|i }}, {{ 'ca'|i }}, and {{ 'eva'|i }}</h2>
+<p>As our grasp of Sanskrit becomes stronger, we will be able to understand more and more of the language. But some concepts are simple enough that we don't need to spend full lessons on them. Here, let's look at three simple uninflected words:</p>
+
+<h3>{{ 'na'|i }}</h2>
+<p>{{ 'na'|i }} is related to the English word "no," and it means nearly the same thing:</p>
+
+<ul class="examples">
+    {{ ex('na bhaviSyanti', 'They will not be', cite='BG 11.32') }}
+</ul>
+
+<h3>{{ 'ca'|i }}</h2>
+<p>{{ 'ca'|i }} means "and." It can connect nouns to nouns:</p>
+
+<ul class="examples">
+    {{ ex('naro vIro gajaz <mark>ca</mark> siMhaM zRNvanti', 'The man, the hero, <mark>and</mark> the elephant hear the lion.') }}
+</ul>
+
+<p>and sentences to sentences:</p>
+
+<ul class="examples">
+    {{ ex('azvA gacchanti gamiSyanti <mark>ca</mark>', 'The horses go <mark>and</mark> will go.') }}
+</ul>
+
+<p>Unlike the English "and," {{ 'ca'|i }} appears at the very end of the list of connected words. This means that {{ 'ca'|i }} can never start a sentence.</p>
+
+<h3>{{ 'eva'|i }}</h3>
+<p>In English, we emphasize words by speaking them differently:</p>
+
+<ul class="examples">
+    {{ ex(en="The <strong>man</strong> will steal the hero's black chariot.") }}
+</ul>
+
+<p>In Sanskrit, we emphasize words by adding {{ 'eva'|i }} after them:</p>
+
+<ul class="examples">
+    {{ ex('nara <mark>eva</mark> kRSNaM vIrarathaM corayiSyati', "The <strong>man</strong> will steal the hero's black chariot.") }}
+</ul>
+
+<p>{{ 'eva'|i }} is sometimes translated as "indeed" or "truly."</p>
+
+<p>In Sanskrit poetry, {{ 'eva'|i }} is often used to fill gaps in a verse's meter. When used in this way, it does not have any strong meaning:</p>
+
+<ul class="examples">
+    {{ ex('mAmakAH pANDavAzcaiva', 'My (sons) and the Pandavas', cite='Bhagavad Gita 1.1') }}
+</ul>
+
+<h3>{{ 'na'|i }}, {{ 'ca'|i }}, and {{ 'eva'|i }}</h3>
+<p>Using these three words, we can read a full line from the Bhagavad Gita:</p>
+
+<ul class="examples">
+    {{ ex('na caiva na bhaviSyAmaH', 'And truly, we will always be. (Literally, "we will not not be.")', cite="Bhagavad Gita 2.12") }}
+</ul>
+
+</section>
+
 {% endblock %}

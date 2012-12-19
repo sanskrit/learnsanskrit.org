@@ -1,4 +1,36 @@
 (function(ns) {
+
+    var makeSVG = function(selector, width, height, margin) {
+        margin = margin || { left: 0, right: 0, top: 0, bottom: 0 };
+        var svg = d3.select(selector).append("svg")
+            .attr("width", width + margin.left + margin.right)
+            .attr("height", height + margin.top + margin.bottom)
+          .append("g")
+            .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+        return svg;
+    };
+
+    function accessor(my, options, name) {
+        return function(_) {
+            if (!arguments.length) return options[name];
+            options[name] = _;
+            return my;
+        };
+    }
+
+    function obj_accessor(my, options, name) {
+        return function(_) {
+            if (!arguments.length) return options[name];
+            for (var key in _) {
+                if (_.hasOwnProperty(key)) {
+                    options[name][key] = _[key];
+                }
+            }
+            return my;
+        };
+    }
+
     ns.pieChart = function(data) {
         var width = 400,
             height = 400,
@@ -114,7 +146,7 @@
     ns.barGraph = function() {
         var margin = {top: 50, right: 50, bottom: 50, left: 50},
             width = 960 - margin.left - margin.right,
-            height = 500 - margin.top - margin.bottom;
+            height = 500 - margin.top - margin.bottom,
             data;
 
         function my(selector) {
@@ -122,7 +154,7 @@
             var formatPercent = d3.format(".0%");
 
             var x = d3.scale.ordinal()
-                .rangeRoundBands([0, width], .1);
+                .rangeRoundBands([0, width], 0.1);
 
             var y = d3.scale.linear()
                 .range([height, 0]);
@@ -211,8 +243,79 @@
               .style("text-anchor", "middle");
 
             node.append("title")
-              .text(function(d) { return LSO.sa2(d.key) + ": " + format(d.value); }); };
+              .text(function(d) { return LSO.sa2(d.key) + ": " + format(d.value); });
+        }
 
+        return my;
+    };
+
+    ns.tree = function(data) {
+        var options = {
+            width: 400,
+            height: 600,
+            margin: {top: 50, right: 150, bottom: 50, left: 50}
+        };
+
+        function my(selector) {
+            var width = options.width,
+                height = options.height,
+                margin = options.margin;
+            var svg = makeSVG(selector, width, height, margin)
+                .attr('class', 'tree');
+
+            var tree = d3.layout.tree()
+                .sort(null)
+                .size([height, width]);
+
+            var nodeData = tree.nodes(data),
+                linkData = tree.links(nodeData);
+
+            var diagonal = d3.svg.diagonal()
+                .projection(function(d) {
+                    return [d.y, d.x];
+                });
+
+            var links = svg.selectAll('path.link')
+                .data(linkData)
+                .enter()
+                .append('path')
+                .attr('class', 'link')
+                .attr('d', diagonal);
+
+            var nodes = svg.selectAll('g.node')
+                .data(nodeData)
+                .enter()
+                .append('g')
+                .attr('class', 'node')
+                .attr('transform', function(d) {
+                    return "translate(" + d.y + "," + d.x + ")";
+                });
+
+            nodes.append('circle')
+                .attr('r', '5');
+
+            nodes.append('text')
+                .attr('class', 'sa1')
+                .attr('dy', 7)
+                .text(function(d) {
+                    return Sanscript.t(d.name, 'hk', LSO.settings.get('sa1'));
+                });
+        }
+        my.data = function(_) {
+            if (!arguments.length) return data;
+            data = _;
+            return my;
+        };
+        my.height = accessor(my, options, 'height');
+        my.margin = obj_accessor(my, options, 'margin');
+        my.width = accessor(my, options, 'width');
+        return my;
+    };
+
+    ns.formTree = function(data) {
+        var my = ns.tree(data)
+            .margin({top: 0, bottom: 0})
+            .width(300);
         return my;
     };
 
