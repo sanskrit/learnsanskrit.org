@@ -1,5 +1,5 @@
 {% extends 'layout.html' %}
-{% from 'guide/macros.html' import nominal, sound, svg, verb with context %}
+{% from 'guide/macros.html' import ex, hex, iex, ihex, nominal, sound, svg, verb with context %}
 
 
 {% block title %}Units{% endblock %}
@@ -7,6 +7,16 @@
 {% block footer_class%}night{% endblock %}
 
 {% block content %}
+
+{% set ex = ex %}
+{% set hex = hex %}
+{% set iex = iex %}
+{% set ihex = ihex %}
+{% set nominal = nominal %}
+{% set sound = sound %}
+{% set svg = svg %}
+{% set verb = verb %}
+
 <div id="content">
     <article style="margin: 0;">
     {% if units|length > 1 %}
@@ -28,9 +38,10 @@
         </header>
 
         {% for child in unit.children %}
+
+
             {% set lesson = child.title %}
             {% set standalone = true %}
-            {% set sound = sound %}
             <h1>{{ child.title|safe }}</h1>
             {% include 'guide/' + unit.slug + '/' + child.slug + '.html' %}
         {% endfor %}
