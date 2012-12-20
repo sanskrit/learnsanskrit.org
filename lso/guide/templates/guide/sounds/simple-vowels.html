@@ -1,4 +1,5 @@
 {% if not standalone %}{% extends 'guide/lesson.html' %}{% endif %}
+{% from 'guide/macros.html' import iast_row as row %}
 
 {% block lesson %}
 <h2>Sounds and letters</h2>
@@ -62,20 +63,13 @@
 <p>We have studied 9 vowels so far. Of these, five are short:</p>
 
 <ul class="grid-5 letters">
-    <li>{{ 'a'|i }}</li>
-    <li>{{ 'i'|i }}</li>
-    <li>{{ 'u'|i }}</li>
-    <li>{{ 'R'|i }}</li>
-    <li>{{ 'lR'|i }}</li>
+    {{ row('a i u R lR') }}
 </ul>
 
 <p>and four are long:</p>
 
 <ul class="grid-5 letters">
-    <li>{{ 'A'|i }}</li>
-    <li>{{ 'I'|i }}</li>
-    <li>{{ 'U'|i }}</li>
-    <li>{{ 'RR'|i }}</li>
+    {{ row('A I U RR') }}
 </ul>
 
 <p>Together, these nine vowels are called <dfn>simple</dfn> vowels.</p>

@@ -7,6 +7,13 @@
 {% endfor %}
 {% endmacro %}
 
+<!-- IAST letters -->
+{% macro iast_row(items) %}
+{% for item in items.split() %}
+<li><div class="letter">{{ item|i }}</div></li>
+{% endfor %}
+{% endmacro %}
+
 {% macro row(category, letters) %}
     <tr>
         <th>{{ category }}</th>

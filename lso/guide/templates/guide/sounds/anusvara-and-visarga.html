@@ -1,4 +1,5 @@
 {% if not standalone %}{% extends 'guide/lesson.html' %}{% endif %}
+{% from 'guide/macros.html' import iast_row as row %}
 
 {% block lesson %}
 <p>The two sounds here are <strong>fundamentally different</strong> from the others we have studied. They appear only because of blending. They can be pronounced in multiple ways. They must follow vowels. And although they seem to be consonants, the tradition calls them something else. Each sound has its own special term.</p>
@@ -55,83 +56,41 @@
 <p>We start with the thirteen vowels:</p>
 
 <ul class="grid-2 letters">
-    {{ sound('a') }}
-    {{ sound('A') }}
-    {{ sound('i') }}
-    {{ sound('I') }}
-    {{ sound('u') }}
-    {{ sound('U') }}
-    {{ sound('R') }}
-    {{ sound('RR') }}
-    {{ sound('lR') }}
-    <li><span class="sa2">&nbsp;</span></li>
-    {{ sound('e') }}
-    {{ sound('ai') }}
-    {{ sound('o') }}
-    {{ sound('au') }}
+    {{ row('a A i I u U R RR lR &nbsp; e ai o au') }}
 </ul>
 
 <h3>{{ 'anusvAra'|i }} and {{ 'visarga'|i }}</h3>
 <p>The {{ 'anusvAra'|i }} and {{ 'visarga'|i }} are not quite the same as normal consonants, so they are listed with the vowels:</p>
 
 <ul class="grid-2 letters">
-    {{ sound('aM') }}
-    {{ sound('aH') }}
+    {{ row('aM aH') }}
 </ul>
 
 <h3>Stops and nasals</h3>
 <p>Next come the stops and nasals:</p>
 
 <ul class="grid-5 letters">
-    {{ sound('ka') }}
-    {{ sound('kha') }}
-    {{ sound('ga') }}
-    {{ sound('gha') }}
-    {{ sound('Ga') }}
-
-    {{ sound('ca') }}
-    {{ sound('cha') }}
-    {{ sound('ja') }}
-    {{ sound('jha') }}
-    {{ sound('Ja') }}
-
-    {{ sound('Ta') }}
-    {{ sound('Tha') }}
-    {{ sound('Da') }}
-    {{ sound('Dha') }}
-    {{ sound('Na') }}
-
-    {{ sound('ta') }}
-    {{ sound('tha') }}
-    {{ sound('da') }}
-    {{ sound('dha') }}
-    {{ sound('na') }}
-
-    {{ sound('pa') }}
-    {{ sound('pha') }}
-    {{ sound('ba') }}
-    {{ sound('bha') }}
-    {{ sound('ma') }}
+    {{ row('ka kha ga gha Ga') }}
+    {{ row('ca cha ja jha Ja') }}
+    {{ row('Ta Tha Da Dha Na') }}
+    {{ row('ta tha da dha na') }}
+    {{ row('pa pha ba bha ma') }}
 </ul>
 
-<h3>Semivowels</h3>
+<h3>Semivowels ({{ 'yavarga'|i }})</h3>
 <p>Then the semivowels:</p>
 
 <ul class="grid-4 letters">
-    {{ sound('ya') }}
-    {{ sound('ra') }}
-    {{ sound('la') }}
-    {{ sound('va') }}
+    {{ row('ya ra la va') }}
 </ul>
 
-<h3>"s" sounds and {{ 'ha'|i }}</h3>
-<p>And, finally, the "s" sounds and {{ 'ha'|i }}.</p>
+<h3>"s" sounds and {{ 'h'|i }} ({{ 'savarga'|i }})</h3>
+<p>And, finally, the "s" sounds and {{ 'h'|i }}.</p>
 
 <ul class="grid-4 letters">
-    {{ sound('za') }}
-    {{ sound('Sa') }}
-    {{ sound('sa') }}
-    {{ sound('ha') }}
+    {{ row('za Sa sa ha') }}
 </ul>
+
+<p>Using these sounds, we can start to build up the basic parts of Sanskrit.</p>
 
 {% endblock %}
