@@ -1,0 +1,133 @@
+{% if not standalone %}{% extends 'guide/lesson.html' %}{% endif %}
+
+{% block lesson %}
+<p>Our goal in this unit is to explore what sorts of words we can create from Sanskrit roots. So far, we have seen that we can create verbs that refer to different periods in time:</p>
+
+<ul class="examples">
+    {{ ex('narA gajaM corayanti', 'The men steal the elephant.') }}
+    {{ ex('vIrau grAmaM rakSiSyataH', 'The two heroes will protect the village.') }}
+</ul>
+
+<p>We can make more interesting changes, too. But before we get to that, let's quickly review how Sanskrit nouns work.</p>
+
+<h2>Noun cases and noun roles</h2>
+<p>When we studied the noun cases, <a href="{{ lesson_url('basics', 'nouns-in-case-1') }}">we made a distinction</a> between the <em>case</em> that a noun uses and the <em>role</em> that the noun plays in the sentence.</p>
+
+<p>This distinction is subtle and easy to miss. Let's make this discussion concrete with an example. Consider the sentence below:</p>
+
+<ul class="examples">
+    {{ ex('zvetaziMhA naraM pazyanti', 'The white lions see the man.') }}
+</ul>
+
+<p>This sentence has a noun in case 1 and a noun in case 2. Usually, case 1 defines the agent (the one who sees) and case 2 defines the object (the one who is seen). But if we use a new verb, these definitions change:</p>
+
+<ul class="examples">
+    {{ ex('zvetasiMhair naro <mark>dRzyate</mark>', 'The man <mark>is seen</mark> by the white lions.') }}
+</ul>
+
+<p>In this new sentence, we have a noun in case 3 and a noun in case 1. But the noun in case 3 has become the agent, and the noun in case 1 has become the object. A verb that causes this change is called <dfn>passive</dfn>: it focuses on the object instead of the agent.</p>
+
+<p>Although every word in the sentence has changed, the meaning of the sentence is still the same. We still have the act of seeing ({{ 'pasyati / dRsyate'|i }}). The ones seeing are still the white lions ({{ 'zvetasiMhAH / zvetasiMhaiH'|i }}). And the one who is seen is still the man ({{ 'naram / naraH'|i }}). So even though the <em>cases</em> of our nouns have changed, the <em>roles</em> that these nouns play are the same.</p>
+
+<p>This leads us to a question: why should we use passive verbs at all? One reason is that passive verbs give us a convenient way to leave the agent out of the sentence. This is useful if we don't know or don't care about who performs the action. In the examples below, note that the verb stays the same regardless of the agent:</p>
+
+<ul class="examples">
+    {{ ex('azvo <mark>gamyate</mark> (gajena / siMhAbhyAm / mRgaiH)', 'The horse <mark>is gone to</mark> (by the elephant / by the two lions / by the deer).') }}
+    {{ ex('ratha <mark>iSyate</mark> (nareNa / vIrAbhyAm / putraiH)', 'The chariot <mark>is desired</mark> (by the man / by the two heroes / by the sons).') }}
+</ul>
+
+<p>In later Sanskrit, passive verbs are often used just for poetic reasons. But regardless of how they are used, passive verbs are very common. The Bhagavad Gita has close to 100 of them overall:</p>
+
+<ul class="examples">
+    {{ ex('mucyante', 'They are released.', cite='BG 3.13, 3.31') }}
+    {{ ex('na lipyate', 'He is not tainted.', cite='BG 5.7') }}
+    {{ ex("kriyate 'rjuna", 'It is done, Arjuna.', cite='BG 18.9') }}
+</ul>
+
+<h2>Creating passive stems</h2>
+<p>It is easy to create the passive stem:</p>
+
+<ol>
+    <li>Add the suffix {{ 'ya'|i }} to the root.</li>
+</ol>
+
+<p>That's all! Then we use {{ 'Atmanepada'|i }} endings to create complete verbs:</p>
+
+<ul class="examples">
+    {{ ex('kRSNamRgAs tudyante zarair vIrANAm', "The black deer were struck by the heroes' arrows.") }}
+    {{ ex('dRzye grAme gRhe caiva', "I am seen in the village <em>and</em> in the house.") }}
+</ul>
+
+<p>But this description is incomplete. Several stems seem to do something else instead:</p>
+
+<ul class="examples">
+    {{ ex("coryete 'zvau", 'The two horses are stolen.') }}
+    {{ ex("kriyate sundareNa", 'It is done by the beautiful one.') }}
+    {{ ex("sthIyase vIrair grAmeSu", 'You are stationed among the villages by the heroes.') }}
+</ul>
+
+<p>Three different issues are involved here. All of them are simple:</p>
+
+<h3>Roots in the {{ 'aya'|i }} class</h3>
+
+<p>Roots in the {{ 'aya'|i }} class are strange. We have already seen that they form future stems in a unique way:</p>
+
+<ul class="examples">
+    {{ ex('corayiSyatha', 'You all will steal.') }}
+</ul>
+
+<p>They also form passive stems in a unique way. Even though all other roots use weak vowels when forming the passive stem, roots in the {{ 'aya'|i }} class use strengthened vowels:</p>
+
+<ul class="examples">
+    {{ ex('coryate', 'It is stolen.') }}
+</ul>
+
+<h3>Roots ending in {{ 'R'|i }}</h3>
+
+<p>We would expect that a root like {{ 'kR'|i }} would form a stem like {{ 'kRya'|i }}. If you try to pronounce this stem, you'll notice that it sounds almost like {{ 'kriya'|i }}. And over time, this is how Sanskrit speakers started to pronounce it. Since written Sanskrit is almost always <q><a href="{{ lesson_url('sounds', 'a-and-aa') }}">a perfect record of the sounds that appear in spoken Sanskrit</a></q>, we can just write the stem as {{ 'kriya'|i }}:</p>
+
+<ul class="examples">
+    {{ ex('kriyate', 'It is done.') }}
+</ul>
+
+<p>If the root starts with multiple consonants, then a different change is made instead:</p>
+
+<ul class="examples">
+    {{ ex('smR (smarati) -> smaryate', 'It is remembered.') }}
+</ul>
+
+<p>{{ '*smriyate'|i }} is hard to pronounce, since it has three consonants in a row. {{ 'smaryate'|i }} fixes that problem by separating the consonants.</p>
+
+<h3>Roots ending in {{ 'A'|i }}</h3>
+
+<p>Roots that end in {{ 'A'|i }} have their {{ 'A'|i }} changed to {{ 'I'|i }}. This change occurs for complex reasons, and it's not worth discussing right now. But fortunately, this is an easy change to make:</p>
+
+<ul class="examples">
+    {{ ex('gRhe sthIyete saha gajaiH', 'The two chariots are stationed with the elephants.') }}
+</ul>
+
+<h2>Using passive stems</h2>
+
+<p>The passive stems above can replace the "present" stem that we've seen already:</p>
+
+<ul class="examples">
+    {{ ex('haMsA gacchanti grAmaM narAya', 'The geese go to the village for the man.') }}
+    {{ ex('grAmo gamyate haMsair narAya', 'The village is gone to by the geese for the man.') }}
+</ul>
+
+<p>But it <strong>cannot</strong> replace other stems. For example, we cannot use this stem in the near future. Instead, we use the ordinary future stem and add {{ 'Atmanepada'|i }} endings:</p>
+
+<ul class="examples">
+    {{ ex('gamiSyate narebhyaH', 'It will be gone to for the men.') }}
+</ul>
+
+<p>As you might imagine, this can be ambiguous:</p>
+
+<ul class="examples">
+    {{ ex('gajo ramate', 'The elephant enjoys.') }}
+    {{ ex('ramyate gajena', 'It is enjoyed by the elephant.') }}
+    {{ ex('gajo ramiSyate', 'The elephant will enjoy.') }}
+    {{ ex('ramiSyate gajena', 'It will be enjoyed by the elephant.') }}
+</ul>
+
+{% endblock %}
