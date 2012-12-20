@@ -5,9 +5,9 @@ from xml.etree import ElementTree as ET
 
 from flask import url_for
 from jinja2 import Markup
-from sanskrit import query, sanscript, sounds
+from sanskrit import sanscript
 
-from lso import app, ctx
+from lso import app, simple_query
 from lso.filters import sa1, sa2
 
 from . import guide as blue
@@ -21,9 +21,6 @@ def inject_notes():
 @blue.context_processor
 def inject_functions():
     return {
-        'ex': ex,
-        'iex': iex,
-        'ihex': ihex,
         'img': img,
         'lesson_url': lesson_url,
         'nominal_data': nominal_data,
@@ -63,57 +60,6 @@ def raw_text(elem, text):
     elem.extend(wrapper.getchildren())
 
 
-def ex(sa=None, en=None, **kwargs):
-    """Display an example.
-
-    :param sa: a Sanskrit string in Harvard-Kyoto
-    :param en: an English string
-    :key aside: a digression on the example
-    :key cite: a citation
-    """
-    aside = kwargs.get('aside')
-    cite = kwargs.get('cite')
-    dev = kwargs.get('dev', True)
-    iast = kwargs.get('iast')
-
-    li = ET.Element('li')
-
-    if sa is not None:
-        if dev:
-            li.append(ET.fromstring(d(sa, tag='p').encode('utf-8')))
-        if iast:
-            li.append(ET.fromstring(i(sa, tag='p').encode('utf-8')))
-
-    if en is not None:
-        elem = ET.SubElement(li, 'p', {'class': 'en'})
-        raw_text(elem, render(en))
-        if 'hint' in kwargs:
-            li.attrib['class'] = 'hint'
-
-    if aside is not None:
-        elem = ET.SubElement(li, 'p')
-        raw_text(elem, render(aside))
-    if cite is not None:
-        elem = ET.SubElement(li, 'p', {'class': 'cite'})
-        raw_text(elem, render(cite))
-
-    returned = ET.tostring(li, encoding='utf-8')
-    returned = returned.decode('utf-8')
-    returned = returned.replace('-&gt;', u'→').replace('&amp;', '&')
-    return Markup(returned)
-
-
-def iex(*args, **kwargs):
-    kwargs['iast'] = True
-    return ex(*args, **kwargs)
-
-
-def ihex(*args, **kwargs):
-    kwargs['iast'] = True
-    kwargs['hint'] = True
-    return ex(*args, **kwargs)
-
-
 def img(filename, alt):
     full_path = url_for('guide.static', filename='img/%s' % filename)
     img = ET.Element('img', {'src': full_path, 'alt': alt})
@@ -134,11 +80,7 @@ def nominal_data(stem, gender, cases=None):
     :param stem: the nominal stem
     :param gender: the gender to use
     """
-    Q = query.SimpleQuery(ctx)
-    forms = Q.noun(stem, gender)
-    for key, value in forms.items():
-        forms[key] = value[:-1] + sounds.simplify(value[-1])
-
+    forms = simple_query.noun(stem, gender)
     labels = {
         's': 'One',
         'd': 'Two',
@@ -170,11 +112,7 @@ def verb_data(root, mode, voice, vclass=None, basis=None):
     :param basis: the "basis" to use when displaying the data.
                   If not provided, use the verb root.
     """
-    Q = query.SimpleQuery(ctx)
-    forms = Q.verb(root, mode, voice)
-    for parse, form in forms.items():
-        forms[parse] = form[:-1] + sounds.simplify(form[-1])
-
+    forms = simple_query.verb(root, mode, voice, vclass=vclass)
     basis = basis or root
     labels = {
         's': 'One',

@@ -2,7 +2,7 @@ from flask import Flask
 from flask.ext.assets import Bundle, Environment
 from flask.ext.mail import Mail
 
-from sanskrit import Context
+from sanskrit import Context, query
 
 app = Flask(__name__)
 app.config.from_object('development.config')
@@ -29,6 +29,7 @@ mail = Mail(app)
 # Sanskrit
 # --------
 ctx = Context(app.config)
+simple_query = query.SimpleQuery(ctx)
 
 # Views
 # -----
