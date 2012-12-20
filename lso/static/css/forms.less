@@ -1,24 +1,9 @@
 @field-border: #dddddd;
 
-button, input[type=submit] {
-    display: block;
-
-    &.large {
-        height: 3em;
-        padding: 0 1em;
-    }
-}
-
 fieldset {
     border: 0;
     margin: 0;
     padding: 0;
-}
-
-form.inset {
-    input, select {
-        height: 3em;
-    }
 }
 
 input[type=text], input[type=email], input[type=password], textarea {
@@ -26,6 +11,7 @@ input[type=text], input[type=email], input[type=password], textarea {
     box-sizing: border-box;
     -moz-box-sizing: border-box;
     font: inherit;
+    height: 3em;
     margin: 0 0 1em;
     padding: 0.5em;
     width: 100%;
@@ -63,4 +49,37 @@ select {
     background: #fff;
     border: 1px @field-border solid;
     font-size: inherit;
+    height: 3em;
+}
+
+/* Basic query form */
+form.query-form {
+    @btn-height: 3em;
+    margin: 0 0 1em;
+    overflow: hidden;
+
+    #q {
+        display: block;
+        float: left;
+        margin: 0;
+        width: 80%;
+    }
+    #submit, #settings-btn {
+        display: block;
+        float: left;
+        height: @btn-height;
+        line-height: @btn-height;
+        margin: 0;
+        width: 10%;
+    }
+    #settings-btn {
+        @bg: desaturate(lighten(@blue, 30%), 80%);
+        @size: 1.6em;
+        .button-colors(#fff, @bg, darken(@bg, 10%));
+        margin-left: 0.5%;
+        font-size: @size;
+        line-height: @btn-height / @size;
+        height: @btn-height / @size;
+        width: 9%;
+    }
 }

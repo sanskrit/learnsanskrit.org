@@ -1,4 +1,5 @@
 {% extends 'tools/layout.html' %}
+{% from 'macros/forms.html' import query_form %}
 
 {% set title = "Monier-Williams Sanskrit-English Dictionary" %}
 
@@ -14,16 +15,7 @@
 <div id="mw">
 <h1>{{ title }}</h1>
 
-<form method="GET" action="" class="inset">
-    <div id="form-secondary">
-    {{ form.from_script }} → {{ form.to_script }}
-    </div>
-
-    <div id="form-main">
-    {{ form.q }}
-    <input id="submit" type="submit" value="Search" class="right" />
-    </div>
-</form>
+{{ query_form(form) }}
 
 <dl id="mw-entries">
     {% for key in results %}

@@ -3,7 +3,11 @@
 .button-base(@color, @bg1, @bg2) {
     .border-radius(@button-border-radius);
     border: 1px solid;
-    font-size: inherit;
+    display: inline-block;
+    font: inherit;
+    font-family: sans-serif;
+    text-align: center;
+    text-decoration: none;
 
     &:hover {
         cursor: pointer;
@@ -32,7 +36,7 @@
     text-shadow: 0 1px 1px rgba(0,0,0,0.4);
 }
 
-input[type='submit'], button, a.btn {
+input[type='button'], input[type='submit'], button, a.btn {
     .button-base(#000, #fff, darken(@light-gray, 5%));
 
     &.right {

@@ -77,17 +77,6 @@
         }
     });
 
-    var FormView = Backbone.View.extend({
-        initialize: function() {
-            var $el = this.$el;
-            this.$q = $('#q', $el);
-            this.$from = $('#from_script', $el);
-            this.$to = $('#to_script', $el);
-            this.$from.val(LSO.settings.get('input'));
-            this.$to.val(LSO.settings.get('sa1'));
-        }
-    });
-
     window.Routes = Backbone.Router.extend({
         routes: {
             'dict/mw/q-:from/:query': 'search',
@@ -102,7 +91,6 @@
         initialize: function() {
             var self = this;
             this.$entries = $('#mw-entries');
-            this.form = new FormView({ el: $('form', this.$el) });
 
             // Normal abbreviations, like 'nom.'
             $.getJSON('/dict/static/data/mw-abbr.json', function(data) {
@@ -120,7 +108,7 @@
 
         render: function() {
             var $entries = this.$entries,
-                to = this.form.$to.val(),
+                to = LSO.settings.get('sa1'),
                 strings = ['##'];
             this.collection.each(function(entry) {
                 var view = new EntryView({ model: entry }).render();
@@ -134,8 +122,8 @@
 
         form_query: function(e) {
             e.preventDefault();
-            var q = this.form.$q.val().replace(/\W/g, '+'),
-                from = this.form.$from.val();
+            var q = $('#q').val().replace(/\W/g, '+'),
+                from = LSO.settings.get('input');
 
             var url = 'dict/mw/q-' + from + '/' + q;
             MW.routes.navigate(url, {trigger: true, replace: true});
