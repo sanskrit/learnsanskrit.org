@@ -96,7 +96,7 @@ $.fn.tabs = function() {
                 id = $pane.attr('id'),
                 text = $(':header', $pane).first().hide().text(),
                 $li = $('<li><a href="#' + id + '">' + text + '</a></li>');
-                $li.appendTo($links);
+            $li.appendTo($links);
         });
         $links.prependTo($this);
         $tabs = $('li', $links);

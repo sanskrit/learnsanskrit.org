@@ -1,4 +1,6 @@
 (function(ns) {
+    ns.d3 = ns.d3 || {};
+    ns = ns.d3;
 
     var makeSVG = function(selector, width, height, margin) {
         margin = margin || { left: 0, right: 0, top: 0, bottom: 0 };
@@ -319,4 +321,4 @@
         return my;
     };
 
-}(LSO.d3 = LSO.d3 || {}));
+}(LSO = window.LSO || {}));

@@ -1,4 +1,7 @@
 $(function() {
+    LSO.settings = new LSO.Settings({ id: 'settings' });
+    LSO.app = new LSO.Application({ model: LSO.settings, el: $('body') });
+
     $('div.tabs').tabs();
     $.cookie.defaults.expires = 365;
     $.cookie.json = true;

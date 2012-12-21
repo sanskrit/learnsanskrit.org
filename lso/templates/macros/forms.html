@@ -2,6 +2,6 @@
 <form method="GET" action="" class="inset query-form">
     {{ form.q }}
     <input id="submit" type="submit" value="Search" class="right" />
-    <a id="settings-btn" class="btn" href="{{ url_for('site.settings') }}">⚙</a>
+    <a id="settings-btn" class="btn" data-modal="settings" href="{{ url_for('site.settings') }}">⚙</a>
 </form>
 {% endmacro %}

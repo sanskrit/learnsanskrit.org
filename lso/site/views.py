@@ -1,4 +1,4 @@
-from flask import render_template
+from flask import render_template, request
 from flask.ext.mail import Message
 from lso import app, mail
 
@@ -37,7 +37,10 @@ def index():
 @site.route('/settings')
 def settings():
     form = forms.SettingsForm()
-    return render_template('site/settings.html', form=form)
+    if request.is_xhr:
+        return render_template('js/settings.html', form=form)
+    else:
+        return render_template('site/settings.html', form=form)
 
 
 @site.route('/resources')
