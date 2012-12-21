@@ -25,7 +25,9 @@
                 {{ sec('Guide', 'guide.index', 'guide') }}
                 {{ sec('Tools', 'tools.index', 'tools') }}
                 {{ sec('Site', 'site.index', 'site') }}
-                {{ sec('Settings', 'site.settings', 'settings') }}
+            </ul>
+            <ul class="secondary">
+                <li><a id="settings-link" href="{{ url_for('site.settings') }}">⚙</a></li>
             </ul>
         </nav>
         {% block body %}
