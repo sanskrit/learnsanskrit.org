@@ -67,7 +67,17 @@
         },
 
         events: {
-            'click a[href^=/settings]': 'viewSettings'
+            'click a[href^=/settings]': 'viewSettings',
+            'keyup': 'hideModals'
+        },
+
+        /**
+         * Hide modals if the escape key is pressed.
+         */
+        hideModals: function(e) {
+            if (e.keyCode == 27) {
+                this.settings.hide();
+            }
         },
 
         viewSettings: function(e) {
