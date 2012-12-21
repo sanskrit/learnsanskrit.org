@@ -8,6 +8,10 @@
             this.$el.hide();
         },
 
+        events: {
+            'click a.btn-close': 'hide'
+        },
+
         show: function() {
             var self = this,
                 duration = 150;

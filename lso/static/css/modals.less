@@ -19,6 +19,32 @@ div.modal-body {
     overflow-y: auto;
 }
 
+a.btn-close {
+    @bg: darken(@light-gray, 20%);
+    @font-size: 1.2em;
+    @size: 2em / @font-size;
+
+    background: @bg;
+    border: 0;
+    color: #fff;
+    display: block;
+    font-size: @font-size;
+    height: @size;
+    line-height: @size;
+    position: absolute;
+    right: 1em;
+    top: 1em;
+    width: @size;
+
+    &:hover {
+        background: #ce8686;
+    }
+    &:active {
+        position: absolute;
+        top: 1.05em;
+    }
+}
+
 #settings-modal {
     background: @light-gray;
     font-family: sans-serif;

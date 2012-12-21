@@ -12,6 +12,7 @@
         },
 
         events: {
+            'click a.btn-close': 'hide',
             'change': 'gather'
         },
 
