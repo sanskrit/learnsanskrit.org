@@ -43,33 +43,61 @@
         }
     });
 
-    var gatherHeadings = function() {
-        var $links = $('<ul>').addClass('headings');
-        $('h2', '#content').each(function() {
-            var $this = $(this),
-                id = LSO.toID($this.text()),
-                html = $this.html();
-            $this.attr('id', id);
-            $('<li>')
-                .wrapInner(
-                    $('<a>').attr('href', '#' + id).html(html)
-                )
-                .appendTo($links);
-        });
-        if ($links.children().length) {
-            $links.appendTo($('li.active', '#sidebar'));
+    var Lesson = Backbone.View.extend({
+
+        initialize: function() {
+            this.$content = $('#content');
+            this.$sidebar = $('#sidebar').pin();
+            this.model.bind('change', this.transliterate, this);
+            this.rendered = false;
+            this.render();
+        },
+
+        gatherHeadings: function() {
+            var $links = $('<ul>').addClass('headings');
+            $('h2', this.$content).each(function() {
+                var $this = $(this),
+                    id = LSO.toID($this.text()),
+                    html = $this.html();
+                $this.attr('id', id);
+                $('<li>')
+                    .wrapInner(
+                        $('<a>').attr('href', '#' + id).html(html)
+                    )
+                    .appendTo($links);
+            });
+            if ($links.children().length) {
+                $links.appendTo($('li.active', this.$sidebar));
+            }
+        },
+
+        render: function() {
+            this.transliterate();
+            this.gatherHeadings();
+            this.rendered = true;
+        },
+
+        transliterate: function() {
+            var model = this.model,
+                sa1, sa2;
+            if (this.rendered) {
+                sa1 = model.previous('sa1'),
+                sa2 = model.previous('sa2');
+            } else {
+                sa1 = 'devanagari';
+                sa2 = 'iast';
+            }
+
+            $('.sa1', this.$el).sanscript(sa1, model.get('sa1'));
+            $('.sa2', this.$el).sanscript(sa2, model.get('sa2'));
         }
-    };
+    });
 
     $(function() {
         $('li.hint', 'ul.examples').each(function() {
             new HintExample({ el: this });
         });
-        $('#sidebar').pin();
-        gatherHeadings();
 
-        var settings = LSO.settings;
-        $('.sa1', '#content').sanscript('devanagari', settings.get('sa1'));
-        $('.sa2', '#content').sanscript('iast', settings.get('sa2'));
+        new Lesson({ model: LSO.settings, el: $('#lesson') });
     });
 }());

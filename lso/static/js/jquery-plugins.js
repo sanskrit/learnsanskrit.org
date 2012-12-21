@@ -28,6 +28,7 @@ $.fn.pin = function() {
 
     pinFn();
     $window.scroll(pinFn);
+    return this;
 };
 
 /**
