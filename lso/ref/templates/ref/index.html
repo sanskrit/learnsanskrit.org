@@ -11,7 +11,7 @@
     {% for r in results %}
     <li>
         <a href="{{ r.url }}">{{ r.name|sa1 }}</a>
-        {% if r.description %}({{ r.description }}){% endif %}
+        {% if r.description %}<abbr>{{ r.description }}</abbr>{% endif %}
     </li>
     {% endfor %}
 </ul>

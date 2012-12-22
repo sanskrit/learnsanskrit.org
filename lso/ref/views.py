@@ -9,41 +9,77 @@ from ..database import session
 from ..forms import QueryForm
 
 
+def to_slp1(q, from_script):
+    return sanscript.transliterate(q, from_script, sanscript.SLP1)
+
+
+def _root_result(root, q, from_script):
+    """Prepare the data needed to display a root result."""
+    name = root.name
+    return {
+        'id': root.id,
+        'name': name,
+        'url': url_for('.root', name=name, from_script=from_script),
+        'description': None
+        }
+
+
+def _stem_result(stem, q, from_script):
+    """Prepare the data needed to display a stem result."""
+    gender_group = ctx.enum_abbr['gender_group']
+    name = stem.name
+    pos_id = stem.pos_id
+
+    if pos_id == X.Tag.NOUN:
+        genders = gender_group[stem.genders_id]
+        url = url_for('.noun', from_script=sanscript.SLP1,
+                      name=name, genders=genders)
+        description = genders + '.'
+
+    elif pos_id == X.Tag.PRONOUN:
+        url = url_for('.pronoun', from_script=sanscript.SLP1,
+                      name=name)
+        description = 'pronoun'
+    else:
+        url = '#'
+        description = None
+
+    return {
+        'id': stem.id,
+        'name': stem.name,
+        'url': url,
+        'description': description
+        }
+
+
 def query(q_raw, from_script):
     """Query for any sort of Sanskrit data.
 
     :param q: a string representing a single word or morpheme.
     :param from_script: the script used by `q`
     """
-    q = sanscript.transliterate(q_raw, from_script, sanscript.SLP1)
-    gender_group = ctx.enum_abbr['gender_group']
+    q = to_slp1(q_raw, from_script)
 
     results = []
+    for r in session.query(X.Root).filter(X.Root.name == q):
+        results.append(_root_result(r, q_raw, from_script))
+
     for r in session.query(X.Stem).filter(X.Stem.name == q):
+        results.append(_stem_result(r, q_raw, from_script))
+
+    for r in session.query(X.Form).filter(X.Form.name == q):
         pos_id = r.pos_id
 
-        if pos_id == X.Tag.NOUN:
-            genders = gender_group[r.genders_id]
-            url = url_for('.noun', from_script=from_script,
-                          name=q_raw, genders=genders)
-            description = genders
+        if pos_id == X.Tag.NOUN or pos_id == X.Tag.PRONOUN:
+            results.append(_stem_result(r.stem, q_raw, from_script))
 
-        elif pos_id == X.Tag.PRONOUN:
-            url = url_for('.pronoun', from_script=from_script,
-                          name=q_raw)
-            description = 'pronoun'
-        else:
-            url = '#'
-            description = None
+        elif pos_id == X.Tag.VERB:
+            results.append(_root_result(r.root, q_raw, from_script))
 
-        data = {
-            'name': r.name,
-            'url': url,
-            'description': description
-            }
-        results.append(data)
-
-    return results
+    # Remove duplicate results
+    seen = set()
+    add = seen.add
+    return [x for x in results if x['id'] not in seen and not add(x['id'])]
 
 
 @ref.route('/')
@@ -66,7 +102,7 @@ def index():
 @ref.route('/nouns-<from_script>/<name>-<genders>')
 def noun(name, from_script, genders=None):
     """Display a noun paradigm."""
-    name = sanscript.transliterate(name, from_script, sanscript.SLP1)
+    name = to_slp1(name, from_script)
     paradigm = simple_query.noun(name, genders)
 
     data = {
@@ -80,7 +116,7 @@ def noun(name, from_script, genders=None):
 @ref.route('/pronouns-<from_script>/<name>')
 def pronoun(name, from_script, genders=None):
     """Display a pronoun paradigm."""
-    name = sanscript.transliterate(name, from_script, sanscript.SLP1)
+    name = to_slp1(name, from_script)
     paradigm = simple_query.pronoun(name, 'm')
 
     data = {
@@ -89,6 +125,21 @@ def pronoun(name, from_script, genders=None):
         'classes': paradigm_colors(paradigm),
         }
     return render_template('ref/nominal.html', **data)
+
+
+@ref.route('/root-<from_script>/<name>')
+def root(name, from_script):
+    """Display a summary of a root's forms"""
+    name = to_slp1(name, from_script)
+
+    return render_template('ref/root.html')
+
+
+@ref.route('/root-<from_script>/<name>/<mode>-<voice>')
+def verb_paradigm(name, from_script, mode, voice):
+    """Display a verb paradigm."""
+    name = to_slp1(name, from_script)
+    return render_template('ref/verb_paradigm.html')
 
 
 def paradigm_colors(paradigm):
