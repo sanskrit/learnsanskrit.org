@@ -1,0 +1,30 @@
+@import "../../../static/css/lib.less";
+
+ul.query-results {
+    list-style: none;
+    padding: 0 1em;
+
+    a {
+        text-decoration: none;
+    }
+    abbr {
+    }
+    li {
+        border-top: 1px @light-gray solid;
+    }
+    li:first-child {
+        border: 0;
+    }
+    p.result {
+        margin: 1em 0;
+        span.sa1 {
+            font-size: 1.5em;
+        }
+        abbr {
+            color: darken(@red, 10%);
+            font-weight: bold;
+            line-height: 1.5em;
+            padding-left: 1em;
+        }
+    }
+}

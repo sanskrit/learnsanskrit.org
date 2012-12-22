@@ -1,0 +1,11 @@
+{% extends 'tools/layout.html' %}
+
+{% block extrahead %}
+    {% assets filters="less", output="gen/ref.css", "ref/css/ref.less" %}
+        <link rel="stylesheet" type="text/css" href="{{ ASSET_URL }}" />
+    {% endassets %}
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('.static', filename='js/ref.js') }}"></script>
+{% endblock %}
