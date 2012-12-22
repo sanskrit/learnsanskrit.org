@@ -3,6 +3,7 @@ from flask.ext.assets import Bundle, Environment
 from flask.ext.mail import Mail
 
 from sanskrit import Context, query
+import sqlalchemy
 
 app = Flask(__name__)
 app.config.from_object('development.config')
@@ -41,7 +42,10 @@ mail = Mail(app)
 # Sanskrit
 # --------
 ctx = Context(app.config)
-simple_query = query.SimpleQuery(ctx)
+try:
+    simple_query = query.SimpleQuery(ctx)
+except sqlalchemy.exc.ProgrammingError:
+    simple_query = None
 
 # Views
 # -----
@@ -49,9 +53,11 @@ import views
 
 from dicts import dicts
 from guide import guide
+from ref import ref
 from site import site
 from tools import tools
 app.register_blueprint(dicts, url_prefix='/dict')
 app.register_blueprint(guide, url_prefix='/guide')
+app.register_blueprint(ref, url_prefix='/ref')
 app.register_blueprint(site)
 app.register_blueprint(tools, url_prefix='/tools')

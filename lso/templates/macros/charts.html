@@ -8,31 +8,35 @@
     </tr>
 {% endmacro %}
 
-{% macro row(r, forms, label) %}
+{% macro row(r, forms, label, classes={}) %}
     <tr>
         {% if label %}<th>{{ label }}</th>{% endif %}
         {% for num in 'sdp' %}
-        <td>{{ forms[(r, num)]|sa1 }}<br />{{ forms[(r, num)]|sa2 }}</td>
+        {% set cls = classes.get((r, num), none) %}
+        <td{% if cls %} class="{{ cls }}"{% endif %}>
+            {{ forms[(r, num)]|sa1 }}<br />
+            {{ forms[(r, num)]|sa2 }}
+        </td>
         {% endfor %}
     </tr>
 {% endmacro %}
 
 <!-- Display nominal data -->
-{% macro nominal_paradigm(basis, forms, caption=none, labels={}, cases='12345678') %}
+{% macro nominal_paradigm(basis, forms, caption=none, labels={}, classes={}, cases='12345678') %}
 <table class="paradigm">
     {{ thead(basis, caption, labels) }}
     {% for c in cases %}
-    {{ row(c, forms, labels[c]) }}
+    {{ row(c, forms, labels[c], classes) }}
     {% endfor %}
 </table>
 {% endmacro %}
 
 <!-- Display verb data -->
-{% macro verb_paradigm(basis, forms, caption=none, labels={}) %}
+{% macro verb_paradigm(basis, forms, caption=none, labels={}, classes={}) %}
 <table class="paradigm">
     {{ thead(basis, caption, labels) }}
     {% for p in '321' %}
-    {{ row(p, forms, labels[p]) }}
+    {{ row(p, forms, labels[p], classes) }}
     {% endfor %}
 </table>
 {% endmacro %}

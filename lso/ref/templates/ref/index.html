@@ -1,0 +1,19 @@
+{% extends 'tools/layout.html' %}
+{% from 'macros/forms.html' import query_form %}
+
+{% block title %}References{% endblock %}
+
+{% block content %}
+<h1>References</h1>
+{{ query_form(form) }}
+
+<ul>
+    {% for r in results %}
+    <li>
+        <a href="{{ r.url }}">{{ r.name|sa1 }}</a>
+        {% if r.description %}({{ r.description }}){% endif %}
+    </li>
+    {% endfor %}
+</ul>
+
+{% endblock %}

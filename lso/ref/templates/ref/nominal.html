@@ -1,0 +1,10 @@
+{% extends 'tools/layout.html' %}
+{% import 'macros/charts.html' as charts %}
+{% from 'macros/forms.html' import query_form %}
+
+{% set title = name|sa1(tag='') %}
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+{{ charts.nominal_paradigm(basis=stem, forms=paradigm, classes=classes) }}
+{% endblock %}
