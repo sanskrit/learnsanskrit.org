@@ -1,10 +1,52 @@
-{% extends 'tools/layout.html' %}
+{% extends 'ref/layout.html' %}
 {% import 'macros/charts.html' as charts %}
 {% from 'macros/forms.html' import query_form %}
 
 {% set title = name|sa1(tag='') %}
 {% block title %}{{ title }}{% endblock %}
 
+{% macro show_forms(items) %}
+{% set data = ', '.join(items) %}
+{% if data %}{{ data|sa1 }}{% else %}<span lang="sa1">&mdash;</span>{% endif %}
+{% endmacro %}
+
 {% block content %}
+<h1>{{ name|sa1 }}</h1>
+
+<h2>Tenses and moods</h2>
+
+{% for mode in verb_modes %}
+<table class="verb-summary">
+    <caption>{{ labels[mode] }}</caption>
+    <tr>
+        {% for voice in voices %}
+        <th class="voice">{{ labels[voice] }}</th>
+        {% endfor %}
+    </tr>
+    <tr>
+        {% for voice in voices %}
+        <td>{{ show_forms(forms.verbs[mode, voice]) }}</td>
+        {% endfor %}
+    </tr>
+{% endfor %}
+</table>
+
+<h2>Participles</h2>
+{% for mode in part_modes %}
+<table class="verb-summary">
+    <caption>{{ labels[mode] }}</caption>
+    <tr>
+        {% for voice in voices %}
+        <th class="voice">{{ labels[voice] }}</th>
+        {% endfor %}
+    </tr>
+    <tr>
+        {% for voice in voices %}
+        <td>{{ show_forms(forms.participles[mode, voice]) }}</td>
+        {% endfor %}
+    </tr>
+</table>
+{% endfor %}
+
 
 {% endblock %}

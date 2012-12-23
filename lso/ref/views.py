@@ -1,3 +1,11 @@
+# -*- coding: utf-8 -*-
+"""
+    lso.ref.views
+    ~~~~~~~~~~~~~
+
+    :license: MIT and BSD
+"""
+
 from collections import OrderedDict
 
 from flask import render_template, request, url_for
@@ -131,8 +139,41 @@ def pronoun(name, from_script, genders=None):
 def root(name, from_script):
     """Display a summary of a root's forms"""
     name = to_slp1(name, from_script)
+    forms = simple_query.verb_summary(name)
 
-    return render_template('ref/root.html')
+    labels = {
+        'pres': 'Present',
+        'ipft': 'Imperfect',
+        'impv': 'Imperative',
+        'opt': 'Optative',
+        'sfut': 'Simple future',
+        'dfut': 'Distant future',
+        'fut': 'Future',
+        'past': 'Past',
+        'aor': 'Aorist',
+        'inj': 'Injunctive',
+        'ben': 'Benedictive',
+        'cond': 'Conditional',
+        'perf': 'Perfect',
+        'P': 'Parasmaipada',
+        'A': u'Ātmanepada',
+        'passive': 'Passive',
+    }
+
+    verb_modes = 'pres impv ipft opt cond sfut dfut aor inj perf'.split()
+    part_modes = 'fut pres past perf'.split()
+    voices = 'P A passive'.split()
+
+    data = {
+        'name': name,
+        'verb_modes': verb_modes,
+        'part_modes': part_modes,
+        'voices': voices,
+        'forms': forms,
+        'labels': labels,
+    }
+
+    return render_template('ref/root.html', **data)
 
 
 @ref.route('/root-<from_script>/<name>/<mode>-<voice>')
