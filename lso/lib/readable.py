@@ -1,3 +1,4 @@
+from sanskrit import sounds
 from sanskrit.schema import Tag
 from lso import ctx
 
@@ -60,17 +61,17 @@ class Readable(object):
 
         self.genders = enum_abbr['gender_group']
 
-        self.gender = self._custom(gender, 'gender')
-        self.case = self._custom(case, 'case')
-        self.number = self._custom(number, 'number')
-        self.person = self._custom(person, 'person')
-        self.mode = self._custom(mode, 'mode')
-        self.voice = self._custom(voice, 'voice')
+        self.gender = self._custom_abbr(gender, 'gender')
+        self.case = self._custom_abbr(case, 'case')
+        self.number = self._custom_abbr(number, 'number')
+        self.person = self._custom_abbr(person, 'person')
+        self.mode = self._custom_abbr(mode, 'mode')
+        self.voice = self._custom_abbr(voice, 'voice')
 
         self.verb_tmp = '{0} {1} {2} {3}'
         self.nominal_tmp = '{0} {1} {2}'
 
-    def _custom(self, abbr, name):
+    def _custom_abbr(self, abbr, name):
         enum = self.ctx.enum_id[name]
         return {enum[k]: v for k, v in abbr.iteritems()}
 

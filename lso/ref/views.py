@@ -9,7 +9,7 @@
 from collections import OrderedDict
 
 from flask import g, render_template, request, url_for
-from sanskrit import sanscript, schema as X
+from sanskrit import sanscript, schema as X, sounds
 
 from lso import ctx, simple_query
 from lso.lib.readable import Readable
@@ -58,7 +58,6 @@ def _stem_result(stem, results, lookup):
     name = stem.name
     pos_id = stem.pos_id
     gender_group = ctx.enum_abbr['gender_group']
-    mode = ctx.enum_abbr['mode']
 
     datum = {
         'id': stem.id,
@@ -100,12 +99,11 @@ def _stem_result(stem, results, lookup):
 def _form_result(form, results, lookup):
     """Prepare the data needed to display a form result."""
 
-    name = form.name
     pos_id = form.pos_id
 
     datum = {
         'id': form.id,
-        'name': name,
+        'name': sounds.Term(form.name).simplify(),
         'description': g.readable.form_abbr(form),
         'children': []
         }
