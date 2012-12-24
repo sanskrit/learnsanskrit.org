@@ -9,17 +9,24 @@
 
 {% if results %}
 <ul class="query-results">
-    {% for r in results %}
+    {% for r in results recursive %}
     <li>
-        <p class="result">
-            <a href="{{ r.url }}">{{ r.name|sa1 }}</a>
-            {% if r.description %}<abbr>{{ r.description }}</abbr>{% endif %}
-        </p>
+        <a href="{{ r.url }}">
+            <p class="result">
+                {{ r.name|sa1 }}
+                {% if r.description %}<abbr>{{ r.description }}</abbr>{% endif %}
+            </p>
+        </a>
+        {% if r.children %}
+        <ul>
+            {{ loop(r.children) }}
+        </ul>
+        {% endif %}
     </li>
     {% endfor %}
 </ul>
 {% else %}
-<p>No results found.</p>
+<p>No results found for {{ form.data['q']|sa1 }}.</p>
 {% endif %}
 
 {% endblock %}

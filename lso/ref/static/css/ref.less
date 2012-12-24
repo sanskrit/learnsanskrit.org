@@ -4,8 +4,13 @@ ul.query-results {
     list-style: none;
     padding: 0 1em;
 
+    ul {
+        margin: 0;
+    }
+
     a {
         text-decoration: none;
+        .transition(0.2s);
     }
     abbr {
     }
@@ -16,15 +21,19 @@ ul.query-results {
         border: 0;
     }
     p.result {
-        margin: 1em 0;
+        padding: 1em;
+        margin: 0;
+
         span.sa1 {
             font-size: 1.5em;
         }
         abbr {
-            color: darken(@red, 10%);
-            font-weight: bold;
+            color: @dark-gray;
             line-height: 1.5em;
             padding-left: 1em;
+        }
+        &:hover {
+            background: @light-gray;
         }
     }
 }

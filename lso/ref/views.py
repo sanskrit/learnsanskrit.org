@@ -8,56 +8,120 @@
 
 from collections import OrderedDict
 
-from flask import render_template, request, url_for
+from flask import g, render_template, request, url_for
 from sanskrit import sanscript, schema as X
 
 from lso import ctx, simple_query
+from lso.lib.readable import Readable
 from . import ref
 from ..database import session
 from ..forms import QueryForm
 
 
+# Helper functions
+# ----------------
+
 def to_slp1(q, from_script):
+    """Helper function. Transliterate to SLP1."""
     return sanscript.transliterate(q, from_script, sanscript.SLP1)
 
 
-def _root_result(root, q, from_script):
+def _root_result(root, results, lookup):
     """Prepare the data needed to display a root result."""
+
+    if root.id in lookup:
+        return lookup[root.id]
+
+    id = root.id
     name = root.name
-    return {
-        'id': root.id,
+
+    datum = {
+        'id': id,
         'name': name,
-        'url': url_for('.root', name=name, from_script=from_script),
-        'description': None
+        'url': url_for('.root', name=name, from_script=sanscript.SLP1),
+        'description': g.readable.root_abbr(root),
+        'children': []
         }
 
+    results.append(datum)
+    lookup[id] = datum
+    return datum
 
-def _stem_result(stem, q, from_script):
+
+def _stem_result(stem, results, lookup):
     """Prepare the data needed to display a stem result."""
-    gender_group = ctx.enum_abbr['gender_group']
+
+    if stem.id in lookup:
+        return lookup[stem.id]
+
+    id = stem.id
     name = stem.name
     pos_id = stem.pos_id
+    gender_group = ctx.enum_abbr['gender_group']
+    mode = ctx.enum_abbr['mode']
+
+    datum = {
+        'id': stem.id,
+        'name': name,
+        'description': g.readable.stem_abbr(stem),
+        'children': []
+        }
 
     if pos_id == X.Tag.NOUN:
         genders = gender_group[stem.genders_id]
-        url = url_for('.noun', from_script=sanscript.SLP1,
-                      name=name, genders=genders)
-        description = genders + '.'
+        datum['url'] = url_for('.noun', from_script=sanscript.SLP1,
+                               name=name, genders=genders)
+        results.append(datum)
 
     elif pos_id == X.Tag.PRONOUN:
-        url = url_for('.pronoun', from_script=sanscript.SLP1,
-                      name=name)
-        description = 'pronoun'
-    else:
-        url = '#'
-        description = None
+        datum['url'] = url_for('.pronoun', from_script=sanscript.SLP1,
+                               name=name)
+        results.append(datum)
 
-    return {
-        'id': stem.id,
-        'name': stem.name,
-        'url': url,
-        'description': description
+    elif pos_id == X.Tag.ADJECTIVE:
+        datum['url'] = '#'
+        results.append(datum)
+
+    elif pos_id == X.Tag.PARTICIPLE:
+        datum['url'] = '#'
+
+        child = datum
+        datum = _root_result(stem.root, results, lookup)
+        datum['children'] = [child]
+
+    else:
+        datum['url'] = '#'
+        datum['description'] = None
+
+    lookup[id] = datum
+    return datum
+
+
+def _form_result(form, results, lookup):
+    """Prepare the data needed to display a form result."""
+
+    name = form.name
+    pos_id = form.pos_id
+
+    datum = {
+        'id': form.id,
+        'name': name,
+        'description': g.readable.form_abbr(form),
+        'children': []
         }
+
+    if pos_id == X.Tag.NOUN or pos_id == X.Tag.PRONOUN:
+        child = datum
+        datum = _stem_result(form.stem, results, lookup)
+        datum['children'].append(child)
+
+    elif pos_id == X.Tag.VERB:
+        child = datum
+        datum = _root_result(form.root, results, lookup)
+        datum['children'].append(child)
+
+    elif pos_id == X.Tag.INDECLINABLE:
+        results.append(datum)
 
 
 def query(q_raw, from_script):
@@ -69,25 +133,28 @@ def query(q_raw, from_script):
     q = to_slp1(q_raw, from_script)
 
     results = []
+    lookup = {}
     for r in session.query(X.Root).filter(X.Root.name == q):
-        results.append(_root_result(r, q_raw, from_script))
+        _root_result(r, results, lookup)
 
     for r in session.query(X.Stem).filter(X.Stem.name == q):
-        results.append(_stem_result(r, q_raw, from_script))
+        _stem_result(r, results, lookup)
 
     for r in session.query(X.Form).filter(X.Form.name == q):
-        pos_id = r.pos_id
+        _form_result(r, results, lookup)
 
-        if pos_id == X.Tag.NOUN or pos_id == X.Tag.PRONOUN:
-            results.append(_stem_result(r.stem, q_raw, from_script))
+    return results
 
-        elif pos_id == X.Tag.VERB:
-            results.append(_root_result(r.root, q_raw, from_script))
 
-    # Remove duplicate results
-    seen = set()
-    add = seen.add
-    return [x for x in results if x['id'] not in seen and not add(x['id'])]
+# Blueprint functions
+# -------------------
+
+@ref.before_request
+def make_readable():
+    """Create a :class:`Readable` to translate a form's database IDs
+    to a readable form.
+    """
+    g.readable = Readable(ctx)
 
 
 @ref.route('/')

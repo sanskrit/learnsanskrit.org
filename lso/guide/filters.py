@@ -31,7 +31,7 @@ def inject_functions():
 @app.template_filter()
 def d(text, tag='span', to=sanscript.DEVANAGARI):
     """Transliterate Harvard-Kyoto (primary)."""
-    return sa1(text, sanscript.HK, to, tag=tag)
+    return sa1(Markup(text), sanscript.HK, to, tag=tag, safe=True)
 
 
 @app.template_filter()
@@ -44,7 +44,7 @@ def foot(text, notes):
 @app.template_filter()
 def i(text, tag='span'):
     """Transliterate Harvard-Kyoto (secondary)."""
-    return sa2(text, sanscript.HK, tag=tag)
+    return sa2(Markup(text), sanscript.HK, tag=tag, safe=True)
 
 
 @app.template_filter()
