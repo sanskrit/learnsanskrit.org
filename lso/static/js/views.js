@@ -9,7 +9,7 @@
         },
 
         events: {
-            'click a.btn-close': 'hide'
+            'click a.close': 'hide'
         },
 
         show: function() {

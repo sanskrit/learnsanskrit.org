@@ -1,11 +1,38 @@
 <div id="settings-modal" class="modal">
+    <div class="modal-head">
     <h2>Settings</h2>
+    </div>
     <div class="modal-body">
     <fieldset>
         {{ form.sa1.label }} {{ form.sa1 }}
+        <div class="settings-desc">
+            <p>This site uses two different scripts to display Sanskrit. The first is the <dfn>main script</dfn>, which is used for large text:</p>
+
+            <blockquote>
+                <p style="font-size: 1.5em">{{ 'Darmakzetre kurukzetre'|sa1 }}</p>
+            </blockquote>
+
+            <p>You should choose something that you can comfortably read at a large size.</p>
+        </div>
+    </fieldset>
+    <fieldset>
         {{ form.sa2.label }} {{ form.sa2 }}
+        <div class="settings-desc">
+            <p>The second is the <dfn>secondary script</dfn>, which is used in small text and when Sanskrit is mixed with English:</p>
+
+            <blockquote>
+                <p>The first word of the Bhagavad Gita is {{ 'Darmakzetre'|sa2 }}.</p>
+            </blockquote>
+
+            <p>If you like, you can make the main script and secondary script the same.</p>
+        </div>
+    </fieldset>
+    <fieldset>
         {{ form.input.label }} {{ form.input }}
+        <div class="settings-desc">
+            <p>You can also choose an <dfn>input script</dfn> for typing Sanskrit on the page. You should choose one that you can easily type on your computer. (We recommend using Harvard-Kyoto.)</p>
+        </div>
     </fieldset>
     </div>
-    <a class="btn btn-close">✖</a>
+    <a class="close">✖</a>
 </div>

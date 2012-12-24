@@ -12,7 +12,7 @@
         },
 
         events: {
-            'click a.btn-close': 'hide',
+            'click a.close': 'hide',
             'change': 'gather'
         },
 

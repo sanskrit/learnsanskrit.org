@@ -15,29 +15,42 @@ div.modal {
     }
 }
 
-div.modal-body {
-    overflow-y: auto;
+div.modal-head {
+    h2 {
+        margin: 0;
+    }
 }
 
-a.btn-close {
+div.modal-body {
+    bottom: 1em;
+    left: 1em;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 0 1em;
+    position: absolute;
+    right: 1em;
+    top: 4em;
+}
+
+a.close {
     @bg: darken(@light-gray, 20%);
     @font-size: 1.2em;
-    @size: 2em / @font-size;
+    @size: 1.75em / @font-size;
 
-    background: @bg;
-    border: 0;
-    color: #fff;
+    color: @bg;
     display: block;
     font-size: @font-size;
     height: @size;
     line-height: @size;
     position: absolute;
+    text-align: center;
     right: 1em;
     top: 1em;
     width: @size;
 
     &:hover {
-        background: #ce8686;
+        color: #000;
+        cursor: pointer;
     }
     &:active {
         position: absolute;
@@ -50,7 +63,31 @@ a.btn-close {
     font-family: sans-serif;
     padding: 1em;
 
+    blockquote {
+        color: darken(@red, 10%);
+    }
+
+    dfn {
+        color: inherit;
+        font-style: normal;
+    }
+
+    label {
+        border-bottom: 1px darken(@light-gray, 5%) solid;
+        font-weight: bold;
+    }
+
+    div.modal-head {
+        border-bottom: 1px darken(@light-gray, 10%) solid;
+        height: 3em;
+    }
+
     div.modal-body {
-        border-top: 1px darken(@light-gray, 10%) solid;
+        background: #fff;
+    }
+
+    div.settings-desc {
+        width: 60%;
+        float: right;
     }
 }
