@@ -1,10 +1,10 @@
 {% extends 'ref/layout.html' %}
 {% from 'macros/forms.html' import query_form %}
 
-{% block title %}References{% endblock %}
+{% block title %}{% if q %}{{ q|sa1(tag='') }}{% else %}References{% endif %}{% endblock %}
 
 {% block content %}
-<h1>References</h1>
+<h1>{% if q %}Results for {{ q|sa1 }}{% else %}References{% endif %}</h1>
 {{ query_form(form) }}
 
 {% if results %}
@@ -25,8 +25,19 @@
     </li>
     {% endfor %}
 </ul>
+{% elif q %}
+<p>Sorry, we couldn't find any results for {{ q|sa1 }}.</p>
 {% else %}
-<p>No results found for {{ form.data['q']|sa1 }}.</p>
+<p><strong>Search for anything.</strong> This Sanskrit analyzer lets you search for almost any type of Sanskrit linguistic data:</p>
+
+<ul>
+    <li>Inflected and uninflected words (<kbd>panthAnam</kbd>, <kbd>akarot</kbd>, <kbd>gacchantau</kbd>, <kbd>atha</kbd>)</li>
+    <li>Noun, adjective, pronoun, and participle stems (<kbd>nara</kbd>, <kbd>zveta</kbd>, <kbd>tad</kbd>, <kbd>gacchat</kbd>)</li>
+    <li>Verb roots (<kbd>bhU</kbd>, <kbd>gam</kbd>)</li>
+</ul>
+
+<p>If you can't find a form that you feel should be here, <a href="{{ url_for('site.contact') }}">let us know about it</a> and we'll do our best to add it here. (The analyzer does not have support for compounds.)</p>
+
 {% endif %}
 
 {% endblock %}

@@ -120,14 +120,11 @@ def _form_result(form, results, lookup):
         results.append(datum)
 
 
-def query(q_raw, from_script):
+def query(q):
     """Query for any sort of Sanskrit data.
 
-    :param q: a string representing a single word or morpheme.
-    :param from_script: the script used by `q`
+    :param q: an SLP1 string representing a single word or morpheme.
     """
-    q = to_slp1(q_raw, from_script)
-
     results = []
     lookup = {}
     for r in session.query(X.Root).filter(X.Root.name == q):
@@ -161,9 +158,13 @@ def index():
     from_script = query_form.data['from_script']
 
     if query_form.validate():
-        results = query(query_form.data['q'], from_script)
+        q = to_slp1(query_form.data['q'], from_script)
+        results = query(q)
+    else:
+        q = None
 
     data = {
+        'q': q,
         'form': query_form,
         'results': results,
     }
