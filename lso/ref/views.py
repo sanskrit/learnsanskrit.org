@@ -11,7 +11,7 @@ from collections import OrderedDict
 from flask import g, render_template, request, url_for
 from sanskrit import sanscript, schema as X, sounds
 
-from lso import ctx, simple_query
+from lso import ctx, simple_analyzer, simple_query
 from lso.lib.readable import Readable
 from . import ref
 from ..database import session
@@ -84,9 +84,8 @@ def _stem_result(stem, results, lookup):
     elif pos_id == X.Tag.PARTICIPLE:
         datum['url'] = '#'
 
-        child = datum
-        datum = _root_result(stem.root, results, lookup)
-        datum['children'] = [child]
+        parent = _root_result(stem.root, results, lookup)
+        parent['children'].append(datum)
 
     else:
         datum['url'] = '#'
@@ -102,23 +101,22 @@ def _form_result(form, results, lookup):
     pos_id = form.pos_id
 
     datum = {
-        'id': form.id,
         'name': sounds.Term(form.name).simplify(),
         'description': g.readable.form_abbr(form),
         'children': []
         }
 
-    if pos_id == X.Tag.NOUN or pos_id == X.Tag.PRONOUN:
-        child = datum
-        datum = _stem_result(form.stem, results, lookup)
-        datum['children'].append(child)
+    Tag = X.Tag
+    if pos_id in (Tag.NOUN, Tag.PRONOUN, Tag.ADJECTIVE, Tag.PARTICIPLE):
+        parent = _stem_result(form.stem, results, lookup)
+        parent['children'].append(datum)
 
-    elif pos_id == X.Tag.VERB:
+    elif pos_id == Tag.VERB:
         child = datum
         datum = _root_result(form.root, results, lookup)
         datum['children'].append(child)
 
-    elif pos_id == X.Tag.INDECLINABLE:
+    elif pos_id == Tag.INDECLINABLE:
         results.append(datum)
 
 
@@ -138,7 +136,7 @@ def query(q_raw, from_script):
     for r in session.query(X.Stem).filter(X.Stem.name == q):
         _stem_result(r, results, lookup)
 
-    for r in session.query(X.Form).filter(X.Form.name == q):
+    for r in simple_analyzer.analyze(q):
         _form_result(r, results, lookup)
 
     return results

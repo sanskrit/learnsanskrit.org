@@ -79,10 +79,13 @@ class Readable(object):
         pos_id = form.pos_id
 
         if pos_id in (Tag.NOUN, Tag.ADJECTIVE, Tag.PRONOUN, Tag.PARTICIPLE):
-            g = self.gender[form.gender_id]
-            c = self.case[form.case_id]
-            n = self.number[form.number_id]
-            return self.nominal_tmp.format(g, c, n)
+            if form.compounded:
+                return 'comp.'
+            else:
+                g = self.gender[form.gender_id]
+                c = self.case[form.case_id]
+                n = self.number[form.number_id]
+                return self.nominal_tmp.format(g, c, n)
 
         elif pos_id == Tag.VERB:
             p = self.person[form.person_id]

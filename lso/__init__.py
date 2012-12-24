@@ -2,7 +2,7 @@ from flask import Flask
 from flask.ext.assets import Bundle, Environment
 from flask.ext.mail import Mail
 
-from sanskrit import Context, query
+from sanskrit import Context, analyze, query
 import sqlalchemy
 
 app = Flask(__name__)
@@ -43,9 +43,12 @@ mail = Mail(app)
 # --------
 ctx = Context(app.config)
 try:
+    from lso import database
     simple_query = query.SimpleQuery(ctx)
+    simple_analyzer = analyze.SimpleAnalyzer(ctx, database.session)
 except sqlalchemy.exc.ProgrammingError:
     simple_query = None
+    simple_analyzer = None
 
 # Views
 # -----
