@@ -43,9 +43,8 @@ mail = Mail(app)
 # --------
 ctx = Context(app.config)
 try:
-    from lso import database
     simple_query = query.SimpleQuery(ctx)
-    simple_analyzer = analyze.SimpleAnalyzer(ctx, database.session)
+    simple_analyzer = analyze.SimpleAnalyzer(ctx)
 except sqlalchemy.exc.ProgrammingError:
     simple_query = None
     simple_analyzer = None
