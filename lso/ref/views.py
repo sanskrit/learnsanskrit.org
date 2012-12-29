@@ -111,7 +111,7 @@ def _form_result(form, results, lookup):
         parent = _stem_result(form.stem, results, lookup)
         parent['children'].append(datum)
 
-    elif pos_id == Tag.VERB:
+    elif pos_id in (Tag.VERB, Tag.GERUND, Tag.INFINITIVE):
         child = datum
         datum = _root_result(form.root, results, lookup)
         datum['children'].append(child)

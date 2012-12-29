@@ -94,6 +94,12 @@ class Readable(object):
             v = self.voice[form.voice_id]
             return self.verb_tmp.format(p, n, m, v)
 
+        elif pos_id == Tag.GERUND:
+            return 'gerund'
+
+        elif pos_id == Tag.INFINITIVE:
+            return 'infinitive'
+
         elif pos_id == Tag.INDECLINABLE:
             return 'ind.'
 
