@@ -61,7 +61,7 @@ class SettingsForm(Form):
 
     sa1 = OptSelectField('Main script', choices=languages,
         default=S.DEVANAGARI)
-    sa2 = OptSelectField('Second script', choices=languages,
+    sa2 = OptSelectField('Secondary script', choices=languages,
         default=S.IAST)
     input = OptSelectField('Input script', choices=inputs,
         default=S.HK)
