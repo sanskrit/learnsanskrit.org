@@ -73,7 +73,7 @@ def mw_results(q):
     """
     q_list = q.replace('+', ' ').replace(',', ' ').split()
 
-    entries = MonierEntry.query.filter(MonierEntry.entry.in_(q_list))
+    entries = MonierEntry.query.filter(MonierEntry.name.in_(q_list))
     entries = entries.order_by('id').all()
 
     results = OrderedDict()
@@ -81,5 +81,5 @@ def mw_results(q):
         results[entry] = []
 
     for e in entries:
-        results[e.entry].append(e.data)
+        results[e.name].append(e.data)
     return results

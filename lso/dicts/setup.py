@@ -4,11 +4,12 @@ import yaml
 from xml.etree import ElementTree as ET
 
 from lso import app
-from ..database import session
+from ..database import session, engine
 from .models import MonierEntry
 
 MONIER_XML = 'monier.xml'
 GREEK_YML = 'greek.yml'
+
 
 def init_monier():
     """Initialize the Monier-Williams dictionary."""
@@ -43,8 +44,7 @@ def init_monier():
 
         h = xml.find('h')
         body = xml.find('body')
-        unaccented_entry = h.find('key1').text
-        accented_entry = h.find('key2').text
+        name = h.find('key1').text
 
         # Set beta code
         L = xml.find('tail/L').text
@@ -53,17 +53,17 @@ def init_monier():
             gk.text = b
 
         data = ET.tostring(body)
-        e = MonierEntry(entry=unaccented_entry, accented=accented_entry,
-                        data=data, parent=None)
+        e = MonierEntry(name=name, data=data)
         session.add(e)
 
         i += 1
         if i % 1000 == 0:
-            print "    {0}: {1}".format(i, unaccented_entry)
+            print "    {0}: {1}".format(i, name)
             session.commit()
 
     session.commit()
     f.close()
+
 
 def run():
     if not MonierEntry.query.count():
