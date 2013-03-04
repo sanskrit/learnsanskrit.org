@@ -8,45 +8,45 @@
 <ul class="examples">
     {{ iex('pacati', 'He cooks.') }}
     {{ iex('<mark>pacate</mark>', "He cooks for himself. (He's cooking himself a meal.)") }}
-    {{ ihex('pacataH', "The two of them cook.") }}
+    {{ iex('pacataH', "The two of them cook.") }}
     {{ iex('<mark>pacete</mark>', "The two of them cook for themselves.") }}
-    {{ ihex('pacanti', "They cook.") }}
+    {{ iex('pacanti', "They cook.") }}
     {{ iex('<mark>pacante</mark>', "They cook for themselves.") }}
 </ul>
 
-<p>The stem is the same, but the endings are different. Just as two different flowers can sometimes grow from the same stalk, so too can {{ 'parasmaipada'|i }} and {{ 'Atmanepada'|i }} forms grow from the same verb stem.</p>
+<p>The stem is the same, but the endings are different. Just as two different flowers can sometimes grow from the same stalk, so too can {{ 'parasmaipada'|i }} and {{ 'Atmanepada'|i }} verbs grow from the same verb stem.</p>
 
 <h2>Endings</h2>
 <p>The {{ 'Atmanepada'|i }} endings are closely related to the {{ 'parasmaipada'|i }} endings. They follow similar patterns:</p>
 
 <ul class="examples">
-    {{ ihex('pacati', 'He cooks.') }}
-    {{ ihex('pacate', "He cooks for himself. (He's cooking himself a meal.)") }}
-    {{ ihex('pacanti', "They cook.") }}
-    {{ ihex('pacante', "They cook for themselves.") }}
-    {{ ihex('pacasi', "You cook.") }}
+    {{ iex('pacati', 'He cooks.') }}
+    {{ iex('pacate', "He cooks for himself. (He's cooking himself a meal.)") }}
+    {{ iex('pacanti', "They cook.") }}
+    {{ iex('pacante', "They cook for themselves.") }}
+    {{ iex('pacasi', "You cook.") }}
     {{ iex('pacase', "You cook for yourself.") }}
 </ul>
 
 <p>Even when these patterns are not immediately clear:</p>
 
 <ul class="examples">
-    {{ ihex('pacataH', "The two of them cook.") }}
+    {{ iex('pacataH', "The two of them cook.") }}
     {{ iex('pacete', "The two of them cook for themselves.") }}
-    {{ ihex('pacathaH', "You two cook") }}
+    {{ iex('pacathaH', "You two cook") }}
     {{ iex('pacethe', "You two cook for yourselves.") }}
-    {{ ihex('pacAvaH', "The two of us cook.") }}
+    {{ iex('pacAvaH', "The two of us cook.") }}
     {{ iex('pacAvahe', "The two of us cook for ourselves.") }}
-    {{ ihex('pacAmaH', "We all cook.") }}
+    {{ iex('pacAmaH', "We all cook.") }}
     {{ iex('pacAmahe', "We all cook for ourselves.") }}
 </ul>
 
 <p>But in two instances, there is no pattern at all:</p>
 
 <ul class="examples">
-    {{ ihex('pacatha', "You all cook.") }}
+    {{ iex('pacatha', "You all cook.") }}
     {{ iex('pacadhve', "You all cook for yourselves.") }}
-    {{ ihex('pacAmi', "I cook.") }}
+    {{ iex('pacAmi', "I cook.") }}
     {{ iex('pace', "I cook for myself.") }}
 </ul>
 
@@ -79,9 +79,8 @@
     {{ ihex('manyante', 'They think.') }}
 </ul>
 
-<p>Traditionally, verbs are presented in a table, like the one below:</p>
+<p>We can summarize the {{ 'Atmanepada'|i }} forms using a table:</p>
 
 {{ verb('laB', 'pres', 'A', vclass='1') }}
 
-<p>But we have already seen all of these forms, and there is no need to linger on a table like this.</p>
 {% endblock %}

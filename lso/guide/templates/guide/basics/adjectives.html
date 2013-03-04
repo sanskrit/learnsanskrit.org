@@ -2,13 +2,19 @@
 
 {% block lesson %}
 
-<p>All Sanskrit words fall into one of three categories: those that use verb endings, those that use noun endings, and those that use no ending at all. We have seen examples from all three of these categories already, and every Sanskrit concept we study from here onward will be based on one of these three categories. The sentence below has a word from each of these three categories:</p>
+<p>All Sanskrit words fall into one of three categories:</p>
+
+<ul>
+    <li>words that use verb endings ({{ 'gacchati'|i }})</li>
+    <li>words that use noun endings ({{ 'gajAya'|i }})</li>
+    <li>words that use no ending at all ({{ 'vinA'|i }})</li>
+</ul>
+
+<p>Every Sanskrit concept we study from here onward will be based on one of these three categories. We have seen examples from all three of these categories already. For example, the sentence below has one from each:</p>
 
 <ul class="examples">
     {{ ihex('naraiH saha pazyanti', 'They see with the men.') }}
 </ul>
-
-<p>Words that use verb endings are <em>verbs</em>. But words that use noun endings are not always nouns; they <em>resemble</em> nouns, but they have very different meanings.</p>
 
 <p>Let's make this discussion more concrete. We already know how to describe the things involved with an action:</p>
 
@@ -61,11 +67,9 @@
 
 <section class="sandhi">
     <h2>Sandhi, or "blended sounds" by another name</h2>
-    <p>Sounds blend nearly everywhere in Sanskrit. Sanskrit grammarians noticed this as well, and they gave these various blendings a single collective name: {{ 'sandhi'|i('dfn') }}. The word means something like "combination," and it refers to the <em>combination</em> of two sounds when they are close together. Now that we are learning more about Sanskrit, we might as well use a few Sanskrit terms. But although the term is different, the concepts involved are exactly the same.</p>
+    <p>Sounds blend nearly everywhere in Sanskrit. Sanskrit grammarians noticed this as well, and they gave these various blendings a single collective name: <dfn>sandhi</dfn>. The word means something like "combination," and it refers to the <em>combination</em> of two sounds when they are close together. This guide uses the term "sandhi" out of respect for other textbooks and the grammatical tradition, but although the term we use is different, the concepts involved here are exactly the same.</p>
 
-    <p>We can talk about certain changes based on the first letter involved. For blends where the {{ 'visarga'|i }} comes first, we can use the term <dfn>{{ 'visarga'|i }} sandhi</dfn>.</p>
-
-    <p>In fact, let us revisit {{ 'visarga'|i }} sandhi one last time. If those are unwelcome words to you, don't worry &mdash; this is the last time that the guide will discuss {{ 'visarga'|i }} sandhi.</p>
+    <p>We can talk about certain changes based on the first letter involved. For blends where the {{ 'visarga'|i }} comes first, we can use the term <dfn>{{ 'visarga'|i }} sandhi</dfn>. In fact, let us revisit {{ 'visarga'|i }} sandhi one last time. If those are unwelcome words to you, don't worry &mdash; this is the last time that the guide will discuss {{ 'visarga'|i }} sandhi.</p>
 
     <p>We have already seen a variety of changes, for both {{ '-aH'|i }}:</p>
     <ul class="examples">
@@ -109,13 +113,13 @@
         {{ ihex('naraiH rakSati', 'The two of you protect with the men.') }}
     </ul>
 
-    <p>We can guess that the result will be {{ 'narair ramate'|i }}. But try saying this phrase ten or twenty times. Notice how difficult it is to say {{ 'r'|i }} twice in a row. It would be much easier to pronounce this phrase if we just removed one of the {{ 'r'|i }} sounds. Sanskrit speakers thought so too:</p>
+    <p>We can guess that the result will be {{ 'narair ramate'|i }}. But try saying this phrase ten or twenty times. Notice how difficult it is to say {{ 'r'|i }} twice in a row. It would be much easier to pronounce this phrase if we could just remove one of the {{ 'r'|i }} sounds. Sanskrit speakers thought so too:</p>
 
     <ul class="examples">
         {{ ihex('naraiH rakSati -> narai rakSati', 'The two of you protect with the men.') }}
     </ul>
 
     <h3>The end of {{ 'visarga'|i }} sandhi</h3>
-    <p>We have already seen almost all of the sandhi changes that occur between Sanskrit words. And indeed, we have come to the end of {{ 'visarga'|i }} sandhi, which explains how these blendings occur.</p>
+    <p>We have come to the end of {{ 'visarga'|i }} sandhi, which explains how these blendings occur. And indeed, we have already seen almost all of the sandhi changes that occur between Sanskrit words.</p>
 </section>
 {% endblock %}

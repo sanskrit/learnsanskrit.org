@@ -52,11 +52,11 @@
 
 
 <h2>Ambiguity</h2>
-<p>Above, we saw that {{ 'gajau'|i }} appears in case 1 and case 2. This can create <dfn>ambiguities</dfn> in Sanskrit, where multiple meanings are possible:</p>
+<p>Above, we saw that {{ 'gajau'|i }} appears in both case 1 and case 2. This can create <dfn>ambiguities</dfn> in Sanskrit, where multiple meanings are possible:</p>
 
 <ul class="examples">
     {{ iex('gajau labhete', '(a) The two of them obtain the two elephants.<br />(b) The two elephants obtain.') }}
-    {{ ihex('vIrau narau rakSataH', '(a) The two heroes protect the two men.<br />(b) The two men protect the two heroes') }}
+    {{ iex('vIrau narau rakSataH', '(a) The two heroes protect the two men.<br />(b) The two men protect the two heroes.') }}
 </ul>
 
 <p>These ambiguities disappear if we know more about this sentence's context. If we do not have enough context, then there is nothing we can do. But fortunately, these sorts of ambiguities are also quite rare. They go away if the verb changes even slightly:</p>
@@ -100,7 +100,7 @@
         {{ ihex("vIrAH azvam icchanti -> vIrA azvam icchanti", 'The heroes want the horse.') }}
     </ul>
 
-    <p>Do you feel overwhelmed by these changes? Don't be &mdash; we've seen almost all of the ways in which the {{ 'visarga'|i }} blends. If you become comfortable with these rules, you will have little trouble with the rest of Sanskrit's blending.</p>
+    <p>Do you feel overwhelmed by these changes? Don't be &mdash; we've seen almost all of the ways in which the {{ 'visarga'|i }} blends. If you can become comfortable with the rules above, then you will have little trouble with the rest of Sanskrit's blending.</p>
 </section>
 
 <h2>Table of forms</h2>
@@ -108,5 +108,6 @@
 
 {{ nominal('gaja', 'm', cases='12') }}
 
-<p>But we have already seen all of these forms, and there is no need to linger on a table like this.</p>
+<p>As before, use this table if it helps you. If you find it confusing, feel free to move on.</p>
+
 {% endblock %}
