@@ -58,7 +58,7 @@
     {{ ex('dRzye grAme gRhe caiva', "I am seen in the village <em>and</em> in the house.") }}
 </ul>
 
-<p>But this description is incomplete. Several stems seem to do something else instead:</p>
+<p>But as usual, a few stems seem to do something a little different:</p>
 
 <ul class="examples">
     {{ ex("coryete 'zvau", 'The two horses are stolen.') }}
@@ -66,7 +66,7 @@
     {{ ex("sthIyase vIrair grAmeSu", 'You are stationed among the villages by the heroes.') }}
 </ul>
 
-<p>Three different issues are involved here. All of them are simple:</p>
+<p>Three different issues are involved here. Fortunately, all of them are straightforward.</p>
 
 <h3>Roots in the {{ 'aya'|i }} class</h3>
 
@@ -103,31 +103,53 @@
 <p>Roots that end in {{ 'A'|i }} have their {{ 'A'|i }} changed to {{ 'I'|i }}. This change occurs for complex reasons, and it's not worth discussing right now. But fortunately, this is an easy change to make:</p>
 
 <ul class="examples">
-    {{ ex('gRhe sthIyete saha gajaiH', 'The two chariots are stationed with the elephants.') }}
+    {{ ex('rathau sthIyete saha gajaiH', 'The two chariots are stationed with the elephants.') }}
 </ul>
 
 <h2>Using passive stems</h2>
 
-<p>The passive stems above can replace the "present" stem that we've seen already:</p>
+<p>The passive stems above can replace the "ordinary" stem that we usually see in the present tense:</p>
 
 <ul class="examples">
-    {{ ex('haMsA gacchanti grAmaM narAya', 'The geese go to the village for the man.') }}
-    {{ ex('grAmo gamyate haMsair narAya', 'The village is gone to by the geese for the man.') }}
+    {{ ex('haMsA grAmaM narAya gacchanti', 'The geese go to the village for the man.') }}
+    {{ ex('haMsair grAmo narAya gamyate', 'The village is gone to by the geese for the man.') }}
 </ul>
 
-<p>But it <strong>cannot</strong> replace other stems. For example, we cannot use this stem in the near future. Instead, we use the ordinary future stem and add {{ 'Atmanepada'|i }} endings:</p>
+<p>But they <strong>cannot</strong> replace any other stems. For example, we cannot use this stem in the near future. Instead, we use the ordinary future stem and add {{ 'Atmanepada'|i }} endings:</p>
 
 <ul class="examples">
-    {{ ex('gamiSyate narebhyaH', 'It will be gone to for the men.') }}
+    {{ ex('narebhyo gamiSyate', 'It will be gone to for the men.') }}
 </ul>
 
 <p>As you might imagine, this can be ambiguous:</p>
 
 <ul class="examples">
     {{ ex('gajo ramate', 'The elephant enjoys.') }}
-    {{ ex('ramyate gajena', 'It is enjoyed by the elephant.') }}
+    {{ ex('gajena ramyate', 'It is enjoyed by the elephant.') }}
     {{ ex('gajo ramiSyate', 'The elephant will enjoy.') }}
-    {{ ex('ramiSyate gajena', 'It will be enjoyed by the elephant.') }}
+    {{ ex('gajena ramiSyate', 'It will be enjoyed by the elephant.') }}
 </ul>
+
+<h2>The {{ 'upasarga'|i }}</h2>
+
+<p>In Vedic Sanskrit, verbs are often used with some special uninflected words. In the example below, you can see one of these special words used with {{ 'car'|i }}. Although {{ 'car'|i }} normally means "walk," this uninflected word modifies the basic meaning of the verb:</p>
+
+<ul class="examples">
+    {{ ex('kam <mark>A</mark> janaM <mark>carati</mark> kAsu vikSu', 'What people does he <mark>visit</mark>, and in what dwellings?', cite='Rigveda 6.21.3') }}
+</ul>
+
+<p>In later Sanskrit, such words are always stuck right at the beginning of the verb, without any intervening words:</p>
+
+<ul class="examples">
+    {{ ex('A + car -> Acar -> Acarati', 'near + walk -> walk near; visit -> he visits') }}
+</ul>
+
+<p>In traditional grammar, this sort of uninflected word is called an <dfn>{{ 'upasarga'|i }}</dfn>, because it is always introduced ({{ 'sarga'|i }}) next to ({{ 'upa'|i }}) the root. Just as "go out" and "go with" means something different from just "go," a verb used with an {{ 'upasarga'|i }} usually means something different from a verb used without one. Incidentally, {{ 'upa'|i }} is itself an {{ 'upasarga'|i }}. (Likewise for the {{ 'vi'|i }} of {{ 'visarga'|i }}). {{ 'upa'|i }} combines with {{ 'sRj'|i }} and the {{ '-a'|i }} suffix to form the word "{{ 'upasarga'|i }}":</p>
+
+<ul class="examples">
+    {{ ex('upa + sRj -> upasRj -> upasarga', "upon + emit -> emit upon, release upon -> that which is released upon something; an {{ 'upasarga'|i }}"|render) }}
+</ul>
+
+<p>Regular Sanskrit has about twenty different {{ 'upasarga'|i }}s, and each has its own distinct meanings. And since we can add multiple {{ 'upasarga'|i }}s to a verb, we can easily create words of great subtlety. But let's leave that for later lessons. For now, it's enough to know that {{ 'upasarga'|i }}s exist and that they can modify the basic meaning of a verb.</p>
 
 {% endblock %}
