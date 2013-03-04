@@ -40,14 +40,14 @@
     - title: Root Suffixes
     - title: The Near Future
     - title: Passive Verbs
-    - title: Causal Verbs
     - title: '<span lang="sa">-ta</span>'
     - title: '<span lang="sa">-tvā</span> and <span lang="sa">-tum</span>'
+    - title: Causal Verbs
     - title: Review
 - title: Appendices
   slug: ''
   children:
-  - title: 'Devanagari'
+  - title: Devanagari
     children:
     - title: How Devanagari Works
     - title: Consonants
