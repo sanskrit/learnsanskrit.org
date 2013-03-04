@@ -1,4 +1,127 @@
 {% if not standalone %}{% extends 'guide/lesson.html' %}{% endif %}
 
 {% block lesson %}
+<p>Sanskrit is a deep and rewarding language. But nothing is deeper, more rewarding, or more fascinating than the ability to <strong>create new words</strong>. By applying simple rules to verb roots, we can quickly create words of great subtlety and power.</p>
+
+<p>In a sense, all of Sanskrit reduces to making complex words from simple parts. And in fact, most of the rules of the Ashtadhyayi are concerned with creating words of one kind or another.</p>
+
+<p>But in this lesson, we will focus on a specific part of word creation: creating nouns and adjectives from verb roots. We do so by using a <dfn>suffix</dfn>, a simple group of sounds that is attached to the end of something:</p>
+
+<ul class="examples">
+    {{ ex('gam -> gamana', 'go -> the act of going') }}
+</ul>
+
+<p>A suffix that attaches directly to a verb root is a <dfn>root suffix</dfn>. Sanskrit has dozens of different root suffixes, and we will study many of them over the course of the guide. But for now, let's focus on four of them.</p>
+
+<h2>Four suffixes</h2>
+
+<p>Whenever we use a suffix, we must keep a few things in mind:</p>
+
+<ul>
+    <li>what the suffix <em>means</em>. Suffixes take basic ideas like "go" and create more complex ones, like "the one who goes" or "the means of going."</li>
+
+    <li>what the suffix <em>does</em>. Suffixes often cause some sort of vowel change, especially when they're attached directly to a root. But they may cause other sorts of changes too.</li>
+
+    <li>how the suffix <em>behaves</em>. Suffixes usually create words of a particular gender.</li>
+</ul>
+
+<p>As you continue, remember that <strong>these ideas are guidelines</strong>, not hard rules. Sanskrit is a human language, and like all human languages, Sanskrit can behave in unpredictable ways.</p>
+
+<h3>{{ '-a'|i }}</h3>
+
+<p>The {{ '-a'|i }} suffix is one of the most complicated suffixes in Sanskrit. It has several different meanings and can cause all sorts of sound changes. But this suffix also gives us some very common words, like {{ 'yoga'|i }} and {{ 'veda'|i }}. It is an important suffix and one worth knowing well.</p>
+
+<p>Usually, {{ '-a'|i }} describes a <em>state of being</em>, and it strengthens the root vowel until it is part of a heavy syllable. Also, it changes {{ 'cavarga'|i }} sounds to {{ 'kavarga'|i }} sounds. The results are almost always masculine:</p>
+
+<ul class="examples">
+    {{ ex('zuc -> zoka', 'grieve -> grief') }}
+    {{ ex('muh -> moha', 'be confused or deluded -> confusion, delusion') }}
+    {{ ex('sRj -> sarga', 'emit, produce -> emission, production, creation') }}
+    {{ ex('labh -> lAbha', 'obtain -> obtaining, acquisition, gain') }}
+</ul>
+
+<p>In Sanskrit grammar, this "state of being" is called {{ 'bhAva'|i }}. So we could say that {{ '-a'|i }} is added in the sense of {{ 'bhAva'|i }}. Incidentally, the word {{ 'bhAva'|i }} itself comes from the {{ '-a'|i }} suffix:</p>
+
+<ul class="examples">
+    {{ ex('bhU -> bhAva', 'be -> state of being') }}
+</ul>
+
+<p>Now for other examples. {{ '-a'|i }} often creates words with predictable meanings, but sometimes these meanings shift in different directions:</p>
+
+<ul class="examples">
+    {{ ex('man -> mAna', 'think -> thought, idea; pride, arrogance') }}
+    {{ ex('dRz -> darza', 'see -> sight; appearance') }}
+</ul>
+
+<p>{{ '-a'|i }} can also create more concrete words, as well:</p>
+
+<ul class="examples">
+    {{ ex('cur -> cora', 'steal -> thief') }}
+    {{ ex('visRj -> visarga', "set free, emit -> \"sending forth,\" the {{ 'visarga'|i }}"|render) }}
+</ul>
+
+<p>And it can also cause other sorts of vowel changes.</p>
+
+<ul class="examples">
+    {{ ex('kR -> kara', 'do -> means of doing; a hand') }}
+    {{ ex('bhU -> bhava', 'be -> everything that is; worldly existence') }}
+</ul>
+
+<p>{{ '-a'|i }} is a rich suffix, but we've explored enough of it for now. Let's look at the other three suffixes instead. These suffixes are much simpler than {{ '-a'|i }}.</p>
+
+<h3>{{ '-aka'|i }}</h3>
+
+<p>Most often, {{ '-aka'|i }} creates masculine nouns. Like {{ '-a'|i }}, {{ '-aka'|i }} usually strengthens the root vowel until it is in a heavy syllable. {{ '-aka'|i }} attaches to some root "X" to create a word that means "one who does X":</p>
+
+<ul class="examples">
+    {{ ex('kR -> kAraka', 'do -> one who does') }}
+    {{ ex('pac -> pAcaka', 'cook -> one who cooks; cooker, cook') }}
+    {{ ex('nI -> nAyaka', 'lead -> one who leads; leader, guide, hero') }}
+</ul>
+
+<h3>{{ '-ana'|i }}</h3>
+<p>Most often, {{ '-ana'|i }} creates neuter nouns and strengthens the root vowel just once. Usually, {{ '-ana'|i }} creates words that mean "the act of doing X" or "a case of doing X":</p>
+
+<ul class="examples">
+    {{ ex('jan -> janana', 'be born -> (the act of) producing something; birth') }}
+    {{ ex('ji -> jayana', 'conquer -> (the act of) conquering') }}
+    {{ ex('jJA -> jJAna', 'know -> (the act of) knowing') }}
+    {{ ex('dRz -> darzana', 'see -> (the act of) seeing') }}
+    {{ ex('nI -> nayana', 'lead -> (the act of) leading') }}
+    {{ ex('muh -> mohana', 'stand -> (a case of) being confused; confusion, delusion') }}
+    {{ ex('yudh -> yodhana', 'fight -> (the act of) fighting; war') }}
+    {{ ex('zru -> zravaNa', 'hear -> (the act of) hearing') }}
+    {{ ex('sthA -> sthAna', 'stand -> (the act of) standing firmly') }}
+</ul>
+
+<p>But many other sorts of meanings exist too:</p>
+
+<ul class="examples">
+    {{ ex('kR -> karaNa', 'do -> a means of doing something; an instrument') }}
+    {{ ex('car -> caraNa', 'walk -> a means of walking; foot') }}
+    {{ ex('jJA -> jJAna', 'know -> what is known; knowledge') }}
+    {{ ex('sthA -> sthAna', 'stand -> a place where one stands; position, state, condition') }}
+</ul>
+
+<p>{{ '-ana'|i }} creates other sorts of words, but the ones above are the most important to remember. This suffix forms many words in the Hindu lexicon, like <a href="http://en.wikipedia.org/wiki/Dar%C5%9Bana">{{ 'darzana'|i }}</a>, <a href="http://en.wikipedia.org/wiki/Upanayana">{{ 'upanayana'|i }}</a>, <a href="http://en.wikipedia.org/wiki/Agnicayana">{{ 'agnicayana'|i }}</a>, <a href="http://en.wikipedia.org/wiki/Ramayana">{{ 'rAmAyaNa'|i }}</a>, and many others.</p>
+
+<h3>{{ '-tra'|i }}</h3>
+<p>Most often, {{ '-tra'|i }} creates neuter nouns and strengthens the root vowel just once. Usually, {{ '-tra'|i }} creates words that mean "a means of doing X". Like {{ '-ana'|i }}, {{ '-tra'|i }} is used to create many important words:</p>
+
+<ul class="examples">
+    {{ ex('nI -> netra', 'lead -> a means of leading; an eye') }}
+    {{ ex('zru -> zrotra', 'hear -> a means of hearing; an ear') }}
+    {{ ex('man -> mantra', 'think -> a means of thinking; a <a href="http://en.wikipedia.org/wiki/Mantra">mantra</a>') }}
+</ul>
+
+<h2>Other suffixes</h2>
+
+<p>We have seen four root suffixes so far. But Sanskrit has dozens more. Some of them have no clear meaning:</p>
+
+<ul class="examples">
+    {{ ex('dhR (dharati) -> dharma', 'bear, carry, keep firm -> that which is firm; <a href="http://en.wikipedia.org/wiki/Dharma">dharma</a>') }}
+</ul>
+
+<p>But others are subtle and extremely powerful. One of these powerful suffixes is {{ '-ta'|i }}, which is used to create "Sanskrit" ({{ 'saMskRta'|i }}) itself. But to prepare for {{ '-ta'|i }} and some of these other suffixes, we have to learn a little more about Sanskrit verbs. We'll do so over the next few lessons.</p>
+
 {% endblock %}
