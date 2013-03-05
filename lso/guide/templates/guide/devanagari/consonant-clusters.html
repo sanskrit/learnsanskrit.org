@@ -44,35 +44,35 @@
 <p>In the simplest sort of conjunct, this stick and everything to the right of it is removed. The letters are then attached horizontally.</p>
 
 <ul class="examples">
-    {{ iex('s ya -> sya', iast=true) }}
-    {{ iex('g dha -> gdha', iast=true) }}
-    {{ iex('t m ya -> tmya', iast=true) }}
+    {{ iex('s ya -> sya') }}
+    {{ iex('g dha -> gdha') }}
+    {{ iex('t m ya -> tmya') }}
 </ul>
 
 <h3>Vertical</h3>
 <p>In some characters &mdash; especially where this vertical "stick" is missing &mdash; the two letters attach vertically:</p>
 
 <ul class="examples">
-    {{ iex('S Ta -> STa', iast=true) }}
-    {{ iex('p ta -> pta', iast=true) }}
-    {{ iex('G ga -> Gga', iast=true) }}
-    {{ iex('d bha -> dbha', iast=true) }}
+    {{ iex('S Ta -> STa') }}
+    {{ iex('p ta -> pta') }}
+    {{ iex('G ga -> Gga') }}
+    {{ iex('d bha -> dbha') }}
 </ul>
 
 <p>Some of these combinations are rather tricky:</p>
 
 <ul class="examples">
-    {{ iex('d ya -> dya', iast=true) }}
-    {{ iex('d ma -> dma', iast=true) }}
-    {{ iex('h ya -> hya', iast=true) }}
-    {{ iex('h ma -> hma', iast=true) }}
+    {{ iex('d ya -> dya') }}
+    {{ iex('d ma -> dma') }}
+    {{ iex('h ya -> hya') }}
+    {{ iex('h ma -> hma') }}
 </ul>
 
 <h3>Horizontal and vertical</h3>
 <p>In longer clusters, letters may come together both horizontally and vertically:</p>
 
 <ul class="examples">
-    {{ ex('G kh ya -> Gkhya', iast=true) }}
+    {{ ex('G kh ya -> Gkhya') }}
 </ul>
 
 <h2>Irregular combinations</h2>
@@ -115,9 +115,9 @@
 <h3>{{ 'za'|d }} + various</h3>
 
 <ul class="examples">
-    {{ ex('z ra -> zra', iast=true) }}
-    {{ ex('z va -> zva', iast=true) }}
-    {{ ex('z ca -> zca', iast=true) }}
+    {{ iex('z ra -> zra') }}
+    {{ iex('z va -> zva') }}
+    {{ iex('z ca -> zca') }}
 </ul>
 
 {% endblock %}
