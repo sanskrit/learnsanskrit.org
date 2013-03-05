@@ -1,4 +1,113 @@
 {% if not standalone %}{% extends 'guide/lesson.html' %}{% endif %}
 
 {% block lesson %}
+
+<p>In Vedic Sanskrit, verbs are often used with some special uninflected words. In the example below, you can see one of these special words used with {{ 'car'|i }}. Although {{ 'car'|i }} normally means "walk," the uninflected word {{ 'A'|i }} modifies the basic meaning of the verb:</p>
+
+<ul class="examples">
+    {{ ex('kam <mark>A</mark> janaM <mark>carati</mark> kAsu vikSu', 'What people does he <mark>visit</mark>, and in what dwellings?', cite='Rigveda 6.21.3') }}
+</ul>
+
+<p>In later Sanskrit, such words are always stuck right at the beginning of the verb:</p>
+
+<ul class="examples">
+    {{ ex('A + car -> Acar -> Acarati', 'near + walk -> walk near; visit -> he visits') }}
+</ul>
+
+<p>The Ashtadhyayi has a special name for these uninflected words. But let's be general and just called them <dfn>verb prefixes</dfn>. Just as "go out" and "go with" mean something different from just "go," a root used with a verb prefix usually means something different from a verb used without one.</p>
+
+<h2>What prefixes mean</h2>
+
+<p>By using prefixes, we can use the basic set of verbs to create thousands more, each with a precise meaning:</p>
+
+<ul class="examples">
+    {{ ex('vi + jJA -> vijJA', 'out/apart + know -> perceive, discern, discriminate, recognize') }}
+    {{ ex('ava + tRR -> avatRR', 'downward + cross -> descend, appear (') }}
+</ul>
+
+<p>And we can use prefixed roots just as we do any other root. For example, we can use root suffixes to create new words:</p>
+
+<ul class="examples">
+    {{ ex('<mark>vijJAnaM</mark> yajJaM tanute', "{{ 'vijJAna'|i }} (insight, discriminating knowledge) performs the sacrifice."|render, cite='Taittiriya Upanishad 2.5') }}
+    {{ ex('vi + sRj -> visRj -> visarga', "out/apart + emit -> emit outward, eject -> that which is ejected; a {{ 'visarga'|i }}"|render) }}
+    {{ ex('avatRR -> avatAra', 'descend, appear -> descent, appearance, manifestation; <a href="http://en.wikipedia.org/wiki/Avatar">avatar</a>') }}
+</ul>
+
+<p>But a verb prefix does not always cause such a clear change in meaning. Like all phrases used by human beings, roots combined with prefixes tend to have more specialized meanings that are difficult to predict:</p>
+
+<ul class="examples">
+    {{ ex('ava + gam -> avagam -> avagacchati', 'downward + go -> He understands.') }}
+</ul>
+
+<p>And in some verbs, prefixes do almost nothing. In the example below, the change is essentially non-existent. Some say that the prefix makes the sense of the verb more intense:</p>
+
+<ul class="examples">
+    {{ ex('sam + jan -> saMjan -> saMjAyate', 'with/together + be born -> be born -> He is born.') }}
+</ul>
+
+<p>Still, prefixes do usually cause a noticeable change. And if we use multiple prefixes, we can stack these changes on top of each other:</p>
+
+<ul class="examples">
+    {{ ex('upa + sam + gam -> upasaMgacchantyazvaM mRgA', 'near/toward + with + go -> The deer approach the horse together.') }}
+</ul>
+
+<p>Sanskrit has about twenty different verb prefixes, each with its own basic meanings. For now, let's restrict ourselves to the five featured above:</p>
+
+<dl class="vocab">
+    <dt>{{ 'A'|sa1 }}</dt>
+    <dd>near</dd>
+    <dt>{{ 'ava'|d }}</dt>
+    <dd>downward</dd>
+    <dt>{{ 'upa'|d }}</dt>
+    <dd>near, toward, up to, next to</dd>
+    <dt>{{ 'vi'|d }}</dt>
+    <dd>outward, apart</dd>
+    <dt>{{ 'sam'|d }}</dt>
+    <dd>with, together</dd>
+</dl>
+
+<h2>Using prefixes</h2>
+
+<p>Prefixes combine using normal sandhi rules. The one exception is that if the prefix ends in {{ 'a'|i }} and the root starts with {{ 'R'|i }}, then the two combine to {{ 'Ar'|i }}:</p>
+
+<ul class="examples">
+    {{ ex('upa + R -> upArcchati', 'near/toward + go -> He goes near.') }}
+</ul>
+
+<h2>In the wild</h2>
+
+<p>Except for {{ 'ava'|i }}, all of the prefixes above are very common. They are so common, in fact, that all of them appear in verse 2 of the Bhagavad Gita:</p>
+
+<ul class="examples">
+    {{ ex('dRSTvA tu pANDavAnIkaM <mark>vi</mark>UDhaM duryodhanas tadA', 'Having seen the army of the Pandavas <mark>arrayed</mark>, Duryodhana then') }}
+    {{ ex('<mark>A</mark>cAryam <mark>upa</mark><mark>saM</mark>gamya rAjA vacanam abravIt', '<mark>approached</mark> his <mark>master</mark> and spoke this statement.') }}
+</ul>
+
+<p>This verse contains a few unfamiliar concepts. But we can understand a surprising amount of it. {{ 'pANDavAnIka'|i }} is a {{ 'tatpuruSa'|i }} compound:</p>
+
+<ul class="examples">
+    {{ ex('pANDavAnAm anIkam -> pAndavAnIkam', 'The army of the Pandavas') }}
+</ul>
+
+<p>Two words are formed using the {{ '-ana'|i }} suffix:</p>
+
+<ul class="examples">
+    {{ ex('vac -> vacana', 'speak -> an act of speaking; speech, word, statement') }}
+    {{ ex('yudh -> yodhana', 'fight -> an act of fighting; war') }}
+</ul>
+
+<p>And {{ 'AcArya'|i }} is a word derived from {{ 'AcAra'|i }}:</p>
+
+<ul class="examples">
+    {{ ex('A + car -> Acar -> AcAra', 'near + walk -> walk toward; visit; practice, undertake -> undertakings, practice, custom, precepts') }}
+</ul>
+
+<p>"Master" is an inaccurate translation for {{ 'AcArya'|i }}. More accurately, an {{ 'AcArya'|i }} is one who knows the {{ 'AcAra'|i }}, and it is often attached to names as a sign of respect. Grammatically, this is a case 1 {{ 'tatpuruSa'|i }}. The {{ 'vigraha'|i }} is on the left:</p>
+
+<ul class="examples">
+    {{ ex('rAmAnuja eva AcAryaH -> rAmAnujAcArya', 'Ramanuja himself is an acharya -> <a href="http://en.wikipedia.org/wiki/Ramanuja">Ramanujacharya</a>') }}
+</ul>
+
+We will study how to create the word {{ 'AcArya'|i }} in a future lesson. And speaking of future lessons, the next two lessons will explain three more words from this verse: {{ 'dRSTvA'|i }}, {{ 'vyUDham'|i }}, and {{ 'upasaMgamya'|i }}.</p>
+
 {% endblock %}

@@ -94,6 +94,40 @@ dl.faq {
     }
 }
 
+dl.vocab {
+    clear: both;
+    margin: auto;
+    overflow: hidden;
+    padding: 1em;
+    width: 80%;
+
+    @h: 3em;
+
+    dt, dd {
+        border-top: 1px @light-gray solid;
+    }
+
+    dt:first-of-type, dd:first-of-type {
+        border: 0;
+    }
+
+    dt {
+        clear: left;
+        float: left;
+        line-height: @h;
+        padding-left: 1em;
+        width: 40%;
+    }
+    dd {
+        @half: (@h - 1) / 2;
+        padding: @half 1em @half 0;
+    }
+
+    span.sa1 {
+        font-size: 1.5em;
+    }
+}
+
 .inset, div.download {
     .border-radius(5px);
 
