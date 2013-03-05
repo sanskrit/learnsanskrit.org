@@ -1,4 +1,146 @@
 {% if not standalone %}{% extends 'guide/lesson.html' %}{% endif %}
 
 {% block lesson %}
+
+<p>{{ '-ta'|i }} is a complicated and demanding suffix that combines several different Sanskrit concepts. But now that we know those concepts, we can learn another useful suffix rather easily. This is the <dfn>{{ '-tvA'|i }}</dfn> suffix, which is common throughout Sanskrit (though not as common as {{ '-ta'|i }}).</p>
+
+<p>As with all suffixes, we need to know three things about {{ '-tvA'|i }}: what the suffix means, what the suffix does, and how the suffix behaves. The first two are straightforward, and {{ '-tvA'|i }} behaves exactly like {{ '-ta'|i }}. So this will be a much shorter lesson than the previous one.</p>
+
+<h2>What it means</h2>
+<p>Just as {{ '-ta'|i }} forms a verbal adjective, <dfn>{{ '-tvA'|i }}</dfn> forms a verbal word that is uninflected. It indicates an <strong>action that occurs before</strong> the main action of the sentence:</p>
+
+<ul class="examples">
+    {{ ex("grAmaM <mark>jitvA</mark> sundaranagare 'rjunaz carati", '<mark>After conquering</mark> the village, Arjuna walks in the beautiful city.') }}
+    {{ ex('lokajanaM <mark>nItvA</mark> vane vasiSyati', 'He will live in the forest <mark>after leading</mark> the people of the world.') }}
+    {{ ex('rAmaM <mark>smRtvA</mark> narAn vadAmaH', 'We speak to the men <mark>after remembering</mark> Rama.') }}
+</ul>
+
+<p>{{ 'tvA'|i }} is simple to understand, so let's move on to how it behaves with other words.</p>
+
+<h2>How it behaves</h2>
+
+<p>Like {{ '-ta'|i }}, {{ '-tvA'|i }} can use nouns of its own. Since words formed with {{ '-tvA'|i }}, are uninflected, they are always exactly the same:</p>
+
+<ul class="examples">
+    {{ ex('yodhakaH zaraM dRSTvA yudhyati', 'The warrior fights after seeing the arrow.') }}
+    {{ hex('yodhakau zarau dRSTvA yudhyataH', 'The two warriors fight after seeing the two arrows.') }}
+    {{ hex('yodhakAH zarAn dRSTvA yudhyanti', 'The warriors fight after seeing the arrows.') }}
+</ul>
+
+<p>This, too, is quite simple. So let's move on to what the {{ '-tvA'|i }} suffix does to the root.</p>
+
+<h2>What it does</h2>
+
+<p>{{ '-tvA'|i }} causes exactly the same changes as {{ '-ta'|i }}. Since we know how to use {{ '-ta'|i }}, we know how to use {{ '-tvA'|i }}:</p>
+
+<ul class="examples">
+    {{ ex('gatvA', 'after going') }}
+    {{ ex('mRtvA', 'after dying') }}
+    {{ hex('jJAtvA', 'after knowing') }}
+    {{ hex('nItvA', 'after leading') }}
+    {{ hex('zucitvA', 'after grieving') }}
+</ul>
+
+<p>The previous lesson mentioned that {{ '-ta'|i }} causes several sorts of sandhi changes, including the ones that turn {{ 'dRz + tvA'|i }} into {{ 'dRSTvA'|i }} and {{ 'iS + tvA'|i }} into {{ 'iSTvA'|i }}. {{ '-tvA'|i }} causes the same sorts of changes, so it is worth the time to study these changes in more detail. For now, let's look at one more type of change:</p>
+
+<ul class="examples">
+    {{ ex('muc -> muktvA', 'after freeing') }}
+    {{ ex('pac -> paktvA', 'after cooking') }}
+    {{ ex('tyaj (tyajati) -> tyaktvA', 'after abandoning') }}
+</ul>
+
+<p>As before, the change is a simple one. {{ 'ct'|i }} is a difficult sound to pronounce. So we change {{ 'c'|i }} to a nearby sound &mdash; that is, {{ 'k'|i }} &mdash; to get something we can pronounce. The same change occurs with {{ 'jt'|i }}. This is part of a general Sanskrit pattern:</p>
+
+<p class="rule">Sounds at the hard palate ({{ 'cavarga'|i }} and {{ 'z'|i }}) move to the soft palate ({{ 'kavarga'|i }}) when they are difficult to pronounce.</p>
+
+<p>This is the same pattern that turns {{ '*drazsyati'|i }} into {{ 'drakSyati'|i }}. Note that we have intentionally stated this pattern in an imprecise way; the precise details are too troublesome to consider right now.</p>
+
+<h2>{{ 'ya'|i }}</h2>
+<p>If a root is used with a verb prefix, then it uses the suffix <dfn>{{ '-ya'|i }}</dfn> instead. The result has the same meaning and behavior as a word made with {{ '-tvA'|i }}. But it causes a different set of changes to the root. Generally, roots used with {{ '-ya'|i }} stay exactly as they are:</p>
+
+<ul class="examples">
+    {{ ex('avagam -> avagamya', 'after understanding') }}
+</ul>
+
+<p>But roots ending in a short vowel use {{ '-tya'|i }} instead:</p>
+
+<ul class="examples">
+    {{ ex('saMsmR -> saMsmRtya',  'after (fully) remembering') }}
+</ul>
+
+<h2>In the wild</h2>
+
+<p>{{ '-tvA'|i }} and {{ '-ya'|i }} are used frequently throughout the Bhagavad Gita and other texts. Together, they appear 15 times in the first chapter alone. Some examples:</p>
+
+<ul class="examples">
+    {{ ex('<mark>dRSTvA</mark> tu pANDavAnIkam', 'But <mark>after seeing</mark> the army of the Pandavas', cite='BG 1.2') }}
+    {{ ex('AcAryam <mark>upasaMgamya</mark>', '<mark>After approaching</mark> his acharya', cite='BG 1.2') }}
+    {{ ex('siMhanAdam (siMhasya nAdam) vinadya', "<mark>After roaring</mark> a lion's roar", cite='BG 1.12') }}
+    {{ ex('prAnAMs <mark>tyaktvA</mark> dhanAni ca', '<mark>After abandoning</mark> their lives and wealth', cite='BG 1.33') }}
+</ul>
+
+<p>Using the words below, we can understand almost all of the words in these examples:</p>
+
+<dl class="vocab">
+    <dt>{{ 'nad (nadati)'|d }}</dt>
+    <dd>roar</dd>
+    <dt>{{ 'prANa (prANaH)'|d }}</dt>
+    <dd>breath; life</dd>
+    <dt>{{ 'dhana (dhanam)'|d }}</dt>
+    <dd>wealth</dd>
+</dl>
+
+<p>{{ '-tvA'|i }} and {{ '-ya'|i }} also appear 22 times in the last chapter of the Bhagavad Gita. Let's make these examples a bit harder, starting with this one</p>
+
+<ul class="examples">
+    {{ ex('saGgaM tyaktvA phalaM caiva sa tyAgaH sAttviko mataH', 'That renunciation (that is done) <mark>after abandoning</mark> attachment and the fruit (of action), too, is thought to be pure.', cite='BG 18.9') }}
+</ul>
+
+<p>{{ 'sa'|i }} is a special word that means "that." But the rest of the line is just a matter of knowing the right words. We know enough about Sanskrit grammar to understand the line.</p>
+
+<dl class="vocab">
+    <dt>{{ 'saGga'|d }}</dt>
+    <dd>sticking to something; worldly or selfish attachment</dd>
+    <dt>{{ 'tyAga'|d }}</dt>
+    <dd>abandoning, relinquishing, renouncing, giving up</dd>
+    <dt>{{ 'sAttvika'|d }}</dt>
+    <dd>pure, true, virtuous, "<a href="http://en.wikipedia.org/wiki/Sattva">sattvic</a>"</dd>
+</dl>
+
+<p>Finally, let's look at these last two examples, which go together:</p>
+
+<ul class="examples">
+    {{ ex('(rAjan) <mark>saMsmRtya saMsmRtya</mark> saMvAdam (imam) adbhutam <br />
+    (kezavArjunayoH) puNyaM hRSyAmi ca muhur muhuH', '<mark>Remembering again and again</mark> the extraordinary and virtuous discussion of Keshava and Arjuna, O king, I rejoice again and again.') }}
+    {{ ex('(tac ca) <mark>saMsmRtya saMsmRtya</mark> rUpam atyadbhutaM (hareH)<br />
+    (vismayo me mahAn rAjan) hRSyAmi ca punaH punaH', 'And <mark>remembering again and again</mark> that extraordinary form of Hari, and with great wonder, O king, I rejoice again and again.', cite='Bhagavad Gita 18.77') }}
+</ul>
+
+<p>Let's focus on the words we can understand. {{ 'saMsmRtya'|i }} is formed with the {{ '-ya'|i }} suffix, as we saw in an earlier example. The word is repeated to show that the action occurs again and again. {{ 'saMvAda'|i }} is created with the {{ '-a'|i }} suffix:</p>
+
+<ul class="examples">
+    {{ ex('sam + vad -> saMvad -> saMvAda', 'with/together + talk -> talk together, discuss -> discussion') }}
+</ul>
+
+<p>{{ 'adbhuta'|i }} and two other words are adjectives:</p>
+
+<dl class="vocab">
+    <dt>{{ 'adbhuta'|d }}</dt>
+    <dd>extraordinary</dd>
+    <dt>{{ 'puNya'|d }}</dt>
+    <dd>holy, meritorious, virtuous, sacred</dd>
+    <dt>{{ 'hRS (hRSyati)'|d }}</dt>
+    <dd>rejoice</dd>
+    <dt>{{ 'punaH'|d }}</dt>
+    <dd>again (uninflected)</dd>
+    <dt>{{ 'rUpa (rUpam)'|d }}</dt>
+    <dd>form, shape</dd>
+    <dt>{{ 'atyadbhuta'|d }}</dt>
+    <dd>very extraordinary</dd>
+    <dt>{{ 'muhuH'|d }}</dt>
+    <dd>again (uninflected)</dd>
+</dl>
+
+<p>With these words in mind, we can understand about half of each verse.</p>
+
 {% endblock %}
