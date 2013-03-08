@@ -1,4 +1,89 @@
 {% if not standalone %}{% extends 'guide/lesson.html' %}{% endif %}
 
+{% macro root_url(x) %}{{ lesson_url('roots', x) }}{% endmacro %}
+
 {% block lesson %}
+
+<p>And that is all! Starting with a basic background in Sanskrit grammar, we built up some of Sanskrit's most powerful devices. We learned that all verbs come from a set of basic <a href="{{ root_url('roots-and-stems') }}">roots</a>, which are sorted into various <a href="{{ root_url('a-ya-and-aya') }}">classes</a>. We learned that nouns have a <a href="{{ root_url('neuter-nouns') }}">gender</a> and that this gender does not always make sense. We studied verbs of different kinds. And we learned how to make some <a href="{{ root_url('ta') }}"><em>very</em> powerful words</a>.</p>
+
+<p>Now our foundation is Sanskrit verbs is quite strong. The next unit will swing in the other direction, as we study Sanskrit nouns and sentences in more detail.</p>
+
+
+<h2>Roots and classes</h2>
+
+<p>Roots fall into one of ten classes. We studied seven of these classes in detail and also looked briefly at the root class.</p>
+
+<h3>Simple classes</h3>
+
+<p>We studied four simple verb classes: the strong {{ 'a'|i }} class:</p>
+
+{{ verb('BU', 'pres', 'P', vclass='1') }}
+
+<p>the weak {{ 'a'|i }} class:</p>
+
+{{ verb('tud', 'pres', 'P', vclass='6') }}
+
+<p>the {{ 'ya'|i }} class:</p>
+
+{{ verb('muh', 'pres', 'P', vclass='4') }}
+
+<p>and the {{ 'aya'|i }} class:</p>
+
+{{ verb('cur', 'pres', 'P', vclass='10') }}
+
+<h3>Complex classes</h3>
+
+<p>We studied three complex verb classes: the {{ '-no'|i }} class:</p>
+
+{{ verb('su', 'pres', 'P', vclass='5') }}
+
+<p>the {{ '-o'|i }} class:</p>
+
+{{ verb('tan', 'pres', 'P', vclass='8') }}
+
+<p>and the {{ '-nA'|i }} class:</p>
+
+{{ verb('krI', 'pres', 'P', vclass='9') }}
+
+<p>We also briefly discussed the root class, which has the important verb {{ 'as'|i }}:</p>
+
+{{ verb('as', 'pres', 'P', vclass='2') }}
+
+
+<h2>Verb prefixes</h2>
+
+<p>We saw the following verb prefixes:</p>
+
+{% include 'guide/include/upasarga-5.html' %}
+
+
+<h2>Inserted {{ 'i'|i }}</h2>
+
+<p>In front of certain suffixes, a root might use a special inserted {{ 'i'|i }} vowel. When used with these suffixes, roots will consistently follow one of three patterns:</p>
+
+<ul>
+    <li>They always use {{ 'i'|i }}.</li>
+    <li>They never use {{ 'i'|i }}.</li>
+    <li>They sometimes use {{ 'i'|i }}.</li>
+</ul>
+
+<p></p>
+
+<p>So far, we have seen three suffixes that cause this behavior: <a href="{{ root_url('the-near-future') }}">{{ '-sya'|i }}</a>, <a href="{{ root_url('ta') }}">{{ '-ta'|i }}</a>, and <a href="{{ root_url('tva') }}">{{ '-tvA'|i }}</a>.</p>
+
+
+<h2>Neuter nouns</h2>
+
+<p>Neuter nouns differ from masculine nouns in case 1, case 2, and case 8:</p>
+
+{{ nominal('Pala', 'n', cases='128') }}
+
+<p>These three cases use almost exactly the same endings. Most neuter nouns have this property. All other cases are identical to the cases for male nouns like {{ 'gaja'|i }}, {{ 'nara'|i }}, and {{ 'grAma'|i }}:</p>
+
+{{ nominal('Pala', 'n', cases='34567') }}
+
+<h2>Other material</h2>
+
+<p>See the relevant lessons on <a href="{{ root_url('verb-prefixes') }}">verb prefixes</a>, <a href="{{ root_url('root-suffixes') }}">root suffixes</a>, <a href="{{ root_url('the-near-future') }}">the near future</a>, and <a href="{{ root_url('passive-verbs') }}">passive verbs</a>.</p>
+
 {% endblock %}
