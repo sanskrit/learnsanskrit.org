@@ -6,5 +6,6 @@ audio/
 gen/
 /lso/data/
 production/
+ignore/
 
 lso/static/.webassets-cache

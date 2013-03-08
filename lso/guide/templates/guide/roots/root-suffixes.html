@@ -1,11 +1,9 @@
 {% if not standalone %}{% extends 'guide/lesson.html' %}{% endif %}
 
 {% block lesson %}
-<p>Sanskrit is a deep and rewarding language. But nothing is deeper, more rewarding, or more fascinating than the ability to <strong>create new words</strong>. By applying simple rules to verb roots, we can quickly create words of great subtlety and power.</p>
+<p>Sanskrit is a deep and rewarding language. But nothing is deeper, more rewarding, or more fascinating than the ability to <strong>create new words</strong>. By applying simple rules to verb roots, we can quickly create sophisticated words for a variety of concepts.</p>
 
-<p>In a sense, all of Sanskrit reduces to making complex words from simple parts. And in fact, most of the rules of the Ashtadhyayi are concerned with creating words of one kind or another.</p>
-
-<p>But in this lesson, we will focus on a specific part of word creation: creating nouns and adjectives from verb roots. We do so by using a <dfn>suffix</dfn>, a simple group of sounds that is attached to the end of something:</p>
+<p>In some sense, the most important part of Sanskrit is learning to make complex words from simple parts. And in fact, most of the rules of the Ashtadhyayi are concerned with creating words of one kind or another. But in this lesson, we will focus on a specific part of word creation: creating nouns and adjectives from verb roots. We do so by using a <dfn>suffix</dfn>, a simple group of sounds that is attached to the end of something:</p>
 
 <ul class="examples">
     {{ ex('gam -> gamana', 'go -> the act of going') }}
@@ -40,7 +38,7 @@
     {{ ex('labh -> lAbha', 'obtain -> obtaining, acquisition, gain') }}
 </ul>
 
-<p>In Sanskrit grammar, this "state of being" is called {{ 'bhAva'|i }}. So we could say that {{ '-a'|i }} is added in the sense of {{ 'bhAva'|i }}. Incidentally, the word {{ 'bhAva'|i }} itself comes from the {{ '-a'|i }} suffix:</p>
+<p>In Sanskrit grammar, this "state of being" is called <dfn>{{ 'bhAva'|i }}</dfn>. So we could say that {{ '-a'|i }} is added in the sense of {{ 'bhAva'|i }}. Incidentally, the word {{ 'bhAva'|i }} itself comes from the {{ '-a'|i }} suffix:</p>
 
 <ul class="examples">
     {{ ex('bhU -> bhAva', 'be -> state of being') }}
@@ -57,7 +55,6 @@
 
 <ul class="examples">
     {{ ex('cur -> cora', 'steal -> thief') }}
-    {{ ex('visRj -> visarga', "set free, emit -> \"sending forth,\" the {{ 'visarga'|i }}"|render) }}
 </ul>
 
 <p>And it can also cause other sorts of vowel changes.</p>
@@ -119,16 +116,16 @@
 
 <h2>Other suffixes</h2>
 
-<p>We have seen four root suffixes so far. Sanskrit has dozens more. Some of them have no clear meaning:</p>
+<p>In addition to the four root suffixes above, Sanskrit has dozens more. Some of them have no clear meaning:</p>
 
 <ul class="examples">
     {{ ex('dhR (dharati) -> dharma', 'bear, carry, keep firm -> that which is firm; <a href="http://en.wikipedia.org/wiki/Dharma">dharma</a>') }}
 </ul>
 
-<p>Others are subtle and powerful. We'll see some of these powerful suffixes later on. Still, the suffixes we've seen are very useful. In fact, we can use them to create the first word in the Bhagavad Gita:</p>
+<p>Others are subtle and very powerful. We'll see some of these powerful suffixes later on. Still, the suffixes we've already seen are useful in their own right. In fact, we can use them to create the first word in the Bhagavad Gita:</p>
 
 <ul class="examples">
-    {{ ex('dharmasya kSetram -> dharmakSetram', '"field of dharma"; a field characterized by dharma') }}
+    {{ ex('dharmasya kSetram -> dharmakSetram', "\"field of dharma\"; a field characterized by dharma (case 6 {{ 'tatpuruSa'|i }})"|render) }}
 </ul>
 
 <p>This is an adjective for {{ 'kuru-kSetra'|i }}, the "field of the Kurus" where the great war of the Mahabharata takes place:</p>

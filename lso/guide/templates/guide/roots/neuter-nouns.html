@@ -18,14 +18,14 @@
 
 <ul class="examples">
     {{ ex('narasya putro bhavati', 'The man has a son. (Literally, "Of the man, there is a son.")') }}
-    {{ ex('narasya <mark>phalam</mark> asti', 'The man has a fruit.') }}
+    {{ ex('devasya <mark>phalam</mark> asti', 'The god has a fruit.') }}
     {{ ex('nagare <mark>phalaM</mark> tiSThati', 'A fruit stands in the city.') }}
     {{ ex('azvau pazyAmi', 'I see two horses.') }}
     {{ ex('<mark>phale</mark> labhadhve', 'You all obtain the two fruits.') }}
     {{ ex('<mark>phale</mark> icchataH', 'The two of them want two fruits.') }}
-    {{ ex('gajAn pazyasi', 'You see elephants.') }}
-    {{ ex('<mark>phalAni</mark> labhAvahe', 'The two of us obtain fruits.') }}
-    {{ ex('<mark>phalAni</mark> pazyAmaH', 'We see the fruits.') }}
+    {{ ex('zvetagajAn krINAsi', 'You buy white elephants.') }}
+    {{ ex('<mark>phalAni</mark> labhAvahe <mark>vane</mark>', 'The two of us obtain fruits in the forest.') }}
+    {{ ex('<mark>phalAni</mark> khAdAmaH', 'We eat the fruits.') }}
 </ul>
 
 <p>Now our sentences are more interesting. Even though {{ 'phala'|i }} and {{ 'nara'|i }} both end in {{ 'a'|i }}, these nouns seem to use different endings. Why does this happen?</p>
@@ -42,39 +42,46 @@
 <p>But nouns have a third property, which is called <dfn>gender</dfn>. In one sense, Sanskrit gender is like the genders we have in real life. So we have <dfn>masculine</dfn> nouns for male things:</p>
 
 <ul class="examples">
-    {{ ex("bAlo 'zvaM corayati", 'The boy steals the horse.') }}
-    {{ ex('gajaH pazyati', 'The (male) elephant sees.') }}
+    {{ ex("<mark>bAlo</mark> 'zvaM corayati", '<mark>The boy</mark> steals the horse.') }}
+    {{ ex('<mark>gajaH</mark> pazyati', '<mark>The (male) elephant</mark> sees.') }}
 </ul>
 
 <p><dfn>feminine</dfn> nouns for female things:</p>
 
 <ul class="examples">
-    {{ ex('bAlA pacati', 'The girl cooks.') }}
-    {{ ex('gajA pazyati', 'The (female) elephant sees.') }}
+    {{ ex('<mark>bAlA</mark> pacati', '<mark>The girl</mark> cooks.') }}
+    {{ ex('<mark>gajA</mark> pazyati', '<mark>The (female) elephant</mark> sees.') }}
 </ul>
 
 <p>and <dfn>neuter</dfn> nouns for everything else:</p>
 
 <ul class="examples">
-    {{ ex('grAme zvetaM phalaM bhavati', 'There is a white fruit in the village.') }}
-    {{ ex('gacchasi nagare sundare', 'You go to the two cities.') }}
-    {{ ex('kRSNeSu vaneSu carAmaH', 'We walk in the black forests.') }}
+    {{ ex('grAme zvetaM <mark>phalaM</mark> bhavati', 'There is a white <mark>fruit</mark> in the village.') }}
+    {{ ex('gacchasi <mark>nagare</mark> sundare', 'You go to the <mark>two cities</mark>.') }}
+    {{ ex('kRSNeSu <mark>vaneSu</mark> carAmaH', 'We walk in the black <mark>forests</mark>.') }}
 </ul>
 
-<p>From these examples, we see that a noun has a basic stem, like {{ 'gaja'|i }} ("elephant") or {{ 'bAla'|i }} ("child"), and that its endings specify the gender, case, and number of the full noun. We also see that adjectives must have the same gender, case, and number as the words they describe. Finally, we see that the grammatical gender of the noun matches the real-life gender of the real object. It makes intuitive sense that a masculine elephant would be described with a masculine noun.</p>
+<p>These examples tell us a lot about Sanskrit nouns:</p>
 
-<p>But unfortunately, this is not the whole story. In truth, <em>gender does not always make sense</em>. Why is {{ 'grAma'|i }} male when {{ 'nagara'|i }} and {{ 'vana'|i }} are neuter? There is no good answer. And it is often the case that words have certain genders solely because of how they were created. Words that end in {{ 'tra'|i }}, for example, are usually neuter. And words that end in {{ 'ana'|i }} are usually neuter too. Also, <em>a noun stem cannot always use endings in any gender</em>. We saw above that {{ 'gaja'|i }} could be both masculine and feminine. This makes biological sense. But {{ 'grAma'|i }}, for example, is nearly always a <em>male</em> noun, and it never uses female endings.</p>
+<ul>
+    <li>A noun has a basic stem, like {{ 'gaja'|i }} ("elephant") or {{ 'bAla'|i }} ("child").</li>
+    <li>A noun's endings define the gender, case, and number of the full noun.</li>
+    <li>Adjectives must have the same gender, case, and number as the words they describe.</li>
+    <li>The "grammatical gender" of the noun matches the real-life gender of the real object. (It makes intuitive sense that a male elephant would be described with a masculine noun.)</li>
+</ul>
+
+<p>But unfortunately, this is not the whole story. In truth, <em>gender does not always make sense</em>. Why is {{ 'grAma'|i }} male when {{ 'nagara'|i }} and {{ 'vana'|i }} are neuter? There is no good answer. And it is often the case that words have certain genders solely because of how they were created. Words that end in {{ 'tra'|i }}, for example, are usually neuter. And words that end in {{ 'ana'|i }} are usually neuter too.</p>
+
+<p>Also, <em>a noun stem cannot always use endings in any gender</em>. We saw above that {{ 'gaja'|i }} could be both masculine and feminine. This makes biological sense. But {{ 'grAma'|i }}, for example, is nearly always a <em>masculine</em> noun, and it never uses feminine endings.</p>
 
 <p>This means that <strong>gender is not intuitive</strong>. When we learn a new word like {{ 'nagara'|i }}, we can only understand it if we know what genders it uses. And these genders do not always correspond to something that makes sense in the real world.</p>
 
 <h2>Back to neuter nouns</h2>
-<p>The examples above show how much the <em>gender</em> of a noun can change the endings it uses. But fortunately, the masculine endings and neuter endings are almost identical. They differ in case 1, case 2, and case 8:</p>
+<p>The examples above show how much the <em>gender</em> of a noun can change the endings it uses. Fortunately, the masculine endings and neuter endings are almost identical. They differ in case 1, case 2, and case 8:</p>
 
 {{ nominal('Pala', 'n', cases='128') }}
 
-<p>These three cases use almost exactly the same endings. Most neuter nouns have this property.</p>
-
-<p>All other cases are identical to the cases for male nouns like {{ 'gaja'|i }}, {{ 'nara'|i }}, and {{ 'grAma'|i }}:</p>
+<p>These three cases use almost exactly the same endings. Most neuter nouns have this property. All other cases are identical to the cases for male nouns like {{ 'gaja'|i }}, {{ 'nara'|i }}, and {{ 'grAma'|i }}:</p>
 
 {{ nominal('Pala', 'n', cases='34567') }}
 
@@ -86,6 +93,12 @@
     {{ hex('phalaM labhase', 'You obtain the fruit.') }}
 </ul>
 
+<p>places:</p>
+
+<ul class="examples">
+    {{ ex('vanaM dahanti', 'They burn the forest.') }}
+</ul>
+
 <p>and concepts:</p>
 
 <ul class="examples">
@@ -95,22 +108,22 @@
 <p>So we can rule out case 8, which usually sounds ridiculous:</p>
 
 <ul class="examples">
-    {{ ex('sundarANi kadalIphalAni gacchAmi', 'O beautiful bananas, I am going.') }}
+    {{ ex('sundarANi kadalIphalAni gacchAmi', '(?) O beautiful bananas, I am going.') }}
 </ul>
 </ul>
 
 <p>And with most of the verbs we have seen so far, case 1 is equally ridiculous:</p>
 
 <ul class="examples">
-    {{ ex('vanaM pazyati', 'The forest is watching.') }}
-    {{ ex('nagaraM carati', 'The city walks.') }}
+    {{ ex('vanaM pazyati', '(?) The forest is watching.') }}
+    {{ ex('nagaraM carati', '(?) The city walks.') }}
 </ul>
 
 <p>Instead, neuter nouns are usually used in cases 2 through 7:</p>
 
 <ul class="examples">
     {{ hex('vanaM pazyati', 'He sees the forest.') }}
-    {{ hex('nagare phalaM krINAsi', 'You buy the fruit in the city.') }}
+    {{ hex('nagare phalaM khAdasi', 'You eat the fruit in the city.') }}
     {{ hex('devAnAM vanAni rakSati', 'He protects the forests of the gods.') }}
     {{ hex('sundarAn nagarAc carati', 'He walks from the beautiful city.') }}
     {{ hex('zvetAni phalAnIcchanti', 'They want the white fruits.') }}
@@ -147,7 +160,7 @@
 <p>Our goal is to read Sanskrit texts. So let's look at an example from the Bhagavad Gita. Here, the word {{ 'kezava'|i }} is a name of Krishna:</p>
 
 <ul class="examples">
-{{ ex('<mark>nimittAni ca pazyAmi</mark> viparItAni <mark>kezava</mark>', 'And I see terrible omens, Krishna.', cite='Bhagavad Gita 1.31') }}
+{{ ex('<mark>nimittAni</mark> ca <mark>pazyAmi</mark> viparItAni <mark>kezava</mark>', 'And I see terrible omens, Krishna.', cite='Bhagavad Gita 1.31') }}
 </ul>
 
 <p>Now that we have a good foundation in Sanskrit, every new lesson will unlock dozens of new words and phrases. And by the end of the unit, we will be able to read and understand many of the words in the Bhagavad Gita. In fact, we will study the word {{ 'viparIta'|i }} in detail in just a few lessons; by the end of the unit, you will be able to fully understand this line.</p>

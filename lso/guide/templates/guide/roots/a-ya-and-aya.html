@@ -2,9 +2,9 @@
 
 {% block lesson %}
 
-<h2>Classes</h2>
+<h2>Roots and classes</h2>
 
-<p>In the previous lesson, we examined various words and used them to create roots. Among those words, the verbs in the present tense seem to be especially unpredictable:</p>
+<p>In the previous lesson, we examined various words and used them to create verb roots. Among those words, the verbs in the present tense seem to be especially unpredictable:</p>
 
 <ul class="examples">
     {{ ex('ji -> jayatha', 'You all conquer.') }}
@@ -36,17 +36,21 @@
 
 <p>We can see a clear difference. The present tense verbs are much more unpredictable.</p>
 
-<p>But if we examine enough verbs, we can see a pattern emerge. Usually, the stems of the present tense fall into ten basic patterns, which we usually call the ten <dfn>classes</dfn>. We will study four of these ten classes here.</p>
+<p>But if we examine enough verbs, we can see a pattern emerge. Usually, the stems of the present tense fall into ten basic patterns, which we call the ten <dfn>classes</dfn>. With the rare exception, every root is part of one of these classes. And some roots are even part of multiple classes.</p>
 
-<h2>Strong {{ 'a'|i }}</h2>
-<p>The first class is by far the largest of the four. In this class, the root vowel strengthens and we add {{ 'a'|i }} to the end of the root. Since roots become stronger and use the vowel {{ 'a'|i }}, we can just call this class the <dfn>strong {{ 'a'|i }}</dfn> class:</p>
+<h2>Four simple classes</h2>
+
+<p>For now, let us study just <strong>four</strong> of the ten verb classes. These four are much simpler than the other six.</p>
+
+<h3>Strong {{ 'a'|i }}</h3>
+<p>The first class is by far the largest. In this class, the root vowel strengthens and we add {{ 'a'|i }} to the end of the root. Since roots become stronger and use the vowel {{ 'a'|i }}, we can just call this class the <dfn>strong {{ 'a'|i }}</dfn> class:</p>
 
 <ul class="examples">
-    {{ ex('ji -> jaya -> jayati', 'He is.') }}
-    {{ ex('nI -> naya -> nayati', 'He is.') }}
-    {{ ex('bhU -> bhava -> bhavati', 'He is.') }}
-    {{ ex('zuc -> zoca -> zocati', 'He grieves.') }}
-    {{ ex('khAd -> khAda -> khAdati', 'He eats.') }}
+    {{ ex('ji -> jaya -> jayati', 'He conquers.') }}
+    {{ ex('nI -> naya -> nayanti', 'They lead.') }}
+    {{ ex('bhU -> bhava -> bhavasi', 'You are.') }}
+    {{ ex('zuc -> zoca -> zocAvaH', 'The two of us grieve.') }}
+    {{ ex('khAd -> khAda -> khAdatha', 'You all eat.') }}
 </ul>
 
 <p>The roots blend with {{ 'a'|i }} according to sandhi rules. We have seen these rules before, so be sure to <a href="{{ lesson_url('sounds', 'semivowels') }}">review the changes here</a> if they are unfamiliar or confusing.</p>
@@ -72,7 +76,7 @@
     {{ ex('sthA -> tiSThati', 'He stands.') }}
 </ul>
 
-<h2>Weak {{ 'a'|i }}</h2>
+<h3>Weak {{ 'a'|i }}</h3>
 <p>In this class, we add {{ 'a'|i }} to the end of the root without changing the root vowel. Since roots remain weak and use the vowel {{ 'a'|i }}, we can just call this class the <dfn>weak {{ 'a'|i }}</dfn> class:</p>
 
 <ul class="examples">
@@ -82,7 +86,7 @@
 
 <p>{{ 'iS'|i }} is an irregular root, but since it has a weak vowel, Panini chose to sort it here.</p>
 
-<h2>{{ 'ya'|i }}</h2>
+<h3>{{ 'ya'|i }}</h3>
 <p>In this class, we add {{ 'ya'|i }} to the end of it without changing the root vowel. Since we add {{ 'ya'|i }}, we can just call this class the <dfn>{{ 'ya'|i }}</dfn> class:</p>
 
 <ul class="examples">
@@ -93,24 +97,25 @@
 
 <p>{{ 'jan'|i }} is an irregular root, but since its stem ends in {{ 'ya'|i }}, Panini chose to sort it here.</p>
 
-<h2>{{ 'aya'|i }}</h2>
+<h3>{{ 'aya'|i }}</h3>
 <p>In this class, the root vowel strengthens and we add {{ 'aya'|i }} to the end of the root. Since we add {{ 'aya'|i }}, we can just call this class the <dfn>{{ 'aya'|i }}</dfn> class:</p>
 
 <ul class="examples">
     {{ ex('cur -> coraya -> corayati', 'He steals.') }}
 </ul>
 
+<h3>Simple classes</h3>
 <p>The four classes above &mdash; strong {{ 'a'|i }}, weak {{ 'a'|i }}, {{ 'ya'|i }}, and {{ 'aya'|i }} &mdash; are simple to use and don't cause any major sandhi changes. Together, we can call these four classes the <dfn>simple classes</dfn>. Note that the examples above contain every root that we have studied so far.</p>
 
 <h2>Using classes</h2>
-<p>The universe of Sanskrit verbs is a large one, but verb classes are only a small part of it. They are seen most often in the present tense. In passing, note that the verb class used by a root is totally unrelated to whether the root uses {{ 'parasmaipada'|i }} or {{ 'Atmanepada'|i }}. For example, here are two verbs in the strong {{ 'a'|i }} class. One uses {{ 'parasmaipada'|i }} and one uses {{ 'Atmanepada'|i }}.</p>
+<p>It is important to remember that the verb class used by a root is totally unrelated to whether the root uses {{ 'parasmaipada'|i }} or {{ 'Atmanepada'|i }}. For example, here are two verbs in the strong {{ 'a'|i }} class. One uses {{ 'parasmaipada'|i }} and one uses {{ 'Atmanepada'|i }}.</p>
 
 <ul class="examples">
     {{ ex('bhU -> bhava -> bhavAmi', 'I am.') }}
     {{ ex('labh -> labha -> labhe', 'I obtain.') }}
 </ul>
 
-<p>Moreover, a root can use multiple verb classes. We will see some examples of this in the next lesson.</p>
+<p>Also, a root can use multiple verb classes. We will see some examples of this in the next lesson.</p>
 
 <p>Finally, we should keep in mind that roots use certain classes only <em>by convention</em>. If we see some new verb root, it is often impossible to determine what classes it will use. For example, we could create some fake root {{ 'vRb'|i }} and treat it like a member of any of the four classes above:</p>
 
@@ -122,5 +127,7 @@
 </ul>
 
 <p>Again, a root's class is just a convention. There is no deeper meaning here.</p>
+
+<p>The universe of Sanskrit verbs is a large one, but verb classes are only a small part of it. Mostly, they are used in the present tense. Later in the unit, we will study some verbs that don't use verb classes at all.</p>
 
 {% endblock %}

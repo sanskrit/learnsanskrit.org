@@ -25,7 +25,14 @@
     {{ ex('zvetasiMhair naro <mark>dRzyate</mark>', 'The man <mark>is seen</mark> by the white lions.') }}
 </ul>
 
-<p>In this new sentence, we have a noun in case 3 and a noun in case 1. But the noun in case 3 has become the agent, and the noun in case 1 has become the object. A verb that causes this change is called <dfn>passive</dfn>: it focuses on the object instead of the agent.</p>
+<p>In this new sentence, we have a noun in case 3 and a noun in case 1. But the agent has moved from case 1 to case 3, and the object has moved from case 2 to case 1:</p>
+
+<ul class="examples">
+    {{ ex('zvetasiMhAH -> zvetasiMhaiH', 'the white lions (agent)') }}
+    {{ ex('naram -> naraH', 'the man (object)') }}
+</ul>
+
+<p>A verb that causes this change is called <dfn>passive</dfn>: it focuses on the object instead of the agent.</p>
 
 <p>Although every word in the sentence has changed, the meaning of the sentence is still the same. We still have the act of seeing ({{ 'pasyati / dRsyate'|i }}). The ones seeing are still the white lions ({{ 'zvetasiMhAH / zvetasiMhaiH'|i }}). And the one who is seen is still the man ({{ 'naram / naraH'|i }}). So even though the <em>cases</em> of our nouns have changed, the <em>roles</em> that these nouns play are the same.</p>
 
@@ -41,6 +48,7 @@
 <ul class="examples">
     {{ ex('mucyante', 'They are released.', cite='BG 3.13, 3.31') }}
     {{ ex('na lipyate', 'He is not tainted.', cite='BG 5.7') }}
+    {{ ex('sUyate', 'BG 9.10') }}
     {{ ex("kriyate 'rjuna", 'It is done, Arjuna.', cite='BG 18.9') }}
 </ul>
 
@@ -48,14 +56,18 @@
 <p>It is easy to create the passive stem:</p>
 
 <ol>
-    <li>Add the suffix {{ 'ya'|i }} to the root.</li>
+    <li>Add the suffix {{ 'ya'|i }} to the root. And if the root ends in a short vowel, make the vowel long.</li>
 </ol>
 
-<p>That's all! Then we use {{ 'Atmanepada'|i }} endings to create complete verbs:</p>
+<p>That's all! Then we use {{ 'Atmanepada'|i }} endings to create complete verbs. <em>All</em> roots use {{ 'Atmanepada'|i }} endings when they are passive, without exception.</p>
 
 <ul class="examples">
     {{ ex('kRSNamRgAs tudyante zarair vIrANAm', "The black deer were struck by the heroes' arrows.") }}
     {{ ex('dRzye grAme gRhe caiva', "I am seen in the village <em>and</em> in the house.") }}
+    {{ ex('vane dahyete grAmabAlaiH', 'The two forests are made to burn by the village boys.') }}
+    {{ ex('vane khAdye narasiMhena', 'I am eaten in the forest by Narasimha (or "by the man\'s lion").') }}
+    {{ ex('zrUyase gRhajanaiH', 'You are heard by the people of the house.') }}
+    {{ ex('jIye yodhakair yodhane', 'I am conquered by the warriors in battle.') }}
 </ul>
 
 <p>But as usual, a few stems seem to do something a little different:</p>
@@ -111,7 +123,7 @@
 <p>The passive stems above can replace the "ordinary" stem that we usually see in the present tense:</p>
 
 <ul class="examples">
-    {{ ex('haMsA grAmaM narAya gacchanti', 'The geese go to the village for the man.') }}
+    {{ ex('haMsA nagaraM narAya gacchanti', 'The geese go to the city for the man.') }}
     {{ ex('haMsair grAmo narAya gamyate', 'The village is gone to by the geese for the man.') }}
 </ul>
 
