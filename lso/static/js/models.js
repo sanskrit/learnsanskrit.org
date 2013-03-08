@@ -41,6 +41,7 @@
      */
     LSO.Settings = LSO.LocalData.extend({
         defaults: {
+            id: 'settings',
             sa1: 'devanagari',
             sa2: 'iast',
             input: 'hk'

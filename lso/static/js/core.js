@@ -1,5 +1,5 @@
 (function(LSO) {
 
-    LSO.settings = new Settings({ id: 'settings' });
+    LSO.settings = new LSO.Settings;
 
 }(LSO = window.LSO || {}));
