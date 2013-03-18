@@ -29,6 +29,7 @@ js = Bundle(
             'js/models.js',
             'js/views.js',
             'js/app.js',
+            'js/core.js',
             'js/util.js',
             # Setup
             'js/setup.js',
