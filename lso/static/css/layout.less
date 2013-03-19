@@ -25,6 +25,12 @@ body {
             width: 90%;
         }
     }
+    &#index {
+        padding: 0;
+        article {
+            margin: 0 10%;
+        }
+    }
 }
 
 #top {
@@ -52,7 +58,6 @@ body {
         &.brand {
             font-size: 1.5em;
             line-height: 2;
-            text-shadow: 0px 0px 2px @gray;
         }
     }
     a {
@@ -94,13 +99,29 @@ header {
     text-align: center;
 }
 
+/* Header for site index */
 header.masthead {
-    h1 {
-        font-size: 3em;
+    @h1: 3em;
+    @h2: 1em;
+    @padding: 1em;
+    background: @nav-bg;
+    height: @h1 + @h2 + 2*@padding;
+    padding-top: 2*@padding;
+
+    h1, h2 {
         margin: 0;
+    }
+    h1 {
+        color: #fff;
+        font-size: @h1;
+    }
+    h2 {
+        color: @light-gray;
+        font-size: @h2;
     }
 }
 
+/* Guide and unit headers, for the single-page unit dump. */
 header.guide {
     h1 {
         font-size: 6em;

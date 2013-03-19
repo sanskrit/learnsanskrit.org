@@ -1,22 +1,60 @@
-{% extends 'narrow.html' %}
+{% extends 'layout.html' %}
+
+{% macro unit(name) %}{{ url_for('guide.unit', unit=name) }}{% endmacro %}
 
 {% block title_full %}learnsanskrit.org{% endblock %}
 
+{% block body_id %}index{% endblock %}
+{% block nav %}{% endblock %}
+
 {% block content %}
-<p><dfn>learnsanskrit.org</dfn> was created to help people learn Sanskrit. Despite its simple appearance, it has a wealth of information:</p>
-<section>
-    <h1>Sanskrit Guide</h1>
-    <p>A <a href="{{ url_for('guide.index') }}">comprehensive grammar guide</a>. Or, learn more <a href="{{ url_for('guide.lesson', unit='about', lesson='sanskrit') }}">about Sanskrit</a> and <a href="{{ url_for('guide.lesson', unit='about', lesson='the-guide') }}">about the guide</a>. This is the oldest and most popular part of the site.</p>
-</section>
+<header class="masthead">
+    <h1>learn<span class="y">sanskrit</span>.org</h1>
+    <h2>A comprehensive Sanskrit resource</h2>
+</header>
 
-<section>
-    <h1>Tools</h1>
-    <p><a href="{{ url_for('tools.sanscript') }}">Sanscript</a> is our most popular tool, but you should also check out the <a href="{{ url_for('dicts.mw') }}">Monier-Williams Dictionary</a>.</p>
-</section>
+<article>
+    <section class="grid">
+        <h2>Sanskrit Guide</h2>
+        <div class="span6 span-first">
+        <p>A <a href="{{ url_for('guide.index') }}">comprehensive grammar guide</a>. This is the oldest and most popular part of the site. If you know English, you know enough to use the guide.</p>
+        </div>
+        <div class="inset span6" style="padding: 0;">
+            <ul>
+                <li><a href="{{ unit('about') }}">About</a></li>
+                <li><a href="{{ unit('sounds') }}">Sounds</a></li>
+                <li><a href="{{ unit('basics') }}">Basics</a></li>
+                <li><a href="{{ unit('roots') }}">Roots</a></li>
+            </ul>
+        </div>
+    </section>
 
-<section>
-    <h1>Site information</h1>
-    <p>Other assorted pages, including various <a href="{{ url_for('site.resources') }}">Sanskrit resources</a> and a bit of information <a href="{{ url_for('site.about') }}">about the site</a>. You can also <a href="{{ url_for('site.contact') }}">contact us</a> if you have something to say.</p>
-</section>
+    <section class="grid">
+        <h2>Tools</h2>
+        <div class="span6 span-first">
+        <p>Various tools. <a href="{{ url_for('tools.sanscript') }}">Sanscript</a> is a fast and powerful transliterator that supports most scripts and romanizations. The <a href="{{ url_for('dicts.mw') }}">dictionary</a> here is a cleaner version of <a href="http://www.sanskrit-lexicon.uni-koeln.de/monier/">the original</a>.</p>
+        </div>
+        <div class="inset span6" style="padding: 0;">
+            <ul>
+                <li><a href="{{ url_for('tools.sanscript') }}">Sanscript</a></li>
+                <li><a href="{{ url_for('dicts.mw') }}">Monier-Williams Dictionary</a></li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="grid">
+        <h2>Site information</h2>
+        <div class="span6 span-first">
+        <p>Other pages, including some <a href="{{ url_for('site.resources') }}">Sanskrit resources</a> and a page <a href="{{ url_for('site.about') }}">about the site</a>. You can also <a href="{{ url_for('site.contact') }}">contact us</a> if you have something to share.</p>
+        </div>
+        <div class="inset span6" style="padding: 0;">
+            <ul>
+                <li><a href="{{ url_for('site.about') }}">About</a></li>
+                <li><a href="{{ url_for('site.resources') }}">Resources</a></li>
+                <li><a href="{{ url_for('site.contact') }}">Contact</a></li>
+            </ul>
+        </div>
+    </section>
+</article>
 
 {% endblock %}
