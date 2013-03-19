@@ -15,6 +15,7 @@
         {% block extrahead %}{% endblock %}
     </head>
     <body id="{% block body_id %}general{% endblock %}">
+        {% block nav %}
         <nav id="top">
             {% macro sec(name, path, id) %}
                 {% set url = url_for(path) %}
@@ -30,15 +31,17 @@
                 <li><a id="settings-link" href="{{ url_for('site.settings') }}">⚙</a></li>
             </ul>
         </nav>
+        {% endblock %}
         {% block body %}
         {% block content %}{% endblock %}
         {% endblock %}
-        <footer class="{% block footer_class %}{% endblock %}">
+        {% block footer %}
+        <footer>
             <div id="footer-wrapper">
-            <p><a href="{{ url_for('index') }}">learnsanskrit.org</a>, since 2009.<br />
-            If you want to use some of the content here, <a href="{{ url_for('site.contact') }}">let us know</a> and we'll work something out.<br />
-            <a id="to-top" href="#top">[back to top]</a></p>
+            <p><a href="{{ url_for('index') }}">learnsanskrit.org</a>, since 2009 (<a href="{{ url_for('site.contact') }}">contact</a>)<br />
+            <a id="to-top" href="#top">back to top</a></p>
             </div>
         </footer>
+        {% endblock %}
     </body>
 </html>

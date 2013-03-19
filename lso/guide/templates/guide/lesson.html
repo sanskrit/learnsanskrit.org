@@ -3,40 +3,34 @@
 
 {% block title %}{{ lesson.stripped_title }}{% endblock %}
 {% block body_id %}lesson{% endblock %}
-{% block footer_class%}night{% endblock %}
 
 {% block content %}
 <div id="content">
 <article>
     <h1>{{ lesson.title|safe }}</h1>
-    {% block lesson %}
-    {% endblock %}
+    {% block lesson %}{% endblock %}
     {% include 'include/footnotes.html' %}
 </article>
 </div>
 
 <div id="sidebar">
     <section id="nav-pane">
-    <h2><a href="{{ lesson_url(unit.slug) }}">{{ unit.title }}</a></h2>
+    <h2><a href="{{ lesson_url(unit.slug) }}"><span class="wrap">{{ unit.title }}</span></a></h2>
     <ol class="unit-nav">
     {%- for L in unit.children %}
         {% if L.id == lesson.id -%}
-            <li class="active"><span class="num">{{ loop.index }}</span> {{ L.title|safe }}</li>
+            <li class="active"><a href="#top"><span class="wrap">{{ L.title|safe }}</span></a></li>
         {%- else -%}
-            <li><a href="{{ lesson_url(unit.slug, L.slug) }}">
-            <span class="num">{{ loop.index }}</span> {{ L.title|safe }}</a></li>
+            <li><a href="{{ lesson_url(unit.slug, L.slug) }}"><span class="wrap">{{ L.title|safe }}</span></a></li>
         {%- endif -%}
     {%- endfor %}
     </ol>
-
-    <ul class="step-nav">
-        <li>{% if prev %}<a href="{{ lesson_url(unit.slug, prev.slug) }}">&laquo; Previous</a>{% else %}&nbsp;{% endif %}</li>
-        <li id="back-to-top"><a href="#top">Back to top</a></li>
-        <li>{% if next %}<a href="{{ lesson_url(unit.slug, next.slug) }}">Next &raquo;</a>{% else %}&nbsp;{% endif %}</li>
-    </ul>
     </nav>
     </section>
 </div>
 
 <script src="{{ url_for('.static', filename='js/guide.js') }}"></script>
+{% endblock %}
+
+{% block footer%}
 {% endblock %}

@@ -1,153 +1,97 @@
 @sidebar-background: #e7e4df;
-@darker-background: darken(@sidebar-background, 5%);
-@sidebar-link-hover: darken(@link-hover-color, 10%);
+@sidebar-width: 30%;
 
 body#lesson {
-    background: @sidebar-background;
-
-    #content {
-        float: left;
-        margin-right: -@sidebar-width;
-        width: 100%;
+    #content, footer {
+        margin-left: @sidebar-width;
     }
 
     article {
-        @border-color: darken(@sidebar-background, 10%);
-        background: #fff;
-        border-right: 1px @border-color solid;
-        margin: 0 @sidebar-width 0 0;
-        padding: @two-column-article-padding;
+        padding: @sidebar-article-padding;
     }
+
     h1 {
+        font-size: 3em;
         margin-top: 0;
         text-align: center;
     }
 }
 
 #sidebar {
-    float: left;
+    background: @sidebar-background;
+    overflow-y: scroll;
+    position: absolute;
+        top: 3em;
+        left: 0;
+        bottom: -3em;
     width: @sidebar-width;
 
     &.pinned {
+        border: 0;
         position: fixed;
-        right: 0;
-        top: 0;
+            top: 0;
+            bottom: 0;
     }
 }
 
-#nav-pane {
-    color: @dark-gray;
+@nav-padding: 1em;
+@unit-padding: 1em;
 
+#nav-pane {
+    h2 {
+        padding-left: @nav-padding;
+    }
+    a, span.wrap {
+        .transition(0.2s);
+        color: darken(@sidebar-background, 65%);
+    }
     a {
         display: block;
         text-decoration: none;
     }
-    h2 {
-        margin: 0;
-        padding-left: 0.666em;
-        a {
-            padding: 0.75em 0;
-            &:hover {
-                color: @sidebar-link-hover;
-            }
-        }
+    span.wrap {
+        border-bottom: 1px solid transparent;
     }
-    span.num {
-        display: inline-block;
-        padding: 0 1em 0 0;
-        text-align: right;
-        margin-left: 2em;
-        width: 1em;
+
+    a:hover, a:hover span.wrap {
+        @c: darken(@blue, 10%);
+        border-color: @c;
+        color: @c;
     }
 }
 
 ol.unit-nav {
+    @total-pad: @nav-padding + @unit-padding;
+    font-family: "Arial";
     list-style: none;
-    margin: 0;
-    padding: 0;
+    padding: 0 0 0 @total-pad;
 
     a {
-        color: inherit;
-    }
-    li {
-        border: 1px transparent solid;
-        border-width: 1px 0;
+        font-size: 0.9em;
         line-height: 2em;
-        padding: 0;
-
-        &:hover {
-            background: @blue;
-            border: 1px darken(@blue, 5%) solid;
-            border-width: 1px 0;
-            color: #fff;
-        }
+        position: relative;
 
         &:before {
-            content: ""
+            content: "-";
+            position: absolute;
+            left: -10px;
         }
-
-        &.active {
-            background: @darker-background;
-            @border-color: darken(@darker-background, 5%);
-            border-color: @border-color;
-
-            &:hover, li:hover {
-                border-color: @border-color;
-                color: inherit;
-            }
-            li:hover {
-                background: inherit;
-                border-color: transparent;
-            }
-            a {
-                color: @link-color;
-                &:hover {
-                    color: @sidebar-link-hover;
-                }
-            }
-        }
+    }
+    li.active {
+        @bg: darken(@sidebar-background, 5%);
+        background: @bg;
+        border: 1px darken(@bg, 5%) solid;
+        border-width: 1px 0;
+        margin: 0 0 0 -@total-pad;
+        padding: 0 0 0 @total-pad;
     }
     ul.headings {
-        margin: 0 0 0.5em 2em;
-        li {
-            line-height: 1.3em;
-            &:before {
-                content: none;
-            }
+        font-size: 0.9em;
+        margin: 0;
+        padding: 0 0 0 1.2em;
+
+        a:before {
+            content: "";
         }
     }
-}
-
-ul.step-nav {
-    border-top: 1px @darker-background solid;
-    list-style: none;
-    padding: 0;
-
-    li {
-        float: left;
-        text-align: center;
-        width: 33.33%;
-        &:hover {
-            background: @darker-background;
-            color: #000;
-        }
-    }
-    a {
-        color: inherit;
-        display: block;
-        line-height: 2 * @en-line-height;
-    }
-}
-
-#back-to-top {
-    cursor: default;
-    opacity: 0;
-    pointer-events: none;
-    .transition(opacity 1s);
-}
-
-#sidebar.pinned #back-to-top {
-    cursor: auto;
-    opacity: 1;
-    pointer-events: auto;
 }
