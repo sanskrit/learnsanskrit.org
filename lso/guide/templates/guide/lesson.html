@@ -1,36 +1,9 @@
-{% extends 'layout.html' %}
-{% from 'guide/macros.html' import ex, hex, iex, ihex, nominal, sound, svg, verb with context %}
+{% extends 'guide.html' %}
 
-{% block title %}{{ lesson.stripped_title }}{% endblock %}
-{% block body_id %}lesson{% endblock %}
+{% block article %}{% block lesson %}{% endblock %}{% endblock %}
 
-{% block content %}
-<div id="content">
-<article>
-    <h1>{{ lesson.title|safe }}</h1>
-    {% block lesson %}{% endblock %}
-    {% include 'include/footnotes.html' %}
-</article>
-</div>
-
-<div id="sidebar">
-    <section id="nav-pane">
-    <h2><a href="{{ lesson_url(unit.slug) }}"><span class="wrap">{{ unit.title }}</span></a></h2>
-    <ol class="unit-nav">
-    {%- for L in unit.children %}
-        {% if L.id == lesson.id -%}
-            <li class="active"><a href="#top"><span class="wrap">{{ L.title|safe }}</span></a></li>
-        {%- else -%}
-            <li><a href="{{ lesson_url(unit.slug, L.slug) }}"><span class="wrap">{{ L.title|safe }}</span></a></li>
-        {%- endif -%}
-    {%- endfor %}
-    </ol>
-    </nav>
-    </section>
-</div>
-
-<script src="{{ url_for('.static', filename='js/guide.js') }}"></script>
-{% endblock %}
-
-{% block footer%}
+{% block footer %}
+{% if next %}
+<footer><p class="call-to-action"><a href="{{ lesson_url(unit.slug, next.slug) }}" class="jumbo invitation btn">Next lesson ({{ next.title }})</a></p></footer>
+{% endif %}
 {% endblock %}

@@ -39,7 +39,8 @@ def unit(**kwargs):
     unit = Lesson.query.filter(Lesson.slug==unit_slug).first()
     if unit:
         unit.children = unit.mp.query_descendants().all()
-        return render_template('guide/unit.html', unit=unit)
+        template = 'guide/%s/index.html' % unit_slug
+        return render_template(template, cur=unit, unit=unit)
     else:
         return redirect(url_for('guide.index'))
 
@@ -70,7 +71,7 @@ def lesson(**kwargs):
 
     template = 'guide/%s/%s.html' % (unit.slug, lesson.slug)
     return render_template(template,
-                           lesson=lesson, prev=prev, next=next,
+                           cur=lesson, prev=prev, next=next,
                            unit=unit)
 
 

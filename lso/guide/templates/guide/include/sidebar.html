@@ -1,0 +1,22 @@
+{% macro contents(units) %}
+{% for unit in units %}
+    <h2><a href="{{ lesson_url(unit.slug) }}"><span class="wrap">{{ unit.title }}</span></a></h2>
+    <ol class="unit-nav">
+        {%- for L in unit.children %}
+            {% if L.id == cur.id -%}
+            <li class="active"><a href="#top"><span class="wrap">{{ L.title|safe }}</span></a></li>
+            {%- else -%}
+            <li><a href="{{ lesson_url(unit.slug, L.slug) }}"><span class="wrap">{{ L.title|safe }}</span></a></li>
+            {%- endif -%}
+        {%- endfor %}
+    </ol>
+{% endfor %}
+{% endmacro %}
+
+<div id="sidebar">
+    <section id="nav-pane">
+    {% if not units %}{% set units = [unit] %}{% endif %}
+    {{ contents(units) }}
+    {% if supp %}{{ contents(supp) }}{% endif %}
+    </section>
+</div>

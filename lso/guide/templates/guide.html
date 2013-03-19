@@ -1,0 +1,22 @@
+{% extends 'layout.html' %}
+
+{% block title %}{{ cur.stripped_title }}{% endblock %}
+{% from 'guide/macros.html' import ex, hex, iex, ihex, nominal, sound, svg, verb with context %}
+{% block body_id %}guide{% endblock %}
+
+{% block content %}
+<div id="content">
+<article>
+    <h1>{{ cur.title|safe }}</h1>
+    {% block article %}{% endblock %}
+    {% include 'include/footnotes.html' %}
+</article>
+</div>
+
+{% include 'guide/include/sidebar.html' %}
+
+<script src="{{ url_for('.static', filename='js/guide.js') }}"></script>
+{% endblock %}
+
+{% block footer%}
+{% endblock %}

@@ -1,0 +1,13 @@
+{% with first = cur.children[0] %}
+<p class="call-to-action"><a class="jumbo invitation btn" href="{{ lesson_url(cur.slug, first.slug) }}">Go to the first lesson</a></p>
+{% endwith %}
+
+<h2>In this unit</h2>
+
+<div class="inset">
+<ul>
+    {% for lesson in cur.children %}
+    <li><a href="{{ lesson_url(cur.slug, lesson.slug) }}">{{ lesson.title|safe }}</a></li>
+    {% endfor %}
+</ul>
+</div>
