@@ -3,7 +3,12 @@
 {% block article %}{% block lesson %}{% endblock %}{% endblock %}
 
 {% block footer %}
-{% if next %}
-<footer><p class="call-to-action"><a href="{{ lesson_url(unit.slug, next.slug) }}" class="jumbo invitation btn">Next lesson ({{ next.title }})</a></p></footer>
-{% endif %}
+<footer>
+    {% if next %}
+    <p class="call-to-action"><a href="{{ lesson_url(unit.slug, next.slug) }}" class="jumbo invitation btn">Next lesson ({{ next.title|safe }})</a></p>
+    {% endif %}
+    {% if prev %}
+    <p><a href="{{ lesson_url(unit.slug, prev.slug) }}">Previous lesson ({{ prev.title|safe }})</a></p>
+    {% endif %}
+</footer>
 {% endblock %}
