@@ -15,3 +15,4 @@ DEFAULT_MAIL_RECIPIENT = 'info@learnsanskrit.org'
 # Large data
 DATA_PATH = os.path.expanduser('~/sanskrit/data')
 MONIER_DIR = os.path.join(DATA_PATH, 'mw')
+STATIC_DEST = 'lso/static'

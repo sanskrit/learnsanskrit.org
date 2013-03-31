@@ -7,11 +7,16 @@ import sqlalchemy
 
 app = Flask(__name__)
 app.config.from_object('development.config')
+try:
+    app.config.from_object('server.config')
+except ImportError:
+    pass
 
 # Assets
 # ------
 assets = Environment(app)
 assets.url = '/static'
+assets.directory = app.config['STATIC_DEST']
 
 less_files = ['css/%s.less' % x
               for x in 'base'.split()]

@@ -173,5 +173,9 @@
     <p>Sanscript is available as a standalone JavaScript file. It is comprehensive and extremely easy to use. You can grab the source code and help improve it <a href="http://github.com/sanskrit/sanscript">on GitHub</a>.</p>
 </section>
 </div>
-<script src="{{ url_for('tools.static', filename='js/sanscript-app.js') }}"></script>
+
+
+{% assets output="gen/sanscript-app.js", "tools/js/sanscript-app.js" %}
+    <script src="{{ ASSET_URL }}"></script>
+{% endassets %}
 {% endblock %}
