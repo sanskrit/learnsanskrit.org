@@ -1,0 +1,22 @@
+{% extends 'narrow.html' %}
+
+{% block title %}Page not found{% endblock %}
+
+{% block content %}
+<h1>Server error <span style="color: #d00">(500)</span></h1>
+
+<p><strong>We messed up.</strong> Something happened that we didn't account for.</p>
+
+<p>We have already received word of the error and will do our best to fix it as soon as we can. But if you'd like to add some extra information about how you came to this page, please <a href="{{ url_for('site.contact') }}">contact us</a> and tell us what you can.</p>
+
+<p>In the mean time, perhaps one of these pages will tide you over:</p>
+
+<ul>
+    <li><a href="{{ url_for('tools.sanscript') }}">Sanscript</a></li>
+    <li><a href="{{ url_for('guide.index') }}">Sanskrit Guide</a></li>
+    <li><a href="{{ url_for('dicts.mw') }}">Monier-Williams Dictionary</a>.</li>
+</ul>
+
+<p>If not, you can use the menu bar at the top of the page to try finding what you were looking for.</p>
+
+{% endblock %}
