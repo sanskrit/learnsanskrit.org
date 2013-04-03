@@ -1,7 +1,7 @@
-from flask import Blueprint
+from lso.lib import LSOBlueprint
 
-guide = Blueprint('guide', __name__,
-                  static_folder='static',
-                  template_folder='templates')
+guide = LSOBlueprint('guide', __name__,
+                     static_folder='static',
+                     template_folder='templates')
 
 import views

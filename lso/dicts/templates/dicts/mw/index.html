@@ -56,5 +56,7 @@
 <a class="reflink" data-text="<%= text %>" href="<%= url %><%= text %>" />
 </script>
 
-<script src="{{ url_for('.static', filename='js/mw-app.js') }}"></script>
+{% assets output="gen/mw-app.js", "dicts/js/mw-app.js" %}
+    <script src="{{ ASSET_URL }}"></script>
+{% endassets %}
 {% endblock %}
