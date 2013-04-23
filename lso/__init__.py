@@ -55,6 +55,16 @@ except sqlalchemy.exc.ProgrammingError:
     simple_query = None
     simple_analyzer = None
 
+# logging
+# -------
+if not app.debug:
+    import logging
+    from logging import FileHandler, getLogger
+    handler = FileHandler(app.config['LOGFILE'])
+    handler.setLevel(logging.WARNING)
+    for L in [app.logger, getLogger('sqlalchemy')]:
+        L.addHandler(handler)
+
 # Views
 # -----
 import views
