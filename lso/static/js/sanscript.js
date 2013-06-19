@@ -1,1 +1,1 @@
-../../lib/sanscript/sanscript/sanscript.js
+../../lib/sanscript.js/sanscript/sanscript.js
