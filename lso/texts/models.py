@@ -1,7 +1,8 @@
 import sqlalchemy.exc
-from sqlalchemy import Column, Integer, ForeignKey, String, Table
+from sqlalchemy import Column, Integer, ForeignKey, String
 from sqlalchemy import Text as _Text
-from sqlalchemy.orm import relation, relationship
+from sqlalchemy.orm import relationship
+from sqlalchemy.ext.associationproxy import association_proxy
 from sqlalchemy.ext.orderinglist import ordering_list
 
 from ..database import SimpleBase, BaseNode
@@ -70,7 +71,7 @@ class Division(BaseNode):
     slug = Column(String, nullable=True)
 
     parent_id = Column(Integer, ForeignKey('division.id'), nullable=True)
-    parent = relation('Division', remote_side=[id])
+    parent = relationship('Division', remote_side=[id])
 
     def __repr__(self):
         return '<Division(%s, %s)>' % (self.id, self.slug)
@@ -79,10 +80,22 @@ class Division(BaseNode):
         return '%s' % self.slug
 
 
-# class SegSegAssoc(SimpleBase):
-#     parent_id = Column(ForeignKey('segment.id'), primary_key=True)
-#     child_id = Column(ForeignKey('segment.id'), primary_key=True)
-#     text_id = Column(ForeignKey('text.id'), primary_key=True)
+class SegSegAssoc(SimpleBase):
+    parent_id = Column(ForeignKey('segment.id'), primary_key=True)
+    child_id = Column(ForeignKey('segment.id'), primary_key=True)
+    text_id = Column(ForeignKey('text.id'), primary_key=True)
+
+    parent = relationship('Segment',
+                          primaryjoin='SegSegAssoc.parent_id==Segment.id',
+                          foreign_keys=[parent_id],
+                          backref='child_assocs')
+
+    child = relationship('Segment',
+                         primaryjoin='SegSegAssoc.child_id==Segment.id',
+                         foreign_keys=[child_id],
+                         backref='parent_assocs')
+
+    text = relationship('Text')
 
 
 class Segment(SimpleBase):
@@ -101,7 +114,8 @@ class Segment(SimpleBase):
     division_id = Column(ForeignKey(Division.id))
 
     division = relationship(Division, cascade=CASCADE_ARGS, single_parent=True)
-    # children = relationship('SegSegAssoc')
+    children = association_proxy('child_assocs', 'child')
+    parents = association_proxy('parent_assocs', 'parent')
 
     def __repr__(self):
         return '<Segment(%s, %s)>' % (self.id, self.slug)
@@ -114,7 +128,7 @@ Division.segments = relationship(Segment,
 
 
 def drop():
-    order = [Segment, Text, Division, Language]
+    order = [SegSegAssoc, Segment, Text, Division, Language]
     for o in order:
         try:
             o.__table__.drop()

@@ -11,7 +11,7 @@
 import xml.etree.cElementTree as ET
 
 from ..database import session
-from .models import Text, Division, Segment
+from .models import Text, Division, Segment, SegSegAssoc
 
 XML_NS = '{http://www.w3.org/XML/1998/namespace}'
 XML_ID = '{http://www.w3.org/XML/1998/namespace}id'
@@ -195,6 +195,16 @@ class DocumentTarget:
             position=self.position,
             text_id=self.text.id,
             division_id=div.id)
+
+        corresp = attr.get('corresp', None)
+        if corresp:
+            corresp = corresp.replace('#', '')
+            text, _, path = corresp.partition('.')
+            other = Segment.query.filter(Segment.text_id == self.text.parent_id)\
+                                 .filter(Segment.slug == path).first()
+            s.parent_assocs.append(SegSegAssoc(parent=other,
+                                               child=s,
+                                               text=self.text))
 
         session.add(s)
         session.flush()

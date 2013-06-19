@@ -5,8 +5,14 @@
 {% block content %}
 <h1>{{ readable_query }}</h1>
 {% for segment in segments %}
-<div id="{{ text.xmlid_prefix }}.{{ segment.slug }}">
-{{ segment.data|safe }}
-</div>
+    <div id="{{ segment.id }}">
+    {{ segment.content|safe }}
+    </div>
+
+    {% for child_text in corresp[segment.slug] %}
+        {% for child in corresp[segment.slug][child_text] %}
+            {{ child.content|safe }}
+        {% endfor %}
+    {% endfor %}
 {% endfor %}
 {% endblock %}

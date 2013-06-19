@@ -1,9 +1,11 @@
+from collections import defaultdict
+
 from flask import redirect, render_template, url_for
 from sqlalchemy import and_
 
 import lib as L
 from . import texts
-from .models import Text, Segment
+from .models import Text, Segment, SegSegAssoc as SSA
 
 
 def paginate(items, size, min_size=0):
@@ -28,12 +30,17 @@ def paginate(items, size, min_size=0):
 
 @texts.route('/')
 def index():
+    """A basic index page containing all texts in the collection."""
     texts = Text.query.all()
     return render_template('texts/index.html', texts=texts)
 
 
 @texts.route('/<slug>/')
 def title(slug):
+    """A title page for a given text.
+
+    :param slug: the text's slug
+    """
     text = Text.query.filter(Text.slug == slug).first()
     if text is None:
         return redirect(url_for('.index'))
@@ -52,20 +59,28 @@ def title(slug):
 
 
 @texts.route('/<slug>/<query>')
-def segment(slug, query):
+@texts.route('/<slug>/<query>+<related>')
+def segment(slug, query, related=None):
+    """Query a given text for a group of segments. If related texts are
+    listed too, show their corresponding segments.
+
+    :param slug: the text's slug
+    :param query: the segment query to perform. This is a CSL of slug
+                  groups, e.g. '1.2', '1.1-1.5', and so on.
+    :param related: if specified, a CSL of the slugs of related texts.
+    """
     text = Text.query.filter(Text.slug == slug).first()
     if text is None:
         return redirect(url_for('.index'))
 
     # Segments
     segments = []
-    path_groups = query.split(',')
     base_query = Segment.query.filter(Segment.text_id == text.id)\
                         .order_by(Segment.position.asc())
-    for g in path_groups:
+    for g in query.split(','):
         pre, cur, post = g.partition('-')
 
-        # Path range
+        # Slug range
         if cur:
             results = base_query.filter(Segment.slug.in_([pre, post])).all()
             try:
@@ -80,15 +95,39 @@ def segment(slug, query):
                 if results:
                     segments.append(results[0])
 
-        # Single path
+        # Single slug
         else:
             s = base_query.filter(Segment.slug == g).first()
             if s:
                 segments.append(s)
 
-    segments = [{'slug': s.slug,
-                 'data': L.transform(s.content)}
-                for s in segments]
+    # Clean up data for display
+    ids = [s.id for s in segments]
+    xmlids = ['.'.join((text.xmlid_prefix, s.slug)) for s in segments]
+    slugs = [s.slug for s in segments]
+    contents = map(L.transform, (s.content for s in segments))
+    segments = [{'id': i, 'xmlid': x, 'slug': s, 'content': c}
+                for i, x, s, c in zip(ids, xmlids, slugs, contents)]
+
+    # Text correspondence
+    id_to_slug = {s['id']: s['slug'] for s in segments}
+    if related:
+        corresp = defaultdict(lambda: defaultdict(list))
+        for grp in related.split(','):
+            # Find corresponding segments
+            child = Text.query.filter(Text.slug == grp).one()
+            results = SSA.query.filter(SSA.parent_id.in_(ids))\
+                               .filter(SSA.text_id==child.id).all()
+
+            # Process and store
+            for r in results:
+                xml_id = '.'.join((child.slug, r.child.slug))
+                content = L.transform(r.child.content)
+                data = {'id': xml_id, 'content': content}
+                parent_slug = id_to_slug[r.parent_id]
+                corresp[parent_slug][child.slug].append(data)
+    else:
+        corresp = None
 
     # Readable query
     readable_query = query.replace('-', ' - ').replace(',', ', ')
@@ -96,4 +135,5 @@ def segment(slug, query):
 
     return render_template('texts/segment.html', text=text,
                            readable_query=readable_query,
-                           segments=segments)
+                           segments=segments,
+                           corresp=corresp)
