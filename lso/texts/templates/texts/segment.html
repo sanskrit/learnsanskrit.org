@@ -5,7 +5,8 @@
 {% block content %}
 <h1>{{ readable_query }}</h1>
 {% for segment in segments %}
-    <div id="{{ segment.id }}">
+<section id="{{ segment.xmlid }}">
+    <div class="primary">
     {{ segment.content|safe }}
     </div>
 
@@ -14,5 +15,6 @@
             {{ child.content|safe }}
         {% endfor %}
     {% endfor %}
+</section>
 {% endfor %}
 {% endblock %}

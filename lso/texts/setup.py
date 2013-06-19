@@ -1,20 +1,14 @@
 from ..database import session
-from .models import Language, Text, Division, Segment
+from .models import Language
 
 __all__ = ['run']
 
 
 def init_texts():
     """Create initial languages."""
-    languages = ['sanskrit', 'english']
-    for lang in languages:
-        session.add(Language(name=lang))
-
-    text = Text(name='Sanskrit Grammar', slug='sanskrit-grammar',
-        xmlid_prefix='SG')
-
-    session.add(text)
-    session.flush()
+    languages = [('Sanskrit', 'sa'), ('English', 'en')]
+    for name, slug in languages:
+        session.add(Language(name=name, slug=slug))
 
     session.commit()
     session.remove()

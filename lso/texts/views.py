@@ -5,8 +5,9 @@ from sqlalchemy import and_
 
 import lib as L
 from . import texts
-from .models import Text, Segment, SegSegAssoc as SSA
+from .models import Language, Segment, SegSegAssoc as SSA, Text
 
+LANG = None
 
 def paginate(items, size, min_size=0):
     """Simple pagination.
@@ -31,7 +32,12 @@ def paginate(items, size, min_size=0):
 @texts.route('/')
 def index():
     """A basic index page containing all texts in the collection."""
-    texts = Text.query.all()
+    global LANG
+    if LANG is None:
+        LANG = {x.slug : x.id for x in Language.query.all()}
+
+    texts = Text.query.filter(Text.language_id == LANG['sa'])\
+                      .all()
     return render_template('texts/index.html', texts=texts)
 
 

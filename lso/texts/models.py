@@ -27,16 +27,20 @@ class Language(SimpleBase):
 
     #: A human-readable name for the language, e.g. `Sanskrit`.
     name = Column(String)
+    #: A slug for the language, e.g. `sanskrit`
+    slug = Column(String)
 
 
-# class Author(SimpleBase):
+class Author(SimpleBase):
 
-#     """The author of some :class:`Text`"""
+    """The author of some :class:`Text`"""
 
-#     en_name = Column(String)
-#     sa_name = Column(String)
-#     #: A human-readable identifier
-#     slug = Column(String, unique=True)
+    # The author's name
+    name = Column(String)
+    #: The author's main language
+    language = Column(ForeignKey(Language.id))
+    #: A human-readable identifier for this author
+    slug = Column(String, unique=True)
 
 
 class Text(SimpleBase):
@@ -54,12 +58,15 @@ class Text(SimpleBase):
 
     #: The text's primary language
     language_id = Column(ForeignKey(Language.id))
+    #: The text's author
+    author_id = Column(ForeignKey(Author.id))
     #: The division tree associated with the text
     division_id = Column(Integer, ForeignKey('division.id'), nullable=True)
     #: The text's parent, if defined
     parent_id = Column(Integer, ForeignKey('text.id'), nullable=True)
 
     language = relationship(Language)
+    author = relationship(Author)
     division = relationship('Division', cascade=CASCADE_ARGS)
     parent = relationship('Text', remote_side=[id], backref='children')
     segments = relationship('Segment', cascade=CASCADE_ARGS, backref='text')
@@ -160,7 +167,7 @@ Division.segments = relationship(Segment,
 def drop():
     """Drop the models defined above."""
 
-    order = [SegSegAssoc, Segment, Text, Division, Language]
+    order = [SegSegAssoc, Segment, Text, Division, Author, Language]
     for o in order:
         try:
             o.__table__.drop()

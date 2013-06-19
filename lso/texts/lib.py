@@ -11,7 +11,7 @@
 import xml.etree.cElementTree as ET
 
 from ..database import session
-from .models import Text, Division, Segment, SegSegAssoc
+from .models import Text, Division, Segment, SegSegAssoc, Language
 
 XML_NS = '{http://www.w3.org/XML/1998/namespace}'
 XML_ID = '{http://www.w3.org/XML/1998/namespace}id'
@@ -19,6 +19,7 @@ XML_LANG = '{http://www.w3.org/XML/1998/namespace}lang'
 
 
 class Tag:
+    TEI = 'TEI'
     TEI_HEADER = 'teiHeader'
     TEXT = 'text'
     ANCHOR = 'anchor'
@@ -55,6 +56,8 @@ class DocumentTarget:
         #
         self.position = 1
 
+        self.lang_map = {x.slug: x.id for x in Language.query.all()}
+
     # XML parser events
     # -----------------
     def start(self, tag, attrib):
@@ -73,7 +76,7 @@ class DocumentTarget:
         elif self.block_tag:
             self.depth += 1
 
-        if tag == Tag.TEXT:
+        if tag == Tag.TEI:
             self.lang = attrib.get(XML_LANG, None)
 
         # Inside a block
@@ -160,7 +163,7 @@ class DocumentTarget:
             name=name,
             slug=slug,
             xmlid_prefix=xmlid_prefix,
-            language_id=None,
+            language_id=self.lang_map[self.lang.split('-')[0]],
             parent_id=parent_id,
             division_id=div.id)
         session.add(self.text)
@@ -202,9 +205,10 @@ class DocumentTarget:
             text, _, path = corresp.partition('.')
             other = Segment.query.filter(Segment.text_id == self.text.parent_id)\
                                  .filter(Segment.slug == path).first()
-            s.parent_assocs.append(SegSegAssoc(parent=other,
-                                               child=s,
-                                               text=self.text))
+            if other is not None:
+                s.parent_assocs.append(SegSegAssoc(parent=other,
+                                                   child=s,
+                                                   text=self.text))
 
         session.add(s)
         session.flush()
@@ -230,17 +234,23 @@ def transform(data):
     xml = ET.fromstring(wrapped_data.encode('utf-8'))
     for elem in xml.iter():
         tag = elem.tag
+        attr = elem.attrib
+        html_attr = {}
 
         if tag == 'l':
-            elem.tag = None
+            if attr.get('rend') == 'indent':
+                elem.tag = 'span'
+                html_attr['class'] = 'indent'
+            else:
+                elem.tag = None
             elem.append(ET.Element('br'))
         elif tag == 'lg':
             elem.tag = 'p'
-            elem.attrib = {}
         elif elem.tag == 'hi':
-            if elem.attrib['rend'] == 'italic':
+            if attr['rend'] == 'italic':
                 elem.tag = 'i'
-                elem.attrib = {}
+
+        elem.attrib = html_attr
 
     # Delete <wrap>
     xml.tag = None
