@@ -20,17 +20,18 @@ def title(slug):
     return render_template('texts/text.html', text=text)
 
 
-@texts.route('/<text>/<path>')
-def segment(text, path):
+@texts.route('/<text>/<query>')
+def segment(text, query):
     slug = text
     text = Text.query.filter(Text.slug == slug).first()
     if text is None:
         return redirect(url_for('.index'))
 
-    path = text.xmlid_prefix + '.' + path
+    paths = query.split(',')
+    paths = ['.'.join([text.xmlid_prefix, p]) for p in paths]
 
     segments = Segment.query.filter(Segment.text_id == text.id)\
-                            .filter(Segment.slug == path)\
+                            .filter(Segment.slug.in_(paths))\
                             .all()
 
     segments = [{'id': s.slug, 'data': L.transform(s.content)}

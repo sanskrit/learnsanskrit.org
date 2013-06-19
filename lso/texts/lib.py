@@ -184,12 +184,20 @@ def process_text_xml(path):
 
 
 def transform(data):
-    xml = ET.fromstring(data.encode('utf-8'))
-    for elem in xml:
+    wrapped_data = '<wrap>%s</wrap>' % data
+    xml = ET.fromstring(wrapped_data.encode('utf-8'))
+    for elem in xml.iter():
         tag = elem.tag
+
         if tag == 'l':
             elem.tag = None
             elem.append(ET.Element('br'))
+        elif tag == 'lg':
+            elem.tag = 'p'
+            elem.attrib = {}
+
+    # Delete <wrap>
+    xml.tag = None
     return ET.tostring(xml)
 
 
