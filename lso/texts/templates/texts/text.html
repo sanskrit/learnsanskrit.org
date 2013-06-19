@@ -4,4 +4,9 @@
 
 {% block content %}
 <h1>{{ text.name }}</h1>
+
+{% for d in divisions %}
+    <h2>{{ d.slug }}</h2>
+{% endfor %}
+
 {% endblock %}

@@ -65,6 +65,11 @@ admin.add_view(ModelView(texts.models.Segment, database.session,
                          name='Segments',
                          url='texts/segments'))
 
+admin.add_view(ModelView(texts.models.Division, database.session,
+                         category='Texts',
+                         name='_Divisions',
+                         url='texts/divisions'))
+
 # Attach to app
 # -------------
 from lso import app

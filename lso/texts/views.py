@@ -4,6 +4,7 @@ from sqlalchemy import and_
 import lib as L
 from . import texts
 from .models import Text, Segment
+from ..database import session
 
 
 @texts.route('/')
@@ -18,7 +19,12 @@ def title(slug):
     if text is None:
         return redirect(url_for('.index'))
 
-    return render_template('texts/text.html', text=text)
+    divisions = text.division.mp.query_descendants().all()
+    d = divisions[0]
+    print d.segments[-1]
+
+    return render_template('texts/text.html', text=text,
+                           divisions=divisions)
 
 
 @texts.route('/<slug>/<query>')

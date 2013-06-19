@@ -144,7 +144,8 @@ class DocumentTarget:
         slug = fields['slug']
         xmlid_prefix = fields['xmlid_prefix']
 
-        div = Division(slug=None, parent_id=None)
+        div = Division(slug=xmlid_prefix, parent_id=None)
+        self.division_map[xmlid_prefix] = div
         session.add(div)
         session.flush()
 
@@ -157,15 +158,34 @@ class DocumentTarget:
         session.add(self.text)
         session.flush()
 
+    def _create_divs(self, slug):
+        div_slug, dot, _ = slug.rpartition('.')
+        try:
+            return self.division_map[div_slug]
+        except KeyError:
+            if dot:
+                parent = self._create_divs(div_slug)
+                d = Division(slug=div_slug, parent_id=parent.id)
+                self.division_map[div_slug] = d
+                session.add(d)
+                session.flush()
+                return d
+            else:
+                raise Exception
+
     def handle_segment(self, blob, xml):
         attr = xml.attrib
+
+        # Create divisions as necessary
+        slug = attr[XML_ID]
+        div = self._create_divs(slug)
 
         s = Segment(
             slug=attr[XML_ID],
             content=blob,
             position=self.position,
             text_id=self.text.id,
-            division_id=None)
+            division_id=div.id)
 
         session.add(s)
         session.flush()

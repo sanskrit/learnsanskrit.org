@@ -38,7 +38,7 @@ class Text(SimpleBase):
     #: The text's primary language
     language_id = Column(ForeignKey(Language.id))
     #: The division tree associated with the text
-    division_id = Column(Integer, ForeignKey('division.id'))
+    division_id = Column(Integer, ForeignKey('division.id'), nullable=True)
 
     language = relationship(Language)
     segments = relationship('Segment', cascade='all, delete-orphan',
@@ -63,6 +63,9 @@ class Division(BaseNode):
     parent_id = Column(Integer, ForeignKey('division.id'), nullable=True)
     parent = relation('Division', remote_side=[id])
 
+    def __repr__(self):
+        return '<Division(%s, %s)>' % (self.id, self.slug)
+
     def __unicode__(self):
         return '%s' % self.slug
 
@@ -83,6 +86,9 @@ class Segment(SimpleBase):
     division_id = Column(ForeignKey(Division.id))
 
     division = relationship(Division)
+
+    def __repr__(self):
+        return '<Segment(%s, %s)>' % (self.id, self.slug)
 
 
 Text.division = relationship(Division)
