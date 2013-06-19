@@ -95,7 +95,7 @@ class DocumentTarget:
                 b.append('<%s>' % tag)
 
     def data(self, data):
-        self.buf.append(data.strip())
+        self.buf.append(data)
 
     def end(self, tag):
         b = self.buf
@@ -237,6 +237,10 @@ def transform(data):
         elif tag == 'lg':
             elem.tag = 'p'
             elem.attrib = {}
+        elif elem.tag == 'hi':
+            if elem.attrib['rend'] == 'italic':
+                elem.tag = 'i'
+                elem.attrib = {}
 
     # Delete <wrap>
     xml.tag = None

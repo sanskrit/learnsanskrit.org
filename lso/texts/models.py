@@ -1,7 +1,17 @@
+# -*- coding: utf-8 -*-
+"""
+    lso.texts.models
+    ~~~~~~~~~~~~~~~~
+
+    Models for handling a collection of segmented texts
+
+    :license: MIT and BSD
+"""
+
 import sqlalchemy.exc
 from sqlalchemy import Column, Integer, ForeignKey, String
 from sqlalchemy import Text as _Text
-from sqlalchemy.orm import relationship
+from sqlalchemy.orm import backref, relationship
 from sqlalchemy.ext.associationproxy import association_proxy
 from sqlalchemy.ext.orderinglist import ordering_list
 
@@ -15,6 +25,7 @@ class Language(SimpleBase):
 
     """The language of some :class:`Text`"""
 
+    #: A human-readable name for the language, e.g. `Sanskrit`.
     name = Column(String)
 
 
@@ -34,8 +45,7 @@ class Text(SimpleBase):
 
     id = Column(Integer, primary_key=True)
 
-    #: A human-readable title in roman letters. Sanskrit texts will use
-    #: titles in SLP1.
+    #: A human-readable title in roman letters.
     name = Column(String)
     #: A human-readable identifier
     slug = Column(String, unique=True)
@@ -81,21 +91,41 @@ class Division(BaseNode):
 
 
 class SegSegAssoc(SimpleBase):
+
+    """Association between parent and child segments.
+
+    This class supports a many-to-many relationship between segments in
+    parent and child texts. For example, a Sanskrit verse could be
+    translated by multiple English stanzas. Or an English verse could
+    represent multiple verses in the Sanskrit.
+
+    `text_id` refers only to the child text. This model assumes that
+    parent texts and child texts have a 1:M relationship. So far, that
+    assumption seems to be a good one.
+    """
+
+    #: The ID of the parent segment
     parent_id = Column(ForeignKey('segment.id'), primary_key=True)
-    child_id = Column(ForeignKey('segment.id'), primary_key=True)
+    #: The ID of the child text.
     text_id = Column(ForeignKey('text.id'), primary_key=True)
+    #: The ID of the child segment. Also, `child.text_id == text_id`.
+    child_id = Column(ForeignKey('segment.id'), primary_key=True)
 
     parent = relationship('Segment',
                           primaryjoin='SegSegAssoc.parent_id==Segment.id',
                           foreign_keys=[parent_id],
-                          backref='child_assocs')
-
+                          backref=backref('child_assocs',
+                                          cascade=CASCADE_ARGS))
+    text = relationship('Text')
     child = relationship('Segment',
                          primaryjoin='SegSegAssoc.child_id==Segment.id',
                          foreign_keys=[child_id],
-                         backref='parent_assocs')
+                         backref=backref('parent_assocs',
+                                         cascade=CASCADE_ARGS))
 
-    text = relationship('Text')
+    def __repr__(self):
+        return '<SegSegAssoc(%s,%s,%s)>' % (self.parent_id, self.child_id,
+                                            self.text_id)
 
 
 class Segment(SimpleBase):
@@ -128,6 +158,8 @@ Division.segments = relationship(Segment,
 
 
 def drop():
+    """Drop the models defined above."""
+
     order = [SegSegAssoc, Segment, Text, Division, Language]
     for o in order:
         try:
