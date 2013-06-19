@@ -60,7 +60,8 @@ def segment(slug, query):
     # Segments
     segments = []
     path_groups = query.split(',')
-    base_query = Segment.query.filter(Segment.text_id == text.id)
+    base_query = Segment.query.filter(Segment.text_id == text.id)\
+                        .order_by(Segment.position.asc())
     for g in path_groups:
         pre, cur, post = g.partition('-')
 
