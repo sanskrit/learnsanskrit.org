@@ -1,9 +1,13 @@
-from sqlalchemy import Column, Integer, ForeignKey, String
+import sqlalchemy.exc
+from sqlalchemy import Column, Integer, ForeignKey, String, Table
 from sqlalchemy import Text as _Text
 from sqlalchemy.orm import relation, relationship
 from sqlalchemy.ext.orderinglist import ordering_list
 
 from ..database import SimpleBase, BaseNode
+
+
+CASCADE_ARGS = 'all,delete,delete-orphan'
 
 
 class Language(SimpleBase):
@@ -13,19 +17,21 @@ class Language(SimpleBase):
     name = Column(String)
 
 
-class Author(SimpleBase):
+# class Author(SimpleBase):
 
-    """The author of some :class:`Text`"""
+#     """The author of some :class:`Text`"""
 
-    en_name = Column(String)
-    sa_name = Column(String)
-    #: A human-readable identifier
-    slug = Column(String, unique=True)
+#     en_name = Column(String)
+#     sa_name = Column(String)
+#     #: A human-readable identifier
+#     slug = Column(String, unique=True)
 
 
 class Text(SimpleBase):
 
     """A complete text, whether Sanskrit or otherwise."""
+
+    id = Column(Integer, primary_key=True)
 
     #: A human-readable title in roman letters. Sanskrit texts will use
     #: titles in SLP1.
@@ -39,10 +45,13 @@ class Text(SimpleBase):
     language_id = Column(ForeignKey(Language.id))
     #: The division tree associated with the text
     division_id = Column(Integer, ForeignKey('division.id'), nullable=True)
+    #: The text's parent, if defined
+    parent_id = Column(Integer, ForeignKey('text.id'), nullable=True)
 
     language = relationship(Language)
-    segments = relationship('Segment', cascade='all, delete-orphan',
-                            backref='text')
+    division = relationship('Division', cascade=CASCADE_ARGS)
+    parent = relationship('Text', remote_side=[id], backref='children')
+    segments = relationship('Segment', cascade=CASCADE_ARGS, backref='text')
 
     def __unicode__(self):
         return '%s' % self.slug
@@ -70,6 +79,12 @@ class Division(BaseNode):
         return '%s' % self.slug
 
 
+# class SegSegAssoc(SimpleBase):
+#     parent_id = Column(ForeignKey('segment.id'), primary_key=True)
+#     child_id = Column(ForeignKey('segment.id'), primary_key=True)
+#     text_id = Column(ForeignKey('text.id'), primary_key=True)
+
+
 class Segment(SimpleBase):
 
     """A discrete piece of some text."""
@@ -85,7 +100,8 @@ class Segment(SimpleBase):
     #: The :class:`Division` that contains this segment
     division_id = Column(ForeignKey(Division.id))
 
-    division = relationship(Division)
+    division = relationship(Division, cascade=CASCADE_ARGS, single_parent=True)
+    # children = relationship('SegSegAssoc')
 
     def __repr__(self):
         return '<Segment(%s, %s)>' % (self.id, self.slug)
@@ -95,3 +111,12 @@ Text.division = relationship(Division)
 Division.segments = relationship(Segment,
                                  collection_class=ordering_list('position'),
                                  order_by=Segment.position)
+
+
+def drop():
+    order = [Segment, Text, Division, Language]
+    for o in order:
+        try:
+            o.__table__.drop()
+        except sqlalchemy.exc.ProgrammingError:
+            print '(table %s does not exist.)' % o.__tablename__

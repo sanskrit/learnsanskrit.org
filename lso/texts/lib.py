@@ -74,7 +74,7 @@ class DocumentTarget:
             self.depth += 1
 
         if tag == Tag.TEXT:
-            self.lang = attrib[XML_LANG]
+            self.lang = attrib.get(XML_LANG, None)
 
         # Inside a block
         if self.block_tag:
@@ -116,7 +116,7 @@ class DocumentTarget:
     # Data handlers
     # -------------
     def handle(self, blob):
-        xml = ET.fromstring(blob.encode('utf-8'))
+        xml = ET.fromstring(blob.replace('&', '&amp;').encode('utf-8'))
         if xml.tag in Tag.SEGMENT_TAGS:
             self.handle_segment(blob, xml)
         elif xml.tag == Tag.TEI_HEADER:
@@ -130,19 +130,26 @@ class DocumentTarget:
             'name':  titleStmt_path + 'title',
             'author': titleStmt_path + 'author',
             'slug':   publicationStmt_path + 'idno[@type="slug"]',
-            'xmlid_prefix': publicationStmt_path + 'idno[@type="xml"]'
+            'xmlid_prefix': publicationStmt_path + 'idno[@type="xml"]',
+            'parent': publicationStmt_path + 'idno[@type="parent"]'
         }
         fields = {}
         for k in paths:
             try:
                 fields[k] = xml.find(paths[k]).text
             except AttributeError:
-                fields[k] = ''
+                fields[k] = None
 
         # Preprocess
         name = fields['name'].partition('[')[0].strip()
         slug = fields['slug']
         xmlid_prefix = fields['xmlid_prefix']
+        parent = fields['parent']
+        if parent is None:
+            parent_id = None
+        else:
+            parent = Text.query.filter(Text.xmlid_prefix == parent).one()
+            parent_id = parent.id
 
         div = Division(slug='', parent_id=None)
         self.division_map[''] = div
@@ -154,6 +161,7 @@ class DocumentTarget:
             slug=slug,
             xmlid_prefix=xmlid_prefix,
             language_id=None,
+            parent_id=parent_id,
             division_id=div.id)
         session.add(self.text)
         session.flush()

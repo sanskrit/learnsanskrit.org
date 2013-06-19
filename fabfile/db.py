@@ -5,39 +5,42 @@ from . import FIRM_YES
 
 
 @task
-def create(*tables):
-    """Create tables in the database.
+def create(*blueprints):
+    """Create blueprint tables in the database.
 
-    :param tables: the tables to create. If blank, create all tables.
+    :param blueprints: the blueprints to create. If blank, create all
+                       blueprints.
     """
-    lso.database.create(*tables)
+    lso.database.create(*blueprints)
 
 
 @task
-def drop(*tables):
-    """Drop tables from the database.
+def drop(*blueprints):
+    """Drop the given blueprints.
 
-    :param tables: the tables to create. If blank, drop all tables.
+    :param blueprints: the blueprints to drop. If blank, drop all
+                       blueprints.
     """
-    if confirm_drop(*tables):
-        lso.database.drop(*tables)
+    if confirm_drop(*blueprints):
+        lso.database.drop(*blueprints)
 
 
 @task
-def recreate(*tables):
-    """Drop tables from the database then recreate them.
+def recreate(*blueprints):
+    """Drop blueprints from the database then recreate them.
 
-    :param tables: the tables to recreate. If blank, recreate all tables.
+    :param tables: the blueprints to recreate. If blank, recreate all
+                   blueprints.
     """
-    drop(*tables)
-    create(*tables)
+    drop(*blueprints)
+    create(*blueprints)
 
 
 @task
 def seed(*blueprints):
-    """Seed tables is the database, by way of their blueprints.
+    """Seed blueprints in the database.
 
-    :param blueprints: the blueprints containing the tables to seed.
+    :param blueprints: the blueprints to seed.
     """
     lso.database.seed(*blueprints)
 
@@ -46,33 +49,17 @@ def seed(*blueprints):
 def rebuild(*blueprints):
     """Drop tables from the given blueprints then recreate and seed them.
 
-    For a blueprint `bp`, this function will try to find `bp.models` and
-    examine the tables in its ORM models.
-
-    :param blueprints: the blueprints containing the tables to rebuild.
+    :param blueprints: the blueprints to rebuild.
     """
-
-    # Get list of tables. This is a little hacky.
-    all_tables = []
-    for name in blueprints or lso.app.blueprints:
-        path = 'lso.{0}.models'.format(name)
-        try:
-            models = __import__(path, fromlist=[path])
-        except ImportError:
-            continue
-        objects = models.__dict__.values()
-        tables = [getattr(obj, '__tablename__', None) for obj in objects]
-        all_tables.extend([t for t in tables if t])
-
-    recreate(*all_tables)
+    recreate(*blueprints)
     seed(*blueprints)
 
 
-def confirm_drop(*tables):
+def confirm_drop(*blueprints):
     """Ask the user to confirm a table drop"""
-    if tables:
-        print 'This will drop the following tables from the database:'
-        for t in tables:
+    if blueprints:
+        print 'This will drop tables for the following blueprints:'
+        for t in blueprints:
             print '    {0}'.format(t)
     else:
         print 'This will drop all tables from the database.'

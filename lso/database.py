@@ -34,41 +34,29 @@ class SimpleBase(Base):
 
 
 def create(*names):
-    """Create tables in the database.
+    """Create blueprint tables in the database.
 
     :param names: the tables to create. If blank, create all tables.
     """
-    if names:
-        for name in names:
-            table = metadata.tables.get(name, None)
-            if table is None:
-                print '  [ ? ] {0}'.format(name)
-            elif table.exists():
-                print '  [ e ] {0}'.format(name)
-            else:
-                table.create()
-                print '  [ c ] {0}'.format(name)
-    else:
-        extant = {t.name for t in metadata.tables.values() if t.exists()}
-        metadata.create_all()
-        for name in metadata.sorted_tables:
-            if name not in extant:
-                print '  [ c ] {0}'.format(name)
+    extant = {t.name for t in metadata.tables.values() if t.exists()}
+    metadata.create_all()
+    for name in [t.name for t in metadata.sorted_tables]:
+        if name not in extant:
+            print '  [ c ] {0}'.format(name)
 
 
 def drop(*names):
-    """Drop tables from the database.
+    """Drop blueprint tables from the database.
 
-    :param names: the tables to create. If blank, drop all tables.
+    :param names: the blueprints to drop. If blank, drop all blueprints.
     """
     if names:
         for name in names:
-            table = metadata.tables.get(name, None)
-            if table is None:
-                print '  [ ? ] {0}'.format(name)
-            else:
-                table.drop()
-                print '  [ d ] {0}'.format(name)
+            path = 'lso.{0}.models'.format(name)
+            models = __import__(path, fromlist=[path])
+            models.drop()
+            print '  [ d ] {0}'.format(name)
+
     else:
         metadata.drop_all()
         for name in metadata.sorted_tables:
@@ -76,15 +64,9 @@ def drop(*names):
 
 
 def seed(*names):
-    """Seed tables in the database, by way of their blueprints.
+    """Seed blueprints in the database.
 
-    For a blueprint `bp`, this function will try to call `bp.setup.run()`.
-
-    Due to interdependencies, it's not always clear how a model should be
-    initialized or where its seed code should live. So, the details of this
-    are left to blueprints.
-
-    :param blueprints: the blueprint containing the tables to seed.
+    :param blueprints: the blueprint to seed.
     """
 
     names = names or app.blueprints

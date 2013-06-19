@@ -41,13 +41,13 @@ js = Bundle(
             output='gen/scripts.js')
 assets.register('all-js', js)
 
-# Mail
-# ----
-mail = Mail(app)
-
 # Admin
 # -----
 import admin
+
+# Mail
+# ----
+mail = Mail(app)
 
 # Sanskrit
 # --------
