@@ -60,15 +60,16 @@ def segment(slug, query):
     # Segments
     segments = []
     path_groups = query.split(',')
+    base_query = Segment.query.filter(Segment.text_id == text.id)
     for g in path_groups:
         pre, cur, post = g.partition('-')
 
         # Path range
         if cur:
-            results = Segment.query.filter(Segment.slug.in_([pre, post])).all()
+            results = base_query.filter(Segment.slug.in_([pre, post])).all()
             try:
                 s1, s2 = results
-                results = Segment.query.filter(and_(
+                results = base_query.filter(and_(
                     Segment.position > s1.position,
                     Segment.position < s2.position)).all()
                 segments.append(s1)
@@ -80,7 +81,7 @@ def segment(slug, query):
 
         # Single path
         else:
-            s = Segment.query.filter(Segment.slug == g).first()
+            s = base_query.filter(Segment.slug == g).first()
             if s:
                 segments.append(s)
 
