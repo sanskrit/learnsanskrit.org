@@ -1,11 +1,11 @@
 {% extends 'general.html' %}
 
-{% block title %}{{ text.name }}{% endblock %}
+{% block title %}{{ readable_query }}{% endblock %}
 
 {% block content %}
-<h1>{{ text.name }}</h1>
+<h1>{{ readable_query }}</h1>
 {% for segment in segments %}
-<div id="{{ segment.slug }}">
+<div id="{{ text.xmlid_prefix }}.{{ segment.slug }}">
 {{ segment.data|safe }}
 </div>
 {% endfor %}

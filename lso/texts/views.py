@@ -4,7 +4,26 @@ from sqlalchemy import and_
 import lib as L
 from . import texts
 from .models import Text, Segment
-from ..database import session
+
+
+def paginate(items, size, min_size=0):
+    """Simple pagination.
+
+    :param size: the group size
+    :param min_size: the mininum group size. If a group is smaller than
+                     `min_size`, then it is merged into the previous
+                     group, if one exists.
+    """
+    groups = []
+    i = 0
+    for start in xrange(0, len(items), size):
+        groups.append(items[start:start+size])
+        i += 1
+
+    if i > 2 and len(groups[-1]) < min_size:
+        groups[-2].extend(groups[-1])
+        groups.pop()
+    return groups
 
 
 @texts.route('/')
@@ -20,11 +39,16 @@ def title(slug):
         return redirect(url_for('.index'))
 
     divisions = text.division.mp.query_descendants().all()
-    d = divisions[0]
-    print d.segments[-1]
+    pages = []
+    for d in divisions:
+        last_slug = d.segments[-1].slug.rpartition('.')[2]
+        number = int(last_slug)
+        slugs = ['%s.%s' % (d.slug, n) for n in range(1, number+1)]
+        pages.append(paginate(slugs, 5, min_size=3))
 
     return render_template('texts/text.html', text=text,
-                           divisions=divisions)
+                           divisions=divisions,
+                           pages=pages)
 
 
 @texts.route('/<slug>/<query>')
@@ -33,6 +57,7 @@ def segment(slug, query):
     if text is None:
         return redirect(url_for('.index'))
 
+    # Segments
     segments = []
     path_groups = query.split(',')
     for g in path_groups:
@@ -40,8 +65,6 @@ def segment(slug, query):
 
         # Path range
         if cur:
-            pre = '.'.join((text.xmlid_prefix, pre))
-            post = '.'.join((text.xmlid_prefix, post))
             results = Segment.query.filter(Segment.slug.in_([pre, post])).all()
             try:
                 s1, s2 = results
@@ -57,13 +80,18 @@ def segment(slug, query):
 
         # Single path
         else:
-            s_slug = '.'.join((text.xmlid_prefix, g))
-            s = Segment.query.filter(Segment.slug == s_slug).first()
+            s = Segment.query.filter(Segment.slug == g).first()
             if s:
                 segments.append(s)
 
-    print segments
-    segments = [{'id': s.slug, 'data': L.transform(s.content)}
+    segments = [{'slug': s.slug,
+                 'data': L.transform(s.content)}
                 for s in segments]
+
+    # Readable query
+    readable_query = query.replace('-', ' - ').replace(',', ', ')
+    readable_query = '%s %s' % (text.name, readable_query)
+
     return render_template('texts/segment.html', text=text,
+                           readable_query=readable_query,
                            segments=segments)

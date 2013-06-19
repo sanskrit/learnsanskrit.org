@@ -144,8 +144,8 @@ class DocumentTarget:
         slug = fields['slug']
         xmlid_prefix = fields['xmlid_prefix']
 
-        div = Division(slug=xmlid_prefix, parent_id=None)
-        self.division_map[xmlid_prefix] = div
+        div = Division(slug='', parent_id=None)
+        self.division_map[''] = div
         session.add(div)
         session.flush()
 
@@ -171,17 +171,18 @@ class DocumentTarget:
                 session.flush()
                 return d
             else:
-                raise Exception
+                return self.division_map['']
 
     def handle_segment(self, blob, xml):
         attr = xml.attrib
 
         # Create divisions as necessary
         slug = attr[XML_ID]
+        _, _, slug = slug.partition('.')
         div = self._create_divs(slug)
 
         s = Segment(
-            slug=attr[XML_ID],
+            slug=slug,
             content=blob,
             position=self.position,
             text_id=self.text.id,
