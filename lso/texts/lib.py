@@ -52,6 +52,8 @@ class DocumentTarget:
         self.lang = None
         # Maps prefix strings to textual divisions
         self.division_map = {}
+        #
+        self.position = 1
 
     # XML parser events
     # -----------------
@@ -161,12 +163,13 @@ class DocumentTarget:
         s = Segment(
             slug=attr[XML_ID],
             content=blob,
-            position=-1,
+            position=self.position,
             text_id=self.text.id,
             division_id=None)
 
         session.add(s)
         session.flush()
+        self.position += 1
 
 
 def process_text_xml(path):
