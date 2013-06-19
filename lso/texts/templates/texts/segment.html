@@ -1,0 +1,12 @@
+{% extends 'general.html' %}
+
+{% block title %}{{ text.name }}{% endblock %}
+
+{% block content %}
+<h1>{{ text.name }}</h1>
+{% for segment in segments %}
+<div id="{{ segment.slug }}">
+{{ segment.data|safe }}
+</div>
+{% endfor %}
+{% endblock %}

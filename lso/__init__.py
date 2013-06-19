@@ -45,6 +45,10 @@ assets.register('all-js', js)
 # ----
 mail = Mail(app)
 
+# Admin
+# -----
+import admin
+
 # Sanskrit
 # --------
 ctx = Context(app.config)
@@ -55,27 +59,32 @@ except sqlalchemy.exc.ProgrammingError:
     simple_query = None
     simple_analyzer = None
 
-# logging
+# Logging
 # -------
 if not app.debug:
     import logging
     from logging import FileHandler, getLogger
+
+    print app.config['LOGFILE']
     handler = FileHandler(app.config['LOGFILE'])
     handler.setLevel(logging.WARNING)
     for L in [app.logger, getLogger('sqlalchemy')]:
         L.addHandler(handler)
 
-# Views
-# -----
+# Views and blueprints
+# --------------------
 import views
 
 from dicts import dicts
 from guide import guide
 from ref import ref
 from site import site
+from texts import texts
 from tools import tools
+
 app.register_blueprint(dicts, url_prefix='/dict')
 app.register_blueprint(guide, url_prefix='/guide')
 app.register_blueprint(ref, url_prefix='/ref')
 app.register_blueprint(site)
+app.register_blueprint(texts, url_prefix='/texts')
 app.register_blueprint(tools, url_prefix='/tools')

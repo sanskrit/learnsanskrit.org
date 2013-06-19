@@ -1,0 +1,14 @@
+{% extends 'admin/master.html' %}
+{% block body %}
+{% if success %}
+<div class="alert alert-success">
+File {{ form.path.data.filename }} uploaded successfully.
+</div>
+
+{% endif %}
+<form enctype="multipart/form-data" method="POST" class="form-horizontal">
+    {{ form.csrf_token }}
+    {{ form.path.label }} {{ form.path }}
+    <input type="submit" class="btn btn-primary" value="Submit"></input>
+</form>
+{% endblock %}

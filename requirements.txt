@@ -1,4 +1,5 @@
 flask >= 0.9
+flask-admin
 flask-assets
 flask-mail
 flask-restless

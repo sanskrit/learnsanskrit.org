@@ -1,7 +1,7 @@
 from lso import app
-from sqlalchemy import create_engine, MetaData
+from sqlalchemy import create_engine, Column, Integer, MetaData
 from sqlalchemy.orm import scoped_session, sessionmaker
-from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.ext.declarative import declarative_base, declared_attr
 from sqlamp import DeclarativeMeta
 
 engine = create_engine(app.config['DATABASE_URI'], convert_unicode=True)
@@ -18,6 +18,20 @@ Base.query = session.query_property()
 BaseNode = declarative_base(metadata=metadata,
                             metaclass=DeclarativeMeta)
 BaseNode.query = session.query_property()
+
+
+class SimpleBase(Base):
+
+    """A simple base class."""
+
+    __abstract__ = True
+
+    id = Column(Integer, primary_key=True)
+
+    @declared_attr
+    def __tablename__(cls):
+        return cls.__name__.lower()
+
 
 def create(*names):
     """Create tables in the database.
@@ -41,6 +55,7 @@ def create(*names):
             if name not in extant:
                 print '  [ c ] {0}'.format(name)
 
+
 def drop(*names):
     """Drop tables from the database.
 
@@ -58,6 +73,7 @@ def drop(*names):
         metadata.drop_all()
         for name in metadata.sorted_tables:
             print '  [ d ] {0}'.format(name)
+
 
 def seed(*names):
     """Seed tables in the database, by way of their blueprints.

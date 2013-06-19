@@ -1,0 +1,14 @@
+{% extends 'general.html' %}
+
+{% block title %}Texts{% endblock %}
+
+{% block content %}
+<h1>Texts</h1>
+
+<ul>
+{% for text in texts %}
+<li><a href="{{ url_for('texts.title', slug=text.slug) }}">{{ text.name }}</a></li>
+{% endfor %}
+</ul>
+
+{% endblock %}
