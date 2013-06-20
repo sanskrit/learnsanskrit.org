@@ -8,10 +8,11 @@
     :license: MIT and BSD
 """
 
+import re
 import xml.etree.cElementTree as ET
 
 from ..database import session
-from .models import Text, Division, Segment, SegSegAssoc, Language
+from .models import Text, Division, Segment, SegSegAssoc, Language, Author
 
 XML_NS = '{http://www.w3.org/XML/1998/namespace}'
 XML_ID = '{http://www.w3.org/XML/1998/namespace}id'
@@ -19,6 +20,9 @@ XML_LANG = '{http://www.w3.org/XML/1998/namespace}lang'
 
 
 class Tag:
+
+    """Various TEI tags"""
+
     TEI = 'TEI'
     TEI_HEADER = 'teiHeader'
     TEXT = 'text'
@@ -126,33 +130,76 @@ class DocumentTarget:
             self.handle_tei_header(blob, xml)
 
     def handle_tei_header(self, blob, xml):
-        # Query for data from teiHeader
+        """Handle the data in the TEI header.
+
+        This function creates a :class:`Text` and a :class:`Division`
+        for the current document if they don't exist already. Where
+        possible, the function creates an :class:`Author` as well.
+
+        """
+        # Search for various data in teiHeader
         titleStmt_path = './fileDesc/titleStmt/'
         publicationStmt_path = './fileDesc/publicationStmt/'
         paths = {
             'name':  titleStmt_path + 'title',
             'author': titleStmt_path + 'author',
+            'translator': titleStmt_path + 'editor[@role="translator"]',
             'slug':   publicationStmt_path + 'idno[@type="slug"]',
             'xmlid_prefix': publicationStmt_path + 'idno[@type="xml"]',
             'parent': publicationStmt_path + 'idno[@type="parent"]'
         }
-        fields = {}
+        field_xml = {}
+        field_text = {}
         for k in paths:
             try:
-                fields[k] = xml.find(paths[k]).text
+                elem = xml.find(paths[k])
+                field_xml[k] = elem
+                field_text[k] = elem.text
             except AttributeError:
-                fields[k] = None
+                field_xml[k] = None
+                field_text[k] = None
 
-        # Preprocess
-        name = fields['name'].partition('[')[0].strip()
-        slug = fields['slug']
-        xmlid_prefix = fields['xmlid_prefix']
-        parent = fields['parent']
+        # TEI document titles usually have some subtitle like
+        # "[a machine readable transcription]". We should make sure to
+        # get rid of that.
+        name = field_text['name'].partition('[')[0].strip()
+        slug = field_text['slug']
+        xmlid_prefix = field_text['xmlid_prefix']
+
+        # Two texts can have a parent-child relationship. This is
+        # defined in the 'parent' field:
+        parent = field_text['parent']
         if parent is None:
             parent_id = None
         else:
-            parent = Text.query.filter(Text.xmlid_prefix == parent).one()
-            parent_id = parent.id
+            parent = Text.query.filter(Text.xmlid_prefix == parent).first()
+            if parent:
+                parent_id = parent.id
+            else:
+                # TODO: notify user of invalid parent
+                parent_id = None
+
+        # `language_id` is used for both texts and authors
+        language_id = self.lang_map[self.lang.split('-')[0]]
+
+        # Create an :class:`Author` record as necessary.
+        # Give precedence to translators: Kale's translation of the
+        # Meghaduta is by Kale, not Kalidasa.
+        author_xml = field_xml['translator'] or field_xml['author']
+        if author_xml is not None:
+            author_slug = author_xml.attrib[XML_ID]
+            author = Author.query.filter(Author.slug == author_slug).first()
+            if author:
+                author_id = author.id
+            else:
+                author_name = self._text(author_xml)
+                author = Author(name=author_name, slug=author_slug,
+                                language_id=language_id)
+                session.add(author)
+                session.flush()
+                author_id = author.id
+        else:
+            author_id = None
 
         div = Division(slug='', parent_id=None)
         self.division_map[''] = div
@@ -163,11 +210,23 @@ class DocumentTarget:
             name=name,
             slug=slug,
             xmlid_prefix=xmlid_prefix,
-            language_id=self.lang_map[self.lang.split('-')[0]],
+            language_id=language_id,
+            author_id=author_id,
             parent_id=parent_id,
             division_id=div.id)
         session.add(self.text)
         session.flush()
+
+    def _text(self, elem):
+        """Return the plain text in a given Element.
+
+        If the element has no children, this is nearly the same as
+        running `elem.text`. Leading and trailing whitespace are
+        stripped out.
+
+        :param elem: the element to process"""
+
+        return re.sub('<[^<]+?>', '', ET.tostring(elem)).strip()
 
     def _create_divs(self, slug):
         div_slug, dot, _ = slug.rpartition('.')
@@ -203,7 +262,8 @@ class DocumentTarget:
         if corresp:
             corresp = corresp.replace('#', '')
             text, _, path = corresp.partition('.')
-            other = Segment.query.filter(Segment.text_id == self.text.parent_id)\
+            parent_id = self.text.parent_id
+            other = Segment.query.filter(Segment.text_id == parent_id)\
                                  .filter(Segment.slug == path).first()
             if other is not None:
                 s.parent_assocs.append(SegSegAssoc(parent=other,

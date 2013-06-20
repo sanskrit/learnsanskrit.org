@@ -56,23 +56,28 @@ class TextView(ModelView):
 
 
 admin.add_view(TextUploadView(
-               category='Texts',
+               category='Collection',
                name='Upload',
                url='texts/upload'))
 
 admin.add_view(TextView(texts.models.Text, database.session,
-                        category='Texts',
-                        name='Manage',
+                        category='Collection',
+                        name='Texts',
                         url='texts/manage'))
 
+admin.add_view(ModelView(texts.models.Author, database.session,
+                         category='Collection',
+                         name='Authors',
+                         url='texts/authors'))
+
 admin.add_view(ModelView(texts.models.Segment, database.session,
-                         category='Texts',
+                         category='Collection',
                          name='Segments',
                          url='texts/segments'))
 
 admin.add_view(ModelView(texts.models.Division, database.session,
-                         category='Texts',
-                         name='_Divisions',
+                         category='Collection',
+                         name='Divisions',
                          url='texts/divisions'))
 
 # Attach to app

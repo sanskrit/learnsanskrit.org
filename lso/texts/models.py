@@ -30,6 +30,12 @@ class Language(SimpleBase):
     #: A slug for the language, e.g. `sanskrit`
     slug = Column(String)
 
+    def __repr__(self):
+        return "<Language(%s, '%s')>" % (self.id, self.slug)
+
+    def __unicode__(self):
+        return self.name
+
 
 class Author(SimpleBase):
 
@@ -38,9 +44,17 @@ class Author(SimpleBase):
     # The author's name
     name = Column(String)
     #: The author's main language
-    language = Column(ForeignKey(Language.id))
+    language_id = Column(ForeignKey(Language.id))
     #: A human-readable identifier for this author
     slug = Column(String, unique=True)
+
+    language = relationship(Language)
+
+    def __repr__(self):
+        return "<Author(%s, '%s')>" % (self.id, self.name)
+
+    def __unicode__(self):
+        return self.name
 
 
 class Text(SimpleBase):

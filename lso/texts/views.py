@@ -1,6 +1,6 @@
 from collections import defaultdict
 
-from flask import redirect, render_template, url_for
+from flask import flash, redirect, render_template, url_for
 from sqlalchemy import and_
 
 import lib as L
@@ -8,6 +8,11 @@ from . import texts
 from .models import Language, Segment, SegSegAssoc as SSA, Text
 
 LANG = None
+
+
+def _flash_missing_text(slug):
+    flash("We can't find text \"%s\" in the collection." % slug)
+
 
 def paginate(items, size, min_size=0):
     """Simple pagination.
@@ -18,14 +23,15 @@ def paginate(items, size, min_size=0):
                      group, if one exists.
     """
     groups = []
-    i = 0
     for start in xrange(0, len(items), size):
         groups.append(items[start:start+size])
-        i += 1
 
-    if i > 2 and len(groups[-1]) < min_size:
-        groups[-2].extend(groups[-1])
-        groups.pop()
+    try:
+        if len(groups[-1]) < min_size:
+            groups[-2].extend(groups[-1])
+            groups.pop()
+    except IndexError:
+        pass
     return groups
 
 
@@ -34,7 +40,7 @@ def index():
     """A basic index page containing all texts in the collection."""
     global LANG
     if LANG is None:
-        LANG = {x.slug : x.id for x in Language.query.all()}
+        LANG = {x.slug: x.id for x in Language.query.all()}
 
     texts = Text.query.filter(Text.language_id == LANG['sa'])\
                       .all()
@@ -49,6 +55,7 @@ def title(slug):
     """
     text = Text.query.filter(Text.slug == slug).first()
     if text is None:
+        _flash_missing_text(slug)
         return redirect(url_for('.index'))
 
     divisions = text.division.mp.query_descendants().all()
@@ -77,6 +84,7 @@ def segment(slug, query, related=None):
     """
     text = Text.query.filter(Text.slug == slug).first()
     if text is None:
+        _flash_missing_text(slug)
         return redirect(url_for('.index'))
 
     # Segments

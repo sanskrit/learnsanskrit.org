@@ -6,15 +6,18 @@
 <h1>{{ readable_query }}</h1>
 {% for segment in segments %}
 <section id="{{ segment.xmlid }}">
+    <a class="jump" href="#{{ segment.xmlid }}">#</a>
     <div class="primary">
     {{ segment.content|safe }}
     </div>
 
+    <div class="translation">
     {% for child_text in corresp[segment.slug] %}
         {% for child in corresp[segment.slug][child_text] %}
             {{ child.content|safe }}
         {% endfor %}
     {% endfor %}
+    </div>
 </section>
 {% endfor %}
 {% endblock %}

@@ -5,6 +5,12 @@
 {% block content %}
 <h1>Texts</h1>
 
+{% with messages = get_flashed_messages() %}
+    {% for m in messages %}
+    <p>{{ m }}</p>
+    {% endfor %}
+{% endwith %}
+
 {% for text in texts %}
 {% set text_url = url_for('texts.title', slug=text.slug) %}
 <section>
@@ -12,7 +18,7 @@
     <ul>
         <li><a href="{{ text_url }}">Main text</a></li>
         {% for c in text.children %}
-        <li><a href="{{ url_for('texts.title', slug=c.slug) }}">{{ c.name }}</a></li>
+        <li><a href="{{ url_for('texts.title', slug=c.slug) }}">{{ c.name }}</a> ({{ c.author.name }})</li>
         {% endfor %}
     </ul>
 </section>
