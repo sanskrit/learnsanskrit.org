@@ -80,7 +80,7 @@ class Text(SimpleBase):
     parent_id = Column(Integer, ForeignKey('text.id'), nullable=True)
 
     language = relationship(Language)
-    author = relationship(Author)
+    author = relationship(Author, backref='texts')
     division = relationship('Division', cascade=CASCADE_ARGS)
     parent = relationship('Text', remote_side=[id], backref='children')
     segments = relationship('Segment', cascade=CASCADE_ARGS, backref='text')

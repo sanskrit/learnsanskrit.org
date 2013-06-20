@@ -4,8 +4,9 @@ from flask import flash, redirect, render_template, url_for
 from sqlalchemy import and_
 
 import lib as L
+from lso import app
 from . import texts
-from .models import Language, Segment, SegSegAssoc as SSA, Text
+from .models import Author, Language, Segment, SegSegAssoc as SSA, Text
 
 LANG = None
 
@@ -48,8 +49,8 @@ def index():
 
 
 @texts.route('/<slug>/')
-def title(slug):
-    """A title page for a given text.
+def text(slug):
+    """The main page of a given text.
 
     :param slug: the text's slug
     """
@@ -69,6 +70,12 @@ def title(slug):
     return render_template('texts/text.html', text=text,
                            divisions=divisions,
                            pages=pages)
+
+
+@app.route('/author/<slug>')
+def author(slug):
+    author = Author.query.filter(Author.slug == slug).first()
+    return render_template('texts/author.html', author=author)
 
 
 @texts.route('/<slug>/<query>')
