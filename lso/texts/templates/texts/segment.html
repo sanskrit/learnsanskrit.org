@@ -20,4 +20,16 @@
     </div>
 </section>
 {% endfor %}
+
+{% macro page_link(q) %}
+    {% if q %}
+    <a href="{{ url_for('.segment', slug=text.slug, query=q.query) }}">{{ q.readable }}</a>
+    {% else %}
+    <a href="{{ url_for('.text', slug=text.slug) }}">(back to title page)</a>
+    {% endif %}
+{% endmacro %}
+
+{{ page_link(prev) }}
+{{ page_link(next) }}
+
 {% endblock %}

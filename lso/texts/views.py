@@ -9,6 +9,8 @@ from . import texts
 from .models import Author, Language, Segment, SegSegAssoc as SSA, Text
 
 LANG = None
+PAGE_SIZE = 5
+MIN_PAGE_SIZE = 3
 
 
 def _flash_missing_text(slug):
@@ -36,6 +38,18 @@ def paginate(items, size, min_size=0):
     return groups
 
 
+def division_paginate(division, size, min_size):
+    last_slug = division.segments[-1].slug.rpartition('.')[2]
+    number = int(last_slug)
+    slugs = ['%s.%s' % (division.slug, n) for n in range(1, number+1)]
+    return paginate(slugs, size, min_size)
+
+
+def peer_divisions(text, cur):
+    divs = text.division.mp.query_descendants().all()
+    return [d for d in divs if d.mp_depth == cur.mp_depth]
+
+
 @texts.route('/')
 def index():
     """A basic index page containing all texts in the collection."""
@@ -59,16 +73,13 @@ def text(slug):
         _flash_missing_text(slug)
         return redirect(url_for('.index'))
 
-    divisions = text.division.mp.query_descendants().all()
+    divs = text.division.mp.query_descendants().all()
     pages = []
-    for d in divisions:
-        last_slug = d.segments[-1].slug.rpartition('.')[2]
-        number = int(last_slug)
-        slugs = ['%s.%s' % (d.slug, n) for n in range(1, number+1)]
-        pages.append(paginate(slugs, 5, min_size=3))
+    for d in divs:
+        pages.append(division_paginate(d, PAGE_SIZE, min_size=MIN_PAGE_SIZE))
 
     return render_template('texts/text.html', text=text,
-                           divisions=divisions,
+                           divs=divs,
                            pages=pages)
 
 
@@ -94,14 +105,15 @@ def segment(slug, query, related=None):
         _flash_missing_text(slug)
         return redirect(url_for('.index'))
 
-    # Segments
+    # Find the segments specified by `query`
     segments = []
     base_query = Segment.query.filter(Segment.text_id == text.id)\
                         .order_by(Segment.position.asc())
-    for g in query.split(','):
+    query_groups = query.split(',')
+    for g in query_groups:
         pre, cur, post = g.partition('-')
 
-        # Slug range
+        # Slug range, e.g. '1.1-1.5'
         if cur:
             results = base_query.filter(Segment.slug.in_([pre, post])).all()
             try:
@@ -116,7 +128,7 @@ def segment(slug, query, related=None):
                 if results:
                     segments.append(results[0])
 
-        # Single slug
+        # Single slug, e.g. '1.2'
         else:
             s = base_query.filter(Segment.slug == g).first()
             if s:
@@ -127,34 +139,100 @@ def segment(slug, query, related=None):
     xmlids = ['.'.join((text.xmlid_prefix, s.slug)) for s in segments]
     slugs = [s.slug for s in segments]
     contents = map(L.transform, (s.content for s in segments))
-    segments = [{'id': i, 'xmlid': x, 'slug': s, 'content': c}
-                for i, x, s, c in zip(ids, xmlids, slugs, contents)]
 
-    # Text correspondence
-    id_to_slug = {s['id']: s['slug'] for s in segments}
+    clean_segments = [{'id': i, 'xmlid': x, 'slug': s, 'content': c}
+                      for i, x, s, c in zip(ids, xmlids, slugs, contents)]
+
+    # Find textual correspondences
+    id_to_slug = {s.id: s.slug for s in segments}
     if related:
-        corresp = defaultdict(lambda: defaultdict(list))
+        clean_corresp = defaultdict(lambda: defaultdict(list))
         for grp in related.split(','):
             # Find corresponding segments
             child = Text.query.filter(Text.slug == grp).one()
             results = SSA.query.filter(SSA.parent_id.in_(ids))\
                                .filter(SSA.text_id==child.id).all()
 
-            # Process and store
+            # Clean up data for display
             for r in results:
                 xml_id = '.'.join((child.slug, r.child.slug))
                 content = L.transform(r.child.content)
                 data = {'id': xml_id, 'content': content}
                 parent_slug = id_to_slug[r.parent_id]
-                corresp[parent_slug][child.slug].append(data)
+                clean_corresp[parent_slug][child.slug].append(data)
     else:
-        corresp = None
+        clean_corresp = None
 
-    # Readable query
+    # Create "prev" and "next" links based on start, end of query
+    if len(query_groups) == 1:
+        first, last = segments[0], segments[-1]
+
+        cur = first.division
+        cur_pages = division_paginate(cur, PAGE_SIZE, MIN_PAGE_SIZE)
+        divs = None
+
+        slug_index_map = {slug: (i, j) for i, page in enumerate(cur_pages)
+                                       for j, slug in enumerate(page)}
+
+        # prev
+        i, j = slug_index_map[first.slug]
+        # prev in current division
+        if i:
+            prev = cur_pages[i-1]
+            if j:
+                prev.extend(cur_pages[i][:j])
+        # prev in previous division
+        else:
+            divs = divs or peer_divisions(text, cur)
+            for k, d in enumerate(divs):
+                if d.id == cur.id:
+                    break
+            if k:
+                pages = division_paginate(divs[k-1], PAGE_SIZE, MIN_PAGE_SIZE)
+                prev = pages[-1]
+            else:
+                prev = None
+
+        # next
+        i, j = slug_index_map[last.slug]
+        next = cur_pages[i][j+1:]
+        # next in current division
+        try:
+            if len(next) < MIN_PAGE_SIZE:
+                next.extend(cur_pages[i+1])
+        except IndexError:
+            pass
+        # next in next division
+        if not next:
+            divs = divs or peer_divisions(text, cur)
+            for k, d in enumerate(divs):
+                if d.id == cur.id:
+                    break
+            try:
+                pages = division_paginate(divs[k+1], PAGE_SIZE, MIN_PAGE_SIZE)
+                next = pages[0]
+            except IndexError:
+                next = None
+
+        # convert to query form
+        if prev:
+            p1, p2 = prev[0], prev[-1]
+            prev = [p1] if p1 == p2 else [p1, p2]
+            prev = {'query': '-'.join(prev), 'readable': ' - '.join(prev)}
+        if next:
+            n1, n2 = next[0], next[-1]
+            next = [n1] if n1 == n2 else [n1, n2]
+            next = {'query': '-'.join(next), 'readable': ' - '.join(next)}
+    else:
+        prev = next = None
+
+    # Rewrite the query in a human-readable form
     readable_query = query.replace('-', ' - ').replace(',', ', ')
     readable_query = '%s %s' % (text.name, readable_query)
 
     return render_template('texts/segment.html', text=text,
                            readable_query=readable_query,
-                           segments=segments,
-                           corresp=corresp)
+                           segments=clean_segments,
+                           corresp=clean_corresp,
+                           prev=prev,
+                           next=next)

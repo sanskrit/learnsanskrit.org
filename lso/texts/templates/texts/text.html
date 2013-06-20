@@ -5,7 +5,7 @@
 {% block content %}
 <h1>{{ text.name }}</h1>
 
-{% for d in divisions %}
+{% for d in divs %}
     <h2>{{ d.slug }}</h2>
     {% set groups = pages[loop.index0] %}
     <ul>
@@ -15,7 +15,6 @@
             <a href="{{ url_for('.segment', slug=text.slug, query=[g[0], g[-1]]|join('-')) }}">{{ g[0] }} - {{ g[-1] }}</a>
         {% else %}
             <a href="{{ url_for('.segment', slug=text.slug, query=g[0]) }}">{{ g[0] }}</a>
-
         {% endif %}
         </li>
     {% endfor %}
