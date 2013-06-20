@@ -172,6 +172,10 @@ class Segment(SimpleBase):
         return '<Segment(%s, %s)>' % (self.id, self.slug)
 
 
+
+
+
+
 Text.division = relationship(Division)
 Division.segments = relationship(Segment,
                                  collection_class=ordering_list('position'),

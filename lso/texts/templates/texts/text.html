@@ -5,18 +5,15 @@
 {% block content %}
 <h1>{{ text.name }}</h1>
 
+{% with p = pages[0][0] %}
+<a class="jumbo invitation btn" href="{{ url_for('.segment', slug=text.slug, query=p.query) }}">Start reading</a>
+{% endwith %}
+
 {% for d in divs %}
     <h2>{{ d.slug }}</h2>
-    {% set groups = pages[loop.index0] %}
     <ul>
-    {% for g in groups %}
-        <li>
-        {% if g|length > 1 %}
-            <a href="{{ url_for('.segment', slug=text.slug, query=[g[0], g[-1]]|join('-')) }}">{{ g[0] }} - {{ g[-1] }}</a>
-        {% else %}
-            <a href="{{ url_for('.segment', slug=text.slug, query=g[0]) }}">{{ g[0] }}</a>
-        {% endif %}
-        </li>
+    {% for p in pages[loop.index0] %}
+        <li><a href="{{ url_for('.segment', slug=text.slug, query=p.query) }}">{{ p.text }}</a></li>
     {% endfor %}
     </ul>
 {% endfor %}

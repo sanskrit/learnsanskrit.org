@@ -50,6 +50,14 @@ def peer_divisions(text, cur):
     return [d for d in divs if d.mp_depth == cur.mp_depth]
 
 
+def page_to_query(page):
+    p1, p2 = page[0], page[-1]
+    if p1 == p2:
+        return {'query': p1, 'text': p1}
+    else:
+        return {'query': '-'.join((p1, p2)), 'text': ' - '.join((p1, p2))}
+
+
 @texts.route('/')
 def index():
     """A basic index page containing all texts in the collection."""
@@ -76,7 +84,9 @@ def text(slug):
     divs = text.division.mp.query_descendants().all()
     pages = []
     for d in divs:
-        pages.append(division_paginate(d, PAGE_SIZE, min_size=MIN_PAGE_SIZE))
+        d_pages = division_paginate(d, PAGE_SIZE, min_size=MIN_PAGE_SIZE)
+        d_pages = map(page_to_query, d_pages)
+        pages.append(d_pages)
 
     return render_template('texts/text.html', text=text,
                            divs=divs,
@@ -216,13 +226,9 @@ def segment(slug, query, related=None):
 
         # convert to query form
         if prev:
-            p1, p2 = prev[0], prev[-1]
-            prev = [p1] if p1 == p2 else [p1, p2]
-            prev = {'query': '-'.join(prev), 'readable': ' - '.join(prev)}
+            prev = page_to_query(prev)
         if next:
-            n1, n2 = next[0], next[-1]
-            next = [n1] if n1 == n2 else [n1, n2]
-            next = {'query': '-'.join(next), 'readable': ' - '.join(next)}
+            next = page_to_query(next)
     else:
         prev = next = None
 
