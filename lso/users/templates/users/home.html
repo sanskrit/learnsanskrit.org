@@ -1,0 +1,9 @@
+{% extends 'general.html' %}
+{% set u = current_user %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<h1>{{ u.email }}</h1>
+<a href="{{ url_for('security.logout') }}">Sign out</a>
+{% endblock %}

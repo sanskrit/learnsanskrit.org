@@ -27,5 +27,10 @@ class LSOBlueprint(Blueprint):
     folder to '/static/blueprint_name' instead of '/url_prefix/static'.
     """
 
+    def __init__(self, name, import_name, **kw):
+        kw['static_folder'] = 'static'
+        kw['template_folder'] = 'templates'
+        Blueprint.__init__(self, name, import_name, **kw)
+
     def make_setup_state(self, *a, **kw):
         return LSOBlueprintSetupState(self, *a, **kw)

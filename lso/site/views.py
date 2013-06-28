@@ -1,17 +1,18 @@
-from flask import render_template, request
+from flask import Blueprint, render_template, request
 from flask.ext.mail import Message
 from lso import app, mail
 
 import forms
-from . import site
+
+bp = Blueprint('site', __name__, static_folder='static', template_folder='templates')
 
 
-@site.route('/about')
+@bp.route('/about')
 def about():
     return render_template('site/about.html')
 
 
-@site.route('/contact', methods=['GET', 'POST'])
+@bp.route('/contact', methods=['GET', 'POST'])
 def contact():
     form = forms.ContactForm()
     if form.validate_on_submit():
@@ -29,12 +30,12 @@ def contact():
         return render_template('site/contact.html', form=form)
 
 
-@site.route('/site')
+@bp.route('/site')
 def index():
     return render_template('site/index.html')
 
 
-@site.route('/settings')
+@bp.route('/settings')
 def settings():
     form = forms.SettingsForm()
     if request.is_xhr:
@@ -43,11 +44,11 @@ def settings():
         return render_template('site/settings.html', form=form)
 
 
-@site.route('/resources')
+@bp.route('/resources')
 def resources():
     return render_template('site/resources.html')
 
 
-@site.route('/source')
+@bp.route('/source')
 def source():
     return render_template('site/source.html')

@@ -10,15 +10,15 @@ from sanskrit import sanscript
 from lso import app, simple_query
 from lso.filters import sa1, sa2
 
-from . import guide as blue
+from .views import bp
 
 
-@blue.context_processor
+@bp.context_processor
 def inject_notes():
     return {'notes': []}
 
 
-@blue.context_processor
+@bp.context_processor
 def inject_functions():
     return {
         'img': img,

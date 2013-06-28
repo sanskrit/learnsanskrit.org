@@ -37,7 +37,7 @@ def recreate(*tables):
 
 @task
 def seed(*blueprints):
-    """Seed tables is the database, by way of their blueprints.
+    """Seed Sanskrit tables.
 
     :param blueprints: the blueprints containing the tables to seed.
     """

@@ -1,6 +1,7 @@
-from flask import Flask
+from flask import Blueprint, Flask
 from flask.ext.assets import Bundle, Environment
 from flask.ext.mail import Mail
+from flask.ext.security import Security, SQLAlchemyUserDatastore
 
 from sanskrit import Context, analyze, query
 import sqlalchemy
@@ -71,20 +72,32 @@ if not app.debug:
     for L in [app.logger, getLogger('sqlalchemy')]:
         L.addHandler(handler)
 
+# Security
+# --------
+from lso.users.models import User, Role
+import database as db
+
+datastore = SQLAlchemyUserDatastore(db, User, Role)
+security = Security(app, datastore)
+
 # Views and blueprints
 # --------------------
 import views
+import importlib
 
-from dicts import dicts
-from guide import guide
-from ref import ref
-from site import site
-from texts import texts
-from tools import tools
 
-app.register_blueprint(dicts, url_prefix='/dict')
-app.register_blueprint(guide, url_prefix='/guide')
-app.register_blueprint(ref, url_prefix='/ref')
-app.register_blueprint(site)
-app.register_blueprint(texts, url_prefix='/texts')
-app.register_blueprint(tools, url_prefix='/tools')
+def register(bp):
+    m = importlib.import_module('lso.%s.views' % bp)
+    for name in dir(m):
+        item = getattr(m, name)
+        if isinstance(item, Blueprint):
+            app.register_blueprint(item)
+
+
+register('dicts')
+register('guide')
+register('ref')
+register('site')
+register('texts')
+register('tools')
+register('users')

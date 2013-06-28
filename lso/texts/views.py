@@ -1,16 +1,19 @@
 from collections import defaultdict
 
-from flask import flash, redirect, render_template, url_for
+from flask import Blueprint, flash, redirect, render_template, url_for
 from sqlalchemy import and_
 
 import lib as L
 from lso import app
-from . import texts
 from .models import Author, Language, Segment, SegSegAssoc as SSA, Text
 
 LANG = None
 PAGE_SIZE = 5
 MIN_PAGE_SIZE = 3
+
+
+bp = Blueprint('texts', __name__, static_folder='static',
+               template_folder='templates', url_prefix='/texts')
 
 
 def _flash_missing_text(slug):
@@ -58,7 +61,7 @@ def page_to_query(page):
         return {'query': '-'.join((p1, p2)), 'text': ' - '.join((p1, p2))}
 
 
-@texts.route('/')
+@bp.route('/')
 def index():
     """A basic index page containing all texts in the collection."""
     global LANG
@@ -70,7 +73,7 @@ def index():
     return render_template('texts/index.html', texts=texts)
 
 
-@texts.route('/<slug>/')
+@bp.route('/<slug>/')
 def text(slug):
     """The main page of a given text.
 
@@ -99,8 +102,8 @@ def author(slug):
     return render_template('texts/author.html', author=author)
 
 
-@texts.route('/<slug>/<query>')
-@texts.route('/<slug>/<query>+<related>')
+@bp.route('/<slug>/<query>')
+@bp.route('/<slug>/<query>+<related>')
 def segment(slug, query, related=None):
     """Query a given text for a group of segments. If related texts are
     listed too, show their corresponding segments.

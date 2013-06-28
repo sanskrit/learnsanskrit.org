@@ -1,8 +1,11 @@
 from flask import redirect, render_template, url_for
 
-import filters
-from . import guide
+from lso.lib import LSOBlueprint
 from .models import Lesson
+
+bp = LSOBlueprint('guide', __name__, url_prefix='/guide')
+
+import filters
 
 
 def lesson_tree(root):
@@ -19,7 +22,7 @@ def lesson_tree(root):
     return units
 
 
-@guide.route('/')
+@bp.route('/')
 def index():
     roots = Lesson.query.filter(Lesson.parent_id==None).all()
     units = lesson_tree(roots[0])
@@ -27,12 +30,12 @@ def index():
     return render_template('guide/index.html', units=units, supp=supp)
 
 
-@guide.route('/help')
+@bp.route('/help')
 def help():
     return render_template('guide/help.html')
 
 
-@guide.route('/<unit>')
+@bp.route('/<unit>')
 def unit(**kwargs):
     unit_slug = kwargs.pop('unit')
 
@@ -45,7 +48,7 @@ def unit(**kwargs):
         return redirect(url_for('guide.index'))
 
 
-@guide.route('/<unit>/<lesson>')
+@bp.route('/<unit>/<lesson>')
 def lesson(**kwargs):
     unit_slug = kwargs.pop('unit')
     lesson_slug = kwargs.pop('lesson')
@@ -75,7 +78,7 @@ def lesson(**kwargs):
                            unit=unit)
 
 
-@guide.route('/<unit>/all')
+@bp.route('/<unit>/all')
 def unit_dump(**kwargs):
     unit_slug = kwargs.pop('unit')
 
@@ -87,7 +90,7 @@ def unit_dump(**kwargs):
         return redirect(url_for('guide.index'))
 
 
-@guide.route('/all')
+@bp.route('/all')
 def guide_dump(**kwargs):
     root = Lesson.query.filter(Lesson.parent_id==None).first()
     units = lesson_tree(root)

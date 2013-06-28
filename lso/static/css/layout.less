@@ -36,7 +36,6 @@ body {
 #top {
     background: @nav-bg;
     left: 0;
-    line-height: 3;
     position: absolute;
     right: 0;
     top: 0;
@@ -46,6 +45,8 @@ body {
         .transition(0.4s);
 
         color: @gray;
+        display: block;
+        float: left;
         outline: none;
         padding: 0 @en-font-size;
         text-decoration: none;
@@ -54,25 +55,24 @@ body {
             background: @nav-hover-bg !important;
             color: #fff !important;
         }
-        &.brand {
-            color: #fff;
-            font-size: 1.5em;
-            line-height: 2;
-        }
     }
-    a {
-        display: block;
-        line-height: 3;
+    a.brand {
+        color: #fff;
+        font-size: 1.5em;
+        line-height: 2;
     }
     li {
         float: left;
+        line-height: 3;
     }
-    ul {
+    ul.main-nav, ul.user-nav {
         list-style: none;
         margin: 0;
         padding: 0;
 
-        &.secondary {
+        &.user-nav {
+            color: #fff;
+            font-family: sans-serif;
             float: right;
         }
     }
@@ -84,6 +84,7 @@ a#settings-link {
     background: lighten(@nav-bg, 10%);
     font-size: @font-size;
     line-height: @height / @font-size;
+    padding: 0 0.5em;
     text-align: center;
 }
 

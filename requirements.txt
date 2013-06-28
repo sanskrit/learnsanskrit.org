@@ -3,9 +3,11 @@ flask-admin
 flask-assets
 flask-mail
 flask-restless
+flask-security
 flask-wtf
 fabric
 pyyaml
+py-bcrypt
 sqlalchemy
 sqlamp
 webassets==dev

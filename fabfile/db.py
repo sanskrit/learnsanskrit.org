@@ -1,6 +1,5 @@
 from fabric.api import *
 
-import lso
 from . import FIRM_YES
 
 
@@ -11,6 +10,7 @@ def create(*blueprints):
     :param blueprints: the blueprints to create. If blank, create all
                        blueprints.
     """
+    import lso
     lso.database.create(*blueprints)
 
 
@@ -22,6 +22,7 @@ def drop(*blueprints):
                        blueprints.
     """
     if confirm_drop(*blueprints):
+        import lso
         lso.database.drop(*blueprints)
 
 
@@ -42,6 +43,7 @@ def seed(*blueprints):
 
     :param blueprints: the blueprints to seed.
     """
+    import lso
     lso.database.seed(*blueprints)
 
 

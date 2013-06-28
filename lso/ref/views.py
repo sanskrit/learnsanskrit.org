@@ -8,14 +8,16 @@
 
 from collections import OrderedDict
 
-from flask import g, render_template, request, url_for
+from flask import Blueprint, g, render_template, request, url_for
 from sanskrit import sanscript, schema as X, sounds
 
 from lso import ctx, simple_analyzer, simple_query
 from lso.lib.readable import Readable
-from . import ref
 from ..database import session
 from ..forms import QueryForm
+
+bp = Blueprint('ref', __name__, static_folder='static',
+               template_folder='templates', url_prefix='/ref')
 
 
 # Helper functions
@@ -41,7 +43,7 @@ def _root_result(root, results, lookup):
         'url': url_for('.root', name=name, from_script=sanscript.SLP1),
         'description': g.readable.root_abbr(root),
         'children': []
-        }
+    }
 
     results.append(datum)
     lookup[id] = datum
@@ -64,7 +66,7 @@ def _stem_result(stem, results, lookup):
         'name': name,
         'description': g.readable.stem_abbr(stem),
         'children': []
-        }
+    }
 
     if pos_id == X.Tag.NOUN:
         genders = gender_group[stem.genders_id]
@@ -104,7 +106,7 @@ def _form_result(form, results, lookup):
         'name': sounds.Term(form.name).simplify(),
         'description': g.readable.form_abbr(form),
         'children': []
-        }
+    }
 
     Tag = X.Tag
     if pos_id in (Tag.NOUN, Tag.PRONOUN, Tag.ADJECTIVE, Tag.PARTICIPLE):
@@ -142,7 +144,7 @@ def query(q):
 # Blueprint functions
 # -------------------
 
-@ref.before_request
+@bp.before_request
 def make_readable():
     """Create a :class:`Readable` to translate a form's database IDs
     to a readable form.
@@ -150,7 +152,7 @@ def make_readable():
     g.readable = Readable(ctx)
 
 
-@ref.route('/')
+@bp.route('/')
 def index():
     """Display a basic query form."""
     query_form = QueryForm(request.args, csrf_enabled=False)
@@ -171,7 +173,7 @@ def index():
     return render_template('ref/index.html', **data)
 
 
-@ref.route('/nouns-<from_script>/<name>-<genders>')
+@bp.route('/nouns-<from_script>/<name>-<genders>')
 def noun(name, from_script, genders=None):
     """Display a noun paradigm."""
     name = to_slp1(name, from_script)
@@ -181,11 +183,11 @@ def noun(name, from_script, genders=None):
         'name': name,
         'paradigm': paradigm,
         'classes': paradigm_colors(paradigm),
-        }
+    }
     return render_template('ref/nominal.html', **data)
 
 
-@ref.route('/pronouns-<from_script>/<name>')
+@bp.route('/pronouns-<from_script>/<name>')
 def pronoun(name, from_script, genders=None):
     """Display a pronoun paradigm."""
     name = to_slp1(name, from_script)
@@ -195,15 +197,17 @@ def pronoun(name, from_script, genders=None):
         'name': name,
         'paradigm': paradigm,
         'classes': paradigm_colors(paradigm),
-        }
+    }
     return render_template('ref/nominal.html', **data)
 
 
-@ref.route('/root-<from_script>/<name>')
+@bp.route('/root-<from_script>/<name>')
 def root(name, from_script):
     """Display a summary of a root's forms"""
     name = to_slp1(name, from_script)
     forms = simple_query.verb_summary(name)
+
+    print forms
 
     labels = {
         'pres': 'Present',
@@ -240,7 +244,7 @@ def root(name, from_script):
     return render_template('ref/root.html', **data)
 
 
-@ref.route('/root-<from_script>/<name>/<mode>-<voice>')
+@bp.route('/root-<from_script>/<name>/<mode>-<voice>')
 def verb_paradigm(name, from_script, mode, voice):
     """Display a verb paradigm."""
     name = to_slp1(name, from_script)

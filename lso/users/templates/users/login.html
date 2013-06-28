@@ -1,0 +1,33 @@
+{% extends 'general.html' %}
+
+{% block title %}Sign in{% endblock %}
+
+{% block content %}
+
+<div class="grid">
+<div class="inset span6">
+    <h1>Sign up</h1>
+    <p>Create an account to get more out of the site:</p>
+    {% set form = signup_form %}
+    <form action="{{ url_for('security.login') }}" method="POST">
+        {{ form.csrf_token }}
+        {{ form.email(placeholder='Email address') }}
+        {{ form.password(placeholder='Password') }}
+        {{ form.subscribe }}
+        {{ form.subscribe.label }}
+        {{ form.submit(class='jumbo btn') }}
+    </form>
+</div>
+<div class="span6">
+    <h1>Sign in</h1>
+    {% set form = login_form %}
+    <form action="{{ url_for('security.login') }}" method="POST">
+        {{ form.csrf_token }}
+        {{ form.email(placeholder='Email address') }}
+        {{ form.password(placeholder='Password') }}
+        {{ form.submit }}
+    </form>
+</div>
+</div>
+
+{% endblock %}

@@ -3,19 +3,21 @@ from flask import redirect, render_template, request, url_for, jsonify
 from sanskrit import sanscript as S
 
 from lso import app
-from ..database import session
+from lso.lib import LSOBlueprint
 from ..forms import QueryForm
-from . import dicts
 from .lib import mw_transform
 from .models import MonierEntry
 
 
-@dicts.route('/')
+bp = LSOBlueprint('dicts', __name__, url_prefix='/dicts')
+
+
+@bp.route('/')
 def index():
     return render_template('dicts/index.html')
 
 
-@dicts.route('/mw/')
+@bp.route('/mw/')
 def mw():
     form = QueryForm(request.args, csrf_enabled=False)
 
@@ -29,14 +31,15 @@ def mw():
         for key in results:
             results[key] = [mw_transform(x, to_script) for x in results[key]]
 
-        return render_template('dicts/mw/index.html', form=form,
-                                                      to_script=to_script,
-                                                      results=results)
+        return render_template('dicts/mw/index.html',
+                               form=form,
+                               to_script=to_script,
+                               results=results)
     else:
         return render_template('dicts/mw/index.html', form=form)
 
 
-@dicts.route('/mw/q-<from_script>/<q>')
+@bp.route('/mw/q-<from_script>/<q>')
 def mw_pretty(from_script, q):
     form = QueryForm(csrf_enabled=False)
     to_script = S.DEVANAGARI
@@ -50,11 +53,11 @@ def mw_pretty(from_script, q):
         results[key] = [mw_transform(x, to_script) for x in results[key]]
 
     return render_template('dicts/mw/index.html', form=form,
-                                                  to_script=to_script,
-                                                  results=results)
+                           to_script=to_script,
+                           results=results)
 
 
-@dicts.route('/mw/works-and-authors')
+@bp.route('/mw/works-and-authors')
 def mw_works():
     return render_template('dicts/mw/works-and-authors.html')
 
