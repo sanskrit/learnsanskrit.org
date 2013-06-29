@@ -29,7 +29,7 @@
     {% if q %}
     <li><a id="{{ id }}" class="page-link" href="{{ url_for('.segment', slug=text.slug, query=q.query, related=related) }}">{{ q.readable }}</a></li>
     {% else %}
-    <li><a id="{{ id }}" class="page-link" href="{{ url_for('.text', slug=text.slug) }}">(back to title page)</a></li>
+    <li><a id="{{ id }}" class="page-link" href="{{ url_for('.text', slug=text.slug) }}">(title page)</a></li>
     {% endif %}
 {% endmacro %}
 

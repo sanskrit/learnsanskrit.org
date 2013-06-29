@@ -93,7 +93,7 @@
             this.$entries = $('#mw-entries');
 
             // Normal abbreviations, like 'nom.'
-            $.getJSON('/dict/static/data/mw-abbr.json', function(data) {
+            $.getJSON('/static/dict/data/mw-abbr.json', function(data) {
                 self.abbr = data;
             });
 

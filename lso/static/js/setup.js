@@ -12,7 +12,6 @@ $(document).on('click', 'a[href^="#"]', function(e) {
     e.preventDefault();
     var $this = $(this),
         id = $this.attr('href').replace(/\./g, '\\.');
-    console.log('animate');
     $('html, body').stop().animate({
         scrollTop: $(id).position().top
     }, 500);

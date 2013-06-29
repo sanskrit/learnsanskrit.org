@@ -261,13 +261,16 @@ def segment(slug, query, related=None):
     :param related: if specified, a CSL of the slugs of related texts.
     """
 
+    # Main text
     text = Text.query.filter(Text.slug == slug).first()
     if text is None:
         _flash_missing_text(slug)
         return redirect(url_for('.index'))
 
+    # Data
     data = segments_data(text, slug, query, related)
 
+    # Child texts
     children = Text.query.filter(Text.parent_id == text.id).all()
     data['children'] = children
 

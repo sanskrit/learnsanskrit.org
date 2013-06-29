@@ -71,7 +71,7 @@
                 readable = a.readable;
             } else {
                 url = '/texts/' + a.text;
-                readable = '(back to title page)';
+                readable = '(title page)';
             }
             $el.attr('href', url);
             $el.text(readable);
@@ -88,6 +88,19 @@
         render: function() {
             this.$el.text(this.model.get('title'));
             return this;
+        }
+    });
+
+    // Router
+    // ------
+
+    window.TextRouter = Backbone.Router.extend({
+        routes: {
+            'texts/*query': 'page'
+        },
+
+        page: function(query) {
+            LSO.textApp.query(query);
         }
     });
 
@@ -136,7 +149,7 @@
             var url = $(e.currentTarget).attr('href');
             if (is_segment(url)) {
                 e.preventDefault();
-                this.query(url);
+                LSO.textRouter.navigate(url, {'trigger': true});
             }
         },
 
@@ -155,7 +168,7 @@
         // Fetch data from the server and store it in the appropriate models.
         query: function(query) {
             var self = this;
-            $.getJSON('/api' + query, function(data) {
+            $.getJSON('/api/texts/' + query, function(data) {
 
                 var prev = data['prev'] || {query: null},
                     next = data['next'] || {query: null};
@@ -172,6 +185,7 @@
                     x['corresp'] = corresp[x.slug] || {};
                     return x;
                 });
+
                 self.collection.reset(segments);
             });
         }
@@ -182,5 +196,8 @@
 $(function() {
     // Remove autoscroll for same-page links
     $(document).off('click', 'a[href^="#"]');
-    var app = new TextApp({ el: $('article') });
+
+    LSO.textApp = new TextApp({ el: $('article') });
+    LSO.textRouter = new TextRouter();
+    Backbone.history.start({ pushState: true });
 });
