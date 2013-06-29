@@ -34,7 +34,13 @@
         '<section id="<%= xmlid %>" class="segment">',
         '    <a class="jump" href="#<%= xmlid %>">#</a>',
         '    <div class="primary"><%= content %></div>',
-        '    <div class="translation"></div>',
+        '    <div class="translation">',
+        '        <% _.each(corresp, function(c_text) { %>',
+        '        <% _.each(c_text, function(c_seg) { %>',
+        '        <%= c_seg.content %>',
+        '        <% }); %>',
+        '        <% }); %>',
+        '    </div>',
         '</section>'
     ].join('');
 
@@ -149,7 +155,12 @@
                 self.prevLink.set(prev);
                 self.nextLink.set(next);
 
-                var segments = data['segments'];
+                var segments = data['segments'],
+                    corresp = data['corresp'] || {};
+                segments = _.map(segments, function(x) {
+                    x['corresp'] = corresp[x.slug] || {};
+                    return x;
+                });
                 self.collection.reset(segments);
             });
         }
