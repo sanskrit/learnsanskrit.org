@@ -36,7 +36,7 @@
 <div id="text-panel">
     <ul id="child-texts">
     {% for c in children %}
-        <li><a data-slug="{{ c.slug }}" class="child-link" href="{{ url_for('.segment', slug=text.slug, query=query, related=c.related) }}">{{ c.slug }}</a><li>
+        <li><a data-id="{{ c.id }}" data-slug="{{ c.slug }}" class="child-link" href="{{ url_for('.segment', slug=text.slug, query=query, related=c.related) }}">{{ c.slug }}</a><li>
     {% endfor %}
     </ul>
     <ul id="page-links">

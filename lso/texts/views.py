@@ -103,6 +103,37 @@ def author(slug):
     return render_template('texts/author.html', author=author)
 
 
+# Segment data
+# ~~~~~~~~~~~~
+
+def child_segments_data(child_slug, parent_ids):
+    """
+
+    :param child_slug: slug for the child text
+    :param parent_ids: IDs of parent segments
+    """
+    data = defaultdict(lambda: defaultdict(list))
+
+    # Find corresponding segments
+    child = Text.query.filter(Text.slug == child_slug).one()
+    results = SSA.query.filter(SSA.parent_id.in_(parent_ids))\
+                       .filter(SSA.text_id==child.id).all()
+
+    # Clean up data for display
+    for r in results:
+        seg = r.child
+        xml_id = '.'.join((child.xmlid_prefix, seg.slug))
+        content = L.transform(seg.content)
+        datum = {
+            'id': seg.id,
+            'slug': seg.slug,
+            'xmlid': xml_id,
+            'content': content}
+        data[r.parent_id][child_slug].append(datum)
+
+    return data
+
+
 def segments_data(text, slug, query, related):
     # Find the segments specified by `query`
     segments = []
@@ -147,18 +178,10 @@ def segments_data(text, slug, query, related):
     if related:
         clean_corresp = defaultdict(lambda: defaultdict(list))
         for grp in related:
-            # Find corresponding segments
-            child = Text.query.filter(Text.slug == grp).one()
-            results = SSA.query.filter(SSA.parent_id.in_(ids))\
-                               .filter(SSA.text_id==child.id).all()
+            data = child_segments_data(grp, ids)
+            for id in data:
+                clean_corresp[id_to_slug[id]] = data[id]
 
-            # Clean up data for display
-            for r in results:
-                xml_id = '.'.join((child.slug, r.child.slug))
-                content = L.transform(r.child.content)
-                data = {'id': xml_id, 'content': content}
-                parent_slug = id_to_slug[r.parent_id]
-                clean_corresp[parent_slug][child.slug].append(data)
     else:
         clean_corresp = None
 
@@ -237,18 +260,6 @@ def segments_data(text, slug, query, related):
     )
 
 
-@app.route('/api/texts/<slug>/<query>')
-@app.route('/api/texts/<slug>/<query>+<list:related>')
-def segment_api(slug, query, related=None):
-    text = Text.query.filter(Text.slug == slug).first()
-    if text is None:
-        return jsonify({})
-
-    data = segments_data(text, slug, query, related)
-    data['text'] = {'slug': text.slug}
-    return jsonify(data)
-
-
 @bp.route('/<slug>/<query>')
 @bp.route('/<slug>/<query>+<list:related>')
 def segment(slug, query, related=None):
@@ -283,3 +294,30 @@ def segment(slug, query, related=None):
         c.related = c.related or None
 
     return render_template('texts/segment.html', **data)
+
+
+# API endpoints
+# ~~~~~~~~~~~~~
+
+@app.route('/api/texts/<slug>/<query>')
+@app.route('/api/texts/<slug>/<query>+<list:related>')
+def segment_api(slug, query, related=None):
+    """API for querying segments.
+
+    :param slug: the text's slug
+    :param query: the query to perform
+    :param related: if specified, a list of the slugs of related texts.
+    """
+    text = Text.query.filter(Text.slug == slug).first()
+    if text is None:
+        return jsonify({})
+
+    data = segments_data(text, slug, query, related)
+    data['text'] = {'slug': text.slug}
+    return jsonify(data)
+
+
+@app.route('/api/texts-child/<slug>/<list:ids>')
+def child_segment_api(slug, ids):
+
+    return jsonify(child_segments_data(slug, ids))

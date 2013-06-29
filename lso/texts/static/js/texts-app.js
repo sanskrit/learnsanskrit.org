@@ -86,7 +86,9 @@
 
     var TitleView = ModelView.extend({
         render: function() {
-            this.$el.text(this.model.get('title'));
+            var title = this.model.get('title');
+            document.title = title;
+            this.$el.text(title);
             return this;
         }
     });
@@ -117,15 +119,15 @@
             new PageLinkView({ el: $('#next-link'), model: this.nextLink });
             new TitleView({ el: $('#readable-query'), model: this.title });
 
-            this.collection = new Segments();
-            this.collection.on('all', this.render, this);
+            this.segments = new Segments();
+            this.segments.on('all', this.render, this);
 
             this.$segments = $('#segments');
         },
 
         events: {
             'click a.jump': 'bookmark',
-            'click a.child-link': 'get_children',
+            'click a.child-link': 'get_child_segments',
             'click a.page-link': 'get_page'
         },
 
@@ -139,9 +141,10 @@
             }, 500);
         },
 
-        // Get child segments
-        get_children: function(e) {
-            console.log('get_children');
+        get_child_segments: function(e) {
+            e.preventDefault();
+            var $link = $(e.currentTarget);
+            this.query_child_segments($link.data('slug'));
         },
 
         // Get a page of segments
@@ -155,8 +158,8 @@
 
         render: function() {
             var data = [];
-            this.collection.each(function(entry) {
-                var view = new SegmentView({ model: entry }).render();
+            this.segments.each(function(model) {
+                var view = new SegmentView({ model: model }).render();
                 data.push(view.$el.html());
             });
             this.$segments
@@ -186,9 +189,28 @@
                     return x;
                 });
 
-                self.collection.reset(segments);
+                self.segments.reset(segments);
             });
-        }
+        },
+
+        // Fetch child segments from the server and store them appropriately.
+        query_child_segments: function(slug) {
+            var parent_ids = this.segments.map(function(s) {
+                return s.get('id');
+            }),
+                parent_ids_slug = parent_ids.join(','),
+                url = '/api/texts-child/' + slug + '/' + parent_ids_slug;
+
+            var self = this;
+            $.getJSON(url, function(data) {
+                var segments2 = self.segments.map(function(s) {
+                    var corresp = s.get('corresp');
+                    _.extend(corresp, data[s.id]);
+                    return s;
+                });
+                self.segments.reset(segments2);
+            });
+        },
     });
 
 }(LSO = window.LSO || {}));

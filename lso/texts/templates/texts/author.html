@@ -5,8 +5,10 @@
 {% block content %}
 <h1>{{ author.name }}</h1>
 
+<ul>
 {% for t in author.texts %}
-    <a href="{{ url_for('texts.text', slug=t.slug) }}">{{ t.name }}</a>
+    <li><a href="{{ url_for('texts.text', slug=t.slug) }}">{{ t.name }}</a></li>
 {% endfor %}
+</ul>
 
 {% endblock %}
