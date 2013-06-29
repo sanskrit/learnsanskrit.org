@@ -180,10 +180,12 @@ def segments_data(text, slug, query, related):
         for grp in related:
             data = child_segments_data(grp, ids)
             for id in data:
-                clean_corresp[id_to_slug[id]] = data[id]
+                clean_corresp[id_to_slug[id]][grp] = data[id][grp]
 
     else:
         clean_corresp = None
+
+    print clean_corresp
 
     # Create "prev" and "next" links based on start, end of query
     if len(query_groups) == 1:
