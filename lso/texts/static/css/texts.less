@@ -18,8 +18,19 @@ div.primary {
 
 }
 
-div.translation {
+div.translations {
     padding: 0 0 0 3em;
+}
+
+div.translation {
+    .transition(background 0.2s);
+
+    border-left: 5px @light-gray solid;
+    padding-left: 1em;
+
+    &.hi {
+        background: @light-gray;
+    }
 }
 
 a.jump {
@@ -82,6 +93,24 @@ div#segment-view {
 }
 
 
+#prev-link:before {
+    content: "« ";
+}
+
+#next-link:after {
+    content: " »";
+}
+
+a.child-link, a.page-link {
+    display: block;
+    height: @panel-height;
+    padding: 0 0.5em;
+}
+
+a.child-link.active {
+    font-weight: bold;
+}
+
 a.page-link {
     @f: 1em;
     font-size: @f;
@@ -90,11 +119,4 @@ a.page-link {
     text-align: center;
     line-height: @panel-height / @f;
     width: 8em;
-}
-
-
-a.child-link, a.page-link {
-    display: block;
-    height: @panel-height;
-    padding: 0 0.5em;
 }

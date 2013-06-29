@@ -185,8 +185,6 @@ def segments_data(text, slug, query, related):
     else:
         clean_corresp = None
 
-    print clean_corresp
-
     # Create "prev" and "next" links based on start, end of query
     if len(query_groups) == 1:
         first, last = segments[0], segments[-1]

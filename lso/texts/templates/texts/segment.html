@@ -14,11 +14,13 @@
         {{ segment.content|safe }}
         </div>
 
-        <div class="translation">
+        <div class="translations">
         {% for child_text in corresp[segment.slug] %}
+            <div class="translation">
             {% for child in corresp[segment.slug][child_text] %}
                 {{ child.content|safe }}
             {% endfor %}
+            </div>
         {% endfor %}
         </div>
     </section>

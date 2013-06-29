@@ -34,10 +34,10 @@
         '<section id="<%= xmlid %>" class="segment">',
         '    <a class="jump" href="#<%= xmlid %>">#</a>',
         '    <div class="primary"><%= content %></div>',
-        '    <div class="translation">',
-        '        <% _.each(corresp, function(c_text) { %>',
-        '        <% _.each(c_text, function(c_seg) { %>',
-        '        <%= c_seg.content %>',
+        '    <div class="translations">',
+        '        <% _.each(corresp, function(c_segs, c_slug) { %>',
+        '        <% _.each(c_segs, function(c_seg) { %>',
+        '        <div class="translation trans-<%= c_slug %>"><%= c_seg.content %></div>',
         '        <% }); %>',
         '        <% }); %>',
         '    </div>',
@@ -66,7 +66,7 @@
             if (a.query) {
                 url = '/texts/' + a.text + '/' + a.query;
                 if (a.related) {
-                    url += '+' + a.related;
+                    url += '+' + a.related.join(',');
                 }
                 readable = a.readable;
             } else {
@@ -128,6 +128,8 @@
         events: {
             'click a.jump': 'bookmark',
             'click a.child-link': 'get_child_segments',
+            'mouseover a.child-link': 'hi_child_segments_on',
+            'mouseout a.child-link': 'hi_child_segments_off',
             'click a.page-link': 'get_page'
         },
 
@@ -143,8 +145,18 @@
 
         get_child_segments: function(e) {
             e.preventDefault();
-            var $link = $(e.currentTarget);
-            this.query_child_segments($link.data('slug'));
+            var $link = $(e.currentTarget),
+                slug = $link.data('slug'),
+                selector = '.trans-' + slug;
+
+
+            $link.toggleClass('active');
+            if ($link.data('queried')) {
+                $(selector).fadeToggle();
+            } else {
+                this.query_child_segments(slug);
+                $link.data('queried', true);
+            }
         },
 
         // Get a page of segments
@@ -154,6 +166,20 @@
                 e.preventDefault();
                 LSO.textRouter.navigate(url, {'trigger': true});
             }
+        },
+
+        hi_child_segments: function(e, leaving) {
+            var slug = $(e.currentTarget).data('slug'),
+                selector = '.trans-' + slug;
+            $(selector).toggleClass('hi', leaving);
+        },
+
+        hi_child_segments_on: function(e) {
+            this.hi_child_segments(e, true);
+        },
+
+        hi_child_segments_off: function(e) {
+            this.hi_child_segments(e, false);
         },
 
         render: function() {
@@ -210,7 +236,7 @@
                 });
                 self.segments.reset(segments2);
             });
-        },
+        }
     });
 
 }(LSO = window.LSO || {}));
