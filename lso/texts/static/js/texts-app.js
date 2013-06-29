@@ -112,12 +112,23 @@
 
         events: {
             'click a.jump': 'bookmark',
+            'click a.child-link': 'get_children',
             'click a.page-link': 'get_page'
         },
 
         // Bookmark a given segment
         bookmark: function(e) {
-            console.log('bookmark');
+            e.preventDefault();
+            var $this = $(e.currentTarget),
+                id = $this.attr('href').replace(/\./g, '\\.');
+            $('#segment-view').stop().animate({
+                scrollTop: $(id).position().top
+            }, 500);
+        },
+
+        // Get child segments
+        get_children: function(e) {
+            console.log('get_children');
         },
 
         // Get a page of segments
@@ -169,5 +180,7 @@
 }(LSO = window.LSO || {}));
 
 $(function() {
+    // Remove autoscroll for same-page links
+    $(document).off('click', 'a[href^="#"]');
     var app = new TextApp({ el: $('article') });
 });

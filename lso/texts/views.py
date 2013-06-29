@@ -146,7 +146,7 @@ def segments_data(text, slug, query, related):
     id_to_slug = {s.id: s.slug for s in segments}
     if related:
         clean_corresp = defaultdict(lambda: defaultdict(list))
-        for grp in related.split(','):
+        for grp in related:
             # Find corresponding segments
             child = Text.query.filter(Text.slug == grp).one()
             results = SSA.query.filter(SSA.parent_id.in_(ids))\
@@ -227,6 +227,7 @@ def segments_data(text, slug, query, related):
 
     return dict(
         text=text,
+        query=query,
         readable_query=readable_query,
         segments=clean_segments,
         corresp=clean_corresp,
@@ -237,7 +238,7 @@ def segments_data(text, slug, query, related):
 
 
 @app.route('/api/texts/<slug>/<query>')
-@app.route('/api/texts/<slug>/<query>+<related>')
+@app.route('/api/texts/<slug>/<query>+<list:related>')
 def segment_api(slug, query, related=None):
     text = Text.query.filter(Text.slug == slug).first()
     if text is None:
@@ -249,7 +250,7 @@ def segment_api(slug, query, related=None):
 
 
 @bp.route('/<slug>/<query>')
-@bp.route('/<slug>/<query>+<related>')
+@bp.route('/<slug>/<query>+<list:related>')
 def segment(slug, query, related=None):
     """Query a given text for a group of segments. If related texts are
     listed too, show their corresponding segments.
@@ -266,4 +267,16 @@ def segment(slug, query, related=None):
         return redirect(url_for('.index'))
 
     data = segments_data(text, slug, query, related)
+
+    children = Text.query.filter(Text.parent_id == text.id).all()
+    data['children'] = children
+
+    related = related or []
+    for c in children:
+        if c.slug in related:
+            c.related = [r for r in related if r != c.slug]
+        else:
+            c.related = related + [c.slug]
+        c.related = c.related or None
+
     return render_template('texts/segment.html', **data)

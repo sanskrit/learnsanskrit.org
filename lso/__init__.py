@@ -13,6 +13,7 @@ try:
 except ImportError:
     pass
 
+
 # Assets
 # ------
 assets = Environment(app)
@@ -42,13 +43,16 @@ js = Bundle(
             output='gen/scripts.js')
 assets.register('all-js', js)
 
+
 # Admin
 # -----
 import admin
 
+
 # Mail
 # ----
 mail = Mail(app)
+
 
 # Sanskrit
 # --------
@@ -59,6 +63,7 @@ try:
 except sqlalchemy.exc.ProgrammingError:
     simple_query = None
     simple_analyzer = None
+
 
 # Logging
 # -------
@@ -72,6 +77,7 @@ if not app.debug:
     for L in [app.logger, getLogger('sqlalchemy')]:
         L.addHandler(handler)
 
+
 # Security
 # --------
 from lso.users.models import User, Role
@@ -79,6 +85,13 @@ import database as db
 
 datastore = SQLAlchemyUserDatastore(db, User, Role)
 security = Security(app, datastore)
+
+
+# Converters
+# ----------
+from lso.lib import converters
+app.url_map.converters['list'] = converters.ListConverter
+
 
 # Views and blueprints
 # --------------------

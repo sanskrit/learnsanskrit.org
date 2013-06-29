@@ -27,15 +27,22 @@
 
 {% macro page_link(q, id) %}
     {% if q %}
-    <a id="{{ id }}" class="page-link" href="{{ url_for('.segment', slug=text.slug, query=q.query, related=related) }}">{{ q.readable }}</a>
+    <li><a id="{{ id }}" class="page-link" href="{{ url_for('.segment', slug=text.slug, query=q.query, related=related) }}">{{ q.readable }}</a></li>
     {% else %}
-    <a id="{{ id }}" class="page-link" href="{{ url_for('.text', slug=text.slug) }}">(back to title page)</a>
+    <li><a id="{{ id }}" class="page-link" href="{{ url_for('.text', slug=text.slug) }}">(back to title page)</a></li>
     {% endif %}
 {% endmacro %}
 
 <div id="text-panel">
-    {{ page_link(prev, 'prev-link') }}
-    {{ page_link(next, 'next-link') }}
+    <ul id="child-texts">
+    {% for c in children %}
+        <li><a data-slug="{{ c.slug }}" class="child-link" href="{{ url_for('.segment', slug=text.slug, query=query, related=c.related) }}">{{ c.slug }}</a><li>
+    {% endfor %}
+    </ul>
+    <ul id="page-links">
+        {{ page_link(prev, 'prev-link') }}
+        {{ page_link(next, 'next-link') }}
+    </ul>
 </div>
 </div>
 
