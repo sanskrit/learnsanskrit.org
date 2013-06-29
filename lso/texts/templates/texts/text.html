@@ -1,4 +1,4 @@
-{% extends 'general.html' %}
+{% extends 'texts/layout.html' %}
 
 {% block title %}{{ text.name }}{% endblock %}
 
@@ -13,7 +13,7 @@
     <h2>{{ d.slug }}</h2>
     <ul>
     {% for p in pages[loop.index0] %}
-        <li><a href="{{ url_for('.segment', slug=text.slug, query=p.query) }}">{{ p.text }}</a></li>
+        <li><a href="{{ url_for('.segment', slug=text.slug, query=p.query) }}">{{ p.readable }}</a></li>
     {% endfor %}
     </ul>
 {% endfor %}

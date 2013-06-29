@@ -1,11 +1,13 @@
-{% extends 'general.html' %}
+{% extends 'texts/layout.html' %}
 
 {% block title %}{{ readable_query }}{% endblock %}
 
 {% block content %}
-<h1>{{ readable_query }}</h1>
+<h1 id="readable-query">{{ readable_query }}</h1>
+
+<div id="segments">
 {% for segment in segments %}
-<section id="{{ segment.xmlid }}">
+<section id="{{ segment.xmlid }}" class="segment">
     <a class="jump" href="#{{ segment.xmlid }}">#</a>
     <div class="primary">
     {{ segment.content|safe }}
@@ -20,16 +22,17 @@
     </div>
 </section>
 {% endfor %}
+</div>
 
-{% macro page_link(q) %}
+{% macro page_link(q, id) %}
     {% if q %}
-    <a href="{{ url_for('.segment', slug=text.slug, query=q.query) }}">{{ q.text }}</a>
+    <a id="{{ id }}" class="page-link" href="{{ url_for('.segment', slug=text.slug, query=q.query, related=related) }}">{{ q.readable }}</a>
     {% else %}
-    <a href="{{ url_for('.text', slug=text.slug) }}">(back to title page)</a>
+    <a id="{{ id }}" class="page-link" href="{{ url_for('.text', slug=text.slug) }}">(back to title page)</a>
     {% endif %}
 {% endmacro %}
 
-{{ page_link(prev) }}
-{{ page_link(next) }}
+{{ page_link(prev, 'prev-link') }}
+{{ page_link(next, 'next-link') }}
 
 {% endblock %}

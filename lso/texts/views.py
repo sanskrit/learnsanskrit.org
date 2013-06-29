@@ -1,6 +1,7 @@
 from collections import defaultdict
 
-from flask import Blueprint, flash, redirect, render_template, url_for
+from flask import (Blueprint, flash, redirect, render_template, url_for,
+                   jsonify)
 from sqlalchemy import and_
 
 import lib as L
@@ -56,9 +57,9 @@ def peer_divisions(text, cur):
 def page_to_query(page):
     p1, p2 = page[0], page[-1]
     if p1 == p2:
-        return {'query': p1, 'text': p1}
+        return {'query': p1, 'readable': p1}
     else:
-        return {'query': '-'.join((p1, p2)), 'text': ' - '.join((p1, p2))}
+        return {'query': '-'.join((p1, p2)), 'readable': ' - '.join((p1, p2))}
 
 
 @bp.route('/')
@@ -102,22 +103,7 @@ def author(slug):
     return render_template('texts/author.html', author=author)
 
 
-@bp.route('/<slug>/<query>')
-@bp.route('/<slug>/<query>+<related>')
-def segment(slug, query, related=None):
-    """Query a given text for a group of segments. If related texts are
-    listed too, show their corresponding segments.
-
-    :param slug: the text's slug
-    :param query: the segment query to perform. This is a CSL of slug
-                  groups, e.g. '1.2', '1.1-1.5', and so on.
-    :param related: if specified, a CSL of the slugs of related texts.
-    """
-    text = Text.query.filter(Text.slug == slug).first()
-    if text is None:
-        _flash_missing_text(slug)
-        return redirect(url_for('.index'))
-
+def segments_data(text, slug, query, related):
     # Find the segments specified by `query`
     segments = []
     base_query = Segment.query.filter(Segment.text_id == text.id)\
@@ -239,9 +225,45 @@ def segment(slug, query, related=None):
     readable_query = query.replace('-', ' - ').replace(',', ', ')
     readable_query = '%s %s' % (text.name, readable_query)
 
-    return render_template('texts/segment.html', text=text,
-                           readable_query=readable_query,
-                           segments=clean_segments,
-                           corresp=clean_corresp,
-                           prev=prev,
-                           next=next)
+    return dict(
+        text=text,
+        readable_query=readable_query,
+        segments=clean_segments,
+        corresp=clean_corresp,
+        prev=prev,
+        next=next,
+        related=related
+    )
+
+
+@app.route('/api/texts/<slug>/<query>')
+@app.route('/api/texts/<slug>/<query>+<related>')
+def segment_api(slug, query, related=None):
+    text = Text.query.filter(Text.slug == slug).first()
+    if text is None:
+        return jsonify({})
+
+    data = segments_data(text, slug, query, related)
+    data['text'] = {'slug': text.slug}
+    return jsonify(data)
+
+
+@bp.route('/<slug>/<query>')
+@bp.route('/<slug>/<query>+<related>')
+def segment(slug, query, related=None):
+    """Query a given text for a group of segments. If related texts are
+    listed too, show their corresponding segments.
+
+    :param slug: the text's slug
+    :param query: the segment query to perform. This is a CSL of slug
+                  groups, e.g. '1.2', '1.1-1.5', and so on.
+    :param related: if specified, a CSL of the slugs of related texts.
+    """
+
+    text = Text.query.filter(Text.slug == slug).first()
+    if text is None:
+        _flash_missing_text(slug)
+        return redirect(url_for('.index'))
+
+    data = segments_data(text, slug, query, related)
+    return render_template('texts/segment.html', **data)
