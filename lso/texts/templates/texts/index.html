@@ -13,7 +13,7 @@
 
 {% for text in texts %}
 {% set text_url = url_for('.text', slug=text.slug) %}
-<section>
+<section class="text">
     <h2><a href="{{ text_url }}">{{ text.name }}</a></h2>
     by <a href="{{ url_for('author', slug=text.author.slug) }}">{{ text.author.name }}</a>
     <ul>

@@ -1,0 +1,66 @@
+@import "../../../static/css/lib.less";
+
+/* Index */
+section.text {
+
+}
+
+/* Segments */
+@gutter: 3em;
+@panel-height: 4em;
+section.segment {
+    position: relative;
+}
+
+div.primary {
+
+}
+
+div.translation {
+    padding: 0 0 0 3em;
+}
+
+a.jump {
+    color: lighten(@gray, 25%);
+    font-size: 2em;
+    font-weight: bold;
+    position: absolute;
+    left: -1em;
+    text-decoration: none;
+
+    &:hover {
+        color: @orange;
+        text-decoration: underline;
+    }
+}
+
+a.page-link {
+    @f: 1.5em;
+    font-size: @f;
+    display: block;
+    float: left;
+    width: 50%;
+    text-align: center;
+    line-height: @panel-height / @f;
+}
+
+div#segment-view {
+    position: fixed;
+    overflow: auto;
+    top: 3em;
+    bottom: @panel-height;
+    left: 0;
+    right: 0;
+    padding: 1em @gutter;
+}
+
+div#text-panel {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    background: @off-white;
+    border-top: 1px @light-gray solid;
+    height: @panel-height;
+}

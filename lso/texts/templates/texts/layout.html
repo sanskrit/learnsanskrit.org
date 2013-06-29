@@ -1,5 +1,11 @@
 {% extends 'general.html' %}
 
+{% block extrahead %}
+    {% assets filters="less", output="gen/texts.css", "texts/css/texts.less" %}
+        <link rel="stylesheet" type="text/css" href="{{ ASSET_URL }}" />
+    {% endassets %}
+{% endblock %}
+
 {% block body_id %}texts{% endblock %}
 
 {% block scripts %}

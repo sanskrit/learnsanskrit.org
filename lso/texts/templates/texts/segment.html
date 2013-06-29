@@ -3,25 +3,26 @@
 {% block title %}{{ readable_query }}{% endblock %}
 
 {% block content %}
+<div id="segment-view">
 <h1 id="readable-query">{{ readable_query }}</h1>
 
 <div id="segments">
-{% for segment in segments %}
-<section id="{{ segment.xmlid }}" class="segment">
-    <a class="jump" href="#{{ segment.xmlid }}">#</a>
-    <div class="primary">
-    {{ segment.content|safe }}
-    </div>
+    {% for segment in segments %}
+    <section id="{{ segment.xmlid }}" class="segment">
+        <a class="jump" href="#{{ segment.xmlid }}">#</a>
+        <div class="primary">
+        {{ segment.content|safe }}
+        </div>
 
-    <div class="translation">
-    {% for child_text in corresp[segment.slug] %}
-        {% for child in corresp[segment.slug][child_text] %}
-            {{ child.content|safe }}
+        <div class="translation">
+        {% for child_text in corresp[segment.slug] %}
+            {% for child in corresp[segment.slug][child_text] %}
+                {{ child.content|safe }}
+            {% endfor %}
         {% endfor %}
+        </div>
+    </section>
     {% endfor %}
-    </div>
-</section>
-{% endfor %}
 </div>
 
 {% macro page_link(q, id) %}
@@ -32,7 +33,12 @@
     {% endif %}
 {% endmacro %}
 
-{{ page_link(prev, 'prev-link') }}
-{{ page_link(next, 'next-link') }}
+<div id="text-panel">
+    {{ page_link(prev, 'prev-link') }}
+    {{ page_link(next, 'next-link') }}
+</div>
+</div>
+
+{% block footer %}{% endblock %}
 
 {% endblock %}
