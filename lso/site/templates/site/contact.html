@@ -14,26 +14,18 @@
 {% block content %}
 <h1>Contact</h1>
 <div class="grid">
-<form action="" method="POST" class="span6">
-    {{ form.csrf_token }}
-    {{ form.subject.label(text='What are you writing about today?') }}
-    {{ field_errors(form.subject) }}
-
-    {{ form.email.label(text='If you would like a reply, please leave your email address:') }}
-    {{ field_errors(form.email) }}
-
-    {{ form.message.label(text='You can write your message here:') }}
-    {{ field_errors(form.message, rows=10) }}
-    <input type="submit" value="Send message" class="large" />
-</form>
+    <div class="inset span6">
+    <form action="" method="POST">
+        {{ form.csrf_token }}
+        {{ field_errors(form.subject, placeholder='Subject') }}
+        {{ field_errors(form.email, placeholder='Email address (optional)') }}
+        {{ field_errors(form.message, rows=10, placeholder='Message') }}
+        <input type="submit" value="Send message" class="jumbo btn" />
+    </form>
+    </div>
 <div class="span6">
-<p><strong>This site thrives on feedback.</strong> Your comments and questions will help the site grow and improve. And if it does, it can continue to help people learn Sanskrit.</p>
+<p><strong>This site thrives on feedback.</strong> Your comments and questions will help the site grow and improve. And if it does, it can continue to help people learn Sanskrit. We read every email we receive and do our best to reply to them all. But due to time constraints, we might not be able to write you a reply.</p>
 
-<p><strong>We read every email we receive</strong>, and do our best to reply to them all. But due to time constraints, we might not be able to send a reply. Please forgive us!</p>
-
-<p><strong>We respect your privacy</strong> and will not share your information with anyone else.</p>
-
-<p><strong>Thanks for writing!</strong> Together, we make this site even better than it already is.</p>
 </div>
 </div>
 {% endblock %}

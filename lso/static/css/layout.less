@@ -1,8 +1,8 @@
 /* Basic page layout */
 
-@nav-bg: darken(@dark-gray, 5%);//lighten(#102632, 3%);
+@nav-bg: #212020;//lighten(#102632, 3%);
 @nav-hover-bg: #B7410E;
-@masthead-bg: #2c2927;
+@masthead-bg: #068;
 
 body {
     color: @dark-gray;
@@ -34,7 +34,8 @@ body {
 }
 
 #top {
-    background: @nav-bg;
+    #gradient.vertical(@nav-bg, darken(@nav-bg, 10%));
+    box-shadow: 0 2px 2px rgba(0,0,0,0.3);
     left: 0;
     position: absolute;
     right: 0;
@@ -42,9 +43,9 @@ body {
     z-index: 1000;
 
     a {
-        .transition(0.4s);
+        .transition(0.2s);
 
-        color: @gray;
+        color: lighten(@gray, 10%);
         display: block;
         float: left;
         outline: none;
@@ -81,7 +82,6 @@ body {
 a#settings-link {
     @height: 3;
     @font-size: 1.6em;
-    background: lighten(@nav-bg, 10%);
     font-size: @font-size;
     line-height: @height / @font-size;
     padding: 0 0.5em;
@@ -90,7 +90,8 @@ a#settings-link {
 
 // Active nav link
 #guide #nav-guide, #lesson #nav-guide, #tools #nav-tools,
-#application #nav-tools, #site #nav-site, #settings #nav-settings {
+#application #nav-tools, #site #nav-site, #settings #nav-settings,
+#texts #nav-texts {
     background: darken(@nav-bg, 10%);
     border: 1px lighten(@nav-bg, 5%) solid;
     border-width: 0 1px;
@@ -104,7 +105,6 @@ header {
 /* Header for site index */
 header.masthead {
     background: @masthead-bg;
-    border-top: 1px @nav-bg solid;
     @h1: 3em;
     @h2: 1em;
     @padding: 1em;
