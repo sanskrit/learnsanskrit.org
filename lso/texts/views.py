@@ -8,7 +8,7 @@ import lib as L
 from lso import app
 from .models import Author, Language, Segment, SegSegAssoc as SSA, Text
 
-LANG = None
+LANGUAGES = None
 PAGE_SIZE = 5
 MIN_PAGE_SIZE = 3
 
@@ -65,11 +65,11 @@ def page_to_query(page):
 @bp.route('/')
 def index():
     """A basic index page containing all texts in the collection."""
-    global LANG
-    if LANG is None:
-        LANG = {x.slug: x.id for x in Language.query.all()}
+    global LANGUAGES
+    if LANGUAGES is None:
+        LANGUAGES = {x.slug: x.id for x in Language.query.all()}
 
-    texts = Text.query.filter(Text.language_id == LANG['sa'])\
+    texts = Text.query.filter(Text.language_id == LANGUAGES['sa'])\
                       .all()
     return render_template('texts/index.html', texts=texts)
 

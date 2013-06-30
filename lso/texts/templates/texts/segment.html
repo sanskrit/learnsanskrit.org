@@ -27,6 +27,11 @@
     {% endfor %}
 </div>
 
+{% macro child_link(c) %}
+    <li><a data-id="{{ c.id }}" data-slug="{{ c.slug }}" class="child-link{% if c.slug not in (c.related or []) %} active{% endif %}" href="{{ url_for('.segment', slug=text.slug, query=query, related=c.related) }}">{{ c.author.name }} <br /> <cite>{{ c.name }}</cite></a></li>
+{% endmacro %}
+
+
 {% macro page_link(q, id) %}
     {% if q %}
     <li><a id="{{ id }}" class="page-link" href="{{ url_for('.segment', slug=text.slug, query=q.query, related=related) }}">{{ q.readable }}</a></li>
@@ -37,9 +42,12 @@
 
 <div id="text-panel">
     <ul id="child-links">
-    {% for c in children %}
-        <li><a data-id="{{ c.id }}" data-slug="{{ c.slug }}" class="child-link{% if c.slug not in (c.related or []) %} active{% endif %}" href="{{ url_for('.segment', slug=text.slug, query=query, related=c.related) }}">{{ c.slug }}</a><li>
-    {% endfor %}
+        <li class="dropdown">
+            <a class="dropdown-toggle" href="#">Translations</a>
+            <ul class="dropdown-menu">
+                {% for c in children %}{{ child_link(c) }}{% endfor %}
+            </ul>
+        </li>
     </ul>
     <ul id="page-links">
         {{ page_link(prev, 'prev-link') }}

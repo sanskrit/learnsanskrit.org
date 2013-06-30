@@ -104,8 +104,11 @@ class Text(SimpleBase):
     parent = relationship('Text', remote_side=[id], backref='children')
     segments = relationship('Segment', cascade=CASCADE_ARGS, backref='text')
 
+    def __repr__(self):
+        return "Text<%s, '%s'>" % (self.id, self.slug)
+
     def __unicode__(self):
-        return '%s' % self.slug
+        return self.slug
 
 
 class Division(BaseNode):

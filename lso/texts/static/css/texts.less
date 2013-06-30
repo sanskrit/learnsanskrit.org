@@ -83,7 +83,7 @@ div#segment-view {
 #child-links {
     left: 1em;
 
-    li {
+    li.dropdown {
         line-height: @panel-height;
     }
 }
@@ -101,14 +101,24 @@ div#segment-view {
     content: " »";
 }
 
-a.child-link, a.page-link {
+a.dropdown-toggle, a.page-link {
     display: block;
     height: @panel-height;
     padding: 0 0.5em;
 }
 
-a.child-link.active {
-    font-weight: bold;
+a.child-link {
+    border: transparent solid;
+    border-width: 1px 0;
+
+    &.active {
+        background: #f9f5d0;
+    }
+
+    cite {
+        color: @gray;
+        font-size: 0.9em;
+    }
 }
 
 a.page-link {
@@ -119,4 +129,36 @@ a.page-link {
     text-align: center;
     line-height: @panel-height / @f;
     width: 8em;
+}
+
+/* Dropdown menus */
+li.dropdown {
+    position: relative;
+}
+
+ul.dropdown-menu {
+    background: #fff;
+    border: 1px @light-gray solid;
+    border-bottom: 0;
+    bottom: @panel-height - 1em;
+    list-style: none;
+    min-width: 200px;
+    padding: 0;
+    position: absolute;
+
+    a {
+        color: @dark-gray;
+        display: block;
+        padding: 0.5em 1em;
+        text-decoration: none;
+
+        &:hover {
+            color: #fff;
+            background: @link-color;
+        }
+    }
+
+    li {
+        float: none !important;
+    }
 }
