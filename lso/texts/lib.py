@@ -12,7 +12,8 @@ import re
 import xml.etree.cElementTree as ET
 
 from ..database import session
-from .models import Text, Division, Segment, SegSegAssoc, Language, Author
+from .models import (Text, Division, Segment, SegSegAssoc, Category, Language,
+                     Author)
 
 XML_NS = '{http://www.w3.org/XML/1998/namespace}'
 XML_ID = '{http://www.w3.org/XML/1998/namespace}id'
@@ -57,14 +58,20 @@ class DocumentTarget:
         self.lang = None
         # Maps prefix strings to textual divisions
         self.division_map = {}
-        #
+        # Used to order segments
         self.position = 1
 
         self.lang_map = {x.slug: x.id for x in Language.query.all()}
+        self.category_map = {x.slug: x.id for x in Category.query.all()}
 
     # XML parser events
     # -----------------
     def start(self, tag, attrib):
+        """Start of an element.
+
+        :param tag: the element's tag
+        :param attrib: the element's attributes
+        """
         b = self.buf
 
         is_tei_header = tag == Tag.TEI_HEADER
@@ -102,9 +109,17 @@ class DocumentTarget:
                 b.append('<%s>' % tag)
 
     def data(self, data):
+        """Element text.
+
+        :param data: the element's text/data.
+        """
         self.buf.append(data)
 
     def end(self, tag):
+        """End of an element.
+
+        :param tag: the element's tag
+        """
         b = self.buf
         b.append('</%s>' % tag)
 
@@ -116,6 +131,7 @@ class DocumentTarget:
             self.depth -= 1
 
     def close(self):
+        """End of the XML document."""
         session.commit()
         session.close()
         del self.buf[:]
@@ -136,6 +152,8 @@ class DocumentTarget:
         for the current document if they don't exist already. Where
         possible, the function creates an :class:`Author` as well.
 
+        :param blob: the raw input from XML parsing
+        :param xml: `blob` as an :class:`xml.etree.Element`
         """
         # Search for various data in teiHeader
         titleStmt_path = './fileDesc/titleStmt/'
@@ -146,7 +164,8 @@ class DocumentTarget:
             'translator': titleStmt_path + 'editor[@role="translator"]',
             'slug':   publicationStmt_path + 'idno[@type="slug"]',
             'xmlid_prefix': publicationStmt_path + 'idno[@type="xml"]',
-            'parent': publicationStmt_path + 'idno[@type="parent"]'
+            'parent': publicationStmt_path + 'idno[@type="parent"]',
+            'category': './profileDesc/textDesc/derivation'
         }
         field_xml = {}
         field_text = {}
@@ -182,6 +201,10 @@ class DocumentTarget:
         # `language_id` is used for both texts and authors
         language_id = self.lang_map[self.lang.split('-')[0]]
 
+        # `category_id`
+        category_slug = field_xml['category'].attrib['type']
+        category_id = self.category_map[category_slug]
+
         # Create an :class:`Author` record as necessary.
         # Give precedence to translators: Kale's translation of the
         # Meghaduta is by Kale, not Kalidasa.
@@ -210,6 +233,7 @@ class DocumentTarget:
             name=name,
             slug=slug,
             xmlid_prefix=xmlid_prefix,
+            category_id=category_id,
             language_id=language_id,
             author_id=author_id,
             parent_id=parent_id,
@@ -224,7 +248,8 @@ class DocumentTarget:
         running `elem.text`. Leading and trailing whitespace are
         stripped out.
 
-        :param elem: the element to process"""
+        :param elem: the element to process
+        """
 
         return re.sub('<[^<]+?>', '', ET.tostring(elem)).strip()
 
@@ -244,6 +269,11 @@ class DocumentTarget:
                 return self.division_map['']
 
     def handle_segment(self, blob, xml):
+        """Handle the data in a TEI segment.
+
+        :param blob: the raw input from XML parsing
+        :param xml: `blob` as an :class:`xml.etree.Element`
+        """
         attr = xml.attrib
 
         # Create divisions as necessary
@@ -276,10 +306,9 @@ class DocumentTarget:
 
 
 def process_text_xml(path):
-    """
-    Parse the given file and map it to the database.
+    """Parse the given file and map it to the database.
 
-    :param filename: path to the text file
+    :param path: path to the text file
     """
 
     with open(path) as f:

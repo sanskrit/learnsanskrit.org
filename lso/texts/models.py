@@ -57,6 +57,22 @@ class Author(SimpleBase):
         return self.name
 
 
+class Category(SimpleBase):
+
+    """The basic category of some :class:`Text`"""
+
+    #: The category name
+    name = Column(String)
+    #: A human-readable identifier for the category
+    slug = Column(String, unique=True)
+
+    def __repr__(self):
+        return "<Category(%s, '%s')>" % (self.id, self.name)
+
+    def __unicode__(self):
+        return self.name
+
+
 class Text(SimpleBase):
 
     """A complete text, whether Sanskrit or otherwise."""
@@ -70,6 +86,8 @@ class Text(SimpleBase):
     #: An XML prefix for the text (for XML conversion)
     xmlid_prefix = Column(String, unique=True)
 
+    #: The text's category (primary, translation, commentary, ...)
+    category_id = Column(ForeignKey(Category.id))
     #: The text's primary language
     language_id = Column(ForeignKey(Language.id))
     #: The text's author
@@ -79,6 +97,7 @@ class Text(SimpleBase):
     #: The text's parent, if defined
     parent_id = Column(Integer, ForeignKey('text.id'), nullable=True)
 
+    category = relationship(Category)
     language = relationship(Language)
     author = relationship(Author, backref='texts')
     division = relationship('Division', cascade=CASCADE_ARGS)
@@ -172,10 +191,6 @@ class Segment(SimpleBase):
         return '<Segment(%s, %s)>' % (self.id, self.slug)
 
 
-
-
-
-
 Text.division = relationship(Division)
 Division.segments = relationship(Segment,
                                  collection_class=ordering_list('position'),
@@ -185,7 +200,7 @@ Division.segments = relationship(Segment,
 def drop():
     """Drop the models defined above."""
 
-    order = [SegSegAssoc, Segment, Text, Division, Author, Language]
+    order = [SegSegAssoc, Segment, Text, Division, Author, Language, Category]
     for o in order:
         try:
             o.__table__.drop()
