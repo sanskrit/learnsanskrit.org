@@ -136,13 +136,18 @@ li.dropdown {
     position: relative;
 }
 
+a.dropdown-toggle {
+    &.active {
+    }
+}
+
 ul.dropdown-menu {
     background: #fff;
-    border: 1px @light-gray solid;
+    border: 2px @light-gray solid;
     border-bottom: 0;
     bottom: @panel-height - 1em;
     list-style: none;
-    min-width: 200px;
+    min-width: 300px;
     padding: 0;
     position: absolute;
 

@@ -6,9 +6,11 @@ from sqlalchemy import and_
 
 import lib as L
 from lso import app
-from .models import Author, Language, Segment, SegSegAssoc as SSA, Text
+from .models import (Author, Category, Language, Segment,
+                     SegSegAssoc as SSA, Text)
 
 LANGUAGES = None
+CATEGORIES = None
 PAGE_SIZE = 5
 MIN_PAGE_SIZE = 3
 
@@ -62,12 +64,16 @@ def page_to_query(page):
         return {'query': '-'.join((p1, p2)), 'readable': ' - '.join((p1, p2))}
 
 
+@app.before_first_request
+def load_data():
+    global CATEGORIES, LANGUAGES
+    CATEGORIES = {x.id: x.slug for x in Category.query.all()}
+    LANGUAGES = {x.slug: x.id for x in Language.query.all()}
+
+
 @bp.route('/')
 def index():
     """A basic index page containing all texts in the collection."""
-    global LANGUAGES
-    if LANGUAGES is None:
-        LANGUAGES = {x.slug: x.id for x in Language.query.all()}
 
     texts = Text.query.filter(Text.language_id == LANGUAGES['sa'])\
                       .all()
@@ -282,9 +288,15 @@ def segment(slug, query, related=None):
     data = segments_data(text, slug, query, related)
 
     # Child texts
-    children = Text.query.filter(Text.parent_id == text.id).all()
-    data['children'] = children
+    data['translation'] = []
+    data['commentary'] = []
 
+    children = Text.query.filter(Text.parent_id == text.id).all()
+    for c in children:
+        key = CATEGORIES[c.category_id]
+        data[key].append(c)
+
+    # 'related' of child texts
     related = related or []
     for c in children:
         if c.slug in related:
