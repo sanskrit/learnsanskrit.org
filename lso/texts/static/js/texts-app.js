@@ -11,6 +11,26 @@
         return url.match('/^\/(.+)\/(.+)\/$/g');
     }
 
+    function url_child_segments_api(child_slug, parent_ids) {
+        return '/api/texts-child/' + child_slug + '/' + parent_ids.join(',');
+    }
+
+    function url_query_api(query) {
+        return '/api/texts/' + query;
+    }
+
+    function url_segment(text, query, related) {
+        url = '/texts/' + text + '/' + query;
+        if (related && related.length) {
+            url += '+' + related.join(',');
+        }
+        return url;
+    }
+
+    function url_text(text) {
+        return '/texts/' + text;
+    }
+
     // Helper classes
     // --------------
 
@@ -27,12 +47,20 @@
         }
     });
 
+    // State
+    // -----
+    // A high-lever represenation of the current page. This contains
+    // the current query, the active related texts, and the slug of the
+    // current text.
+    var State = Backbone.Model;
+
+
     // Segments
     // --------
 
     var tSegment = [
         '<section id="<%= xmlid %>" class="segment">',
-        '    <a class="jump" href="#<%= xmlid %>">#</a>',
+        '    <a class="jump" href="<%= slug %>">#</a>',
         '    <div class="primary"><%= content %></div>',
         '    <div class="translations">',
         '        <% _.each(corresp, function(c_segs, c_slug) { %>',
@@ -44,16 +72,96 @@
         '</section>'
     ].join('');
 
+    var Segment = Backbone.Model;
+
     var Segments = Backbone.Collection.extend({
-        model: Backbone.Model
+        model: Segment
     });
 
     var SegmentView = TemplateView.extend({
         template: _.template(tSegment)
     });
 
-    // Page link
-    // ---------
+    // Child links
+    // -----------
+
+    var ChildLink = Backbone.Model;
+
+    var ChildLinks = Backbone.Collection.extend({
+        model: ChildLink,
+
+        // Get a list of active slugs
+        actives: function() {
+            var activeList = this.where({ active: true });
+            return _.map(activeList, function(x) {
+                return x.get('slug');
+            });
+        }
+    });
+
+    var ChildLinksView = Backbone.View.extend({
+
+        initialize: function() {
+            var collection = this.collection = new ChildLinks();
+
+            // Initialize from source
+            $('a.child-link').each(function() {
+                var $this = $(this),
+                    datum = {
+                        id: $this.data('id'),
+                        slug: $this.data('slug'),
+                        active: $this.hasClass('active')
+                    };
+                collection.add(datum);
+                console.log(collection.models);
+            });
+        },
+
+        events: {
+            'click a.child-link': 'get_child_segments',
+            'mouseover a.child-link': 'hi_child_segments_on',
+            'mouseout a.child-link': 'hi_child_segments_off'
+        },
+
+        get_child_segments: function(e) {
+            e.preventDefault();
+            var $link = $(e.currentTarget),
+                slug = $link.data('slug'),
+                selector = '.trans-' + slug;
+
+            if ($link.hasClass('active')) {
+                $link.data('queried', true);
+            }
+            $link.toggleClass('active');
+            if ($link.data('queried')) {
+                $(selector).removeClass('hi').fadeToggle();
+            } else {
+                LSO.textApp.query_child_segments(slug);
+                $link.data('queried', true);
+            }
+
+            // Update model
+            var m = this.collection.findWhere({ 'slug': slug });
+            m.set('active', !m.get('active'));
+        },
+
+        hi_child_segments: function(e, leaving) {
+            var slug = $(e.currentTarget).data('slug'),
+                selector = '.trans-' + slug;
+            $(selector).toggleClass('hi', leaving);
+        },
+
+        hi_child_segments_on: function(e) {
+            this.hi_child_segments(e, true);
+        },
+
+        hi_child_segments_off: function(e) {
+            this.hi_child_segments(e, false);
+        }
+    });
+
+    // Page links
+    // ----------
 
     var PageLink = Backbone.Model;
 
@@ -64,10 +172,7 @@
 
             var url, readable;
             if (a.query) {
-                url = '/texts/' + a.text + '/' + a.query;
-                if (a.related) {
-                    url += '+' + a.related.join(',');
-                }
+                url = url_segment(a.text, a.query, a.related);
                 readable = a.readable;
             } else {
                 url = '/texts/' + a.text;
@@ -82,11 +187,9 @@
     // Title
     // -----
 
-    var Title = Backbone.Model;
-
     var TitleView = ModelView.extend({
         render: function() {
-            var title = this.model.get('title');
+            var title = this.model.get('readable');
             document.title = title;
             this.$el.text(title);
             return this;
@@ -113,11 +216,24 @@
         initialize: function() {
             this.prevLink = new PageLink();
             this.nextLink = new PageLink();
-            this.title = new Title();
+            this.state = new State();
 
-            new PageLinkView({ el: $('#prev-link'), model: this.prevLink });
-            new PageLinkView({ el: $('#next-link'), model: this.nextLink });
-            new TitleView({ el: $('#readable-query'), model: this.title });
+            var childLinksView = new ChildLinksView({ el: $('#child-links') });
+            this.childLinks = childLinksView.collection;
+            this.childLinks.on('change', this.update_related, this);
+
+            this.prevLinkView = new PageLinkView({
+                el: $('#prev-link'),
+                model: this.prevLink
+            });
+            this.nextLinkView = new PageLinkView({
+                el: $('#next-link'),
+                model: this.nextLink
+            });
+            this.titleView = new TitleView({
+                el: $('#readable-query'),
+                model: this.state
+            });
 
             this.segments = new Segments();
             this.segments.on('all', this.render, this);
@@ -127,36 +243,12 @@
 
         events: {
             'click a.jump': 'bookmark',
-            'click a.child-link': 'get_child_segments',
-            'mouseover a.child-link': 'hi_child_segments_on',
-            'mouseout a.child-link': 'hi_child_segments_off',
             'click a.page-link': 'get_page'
         },
 
-        // Bookmark a given segment
+        // View a single segment by itself
         bookmark: function(e) {
             e.preventDefault();
-            var $this = $(e.currentTarget),
-                id = $this.attr('href').replace(/\./g, '\\.');
-            $('#segment-view').stop().animate({
-                scrollTop: $(id).position().top
-            }, 500);
-        },
-
-        get_child_segments: function(e) {
-            e.preventDefault();
-            var $link = $(e.currentTarget),
-                slug = $link.data('slug'),
-                selector = '.trans-' + slug;
-
-
-            $link.toggleClass('active');
-            if ($link.data('queried')) {
-                $(selector).fadeToggle();
-            } else {
-                this.query_child_segments(slug);
-                $link.data('queried', true);
-            }
         },
 
         // Get a page of segments
@@ -166,20 +258,6 @@
                 e.preventDefault();
                 LSO.textRouter.navigate(url, {'trigger': true});
             }
-        },
-
-        hi_child_segments: function(e, leaving) {
-            var slug = $(e.currentTarget).data('slug'),
-                selector = '.trans-' + slug;
-            $(selector).toggleClass('hi', leaving);
-        },
-
-        hi_child_segments_on: function(e) {
-            this.hi_child_segments(e, true);
-        },
-
-        hi_child_segments_off: function(e) {
-            this.hi_child_segments(e, false);
         },
 
         render: function() {
@@ -196,15 +274,21 @@
 
         // Fetch data from the server and store it in the appropriate models.
         query: function(query) {
-            var self = this;
-            $.getJSON('/api/texts/' + query, function(data) {
+            var self = this,
+                url = url_query_api(query);
+            $.getJSON(url, function(data) {
 
                 var prev = data['prev'] || {query: null},
                     next = data['next'] || {query: null};
                 prev['text'] = next['text'] = data['text']['slug'];
                 prev['related'] = next['related'] = data['related'];
 
-                self.title.set('title', data['readable_query']);
+                self.state.set({
+                    text: data['text'],
+                    query: data['query'],
+                    related: data['related'],
+                    readable: data['readable_query']
+                });
                 self.prevLink.set(prev);
                 self.nextLink.set(next);
 
@@ -224,8 +308,7 @@
             var parent_ids = this.segments.map(function(s) {
                 return s.get('id');
             }),
-                parent_ids_slug = parent_ids.join(','),
-                url = '/api/texts-child/' + slug + '/' + parent_ids_slug;
+                url = url_child_segments_api(slug, parent_ids);
 
             var self = this;
             $.getJSON(url, function(data) {
@@ -236,6 +319,17 @@
                 });
                 self.segments.reset(segments2);
             });
+        },
+
+        update_related: function() {
+            var related = this.childLinks.actives();
+            this.state.set('related', related);
+            this.prevLink.set('related', related);
+            this.nextLink.set('related', related);
+
+            var a = this.state.attributes;
+            var url = url_segment(a.text.slug, a.query, a.related);
+            LSO.textRouter.navigate(url);
         }
     });
 

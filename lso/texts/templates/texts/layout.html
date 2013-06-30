@@ -7,9 +7,3 @@
 {% endblock %}
 
 {% block body_id %}texts{% endblock %}
-
-{% block scripts %}
-{% assets output="gen/texts-app.js", "texts/js/texts-app.js" %}
-    <script src="{{ ASSET_URL }}"></script>
-{% endassets %}
-{% endblock %}
