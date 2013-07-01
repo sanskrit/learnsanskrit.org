@@ -1,10 +1,10 @@
 import os
 
-from flask import redirect
+from flask import flash, redirect
 from flask.ext.admin import Admin, BaseView, AdminIndexView, expose
 from flask.ext.admin.contrib.sqlamodel import ModelView
 from flask.ext.security import current_user
-from flask.ext.wtf import Form
+from flask.ext.wtf import Form, Required
 from werkzeug import secure_filename
 from wtforms import FileField
 
@@ -14,7 +14,7 @@ import texts.lib
 
 
 class UploadForm(Form):
-    path = FileField("XML Document")
+    path = FileField("XML Document", [Required()])
 
 
 class AuthMixin(object):

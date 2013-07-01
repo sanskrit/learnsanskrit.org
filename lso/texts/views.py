@@ -9,9 +9,13 @@ from lso import app
 from .models import (Author, Category, Language, Segment,
                      SegSegAssoc as SSA, Text)
 
+# Maps slugs to IDs
 LANGUAGES = None
+# Maps IDs to slugs
 CATEGORIES = None
+# Standard size of a segment page
 PAGE_SIZE = 5
+# Minimum size for a segment page
 MIN_PAGE_SIZE = 3
 
 
@@ -19,29 +23,32 @@ bp = Blueprint('texts', __name__, static_folder='static',
                template_folder='templates', url_prefix='/texts')
 
 
+# Helper functions
+# ~~~~~~~~~~~~~~~~
+
 def _flash_missing_text(slug):
     flash("We can't find text \"%s\" in the collection." % slug)
 
 
 def paginate(items, size, min_size=0):
-    """Simple pagination.
+    """Return a list of items grouped into pages.
 
-    :param size: the group size
-    :param min_size: the mininum group size. If a group is smaller than
+    :param size: the page size
+    :param min_size: the mininum page size. If a page is smaller than
                      `min_size`, then it is merged into the previous
-                     group, if one exists.
+                     page, if one exists.
     """
-    groups = []
+    pages = []
     for start in xrange(0, len(items), size):
-        groups.append(items[start:start+size])
+        pages.append(items[start:start+size])
 
     try:
-        if len(groups[-1]) < min_size:
-            groups[-2].extend(groups[-1])
-            groups.pop()
+        if len(pages[-1]) < min_size:
+            pages[-2].extend(pages[-1])
+            pages.pop()
     except IndexError:
         pass
-    return groups
+    return pages
 
 
 def division_paginate(division, size, min_size):
@@ -52,11 +59,19 @@ def division_paginate(division, size, min_size):
 
 
 def peer_divisions(text, cur):
+    """Get divisions with the same depth as `cur`.
+
+    :param `cur`: a :class:`Division`.
+    """
     divs = text.division.mp.query_descendants().all()
     return [d for d in divs if d.mp_depth == cur.mp_depth]
 
 
 def page_to_query(page):
+    """Convert a page to a query string..
+
+    :param page: a list of items
+    """
     p1, p2 = page[0], page[-1]
     if p1 == p2:
         return {'query': p1, 'readable': p1}
@@ -64,52 +79,37 @@ def page_to_query(page):
         return {'query': '-'.join((p1, p2)), 'readable': ' - '.join((p1, p2))}
 
 
+def categorize_texts(texts):
+    """Sort a list of texts into categories.
+
+    :param texts: a list of :class:`Text` objects.
+    """
+    data = defaultdict(list)
+    for text in texts:
+        key = CATEGORIES[text.category_id]
+        data[key].append(text)
+    return data
+
+
+# Initialization
+# ~~~~~~~~~~~~~~
+
 @app.before_first_request
 def load_data():
+    """Load some simple data from the database."""
     global CATEGORIES, LANGUAGES
     CATEGORIES = {x.id: x.slug for x in Category.query.all()}
     LANGUAGES = {x.slug: x.id for x in Language.query.all()}
 
 
-@bp.route('/')
-def index():
-    """A basic index page containing all texts in the collection."""
-
-    texts = Text.query.filter(Text.language_id == LANGUAGES['sa'])\
-                      .all()
-    return render_template('texts/index.html', texts=texts)
+@bp.context_processor
+def inject_helpers():
+    return {
+        'categorize_texts': categorize_texts
+    }
 
 
-@bp.route('/<slug>/')
-def text(slug):
-    """The main page of a given text.
-
-    :param slug: the text's slug
-    """
-    text = Text.query.filter(Text.slug == slug).first()
-    if text is None:
-        _flash_missing_text(slug)
-        return redirect(url_for('.index'))
-
-    divs = text.division.mp.query_descendants().all()
-    pages = []
-    for d in divs:
-        d_pages = division_paginate(d, PAGE_SIZE, min_size=MIN_PAGE_SIZE)
-        d_pages = map(page_to_query, d_pages)
-        pages.append(d_pages)
-
-    return render_template('texts/text.html', text=text,
-                           divs=divs,
-                           pages=pages)
-
-
-@app.route('/author/<slug>')
-def author(slug):
-    author = Author.query.filter(Author.slug == slug).first()
-    return render_template('texts/author.html', author=author)
-
-
-# Segment data
+# Data helpers
 # ~~~~~~~~~~~~
 
 def child_segments_data(child_slug, parent_ids):
@@ -141,6 +141,12 @@ def child_segments_data(child_slug, parent_ids):
 
 
 def segments_data(text, slug, query, related):
+    """
+    :param text:
+    :param slug:
+    :param query:
+    :param related:
+    """
     # Find the segments specified by `query`
     segments = []
     base_query = Segment.query.filter(Segment.text_id == text.id)\
@@ -266,6 +272,48 @@ def segments_data(text, slug, query, related):
     )
 
 
+# Regular endpoints
+# ~~~~~~~~~~~~~~~~~
+
+@bp.route('/')
+def index():
+    """A basic index page containing all texts in the collection."""
+
+    texts = Text.query.filter(Text.language_id == LANGUAGES['sa'])\
+                      .filter(Text.parent_id == None)\
+                      .all()
+    return render_template('texts/index.html', texts=texts)
+
+
+@bp.route('/<slug>/')
+def text(slug):
+    """The main page of a given text.
+
+    :param slug: the text's slug
+    """
+    text = Text.query.filter(Text.slug == slug).first()
+    if text is None:
+        _flash_missing_text(slug)
+        return redirect(url_for('.index'))
+
+    divs = text.division.mp.query_descendants().all()
+    pages = []
+    for d in divs:
+        d_pages = division_paginate(d, PAGE_SIZE, min_size=MIN_PAGE_SIZE)
+        d_pages = map(page_to_query, d_pages)
+        pages.append(d_pages)
+
+    return render_template('texts/text.html', text=text,
+                           divs=divs,
+                           pages=pages)
+
+
+@app.route('/author/<slug>')
+def author(slug):
+    author = Author.query.filter(Author.slug == slug).first()
+    return render_template('texts/author.html', author=author)
+
+
 @bp.route('/<slug>/<query>')
 @bp.route('/<slug>/<query>+<list:related>')
 def segment(slug, query, related=None):
@@ -291,10 +339,8 @@ def segment(slug, query, related=None):
     data['translation'] = []
     data['commentary'] = []
 
-    children = Text.query.filter(Text.parent_id == text.id).all()
-    for c in children:
-        key = CATEGORIES[c.category_id]
-        data[key].append(c)
+    children = text.children
+    data.update(categorize_texts(children))
 
     # 'related' of child texts
     related = related or []

@@ -251,7 +251,8 @@ class DocumentTarget:
         :param elem: the element to process
         """
 
-        return re.sub('<[^<]+?>', '', ET.tostring(elem)).strip()
+        blob = ET.tostring(elem, encoding='utf-8')
+        return re.sub('<[^<]+?>', '', blob).strip()
 
     def _create_divs(self, slug):
         div_slug, dot, _ = slug.rpartition('.')

@@ -2,6 +2,17 @@
 
 {% block title %}Texts{% endblock %}
 
+{% macro print_category(name, items) %}
+{% if items %}
+    <h3>{{ name }}</h3>
+    <ul>
+        {% for text in items %}
+        <li><a href="{{ url_for('.text', slug=text.slug) }}">{{ text.name }}</a> ({{ text.author.name }})</li>
+        {% endfor %}
+    </ul>
+{% endif %}
+{% endmacro %}
+
 {% block content %}
 <h1>Texts</h1>
 
@@ -14,14 +25,10 @@
 {% for text in texts %}
 {% set text_url = url_for('.text', slug=text.slug) %}
 <section class="text">
-    <h2><a href="{{ text_url }}">{{ text.name }}</a></h2>
-    by <a href="{{ url_for('author', slug=text.author.slug) }}">{{ text.author.name }}</a>
-    <ul>
-        <li><a href="{{ text_url }}">Main text</a></li>
-        {% for c in text.children %}
-        <li><a href="{{ url_for('.text', slug=c.slug) }}">{{ c.name }}</a> ({{ c.author.name }})</li>
-        {% endfor %}
-    </ul>
+    <h2><a href="{{ text_url }}">{{ text.name }}</a> (<a href="{{ url_for('author', slug=text.author.slug) }}">{{ text.author.name }}</a>)</h2>
+    {% set cat = categorize_texts(text.children) %}
+    {{ print_category('Translations', cat.translation) }}
+    {{ print_category('Commentaries', cat.commentary) }}
 </section>
 {% endfor %}
 

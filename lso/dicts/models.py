@@ -1,21 +1,27 @@
-from sqlalchemy import Column, Integer, String, Text
-from sqlalchemy.orm import relation
-
-from ..database import engine, Base
+from sqlalchemy import Column, String, Text
+from ..database import SimpleBase
 
 
-class MonierEntry(Base):
-    __tablename__ = 'mw_entries'
+class MonierEntry(SimpleBase):
 
-    id = Column(Integer, primary_key=True)
-    name = Column(String, index=True)  # unaccented SLP1
-    location = Column(String)  # page and column number
-    data = Column(Text)  # definition
+    """A dictionary entry from the Monier-Williams dictionary."""
+
+    #: A word written in unaccented SLP1
+    name = Column(String, index=True)
+    #: The page and column number of the entry
+    location = Column(String)
+    #: The definition associated with this entry. This is an XML blob.
+    content = Column(Text)
 
     def __repr__(self):
-        return "<MonierEntry('%s')>" % self.entry
+        return "<MonierEntry(%s,'%s')>" % (self.id, self.entry)
+
+    def __unicode__(self):
+        return self.name
 
 
-def init():
-    import setup
-    setup.run()
+def drop():
+    """Drop the models defined above."""
+    models = [MonierEntry]
+    for m in models:
+        m.__table__.drop()
