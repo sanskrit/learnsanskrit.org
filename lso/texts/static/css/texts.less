@@ -2,8 +2,44 @@
 
 /* Index */
 section.text {
+    margin-bottom: 1em;
+
     &:hover {
         background: @off-white
+    }
+    h2 {
+        margin: 0;
+    }
+}
+
+ul.text-list {
+    list-style: none;
+    padding: 0 1em;
+
+    a {
+        display: block;
+        text-decoration: none;
+    }
+
+    li {
+        .transition(0.2s);
+        &:hover {
+            @c: @link-color;
+            background: @c;
+            border-radius: 3px;
+            border: darken(@c, 10%) solid;
+            border-width: 0 0.5em;
+            padding-left: 0.5em;
+
+            a {
+                color: #fff;
+            }
+        }
+    }
+
+    cite {
+        color: @gray;
+        font-size: 0.9em;
     }
 }
 

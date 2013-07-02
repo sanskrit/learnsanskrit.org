@@ -17,6 +17,7 @@
     <h2>
         <a href="{{ url_for('texts.text', slug=text.slug) }}">{{ text.name }}</a>
     </h2>
+    <small>By <a href="{{ url_for('texts.author', slug=text.author.slug) }}">{{ text.author.name }}</a></small>
     {% set cat = categorize(text.children) %}
     {{ print_category('Translations', cat.translation) }}
     {{ print_category('Commentaries', cat.commentary) }}
