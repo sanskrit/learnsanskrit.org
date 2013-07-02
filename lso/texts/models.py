@@ -180,11 +180,11 @@ class Segment(SimpleBase):
     #: The content contained in this segment
     content = Column(_Text)
     #: The segment's position within the division
-    position = Column(Integer)
+    position = Column(Integer, index=True)
     #: The :class:`Text` that owns this segment
     text_id = Column(ForeignKey(Text.id), index=True)
     #: The :class:`Division` that contains this segment
-    division_id = Column(ForeignKey(Division.id))
+    division_id = Column(ForeignKey(Division.id), index=True)
 
     division = relationship(Division, cascade=CASCADE_ARGS, single_parent=True)
     children = association_proxy('child_assocs', 'child')

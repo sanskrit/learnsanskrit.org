@@ -319,6 +319,7 @@ def text(slug):
         return redirect(url_for('.index'))
 
     divs = text.division.mp.query_descendants().all()
+    divs = [d for d in divs if d.segments]
     pages = []
     for d in divs:
         d_pages = division_paginate(d, PAGE_SIZE, min_size=MIN_PAGE_SIZE)
