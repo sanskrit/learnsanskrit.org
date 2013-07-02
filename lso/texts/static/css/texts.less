@@ -4,16 +4,28 @@
  * ~~~~~~~~~~~ */
 
 /* Block links */
-ul.text-list a, a.page-link, ul.dropdown-menu a, ul.page-links a {
+@link-bg: @link-color;
+ul.text-list a, a.page-link, ul.dropdown-menu a, ul.page-links a, a.dropdown-toggle {
     display: block;
     text-decoration: none;
+
+    &:hover {
+        background: @link-bg;
+        color: #fff;
+    }
 }
 
 /* Transitions */
-a.page-link, ul.text-list li {
+a.page-link, ul.text-list a, a.dropdown-toggle, a.dropdown-toggle:after {
     .transition(0.2s);
 }
 
+/* List style */
+ul.text-list, ul.page-links, #child-links, #page-links, ul.dropdown-menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
 
 /* Text index
  * ~~~~~~~~~~ */
@@ -21,31 +33,19 @@ a.page-link, ul.text-list li {
 section.text {
     margin-bottom: 1em;
 
-    &:hover {
-        background: @off-white
-    }
     h2 {
         margin: 0;
     }
 }
 
 ul.text-list {
-    list-style: none;
     padding: 0 1em;
 
-    li {
-        &:hover {
-            @c: @link-color;
-            background: @c;
-            border-radius: 3px;
-            border: darken(@c, 10%) solid;
-            border-width: 0 0.5em;
-            padding-left: 0.5em;
-
-            a {
-                color: #fff;
-            }
-        }
+    a:hover {
+        border-radius: 3px;
+        border: darken(@link-bg, 10%) solid;
+        border-width: 0 0.5em;
+        padding-left: 0.5em;
     }
 
     cite {
@@ -59,9 +59,7 @@ ul.text-list {
  * ~~~~~~~~~~~ */
 
 ul.page-links {
-    list-style: none;
     overflow: hidden;
-    padding: 0;
     margin: 1em 0;
 
     li {
@@ -74,10 +72,6 @@ ul.page-links {
 
         &:nth-child(odd) {
             background: @light-gray;
-        }
-
-        &:hover {
-            background: @link-color;
         }
     }
 }
@@ -149,9 +143,6 @@ div#segment-view {
 
 #child-links, #page-links {
     height: @panel-height;
-    list-style: none;
-    margin: 0;
-    padding: 0;
     position: absolute;
 
     li {
@@ -160,11 +151,7 @@ div#segment-view {
 }
 
 #child-links {
-    left: 1em;
-
-    li.dropdown {
-        line-height: @panel-height;
-    }
+    left: 0;
 }
 
 #page-links {
@@ -172,7 +159,8 @@ div#segment-view {
 }
 
 a.dropdown-toggle, a.page-link {
-    display: block;
+    color: @dark-gray;
+    text-decoration: none;
     height: @panel-height;
     padding: 0 0.5em;
 }
@@ -193,44 +181,64 @@ a.child-link {
 
 a.page-link {
     @f: 2em;
+    @p: 0.5em;
+    @o: 0.3em;
+
     font-size: @f;
     border-left: 1px darken(@light-gray, 10%) solid;
     float: left;
     text-align: center;
     line-height: @panel-height / @f;
     width: 1.5em;
+
+    &#prev-link:hover {
+        padding: 0 @p + @o 0 @p - @o;
+    }
+
+    &#next-link:hover {
+        padding: 0 @p - @o 0 @p + @o;
+    }
 }
 
 /* Dropdown menus
  * ~~~~~~~~~~~~~~ */
 li.dropdown {
+    border-right: 1px darken(@light-gray, 10%) solid;
+    line-height: @panel-height;
     position: relative;
 }
 
 a.dropdown-toggle {
-    &.active {
+    padding: 0 1.5em 0 0.5em;
+    position: relative;
+
+    &:after {
+        @f: 0.3em;
+        content: "◢◣";
+        position: absolute;
+        right: 0.4em / @f;
+
+        color: @gray;
+        font-size: @f;
+    }
+
+    &.active:after {
+        .rotate(180deg);
     }
 }
 
 ul.dropdown-menu {
     position: absolute;
-    bottom: @panel-height - 1em;
+    bottom: @panel-height;
 
     background: #fff;
     border: 2px @light-gray solid;
     border-bottom: 0;
-    list-style: none;
     min-width: 300px;
-    padding: 0;
 
     a {
         color: @dark-gray;
         padding: 0.5em 1em;
-
-        &:hover {
-            color: #fff;
-            background: @link-color;
-        }
     }
 
     li {

@@ -15,7 +15,7 @@
     {% set ps = pages[loop.index0] %}
     {% set len = ps|length %}
     {% for p in ps %}
-        <li style="width: {{ 100.0/len }}%;"><a href="{{ url_for('.segment', slug=text.slug, query=p.query) }}" data-readable="Go to {{ p.readable }}">&nbsp;</a></li>
+        <li style="width: {{ 100.0/len }}%;"><a href="{{ url_for('.segment', slug=text.slug, query=p.query) }}" data-readable="{{ p.readable }}">&nbsp;</a></li>
     {% endfor %}
     </ul>
 {% endfor %}
