@@ -6,10 +6,8 @@ $.tooltips = function(selector, scope) {
     selector = selector || '[title]';
     // Bind to page if no scope provided
     scope = scope || 'body';
-    // Speed for fading in and out
-    var fadeSpeed = 100,
     // Offset from cursor
-        offset = 5;
+    var offset = 5;
 
     $(scope).on({
         mouseover: function() {
@@ -32,7 +30,7 @@ $.tooltips = function(selector, scope) {
             var $tt = $('<div class="tt" />').html(title)
                 .hide()
                 .appendTo('body')
-                .fadeIn(fadeSpeed);
+                .show();
             $this.data('tooltip', $tt);
             console.log($tt);
         },
@@ -56,9 +54,7 @@ $.tooltips = function(selector, scope) {
             $tt.css({ top: top, left: left });
         },
         mouseout: function() {
-            $(this).data('tooltip').fadeOut(fadeSpeed, function() {
-                // $(this).remove();
-            });
+            $(this).data('tooltip').hide().remove();
         }
     }, selector);
 };
