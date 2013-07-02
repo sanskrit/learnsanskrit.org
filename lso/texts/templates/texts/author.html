@@ -1,14 +1,10 @@
 {% extends 'texts/layout.html' %}
+{% import 'texts/macros.html' as macros %}
 
 {% block title %}{{ author.name }}{% endblock %}
 
 {% block content %}
 <h1>{{ author.name }}</h1>
 
-<ul>
-{% for t in author.texts %}
-    <li><a href="{{ url_for('texts.text', slug=t.slug) }}">{{ t.name }}</a></li>
-{% endfor %}
-</ul>
-
+{{ macros.text_blocks(author.texts, categorize_texts) }}
 {% endblock %}

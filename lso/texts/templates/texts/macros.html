@@ -1,0 +1,25 @@
+{# Print links to translations and commentaries #}
+{% macro print_category(name, items) %}
+{% if items %}
+<h3>{{ name }}</h3>
+<ul class="text-list">
+    {% for text in items %}
+    <li><a href="{{ url_for('texts.text', slug=text.slug) }}">{{ text.author.name }} <br /> <cite>{{ text.name }}</cite></a></li>
+    {% endfor %}
+</ul>
+{% endif %}
+{% endmacro %}
+
+{# For each text in `texts`, print the material associated with the text. #}
+{% macro text_blocks(texts, categorize) %}
+{% for text in texts %}
+<section class="inset text">
+    <h2>
+        <a href="{{ url_for('texts.text', slug=text.slug) }}">{{ text.name }}</a>
+    </h2>
+    {% set cat = categorize(text.children) %}
+    {{ print_category('Translations', cat.translation) }}
+    {{ print_category('Commentaries', cat.commentary) }}
+</section>
+{% endfor %}
+{% endmacro %}

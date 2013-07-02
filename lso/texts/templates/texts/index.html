@@ -1,35 +1,15 @@
 {% extends 'texts/layout.html' %}
+{% from 'texts/macros.html' import text_blocks %}
 
 {% block title %}Texts{% endblock %}
-
-{% macro print_category(name, items) %}
-{% if items %}
-    <h3>{{ name }}</h3>
-    <ul>
-        {% for text in items %}
-        <li><a href="{{ url_for('.text', slug=text.slug) }}">{{ text.name }}</a> ({{ text.author.name }})</li>
-        {% endfor %}
-    </ul>
-{% endif %}
-{% endmacro %}
 
 {% block content %}
 <h1>Texts</h1>
 
 {% with messages = get_flashed_messages() %}
-    {% for m in messages %}
-    <p>{{ m }}</p>
-    {% endfor %}
+    {% for m in messages %}<p>{{ m }}</p>{% endfor %}
 {% endwith %}
 
-{% for text in texts %}
-{% set text_url = url_for('.text', slug=text.slug) %}
-<section class="text">
-    <h2><a href="{{ text_url }}">{{ text.name }}</a> (<a href="{{ url_for('author', slug=text.author.slug) }}">{{ text.author.name }}</a>)</h2>
-    {% set cat = categorize_texts(text.children) %}
-    {{ print_category('Translations', cat.translation) }}
-    {{ print_category('Commentaries', cat.commentary) }}
-</section>
-{% endfor %}
+{{ text_blocks(texts, categorize_texts) }}
 
 {% endblock %}

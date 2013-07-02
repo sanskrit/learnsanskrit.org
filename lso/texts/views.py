@@ -20,7 +20,7 @@ MIN_PAGE_SIZE = 3
 
 
 bp = Blueprint('texts', __name__, static_folder='static',
-               template_folder='templates', url_prefix='/texts')
+               template_folder='templates')
 
 
 # Helper functions
@@ -275,7 +275,7 @@ def segments_data(text, slug, query, related):
 # Regular endpoints
 # ~~~~~~~~~~~~~~~~~
 
-@bp.route('/')
+@bp.route('/texts/')
 def index():
     """A basic index page containing all texts in the collection."""
 
@@ -285,7 +285,7 @@ def index():
     return render_template('texts/index.html', texts=texts)
 
 
-@bp.route('/<slug>/')
+@bp.route('/texts/<slug>/')
 def text(slug):
     """The main page of a given text.
 
@@ -308,14 +308,14 @@ def text(slug):
                            pages=pages)
 
 
-@app.route('/author/<slug>')
+@bp.route('/authors/<slug>')
 def author(slug):
     author = Author.query.filter(Author.slug == slug).first()
     return render_template('texts/author.html', author=author)
 
 
-@bp.route('/<slug>/<query>')
-@bp.route('/<slug>/<query>+<list:related>')
+@bp.route('/texts/<slug>/<query>')
+@bp.route('/texts/<slug>/<query>+<list:related>')
 def segment(slug, query, related=None):
     """Query a given text for a group of segments. If related texts are
     listed too, show their corresponding segments.
