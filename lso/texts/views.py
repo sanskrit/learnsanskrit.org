@@ -272,8 +272,30 @@ def segments_data(text, slug, query, related):
     )
 
 
-# Regular endpoints
-# ~~~~~~~~~~~~~~~~~
+# Author endpoints
+# ~~~~~~~~~~~~~~~~
+
+@bp.route('/authors/')
+def author_index():
+    authors = Author.query.all()
+    sanskrit = []
+    english = []
+    for a in authors:
+        if a.language_id == LANGUAGES['sa']:
+            sanskrit.append(a)
+        else:
+            english.append(a)
+    return render_template('/texts/author_index.html', sanskrit=sanskrit,
+                           english=english)
+
+@bp.route('/authors/<slug>')
+def author(slug):
+    author = Author.query.filter(Author.slug == slug).first()
+    return render_template('texts/author.html', author=author)
+
+
+# Text/segment endpoints
+# ~~~~~~~~~~~~~~~~~~~~~~
 
 @bp.route('/texts/')
 def index():
@@ -306,12 +328,6 @@ def text(slug):
     return render_template('texts/text.html', text=text,
                            divs=divs,
                            pages=pages)
-
-
-@bp.route('/authors/<slug>')
-def author(slug):
-    author = Author.query.filter(Author.slug == slug).first()
-    return render_template('texts/author.html', author=author)
 
 
 @bp.route('/texts/<slug>/<query>')

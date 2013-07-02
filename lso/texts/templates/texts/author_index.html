@@ -1,0 +1,14 @@
+{% extends 'texts/layout.html' %}
+{% import 'texts/macros.html' as macros %}
+
+{% block title %}Authors{% endblock %}
+
+{% block content %}
+<h1>Authors</h1>
+
+<ul>
+    {% for a in authors %}
+    <li><a href="{{ url_for('texts.author', slug=a.slug) }}">{{ a.name }}</a></li>
+    {% endfor %}
+</ul>
+{% endblock %}
