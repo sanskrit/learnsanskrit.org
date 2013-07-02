@@ -334,11 +334,27 @@ def transform(data):
             else:
                 elem.tag = None
             elem.append(ET.Element('br'))
-        elif tag == 'lg':
+
+        # Modify tag
+        elif tag in ('lg', 'p', 'head'):
             elem.tag = 'p'
+        elif tag == 'quote':
+            elem.tag = 'blockquote'
+
         elif elem.tag == 'hi':
-            if attr['rend'] == 'italic':
+            if attr.get('rend') == 'italic':
                 elem.tag = 'i'
+
+        elif elem.tag == 'stage':
+            elem.tag = 'span'
+            html_attr['class'] = 'stage'
+
+        # Delete tag
+        elif elem.tag in ('corr', 'choice', 'supplied'):
+            elem.tag = None
+        # Delete element
+        elif elem.tag == 'sic':
+            elem.tag = elem.text = elem.tail = None
 
         elem.attrib = html_attr
 
