@@ -11,9 +11,11 @@
 
 {% for d in divs %}
     <h2>{{ d.slug }}</h2>
-    <ul>
-    {% for p in pages[loop.index0] %}
-        <li><a href="{{ url_for('.segment', slug=text.slug, query=p.query) }}">{{ p.readable }}</a></li>
+    <ul class="page-links">
+    {% set ps = pages[loop.index0] %}
+    {% set len = ps|length %}
+    {% for p in ps %}
+        <li style="width: {{ 100.0/len }}%;"><a href="{{ url_for('.segment', slug=text.slug, query=p.query) }}" data-readable="Go to {{ p.readable }}">&nbsp;</a></li>
     {% endfor %}
     </ul>
 {% endfor %}

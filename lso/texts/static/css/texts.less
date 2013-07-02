@@ -1,6 +1,23 @@
 @import "../../../static/css/lib.less";
 
-/* Index */
+/* Shared data
+ * ~~~~~~~~~~~ */
+
+/* Block links */
+ul.text-list a, a.page-link, ul.dropdown-menu a, ul.page-links a {
+    display: block;
+    text-decoration: none;
+}
+
+/* Transitions */
+a.page-link, ul.text-list li {
+    .transition(0.2s);
+}
+
+
+/* Text index
+ * ~~~~~~~~~~ */
+
 section.text {
     margin-bottom: 1em;
 
@@ -16,13 +33,7 @@ ul.text-list {
     list-style: none;
     padding: 0 1em;
 
-    a {
-        display: block;
-        text-decoration: none;
-    }
-
     li {
-        .transition(0.2s);
         &:hover {
             @c: @link-color;
             background: @c;
@@ -43,7 +54,38 @@ ul.text-list {
     }
 }
 
-/* Segments */
+
+/* Title pages
+ * ~~~~~~~~~~~ */
+
+ul.page-links {
+    list-style: none;
+    overflow: hidden;
+    padding: 0;
+    margin: 1em 0;
+
+    li {
+        background: @off-white;
+        border: 1px darken(@light-gray, 5%) solid;
+        box-sizing: border-box;
+        float: left;
+        line-height: 3em;
+        min-width: 5% !important;
+
+        &:nth-child(odd) {
+            background: @light-gray;
+        }
+
+        &:hover {
+            background: @link-color;
+        }
+    }
+}
+
+
+/* Segment pages
+ * ~~~~~~~~~~~~~ */
+
 @gutter: 3em;
 @panel-height: 4em;
 section.segment {
@@ -85,11 +127,12 @@ a.jump {
 
 div#segment-view {
     position: fixed;
-    overflow: auto;
     top: 3em;
     bottom: @panel-height;
     left: 0;
     right: 0;
+
+    overflow: auto;
     padding: 1em @gutter;
 }
 
@@ -125,16 +168,7 @@ div#segment-view {
 }
 
 #page-links {
-    right: 1em;
-}
-
-
-#prev-link:before {
-    content: "« ";
-}
-
-#next-link:after {
-    content: " »";
+    right: 0;
 }
 
 a.dropdown-toggle, a.page-link {
@@ -158,16 +192,17 @@ a.child-link {
 }
 
 a.page-link {
-    @f: 1em;
+    @f: 2em;
     font-size: @f;
-    display: block;
+    border-left: 1px darken(@light-gray, 10%) solid;
     float: left;
     text-align: center;
     line-height: @panel-height / @f;
-    width: 8em;
+    width: 1.5em;
 }
 
-/* Dropdown menus */
+/* Dropdown menus
+ * ~~~~~~~~~~~~~~ */
 li.dropdown {
     position: relative;
 }
@@ -178,20 +213,19 @@ a.dropdown-toggle {
 }
 
 ul.dropdown-menu {
+    position: absolute;
+    bottom: @panel-height - 1em;
+
     background: #fff;
     border: 2px @light-gray solid;
     border-bottom: 0;
-    bottom: @panel-height - 1em;
     list-style: none;
     min-width: 300px;
     padding: 0;
-    position: absolute;
 
     a {
         color: @dark-gray;
-        display: block;
         padding: 0.5em 1em;
-        text-decoration: none;
 
         &:hover {
             color: #fff;

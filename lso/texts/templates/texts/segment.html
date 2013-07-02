@@ -4,12 +4,13 @@
     <li><a data-id="{{ c.id }}" data-slug="{{ c.slug }}" class="child-link{% if c.slug not in (c.related or []) %} active{% endif %}" href="{{ url_for('.segment', slug=text.slug, query=query, related=c.related) }}">{{ c.author.name }} <br /> <cite>{{ c.name }}</cite></a></li>
 {% endmacro %}
 
-{% macro page_link(q, id) %}
+{% macro page_link(q, id, t) %}
     {% if q %}
-    <li><a id="{{ id }}" class="page-link" href="{{ url_for('.segment', slug=text.slug, query=q.query, related=related) }}">{{ q.readable }}</a></li>
+        {% set url = url_for('.segment', slug=text.slug, query=q.query, related=related) %}
     {% else %}
-    <li><a id="{{ id }}" class="page-link" href="{{ url_for('.text', slug=text.slug) }}">(title page)</a></li>
+        {% set url = url_for('.text', slug=text.slug) %}
     {% endif %}
+    <li><a id="{{ id }}" class="page-link" href="{{ url }}">{{ t|safe }}</a></li>
 {% endmacro %}
 
 {% macro dropdown(name, items) %}
@@ -54,8 +55,8 @@
         {% if commentary %}{{ dropdown('Commentaries', commentary) }}{% endif %}
     </ul>
     <ul id="page-links">
-        {{ page_link(prev, 'prev-link') }}
-        {{ page_link(next, 'next-link') }}
+        {{ page_link(prev, 'prev-link', '&laquo;') }}
+        {{ page_link(next, 'next-link', '&raquo;') }}
     </ul>
 </div>
 </div>
