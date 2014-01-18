@@ -1,10 +1,12 @@
 #!/usr/bin/python
 # -*- encoding: utf-8 -*-
 
+import json
 import os
 import re
 import yaml
 
+import lso.util
 from ..database import session
 from .models import Lesson
 
@@ -12,6 +14,16 @@ __all__ = ['run']
 
 DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')
 _punct_re = re.compile(r'[\t !"#$%&\'()*\-/<=>?@\[\\\]^_`{|},.]+')
+
+
+def build_graph():
+    """Load the lesson graph and populate any missing fields."""
+    with open(os.path.join(DATA_DIR, 'guide.json')) as f:
+        json_data = json.loads(lso.util.json_minify(f.read()))
+        for lesson in json_data:
+            if 'slug' not in lesson:
+                lesson['slug'] = slugify(lesson['name'])
+        return json_data
 
 
 def slugify(title):
@@ -27,7 +39,8 @@ def slugify(title):
 
     returned = []
     for w in _punct_re.split(preslug):
-        returned.append(w)
+        if w:
+            returned.append(w)
     return '-'.join(returned).lower()
 
 

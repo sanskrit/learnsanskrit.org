@@ -1,0 +1,857 @@
+[
+    // ~~~~~~
+    // Sounds
+    // ~~~~~~
+    // Pronouncing and labeling various Sanskrit sounds
+    {
+        "name": "`a`",
+        "deps": []
+    },
+    {
+        "name": "Short and long vowels",
+        "deps": [
+            "a"
+        ]
+    },
+    {
+        "name": "Simple vowels",
+        "deps": [
+            "short-and-long-vowels"
+        ]
+    },
+    {
+        "name": "Compound vowels",
+        "deps": [
+            "simple-vowels"
+        ]
+    },
+    {
+        "name": "Similar vowels",
+        "deps": [
+            "simple-vowels",
+            "compound-vowels"
+        ]
+    },
+    {
+        "name": "Semivowels",
+        "deps": [
+            "similar-vowels"
+        ]
+    },
+    {
+        "name": "Basic consonants",
+        "deps": [
+            "a",
+            "semivowels"
+        ]
+    },
+    {
+        "name": "Voiced consonants",
+        "deps": [
+            "basic-consonants"
+        ]
+    },
+    {
+        "name": "Aspirated consonants",
+        "deps": [
+            "basic-consonants"
+        ]
+    },
+    {
+        "name": "\"s\" consonants",
+        "deps": [
+            "basic-consonants"
+        ]
+    },
+    {
+        "name": "`ha`",
+        "deps": [
+            "voiced-consonants",
+            "aspirated-consonants"
+        ]
+    },
+    {
+        "name": "`anusvAra` and `visarga`",
+        "deps": [
+            "basic-consonants",
+            "ha"
+        ]
+    },
+    {
+        "name": "The Sanskrit alphabet",
+        "deps": [
+            "simple-vowels",
+            "compound-vowels",
+            "anusvara-and-visarga",
+            "basic-consonants",
+            "voiced-consonants",
+            "aspirated-consonants",
+            "s-consonants",
+            "ha"
+        ]
+    },
+    {
+        "name": "Special combinations",
+        "deps": [
+            "the-sanskrit-alphabet"
+        ]
+    },
+
+
+    // ~~~~~~~
+    // Prosody
+    // ~~~~~~~
+    // Meter, verses, and so on.
+    {
+        "name": "Syllables",
+        "deps": [
+            "the-sanskrit-alphabet"
+        ]
+    },
+    {
+        "name": "Meter",
+        "deps": [
+            "syllables"
+        ]
+    },
+    {
+        "name": "`gaNa`",
+        "deps": [
+            "meter"
+        ]
+    },
+
+
+    // ~~~~~~~~~~~~~
+    // Regular verbs
+    // ~~~~~~~~~~~~~
+    // Verbs in various modes, classes, and voices. Participles are
+    // in a separate section.
+    {
+        "name": "How Sanskrit works",
+        "deps": [
+        ]
+    },
+    {
+        "name": "Verbs",
+        "deps": [
+            "how-sanskrit-works"
+        ]
+    },
+    {
+        "name": "Present tense verbs",
+        "deps": [
+            "verbs"
+        ]
+    },
+    {
+        "name": "`Atmanepada`",
+        "deps": [
+            "present-tense-verbs"
+        ]
+    },
+    {
+        "name": "Passive verbs",
+        "deps": [
+            "atmanepada",
+            "the-eight-cases"
+        ]
+    },
+    {
+        "name": "The recent past",
+        "deps": [
+            "roots"
+        ]
+    },
+    {
+        "name": "The ordinary past",
+        "deps": [
+            "verb-classes"
+        ]
+    },
+    {
+        "name": "The distant past",
+        "deps": [
+            "doubling"
+        ]
+    },
+    {
+        "name": "The near future",
+        "deps": [
+            "roots"
+        ]
+    },
+    {
+        "name": "The distant future",
+        "deps": [
+            "roots"
+        ]
+    },
+    {
+        "name": "Potential verbs",
+        "deps": [
+            "verb-classes"
+        ]
+    },
+    {
+        "name": "Commands",
+        "deps": [
+            "verb-classes"
+        ]
+    },
+    {
+        "name": "Conditional verbs",
+        "deps": [
+            "the-near-future"
+        ]
+    },
+    {
+        "name": "Benedictive verbs",
+        "deps": [
+            "roots",
+            "passive-verbs"
+        ]
+    },
+
+
+    // ~~~~~~~~~~~~~~~~~~~~~~~~
+    // Gender, case, and number
+    // ~~~~~~~~~~~~~~~~~~~~~~~~
+    // Basic nominal concepts.
+    {
+        "name": "Nouns",
+        "deps": [
+            "how-sanskrit-works",
+            "verbs"
+        ]
+    },
+
+    {
+        "name": "Case 1",
+        "deps": [
+            "nouns"
+        ]
+    },
+    {
+        "name": "Case 2",
+        "deps": [
+            "case-1"
+        ]
+    },
+    {
+        "name": "Case 3",
+        "deps": [
+            "case-2"
+        ]
+    },
+    {
+        "name": "Case 4",
+        "deps": [
+            "case-3"
+        ]
+    },
+    {
+        "name": "Case 5",
+        "deps": [
+            "case-4"
+        ]
+    },
+    {
+        "name": "Case 6",
+        "deps": [
+            "case-5"
+        ]
+    },
+    {
+        "name": "Case 7",
+        "deps": [
+            "case-6"
+        ]
+    },
+    {
+        "name": "Case 8",
+        "deps": [
+            "case-7"
+        ]
+    },
+    {
+        "name": "The eight cases",
+        "deps": [
+            "case-1",
+            "case-2",
+            "case-3",
+            "case-4",
+            "case-5",
+            "case-6",
+            "case-7",
+            "case-8"
+        ]
+    },
+    {
+        "name": "Neuter and feminine nouns",
+        "deps": [
+            "the-eight-cases"
+        ]
+    },
+
+
+    // ~~~~~~~~
+    // Pronouns
+    // ~~~~~~~~
+    // All the ones that appear in classical Sanskrit.
+    {
+        "name": "`tad` and `etad`",
+        "deps": [
+            "neuter-and-feminine-nouns"
+        ]
+    },
+    {
+        "name": "`yad` and other relatives",
+        "deps": [
+            "tad-and-etad"
+        ]
+    },
+    {
+        "name": "`kim`",
+        "deps": [
+            "tad-and-etad"
+        ]
+    },
+    {
+        "name": "`idam`",
+        "deps": [
+            "tad-and-etad"
+        ]
+    },
+    {
+        "name": "`ena`",
+        "deps": [
+            "tad-and-etad"
+        ]
+    },
+
+
+    // ~~~~~~~~~~
+    // Adjectives
+    // ~~~~~~~~~~
+    // Regular and pronominal.
+    {
+        "name": "Adjectives",
+        "deps": [
+            "the-eight-cases",
+            "neuter-and-feminine-nouns"
+        ]
+    },
+    {
+        "name": "Pronominal adjectives",
+        "deps": [
+            "adjectives",
+            "tad-and-etad"
+        ]
+    },
+
+
+    // ~~~~~~~~~
+    // Compounds
+    // ~~~~~~~~~
+    // Making and parsing compounds
+    {
+        "name": "Compounds",
+        "deps": [
+            "the-eight-cases"
+        ]
+    },
+    {
+        "name": "`tatpuruSa` compounds",
+        "slug": "tatpurusha-compounds",
+        "deps": [
+            "compounds"
+        ]
+    },
+    {
+        "name": "`dvandva` compounds",
+        "deps": [
+            "compounds",
+            "ca-and-vaa"
+        ]
+    },
+    {
+        "name": "`bahuvrIri` compounds",
+        "deps": [
+            "tatpurusha-compounds"
+        ]
+    },
+    {
+        "name": "`avyayIbhAva` compounds",
+        "deps": [
+            "tatpurusha-compounds"
+        ]
+    },
+
+
+    // ~~~~~~~~~~~~~~~~~
+    // Uninflected words
+    // ~~~~~~~~~~~~~~~~~
+    // Does not include uninflected verbals.
+    {
+        "name": "Uninflected words",
+        "deps": [
+            "how-sanskrit-works"
+        ]
+    },
+    {
+        "name": "`na`",
+        "deps": [
+            "uninflected-words"
+        ]
+    },
+    {
+        "name": "`ca` and `vA`",
+        "slug": "ca-and-vaa",
+        "deps": [
+            "uninflected-words"
+        ]
+    },
+    {
+        "name": "`iti`",
+        "deps": [
+            "uninflected-words"
+        ]
+    },
+    {
+        "name": "`iva`",
+        "deps": [
+            "uninflected-words"
+        ]
+    },
+    {
+        "name": "`eva`, `tu`, and `hi`",
+        "deps": [
+            "uninflected-words"
+        ]
+    },
+    {
+        "name": "Adverbs",
+        "deps": [
+            "uninflected-words",
+            "adjectives"
+        ]
+    },
+
+
+    // ~~~~~~~~~~~~~~~~~~~~
+    // Secondary verb stems
+    // ~~~~~~~~~~~~~~~~~~~~
+    // Everything other than the basic 10.
+    {
+        "name": "Other verb stems",
+        "deps": [
+            "roots"
+        ]
+    },
+    {
+        "name": "Causal verbs",
+        "deps": [
+            "other-verb-stems"
+        ]
+    },
+    {
+        "name": "Desiderative verbs",
+        "deps": [
+            "other-verb-stems",
+            "doubling"
+        ]
+    },
+    {
+        "name": "Intensive verbs",
+        "deps": [
+            "other-verb-stems"
+        ]
+    },
+    {
+        "name": "Nominal verbs",
+        "deps": [
+            "other-verb-stems"
+        ]
+    },
+
+
+    // ~~~~~~~~~~
+    // Noun stems
+    // ~~~~~~~~~~
+    // Everything other than -a
+    {
+        "name": "The strong `a` class",
+        "deps": [
+            "verb-classes"
+        ]
+    },
+    {
+        "name": "The root class",
+        "deps": [
+            "verb-classes"
+        ]
+    },
+    {
+        "name": "The doubling class",
+        "deps": [
+            "verb-classes",
+            "doubling"
+        ]
+    },
+    {
+        "name": "The `ya` class",
+        "deps": [
+            "verb-classes"
+        ]
+    },
+    {
+        "name": "The `no` class",
+        "deps": [
+            "verb-classes"
+        ]
+    },
+    {
+        "name": "The weak `a` class",
+        "deps": [
+            "verb-classes"
+        ]
+    },
+    {
+        "name": "The nasal class",
+        "deps": [
+            "verb-classes"
+        ]
+    },
+    {
+        "name": "The `o` class",
+        "ex": ["tanoti"],
+        "deps": [
+            "verb-classes"
+        ]
+    },
+    {
+        "name": "`kR`",
+        "ex": ["karoti"],
+        "deps": [
+            "the-o-class"
+        ]
+    },
+    {
+        "name": "The `nA` class",
+        "deps": [
+            "verb-classes"
+        ]
+    },
+    {
+        "name": "The `aya` class",
+        "ex": ["corayati"],
+        "deps": [
+            "verb-classes"
+        ]
+    },
+
+
+    // ~~~~~~~~~~
+    // Noun stems
+    // ~~~~~~~~~~
+    // Everything other than -a
+    {
+        "name": "`-A`, `-I`, and `-U` stems",
+        "ex": ["senA", "nadI", "vadhU"],
+        "deps": [
+            "the-eight-cases"
+        ]
+    },
+    {
+        "name": "`-i` and `-u` stems",
+        "ex": ["agni", "vAyu"],
+        "deps": [
+            "the-eight-cases"
+        ]
+    },
+    {
+        "name": "Consonant stems",
+        "deps": [
+            "the-eight-cases"
+        ]
+    },
+    {
+        "name": "`-R` Stems",
+        "deps": [
+            "the-eight-cases",
+            "consonant-stems",
+            "strong-and-weak-stems",
+            "stem-suffixes"
+        ]
+    },
+    {
+        "name": "`-ai` stems",
+        "deps": [
+            "consonant-stems"
+        ]
+    },
+    {
+        "name": "`-o` stems",
+        "deps": [
+            "consonant-stems"
+        ]
+    },
+    {
+        "name": "`-au` stems",
+        "deps": [
+            "consonant-stems"
+        ]
+    },
+    {
+        "name": "Strong and weak stems",
+        "deps": [
+            "consonant-stems"
+        ]
+    },
+    {
+        "name": "`-an`, `-man`, and `-van` stems",
+        "deps": [
+            "strong-and-weak-stems"
+        ]
+    },
+    {
+        "name": "`-at`, `-mat`, and `-vat` stems",
+        "deps": [
+            "strong-and-weak-stems"
+        ]
+    },
+    {
+        "name": "`-in`, `-min`, and `-vin` stems",
+        "deps": [
+            "strong-and-weak-stems"
+        ]
+    },
+
+
+
+    // ~~~~~~~~~~~
+    // Participles
+    // ~~~~~~~~~~~
+    // All the common participles.
+    {
+        "name": "Participles",
+        "deps": [
+            "roots",
+            "making-words"
+        ]
+    },
+    {
+        "name": "Past participles",
+        "deps": [
+            "participles"
+        ]
+    },
+    {
+        "name": "Present participles",
+        "deps": [
+            "participles"
+        ]
+    },
+    {
+        "name": "Future participles",
+        "deps": [
+            "participles"
+        ]
+    },
+    {
+        "name": "Other participles",
+        "deps": [
+            "participles",
+            "the-distant-past"
+        ]
+    },
+    {
+        "name": "Participles and \"simultaneous action\"",
+        "deps": [
+            "past-participles",
+            "present-participles",
+            "future-participles"
+        ]
+    },
+
+
+    // ~~~~~~~~~~~
+    // Other stuff
+    // ~~~~~~~~~~~
+    // Things that don't belong anywhere else.
+    {
+        "name": "Doubling",
+        "deps": [
+            "roots"
+        ]
+    },
+    {
+        "name": "Verbless sentences",
+        "deps": [
+            "how-sanskrit-works",
+            "case-1"
+        ]
+    },
+    {
+        "name": "Roots",
+        "deps": [
+            "present-tense-verbs",
+            "atmanepada"
+        ]
+    },
+    {
+        "name": "Verb classes",
+        "deps": [
+            "roots"
+        ]
+    },
+    {
+        "name": "Making words",
+        "deps": [
+            "roots"
+        ]
+    },
+    {
+        "name": "Root suffixes",
+        "deps": [
+            "making-words"
+        ]
+    },
+    {
+        "name": "Stem suffixes",
+        "deps": [
+            "making-words"
+        ]
+    },
+    {
+        "name": "Infinitives",
+        "deps": [
+            "root-suffixes"
+        ]
+    },
+    {
+        "name": "Gerunds",
+        "deps": [
+            "root-suffixes"
+        ]
+    },
+
+
+
+    // ~~~~~~~
+    // Numbers
+    // ~~~~~~~
+    // One, two, and many more.
+    {
+        "name": "Numbers",
+        "deps": [
+            "pronominal-adjectives"
+        ]
+    },
+    {
+        "name": "One, two, three, ...",
+        "deps": [
+            "numbers"
+        ]
+    },
+    {
+        "name": "First, second, third, ...",
+        "deps": [
+            "one-two-three"
+        ]
+    },
+    {
+        "name": "Big numbers",
+        "deps": [
+            "one-two-three"
+        ]
+    },
+
+
+    // ~~~~~~~~~~
+    // Devanagari
+    // ~~~~~~~~~~
+    // Reading and writing Sanskrit in Devanagari.
+    {
+        "name": "Devanagari",
+        "deps": [
+            "the-sanskrit-alphabet"
+        ]
+    },
+    {
+        "name": "Marks",
+        "deps": [
+            "devanagari"
+        ]
+    },
+    {
+        "name": "Consonants",
+        "slug": "devanagari-consonants",
+        "deps": [
+            "devanagari"
+        ]
+    },
+    {
+        "name": "Plain vowels",
+        "deps": [
+            "devanagari"
+        ]
+    },
+    {
+        "name": "Consonant clusters",
+        "deps": [
+            "devanagari-consonants"
+        ]
+    },
+    {
+        "name": "Punctuation",
+        "deps": [
+            "devanagari"
+        ]
+    },
+    {
+        "name": "Numerals",
+        "deps": [
+            "devanagari"
+        ]
+    },
+    {
+        "name": "Om",
+        "deps": [
+            "marks",
+            "plain-vowels"
+        ]
+    },
+
+
+    // ~~~~~~~~~~~~~~
+    // Vedic Sanskrit
+    // ~~~~~~~~~~~~~~
+    // Things outside the scope of classical Sanskrit.
+    {
+        "name": "Vedic Sanskrit",
+        "deps": [
+            "the-sanskrit-alphabet"
+        ]
+    },
+    {
+        "name": "`lR` and `L`",
+        "deps": [
+            "vedic-sanskrit"
+        ]
+    },
+    {
+        "name": "Accent",
+        "deps": [
+            "vedic-sanskrit"
+        ]
+    },
+    {
+        "name": "Vedic Devanagari",
+        "deps": [
+            "vedic-sanskrit",
+            "devanagari-consonants"
+        ]
+    }
+]
