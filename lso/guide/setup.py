@@ -6,9 +6,9 @@ import os
 import re
 import yaml
 
+import lso.database
 import lso.util
-from ..database import session
-from .models import Lesson
+from .models import _Lesson, Lesson
 
 __all__ = ['run']
 
@@ -44,7 +44,30 @@ def slugify(title):
     return '-'.join(returned).lower()
 
 
+def add_lessons(graph_data, sessionclass):
+    """Store the lesson DAG in the database.
+
+    :param graph_data: the lesson DAG, as Python data
+    :param sessionclass: some session class
+    """
+    lesson_map = {}
+    session = sessionclass()
+
+    for datum in graph_data:
+        lesson = Lesson(name=datum['name'], slug=datum['slug'])
+        session.add(lesson)
+        lesson_map[datum['slug']] = lesson
+
+    for datum in graph_data:
+        slug = datum['slug']
+        deps = [lesson_map[dep] for dep in datum['deps']]
+        lesson_map[slug].add_dependencies(*deps)
+
+    session.commit()
+
+
 def init_lessons(filename):
+    session = lso.database.session
     def handle(stubs, parent=None):
         lesson = None
         for stub in stubs:
@@ -54,7 +77,7 @@ def init_lessons(filename):
             except KeyError:
                 slug = slugify(title)
 
-            lesson = Lesson(parent=parent,
+            lesson = _Lesson(parent=parent,
                             slug=slug,
                             title=title)
             session.add(lesson)
@@ -70,5 +93,5 @@ def init_lessons(filename):
 
 
 def run():
-    if not Lesson.query.count():
+    if not _Lesson.query.count():
         init_lessons('guide.yml')

@@ -4,11 +4,11 @@ from fabric.api import *
 from flask.ext import weasyprint as WP
 
 from lso import app
-from lso.guide.models import Lesson
+from lso.guide.models import _Lesson
 
 
 def lesson_tree():
-    roots = Lesson.query.filter(Lesson.parent_id==None).all()
+    roots = _Lesson.query.filter(_Lesson.parent_id==None).all()
     guide_root = next(x for x in roots if x.slug == '')
 
     lessons = guide_root.mp.query_descendants().all()
