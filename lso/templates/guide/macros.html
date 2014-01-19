@@ -1,0 +1,35 @@
+{# Print a list of examples #}
+{% macro examples() %}
+<ul class="examples">
+    {% for example in varargs %}{{ example }}{% endfor %}
+</ul>
+{% endmacro %}
+
+{# Print a single example #}
+{% macro x(sanskrit, english) %}
+<li>
+    {% set text = sanskrit.replace('->', '→') %}
+    {{ text|d(tag='p') }}
+    {{ text|i(tag='p') }}
+    <p>{{ english }}</p>
+</li>
+{% endmacro %}
+
+{# Print a list of lesson links #}
+{% macro lesson_list(lessons) %}
+{% if lessons %}
+<ul>
+    {% for lesson in lessons %}
+    <li><a href="{{ url_for('.lesson', slug=lesson.slug) }}">{{ lesson.name }}</a></li>
+    {% endfor %}
+</ul>
+{% endif %}
+{% endmacro %}
+
+
+
+{% macro note() %}
+<aside class="note">
+    {{ caller() }}
+</aside>
+{% endmacro %}

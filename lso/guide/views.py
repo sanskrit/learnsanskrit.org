@@ -31,7 +31,7 @@ def lesson(slug):
         try:
             kw = {
                 'lesson': lesson,
-                'content_path': 'guide/{}.html'.format(lesson.slug)
+                'content_path': 'guide/content/{}.html'.format(lesson.slug)
             }
             content_path = 'guide/{}.html'.format(lesson.slug)
             return render_template('guide/lesson.html', **kw)

@@ -1,7 +1,5 @@
+{% import 'guide/macros.html' as m %}
+
 <h1>Sanskrit guide</h1>
 
-<ul>
-{% for lesson in lessons %}
-    <li><a href="{{ url_for('.lesson', slug=lesson.slug) }}">{{ lesson.name }}</a></li>
-{% endfor %}
-</ul>
+{{ m.lesson_list(lessons) }}

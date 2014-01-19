@@ -1,17 +1,10 @@
+{% import 'guide/macros.html' as m %}
 <h1>{{ lesson.name }}</h1>
 
-<h2>Predecessors</h2>
-<ul>
-{% for pred in lesson.predecessors() %}
-    <li><a href="{{ url_for('.lesson', slug=pred.slug) }}">{{ pred.name }}</a></li>
-{% endfor %}
-</ul>
+<p>Sorry, this lesson isn't ready yet.</p>
 
+<h2>Predecessors</h2>
+{{ m.lesson_list(lesson.predecessors()) }}
 
 <h2>Successors</h2>
-<p>(necessary but not sufficient)</p>
-<ul>
-{% for succ in lesson.successors() %}
-    <li><a href="{{ url_for('.lesson', slug=succ.slug) }}">{{ succ.name }}</a></li>
-{% endfor %}
-</ul>
+{{ m.lesson_list(lesson.successors()) }}
