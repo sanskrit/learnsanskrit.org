@@ -1,14 +1,6 @@
-{% extends 'guide.html' %}
+{% set notes = [] %}
+<article>
+    <h1>{{ lesson.name }}</h1>
 
-{% block article %}{% block lesson %}{% endblock %}{% endblock %}
-
-{% block footer %}
-<footer>
-    {% if next %}
-    <p class="call-to-action"><a href="{{ lesson_url(unit.slug, next.slug) }}" class="jumbo invitation btn">Next lesson ({{ next.title|safe }})</a></p>
-    {% endif %}
-    {% if prev %}
-    <p><a href="{{ lesson_url(unit.slug, prev.slug) }}">Previous lesson ({{ prev.title|safe }})</a></p>
-    {% endif %}
-</footer>
-{% endblock %}
+    {% include content_path %}
+</article>
