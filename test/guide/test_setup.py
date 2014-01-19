@@ -1,8 +1,8 @@
+import pytest
+
 from lso.database import Base
 from lso.guide import setup
 from lso.guide.models import Lesson
-
-import pytest
 
 
 @pytest.fixture(scope='session')

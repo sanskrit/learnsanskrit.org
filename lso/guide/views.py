@@ -1,11 +1,39 @@
-from flask import redirect, render_template, url_for
+from flask import abort, redirect, render_template, url_for
 
+from lso.guide import util
 from lso.lib import LSOBlueprint
-from .models import _Lesson
+from .models import Lesson, _Lesson
 
 bp = LSOBlueprint('guide', __name__, url_prefix='/guide')
 
 import filters
+
+
+@bp.route('/')
+def index():
+    all_lessons = Lesson.query.all()
+    slug_map = {lesson.slug: lesson for lesson in all_lessons}
+    slug_graph = {lesson.slug: [succ.slug for succ in lesson.successors()]
+                  for lesson in all_lessons}
+
+    sorted_slugs = util.topological_sort(slug_graph)
+    sorted_lessons = [slug_map[slug] for slug in sorted_slugs]
+    return render_template('guide/index.html', lessons=sorted_lessons)
+
+
+@bp.route('/<slug>')
+def lesson(slug):
+    lesson = Lesson.query.filter(Lesson.slug==slug).first()
+    if lesson:
+        template = 'guide/placeholder-lesson.html'
+        return render_template(template, lesson=lesson)
+    else:
+        abort(404)
+
+
+@bp.route('/help')
+def help():
+    return render_template('guide/help.html')
 
 
 def lesson_tree(root):
@@ -22,21 +50,8 @@ def lesson_tree(root):
     return units
 
 
-@bp.route('/')
-def index():
-    roots = _Lesson.query.filter(_Lesson.parent_id==None).all()
-    units = lesson_tree(roots[0])
-    supp = lesson_tree(roots[1])
-    return render_template('guide/index.html', units=units, supp=supp)
-
-
-@bp.route('/help')
-def help():
-    return render_template('guide/help.html')
-
-
-@bp.route('/<unit>')
-def unit(**kwargs):
+@bp.route('/unit/<unit>')
+def _unit(**kwargs):
     unit_slug = kwargs.pop('unit')
 
     unit = _Lesson.query.filter(_Lesson.slug==unit_slug).first()
@@ -49,7 +64,7 @@ def unit(**kwargs):
 
 
 @bp.route('/<unit>/<lesson>')
-def lesson(**kwargs):
+def _lesson(**kwargs):
     unit_slug = kwargs.pop('unit')
     lesson_slug = kwargs.pop('lesson')
 

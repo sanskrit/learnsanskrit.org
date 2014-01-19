@@ -1,0 +1,17 @@
+<h1>{{ lesson.name }}</h1>
+
+<h2>Predecessors</h2>
+<ul>
+{% for pred in lesson.predecessors() %}
+    <li><a href="{{ url_for('.lesson', slug=pred.slug) }}">{{ pred.name }}</a></li>
+{% endfor %}
+</ul>
+
+
+<h2>Successors</h2>
+<p>(necessary but not sufficient)</p>
+<ul>
+{% for succ in lesson.successors() %}
+    <li><a href="{{ url_for('.lesson', slug=succ.slug) }}">{{ succ.name }}</a></li>
+{% endfor %}
+</ul>

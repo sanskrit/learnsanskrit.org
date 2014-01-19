@@ -44,14 +44,14 @@ def slugify(title):
     return '-'.join(returned).lower()
 
 
-def add_lessons(graph_data, sessionclass):
+def add_lessons(graph_data, sessionclass=None):
     """Store the lesson DAG in the database.
 
     :param graph_data: the lesson DAG, as Python data
     :param sessionclass: some session class
     """
     lesson_map = {}
-    session = sessionclass()
+    session = sessionclass() if sessionclass else lso.database.session
 
     for datum in graph_data:
         lesson = Lesson(name=datum['name'], slug=datum['slug'])

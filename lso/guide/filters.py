@@ -69,9 +69,9 @@ def img(filename, alt):
 def lesson_url(unit, lesson=None):
     """URL helper for linking to lessons and units."""
     if lesson:
-        return url_for('guide.lesson', unit=unit, lesson=lesson)
+        return url_for('guide._lesson', unit=unit, lesson=lesson)
     else:
-        return url_for('guide.unit', unit=unit)
+        return url_for('guide._unit', unit=unit)
 
 
 def nominal_data(stem, gender, cases=None):
