@@ -25,3 +25,16 @@
 </ul>
 {% endif %}
 {% endmacro %}
+
+{% macro sounds() %}
+<ul class="sounds">
+    {% for name, filename, desc in varargs %}
+    <li>
+        <a href="{{ url_for('guide.static', filename='audio/%s.mp3' | format(filename)) }}">
+            <div class="letter">{{ name|i }}</div>
+            {% if desc -%}<div>{{ desc }}</div>{%- endif -%}
+        </a>
+    </li>
+    {% endfor %}
+</ul>
+{% endmacro %}
