@@ -10,6 +10,6 @@
     {{ m.lesson_list(predecessors) }}
     {% endif %}
 
-    {% include content_path %}
+    {% filter markdown %}{% include content_path %}{% endfilter %}
 </article>
 {% endblock %}

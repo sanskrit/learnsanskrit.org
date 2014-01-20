@@ -1,6 +1,7 @@
 from flask import Blueprint, Flask
 from flask.ext.assets import Bundle, Environment
 from flask.ext.mail import Mail
+from flask.ext.markdown import Markdown
 from flask.ext.security import Security, SQLAlchemyUserDatastore
 
 from sanskrit import Context, analyze, query
@@ -52,6 +53,13 @@ import admin
 # Mail
 # ----
 mail = Mail(app)
+
+
+# Markdown
+# --------
+md = Markdown(app, extensions=['admonition'])
+from ext_markdown import SanskritExtension
+md.register_extension(SanskritExtension)
 
 
 # Sanskrit
