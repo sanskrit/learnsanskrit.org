@@ -1,0 +1,117 @@
+<h1>CSS preview</h1>
+
+{% macro section(name) %}
+<h2>{{ name }}</h2>
+<div style="margin-left: 3em">
+{{ caller() }}
+</div>
+{% endmacro %}
+
+
+{% call section('Headings') %}
+<h1>h1. Heading</h1>
+<h2>h2. Heading</h2>
+<h3>h3. Heading</h3>
+<h4>h4. Heading</h4>
+<h5>h5. Heading</h5>
+<h6>h6. Heading</h6>
+{% endcall %}
+
+
+{% call section('Lists') %}
+<ul>
+    <li>This is an unordered list.</li>
+    <li>It has three items.</li>
+    <li>This was the list.</li>
+</ul>
+
+<ol>
+    <li>This is an ordered list.</li>
+    <li>It has three items.</li>
+    <li>This was the list.</li>
+</ol>
+
+<dl>
+    <dt>This is a term.</dt>
+    <dd><p>This its its definition.</p></dd>
+    <dt>This is another term.</dt>
+    <dd><p>This its its definition.</p></dd>
+</dl>
+{% endcall %}
+
+
+{% call section('Inline tags') %}
+{% set tags = [
+    ('a', 'link text (no href)'),
+    ('abbr', 'abbreviated text'),
+    ('b', 'bolded text'),
+    ('cite', 'cited text'),
+    ('code', 'code'),
+    ('del', 'deleted text'),
+    ('em', 'emphasized text'),
+    ('i', 'italicized text'),
+    ('ins', 'inserted text'),
+    ('kbd', 'keyboard text'),
+    ('mark', 'marked text'),
+    ('q', 'quoted text'),
+    ('s', 'strikethrough text'),
+    ('small', 'small text'),
+    ('strong', 'strongly emphasized text'),
+    ('sub', 'subscript'),
+    ('sup', 'superscript'),
+    ('u', 'underlined text'),
+] %}
+{% for tag, desc in tags %}
+<p>
+    <code>&lt;{{ tag }}&gt;</code> : for <{{ tag }}>{{ desc }}</{{ tag }}>
+</p>
+{% endfor %}
+{% endcall %}
+
+
+{% call section('Sanskrit text') %}
+<p>This is Devanagari: {{ 'saMskRtam'|d }}</p>
+<p>This is IAST: {{ 'saMskRtam'|i }}</p>
+{% endcall %}
+
+
+{% call section('Body text') %}
+<p>This is a paragraph. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean cursus molestie sapien et bibendum. Nulla laoreet condimentum viverra. Pellentesque euismod augue est. Suspendisse vitae tincidunt lectus, ut malesuada nibh. Sed ut quam egestas, euismod tortor in, pretium purus. Nam rhoncus volutpat molestie. Nulla vehicula sed dui sit amet lacinia.</p>
+
+<p>This is another paragraph. Phasellus vel ipsum vel ipsum auctor posuere. Etiam sed leo risus. In ac posuere lacus. Vestibulum eu varius ligula, porttitor fringilla quam. Vivamus ullamcorper massa elementum nisl semper, eget lobortis ipsum adipiscing. Suspendisse augue ligula, posuere a egestas ac, mattis id purus. Duis porttitor diam vel elit tristique accumsan. Fusce quis dignissim leo, vel hendrerit nisi.</p>
+
+<blockquote>
+    <p>This is a blockquote. Nullam eget purus risus. Sed nisi turpis, eleifend vitae nisi eget, varius pretium velit. Curabitur ultricies tempor ipsum, at interdum mi. In porttitor justo eu rhoncus pretium. Nunc elementum, urna imperdiet pretium molestie, mauris dolor tristique dui, et malesuada urna enim sit amet libero. Aliquam congue enim vestibulum egestas facilisis.</p>
+
+    <p>This is another paragraph in the blockquote. Nam blandit lacinia risus non rhoncus. Aenean ut pharetra lectus. In malesuada aliquet rutrum. Aenean sagittis nisi id nunc pellentesque, a malesuada nisi pharetra. Pellentesque pretium dui libero, ut tempor libero dictum quis. Fusce libero justo, fringilla a imperdiet ac, posuere vitae odio. Curabitur odio urna, interdum vitae turpis vitae, faucibus aliquet nisl.</p>
+</blockquote>
+{% endcall %}
+
+{% call section('Tables') %}
+<table>
+    <tr>
+        <th>Words</th>
+        <th>and</th>
+        <th>more</th>
+        <th>words</th>
+    </tr>
+    <tr>
+        <td>This</td>
+        <td>is</td>
+        <td>a</td>
+        <td>table</td>
+    </tr>
+    <tr>
+        <td>filled</td>
+        <td>with</td>
+        <td>different</td>
+        <td>words</td>
+    </tr>
+    <tr>
+        <td>but</td>
+        <td>just</td>
+        <td>twelve</td>
+        <td>words</td>
+    </tr>
+</table>
+{% endcall %}

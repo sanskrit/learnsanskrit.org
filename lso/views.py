@@ -22,3 +22,8 @@ def page_not_found(error):
 @app.errorhandler(500)
 def internal_server_error(error):
     return render_template('errors/500.html'), 500
+
+
+@app.route('/demo')
+def site_css():
+    return render_template('demo.html')
