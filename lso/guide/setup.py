@@ -4,11 +4,10 @@
 import json
 import os
 import re
-import yaml
 
 import lso.database
 import lso.util
-from .models import _Lesson, Lesson
+from .models import Lesson, LessonEdge
 
 __all__ = ['run']
 
@@ -66,32 +65,11 @@ def add_lessons(graph_data, sessionclass=None):
     session.commit()
 
 
-def init_lessons(filename):
-    session = lso.database.session
-    def handle(stubs, parent=None):
-        lesson = None
-        for stub in stubs:
-            title = stub['title']
-            try:
-                slug = stub['slug']
-            except KeyError:
-                slug = slugify(title)
+def run(force=False):
+    if force:
+        LessonEdge.query.delete()
+        Lesson.query.delete()
 
-            lesson = _Lesson(parent=parent,
-                            slug=slug,
-                            title=title)
-            session.add(lesson)
-
-            try:
-                handle(stub['children'], lesson)
-            except KeyError:
-                pass
-
-    data = yaml.load(open(os.path.join(DATA_DIR, filename)))
-    handle(data)
-    session.commit()
-
-
-def run():
-    if not _Lesson.query.count():
-        init_lessons('guide.yml')
+    if not Lesson.query.count():
+        graph_data = build_graph()
+        add_lessons(graph_data, lso.database.session)
