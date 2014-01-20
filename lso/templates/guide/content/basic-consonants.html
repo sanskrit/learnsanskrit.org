@@ -1,0 +1,147 @@
+Visualize the flow of air that makes the vowel `a`. The air starts in the lungs, moves through the throat, and flows cleanly through the mouth, like a river flowing straight. And if we change the air flow in some way, we create a new sound.
+
+At a high level, we can separate all Sanskrit sounds into two groups:
+
+- those that leave the air flow mostly unchanged
+- those that change the air flow in significant ways
+
+The sounds that leave it mostly unchanged are called <dfn>vowels</dfn>. We have seen all of these already. By using our tongues and lips to change the shape of the air flow, we can create a variety of simple and compound vowels.
+
+All other sounds are called <dfn>consonants</dfn>. For example, the four semivowels (`ya`, `ra`, `la`, `va`) are produced by *squeezing* the air flow at certain points in the mouth.
+
+But we can change the air flow in more drastic ways than this.
+
+
+Stops and nasals
+----------------
+
+Try pronouncing the vowel `a`. While pronouncing the vowel, *stop* the flow of air entirely, then quickly let it flow again. This produces sounds like `ka` and `ta` and `pa`. We can call such sounds <dfn>stops</dfn>, since they are made when the air flow stops.
+
+Once more, try pronouncing the vowel `a`. While pronouncing the vowel, stop the flow of air entirely &mdash; then *redirect* it through your nose. This produces sounds like `na` and `ma`. We can call such sounds <dfn>nasals</dfn>, since they are made with help from the nasal cavity.
+
+!!! note
+    These are simple sounds. So why the long introduction? By learning to become aware of how sounds are formed and why they sound the way they do, you will have less trouble learning Sanskrit.
+
+
+Stopping the flow of air
+------------------------
+
+The mouth is a large cavern with a long roof. We can stop the flow of air at many points. Sanskrit uses **five** of these points, and you can see them below:
+
+{% include 'guide/include/sound-points.html' %}
+
+These five points are:
+
+- The <dfn class="r">soft palate</dfn>
+- The <dfn class="o">hard palate</dfn>
+- The <dfn class="y">hard bump</dfn> on the roof of the mouth
+- The <dfn class="g">base of the teeth</dfn>
+- The <dfn class="b">lips</dfn>
+
+Let's just call these points the <dfn>points of sound</dfn>. Now let's see how they're used:
+
+### Soft palate
+We start at the soft palate, at the back of the mouth:
+
+{{ m.sounds(
+    ('ka', 'ka', '"k" in "skill"'),
+    ('Ga', 'na_k', '"ng" in "lung"'),
+) }}
+
+### Hard palate
+Moving forward, we reach the hard palate:
+
+{{ m.sounds(
+    ('ca', 'ca', '(no match)'),
+    ('Ja', 'na_j', '(no match)'),
+) }}
+
+!!! note
+    `ca` looks and sounds similar to the English "ch" sound. But the two are distinct. The English "ch" is pronounced near the teeth. `ca` is pronounced much further back. Getting this sound right might require some practice.
+
+### Hard bump
+Further still, we reach the hard bump on the roof of the mouth:
+
+{{ m.sounds(
+    ('Ta', 'ta1', '(no match)'),
+    ('Na', 'na1', '(no match)'),
+) }}
+
+For convenience, let us say that these sounds are <dfn>retroflexed</dfn>. This word evokes a tongue that has bent ("flex") backward ("retro") to produce the sound.
+
+!!! note
+    Retroflexed sounds do not exist in English. If you have trouble pronouncing them, try curling your tongue further back.
+
+### Base of the teeth
+A little further, we reach the base of the teeth:
+
+{{ m.sounds(
+    ('ta', 'ta', '"t" in "thumb"'),
+    ('na', 'na', '"n" in "nose"'),
+) }}
+
+!!! note
+    This is the **base** of the teeth, not the tip. At the tip, you get the English "th". At the base, you get the Sanskrit `ta`. The difference is small but still noticeable.
+
+### Lips
+Finally, we reach the lips:
+
+{{ m.sounds(
+    ('pa', 'pa', '"p" in "spill"'),
+    ('ma', 'ma', '"m" in "mill"'),
+) }}
+
+
+Blending stops and nasals
+-------------------------
+
+We have seen that vowels can blend together. But stops and nasals can blend too. Let's look at some examples first:
+
+!!! examples
+    - {{ m.x('tat na Asyam', 'That is not a mouth.') }}
+    - {{ m.x('rAT naraH', 'The king is a man.') }}
+
+Try reading the first sentence out loud ten times.
+
+As you might have noticed, it is tiresome to shift from `t` to `n` when pronouncing `tat na`. Because of clustered sounds like these, speaking Sanskrit can feel hard and slow.
+
+The earliest Sanskrit speakers solved this problem by *blending stops and nasals together*. Whenever a stop is in front of a nasal, it becomes nasal, too:
+
+!!! examples
+    - {{ m.x('tat na Asyam -> tan nAsyam', 'That is not a mouth.') }}
+
+But when a stop becomes a nasal, it keeps its point of sound:
+
+!!! examples
+    - {{ m.x('rAT naraH -> rAN naraH', 'The king is a man.') }}
+
+We should note that too much blending can be a bad thing. Letters help to make one word **distinct** from another. This is the main job of the stop consonants. So, stops only blend **between words**, not inside them.
+
+Try to blend the words in the phrases below:
+
+!!! examples
+    - {{ m.x('tasmAt na arhA vayaM hantum') }}
+    - {{ m.x('yac chreyaH syAt nizcitaM brUhi tat me') }}
+    - {{ m.x('tvatprasAdAt mayA acyuta') }}
+
+These phrases are from the <cite>Bhagavad Gita</cite>:
+
+!!! examples
+
+    -   {{ m.x('tasmAn nArhA vayaM hantum') }}
+
+        Thus it is not right that we kill &hellip;
+
+        <cite>Bhagavad Gita</cite> 1.37
+
+    -   {{ m.x('yac chreyaH syAn nizcitaM brUhi tan me') }}
+
+        Truly, tell me that which would be best.
+
+        <cite>Bhagavad Gita</cite> 2.7
+
+    -   {{ m.x('tvatprasAdAn mayAcyuta') }}
+
+        My (delusion is gone, and I've come to wisdom,) by your favor, O Krishna.
+
+        <cite>Bhagavad Gita</cite> 18.73
