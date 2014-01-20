@@ -1,0 +1,69 @@
+We have seen two sounds: the short vowel `a` and the long vowel `A`. Let's add seven more vowels. Four are short:
+
+{{ m.sounds(
+    ('i', 'i', '"i" in "bit"'),
+    ('u', 'u', '"u" in "put"'),
+    ('R', 'r', '(no match)'),
+    ('lR', none, '(no match)')
+)}}
+
+And four are long:
+
+{{ m.sounds(
+    ('I', 'ii', '"ee" in "teeth"'),
+    ('U', 'uu', '"oo" in "mood"'),
+    ('RR', 'rr', '(no match)'),
+)}}
+
+Now we have seen 9 vowels. Five (`a, i, u, R, lR`) are short, and four (`A, I, U, RR`) are long. Let's call these nine vowels the <dfn>simple vowels</dfn>, since they are (mostly) simple to pronounce.
+
+!!! note
+    `R` and `RR` are pronounced in various ways, but from my experience, the version in the recordings above is the most accurate. Note that it sou
+
+!!! note
+    `lR` has no long form. Why? Because it is **extremely** rare. Most texts do not have it at all. Generally, you can pronounce it however you like. Just use your best guess.
+
+
+Blending vowels
+---------------
+
+[We have already seen]({{ m.lesson_url('short-and-long-vowels') }}) that `a` and `A` can blend together. These new vowels can blend too:
+
+!!! examples
+
+    -   {{ m.x('sA Apnoti -> sApnoti') }}
+
+        She obtains.
+
+    -   {{ m.x('gacchati IzvaraH -> gacchatIzvaraH') }}
+
+        The lord goes.
+
+    -   {{ m.x('gacchati madhu udakam -> gacchati madhUdakam') }}
+
+        He goes to the sweet water.
+
+In these sentences, the vowels that blend together resemble each other. {{ 'A'|i }} blends with {{ 'A'|i }}, {{ 'i'|i }} blends with {{ 'I'|i }}, {{ 'u'|i }} blends with {{ 'u'|i }}, and so on. In each case, the vowels are roughly the same, although they might have different lengths. We'll return to this idea later on.
+
+Try to blend the words in the phrases below:
+
+!!! examples
+
+    -   {{ m.x('na anyadasti iti') }}
+    -   {{ m.x('eSa tu uddezataH') }}
+
+These phrases are from the <cite>Bhagavad Gita</cite>:
+
+!!! examples
+
+    -   {{ m.x('na anyadastIti') }}
+
+        (The unwise, who delight in the letter of the Vedas and proclaim) "there is nothing else", ...
+
+        <cite>Bhagavad Gita</cite> 2.42
+
+    -   {{ m.x('eSa tUddezataH') }}
+
+        (What I have declared) is just an example (of my many splendors.)
+
+        <cite>Bhagavad Gita</cite> 10.40
