@@ -1,0 +1,144 @@
+A new kind of sound
+-------------------
+
+How do two vowels blend together? If they are similar, then they become long:
+
+{% include 'guide/include/similar-vowel-sandhi-examples.html' %}
+
+If they are not similar, the blend depends on the first vowel. For example, `a` and `A` combine to create compound vowels:
+
+{% include 'guide/include/a-plus-compound-vowel-sandhi-examples.html' %}
+
+But there are other combinations that are more puzzling:
+
+!!! examples
+
+    -   {{ m.x('gacchati azvaH') }}
+
+        The horse goes.
+
+    -   {{ m.x('sAdhu Aste') }}
+
+        He sits well.
+
+To blend these vowels, we need a new kind of sound. Consider the combinations `i` + `a` and `u` + `a`. These combine in an obvious way:
+
+!!! examples
+
+    -   {{ m.x('i + a -> ia') }}
+    -   {{ m.x('u + a -> ua') }}
+
+It can be tiresome to keep these two sounds separate. But these sounds do not blend easily. They fight for space, like two wrestlers in the ring. And only one of them can remain. Ultimately, one of the sounds collapses and becomes **shorter than a short vowel**. Wherever possible, the first sound is the one that shortens:
+
+!!! examples
+
+    -   {{ m.x('i + a -> [ya]') }}
+    -   {{ m.x('u + a -> [va]') }}
+
+These shortened vowels are called <dfn>semivowels</dfn>. Every simple vowel has one, except for `a` and `A`:
+
+{{ m.sounds(
+    ('ya', 'ya', '"y" in "yellow"'),
+    ('ra', 'ra', '(no match)'),
+    ('la', 'la', '"l" in "loose"'),
+    ('va', 'va', '"v" in "vase"'),
+) }}
+
+!!! note
+    Since semivowels can only exist around other vowels, they are all listed with the vowel `a`. As you pronounce these letters, keep them as short as possible.
+
+
+Fake compound vowels
+--------------------
+
+We have seen four compound vowels: `e`, `o`, `ai`, and `au`. But none of these compound vowels use `R`, `RR`, or `lR`. Can we use these three vowels at all? Yes and no. Using semivowels, we can create "fake" compound vowels:
+
+!!! examples
+
+    -   {{ m.x('a + R/RR -> ar') }}
+    -   {{ m.x('a/A + lR -> al') }}
+    -   {{ m.x('a/A + ar -> Ar') }}
+    -   {{ m.x('a/A + al -> Al') }}
+
+And just like the "real" compound vowels, these "fake" compound vowels can combine again:
+
+!!! examples
+
+    -   {{ m.x('a/A + ar -> Ar') }}
+    -   {{ m.x('a/A + Ar -> Ar') }}
+    -   {{ m.x('a/A + al -> Al') }}
+    -   {{ m.x('a/A + Al -> Al') }}
+
+
+Blending vowels
+---------------
+
+When vowels cannot blend or combine, one of them becomes a semivowel:
+
+!!! examples
+
+    -   {{ m.x('gacchati azvaH -> gacchaty azvaH') }}
+
+        The horse goes.
+
+    -   {{ m.x('nadI adRzyata -> nady adRzyata') }}
+
+        The river was seen.
+
+    -   {{ m.x('sAdhu Aste -> sAdhv Aste') }}
+
+        He sits well.
+
+
+This applies to compound vowels, too. We just have to remember where they come from. For example, `au` comes from `a + a + u`, or `Au`. So, we get:
+
+!!! examples
+
+    -   {{ m.x('azvau icchati -> azvAu icchati -> azvAv icchati') }}
+
+        He wants the two horses.
+
+Try to blend the words in the phrases below:
+
+!!! examples
+
+    - {{ m.x('bhavati iti anuzuzruma') }}
+    - {{ m.x('na tu eva ahaM jAtu na Asam') }}
+    - {{ m.x('tejasvi nau adhItam astu') }}
+    - {{ m.x('yadi api ete na pazyanti') }}
+
+These words blend as you would expect:
+
+!!! examples
+
+    -   {{ m.x('bhavatIty anuzuzruma') }}
+
+        (They dwell eternally in hell) &mdash; so we have heard.
+
+        <cite>Bhagavad Gita</cite> 1.44
+
+    -   {{ m.x('na tv evAhaM jAtu nAsam') }}
+
+        Never was I ever not.
+
+        <cite>Bhagavad Gita</cite> 2.12
+
+    -   {{ m.x('tejasvi nAv adhItam astu') }}
+
+        May our studies be glorious.
+
+        <cite>Upanishads</cite> (various)
+
+    -   {{ m.x('yady apy ete na pazyanti') }}
+
+        But even if they do not see, &hellip;
+
+        <cite>Bhagavad Gita</cite> 1.38
+
+
+The rest of the alphabet
+------------------------
+
+We can now describe how the Sanskrit vowels blend and interact. This knowledge is highly useful and will be especially important later on.
+
+But there are still many other sounds to consider. Let's take a break from the vowels and see what some of these sounds are. They are much simpler and will be much easier to learn.
