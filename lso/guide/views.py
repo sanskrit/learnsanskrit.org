@@ -12,15 +12,23 @@ bp = LSOBlueprint('guide', __name__, url_prefix='/guide')
 import filters
 
 
+def lesson_sort(lessons):
+    """Returns a topological sort of a list of lessons.
+
+    Ties are broken arbitrarily.
+
+    :param lessons: a list of lessons
+    """
+    slug_map = {lesson.slug: lesson for lesson in lessons}
+    slug_graph = {lesson.slug: [succ.slug for succ in lesson.successors()]
+                  for lesson in lessons}
+    sorted_slugs = util.topological_sort(slug_graph)
+    return [slug_map[slug] for slug in sorted_slugs]
+
+
 @bp.route('/')
 def index():
-    all_lessons = Lesson.query.all()
-    slug_map = {lesson.slug: lesson for lesson in all_lessons}
-    slug_graph = {lesson.slug: [succ.slug for succ in lesson.successors()]
-                  for lesson in all_lessons}
-
-    sorted_slugs = util.topological_sort(slug_graph)
-    sorted_lessons = [slug_map[slug] for slug in sorted_slugs]
+    sorted_lessons = lesson_sort(Lesson.query.all())
     return render_template('guide/index.html', lessons=sorted_lessons)
 
 
