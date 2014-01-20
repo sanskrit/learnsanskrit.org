@@ -27,10 +27,10 @@
 <ul class="sounds">
     {% for name, filename, desc in varargs %}
     <li>
-        <a href="{{ url_for('guide.static', filename='audio/%s.mp3' | format(filename)) }}">
+        {% if filename %}<a href="{{ url_for('guide.static', filename='audio/%s.mp3' | format(filename)) }}">{% endif %}
             <div class="letter">{{ name|i }}</div>
             {% if desc -%}<div>{{ desc }}</div>{%- endif -%}
-        </a>
+        {% if filename %}</a>{% endif %}
     </li>
     {% endfor %}
 </ul>
