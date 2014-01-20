@@ -23,6 +23,11 @@
 {% endif %}
 {% endmacro %}
 
+{# link to a lesson #}
+{% macro lesson_url(slug) %}
+{{ url_for('guide.lesson', slug=slug)}}
+{% endmacro %}
+
 {% macro sounds() %}
 <ul class="sounds">
     {% for name, filename, desc in varargs %}
