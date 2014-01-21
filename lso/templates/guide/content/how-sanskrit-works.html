@@ -1,0 +1,66 @@
+Before we begin with Sanskrit itself, let's quickly discuss what the language is like. This will give us a steady foundation and put Sanskrit's different parts in perspective.
+
+
+Word order
+----------
+
+Here is a basic English sentence:
+
+!!! examples
+    - Elephants eat fruits.
+
+
+Here is the same sentence in Sanskrit:
+
+!!! examples
+    - {{ m.x('gajAH phalAni khAdanti', 'elephants fruits eat ("Elephants eat fruits.")') }}
+
+
+As you can see, the came concepts appear in different orders in both languages. But surprisingly, the word order does not matter much in Sanskrit:
+
+!!! examples
+    - {{ m.x('gajAH khAdanti phalAni', 'elephants eat fruits ("Elephants eat fruits.")') }}
+    - {{ m.x('phalAni khAdanti gajAH', 'fruits eat elephants ("Elephants eat fruits.")') }}
+    - {{ m.x('khAdanti phalAni gajAH', 'eat fruits elephants ("Elephants eat fruits.")') }}
+
+
+Inflection
+----------
+
+Sanskrit is so flexible because its words carry **extra information** with them. We take a basic word, like `gaja` ("elephant"), and somehow <em>mark</em> it to show two things:
+
+- There are multiple elephants.
+- These elephants are eating (but the fruits are not).
+
+And likewise for `phala` ("fruit"):
+
+- There are multiple fruits.
+- These fruits are being eaten (but the elephants are not).
+
+We add this extra information by changing part of the word: `gaja` becomes `gajAH`, and `phala` becomes `phalAni`. When we change a word to add information like this, we say that we <dfn>inflect</dfn> the word.
+
+Words are inflected in English, too, but not very much. For example, we say "I play" and "you play," but we say "he **plays**," not "he play." If we see just the word "plays," we can guess that the person doing the playing is "he" or "she," but probably not "I" or "you." This is because the word has been <em>inflected</em> to show who is doing the playing.
+
+As another example, we say "I play" and "I will play," but we say "I **played**." The word "play" changes to show that the playing has already happened. We can work backward from the word "played" and figure that out.
+
+Sanskrit words are inflected much more than English words. Even complex ideas can be represented as single words:
+
+!!! examples
+    - {{ m.x('grAmAn bAlau [jigamayiSanti]', '[They want to make] the two boys [go] to the villages.') }}
+
+There are also <dfn>uninflected</dfn> words, which always remain the same:
+
+!!! examples
+    - {{ m.x('sa [eva] gacchati', '[Only] he goes.')}}
+
+
+Making words
+------------
+
+One of Sanskrit's richest and most rewarding qualities is that we can easily **make our own words**. Starting from basic sounds and syllables, we can create words of great subtlety and nuance:
+
+!!! examples
+    - {{ m.x('bhaj -> bhaga -> bhagavat -> bhAgavata', 'adore, love -> adoration, love -> glorious, fortunate; the blessed one, Lord -> concerning the blessed Lord') }}
+    - {{ m.x('yuj -> yoga -> yogin', 'connect, bind, prepare -> concentration, exertion (<a href="http://en.wikipedia.org/wiki/Yoga">yoga</a>) -> <a href="http://en.wikipedia.org/wiki/Yogi">yogin</a>'|safe) }}
+
+Just as many branches grow from the same trunk, many words grow from the same basic elements. By learning these elements and some basic rules, we can understand thousands of new words.
