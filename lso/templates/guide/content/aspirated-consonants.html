@@ -1,0 +1,131 @@
+The stop letters are simple sounds produced in a simple way:
+
+{{ m.sounds(
+) }}
+
+But as with many things in life, these letters become more interesting when they become more complex. To start, we can make a stop <dfn>voiced</dfn> or <dfn>unvoiced</dfn>:
+
+{{ m.sounds(
+    ('ka', 'ka', '"k" in "skill"'),
+    ('ga', 'ga', '"g" in "gill"'),
+) }}
+
+But Sanskrit complicates the stop consonants in a second way. Recall that a stop is produced when the flow of air stops then quickly resumes. In `ka`, this flow resumes normally, like water from a tap. But this flow can also resume explosively, like water bursting through a dam:
+
+{{ m.sounds(
+    ('kha', 'kha', '"k" in "kill"'),
+    ('gha', 'gha', '(no match)'),
+) }}
+
+Sounds like `kha` and `gha` are called <dfn>aspirated</dfn> ("breathy"), and sounds like `ka` and `ga` are <dfn>unaspirated</dfn> ("not breathy").
+
+!!! note
+    `gha` is both voiced and aspirated.
+
+
+25 stops and nasals
+-------------------
+
+Each of the five points of sound has **four** stops and one nasal. Together, these give us 25 sounds:
+
+{{ m.sounds(
+    ('ka', 'ka', '"k" in "skill"'),
+    ('kha', 'kha', '"k" in "kill"'),
+    ('ga', 'ga', '"g" in "gill"'),
+    ('gha', 'gha', '(no match)'),
+    ('Ga', 'na_k', '"ng" in "lung"'),
+
+    ('ca', 'ca', '(no match)'),
+    ('cha', 'cha', '(no match)'),
+    ('ja', 'ja', '(no match)'),
+    ('jha', 'jha', '(no match)'),
+    ('Ja', 'na_j', '(no match)'),
+
+    ('Ta', 'ta1', '(no match)'),
+    ('Tha', 'tha1', '(no match)'),
+    ('Da', 'da1', '(no match)'),
+    ('Dha', 'dha1', '(no match)'),
+    ('Na', 'na1', '(no match)'),
+
+    ('ta', 'ta', '"th" in "thumb"'),
+    ('tha', 'tha', '(no match)'),
+    ('da', 'da', '"th" in "this"'),
+    ('dha', 'dha', '(no match)'),
+    ('na', 'na', '"n" in "nose"'),
+
+    ('pa', 'pa', '"p" in "spill"'),
+    ('pha', 'pha', '"p" in "pill"'),
+    ('ba', 'ba', '"b" in "bill"'),
+    ('bha', 'bha', '(no match)'),
+    ('ma', 'ma', '"m" in "mill"'),
+) }}
+
+
+This arrangement is over 2800 years old. It stands at the beginning of the Indian linguistic tradition.
+
+
+`varga`
+-------
+
+The Sanskrit word <dfn>`varga`</dfn> lets us create a shorthand for certain groups of consonants:
+
+- {{ 'kavarga'|i('dfn') }} for the five consonants (4 stops + 1 nasal) at the soft palate
+- {{ 'cavarga'|i('dfn') }} for the five at the hard palate
+- {{ 'Tavarga'|i('dfn') }} for the five that are retroflexed
+- {{ 'tavarga'|i('dfn') }} for the five at the teeth
+- {{ 'pavarga'|i('dfn') }} for the five at the lips
+
+We can also refer to the semivowels with the term {{ 'yavarga'|i('dfn') }}.
+
+
+Blending stops with other stops
+-------------------------------
+
+Stops blend very easily, whether with nasals:
+
+!!! examples
+    - {{ m.x('tat na Asyam', 'That is not a mouth.') }}
+    - {{ m.x('rAT naraH', 'The king is a man.') }}
+
+or with most other letters. Stops become **voiced** in front of any voiced sound, including vowels:
+
+!!! examples
+    - {{ m.x('tat asat -> tad asat', 'That is false.') }}
+    - {{ m.x('vAk eva -> vAg eva', 'speech itself') }}
+
+semivowels:
+
+!!! examples
+    - {{ m.x('tat yacchati -> tad yacchati', 'He restrains it.') }}
+
+and other stops:
+
+!!! examples
+    - {{ m.x('sa rAT bhavati -> sa rAD bhavati', 'He becomes a king.') }}
+
+but even though they change a little bit, these consonants still use the same point of sound.
+
+As before, stops only blend <em>between</em> words, not inside them. Otherwise, we would become hopelessly confused:
+
+!!! examples
+    - {{ m.x('tan mantram', 'That is a mantra.') }}
+    - {{ m.x('tan ma[ndra]m', 'That is charming.') }}
+
+Try to blend the words in the phrases below:
+
+!!! examples
+    - {{ m.x('na asat AsIt na u sat AsIt tadAnIm') }}
+    - {{ m.x('uta amRtatvasya IzAno yat annena atirohati') }}
+
+These are lines from various Vedic hymns:{% filter foot(notes) %}Like most all Vedic Sanskrit, the lines here are open to some interpretation.{% endfilter %}
+
+!!! examples
+    -   {{ m.x('nAsad AsIn no sad AsIt tadAnIm', 'Then there was neither nothing nor anything.') }}
+
+        <cite>Nāsadīya Sūkta</cite>
+
+    -   {{ m.x('utAmRtatvasyezAno yad annenAtirohati', 'And he is the lord of immortality, who grows further by food.') }}
+
+        <cite>Purusha Sūkta</cite>
+
+The first example is from one of the most popular Vedic hymns. The line had all of its blending undone, but we were able to fully restore it.
