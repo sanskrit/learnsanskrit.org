@@ -30,10 +30,16 @@
 {% endmacro %}
 
 {# <ul> in rows #}
-{% macro row_ul(items) %}
+{% macro row_ul(items, callback=none) %}
 <ul>
 {% for item in items %}
-    <li>{{ item|i }}</li>
+    <li>
+    {% if callback %}
+        {{ callback(item) }}
+    {% else %}
+        {{ item }}
+    {% endif %}
+    </li>
 {% endfor %}
 </ul>
 {% endmacro %}
