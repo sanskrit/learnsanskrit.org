@@ -29,6 +29,16 @@
 {{ url_for('guide.lesson', slug=slug)}}
 {% endmacro %}
 
+{# <ul> in rows #}
+{% macro row_ul(items) %}
+<ul>
+{% for item in items %}
+    <li>{{ item|i }}</li>
+{% endfor %}
+</ul>
+{% endmacro %}
+
+{# Display Sanskrit sounds with links #}
 {% macro sounds() %}
 <ul class="sounds">
     {% for name, filename, desc in varargs %}
