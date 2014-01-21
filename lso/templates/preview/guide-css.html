@@ -1,9 +1,19 @@
 {% import 'guide/macros.html' as m %}
 
-{% call m.note() %}
-    <p>This is a note.</p>
-{% endcall %}
+{% filter markdown %}
+!!! note
+    This is a note.
 
-{{ m.examples(
-    m.x('gacchati azvaH -> [gacchaty] azvaH', 'The horse goes.')
-) }}
+!!! examples
+
+    -   {{ m.x('gacchati azvaH -> [gacchaty] azvaH') }}
+
+        The horse goes.
+
+        <cite>Citation</cite> and comments
+
+    -   {{ m.x('pazyati') }}
+
+        He sees.
+
+{% endfilter %}
