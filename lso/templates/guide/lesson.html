@@ -1,16 +1,19 @@
 {% import 'guide/macros.html' as m %}
 {% from 'guide/macros.html' import examples, x %}
+{% extends 'base.html' %}
 
-{% block article %}
-<article>
-    <h1>{{ lesson.name }}</h1>
+{% block content %}
+    <article>
+    {% block article %}
+        <h1>{{ lesson.name }}</h1>
 
-    {% set predecessors = lesson.predecessors() %}
-    {% if predecessors %}
-    <p>Depends on:</p>
-    {{ m.lesson_list(predecessors) }}
-    {% endif %}
+        {% set predecessors = lesson.predecessors() %}
+        {% if predecessors %}
+        <p>Depends on:</p>
+        {{ m.lesson_list(predecessors) }}
+        {% endif %}
 
-    {% filter markdown %}{% include content_path %}{% endfilter %}
-</article>
+        {% filter markdown %}{% include content_path %}{% endfilter %}
+    {% endblock %}
+    </article>
 {% endblock %}

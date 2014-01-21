@@ -1,16 +1,12 @@
+@import "variables.less";
+
 /* Default styles for HTML elements */
 
+// General
 ::selection {
     background: #FF7F50;
     color: #fff;
 }
-
-.r {color: @red;}
-.o {color: @orange;}
-.y {color: @yellow;}
-.g {color: @green;}
-.b {color: @blue;}
-.p {color: @purple;}
 
 [lang] {
     font-style: italic;
@@ -20,10 +16,68 @@
     font-family: @iast-font-family;
 }
 
+// Body
+body {
+    color: @dark-gray;
+    font-family: @en-font-family;
+}
+
+// Headings
+h1, h2, h3, h4, h5, h6 {
+    color: #000;
+    font-weight: normal;
+    font-family: @h-font-family;
+}
+
+h1 {
+    font-size: 2em;
+}
+
+// Blocks
+blockquote {
+    border-left: 5px solid @light-gray;
+    margin: 0;
+    padding: 1em 2em;
+
+    & p:last-child {
+        margin-bottom: 0;
+    }
+}
+
+p {
+    line-height: @en-line-height;
+    margin: 0 0 1em;
+}
+
+// Lists
+li {
+    line-height: @en-line-height;
+}
+
+// Inline
+dfn {
+    color: darken(@red, 20%);
+}
+
+mark {
+    background: @note-bg;
+    border: 1px @note-border-color solid;
+    padding: 0 0.2em;
+}
+
+// Inline classes
 .sa1 {
     font-family: @sa-font-family;
 }
 
+.r {color: @red;}
+.o {color: @orange;}
+.y {color: @yellow;}
+.g {color: @green;}
+.b {color: @blue;}
+.p {color: @purple;}
+
+// Links
 a {
     color: @link-color;
     &:hover {
@@ -63,11 +117,6 @@ b a {
     text-decoration: none;
 }
 
-dfn {
-    color: darken(@red, 25%);
-    font-weight: bold;
-}
-
 figure {
     margin: 1em 0;
 
@@ -81,16 +130,6 @@ figure {
     }
 }
 
-h1, h2, h3 {
-    color: #000;
-    font-weight: normal;
-}
-
-h1 {
-    font-size: 2em;
-    line-height: 1;
-}
-
 kbd, samp {
     background: #fff;
     border: 1px @light-gray solid;
@@ -98,24 +137,6 @@ kbd, samp {
     .border-radius(0.2em);
 }
 
-li {
-    line-height: @en-line-height;
-}
-
-mark {
-    @bg: #f8f3ac;
-    @border: #ffd022;
-    background: @bg;
-    border: 1px @border solid;
-    border-radius: 2px;
-    padding: 0 0.2em;
-}
-
 ol, ul, ul ul {
     margin: 1em 0;
-}
-
-p {
-    line-height: @en-line-height;
-    margin: 0 0 1em;
 }

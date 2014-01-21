@@ -1,0 +1,13 @@
+<!doctype html>
+<html>
+    <head>
+        <title>learnsanskrit.org</title>
+        {% assets "all-css" %}
+        <link rel="stylesheet" type="text/css" href="{{ ASSET_URL }}">
+        {% endassets %}
+        <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    </head>
+    <body>
+        {% block content %}{% endblock %}
+    </body>
+</html>
