@@ -1,0 +1,6 @@
+{% import 'guide/macros.html' as m %}
+
+{% macro dev(x) %}{{ x|d }}<br />{{ x|i }}{% endmacro %}
+{% macro rows(data) %}
+{{ m.row_ul(data.split(), callback=dev) }}
+{% endmacro %}
