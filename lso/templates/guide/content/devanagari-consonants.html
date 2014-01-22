@@ -1,0 +1,44 @@
+{% from 'guide/macros-devanagari.html' import rows %}
+
+The consonants are the most important part of Devanagari, and they're where you should spend most of your time. If you know these letters well, you'll have little trouble reading Devanagari.
+
+The letters
+------------
+
+{{ rows('ka kha ga gha Ga ca cha ja jha Ja Ta Tha Da Dha Na ta tha da dha na pa pha ba bha ma') }}
+
+{{ rows('ya ra la va za Sa sa ha') }}
+
+{#}
+Common letters
+Usually, students try to memorize the consonants in order, starting with {{ 'ka'|d }} and ending with {{ 'ha'|d }}. This is slow and unrewarding. Some consonants are so rare that the average text does not contain them. Others are so common that they appear in almost every other word. By focusing on common consonants first, you can start reading Devanagari without having to learn the complete script:
+
+<figure>
+     svg('consonant-distribution') }}
+    <figcaption>Distribution of Devanagari consonants in the Bhagavad Gita. The larger a circle is, the more times its letter appears. `jha` is so rare that it appears just once. <span class="js">(Hover over a circle to see how many times it appears in the text.)' }}</figcaption>
+</figure>
+{#}
+
+
+How to memorize letters
+-----------------------
+If you have trouble memorizing a letter, consider the students of Japanese and Chinese, who have to memorize thousands of characters. Many of these students create *vivid stories* about the different letters. These stories serve as reminders of how different letters sound. A simple example:
+
+!!! examples
+    -   {{ m.x('gha') }}
+
+        This looks like a *guy* with a *goiter* and a *gut* full of *gas*.
+
+
+These stories can also help you distinguish between similar letters. For example, we can keep {{ 'Ga'|d }} and {{ 'Da'|d }} apart because {{ 'Ga'|d }} has a dot like a **nose** piercing.
+
+These are the most commonly confused letters:
+
+!!! examples
+    - {{ m.x('ca, ja') }}
+    - {{ m.x('ba, va') }}
+    - {{ m.x('pa, Sa') }}
+    - {{ m.x('gha, dha') }}
+    - {{ m.x('bha, ma') }}
+    - {{ m.x('Ga, Da') }}
+    - {{ m.x('Ta, Tha, Dha, da') }}
