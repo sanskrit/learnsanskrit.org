@@ -1,4 +1,5 @@
-{% import 'guide/macros.html' as m %}
+{% extends 'guide/lesson.html' %}
+{% block article %}
 <h1>{{ lesson.name }}</h1>
 
 <p>Sorry, this lesson isn't ready yet.</p>
@@ -8,3 +9,4 @@
 
 <h2>Successors</h2>
 {{ m.lesson_list(lesson.successors()) }}
+{% endblock %}
