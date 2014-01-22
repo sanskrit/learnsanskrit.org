@@ -1,0 +1,110 @@
+{% from 'guide/macros-devanagari.html' import rows %}
+
+!!! warning
+    Many of the examples below will depend on your computer's support for Devanagari. Ordinary Devanagari fonts usually do not support more complicated clusters (perhaps with good reason).
+
+Many Sanskrit words have <dfn>consonant clusters</dfn>, where multiple consonants appear next to each other. In Devanagari, these consonants are just mashed together:
+
+!!! examples
+    - {{ m.x('kR[SNa]') }}
+    - {{ m.x('A[tmA]') }}
+
+{#}
+Unfortunately, consonant clusters can be even more difficult than in this example. Some clusters are so densely combined that the original letters are unrecognizable. And there are simply too many to memorize:
+
+<figure>
+    {{ svg('conjunct-distribution') }}
+    <figcaption>Distribution of Devanagari consonant clusters in the Bhagavad Gita. The larger a circle is, the more times its cluster appears. <span class="js">(Hover over a circle to see how many times it appears in the text.)</figcaption>
+</figure>
+{#}
+
+
+Fortunately, most consonant clusters fall into simple patterns. By learning these simple patterns, you will be able to figure out most all of the clusters you will see in Sanskrit.
+
+
+Horizontal clusters
+-------------------
+
+Most Devanagari letters have a vertical bar that goes down the side or middle of the letter.
+
+!!! examples
+    - {{ m.x('kha, ga, gha, ca, ja, jha, Ja, Na, ta, tha, dha, na, pa, ba, bha, ma, ya, la, va, za, Sa, sa') }}
+    - {{ m.x('ka, pha') }}
+
+
+In the simplest clusters, this stick and everything to the right of it is removed. The letters are then attached horizontally.
+
+!!! examples
+    - {{ m.x('s ya -> [sya]') }}
+    - {{ m.x('g dha -> [gdha]') }}
+    - {{ m.x('t m ya -> [tmya]') }}
+
+
+Vertical clusters
+-----------------
+
+In some characters &mdash; especially where this vertical "stick" is missing &mdash; the two letters attach vertically:
+
+!!! examples
+    - {{ m.x('S Ta -> [STa]') }}
+    - {{ m.x('p ta -> [pta]') }}
+    - {{ m.x('G ga -> [Gga]') }}
+    - {{ m.x('d bha -> [dbha]') }}
+
+Some of these combinations are rather tricky:
+
+!!! examples
+    - {{ m.x('d ya -> [dya]') }}
+    - {{ m.x('d ma -> [dma]') }}
+    - {{ m.x('h ya -> [hya]') }}
+    - {{ m.x('h ma -> [hma]') }}
+
+
+Horizontal and vertical clusters
+--------------------------------
+
+In longer clusters, letters might combine both horizontally and vertically:
+
+!!! examples
+    - {{ m.x('G kh ya -> [Gkhya]') }}
+
+
+Irregular clusters
+------------------
+
+Some clusters are difficult enough that they cannot be read correctly on the first try:
+
+### {{ 'kSa'|d }} and {{ 'jJa'|d }}
+These two clusters are very common. Note that the individual letters are unrecognizable:
+
+{{ rows('kSa jJa') }}
+
+### Consonant + {{ 'ra'|d }}
+When `ra` appear before a consonant, the combination is simple:
+
+!!! examples
+    - {{ m.x('r + pa -> rpa') }}
+
+But when {{ 'ra'|d }} appears <em>after</em> a consonant, the combination is slightly trickier. {{ 'ra'|d }} is attached as a tick-mark on the "stick" part of the cluster before it:
+
+!!! examples
+    - {{ m.x('p + ra -> pra') }}
+    - {{ m.x('m + ra -> mra') }}
+
+If no stick is available, {{ 'ra'|d }} is written slightly differently:
+
+!!! examples
+    - {{ m.x('ST + ra -> STra') }}
+
+### {{ 'tta'|d }}, {{ 'kta'|d }}, {{ 'tra'|d }}, and {{ 'ktra'|d }}
+
+These conjuncts just barely show the original letters:
+
+{{ rows('tta kta tra ktra') }}
+
+### {{ 'za'|d }} + various
+
+!!! examples
+    - {{ m.x('z + ra -> zra') }}
+    - {{ m.x('z + va -> zva') }}
+    - {{ m.x('z + ca -> zca') }}
