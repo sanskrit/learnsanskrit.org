@@ -1,0 +1,41 @@
+{% macro dev(x) %}{{ x|d }}<br />{{ x|i }}{% endmacro %}
+{% macro rows(data) %}
+{{ m.row_ul(data.split(), callback=dev) }}
+{% endmacro %}
+
+`ka`
+----
+
+Our first Devanagari letter:
+
+{{ rows('ka') }}
+
+In Devanagari, all consonants are followed by `a` automatically. {{ 'ka'|d }} is **always** pronounced as `ka`, **never** as `k`.
+
+
+Vowel marks
+-----------
+
+To make sounds other than just `ka`, we add special *marks* to the original {{ 'ka'|d }}. All consonants use the same set of marks:
+
+{{ rows('ka kA ki kI ku kU kR kRR klR ke kai ko kau') }}
+
+For convenience, we can call these marks <dfn>vowel marks</dfn>. Generally, the marks for long vowels are modified versions of the marks for short vowels.
+
+In Devanagari, vowels appear both as independent letters and as vowel marks. But vowel marks are used wherever possible.
+
+
+Other marks
+-----------
+
+Not all marks are vowel marks:
+
+{{ rows('kaM kaH rka k') }}
+
+The stroke that makes {{ 'ka'|d }} become {{ 'k'|d }} is called the {{ 'virAma'|i('dfn') }}. `ra` is written as a mark when it comes before a consonant.
+
+There is also a symbol for <dfn>nasal vowels</dfn>:
+
+{{ rows('ka~') }}
+
+This mark is called the <dfn>`candrabindu`</dfn>. In ordinary Sanskrit, the `candrabindu` is used only in certain contexts.
