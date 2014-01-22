@@ -1,0 +1,67 @@
+{% set sample = 'tejasvi nAvadhItamastu' %}
+
+When most people think of written Sanskrit, they think of <dfn>Devanagari</dfn>:
+
+!!! examples
+
+    -   {{ sample|d }}
+
+        May our studies be glorious.
+
+        <cite>Upanishads</cite> (various)
+
+Devanagari is the most common script used to write Sanskrit, but it is not the only one:
+
+!!! examples
+
+    -   {{ sample|d(to='bengali') }}
+
+        (Bengali)
+
+    -   {{ sample|d(to='gujarati') }}
+
+        (Gujarati)
+
+    -   {{ sample|d(to='gurmukhi') }}
+
+        (Gurmukhi)
+
+    -   {{ sample|d(to='kannada') }}
+
+        (Kannada)
+
+    -   {{ sample|d(to='malayalam') }}
+
+        (Malayalam)
+
+    -   {{ sample|d(to='oriya') }}
+
+        (Oriya)
+
+    -   {{ sample|d(to='tamil') }}
+
+        (Tamil)
+
+    -   {{ sample|d(to='telugu') }}
+
+        (Telugu)
+
+    -   `tejasvi nAvadhItamastu`
+
+        (romanized)
+
+
+Why Devanagari?
+---------------
+
+Sanskrit doesn't really have a script of its own, although Devanagari is the modern convention. So why should we learn Devanagari at all?
+
+- Many Sanskrit books (especially outside of India) are available only in Devanagari.
+- It's a beautiful script with an interesting structure.
+- If you don't know it, some people might laugh at you.
+
+The lessons to come will describe Devanagari in more detail.
+
+!!! note
+    If you plan to do all of your Sanskrit reading online, there's little reason to learn Devanagari; you can just [transliterate]({{ url_for('tools.sanscript') }}) to some other script.
+
