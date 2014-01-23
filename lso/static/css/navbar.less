@@ -1,0 +1,54 @@
+@nav-bg: #212020;//lighten(#102632, 3%);
+@nav-hover-bg: #B7410E;
+@nav-height: 3em;
+
+#top {
+    #gradient.vertical(@nav-bg, darken(@nav-bg, 10%));
+    font-family: @h-font-family;
+    height: @nav-height;
+
+    a {
+        .transition(0.2s);
+
+        color: lighten(@gray, 10%);
+        display: block;
+        float: left;
+        outline: none;
+        padding: 0 1em;
+        text-decoration: none;
+
+        &:hover, &:focus {
+            background: @nav-hover-bg;
+            color: #fff;
+        }
+    }
+    a.brand {
+        @f: 1.5em;
+        color: #fff;
+        font-family: @en-font-family;
+        font-size: @f;
+        line-height: @nav-height / @f;
+    }
+    li {
+        float: left;
+        line-height: 3;
+    }
+    ul.main-nav, ul.user-nav {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+    ul.user-nav {
+        color: #fff;
+        font-family: sans-serif;
+        float: right;
+    }
+}
+
+#settings-link {
+    @font-size: 1.6em;
+    font-size: @font-size;
+    line-height: @nav-height / @font-size;
+    padding: 0 0.5em;
+    text-align: center;
+}

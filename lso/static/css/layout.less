@@ -1,7 +1,5 @@
 /* Basic page layout */
 
-@nav-bg: #212020;//lighten(#102632, 3%);
-@nav-hover-bg: #B7410E;
 @masthead-bg: #068;
 
 body {
@@ -31,61 +29,6 @@ body {
             margin: 0 10%;
         }
     }
-}
-
-#top {
-    #gradient.vertical(@nav-bg, darken(@nav-bg, 10%));
-    box-shadow: 0 2px 2px rgba(0,0,0,0.3);
-    left: 0;
-    position: absolute;
-    right: 0;
-    top: 0;
-    z-index: 1000;
-
-    a {
-        .transition(0.2s);
-
-        color: lighten(@gray, 10%);
-        display: block;
-        float: left;
-        outline: none;
-        padding: 0 @en-font-size;
-        text-decoration: none;
-
-        &:hover {
-            background: @nav-hover-bg !important;
-            color: #fff !important;
-        }
-    }
-    a.brand {
-        color: #fff;
-        font-size: 1.5em;
-        line-height: 2;
-    }
-    li {
-        float: left;
-        line-height: 3;
-    }
-    ul.main-nav, ul.user-nav {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-
-        &.user-nav {
-            color: #fff;
-            font-family: sans-serif;
-            float: right;
-        }
-    }
-}
-
-a#settings-link {
-    @height: 3;
-    @font-size: 1.6em;
-    font-size: @font-size;
-    line-height: @height / @font-size;
-    padding: 0 0.5em;
-    text-align: center;
 }
 
 // Active nav link
