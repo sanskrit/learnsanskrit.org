@@ -1,0 +1,51 @@
+Consider a simple sentence:
+
+!!! examples
+    - {{ m.x('gacchati', 'He goes with the elephant.') }}
+
+Using nouns, we can describe the things that are part of the action:
+
+!!! examples
+    - {{ m.x('gajaH siMhena grAmaM gacchati', 'The elephant goes to the village with the lion.') }}
+
+But what if we want to describe the nouns themselves? We can use special *descriptive words*:
+
+!!! examples
+    - {{ m.x('[kRSNo] gajaH siMhena grAmaM carati', 'The [black] elephant walks to the village with the lion.') }}
+    - {{ m.x('gajaH [zvetena] siMhena grAmaM carati', 'The elephant walks to the village with the [white] lion.') }}
+    - {{ m.x('gajaH siMhena [sundaraM] grAmaM carati', 'The elephant walks to the [beautiful] village with the lion.') }}
+
+These words are called <dfn>adjectives</dfn>, and they describe some quality in a certain noun.
+
+
+Using adjectives
+----------------
+
+Adjectives use the same endings as nouns, and they **must** have the same case and number as the things they describe. Small changes can cause great differences in meaning:
+
+!!! examples
+    - {{ m.x('[sundaraM] siMho naraM pazyati kRSNaH', 'The [black] lion sees the beautiful man.') }}
+    - {{ m.x('[sundaraH] siMho naraM pazyati kRSNam', 'The beautiful lion sees the [black] man.') }}
+
+Like most Sanskrit words, adjectives can appear nearly anywhere:
+
+!!! examples
+    - {{ m.x('[sundaro] gajaH siMhaM jayati.', 'The beautiful elephant conquers the lion.') }}
+    - {{ m.x('gajaH [sundaraH] siMhaM jayati', 'The beautiful elephant conquers the lion.') }}
+    - {{ m.x('gajaH siMhaM [sundaro] jayati', 'The beautiful elephant conquers the lion.') }}
+    - {{ m.x('gajaH siMhaM jayati [sundaraH]', 'The beautiful elephant conquers the lion.') }}
+
+And we can use several of them at once:
+
+!!! examples
+    - {{ m.x('[sundarau] siMhau naraM pazyati [kRSNau]', 'The two [beautiful black] lions see the man.') }}
+
+Since adjectives are so similar to nouns, they can be used even if no noun is present:
+
+!!! examples
+    - {{ m.x('kRSNaH zvetaM rakSati', 'The black one protects the white one.') }}
+
+And sometimes, they can even become actual nouns:
+
+!!! examples
+    - {{ m.x('kRSNaH zvetaM rakSati', 'Krishna protects the white one.') }}
