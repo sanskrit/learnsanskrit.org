@@ -7,7 +7,7 @@
 
 {# Print a single example #}
 {% macro x(sanskrit, english) -%}
-{%- set text = sanskrit.replace('->', '→') -%}
+{%- set text = sanskrit.replace('->', '→').replace('[', '<mark>').replace(']', '</mark>') -%}
 {{- text|d(tag='p') -}}
 {{- text|i(tag='p') -}}
 {{ english }}
