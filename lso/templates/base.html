@@ -8,6 +8,7 @@
         <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
     </head>
     <body>
+        {% block nav %}{% include 'include/nav.html' %}{% endblock %}
         {% block content %}{% endblock %}
     </body>
 </html>
