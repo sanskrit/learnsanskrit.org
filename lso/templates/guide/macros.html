@@ -18,7 +18,7 @@
 {% if lessons %}
 <ul>
     {% for lesson in lessons %}
-    <li><a href="{{ url_for('.lesson', slug=lesson.slug) }}">{{ lesson.name }}</a></li>
+    <li><a href="{{ url_for('guide.lesson', slug=lesson.slug) }}">{{ lesson.name }}</a></li>
     {% endfor %}
 </ul>
 {% endif %}

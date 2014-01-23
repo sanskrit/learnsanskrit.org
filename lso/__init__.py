@@ -114,6 +114,11 @@ def register(bp):
         if isinstance(item, Blueprint):
             app.register_blueprint(item)
 
+# Debug views
+# -----------
+if app.debug:
+    import debug
+
 
 register('dicts')
 register('guide')

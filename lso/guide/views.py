@@ -41,7 +41,6 @@ def lesson(slug):
                 'lesson': lesson,
                 'content_path': 'guide/content/{}.html'.format(lesson.slug)
             }
-            content_path = 'guide/{}.html'.format(lesson.slug)
             return render_template('guide/lesson.html', **kw)
         except jinja2.exceptions.TemplateNotFound:
             return render_template('guide/placeholder.html', lesson=lesson)

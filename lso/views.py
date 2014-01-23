@@ -1,4 +1,4 @@
-from flask import render_template
+from flask import abort, render_template
 
 from lso import app
 from lso.database import session
@@ -23,7 +23,3 @@ def page_not_found(error):
 def internal_server_error(error):
     return render_template('errors/500.html'), 500
 
-
-@app.route('/demo')
-def site_css():
-    return render_template('demo.html')
