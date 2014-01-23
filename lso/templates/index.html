@@ -3,34 +3,37 @@
 {% block title %}learnsanskrit.org{% endblock %}
 
 {% block content %}
-<header class="masthead">
+<header class="splash">
     <h1>learn<span class="y">sanskrit</span>.org</h1>
     <h2>A comprehensive Sanskrit resource</h2>
 </header>
 
+<div style="max-width: 800px; margin: auto;">
 <section class="grid">
-    <h2>Sanskrit Guide</h2>
-    <p>A <a href="{{ url_for('guide.index') }}">comprehensive grammar guide</a>. This is the oldest and most popular part of the site. If you know English, you know enough to use the guide.</p>
-    </div>
+    <h1>Sanskrit guide</h1>
+    <p>A comprehensive grammar guide for anyone who wants to learn Sanskrit. Read on to find:</p>
+    <ul>
+        <li>Clear, simple lessons about nearly every part of Sanskrit grammar</li>
+        <li>A strong focus on the most important and useful parts of the language</li>
+        <li>Almost a thousand examples and exercises</li>
+        <li>Audio clips, images, historical notes, and more</li>
+    </ul>
+    <p class="call-to-action"><a href="{{ url_for('guide.index') }}" class="jumbo invitation btn">Start learning Sanskrit</a></p>
 </section>
 
 <section class="grid">
-    <h2>Tools</h2>
-    <p><a href="{{ url_for('tools.sanscript') }}">Sanscript</a> is a fast and powerful transliterator that supports most scripts and romanizations. The <a href="{{ url_for('dicts.mw') }}">dictionary</a> here is a cleaner version of <a href="http://www.sanskrit-lexicon.uni-koeln.de/monier/">the original</a>.</p>
-        <ul>
-            <li><a href="{{ url_for('tools.sanscript') }}">Sanscript</a></li>
-            <li><a href="{{ url_for('dicts.mw') }}">Monier-Williams Dictionary</a></li>
-        </ul>
+    <h1>Tools</h1>
+    <p>Fast, robust, and beautiful Sanskrit tools.</p>
+    <ul>
+        <li>Transliterate with <a href="{{ url_for('tools.sanscript') }}">Sanscript</a>. Supports all Indian scripts and a variety of romanizations.</li>
+        <li>Look up words in the <a href="{{ url_for('dicts.mw') }}">Monier-Williams dictionary</a>.</li>
+    </ul>
 </section>
 
 <section class="grid">
-    <h2>Site information</h2>
-    <p>Other pages, including some <a href="{{ url_for('site.resources') }}">Sanskrit resources</a> and a page <a href="{{ url_for('site.about') }}">about the site</a>. You can also <a href="{{ url_for('site.contact') }}">contact us</a> if you have something to share.</p>
-        <ul>
-            <li><a href="{{ url_for('site.about') }}">About</a></li>
-            <li><a href="{{ url_for('site.resources') }}">Resources</a></li>
-            <li><a href="{{ url_for('site.contact') }}">Contact</a></li>
-        </ul>
+    <h1>Texts</h1>
+    <p>A <a href="{{ url_for('texts.index') }}">reading environment</a> for the modern Sanskrit student. Texts, translations, commentaries, and word-by-word analysis, all in one place.</p>
 </section>
+</div>
 
 {% endblock %}

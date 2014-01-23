@@ -1,7 +1,5 @@
 /* Basic page layout */
 
-@masthead-bg: #068;
-
 body {
     color: @dark-gray;
     font-family: @en-font-family;
@@ -39,31 +37,6 @@ body {
     border: 1px lighten(@nav-bg, 5%) solid;
     border-width: 0 1px;
     color: #fff;
-}
-
-header {
-    text-align: center;
-}
-
-/* Header for site index */
-header.masthead {
-    background: @masthead-bg;
-    @h1: 3em;
-    @h2: 1em;
-    @padding: 1em;
-    height: @h1 + @h2 + 2*@padding;
-    padding-top: 2*@padding;
-
-    h1, h2 {
-        color: #fff;
-        margin: 0;
-    }
-    h1 {
-        font-size: @h1;
-    }
-    h2 {
-        font-size: @h2;
-    }
 }
 
 /* Guide and unit headers, for the single-page unit dump. */

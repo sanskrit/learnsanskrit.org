@@ -1,0 +1,24 @@
+@masthead-bg: #068;
+
+/* Header for site index */
+header.splash {
+    background: @masthead-bg;
+    text-align: center;
+    @h1: 3em;
+    @h2: 1em;
+    @padding: 1em;
+    height: @h1 + @h2 + 2*@padding;
+    padding-top: 2*@padding;
+
+    h1, h2 {
+        color: #fff;
+        font-family: @en-font-family;
+        margin: 0;
+    }
+    h1 {
+        font-size: @h1;
+    }
+    h2 {
+        font-size: @h2;
+    }
+}
