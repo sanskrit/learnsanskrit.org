@@ -2,7 +2,11 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1>Unfinished lessons (debug)</h1>
+<h1>TODO</h1>
+{{ m.lesson_list(todo) }}
 
-{{ m.lesson_list(lessons) }}
+<h1>Finished</h1>
+{{ m.lesson_list(finished) }}
+
+
 {% endblock %}

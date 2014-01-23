@@ -19,6 +19,8 @@ def debug_guide():
         except TemplateNotFound:
             return False
 
-    lessons = [L for L in Lesson.query.all() if not has_template(L)]
+    all_lessons = Lesson.query.all()
+    finished = [L for L in all_lessons if has_template(L)]
+    todo = [L for L in all_lessons if not has_template(L)]
 
-    return render_template('debug/guide.html', lessons=lessons)
+    return render_template('debug/guide.html', finished=finished, todo=todo)
