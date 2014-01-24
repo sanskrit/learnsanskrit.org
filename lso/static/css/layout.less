@@ -1,34 +1,5 @@
 /* Basic page layout */
 
-body {
-    color: @dark-gray;
-    font-family: @en-font-family;
-    font-size: @en-font-size;
-    margin: 0;
-    padding: 3em 0 0;
-
-    &#general, &#tools, &#site, &#settings, &#texts {
-        article {
-            margin: 3em 10%;
-            &.narrow {
-                margin: 3em auto;
-            }
-        }
-    }
-    &#application {
-        article {
-            margin: auto;
-            max-width: 960px;
-            width: 90%;
-        }
-    }
-    &#index {
-        article {
-            margin: 0 10%;
-        }
-    }
-}
-
 // Active nav link
 #guide #nav-guide, #lesson #nav-guide, #tools #nav-tools,
 #application #nav-tools, #site #nav-site, #settings #nav-settings,
@@ -39,27 +10,9 @@ body {
     color: #fff;
 }
 
-/* Guide and unit headers, for the single-page unit dump. */
-header.guide {
-    h1 {
-        font-size: 6em;
-        margin: 0;
-    }
-}
-
-header.unit {
-    h1 {
-        font-size: 4em;
-        margin: 0;
-    }
-}
-
-article {
-    &.narrow {
-        margin: auto;
-        min-width: 600px;
-        width: 60%;
-    }
+div.narrow, body#application article  {
+    max-width: 800px;
+    margin: auto;
 }
 
 footer {
