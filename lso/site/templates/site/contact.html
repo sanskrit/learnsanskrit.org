@@ -12,20 +12,20 @@
 {% endmacro %}
 
 {% block content %}
+<div class="narrow">
 <h1>Contact</h1>
-<div class="grid">
-    <div class="inset span6">
-    <form action="" method="POST">
-        {{ form.csrf_token }}
-        {{ field_errors(form.subject, placeholder='Subject') }}
-        {{ field_errors(form.email, placeholder='Email address (optional)') }}
-        {{ field_errors(form.message, rows=10, placeholder='Message') }}
-        <input type="submit" value="Send message" class="jumbo btn" />
-    </form>
-    </div>
-<div class="span6">
+
 <p><strong>This site thrives on feedback.</strong> Your comments and questions will help the site grow and improve. And if it does, it can continue to help people learn Sanskrit. We read every email we receive and do our best to reply to them all. But due to time constraints, we might not be able to write you a reply.</p>
 
-</div>
+
+<form action="" class="inset" method="POST">
+    {{ form.csrf_token }}
+    {{ field_errors(form.subject, placeholder='Subject') }}
+    {{ field_errors(form.email, placeholder='Email address (optional)') }}
+    {{ field_errors(form.message, rows=10, placeholder='Message') }}
+    <p>If you want a reply, please mention your email address.</p>
+    <input type="submit" value="Send message" class="jumbo btn" />
+</form>
+
 </div>
 {% endblock %}

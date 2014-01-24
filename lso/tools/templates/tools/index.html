@@ -1,15 +1,30 @@
-{% extends 'general.html' %}
+{% extends 'base.html' %}
 
 {% block title %}Tools{% endblock %}
 {% block body_id %}tools{% endblock %}
 
 {% block content %}
+<div class="narrow">
 <h1>Tools</h1>
 
-<h2>Transliteration</h2>
-<p><a href="{{ url_for('.sanscript') }}">Sanscript</a>  transliterates text from one script to another. Sanscript supports all Indian scripts and the most popular romanizations. It focuses on Sanskrit, but it has strong support for other languages.</p>
+<h2>Sanscript transliterator</h2>
+<p>Transliterate text from one script to another. Sanscript supports all modern Indian scripts and the most popular romanizations. It's fast, robust, and thoroughly tested. Although Sanscript focuses on Sanskrit, it has strong support for other Indian languages.</p>
 
-<h2>Dictionaries</h2>
-<p>The <a href="{{ url_for('dicts.mw') }}">Monier-Williams Sanskrit-English Dictionary</a> is the largest and most commonly used Sanskrit-English dictionary. Dictionary data comes from the <a href="http://www.sanskrit-lexicon.uni-koeln.de/">Cologne Digital Sanskrit Lexicon</a> project.</p>
+<p class="call-to-action"><a class="jumbo invitation btn" href="{{ url_for('.sanscript') }}">Transliterate some text</a></p>
 
+<h2>Monier-Williams dictionary</h2>
+<p>A cleaner version of the <a href="{{ url_for('dicts.mw') }}">Monier-Williams Sanskrit-English Dictionary</a>, the largest and most commonly used Sanskrit-English dictionary. This version contains some nice improvements:</p>
+
+<ul>
+    <li>Look up multiple words at once</li>
+    <li>Enter input in nearly any common format</li>
+    <li>View output in any Indian script</li>
+    <li>Color-coded information for faster reading</li>
+</ul>
+
+<p>Dictionary data comes from the <a href="http://www.sanskrit-lexicon.uni-koeln.de/">Cologne Digital Sanskrit Lexicon</a> project.</p>
+
+<p class="call-to-action"><a class="jumbo invitation btn" href="{{ url_for('dicts.mw') }}">Search the dictionary</a></p>
+
+</div>
 {% endblock %}

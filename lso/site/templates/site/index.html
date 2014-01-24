@@ -4,25 +4,22 @@
 {% block body_id %}site{% endblock %}
 
 {% block content %}
+<div class="narrow">
 <h1>Site information</h1>
 
-<a class="block" href="{{ url_for('.about') }}">
 <h2>About the site</h2>
-<p>A bit of background on learnsanskrit.org and how it was created.</p>
-</a>
+<p>A short history of learnsanskrit.org and how it was created. <a href="{{ url_for('.about') }}">Read more.</a></p>
 
-<a class="block" href="{{ url_for('.contact') }}">
 <h2>Contact us</h2>
-<p>Let us know what we're doing right and what we're doing wrong. We'll do our best to put your feedback to work. Together, we can make this site even better.</p>
-</a>
+<p><a href="{{ url_for('.contact') }}">Let us know</a> what we're doing right and what we're doing wrong. We'll do our best to put your feedback to work.</p>
 
-<a class="block" href="{{ url_for('.resources') }}">
+
 <h2>Resources</h2>
-<p>Links to dictionaries, texts, textbooks, tools, and other Sanskrit resources.</p>
-</a>
+<p><a href="{{ url_for('.resources') }}">A collection of useful links</a> to dictionaries, texts, textbooks, tools, and other Sanskrit resources.</p>
 
-<a class="block" href="http://github.com/sanskrit">
+
 <h2>Source code</h2>
-<p>All of our source code is hosted on GitHub.</p>
-</a>
+<p>All of our source code is <a href="http://github.com/sanskrit">hosted on GitHub</a>.</p>
+
+</div>
 {% endblock %}

@@ -4,6 +4,7 @@
 {% block title %}Texts{% endblock %}
 
 {% block content %}
+<div class="narrow">
 <h1>Texts</h1>
 
 {% with messages = get_flashed_messages() %}
@@ -11,5 +12,5 @@
 {% endwith %}
 
 {{ text_blocks(texts, categorize_texts) }}
-
+</div>
 {% endblock %}
