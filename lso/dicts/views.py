@@ -83,6 +83,6 @@ def mw_results(q):
     for entry in q_list:
         results[entry] = []
 
-    for e in entries:
-        results[e.name].append(e.data)
+    for entry in entries:
+        results[entry.name].append(entry.content)
     return results

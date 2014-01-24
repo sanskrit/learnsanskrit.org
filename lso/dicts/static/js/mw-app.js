@@ -1,7 +1,7 @@
 (function() {
     var t = Sanscript.t,
         GREEK_URL = 'http://www.perseus.tufts.edu/hopper/morph?l=',
-        CITE_URL = '/dict/mw/works-and-authors';
+        CITE_URL = '/dicts/mw/works-and-authors';
 
     var Entries = Backbone.Collection.extend({
         model: Backbone.Model
@@ -47,7 +47,7 @@
                 text = text.replace(/\W/g, '');
 
                 $span.wrapInner(link_template({ text: text,
-                    url: '/dict/mw/q-slp1/' }));
+                    url: '/dicts/mw/q-slp1/' }));
             });
             $('span.gk', this.$el).each(function() {
                 var $span = $(this),
@@ -79,7 +79,7 @@
 
     window.Routes = Backbone.Router.extend({
         routes: {
-            'dict/mw/q-:from/:query': 'search',
+            'dicts/mw/q-:from/:query': 'search',
         },
 
         search: function(from, q) {
@@ -125,13 +125,13 @@
             var q = $('#q').val().replace(/\W/g, '+'),
                 from = LSO.settings.get('input');
 
-            var url = 'dict/mw/q-' + from + '/' + q;
+            var url = 'dicts/mw/q-' + from + '/' + q;
             MW.routes.navigate(url, {trigger: true, replace: true});
         },
 
         link_query: function(e) {
             e.preventDefault();
-            var url = 'dict/mw/q-slp1/' + $(e.currentTarget).data('text');
+            var url = 'dicts/mw/q-slp1/' + $(e.currentTarget).data('text');
             MW.routes.navigate(url, {trigger: true});
         },
 

@@ -1,6 +1,13 @@
 import pytest
-from sqlalchemy import create_engine, MetaData
+from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
+
+from lso import app as _app
+
+
+@pytest.fixture(scope='session')
+def app(request):
+    return _app.test_client()
 
 
 @pytest.fixture(scope='session')
