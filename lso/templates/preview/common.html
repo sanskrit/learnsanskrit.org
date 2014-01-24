@@ -1,5 +1,3 @@
-<h1>CSS preview</h1>
-
 {% macro section(name) %}
 <h2>{{ name }}</h2>
 <div style="margin-left: 3em">
@@ -7,6 +5,7 @@
 </div>
 {% endmacro %}
 
+<h1>CSS preview</h1>
 
 {% call section('Headings') %}
 <h1>h1. Heading</h1>
@@ -116,4 +115,20 @@
         <td>words</td>
     </tr>
 </table>
+{% endcall %}
+
+
+{% call section('Buttons') %}
+<input type="button" value="Input with button type" />
+<input type="submit" value="Input with submit type" />
+<button>Button</button>
+<a class="btn">Link</a>
+<a class="invitation btn">Invitation</a>
+
+<br />
+
+<input type="button" value="Input with button type" />
+<input type="submit" value="Input with submit type" />
+<button>Button</button>
+<a class="btn">Link</a>
 {% endcall %}
