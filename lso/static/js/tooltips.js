@@ -11,7 +11,6 @@ $.tooltips = function(selector, scope) {
 
     $(scope).on({
         mouseover: function() {
-            console.log('over');
             var $this = $(this),
                 title = $this.data('title');
 
@@ -32,7 +31,6 @@ $.tooltips = function(selector, scope) {
                 .appendTo('body')
                 .show();
             $this.data('tooltip', $tt);
-            console.log($tt);
         },
         mousemove: function(e) {
             var $tt = $(this).data('tooltip'),

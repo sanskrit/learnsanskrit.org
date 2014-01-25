@@ -55,14 +55,14 @@ class TestData:
                 stack.extend(other['deps'])
 
     def test_mostly_no_deps(self, graph_data):
-        """Verify that only a few lessons have no dependencesies."""
+        """Verify that only a few lessons have no dependencies."""
         no_deps = set(x['slug'] for x in graph_data if not x['deps'])
         assert no_deps == {'a', 'how-sanskrit-works'}
 
 
 class TestAddLessons:
 
-    """Verifies that the lesson graph has been stored correctly."""
+    """Verifies that the lesson graph has been built correctly."""
 
     def test_all_defined(self, graph_data, lessons):
         assert len(lessons) == len(graph_data)
