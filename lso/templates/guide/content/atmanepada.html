@@ -1,0 +1,94 @@
+Sanskrit verbs come in two different *types*. All of the verbs that we've seen so far are of the first type, which is usually called <dfn>`parasmaipada`</dfn>:
+
+!!! examples
+    - {{ m.x('gacchati', 'He goes.') }}
+    - {{ m.x('gacchataH', 'The two of them go.') }}
+    - {{ m.x('gacchanti', 'They go.') }}
+
+In this lesson, we'll focus on verbs of the second type, which is usually called <dfn>`Atmanepada`</dfn>:
+
+!!! examples
+    - {{ m.x('labhate', 'He obtains.') }}
+    - {{ m.x('labhete', 'The two of them obtain.') }}
+    - {{ m.x('labhante', 'They obtain.') }}
+
+Some verbs can use either `parasmaipada` or `Atmanepada`. But usually, the verb tends toward one or the other.
+
+
+Why `Atmanepada`?
+-----------------
+
+If we already have `parasmaipada`, why use `Atmanepada` at all? For certain verbs, `Atmanepada` can imply acting *for oneself* (`Atmane`):
+
+!!! examples
+    -   {{ m.x('pacate', "He cooks (for himself).") }}
+
+        (In other words, he's cooking himself a meal.)
+
+    -   {{ m.x('pacete', "The two of them cook for themselves.") }}
+    -   {{ m.x('pacante', "They cook for themselves.") }}
+
+instead of *for somebody else* (`parasmai`):
+
+!!! examples
+    - {{ m.x('pacati', 'He cooks (for somebody else).') }}
+    - {{ m.x('pacataH', "The two of them cook.") }}
+    - {{ m.x('pacanti', "They cook.") }}
+
+But for most verbs, this "for oneself" meaning is barely there.
+
+However, `Atmanepada` verbs do tend to describe things that affect us, like being born:
+
+!!! examples
+    - {{ m.x('jAyate', 'He is born.') }}
+
+dying:
+
+!!! examples
+    - {{ m.x('mriyante', 'They die.') }}
+
+or just thinking:
+
+!!! examples
+    - {{ m.x('manye', 'I think.') }}
+
+
+Making `Atmanepada` verbs
+-------------------------
+
+Just as two flowers can grow from the same plant stem, `parasmaipada` and `Atmanepada` verbs grow from the same verb stem. And both sets of endings follow the same patterns:
+
+!!! examples
+    - {{ m.x('pacati', 'He cooks.') }}
+    - {{ m.x('pacate', "He cooks for himself.") }}
+    - {{ m.x('pacanti', "They cook.") }}
+    - {{ m.x('pacante', "They cook for themselves.") }}
+    - {{ m.x('pacasi', "You cook.") }}
+    - {{ m.x('pacase', "You cook for yourself.") }}
+
+
+Even when these patterns are not immediately clear:
+
+!!! examples
+    - {{ m.x('pacataH', "The two of them cook.") }}
+    - {{ m.x('pacete', "The two of them cook for themselves.") }}
+    - {{ m.x('pacathaH', "You two cook") }}
+    - {{ m.x('pacethe', "You two cook for yourselves.") }}
+    - {{ m.x('pacAvaH', "The two of us cook.") }}
+    - {{ m.x('pacAvahe', "The two of us cook for ourselves.") }}
+    - {{ m.x('pacAmaH', "We all cook.") }}
+    - {{ m.x('pacAmahe', "We all cook for ourselves.") }}
+
+But in two instances, there is no pattern at all:
+
+!!! examples
+    - {{ m.x('pacatha', "You all cook.") }}
+    - {{ m.x('pacadhve', "You all cook for yourselves.") }}
+    - {{ m.x('pacAmi', "I cook.") }}
+    - {{ m.x('pace', "I cook for myself.") }}
+
+
+Verb table
+----------
+
+{{ m.verb('laB', 'pres', 'A', vclass='1') }}
