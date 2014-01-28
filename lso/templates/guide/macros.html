@@ -1,3 +1,5 @@
+{% import 'macros/charts.html' as charts %}
+
 {# Print a list of examples #}
 {% macro examples() %}
 <ul class="examples">
@@ -56,4 +58,11 @@
     </li>
     {% endfor %}
 </ul>
+{% endmacro %}
+
+
+{% macro verb(root, mode, voice, vclass=none) %}
+{# I don't know how to expose verb_data as a function: #}
+{% set data = root|verb_data(mode, voice, vclass=vclass) %}
+{{ charts.verb_paradigm(**data) }}
 {% endmacro %}

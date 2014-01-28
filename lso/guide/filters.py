@@ -24,7 +24,6 @@ def inject_functions():
         'img': img,
         'lesson_url': lesson_url,
         'nominal_data': nominal_data,
-        'verb_data': verb_data,
         }
 
 
@@ -102,7 +101,8 @@ def nominal_data(stem, gender, cases=None):
         }
 
 
-def verb_data(root, mode, voice, vclass=None, basis=None):
+@app.template_filter()
+def verb_data(root, mode, voice, mod=None, vclass=None, basis=None):
     """Gather data for displaying a verb paradigm.
 
     :param root: the root
