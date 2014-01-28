@@ -100,7 +100,6 @@ class Text(SimpleBase):
     category = relationship(Category)
     language = relationship(Language)
     author = relationship(Author, backref='texts')
-    division = relationship('Division', cascade=CASCADE_ARGS)
     parent = relationship('Text', remote_side=[id], backref='children')
     segments = relationship('Segment', cascade=CASCADE_ARGS, backref='text')
 
@@ -194,7 +193,8 @@ class Segment(SimpleBase):
         return '<Segment(%s, %s)>' % (self.id, self.slug)
 
 
-Text.division = relationship(Division)
+Text.division = relationship(Division, single_parent=True,
+                             cascade=CASCADE_ARGS)
 Division.segments = relationship(Segment,
                                  collection_class=ordering_list('position'),
                                  order_by=Segment.position)

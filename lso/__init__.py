@@ -65,6 +65,7 @@ md.register_extension(SanskritExtension)
 # Sanskrit
 # --------
 ctx = Context(app.config)
+ctx.connect()
 try:
     simple_query = query.SimpleQuery(ctx)
     simple_analyzer = analyze.SimpleAnalyzer(ctx)
