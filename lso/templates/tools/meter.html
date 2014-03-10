@@ -1,0 +1,54 @@
+{% extends 'tools/layout.html' %}
+
+{% block extrahead %}
+    {% assets filters="less", output="gen/sanscript.css", "tools/css/sanscript.less" %}
+        <link rel="stylesheet" type="text/css" href="{{ ASSET_URL }}" />
+    {% endassets %}
+{% endblock %}
+
+{% block title %}Meter recognizer{% endblock %}
+
+{% block content %}
+<div id="tool">
+<h1>Meter recognizer</h1>
+<form action="" method="POST">
+    {{ form.csrf_token }}
+    <div id="sa-panel" class="inset">
+        {{ form.from_script }}
+        &rarr;
+        {{ form.to_script }}
+        <div class="buttons">
+            <input id="submit" type="submit" value="Classify" />
+        </div>
+    </div>
+   {{ form.input }}
+</form>
+
+{% if form.input.data %}
+    {% if result %}
+        <p>Detected as {{ result.name }}</p>
+    {% else %}
+        <p>No matches found.</p>
+    {% endif %}
+    {{ form.input.data|d }}
+{% endif %}
+
+<div class="tabs">
+<section id="t-intro">
+    <h1>Meter recognizer</h1>
+    <div class="directions">
+        <ol>
+            <li>Type some <a href="#input" data-spotlight="#input">text</a>.</li>
+            <li>Click the <a href="#submit" data-spotlight="#submit">button</a>.</li>
+        </ol>
+    </div>
+    <p>The <dfn>meter recognizer</dfn> takes some input text and tells you what meters it uses.</p>
+</section>
+
+<section id="t-code">
+    <h1>Code</h1>
+    <p>The meter recognizer is available as a Python package. You can grab the source code and help improve it <a href="http://github.com/sanskrit/chandas">on GitHub</a>.</p>
+</section>
+</div>
+
+{% endblock %}
