@@ -25,10 +25,11 @@ class LSOBlueprint(Blueprint):
 
     """A special kind of :class:`~flask.Blueprint`. It mounts the static
     folder to '/static/blueprint_name' instead of '/url_prefix/static'.
+    This is useful for e.g. serving static assets from a single process.
     """
 
     def __init__(self, name, import_name, **kw):
-        kw['static_folder'] = 'static'
+        kw['static_folder'] = '../static/' + name
         kw['template_folder'] = 'templates'
         Blueprint.__init__(self, name, import_name, **kw)
 

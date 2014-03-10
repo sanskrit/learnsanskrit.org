@@ -1,8 +1,8 @@
 from chandas import Classifier
 from flask import render_template
 
-from lso.lib import LSOBlueprint
 import forms
+from lso.lib import LSOBlueprint
 
 bp = LSOBlueprint('tools', __name__, url_prefix='/tools')
 classifier = Classifier.from_json_file('/home/akp/projects/chandas/data/data.json')
