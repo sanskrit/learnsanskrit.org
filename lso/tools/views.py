@@ -19,10 +19,15 @@ def meter():
     form = forms.MeterForm()
     if form.validate_on_submit():
         result = classifier.classify(form.input.data)
+        if result is None:
+            line_results = classifier.classify_lines(form.input.data)
+        else:
+            line_results = None
         data = dict(
             form=form,
             result=result,
-            block=Block(form.input.data)
+            block=Block(form.input.data),
+            line_results=line_results
         )
         return render_template('tools/meter.html', **data)
     return render_template('tools/meter.html', form=form)

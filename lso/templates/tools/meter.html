@@ -1,5 +1,16 @@
 {% extends 'tools/layout.html' %}
 
+{% macro syllable_row(line) %}
+    <tr>
+    {% set scan = line.scan %}
+    {% for syllable in line.syllables %}
+        <td{% if scan[loop.index0] == 'G' %} class="heavy"{% endif %}>
+            {{ syllable|sa1('slp1', 'devanagari', None) }}
+        </td>
+    {% endfor %}
+    </tr>
+{% endmacro %}
+
 {% block extrahead %}
     {% assets filters="less", output="gen/meter.css", "tools/css/meter.less" %}
         <link rel="stylesheet" type="text/css" href="{{ ASSET_URL }}" />
@@ -28,20 +39,22 @@
 {% if form.input.data %}
     {% if result %}
         <p>Detected as {{ result.name }}</p>
+        <table class="syllables">
+            {% for line in block.lines %}{{ syllable_row(line) }}{% endfor %}
+        </table>
     {% else %}
-        <p>No matches found.</p>
-    {% endif %}
-    <table class="syllables">
-    {% for line in block.lines %}
-        <tr>
-        {% set scan = line.scan %}
-        {% for syllable in line.syllables %}
-            <td{% if scan[loop.index0] == 'G' %} class="heavy"{% endif %}>
-                {{ syllable|sa1('slp1', 'devanagari', None) }}
-            </td>
+        <p>Couldn't identify the meter. Line by line results:</p>
+        {% for line, padya in line_results %}
+            {% if padya %}
+            <p>Line {{loop.index}} identified as {{padya.name}}:</p>
+            {% else %}
+            <p>Line {{loop.index}} couldn't be identified:</p>
+            {% endif %}
+            <table class="syllables">
+                {{ syllable_row(line) }}
+            </table>
         {% endfor %}
-    {% endfor %}
-    </table>
+    {% endif %}
 {% endif %}
 </div>
 
