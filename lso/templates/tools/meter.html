@@ -24,14 +24,26 @@
    {{ form.input }}
 </form>
 
+<div id="results">
 {% if form.input.data %}
     {% if result %}
         <p>Detected as {{ result.name }}</p>
     {% else %}
         <p>No matches found.</p>
     {% endif %}
-    {{ form.input.data|d }}
+    <table class="syllables">
+    {% for line in block.lines %}
+        <tr>
+        {% set scan = line.scan %}
+        {% for syllable in line.syllables %}
+            <td{% if scan[loop.index0] == 'G' %} class="heavy"{% endif %}>
+                {{ syllable|d }}
+            </td>
+        {% endfor %}
+    {% endfor %}
+    </table>
 {% endif %}
+</div>
 
 <div class="tabs">
 <section id="t-intro">

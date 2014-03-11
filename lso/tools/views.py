@@ -1,4 +1,5 @@
 from chandas import Classifier
+from chandas.wrappers import Block
 from flask import render_template
 
 import forms
@@ -18,7 +19,12 @@ def meter():
     form = forms.MeterForm()
     if form.validate_on_submit():
         result = classifier.classify(form.input.data)
-        return render_template('tools/meter.html', form=form, result=result)
+        data = dict(
+            form=form,
+            result=result,
+            block=Block(form.input.data)
+        )
+        return render_template('tools/meter.html', **data)
     return render_template('tools/meter.html', form=form)
 
 
