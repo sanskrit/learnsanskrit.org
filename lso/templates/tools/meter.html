@@ -36,11 +36,13 @@
 </form>
 
 <div id="results">
-{% if form.input.data %}
-    {% if result %}
-        <p>Detected as {{ result.name }}</p>
+{% for _block in blocks %}
+    {% if blocks|length > 1 %}<h2>Block {{ loop.index }}</h2>{% endif %}
+    {% set padya, line_results = results[loop.index0] %}
+    {% if padya %}
+        <p>Detected as {{ padya.name }}:</p>
         <table class="syllables">
-            {% for line in block.lines %}{{ syllable_row(line) }}{% endfor %}
+            {% for line in _block.lines %}{{ syllable_row(line) }}{% endfor %}
         </table>
     {% else %}
         <p>Couldn't identify the meter. Line by line results:</p>
@@ -55,7 +57,7 @@
             </table>
         {% endfor %}
     {% endif %}
-{% endif %}
+{% endfor %}
 </div>
 
 <div class="tabs">

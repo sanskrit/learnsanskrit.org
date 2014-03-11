@@ -1,5 +1,5 @@
 from chandas import Classifier
-from chandas.wrappers import Block
+from chandas.wrappers import iter_blocks
 from flask import render_template
 
 import forms
@@ -18,16 +18,19 @@ def meter():
     """Meter recognizer."""
     form = forms.MeterForm()
     if form.validate_on_submit():
-        result = classifier.classify(form.input.data)
-        if result is None:
-            line_results = classifier.classify_lines(form.input.data)
-        else:
-            line_results = None
+        blocks = list(iter_blocks(form.input.data))
+        results = []
+        for block in blocks:
+            result = classifier.classify(block.raw)
+            if result is None:
+                line_result = classifier.classify_lines(form.input.data)
+            else:
+                line_result = None
+            results.append((result, line_result))
         data = dict(
             form=form,
-            result=result,
-            block=Block(form.input.data),
-            line_results=line_results
+            blocks=blocks,
+            results=results,
         )
         return render_template('tools/meter.html', **data)
     return render_template('tools/meter.html', form=form)
