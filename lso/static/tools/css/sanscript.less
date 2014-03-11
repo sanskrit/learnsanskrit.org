@@ -1,8 +1,8 @@
 @import "../../../static/css/lib.less";
+@import "style.less";
 
 @examples-font-size: 1.3em;
 @field-height: 3em;
-@height: 15em;
 @textbox-width: 49%;
 @textbox-gap: 100% - 2 * @textbox-width;
 
@@ -11,16 +11,7 @@ body {
     overflow-y: scroll;
 }
 
-form {
-    font-family: sans-serif;
-    font-size: (1 / @en-font-size);
-}
-
 h1 {
-    color: #000;
-    font-size: 2em;
-    text-align: left;
-
     small {
         color: @gray;
         font-size: 0.6em;
@@ -29,13 +20,6 @@ h1 {
 
 label {
     color: darken(@gray, 20%);
-}
-
-textarea {
-    font-size: 0.9em;
-    height: @height;
-    padding: 0;
-    margin: 0;
 }
 
 ul.examples {
@@ -76,9 +60,6 @@ ul.letters {
             height: @field-height;
         }
     }
-    select {
-        height: @field-height;
-    }
     ul.examples {
         border: 0;
         // Size w.r.t. base font size.
@@ -87,14 +68,8 @@ ul.letters {
     }
 }
 
-#submit, #swap, label, select {
+#swap, label, select {
     font-size: 1em;
-}
-
-#submit {
-    float: left;
-    margin-right: 0.3em;
-    width: 3 * @field-height;
 }
 
 #swap {
@@ -128,35 +103,4 @@ div.textbox {
             }
         }
     }
-}
-
-div.directions {
-    margin-bottom: 1em;
-    text-align: center;
-
-    ol {
-        clear: both;
-        counter-reset: item;
-        display: inline-block;
-        list-style: none;
-        margin: 0;
-        overflow: hidden;
-        padding: 0;
-    }
-
-    li {
-        float: left;
-        margin-left: 2em;
-
-        &:before {
-            content: counter(item);
-            counter-increment: item;
-            color: @gray;
-            font-size: 2em;
-            margin-right: 0.5em;
-        }
-    }
-    ol li:first-child {
-            margin: 0;
-        }
 }

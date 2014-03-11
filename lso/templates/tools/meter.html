@@ -1,7 +1,7 @@
 {% extends 'tools/layout.html' %}
 
 {% block extrahead %}
-    {% assets filters="less", output="gen/sanscript.css", "tools/css/sanscript.less" %}
+    {% assets filters="less", output="gen/meter.css", "tools/css/meter.less" %}
         <link rel="stylesheet" type="text/css" href="{{ ASSET_URL }}" />
     {% endassets %}
 {% endblock %}
@@ -13,11 +13,11 @@
 <h1>Meter recognizer</h1>
 <form action="" method="POST">
     {{ form.csrf_token }}
-    <div id="sa-panel" class="inset">
+    <div id="panel" class="inset">
         {{ form.from_script }}
         &rarr;
         {{ form.to_script }}
-        <div class="buttons">
+        <div class="button-group">
             <input id="submit" type="submit" value="Classify" />
         </div>
     </div>
@@ -37,7 +37,7 @@
         {% set scan = line.scan %}
         {% for syllable in line.syllables %}
             <td{% if scan[loop.index0] == 'G' %} class="heavy"{% endif %}>
-                {{ syllable|d }}
+                {{ syllable|sa1('slp1', 'devanagari', None) }}
             </td>
         {% endfor %}
     {% endfor %}

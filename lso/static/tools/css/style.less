@@ -1,0 +1,69 @@
+// Shared CSS for arbitrary tools.
+@import "../../../static/css/lib.less";
+
+@field-height: 3em;
+
+form {
+    font-family: sans-serif;
+}
+
+textarea {
+    font-size: 0.9em;
+    height: 15em;
+    padding: 0.3em;
+}
+
+// Main submit button. Should be large and easy to spot.
+#submit {
+    float: left;
+    height: @field-height;
+    margin-right: 0.3em;
+    min-width: 3 * @field-height;
+}
+
+// Panel, containing buttons and options.
+#panel {
+    clear: both;
+    margin: 1em 0;
+}
+
+// Wraps a group of large buttons.
+div.button-group {
+    float: right;
+    input, button {
+        float: left;
+        height: @field-height;
+    }
+}
+
+// Directions for using the tool.
+div.directions {
+    margin-bottom: 1em;
+    text-align: center;
+
+    ol {
+        clear: both;
+        counter-reset: item;
+        display: inline-block;
+        list-style: none;
+        margin: 0;
+        overflow: hidden;
+        padding: 0;
+    }
+
+    li {
+        float: left;
+        margin-left: 2em;
+
+        &:before {
+            content: counter(item);
+            counter-increment: item;
+            color: @gray;
+            font-size: 2em;
+            margin-right: 0.5em;
+        }
+    }
+    ol li:first-child {
+        margin: 0;
+    }
+}
