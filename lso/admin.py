@@ -2,7 +2,7 @@ import os
 
 from flask import flash, redirect
 from flask.ext.admin import Admin, BaseView, AdminIndexView, expose
-from flask.ext.admin.contrib.sqlamodel import ModelView
+from flask.ext.admin.contrib.sqla import ModelView
 from flask.ext.security import current_user
 from werkzeug import secure_filename
 from wtforms import FileField, Form, validators
