@@ -1,8 +1,6 @@
 from fabric.api import *
 from sanskrit import Context
 
-import lso
-
 
 @task
 def create(*tables):
@@ -10,6 +8,7 @@ def create(*tables):
 
     :param tables: the tables to create. If blank, create all tables.
     """
+    import lso
     ctx = Context(lso.app.config)
     ctx.create_all()
 
@@ -20,6 +19,7 @@ def drop(*tables):
 
     :param tables: the tables to create. If blank, drop all tables.
     """
+    import lso
     ctx = Context(lso.app.config)
     ctx.drop_all()
 
@@ -30,6 +30,7 @@ def recreate(*tables):
 
     :param tables: the tables to recreate. If blank, recreate all tables.
     """
+    import lso
     ctx = Context(lso.app.config)
     ctx.drop_all()
     ctx.build()
@@ -41,5 +42,6 @@ def seed(*blueprints):
 
     :param blueprints: the blueprints containing the tables to seed.
     """
+    import lso
     ctx = Context(lso.app.config)
     ctx.build()
