@@ -2,12 +2,14 @@ flask >= 0.9
 flask-admin
 flask-assets
 flask-mail
+flask-markdown
 flask-restless
 flask-security
+flask-weasyprint
 flask-wtf
 fabric
+lxml
 pyyaml
 py-bcrypt
 sqlalchemy
 sqlamp
-webassets==dev

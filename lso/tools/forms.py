@@ -1,4 +1,4 @@
-from flask.ext.wtf import TextAreaField
+from wtforms import TextAreaField
 
 from lso.forms import SanskritForm
 

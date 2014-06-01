@@ -3,6 +3,7 @@
 *.pdf
 *.py[cod]
 audio/
+env/
 gen/
 /lso/data/
 production/

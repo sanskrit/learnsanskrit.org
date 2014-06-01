@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
-from flask.ext.wtf import (Form, TextField, TextAreaField,
-                           Email, Optional, Required)
+from wtforms import (Form, TextField, TextAreaField,
+                           validators)
 from flask.ext.wtf.html5 import EmailField
 
 from lso.forms.optgroup import OptSelectField
@@ -9,9 +9,9 @@ from sanskrit import sanscript as S
 
 
 class ContactForm(Form):
-    subject = TextField('Subject', [Required()])
-    email = EmailField('Email', [Optional(), Email()])
-    message = TextAreaField('Message', [Required()])
+    subject = TextField('Subject', [validators.Required()])
+    email = EmailField('Email', [validators.Optional(), validators.Email()])
+    message = TextAreaField('Message', [validators.Required()])
 
 
 class SettingsForm(Form):

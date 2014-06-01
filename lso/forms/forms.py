@@ -1,6 +1,6 @@
 # -*- encoding: utf-8 -*-
 
-from flask.ext.wtf import Form, TextField, Required
+from wtforms import Form, TextField, validators
 from sanskrit import sanscript as S
 
 from optgroup import OptSelectField
@@ -71,4 +71,4 @@ class QueryForm(SanskritForm):
         ]]
         ]
     from_script = OptSelectField('From', choices=inputs, default=S.HK)
-    q = TextField(validators=[Required()])
+    q = TextField(validators=[validators.Required()])
