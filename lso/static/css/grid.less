@@ -1,16 +1,18 @@
 /* 12-column fluid grid, from Twitter Bootstrap */
+@import "mixins.less";
+@import "variables.less";
 
 #grid {
-    .fluid (@grid-column-width, @grid-gutter-width) {
+    .fluid(@grid-column-width, @grid-gutter-width) {
         .spanX (@index) when (@index > 0) {
-            (~".span@{index}") { .span(@index); }
+            .span@{index} { .span(@index); }
             .spanX(@index - 1);
         }
         .spanX (0) {}
 
         .offsetX (@index) when (@index > 0) {
-            (~'.offset@{index}') { .offset(@index); }
-            (~'.offset@{index}:first-child') { .offsetFirstChild(@index); }
+            .offset@{index} { .offset(@index); }
+            .offset@{index}:first-child { .offsetFirstChild(@index); }
             .offsetX(@index - 1);
         }
         .offsetX (0) {}
