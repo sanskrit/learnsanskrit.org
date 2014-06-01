@@ -8,7 +8,7 @@ flask-security
 flask-weasyprint
 flask-wtf
 fabric
-lxml
+psycopg2
 pyyaml
 py-bcrypt
 sqlalchemy
