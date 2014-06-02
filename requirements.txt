@@ -1,3 +1,4 @@
+fabric
 flask >= 0.9
 flask-admin
 flask-assets
@@ -7,9 +8,9 @@ flask-restless
 flask-security
 flask-weasyprint
 flask-wtf
-fabric
 psycopg2
-pyyaml
 py-bcrypt
+pytest
+pyyaml
 sqlalchemy
 sqlamp
