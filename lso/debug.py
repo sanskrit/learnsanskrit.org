@@ -4,6 +4,7 @@ from jinja2.exceptions import TemplateNotFound
 from lso import app
 from lso.guide.models import Lesson
 
+
 @app.route('/debug/css/')
 def debug_css():
     return render_template('debug/css.html')

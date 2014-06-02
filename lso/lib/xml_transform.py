@@ -4,7 +4,9 @@ Lightweight XML transforms (instead of XSLT)
 
 from xml.etree import ElementTree as ET
 
+
 class Rule(object):
+
     """A Rule defines a "translation" on a given element. It is not nearly as
     powerful as XSLT.
 
@@ -13,6 +15,7 @@ class Rule(object):
     :param after_open: text to insert after the open tag
     :param before_close: text to insert before the close tag
     """
+
     def __init__(self, tag=None, attrib=None, after_open='', before_close=''):
         self.tag = tag
         self.attrib = attrib or {}
@@ -21,6 +24,7 @@ class Rule(object):
 
 
 class TextRule(Rule):
+
     def __init__(self, after_open='', before_close=''):
         super(TextRule, self).__init__(after_open=after_open,
                                        before_close=before_close)

@@ -40,7 +40,7 @@ def paginate(items, size, min_size=0):
     """
     pages = []
     for start in xrange(0, len(items), size):
-        pages.append(items[start:start+size])
+        pages.append(items[start:start + size])
 
     try:
         if len(pages[-1]) < min_size:
@@ -54,7 +54,7 @@ def paginate(items, size, min_size=0):
 def division_paginate(division, size, min_size):
     last_slug = division.segments[-1].slug.rpartition('.')[2]
     number = int(last_slug)
-    slugs = ['%s.%s' % (division.slug, n) for n in range(1, number+1)]
+    slugs = ['%s.%s' % (division.slug, n) for n in range(1, number + 1)]
     return paginate(slugs, size, min_size)
 
 
@@ -123,7 +123,7 @@ def child_segments_data(child_slug, parent_ids):
     # Find corresponding segments
     child = Text.query.filter(Text.slug == child_slug).one()
     results = SSA.query.filter(SSA.parent_id.in_(parent_ids))\
-                       .filter(SSA.text_id==child.id).all()
+                       .filter(SSA.text_id == child.id).all()
 
     # Clean up data for display
     for r in results:
@@ -206,13 +206,13 @@ def segments_data(text, slug, query, related):
         divs = None
 
         slug_index_map = {slug: (i, j) for i, page in enumerate(cur_pages)
-                                       for j, slug in enumerate(page)}
+                          for j, slug in enumerate(page)}
 
         # prev
         i, j = slug_index_map[first.slug]
         # prev in current division
         if i:
-            prev = cur_pages[i-1]
+            prev = cur_pages[i - 1]
             if j:
                 prev.extend(cur_pages[i][:j])
         # prev in previous division
@@ -222,18 +222,19 @@ def segments_data(text, slug, query, related):
                 if d.id == cur.id:
                     break
             if k:
-                pages = division_paginate(divs[k-1], PAGE_SIZE, MIN_PAGE_SIZE)
+                pages = division_paginate(
+                    divs[k - 1], PAGE_SIZE, MIN_PAGE_SIZE)
                 prev = pages[-1]
             else:
                 prev = None
 
         # next
         i, j = slug_index_map[last.slug]
-        next = cur_pages[i][j+1:]
+        next = cur_pages[i][j + 1:]
         # next in current division
         try:
             if len(next) < MIN_PAGE_SIZE:
-                next.extend(cur_pages[i+1])
+                next.extend(cur_pages[i + 1])
         except IndexError:
             pass
         # next in next division
@@ -243,7 +244,8 @@ def segments_data(text, slug, query, related):
                 if d.id == cur.id:
                     break
             try:
-                pages = division_paginate(divs[k+1], PAGE_SIZE, MIN_PAGE_SIZE)
+                pages = division_paginate(
+                    divs[k + 1], PAGE_SIZE, MIN_PAGE_SIZE)
                 next = pages[0]
             except IndexError:
                 next = None
@@ -287,6 +289,7 @@ def author_index():
             english.append(a)
     return render_template('/texts/author_index.html', sanskrit=sanskrit,
                            english=english)
+
 
 @bp.route('/authors/<slug>')
 def author(slug):

@@ -37,7 +37,7 @@ def json_minify(string, strip_space=True):
             # start of string or unescaped quote character to end string
             if not in_string or (escaped is None or len(escaped.group()) % 2 == 0):
                 in_string = not in_string
-            index -= 1 # include " character in next catch
+            index -= 1  # include " character in next catch
         elif not (in_string or in_multi or in_single):
             if val == '/*':
                 in_multi = True

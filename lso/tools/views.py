@@ -6,7 +6,9 @@ import forms
 from lso.lib import LSOBlueprint
 
 bp = LSOBlueprint('tools', __name__, url_prefix='/tools')
-classifier = Classifier.from_json_file('/home/akp/projects/chandas/data/data.json')
+classifier = Classifier.from_json_file(
+    '/home/akp/projects/chandas/data/data.json')
+
 
 @bp.route('/')
 def index():

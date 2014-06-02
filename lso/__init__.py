@@ -27,21 +27,21 @@ less = Bundle(*less_files, filters='less', output='gen/style.css', debug=False)
 assets.register('all-css', less)
 
 js = Bundle(
-            # Plugins
-            'js/jquery-plugins.js',
-            'js/jquery.cookie.js',
-            'js/tooltips.js',
-            'js/sanscript.js',
-            'js/d3-modules.js',
-            # Base
-            'js/models.js',
-            'js/views.js',
-            'js/app.js',
-            'js/core.js',
-            'js/util.js',
-            # Setup
-            'js/setup.js',
-            output='gen/scripts.js')
+    # Plugins
+    'js/jquery-plugins.js',
+    'js/jquery.cookie.js',
+    'js/tooltips.js',
+    'js/sanscript.js',
+    'js/d3-modules.js',
+    # Base
+    'js/models.js',
+    'js/views.js',
+    'js/app.js',
+    'js/core.js',
+    'js/util.js',
+    # Setup
+    'js/setup.js',
+    output='gen/scripts.js')
 assets.register('all-js', js)
 
 

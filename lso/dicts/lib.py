@@ -1,5 +1,5 @@
-  #!/usr/bin/python
-  # -*- encoding: utf-8 -*-
+#!/usr/bin/python
+# -*- encoding: utf-8 -*-
 
 import re
 import xml.etree.ElementTree as ET

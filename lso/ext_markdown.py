@@ -4,7 +4,9 @@ from markdown.util import etree
 
 from sanskrit import sanscript
 
+
 class SanskritPattern(Pattern):
+
     def handleMatch(self, match):
         attrib = {'lang': 'sa', 'class': 'sa2'}
         el = etree.Element('span', **attrib)
@@ -15,6 +17,7 @@ class SanskritPattern(Pattern):
 
 
 class SanskritExtension(Extension):
+
     """Modify backticks (`) to transliterate to Devanagari."""
 
     def extendMarkdown(self, md, md_globals):

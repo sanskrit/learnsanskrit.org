@@ -4,6 +4,7 @@ from sqlalchemy.orm import relation, relationship
 
 from ..database import engine, Base, BaseNode, SimpleBase
 
+
 class _Lesson(BaseNode):
     __tablename__ = 'lessons'
     __mp_manager__ = 'mp'
@@ -55,10 +56,10 @@ class LessonEdge(Base):
     head_id = Column(ForeignKey('lesson.id'), primary_key=True)
     tail_id = Column(ForeignKey('lesson.id'), primary_key=True)
 
-    head = relationship(Lesson, primaryjoin=head_id==Lesson.id,
+    head = relationship(Lesson, primaryjoin=head_id == Lesson.id,
                         backref='outgoing_edges')
 
-    tail = relationship(Lesson, primaryjoin=tail_id==Lesson.id,
+    tail = relationship(Lesson, primaryjoin=tail_id == Lesson.id,
                         backref='incoming_edges')
 
     def __init__(self, head, tail):

@@ -15,6 +15,7 @@ __all__ = ('OptSelectField', 'SelectWidget')
 
 
 class SelectWidget(BaseSelectWidget):
+
     """
     Add support of choices with ``optgroup`` to the ``Select`` widget.
     """
@@ -49,6 +50,7 @@ class SelectWidget(BaseSelectWidget):
 
 
 class OptSelectField(BaseSelectField):
+
     """
     Add support of ``optgorup``'s' to default WTForms' ``SelectField`` class.
 

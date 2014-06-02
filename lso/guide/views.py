@@ -34,7 +34,7 @@ def index():
 
 @bp.route('/<slug>')
 def lesson(slug):
-    lesson = Lesson.query.filter(Lesson.slug==slug).first()
+    lesson = Lesson.query.filter(Lesson.slug == slug).first()
     if lesson:
         try:
             kw = {

@@ -31,6 +31,7 @@ class LSOModelView(AuthMixin, ModelView):
 
 
 class LSOIndexView(AdminIndexView):
+
     @expose('/')
     def index(self):
         if current_user.has_role('admin'):
@@ -68,7 +69,6 @@ class TextView(LSOModelView):
     column_labels = {'xmlid_prefix': 'XML ID prefix'}
 
 
-
 admin = Admin(name='learnsanskrit.org', index_view=LSOIndexView())
 
 admin.add_view(TextUploadView(
@@ -82,19 +82,19 @@ admin.add_view(TextView(texts.models.Text, database.session,
                         url='texts/manage'))
 
 admin.add_view(LSOModelView(texts.models.Author, database.session,
-                         category='Collection',
-                         name='Authors',
-                         url='texts/authors'))
+                            category='Collection',
+                            name='Authors',
+                            url='texts/authors'))
 
 admin.add_view(LSOModelView(texts.models.Segment, database.session,
-                         category='Collection',
-                         name='Segments',
-                         url='texts/segments'))
+                            category='Collection',
+                            name='Segments',
+                            url='texts/segments'))
 
 admin.add_view(LSOModelView(texts.models.Division, database.session,
-                         category='Collection',
-                         name='Divisions',
-                         url='texts/divisions'))
+                            category='Collection',
+                            name='Divisions',
+                            url='texts/divisions'))
 
 # Attach to app
 # -------------

@@ -4,7 +4,8 @@ from lso import app, mail
 
 import forms
 
-bp = Blueprint('site', __name__, static_folder='static', template_folder='templates')
+bp = Blueprint(
+    'site', __name__, static_folder='static', template_folder='templates')
 
 
 @bp.route('/about')

@@ -14,7 +14,7 @@ class Readable(object):
             'f': 'fem.',
             'n': 'neut.',
             'none': '',
-            }
+        }
 
         case = {
             '1': 'nom.',
@@ -25,19 +25,19 @@ class Readable(object):
             '6': 'gen.',
             '7': 'loc.',
             '8': 'voc.',
-            }
+        }
 
         number = {
             's': 'sg.',
             'd': 'du.',
             'p': 'pl.'
-            }
+        }
 
         person = {
             '1': '1st.',
             '2': '2nd.',
             '3': '3rd.',
-            }
+        }
 
         mode = {
             'pres': 'present',
@@ -51,13 +51,13 @@ class Readable(object):
             'perf': 'perfect',
             'ben': 'benedictive',
             'dfut': 'distant future',
-            }
+        }
 
         voice = {
             'P': 'P.',
             'A': 'A',
             'passive': 'passive',
-            }
+        }
 
         self.genders = enum_abbr['gender_group']
 

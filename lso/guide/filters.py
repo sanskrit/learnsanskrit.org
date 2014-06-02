@@ -24,7 +24,7 @@ def inject_functions():
         'img': img,
         'lesson_url': lesson_url,
         'nominal_data': nominal_data,
-        }
+    }
 
 
 @app.template_filter()
@@ -98,7 +98,7 @@ def nominal_data(stem, gender, cases=None):
         'cases': cases,
         'forms': forms,
         'labels': labels,
-        }
+    }
 
 
 @app.template_filter()
@@ -126,4 +126,4 @@ def verb_data(root, mode, voice, mod=None, vclass=None, basis=None):
         'basis': basis,
         'forms': forms,
         'labels': labels,
-        }
+    }

@@ -23,6 +23,7 @@ def home():
 def settings():
     return render_template('users/settings.html')
 
+
 @bp.route('/login')
 def login():
     login_form = f.LoginForm()
