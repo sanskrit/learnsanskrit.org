@@ -40,3 +40,11 @@ Building learnsanskrit.org
 6. Whenever you're done, kill the server and exit the virtualenv:
 
         deactivate
+
+Components
+----------
+
+- grammar guide
+- dictionary
+- assorted tools (transliterator, meter recognizer)
+- "reading environment" with texts, translations, commentaries, and other data
