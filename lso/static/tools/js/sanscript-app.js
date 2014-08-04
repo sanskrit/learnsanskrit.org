@@ -123,9 +123,12 @@
         },
 
         events: {
+            // TODO: keyup is slow. But keydown and keypress fire before the
+            // new character is added. This can be fixed, but not without a bit
+            // more time.
             'keyup #input': 'render',
-            'click #submit': 'select_and_run',
-            'click #output': 'select_and_run',
+            'click #submit': 'run_then_select',
+            'click #output': 'run_then_select',
             'click #swap': 'swap',
             'click #swap-link': 'swap',
         },
@@ -147,7 +150,7 @@
             }
         },
 
-        select_and_run: function(e) {
+        run_then_select: function(e) {
             this.run(e);
             this.$output.select();
         },
