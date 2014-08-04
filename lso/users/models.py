@@ -3,7 +3,6 @@ from flask.ext.security import UserMixin, RoleMixin
 from sqlalchemy import Boolean, Column, ForeignKey, String
 from sqlalchemy.orm import relationship
 
-from lso import app
 from ..database import Base, SimpleBase
 
 

@@ -2,8 +2,8 @@ from collections import OrderedDict
 from flask import redirect, render_template, request, url_for, jsonify
 from sanskrit import sanscript as S
 
-from lso import app
 from lso.lib import LSOBlueprint
+from lso.views import api
 from ..forms import QueryForm
 from .lib import mw_transform
 from .models import MonierEntry
@@ -62,7 +62,7 @@ def mw_works():
     return render_template('dicts/mw/works-and-authors.html')
 
 
-@app.route('/api/mw/<slp_query>')
+@api.route('/mw/<slp_query>')
 def mw_api(slp_query):
     results = mw_results(slp_query)
     for key in results:
@@ -80,8 +80,8 @@ def mw_results(q):
     entries = entries.order_by('id').all()
 
     results = OrderedDict()
-    for entry in q_list:
-        results[entry] = []
+    for name in q_list:
+        results[name] = []
 
     for entry in entries:
         results[entry.name].append(entry.content)

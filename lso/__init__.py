@@ -1,32 +1,28 @@
+import importlib
+import os
+
 from flask import Blueprint, Flask
 from flask.ext.assets import Bundle, Environment
 from flask.ext.mail import Mail
 from flask.ext.markdown import Markdown
 from flask.ext.security import Security, SQLAlchemyUserDatastore
+from flask.ext.sqlalchemy import SQLAlchemy
 
-from sanskrit import Context, analyze, query
+import sanskrit
+import sanskrit.analyze
+import sanskrit.query
 import sqlalchemy
 
-app = Flask(__name__)
-app.config.from_object('development.config')
-try:
-    app.config.from_object('server.config')
-except ImportError:
-    pass
+import lso.admin
+import lso.database
+import lso.lib.converters
 
 
-# Assets
-# ------
-assets = Environment(app)
-assets.url = '/static'
-assets.directory = app.config['STATIC_DEST']
-
-less_files = ['css/%s.less' % x
-              for x in 'base'.split()]
-less = Bundle(*less_files, filters='less', output='gen/style.css', debug=False)
-assets.register('all-css', less)
-
-js = Bundle(
+# Assets (LESS CSS and assorted JavaScript)
+assets = Environment()
+assets.register('all-css', Bundle('css/base.less', filters='less',
+                                  output='gen/style.css', debug=False))
+assets.register('all-js', Bundle(
     # Plugins
     'js/jquery-plugins.js',
     'js/jquery.cookie.js',
@@ -41,42 +37,15 @@ js = Bundle(
     'js/util.js',
     # Setup
     'js/setup.js',
-    output='gen/scripts.js')
-assets.register('all-js', js)
+    output='gen/scripts.js'))
 
 
-# Admin
-# -----
-import admin
-
-
-# Mail
-# ----
-mail = Mail(app)
-
-
-# Markdown
-# --------
-md = Markdown(app, extensions=['admonition'])
-from ext_markdown import SanskritExtension
-md.register_extension(SanskritExtension)
-
-
-# Sanskrit
-# --------
-ctx = Context(app.config)
-ctx.connect()
-try:
-    simple_query = query.SimpleQuery(ctx)
-    simple_analyzer = analyze.SimpleAnalyzer(ctx)
-except sqlalchemy.exc.ProgrammingError:
-    simple_query = None
-    simple_analyzer = None
+# Mail (for contact form)
+mail = Mail()
 
 
 # Logging
-# -------
-if not app.debug:
+def do_logging(app):
     import logging
     from logging import FileHandler, getLogger
 
@@ -87,44 +56,122 @@ if not app.debug:
         L.addHandler(handler)
 
 
-# Security
-# --------
+# Security (for user accounts)
 from lso.users.models import User, Role
-import database as db
-
-datastore = SQLAlchemyUserDatastore(db, User, Role)
-security = Security(app, datastore)
+datastore = SQLAlchemyUserDatastore(lso.database.db, User, Role)
+security = Security(datastore)
 
 
-# Converters
-# ----------
-from lso.lib import converters
-app.url_map.converters['list'] = converters.ListConverter
+# Converters (for fancy dictionary queries)
+def add_converters(app):
+    app.url_map.converters['list'] = lso.lib.converters.ListConverter
 
 
 # Views and blueprints
 # --------------------
-import views
-import importlib
+def register_blueprints(app, *blueprints):
+    for bp in blueprints:
+        m = importlib.import_module('lso.%s.views' % bp)
+        for name in dir(m):
+            item = getattr(m, name)
+            if isinstance(item, Blueprint):
+                app.register_blueprint(item)
 
 
-def register(bp):
-    m = importlib.import_module('lso.%s.views' % bp)
-    for name in dir(m):
-        item = getattr(m, name)
-        if isinstance(item, Blueprint):
-            app.register_blueprint(item)
+# Filters
+import lso.filters as f
+import lso.guide.filters as gf
+template_filters = [
+    f.date,
+    f.sa1,
+    f.sa2,
+    gf.d,
+    gf.foot,
+    gf.i,
+    gf.render,
+    gf.verb_data,
+]
 
-# Debug views
-# -----------
-if app.debug:
-    import debug
 
+def create_app(name, override=None):
+    """App factory.
 
-register('dicts')
-register('guide')
-register('ref')
-register('site')
-register('texts')
-register('tools')
-register('users')
+    The factory pattern makes unit testing much saner.
+
+    :param name:
+    :param override: overrides for the app config.
+    """
+    app = Flask(name)
+
+    # Basic config
+    LSO_PATH = os.path.dirname(__file__)
+
+    # Needed to locate templates and assets in various contexts (runserver,
+    # testing, ...)
+    # TODO: surely there's a way to avoid this?
+    app.template_folder = os.path.join(LSO_PATH, 'templates')
+    app.static_folder = os.path.join(LSO_PATH, 'static')
+
+    app.config.from_object('development.config')
+    if override is not None:
+        app.config.update(override)
+    else:
+        try:
+            app.config.from_object('server.config')
+        except ImportError:
+            pass
+
+    # Template filters
+    for filt in template_filters:
+        app.add_template_filter(filt)
+
+    # Extensions
+    lso.admin.admin.init_app(app)
+
+    assets.init_app(app)
+    assets.app = app  # TODO: remove hack
+    assets.url = '/static'
+    assets.directory = app.config['STATIC_DEST']
+
+    lso.database.db.init_app(app)
+
+    mail.init_app(app)
+
+    md = Markdown(app, extensions=['admonition'])
+    from ext_markdown import SanskritExtension
+    md.register_extension(SanskritExtension)
+
+    security.init_app(app)
+
+    # 'sanskrit' package
+    ctx = sanskrit.Context(app.config)
+    ctx.connect()
+    try:
+        simple_query = sanskrit.query.SimpleQuery(ctx)
+        simple_analyzer = sanskrit.analyze.SimpleAnalyzer(ctx)
+    except (sqlalchemy.exc.ProgrammingError, sqlalchemy.exc.OperationalError):
+        simple_query = None
+        simple_analyzer = None
+
+    # Blueprints
+    if app.debug:
+        import debug
+        app.register_blueprint(debug.debug)
+    else:
+        do_logging(app)
+
+    import views
+    app.register_blueprint(views.main)
+    register_blueprints(app,
+        'dicts',
+        'guide',
+        # 'ref',
+        'site',
+        # 'texts',
+        'tools',
+        'users'
+    )
+
+    with app.app_context():
+        lso.database.db.create_all()
+    return app

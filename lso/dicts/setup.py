@@ -1,33 +1,41 @@
+import csv
 import os
 import re
-import yaml
-from xml.etree import ElementTree as ET
+import xml.etree.cElementTree as ET
 
-from lso import app
-from ..database import session, engine
+import lso
+import lso.database
 from .models import MonierEntry
 
-MONIER_DIR = app.config['MONIER_DIR']
-MONIER_XML = os.path.join(MONIER_DIR, 'monier.xml')
-MW_FINAL = os.path.join(MONIER_DIR, 'mw-final.xml')
-GREEK_YML = os.path.join(MONIER_DIR, 'greek.yml')
+
+def get_filenames(app):
+    monier_dir = app.config['MONIER_DIR']
+    return {
+        'monier-raw': os.path.join(monier_dir, 'monier.xml'),
+        'monier-final': os.path.join(monier_dir, 'mw-final.xml'),
+        'greeklist': os.path.join(monier_dir, 'greeklist.csv')
+    }
 
 
-def preprocess():
+def preprocess(app):
+    files = get_filenames(app)
+
     # Map from line numbers to lists of Greek words in beta code
-    with open(GREEK_YML) as f:
-        greek = yaml.load(f)
-        greek = {x['num']: x['greek'] for x in greek}
+    greek = {}
+    with open(files['greeklist']) as f:
+        reader = csv.DictReader(f)
+        for row in reader:
+            greek[(row['L'], int(row['index']) - 1)] = row['betacode']
 
-    f = open(os.path.join(MONIER_XML), 'r')
-    g = open(os.path.join(MW_FINAL), 'w')
-    i = 0
+    mw_in = open(files['monier-raw'], 'r')
+    mw_out = open(files['monier-final'], 'w')
+    count = 0
 
-    for line in f.readlines():
+    for line in mw_in.readlines():
         try:
             xml = ET.fromstring(line)
         except ET.ParseError:
-            g.write(line)
+            mw_out.write(line)
             continue
 
         h = xml.find('h')
@@ -36,31 +44,32 @@ def preprocess():
 
         # Set beta code
         L = xml.find('tail/L').text
-        betas = greek.get(L, []) or greek.get(L + '0', [])
-        for b, gk in zip(betas, body.findall('.//gk')):
-            gk.text = b
+        # betas = greek.get(L, []) or greek.get(L + '0', [])
+        for i, gk in enumerate(body.findall('.//gk')):
+            gk.text = greek.get((L, i)) or greek.get((L + '0', i))
 
-        g.write(ET.tostring(xml))
-        g.write("\n")
+        mw_out.write(ET.tostring(xml))
+        mw_out.write("\n")
 
-        i += 1
-        if i % 1000 == 0:
-            print "    {0}: {1}".format(i, name)
+        count += 1
+        if count % 1000 == 0:
+            print "    {0}: {1}".format(count, name)
 
-    f.close()
-    g.close()
+    mw_in.close()
+    mw_out.close()
 
 
-def init_monier():
+def init_monier(app):
     """Initialize the Monier-Williams dictionary."""
 
-    if not os.path.isfile(MW_FINAL):
-        preprocess()
+    files = get_filenames(app)
+    if not os.path.isfile(files['monier-final']):
+        preprocess(app)
 
-    session_add = session.add
     re_entry = re.compile('<key1>(.*)</key1>.*(<body>.*</body>)')
+    session = lso.database.db.session
 
-    with open(MW_FINAL) as f:
+    with open(files['monier-final']) as f:
         id = 1
 
         # MW entries are at 4 hierarchical levels, plus a "null"
@@ -85,7 +94,7 @@ def init_monier():
             content = results.group(2)
 
             e = MonierEntry(id=id, name=name, content=content)
-            session_add(e)
+            session.add(e)
 
             id += 1
             if id % 1000 == 0:
@@ -95,6 +104,11 @@ def init_monier():
     session.commit()
 
 
-def run():
-    if not MonierEntry.query.count():
-        init_monier()
+def run(app=None, force=False):
+    app = app or lso.create_app(__name__)
+    with app.app_context():
+        if force:
+            MonierEntry.query.delete()
+
+        if not MonierEntry.query.count():
+            init_monier(app)

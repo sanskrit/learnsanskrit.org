@@ -11,10 +11,9 @@ def graph_data():
 
 
 @pytest.fixture(scope='session')
-def lessons(engine, graph_data, sessionclass):
-    Base.metadata.create_all(engine)
-    setup.add_lessons(graph_data, sessionclass)
-    return sessionclass().query(Lesson).all()
+def lessons(graph_data, session):
+    setup.add_lessons(graph_data, session)
+    return Lesson.query.all()
 
 
 class TestData:

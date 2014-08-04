@@ -2,7 +2,7 @@
 # -*- encoding: utf-8 -*-
 
 import re
-import xml.etree.ElementTree as ET
+import xml.etree.cElementTree as ET
 from sanskrit import sanscript as S, betacode as B
 
 from lso.lib.xml_transform import Rule, TextRule, translate

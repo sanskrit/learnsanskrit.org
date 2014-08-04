@@ -7,9 +7,9 @@ from flask.ext.security import current_user
 from werkzeug import secure_filename
 from wtforms import FileField, Form, validators
 
-import database
-import texts.models
-import texts.lib
+import lso.texts
+import lso.texts.models
+from .database import db
 
 
 class UploadForm(Form):
@@ -56,7 +56,7 @@ class TextUploadView(LSOView):
             filename = os.path.join(app.config['UPLOAD_DIR'], filename)
             data.save(filename)
             success = True
-            texts.lib.process_text_xml(filename)
+            lso.texts.lib.process_text_xml(filename)
         else:
             filename = None
             success = False
@@ -76,27 +76,22 @@ admin.add_view(TextUploadView(
                name='Upload',
                url='texts/upload'))
 
-admin.add_view(TextView(texts.models.Text, database.session,
+admin.add_view(TextView(lso.texts.models.Text, db.session,
                         category='Collection',
                         name='Texts',
                         url='texts/manage'))
 
-admin.add_view(LSOModelView(texts.models.Author, database.session,
+admin.add_view(LSOModelView(lso.texts.models.Author, db.session,
                             category='Collection',
                             name='Authors',
                             url='texts/authors'))
 
-admin.add_view(LSOModelView(texts.models.Segment, database.session,
+admin.add_view(LSOModelView(lso.texts.models.Segment, db.session,
                             category='Collection',
                             name='Segments',
                             url='texts/segments'))
 
-admin.add_view(LSOModelView(texts.models.Division, database.session,
+admin.add_view(LSOModelView(lso.texts.models.Division, db.session,
                             category='Collection',
                             name='Divisions',
                             url='texts/divisions'))
-
-# Attach to app
-# -------------
-from lso import app
-admin.init_app(app)

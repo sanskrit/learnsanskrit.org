@@ -22,6 +22,10 @@ SECURITY_CHANGEABLE = True  # can change password
 SECURITY_REGISTERABLE = True  # can register
 SECURITY_RECOVERABLE = True  # can recover a lost password
 
+# flask-sqlalchemy
+# ----------------
+SQLALCHEMY_DATABASE_URI = DATABASE_URI
+
 # File uploads
 # ------------
 UPLOAD_DIR = '/tmp'
@@ -29,6 +33,6 @@ ALLOWED_EXTENSIONS = {'xml'}
 
 # Large data
 # ----------
-DATA_PATH = os.path.expanduser('~/sanskrit/data')
-MONIER_DIR = os.path.join(DATA_PATH, 'mw')
+DATA_PATH = os.path.expanduser('~/projects/sanskrit-data')
+MONIER_DIR = os.path.join(DATA_PATH, 'monier-williams')
 STATIC_DEST = 'lso/static'

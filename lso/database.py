@@ -1,23 +1,18 @@
-from lso import app
+from flask.ext.sqlalchemy import SQLAlchemy
 from sqlalchemy import create_engine, Column, Integer, MetaData
 from sqlalchemy.orm import scoped_session, sessionmaker
 from sqlalchemy.ext.declarative import declarative_base, declared_attr
 from sqlamp import DeclarativeMeta
 
-engine = create_engine(app.config['DATABASE_URI'], convert_unicode=True)
-session = scoped_session(sessionmaker(autocommit=False,
-                                      autoflush=False,
-                                      bind=engine))
-metadata = MetaData(engine)
 
-# Base class for ordinary data
-Base = declarative_base(metadata=metadata)
-Base.query = session.query_property()
+db = SQLAlchemy()
+
+Base = db.Model
 
 # Base class for tree data
-BaseNode = declarative_base(metadata=metadata,
+BaseNode = declarative_base(metadata=db.metadata,
                             metaclass=DeclarativeMeta)
-BaseNode.query = session.query_property()
+BaseNode.query = db.session.query_property()
 
 
 class SimpleBase(Base):

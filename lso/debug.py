@@ -1,17 +1,18 @@
-from flask import render_template
+from flask import Blueprint, current_app as app, render_template
 from jinja2.exceptions import TemplateNotFound
 
-from lso import app
 from lso.guide.models import Lesson
 
+debug = Blueprint('debug', __name__, url_prefix='/debug')
 
-@app.route('/debug/css/')
-def debug_css():
+
+@debug.route('/css/')
+def css():
     return render_template('debug/css.html')
 
 
-@app.route('/debug/guide/')
-def debug_guide():
+@debug.route('/guide/')
+def guide():
     def has_template(lesson):
         path = 'guide/content/{}.html'.format(lesson.slug)
         try:

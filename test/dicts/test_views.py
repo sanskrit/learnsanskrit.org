@@ -2,19 +2,25 @@ import json
 
 import pytest
 
-
-def test_api_single_word_with_entries(app):
-    actual = json.loads(app.get('/api/mw/aham').data)
-    assert actual['aham']
+from lso.dicts import setup
 
 
-def test_api_single_word_no_entries(app):
-    actual = json.loads(app.get('/api/mw/garbage').data)
-    expected = {'garbage': []}
-    assert actual == expected
+@pytest.fixture(scope='module')
+def mw_data(app):
+    setup.run(app=app)
 
 
-def test_api_multiple_words(app):
-    actual = json.loads(app.get('/api/mw/aham+aTa').data)
-    assert actual['aham']
-    assert actual['aTa']
+def test_api_single_word_with_entries(mw_data, test_app):
+    results = json.loads(test_app.get('/api/mw/aham').data)
+    assert results['aham']
+
+
+def test_api_single_word_no_entries(mw_data, test_app):
+    results = json.loads(test_app.get('/api/mw/garbage').data)
+    assert results == {'garbage': []}
+
+
+def test_api_multiple_words(mw_data, test_app):
+    results = json.loads(test_app.get('/api/mw/aham+aTa').data)
+    assert results['aham']
+    assert results['aTa']

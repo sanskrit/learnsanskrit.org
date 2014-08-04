@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
-from wtforms import (Form, TextField, TextAreaField,
-                     validators)
+from wtforms import (TextField, TextAreaField, validators)
+from flask.ext.wtf import Form
 from flask.ext.wtf.html5 import EmailField
 
 from lso.forms.optgroup import OptSelectField

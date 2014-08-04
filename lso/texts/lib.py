@@ -11,13 +11,15 @@
 import re
 import xml.etree.cElementTree as ET
 
-from ..database import session
+from ..database import db
 from .models import (Text, Division, Segment, SegSegAssoc, Category, Language,
                      Author)
 
 XML_NS = '{http://www.w3.org/XML/1998/namespace}'
 XML_ID = '{http://www.w3.org/XML/1998/namespace}id'
 XML_LANG = '{http://www.w3.org/XML/1998/namespace}lang'
+
+session = db.session
 
 
 class Tag:

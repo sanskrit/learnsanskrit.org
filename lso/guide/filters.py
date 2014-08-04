@@ -1,13 +1,13 @@
 #!/usr/bin/python
 # -*- encoding: utf-8 -*-
 
-from xml.etree import ElementTree as ET
+import xml.etree.cElementTree as ET
 
-from flask import url_for
+from flask import current_app, url_for
 from jinja2 import Markup
 from sanskrit import sanscript
 
-from lso import app, simple_query
+simple_query = None  # TODO
 from lso.filters import sa1, sa2
 
 from .views import bp
@@ -27,28 +27,24 @@ def inject_functions():
     }
 
 
-@app.template_filter()
 def d(text, tag='span', to=sanscript.DEVANAGARI):
     """Transliterate Harvard-Kyoto (primary)."""
     return sa1(Markup(text), sanscript.HK, to, tag=tag, safe=True)
 
 
-@app.template_filter()
 def foot(text, notes):
     notes.append(text)
     i = len(notes)
     return '<sup><a id="fref-%s" href="#fnote-%s">[%s]</a></sup>' % (i, i, i)
 
 
-@app.template_filter()
 def i(text, tag='span'):
     """Transliterate Harvard-Kyoto (secondary)."""
     return sa2(Markup(text), sanscript.HK, tag=tag, safe=True)
 
 
-@app.template_filter()
 def render(text):
-    return app.jinja_env.from_string(text).render()
+    return current_app.jinja_env.from_string(text).render()
 
 
 def raw_text(elem, text):
@@ -101,7 +97,6 @@ def nominal_data(stem, gender, cases=None):
     }
 
 
-@app.template_filter()
 def verb_data(root, mode, voice, mod=None, vclass=None, basis=None):
     """Gather data for displaying a verb paradigm.
 

@@ -30,7 +30,6 @@ class LSOBlueprint(Blueprint):
 
     def __init__(self, name, import_name, **kw):
         kw['static_folder'] = '../static/' + name
-        kw['template_folder'] = 'templates'
         Blueprint.__init__(self, name, import_name, **kw)
 
     def make_setup_state(self, *a, **kw):

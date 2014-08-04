@@ -1,24 +1,25 @@
-from flask import abort, render_template
+from flask import Blueprint, abort, current_app as app, render_template
 
-from lso import app
-from lso.database import session
+main = Blueprint('main', __name__, url_prefix='/')
+api = Blueprint('api', __name__, url_prefix='/api')
 
 
-@app.teardown_request
+@main.teardown_request
 def remove_session(exception=None):
-    session.remove()
+    # TODO: teardown `sanskrit` session
+    pass
 
 
-@app.route('/')
+@main.route('/')
 def index():
     return render_template('index.html')
 
 
-@app.errorhandler(404)
+@main.app_errorhandler(404)
 def page_not_found(error):
     return render_template('errors/404.html'), 404
 
 
-@app.errorhandler(500)
+@main.app_errorhandler(500)
 def internal_server_error(error):
     return render_template('errors/500.html'), 500

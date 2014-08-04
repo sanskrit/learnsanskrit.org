@@ -2,26 +2,7 @@ import re
 from sqlalchemy import Column, Integer, ForeignKey, String
 from sqlalchemy.orm import relation, relationship
 
-from ..database import engine, Base, BaseNode, SimpleBase
-
-
-class _Lesson(BaseNode):
-    __tablename__ = 'lessons'
-    __mp_manager__ = 'mp'
-
-    id = Column(Integer, primary_key=True)
-    title = Column(String)
-    slug = Column(String)
-    parent_id = Column(ForeignKey('lessons.id'))
-
-    parent = relation('_Lesson', remote_side=[id])
-
-    @property
-    def stripped_title(self):
-        return re.sub('<.*?>', '', self.title)
-
-    def __repr__(self):
-        return '<_Lesson(%s,%s)>' % (self.id, self.slug)
+from ..database import Base, SimpleBase
 
 
 class Lesson(SimpleBase):
@@ -51,6 +32,7 @@ class LessonEdge(Base):
 
     Lesson *A* points to lesson *B* if and only if *B* depends on *A*.
     """
+
     __tablename__ = 'lesson_edge'
 
     head_id = Column(ForeignKey('lesson.id'), primary_key=True)
@@ -65,9 +47,3 @@ class LessonEdge(Base):
     def __init__(self, head, tail):
         self.head = head
         self.tail = tail
-
-
-def init():
-    BaseNode.metadata.create_all(bind=engine)
-    import setup
-    setup.run()

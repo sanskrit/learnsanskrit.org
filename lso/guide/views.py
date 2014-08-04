@@ -2,14 +2,14 @@ import jinja2.exceptions
 
 from flask import abort, redirect, render_template, url_for
 
-
 from lso.guide import util
 from lso.lib import LSOBlueprint
-from .models import Lesson, _Lesson
-
-bp = LSOBlueprint('guide', __name__, url_prefix='/guide')
+from .models import Lesson
 
 import filters
+
+
+bp = LSOBlueprint('guide', __name__, url_prefix='/guide')
 
 
 def lesson_sort(lessons):

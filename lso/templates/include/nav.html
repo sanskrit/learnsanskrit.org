@@ -4,20 +4,21 @@
 {% endmacro %}
 
 <nav id="top">
-    <a class="brand" href="{{ url_for('index') }}">learn<span class="y">sanskrit</span>.org</a>
+    <a class="brand" href="{{ url_for('main.index') }}">learn<span class="y">sanskrit</span>.org</a>
     <ul class="main-nav">
         {{ sec('Guide', 'guide.index', 'guide') }}
         {{ sec('Tools', 'tools.index', 'tools') }}
-        {{ sec('Texts', 'texts.index', 'texts') }}
+        {# {{ sec('Texts', 'texts.index', 'texts') }} #}
         {{ sec('Site', 'site.index', 'site') }}
-        {% if current_user.has_role('admin') %}{{ sec('Admin', 'admin.index', 'admin') }}{% endif %}
+        {# {% if current_user.has_role('admin') %}{{ sec('Admin',
+        'admin.index', 'admin') }}{% endif %} #}
     </ul>
     <ul class="user-nav">
         <li>
             {% if current_user.is_authenticated() %}
             <a href="{{ url_for('users.home') }}">{{ current_user.email }}</a>
             {% else %}
-            <a href="{{ url_for('users.login') }}">Sign in</a>
+                {# <a href="{{ url_for('users.login') }}">Sign in</a> #}
             {% endif %}
             <a id="settings-link" href="{{ url_for('site.settings') }}">⚙</a>
         </li>

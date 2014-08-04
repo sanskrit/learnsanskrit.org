@@ -1,11 +1,11 @@
-from flask import Blueprint, render_template, request
+from flask import Blueprint, render_template, request, current_app
 from flask.ext.mail import Message
-from lso import app, mail
+from lso import mail
+from lso.lib import LSOBlueprint
 
 import forms
 
-bp = Blueprint(
-    'site', __name__, static_folder='static', template_folder='templates')
+bp = LSOBlueprint('site', __name__, url_prefix='')
 
 
 @bp.route('/about')
@@ -17,8 +17,8 @@ def about():
 def contact():
     form = forms.ContactForm()
     if form.validate_on_submit():
-        default_sender = app.config['DEFAULT_MAIL_SENDER']
-        default_recipient = app.config['DEFAULT_MAIL_RECIPIENT']
+        default_sender = current_app.config['DEFAULT_MAIL_SENDER']
+        default_recipient = current_app.config['DEFAULT_MAIL_RECIPIENT']
 
         msg = Message(form.subject.data,
                       sender=default_sender,

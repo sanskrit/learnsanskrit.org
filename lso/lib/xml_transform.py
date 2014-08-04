@@ -2,7 +2,7 @@
 Lightweight XML transforms (instead of XSLT)
 """
 
-from xml.etree import ElementTree as ET
+import xml.etree.cElementTree as ET
 
 
 class Rule(object):

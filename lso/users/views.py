@@ -1,20 +1,16 @@
 from flask import render_template
-from flask.ext.security import login_required, current_user as u
+from flask.ext.security import login_required, current_user
 
-import forms as f
+import forms
 from lso import security
 from lso.lib import LSOBlueprint
 
-bp = LSOBlueprint('users', __name__)
-
-security._state.login_form = f.LoginForm
-security._state.register_form = f.SignupForm
+bp = LSOBlueprint('users', __name__, url_prefix='')
 
 
 @login_required
 @bp.route('/home')
 def home():
-    print u.roles
     return render_template('users/home.html')
 
 
@@ -26,8 +22,8 @@ def settings():
 
 @bp.route('/login')
 def login():
-    login_form = f.LoginForm()
-    signup_form = f.SignupForm()
+    login_form = forms.LoginForm()
+    signup_form = forms.SignupForm()
     return render_template('users/login.html', login_form=login_form,
                            signup_form=signup_form)
 # def logout
