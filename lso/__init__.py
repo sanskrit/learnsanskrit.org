@@ -125,6 +125,8 @@ def create_app(name, override=None):
     for filt in template_filters:
         app.add_template_filter(filt)
 
+    add_converters(app)
+
     # Extensions
     lso.admin.admin.init_app(app)
 
