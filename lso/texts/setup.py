@@ -1,10 +1,10 @@
-from ..database import session
+import lso.database
 from .models import Category, Language
 
 __all__ = ['run']
 
 
-def init_texts():
+def init_texts(session):
     """Create initial languages."""
     languages = [('Sanskrit', 'sa'), ('English', 'en')]
     for name, slug in languages:
@@ -17,9 +17,8 @@ def init_texts():
         session.add(Category(name=name, slug=slug))
 
     session.commit()
-    session.remove()
 
 
 def run():
     if not Language.query.count():
-        init_texts()
+        init_texts(lso.database.db.session)

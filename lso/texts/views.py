@@ -5,7 +5,7 @@ from flask import (Blueprint, flash, redirect, render_template, url_for,
 from sqlalchemy import and_
 
 import lib as L
-from lso import app
+from lso.views import api
 from .models import (Author, Category, Language, Segment,
                      SegSegAssoc as SSA, Text)
 
@@ -21,6 +21,10 @@ MIN_PAGE_SIZE = 3
 
 bp = Blueprint('texts', __name__, static_folder='static',
                template_folder='templates')
+
+
+def view_setup(app):
+    app.before_first_request(load_data)
 
 
 # Helper functions
@@ -94,7 +98,6 @@ def categorize_texts(texts):
 # Initialization
 # ~~~~~~~~~~~~~~
 
-@app.before_first_request
 def load_data():
     """Load some simple data from the database."""
     global CATEGORIES, LANGUAGES
@@ -377,8 +380,8 @@ def segment(slug, query, related=None):
 # API endpoints
 # ~~~~~~~~~~~~~
 
-@app.route('/api/texts/<slug>/<query>')
-@app.route('/api/texts/<slug>/<query>+<list:related>')
+@api.route('/texts/<slug>/<query>')
+@api.route('/texts/<slug>/<query>+<list:related>')
 def segment_api(slug, query, related=None):
     """API for querying segments.
 
@@ -395,7 +398,7 @@ def segment_api(slug, query, related=None):
     return jsonify(data)
 
 
-@app.route('/api/texts-child/<slug>/<list:ids>')
+@api.route('/texts-child/<slug>/<list:ids>')
 def child_segment_api(slug, ids):
 
     return jsonify(child_segments_data(slug, ids))

@@ -72,6 +72,10 @@ def add_converters(app):
 def register_blueprints(app, *blueprints):
     for bp in blueprints:
         m = importlib.import_module('lso.%s.views' % bp)
+        try:
+            m.view_setup(app)
+        except AttributeError:
+            pass
         for name in dir(m):
             item = getattr(m, name)
             if isinstance(item, Blueprint):
@@ -169,7 +173,7 @@ def create_app(name, override=None):
         'guide',
         # 'ref',
         'site',
-        # 'texts',
+        'texts',
         'tools',
         'users'
     )
