@@ -19,6 +19,7 @@ PAGE_SIZE = 5
 MIN_PAGE_SIZE = 3
 
 
+# No URL prefix; this has '/texts' and '/authors'.
 bp = Blueprint('texts', __name__, static_folder='static',
                template_folder='templates')
 

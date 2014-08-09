@@ -11,6 +11,10 @@
     {% for m in messages %}<p>{{ m }}</p>{% endfor %}
 {% endwith %}
 
+{% if texts %}
 {{ text_blocks(texts, categorize_texts) }}
+{% else %}
+<p>learnsanskrit.org hasn't uploaded any texts yet. Check back soon!</p>
+{% endif %}
 </div>
 {% endblock %}
