@@ -25,6 +25,7 @@ def test_api_multiple_words(mw_data, test_app):
     assert results['aham']
     assert results['aTa']
 
+
 def test_api_empty_word(mw_data, test_app):
     results = json.loads(test_app.get('/api/mw/aham++aTa').data)
     assert results['aham']
