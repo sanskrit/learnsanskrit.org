@@ -1,38 +1,95 @@
-We have heard two vowels so far: the short vowel `a` and the long vowel `A`. But there are other short and long vowels, too. Below, the vowels on the left are short, and the vowels on the right are long:
+`a` and `A`
+-----------
+
+The first sound in the Sanskrit alphabet is a simple one:
+
+{{ m.sounds(
+    ('a', 'a', '"u" in "but"')
+)}}
+
+`a`, like "mutt" or "ruff" or "cummerbund." The sound comes naturally without any great effort.
+
+When you pronounce this sound, let your breath flow cleanly through your mouth, without any breaks or stops. Sounds produced in this way are called <dfn>vowels</dfn>.
+
+!!! note
+    As you learn the Sanskrit alphabet, study the recordings carefully and consult the knowledgeable people around you. Use the English approximations only as a last resort.
+
+Now comes a second vowel:
+
+{{ m.sounds(
+    ('A', 'aa', '"a" in "father"')
+)}}
+
+`A`, like "car" or "far" or "almost dark."
+
+`A` is *twice as long* as `a`. Vowels as long as `a` are called <dfn>short</dfn>, and vowels as long as `A` are called <dfn>long</dfn>. So when you pronounce `A`, make the sound loooong!
+
+
+Vowels in other places
+----------------------
+
+Sounds are formed by using different "places" in the mouth. "p" and "b" are puffs of air that explode from the *lips*, and "t" and "d" touch the tops of your *teeth*. Try pronouncing the English alphabet slowly, paying careful attention to how the sound *feels* and which parts of your mouth you use.
+
+`a` and `A` don't have a clear "place" in the mouth. But other vowels do. Push your tongue back to produce these two sounds:
 
 {{ m.sounds(
     ('i', 'i', '"i" in "bit"'),
     ('I', 'ii', '"ee" in "teeth"')
 )}}
 
+`i` and `I`, like "fit' and "feet," or "lip" and "leap." `i` is *short* like `a`, and `I` is *long* like `A`.
+
+Let your tongue return to its original position. Then bring your lips together to produce these two sounds:
+
 {{ m.sounds(
-    ('u', 'u', '"u" in "put"'),
-    ('U', 'uu', '"oo" in "mood"'),
+    ('u', 'u', '"oo" in "mood" (short)'),
+    ('U', 'uu', '"oo" in "mood" (long)'),
 )}}
+
+`u` and `U` both sound like the "oo" in "moon" "spoon," but `u` is *short* like `a` and `i`.
+
+Finally, let's look at three more vowels. These vowels don't exist in English, so listen to the recordings carefully and pronounce them as well as you can:
 
 {{ m.sounds(
     ('R', 'r', '(no match)'),
     ('RR', 'rr', '(no match)'),
 )}}
 
-`a`, `i`, `u`, and `R` are the most common short vowels by far. Sanskrit has just one more short vowel, but it is **extremely** rare and has no longer partner:
-
 {{ m.sounds(
     ('lR', none, '(no match)')
 )}}
 
-Together, these 9 vowels are often called the <dfn>simple vowels</dfn>.
+`R` is *short* and `RR` is *long*. `R` is the "ri" in "Krishna" and "Sanskrit." If you don't know any Indian languages already, `R` and `RR` might be hard to pronounce. But after some practice, both sounds will become much easier.
 
-!!! note
-    `R` and `RR` are pronounced in various ways. From my experience, the version in the recordings above is the most accurate.
+Meanwhile, `lR` is *short*. `lR` is also **extremely rare**. It is so rare, in fact, that it has no longer version, and people all throughout India pronounce it in various ways. I have not been able to find any consensus on how to pronounce it, so just use your best guess.
 
-    Generally, you can pronounce `lR` however you like. Just use your best guess.
+Together, the nine vowels above (`a, A, i, I, u, U, R, RR, lR`) are called the <dfn>simple vowels</dfn>. Five are short (`a, i, u, R, lR`), and four are long (`A, I, U, RR`).
 
 
 Blending vowels
 ---------------
 
-[We have already seen]({{ m.lesson_url('short-and-long-vowels') }}) that `a` and `A` can blend together. These new vowels can blend too:
+In almost every text, *written Sanskrit is a perfect record of spoken Sanskrit*. To understand what this means, let's look at a simple Sanskrit sentence:
+
+!!! examples
+
+    -   {{ m.x('bAlAya Aha') }}
+
+        He speaks for the boy.
+
+Try reading this sentence out loud ten times.
+
+As you might have noticed, it is tricky to keep stopping after `bAlAya` and keep starting again at `Aha`. Because of these pauses, speaking Sanskrit can feel slow. Fortunately, Sanskrit speakers avoided this problem by **blending sounds together**. Blended sounds are easier to pronounce and can be pronounced faster. In `bAlAya Aha`, for example, it is much easier to blend `a` and `A` and just say `bAlAyAha`.
+
+This is how Sanskrit is usually written down, too. Even if two words are supposed to be separate, they are blended wherever possible:
+
+!!! examples
+
+    -   {{ m.x('bAlAya Aha -> [bAlAyAha]', 'He speaks for the boy.') }}
+
+In other words, *written Sanskrit is a perfect record of spoken Sanskrit*. This idea is very important and will save us a lot of trouble.
+
+What's interesting is that the simple vowels often blend together quite nicely:
 
 !!! examples
 
@@ -44,7 +101,7 @@ Blending vowels
 
         The lord goes.
 
-    -   {{ m.x('madhu udakam -> gacchati madhUdakam') }}
+    -   {{ m.x('madhu udakam -> madhUdakam') }}
 
         sweet water
 
@@ -52,18 +109,34 @@ Blending vowels
 
         the `R` pronounced by the sacrificer
 
-In these examples, the vowels that blend together resemble each other: {{ 'A'|i }} blends with {{ 'A'|i }}, {{ 'i'|i }} blends with {{ 'I'|i }}, {{ 'u'|i }} blends with {{ 'u'|i }}, and so on. In each example, the vowels are roughly the same, although they sometimes have different lengths. We'll return to this idea later on.
+How would you describe the changes that you see in the examples above? Take a moment to think of a rule that explains this behavior.
 
-Try to blend the words in the phrases below:
+All of these changes are part of the same pattern: if the vowels are in the same "group," then they merge to make a long vowel. This rule is clumsy, but the intuition behind it is much clearer.
+
+Now, try to blend the vowels in the examples below:
 
 !!! examples
 
+    -   {{ m.x('pUrNam eva avaziSyate') }}
+    -   {{ m.x('nityazabdena atra anityatvasya abhAvaH') }}
     -   {{ m.x('na anyadasti iti') }}
     -   {{ m.x('eSa tu uddezataH') }}
 
-These phrases are from the <cite>Bhagavad Gita</cite>:
+These examples are all from real Sanskrit texts:
 
 !!! examples
+
+    -   {{ m.x('(pUrNasya pUrNam AdAya) pUrNam evAvaziSyate') }}
+
+        (Taking the full from the full,) the full itself remains.
+
+        <cite lang="sa">Īśa Upaniṣad</cite>
+
+    -   {{ m.x('nityazabdenAtrAnityatvasyAbhAvaH (ucyate)') }}
+
+        By the word "permanent" here (is meant) the absence of impermanence.
+
+        <cite lang="sa">Nyāyapraveśa</cite> 2.3
 
     -   {{ m.x('na anyadastIti') }}
 
@@ -76,3 +149,16 @@ These phrases are from the <cite>Bhagavad Gita</cite>:
         (What I have declared) is just an example (of my many splendors.)
 
         <cite>Bhagavad Gita</cite> 10.40
+
+
+Parting thoughts
+----------------
+
+This lesson covered a fair amount of material. But as a parting thought, consider the two examples below:
+
+!!! examples
+
+    -   {{ m.x('gacchati azvaH') }}
+    -   {{ m.x('pazya etAm') }}
+
+How do you think the vowels would blend here? The next few lessons will reveal the answer.

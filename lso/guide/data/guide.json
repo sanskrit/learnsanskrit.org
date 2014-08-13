@@ -4,20 +4,8 @@
     // ~~~~~~
     // Pronouncing and labeling various Sanskrit sounds
     {
-        "name": "`a`",
-        "deps": []
-    },
-    {
-        "name": "Short and long vowels",
-        "deps": [
-            "a"
-        ]
-    },
-    {
         "name": "Simple vowels",
-        "deps": [
-            "short-and-long-vowels"
-        ]
+        "deps": []
     },
     {
         "name": "Compound vowels",
@@ -41,7 +29,7 @@
     {
         "name": "Basic consonants",
         "deps": [
-            "a",
+            "simple-vowels",
             "semivowels"
         ]
     },
