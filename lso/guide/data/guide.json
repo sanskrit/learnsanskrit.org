@@ -14,16 +14,9 @@
         ]
     },
     {
-        "name": "Similar vowels",
-        "deps": [
-            "simple-vowels",
-            "compound-vowels"
-        ]
-    },
-    {
         "name": "Semivowels",
         "deps": [
-            "similar-vowels"
+            "compound-vowels"
         ]
     },
     {
