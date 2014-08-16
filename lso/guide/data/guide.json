@@ -27,30 +27,15 @@
         ]
     },
     {
-        "name": "Voiced and unvoiced sounds",
+        "name": "\"s\" consonants",
         "deps": [
             "basic-consonants"
         ]
     },
     {
-        "name": "Aspirated consonants",
-        "deps": [
-            "basic-consonants",
-            "voiced-and-unvoiced-sounds"
-        ]
-    },
-    {
-        "name": "\"s\" consonants",
-        "deps": [
-            "basic-consonants",
-            "voiced-and-unvoiced-sounds"
-        ]
-    },
-    {
         "name": "`ha`",
         "deps": [
-            "voiced-and-unvoiced-sounds",
-            "aspirated-consonants"
+            "s-consonants"
         ]
     },
     {
@@ -67,8 +52,6 @@
             "compound-vowels",
             "anusvara-and-visarga",
             "basic-consonants",
-            "voiced-and-unvoiced-sounds",
-            "aspirated-consonants",
             "s-consonants",
             "ha"
         ]
