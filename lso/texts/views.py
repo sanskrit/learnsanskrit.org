@@ -28,6 +28,20 @@ def view_setup(app):
     app.before_first_request(load_data)
 
 
+def load_data():
+    """Load some simple data from the database."""
+    global CATEGORIES, LANGUAGES
+    CATEGORIES = {x.id: x.slug for x in Category.query.all()}
+    LANGUAGES = {x.slug: x.id for x in Language.query.all()}
+
+
+@bp.context_processor
+def inject_helpers():
+    return {
+        'categorize_texts': categorize_texts
+    }
+
+
 # Helper functions
 # ~~~~~~~~~~~~~~~~
 
@@ -94,23 +108,6 @@ def categorize_texts(texts):
         key = CATEGORIES[text.category_id]
         data[key].append(text)
     return data
-
-
-# Initialization
-# ~~~~~~~~~~~~~~
-
-def load_data():
-    """Load some simple data from the database."""
-    global CATEGORIES, LANGUAGES
-    CATEGORIES = {x.id: x.slug for x in Category.query.all()}
-    LANGUAGES = {x.slug: x.id for x in Language.query.all()}
-
-
-@bp.context_processor
-def inject_helpers():
-    return {
-        'categorize_texts': categorize_texts
-    }
 
 
 # Data helpers
