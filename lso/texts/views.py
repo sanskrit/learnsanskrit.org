@@ -121,7 +121,6 @@ def child_segments_data(child_slug, parent_ids):
     """
     data = defaultdict(lambda: defaultdict(list))
 
-    # Find corresponding segments
     child = Text.query.filter(Text.slug == child_slug).one()
     results = SSA.query.filter(SSA.parent_id.in_(parent_ids))\
                        .filter(SSA.text_id == child.id).all()
