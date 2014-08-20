@@ -71,4 +71,4 @@ def run(force=False):
 
     if not Lesson.query.count():
         graph_data = build_graph()
-        add_lessons(graph_data, lso.database.session)
+        add_lessons(graph_data, lso.database.db.session)
