@@ -1,8 +1,6 @@
 import lso.database
 from .models import Category, Language
 
-__all__ = ['run']
-
 
 def init_texts(session):
     """Create initial languages."""
