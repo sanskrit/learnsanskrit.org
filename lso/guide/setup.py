@@ -62,10 +62,12 @@ def add_lessons(graph_data, session):
 
 
 def run(force=False):
-    if force:
-        LessonEdge.query.delete()
-        Lesson.query.delete()
+    app = app or lso.create_app(__name__)
+    with app.app_context():
+        if force:
+            LessonEdge.query.delete()
+            Lesson.query.delete()
 
-    if not Lesson.query.count():
-        graph_data = build_graph()
-        add_lessons(graph_data, lso.database.db.session)
+        if not Lesson.query.count():
+            graph_data = build_graph()
+            add_lessons(graph_data, lso.database.db.session)
