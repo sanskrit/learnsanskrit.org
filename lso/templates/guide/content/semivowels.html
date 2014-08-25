@@ -1,39 +1,44 @@
 A new kind of sound
 -------------------
 
-How do two vowels blend together? If they are similar, then they become long:
-
-{% include 'guide/include/similar-vowel-sandhi-examples.html' %}
-
-If they are not similar, the blend depends on the first vowel. For example, `a` and `A` combine to create compound vowels:
-
-{% include 'guide/include/a-plus-compound-vowel-sandhi-examples.html' %}
-
-But there are other combinations that are more puzzling:
+In two lessons we have seen two very interesting behaviors among the Sanskrit vowels. First, <dfn>similar</dfn> vowels combine and become long:
 
 !!! examples
+    -   {{ m.x('sA Apnoti -> sApnoti') }}
 
+Second, non-similar vowels form <dfn>compound</dfn> vowels if the first vowel is `a` or `A`:
+
+!!! examples
+    -   {{ m.x('mama icchA') }}
+
+But we have seen two cases that are still difficult to explain.
+
+In the first case, what happens if the first vowels isn't `a` or `A`?
+
+!!! examples
     -   {{ m.x('gacchati azvaH') }}
 
-        The horse goes.
+And in the second case, why can't we make compound vowels out of `R`, `RR`, or `lR`?
 
+!!! examples
+    -   {{ m.x('sA Rcchati') }}
+
+Both questions are answered by using a new kind of sound.
+
+Compressed vowels
+-----------------
+Consider the combinations `i` + `a` and `u` + `a`. According to what we know so far, these vowels just sit next to each other and stay unchanged:
+
+!!! examples
+    -   {{ m.x('gacchati azvaH') }}
     -   {{ m.x('sAdhu Aste') }}
 
-        He sits well.
-
-To blend these vowels, we need a new kind of sound. Consider the combinations `i` + `a` and `u` + `a`. These combine in an obvious way:
+But it can be tiresome to keep these two sounds separate. But these sounds do not blend easily. They fight for space, like two wrestlers in the ring. And only one of them can remain. Ultimately, one of the sounds collapses and becomes *shorter than a short vowel*. Wherever possible, the first sound is the one that shortens:
 
 !!! examples
 
-    -   {{ m.x('i + a -> ia') }}
-    -   {{ m.x('u + a -> ua') }}
-
-It can be tiresome to keep these two sounds separate. But these sounds do not blend easily. They fight for space, like two wrestlers in the ring. And only one of them can remain. Ultimately, one of the sounds collapses and becomes **shorter than a short vowel**. Wherever possible, the first sound is the one that shortens:
-
-!!! examples
-
-    -   {{ m.x('i + a -> [ya]') }}
-    -   {{ m.x('u + a -> [va]') }}
+    -   {{ m.x('gacchati azvaH -> gacchat[y] azvaH') }}
+    -   {{ m.x('sAdhu Aste -> sAdh[v] Aste') }}
 
 These shortened vowels are called <dfn>semivowels</dfn>. Every simple vowel has one, except for `a` and `A`:
 
@@ -47,20 +52,22 @@ These shortened vowels are called <dfn>semivowels</dfn>. Every simple vowel has 
 !!! note
     Since semivowels can only exist around other vowels, they are all listed with the vowel `a`. As you pronounce these letters, keep them as short as possible.
 
+This answers the issue of `gacchati azvaH`. Now let us turn to `sA Rcchati`.
+
 
 Fake compound vowels
 --------------------
 
-We have seen four compound vowels: `e`, `o`, `ai`, and `au`. But none of these compound vowels use `R`, `RR`, or `lR`. Can we use these three vowels at all? Yes and no. Using semivowels, we can create "fake" compound vowels:
+Sanskrit's four compound vowels are `e`, `o`, `ai`, and `au`. But none of these compound vowels use `R`, `RR`, or `lR`. Can we use these three vowels at all? Yes and no. Using semivowels, we can create "fake" compound vowels:
 
 !!! examples
 
-    -   {{ m.x('a + R/RR -> ar') }}
+    -   {{ m.x('a/A + R/RR -> ar') }}
     -   {{ m.x('a/A + lR -> al') }}
-    -   {{ m.x('a/A + ar -> Ar') }}
-    -   {{ m.x('a/A + al -> Al') }}
 
-And just like the "real" compound vowels, these "fake" compound vowels can combine again:
+Since `a` and `A` have no semivowels, they cannot be "crushed" into semivowels. So `R / RR / lR` are crushed instead.
+
+Just like the "real" compound vowels, these "fake" compound vowels can combine again:
 
 !!! examples
 
@@ -69,36 +76,63 @@ And just like the "real" compound vowels, these "fake" compound vowels can combi
     -   {{ m.x('a/A + al -> Al') }}
     -   {{ m.x('a/A + Al -> Al') }}
 
-
-Blending vowels
----------------
-
-When vowels cannot blend or combine, one of them becomes a semivowel:
+This answers the question of `sA Rcchati`:
 
 !!! examples
+    -   {{ m.x('sA Rcchati -> sarcchati') }}
+
+        (This may seem like a strange result. But it fully follows the general rules that we've seen so far.)
+
+But why do `R`, `RR`, and `lR` go through this "fake" business at all? I'm not sure. My guess is that these three vowels are so different and strange that they can't blend as easily as `i` and the others do. It's like blending oil in water. So at all times, `R` (and the others) stay totally separate.
+
+
+Blending compound vowels
+------------------------
+
+We have now seen three basic behaviors that the Sanskrit vowels have. Each example below shows a different rule:
+
+!!! examples
+    -   {{ m.x('sA Apnoti -> sApnoti') }}
+        Similar vowels combine and become long.
+
+    -   {{ m.x('mama icchA -> mamecchA') }}
+        Otherwise, `a/A` blends with the next vowel.
 
     -   {{ m.x('gacchati azvaH -> gacchaty azvaH') }}
+        And other simple vowels are "crushed" into semivowels.
 
-        The horse goes.
-
-    -   {{ m.x('nadI adRzyata -> nady adRzyata') }}
-
-        The river was seen.
-
-    -   {{ m.x('sAdhu Aste -> sAdhv Aste') }}
-
-        He sits well.
-
-
-This applies to compound vowels, too. We just have to remember where they come from. For example, `au` comes from `a + a + u`, or `Au`. So, we get:
+Only one case remains:
 
 !!! examples
+    -   {{ m.x('azvau icchati') }}
 
-    -   {{ m.x('azvau icchati -> azvAu icchati -> azvAv icchati') }}
+But we need no new rules. We just need to use the same simple behaviors that we've already seen.
 
-        He wants the two horses.
+First, remember what a compound vowel *is* (rule 2). `au` comes from `a/A` + `o`, and `o` comes from `a/A` + `u/U`. So let's rewrite the example in a strange way, to make this idea clearer:
 
-Try to blend the words in the phrases below:
+!!! examples
+    -   {{ m.x('azvau icchati -> azv [a/A a/A u/U] icchati') }}
+
+Second, we know that simple vowels are *crushed* into semivowels (rule 3):
+
+!!! examples
+    -   {{ m.x('azvau icchati -> azv a/A a/A [v] icchati') }}
+
+Finally, similar vowels *combine* (rule 1):
+
+!!! examples
+    -   {{ m.x('azvau icchati -> azv[A]v icchati') }}
+
+So we get our final result:
+
+!!! examples
+    -   {{ m.x('azvau icchati -> azvAv icchati') }}
+
+Amazing! Our three simple rules explain a totally new kind of change. This is the approach that these lessons will use wherever possible. With basic ideas and some common sense, we can avoid a lot of headaches.
+
+And in addition, these three rules explain nearly all of the things that two Sanskrit vowels do when they're next to each other.
+
+Now, try to blend the vowels in the phrases below:
 
 !!! examples
 
@@ -107,7 +141,7 @@ Try to blend the words in the phrases below:
     - {{ m.x('tejasvi nau adhItam astu') }}
     - {{ m.x('yadi api ete na pazyanti') }}
 
-These words blend as you would expect:
+These examples are all from real Sanskrit texts:
 
 !!! examples
 
@@ -138,7 +172,6 @@ These words blend as you would expect:
 
 The rest of the alphabet
 ------------------------
+Forgive me for spending so much time on vowels! But they are extremely important in Sanskrit and are fundamental to the most beautiful parts of it.
 
-We can now describe how the Sanskrit vowels blend and interact. This knowledge is highly useful and will be especially important later on.
-
-But there are still many other sounds to consider. Let's take a break from the vowels and see what some of these sounds are. They are much simpler and will be much easier to learn.
+Future lessons will explore other sorts of sounds. These lessons will be much simpler, so we can go a little faster, too.
