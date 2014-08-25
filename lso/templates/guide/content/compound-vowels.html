@@ -1,24 +1,43 @@
-We have studied nine vowels so far. This lesson will cover the last four and bring our study of the Sanskrit vowels to a close.
+As we've already seen, simple vowels can combine in interesting ways:
 
-Just as tin and copper can combine to make bronze, two vowels can combine to make a <dfn>compound</dfn> vowel. Sanskrit has four compound vowels. Each is a <strong>long vowel</strong>, and each is made by a different combination.
+!!! examples
+
+    -   {{ m.x('sA Apnoti -> sApnoti') }}
+
+        She obtains.
+
+    -   {{ m.x('gacchati IzvaraH -> gacchatIzvaraH') }}
+
+        The lord goes.
+
+In these examples, the vowels are in the same "group": `a` combines with `A`, and `i` combines wit h `I`. That is, the vowels that combine are <dfn>similar</dfn>. But what if the two vowels *aren't* similar?
+
+!!! examples
+
+    -   {{ m.x('sakhA iti matvA') }}
+    -   {{ m.x('gacchati azvaH') }}
+
+Here, we'll focus on the first example, and another where the behavior is roughly the same:
+
+!!! examples
+
+    -   {{ m.x('mama icchA') }}
+    -   {{ m.x('sakhA iti matvA') }}
+
+
+In other words, what happens when `a` or `A` is the first vowel?
 
 
 `a/A` + simple vowel
 --------------------
 
-Consider the combinations `a` + `i` and `a` + `u`. These combine rather simply:
+Sanskrit vowels tend to blend with each other. And the same thing happens here. But instead of getting another simple vowel, we get a new kind of vowel:
 
 !!! examples
-    - {{ m.x('a + i -> a-i') }}
-    - {{ m.x('a + u -> a-u') }}
+    - {{ m.x('mama icchA -> mamecchA') }}
+    - {{ m.x('mama udakam -> mamodakam') }}
 
-But it can be tiresome to keep these two sounds separate. Over time, these two sounds blended and became slightly easier to pronounce:
-
-!!! examples
-    - {{ m.x('a + i -> e') }}
-    - {{ m.x('a + u -> o') }}
-
-This gives us our next two vowels:
+(Commbinations with `R`, `RR`, and `lR` are trickier, and we will cover them later.) Let's call these new vowels <dfn>compound</dfn> vowels, since they're combinations of different kinds of vowels. Our first two compound vowels are below:
 
 {{ m.sounds(
     ('e', 'e', '"a" in "mane"'),
@@ -26,33 +45,31 @@ This gives us our next two vowels:
 ) }}
 
 !!! note
-    As you pronounce `e` and `o`, try to make the sound "flat" and constant. If you are a native English speaker, this might be hard; English "e" sounds like Sanskrit `ei` and English "o" sounds like Sanskrit `ou`.
+    The Sanskrit sounds `e` and `o` are different from the English "ay" sound ("mane", "drain") and "o" sound ("bone", "moan"). When you pronounce `e` or `o`, try to make the sound "flat" and constant. If you are a native English speaker, this might be hard; it is tempting to pronounce `e` as if it were `ei` and `o` as if it is were `ou`.
 
-The other combinations blend in the same way:
-
-!!! examples
-    - {{ m.x('a/A + i/I -> e') }}
-    - {{ m.x('a/A + u/U -> o') }}
-
-For now, let's ignore combinations with `R`, `RR`, and 'lR'.
-
-
-`a/A` + compound vowel
-----------------------
-
-Consider the combinations `a + e` and `a + o`. These combinations are not obvious. But if we remember that `e` comes from `a + i` and that `o` comes from `a + u`, they become easy:
+`e` and `o` are both long vowels, like `A`, `I`, and the others. But these vowels pose more interesting questions. For example, what happens here? How do the vowels blend?
 
 !!! examples
-    - {{ m.x('a + a + i -> A-i') }}
-    - {{ m.x('a + a + u -> A-u') }}
+    - {{ m.x('pazya etAm') }}
 
-But it can be tiresome to spend so much time pronouncing a vowel. Over time, the `A` sound became a little shorter:
+
+`a/A` + `e/o`
+-------------
+
+When `a` and `i` combine, the two vowels blend and combine into a single `e`. But if we add another `a`, then the `a` sound becomes stronger and forces the sounds to separate:
 
 !!! examples
-    - {{ m.x('a + a + i -> ai') }}
-    - {{ m.x('a + a + u -> au') }}
+    - {{ m.x('a + e -> ai') }}
 
-This gives us our next two vowels:
+This idea applies more generally to any combination of `a/A` and `e/o`:
+
+!!! examples
+    - {{ m.x('a + e -> ai') }}
+    - {{ m.x('A + e -> ai') }}
+    - {{ m.x('a + o -> au') }}
+    - {{ m.x('A + o -> au') }}
+
+And because of this process, we get two more compound vowels:
 
 {{ m.sounds(
     ('ai', 'ai', '"i" in "fight"'),
@@ -63,31 +80,29 @@ This gives us our next two vowels:
 
     As you pronounce `ai` and `au`, try to make the "a" part of `ai` and `au` sound just like the vowel `a`. The shorter it is, the better.
 
-The other combinations blend in the same way:
+Now, the natural next question is whether we can combine `ai` and `au` once more. It is easy to imagine what this might look like:
 
 !!! examples
-    - {{ m.x('a/A + e -> ai') }}
-    - {{ m.x('a/A + o -> au') }}
+    - {{ m.x('a/A + ai -> Ai ?') }}
+    - {{ m.x('a/A + au -> Au ?') }}
 
-Can we combine `ai` and `au` with anything? We can try:
+But alas, Sanskrit does not work this way. `ai` and `au` "combine," but they remain unchanged:
 
 !!! examples
-    - {{ m.x('a/A + ai -> Ai') }}
-    - {{ m.x('a/A + au -> Au') }}
+    - {{ m.x('a/A + ai -> ai') }}
+    - {{ m.x('a/A + au -> au') }}
 
-But they shorten back to `ai` and `au` **and stay unchanged**.
-
-For now, let's ignore combinations with `R`, `RR`, and 'lR'.
+This is probably for the best; without a firm limit, perhaps Sanskrit would end up with vowels like `AAAAAAi`, or something else equally painful.
 
 
 Blending vowels
 ---------------
 
-`a` and `A` blend with the compound vowels, just like they do above:
+In almost every text, *written Sanskrit is a perfect record of spoken Sanskrit*. By knowing where these compound vowels come from, we can write Sanskrit sentences exactly as they are pronounced:
 
 {% include 'guide/include/a-plus-compound-vowel-sandhi-examples.html' %}
 
-Try to blend the words in the phrases below:
+Now, try to blend the vowels in the examples below:
 
 !!! examples
     -   {{ m.x('pazya etAm') }}
@@ -96,7 +111,7 @@ Try to blend the words in the phrases below:
     -   {{ m.x('ca oSadhIH') }}
     -   {{ m.x('na asad AsIn na u sad AsIt tadAnIm') }}
 
-These words blend as you would expect:
+These examples are all from real Sanskrit texts:
 
 !!! examples
 
@@ -129,3 +144,9 @@ These words blend as you would expect:
         Then there was neither nothing nor anything.
 
         <cite>Nāsadīya Sūkta</cite>
+
+
+Parting thoughts
+----------------
+
+This lesson answered some interesting questions but posed some new ones. What happens if the second vowel is `R` or `RR` or `lR`? And what happens in our `gacchati azvaH` example from before? Both questions have the same answer, which the next lesson will cover.
