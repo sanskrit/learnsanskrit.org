@@ -114,7 +114,7 @@ def categorize_texts(texts):
 # ~~~~~~~~~~~~
 
 def child_segments_data(child_slug, parent_ids):
-    """
+    """Get child segments of the given parent IDs.
 
     :param child_slug: slug for the child text
     :param parent_ids: IDs of parent segments
