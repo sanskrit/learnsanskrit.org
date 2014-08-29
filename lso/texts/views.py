@@ -70,7 +70,7 @@ def paginate(items, size, min_size=0):
     return pages
 
 
-def division_paginate(division, size, min_size):
+def paginate_division(division, size, min_size):
     last_slug = division.segments[-1].slug.rpartition('.')[2]
     number = int(last_slug)
     slugs = ['%s.%s' % (division.slug, n) for n in range(1, number + 1)]
@@ -202,7 +202,7 @@ def segments_data(text, slug, query, related):
         first, last = segments[0], segments[-1]
 
         cur = first.division
-        cur_pages = division_paginate(cur, PAGE_SIZE, MIN_PAGE_SIZE)
+        cur_pages = paginate_division(cur, PAGE_SIZE, MIN_PAGE_SIZE)
         divs = None
 
         slug_index_map = {slug: (i, j) for i, page in enumerate(cur_pages)
@@ -222,7 +222,7 @@ def segments_data(text, slug, query, related):
                 if d.id == cur.id:
                     break
             if k:
-                pages = division_paginate(
+                pages = paginate_division(
                     divs[k - 1], PAGE_SIZE, MIN_PAGE_SIZE)
                 prev = pages[-1]
             else:
@@ -244,7 +244,7 @@ def segments_data(text, slug, query, related):
                 if d.id == cur.id:
                     break
             try:
-                pages = division_paginate(
+                pages = paginate_division(
                     divs[k + 1], PAGE_SIZE, MIN_PAGE_SIZE)
                 next = pages[0]
             except IndexError:
@@ -325,7 +325,7 @@ def text(slug):
     divs = [d for d in divs if d.segments]
     pages = []
     for d in divs:
-        d_pages = division_paginate(d, PAGE_SIZE, min_size=MIN_PAGE_SIZE)
+        d_pages = paginate_division(d, PAGE_SIZE, min_size=MIN_PAGE_SIZE)
         d_pages = map(page_to_query, d_pages)
         pages.append(d_pages)
 
