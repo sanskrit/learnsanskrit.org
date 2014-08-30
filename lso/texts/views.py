@@ -86,8 +86,8 @@ def peer_divisions(text, cur):
     return [d for d in divs if d.mp_depth == cur.mp_depth]
 
 
-def page_to_query(page):
-    """Convert a page to a query string..
+def page_to_query_string(page):
+    """Convert a page to a query string.
 
     :param page: a list of items
     """
@@ -252,9 +252,9 @@ def segments_data(text, slug, query, related):
 
         # convert to query form
         if prev:
-            prev = page_to_query(prev)
+            prev = page_to_query_string(prev)
         if next:
-            next = page_to_query(next)
+            next = page_to_query_string(next)
     else:
         prev = next = None
 
@@ -326,8 +326,8 @@ def text(slug):
     pages = []
     for d in divs:
         d_pages = paginate_division(d, PAGE_SIZE, min_size=MIN_PAGE_SIZE)
-        d_pages = map(page_to_query, d_pages)
-        pages.append(d_pages)
+        page_queries = map(page_to_query_string, d_pages)
+        pages.append(page_queries)
 
     return render_template('texts/text.html', text=text,
                            divs=divs,
