@@ -321,12 +321,12 @@ def text(slug):
         _flash_missing_text(slug)
         return redirect(url_for('.index'))
 
-    divs = text.division.mp.query_descendants().all()
-    divs = [d for d in divs if d.segments]
+    divisions = text.division.mp.query_descendants().all()
+    divisions = [d for d in divisions if d.segments]
     pages = []
-    for d in divs:
-        d_pages = paginate_division(d, PAGE_SIZE, min_size=MIN_PAGE_SIZE)
-        page_queries = map(page_to_query_string, d_pages)
+    for d in divisions:
+        division_pages = paginate_division(d, PAGE_SIZE, min_size=MIN_PAGE_SIZE)
+        page_queries = map(page_to_query_string, division_pages)
         pages.append(page_queries)
 
     return render_template('texts/text.html', text=text,
