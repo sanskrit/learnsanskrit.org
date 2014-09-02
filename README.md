@@ -8,6 +8,7 @@ libraries to comfortably list here.
 
 All contributions are welcome!
 
+
 Building learnsanskrit.org
 --------------------------
 
@@ -35,11 +36,12 @@ Building learnsanskrit.org
 
 5. Run on localhost:
 
-        fab serve
+        python runserver.py
 
 6. Whenever you're done, kill the server and exit the virtualenv:
 
         deactivate
+
 
 Components
 ----------
