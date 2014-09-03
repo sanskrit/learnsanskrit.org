@@ -1,4 +1,7 @@
-Visualize the flow of air that makes the vowel `a`. The air starts in the lungs, moves through the throat, and flows cleanly through the mouth, like a river flowing straight. And if we change the air flow in some way, we create a new sound.
+A flow of air
+-------------
+
+Visualize the flow of air that makes the vowel `a`. The air starts in the lungs, moves through the throat, and flows cleanly through the mouth, like a river flowing straight.
 
 At a high level, we can separate all Sanskrit sounds into two groups:
 
@@ -12,15 +15,51 @@ All other sounds are called <dfn>consonants</dfn>. For example, the four semivow
 But we can change the air flow in more drastic ways than this.
 
 
-Stops and nasals
-----------------
+The `ka` stops
+--------------
 
 Try pronouncing the vowel `a`. While pronouncing the vowel, *stop* the flow of air entirely, then quickly let it flow again. This produces sounds like `ka` and `ta` and `pa`. We can call such sounds <dfn>stops</dfn>, since they are made when the air flow stops.
 
-Once more, try pronouncing the vowel `a`. While pronouncing the vowel, stop the flow of air entirely &mdash; then *redirect* it through your nose. This produces sounds like `na` and `ma`. We can call such sounds <dfn>nasals</dfn>, since they are made with help from the nasal cavity.
+The first stop is simple:
 
-!!! note
-    These are simple sounds. So why the long introduction? By learning to become aware of how sounds are formed and why they sound the way they do, you will have less trouble learning Sanskrit.
+{{ m.sounds(
+    ('ka', 'ka', '"k" in "skill"'),
+) }}
+
+`ka`, like "skill" or "skip" or "scary scar."
+
+But Sanskrit makes a distinction here that English does not. Recall that a stop is produced when the flow of air stops then quickly resumes. In `ka`, this flow resumes normally, like water from a tap. But this flow can also resume explosively, like water bursting through a dam:
+
+{{ m.sounds(
+    ('kha', 'kha', '"k" in "kill"'),
+) }}
+
+`kha`, like "kill" or "kiss" or "kick a can." Sounds like `kha` and `gha` are called <dfn>aspirated</dfn> ("breathy"), and sounds like `ka` and `ga` are <dfn>unaspirated</dfn> ("not breathy").
+
+Sanskrit also distinguishes between <dfn>unvoiced</dfn> sounds ("kill", "pill", "till") and <dfn>voiced</dfn> sounds ("gill", "bill", "dill"):
+
+{{ m.sounds(
+    ('ka', 'ka', '"k" in "skill"'),
+    ('kha', 'kha', '"k" in "kill"'),
+    ('ga', 'ga', '"g" in "gill"'),
+    ('gha', 'gha', '(no match)'),
+) }}
+
+English doesn't quite have a sound like `gha`. The closest might be the "g h" sound in "log house."
+
+
+The `ka` nasal
+--------------
+
+Once more, try pronouncing the vowel `a`. While pronouncing the vowel, stop the flow of air entirely &mdash; then *redirect* it through your nose. This produces sounds like `na` and `ma`. We can call such sounds <dfn>nasals</dfn>, since they are made with help from the nasal cavity:
+
+{{ m.sounds(
+    ('ka', 'ka', '"k" in "skill"'),
+    ('kha', 'kha', '"k" in "kill"'),
+    ('ga', 'ga', '"g" in "gill"'),
+    ('gha', 'gha', '(no match)'),
+    ('Ga', 'na_k', '"ng" in "lung"'),
+) }}
 
 
 Stopping the flow of air
@@ -38,34 +77,48 @@ These five points are:
 - The <dfn class="g">base of the teeth</dfn>
 - The <dfn class="b">lips</dfn>
 
-Let's just call these points the <dfn>points of sound</dfn>. Now let's see how they're used:
+Let's just call these points the <dfn>points of sound</dfn>.
+
 
 ### Soft palate
 We start at the soft palate, at the back of the mouth:
 
 {{ m.sounds(
     ('ka', 'ka', '"k" in "skill"'),
+    ('kha', 'kha', '"k" in "kill"'),
+    ('ga', 'ga', '"g" in "gill"'),
+    ('gha', 'gha', '(no match)'),
     ('Ga', 'na_k', '"ng" in "lung"'),
 ) }}
+
+We've seen these five already. But the others will be more interesting.
 
 ### Hard palate
 Moving forward, we reach the hard palate:
 
 {{ m.sounds(
     ('ca', 'ca', '(no match)'),
+    ('cha', 'cha', '(no match)'),
+    ('ja', 'ja', '(no match)'),
+    ('jha', 'jha', '(no match)'),
     ('Ja', 'na_j', '(no match)'),
 ) }}
 
 !!! note
     `ca` looks and sounds similar to the English "ch" sound. But the two are distinct. The English "ch" is pronounced near the teeth. `ca` is pronounced much further back. Getting this sound right might require some practice.
 
+
 ### Hard bump
 Further still, we reach the hard bump on the roof of the mouth:
 
 {{ m.sounds(
     ('Ta', 'ta1', '(no match)'),
+    ('Tha', 'tha1', '(no match)'),
+    ('Da', 'da1', '(no match)'),
+    ('Dha', 'dha1', '(no match)'),
     ('Na', 'na1', '(no match)'),
 ) }}
+
 
 For convenience, let us say that these sounds are <dfn>retroflexed</dfn>. This word evokes a tongue that has bent ("flex") backward ("retro") to produce the sound.
 
@@ -76,7 +129,10 @@ For convenience, let us say that these sounds are <dfn>retroflexed</dfn>. This w
 A little further, we reach the base of the teeth:
 
 {{ m.sounds(
-    ('ta', 'ta', '"t" in "thumb"'),
+    ('ta', 'ta', '"th" in "thumb"'),
+    ('tha', 'tha', '(no match)'),
+    ('da', 'da', '"th" in "this"'),
+    ('dha', 'dha', '(no match)'),
     ('na', 'na', '"n" in "nose"'),
 ) }}
 
@@ -88,14 +144,20 @@ Finally, we reach the lips:
 
 {{ m.sounds(
     ('pa', 'pa', '"p" in "spill"'),
+    ('pha', 'pha', '"p" in "pill"'),
+    ('ba', 'ba', '"b" in "bill"'),
+    ('bha', 'bha', '(no match)'),
     ('ma', 'ma', '"m" in "mill"'),
 ) }}
+
+
+This arrangement of sounds -- from `ka` and `kha` to `ma` -- is over 2800 years old. It stands at the beginning of the Indian linguistic tradition.
 
 
 Blending stops and nasals
 -------------------------
 
-We have seen that vowels can blend together. But stops and nasals can blend too. Let's look at some examples first:
+Like vowels, consonants can blend together. Consonants blend according to some simple rules, but since this lesson is already quite long, let's look at a very simple case:
 
 !!! examples
     - {{ m.x('tat na Asyam', 'That is not a mouth.') }}
@@ -110,7 +172,7 @@ The earliest Sanskrit speakers solved this problem by *blending stops and nasals
 !!! examples
     - {{ m.x('tat na Asyam -> tan nAsyam', 'That is not a mouth.') }}
 
-But when a stop becomes a nasal, it keeps its point of sound:
+But notice that when a stop becomes a nasal, it keeps its point of sound:
 
 !!! examples
     - {{ m.x('rAT naraH -> rAN naraH', 'The king is a man.') }}
