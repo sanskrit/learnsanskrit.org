@@ -1,3 +1,6 @@
+#!/usr/bin/python
+# -*- encoding: utf-8 -*-
+
 import json
 import os
 import re
@@ -61,13 +64,25 @@ def add_lessons(graph_data, session):
     session.commit()
 
 
-def run(force=False):
-    app = app or lso.create_app(__name__)
+def create(app):
     with app.app_context():
-        if force:
-            LessonEdge.query.delete()
-            Lesson.query.delete()
+        lso.database.db.create_all()
 
-        if not Lesson.query.count():
-            graph_data = build_graph()
-            add_lessons(graph_data, lso.database.db.session)
+
+def drop(app):
+    with app.app_context():
+        LessonEdge.__table__.drop(lso.database.db.engine)
+        Lesson.__table__.drop(lso.database.db.engine)
+
+
+def seed(app):
+    with app.app_context():
+        assert not Lesson.query.count()
+        graph_data = build_graph()
+        add_lessons(graph_data, lso.database.db.session)
+
+
+def delete(app):
+    with app.app_context():
+        LessonEdge.query.delete()
+        Lesson.query.delete()
