@@ -46,15 +46,15 @@
 </ul>
 {% endmacro %}
 
-{# Display Sanskrit sounds with links #}
+{# Display Sanskrit sounds with links. #}
 {% macro sounds() %}
-<ul class="sounds">
+<ul class="sounds sounds-{{ varargs|length }}">
     {% for name, filename, desc in varargs %}
     <li>
-        {% if filename %}<a href="{{ url_for('guide.static', filename='audio/%s.mp3' | format(filename)) }}">{% endif %}
-            <div class="letter">{{ name|i }}</div>
-            {% if desc -%}<div>{{ desc }}</div>{%- endif -%}
-        {% if filename %}</a>{% endif %}
+        <a href="{{ url_for('guide.static', filename='audio/%s.mp3' | format(filename)) }}">
+            <span class="sounds-letter">{{ name|i }}</span>
+            <span class="sounds-desc">{{ desc }}</span>
+        </a>
     </li>
     {% endfor %}
 </ul>
