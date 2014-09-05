@@ -96,6 +96,7 @@
     {
         "name": "How Sanskrit works",
         "deps": [
+            "the-sanskrit-alphabet"
         ]
     },
     {
@@ -342,7 +343,7 @@
         ]
     },
     {
-        "name": "`bahuvrIri` compounds",
+        "name": "`bahuvrIhi` compounds",
         "deps": [
             "tatpurusha-compounds"
         ]
