@@ -1,13 +1,18 @@
-Generally, every Sanskrit sentence is just some <dfn>action</dfn>. The simplest sentences are just actions and nothing else:
+Actions
+-------
+
+With few exceptions, every Sanskrit sentence is just some <dfn>action</dfn>. The simplest sentences are just actions and nothing else:
 
 !!! examples
     - {{ m.x('gacchati', 'He goes.') }}
 
-These sorts of actions are called <dfn>verbs</dfn>. `gacchati` is a verb. So are the words below:
+These sentences are just actions, too:
 
 !!! examples
     - {{ m.x('gacchataH', 'The two of them go.') }}
     - {{ m.x('gacchanti', 'They go.') }}
+
+The actions in these sentencs all share a basic "core" that we add endings to. These sorts of actions are usually called <dfn>verbs</dfn>.
 
 
 Stems and endings
@@ -23,8 +28,10 @@ We combine a stem with an <dfn>ending</dfn> to make a complete word:
     - {{ m.x('pazya + nti -> pazyanti', 'They see.') }}
 
 
-Number
-------
+The stem contains the basic meaning of the verb: going somewhere (`gaccha`), standing (`tiSTha`), seeing (`pazya`), and so on. But the ending contains some extra information:
+
+
+### Number
 
 A verb's ending describes the *number of things* that perform the action:
 
@@ -33,11 +40,11 @@ A verb's ending describes the *number of things* that perform the action:
     - {{ m.x('pazyataH', 'The two of them see.') }}
     - {{ m.x('gacchanti', 'They go.') }}
 
-We can call this a change in the verb's <dfn>number</dfn>.
+
+In English, this idea is called the <dfn>number</dfn> of the verb.
 
 
-Person
-------
+### Person
 
 Not all verbs describes "he" and "they" and so on. We can talk about other sorts of people, too. We can talk about the people in front of us:
 
@@ -53,4 +60,4 @@ And we can talk about ourselves:
     - {{ m.x('tiSThAvaH', 'The two of us stand.') }}
     - {{ m.x('tiSThAmaH', 'We all stand.') }}
 
-In English, this is called a change in the verb's <dfn>person</dfn>. This guide will use that term, too.
+In English, this idea is called the <dfn>person</dfn> of the verb. This "person" information is all contained in the verb ending.
