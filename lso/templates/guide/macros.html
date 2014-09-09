@@ -18,7 +18,7 @@
 {# Print a list of lesson links #}
 {% macro lesson_list(lessons) %}
 {% if lessons %}
-<ul>
+<ul class="lesson-list">
     {%- for lesson in lessons %}
     <li><a href="{{ url_for('guide.lesson', slug=lesson.slug) }}">{{ lesson.name }}</a></li>
     {%- endfor %}
