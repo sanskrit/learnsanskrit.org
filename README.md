@@ -31,7 +31,12 @@ Building learnsanskrit.org
 
 4. Initialize the database:
 
-    TODO
+        from lso import create_app
+        app = create_app(__name__)
+
+        from <blueprint> import setup
+        setup.create(app)
+        setup.seed(app)
 
 5. Run on localhost:
 
