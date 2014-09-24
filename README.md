@@ -34,6 +34,7 @@ Building learnsanskrit.org
         from lso import create_app
         app = create_app(__name__)
 
+        # Run this for all blueprints
         from <blueprint> import setup
         setup.create(app)
         setup.seed(app)
