@@ -59,7 +59,7 @@ def do_logging(app):
 # Security (for user accounts)
 from lso.users.models import User, Role
 datastore = SQLAlchemyUserDatastore(lso.database.db, User, Role)
-security = Security(datastore)
+security = Security(datastore=datastore)
 
 
 # Converters (for fancy dictionary queries)
@@ -67,8 +67,7 @@ def add_converters(app):
     app.url_map.converters['list'] = lso.lib.converters.ListConverter
 
 
-# Views and blueprints
-# --------------------
+# Blueprints
 def register_blueprints(app, *blueprints):
     for bp in blueprints:
         m = importlib.import_module('lso.%s.views' % bp)
