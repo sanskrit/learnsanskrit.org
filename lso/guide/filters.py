@@ -22,7 +22,6 @@ def inject_notes():
 def inject_functions():
     return {
         'img': img,
-        'lesson_url': lesson_url,
         'nominal_data': nominal_data,
     }
 
@@ -59,14 +58,6 @@ def img(filename, alt):
     full_path = url_for('guide.static', filename='img/%s' % filename)
     img = ET.Element('img', {'src': full_path, 'alt': alt})
     return Markup(ET.tostring(img))
-
-
-def lesson_url(unit, lesson=None):
-    """URL helper for linking to lessons and units."""
-    if lesson:
-        return url_for('guide._lesson', unit=unit, lesson=lesson)
-    else:
-        return url_for('guide._unit', unit=unit)
 
 
 def nominal_data(stem, gender, cases=None):
