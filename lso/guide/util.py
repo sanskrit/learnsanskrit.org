@@ -21,3 +21,17 @@ def topological_sort(graph):
                 candidates.append(successor)
 
     return result
+
+
+def lesson_sort(lessons):
+    """Returns a topological sort of a list of lessons.
+
+    Ties are broken arbitrarily.
+
+    :param lessons: a list of lessons
+    """
+    slug_map = {lesson.slug: lesson for lesson in lessons}
+    slug_graph = {lesson.slug: [succ.slug for succ in lesson.successors()]
+                  for lesson in lessons}
+    sorted_slugs = topological_sort(slug_graph)
+    return [slug_map[slug] for slug in sorted_slugs]
