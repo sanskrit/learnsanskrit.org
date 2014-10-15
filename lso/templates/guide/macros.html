@@ -73,7 +73,26 @@
     {% set labels=['He', 'You', 'I'] %}
     {% for row in forms %}
     <tr>
-        <th>{{ labels[loop.index0] }}
+        <th>{{ labels[loop.index0] }}</th>
+        {% for form in row %}
+        <td>{{ form|sa1 }}<br />{{ form|sa2 }}</td>
+        {% endfor %}
+    </tr>
+    {% endfor %}
+</table>
+{% endmacro %}
+
+{% macro manual_nominal(stem, forms) %}
+<table class="paradigm">
+    <tr>
+        <th>{{ stem|sa1 }}</th>
+        <th>One</th>
+        <th>Two</th>
+        <th>Many</th>
+    </tr>
+    {% for row in forms %}
+    <tr>
+        <th>Case {{ loop.index }}</th>
         {% for form in row %}
         <td>{{ form|sa1 }}<br />{{ form|sa2 }}</td>
         {% endfor %}

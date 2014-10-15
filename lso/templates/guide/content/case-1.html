@@ -1,0 +1,41 @@
+Nouns can take different *roles* in some sentence. The simplest role just states the **subject of the sentence**:
+
+!!! examples
+    - {{ m.x('[gajaH] pazyati', '[The elephant] sees.') }}
+    - {{ m.x('[gajau] pazyataH', '[The two elephants] see.') }}
+    - {{ m.x('[gajAH] pazyanti', '[The elephants] see.') }}
+
+`pazyati` implies that **only one** thing sees. `gajaH` implies that **only one** elephant performs the action. Each word implies the same number of things (one), so they are used together.
+
+<section class="sandhi">
+{% filter markdown %}
+## Blending the `visarga`
+Recall that the `visarga` blends with the unvoiced sounds that follow it. (For a refresher, see [this leson]({{ m.lesson_url('anusvara-and-visarga') }})). But what happens if it's followed by a `voiced` sound?
+
+!!! examples
+    - {{ m.x('naraH dizati', 'The man points.') }}
+    - {{ m.x('narAH dizanti', 'The men point.') }}
+
+We could try to reason about what the changes here would be; but in this one unfortunate instance, it's easiest just to memorize them:
+
+!!! examples
+    - {{ m.x('naraH dizati -> [naro] dizati', 'The man points.') }}
+    - {{ m.x('narAH dizanti -> [narA] dizanti', 'The men point.') }}
+    - {{ m.x('naraH gacchati -> [naro] gacchati', 'The man goes.') }}
+    - {{ m.x('narAH gacchanti -> [narA] gacchanti', 'The men go.') }}
+
+It's possible to explain the second change after some thought. But I don't know how to explain the first one. [Let me know]({{ url_for('site.contact') }}) if you have any ideas.
+{% endfilter %}
+</section>
+
+
+## Noun table
+
+Nouns are often presented in tables, like this:
+
+{{ m.manual_nominal(
+    stem='nara',
+    forms=[['naraH', 'narO', 'narAH']],
+) }}
+
+Tables like this one will appear throughout the guide. But you don't have to use them if you don't want to.
