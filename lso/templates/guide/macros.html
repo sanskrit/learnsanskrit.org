@@ -60,6 +60,28 @@
 </ul>
 {% endmacro %}
 
+{# An alternative to `verb`, which still isn't working. #}
+{% macro manual_verb(root, forms, caption) %}
+<table class="paradigm">
+    <caption>{{ caption }}</caption>
+    <tr>
+        <th>{{ root|sa1 }}</th>
+        <th>One</th>
+        <th>Two</th>
+        <th>Many</th>
+    </tr>
+    {% set labels=['He', 'You', 'I'] %}
+    {% for row in forms %}
+    <tr>
+        <th>{{ labels[loop.index0] }}
+        {% for form in row %}
+        <td>{{ form|sa1 }}<br />{{ form|sa2 }}</td>
+        {% endfor %}
+    </tr>
+    {% endfor %}
+</table>
+{% endmacro %}
+
 
 {% macro verb(root, mode, voice, vclass=none) %}
 {# I don't know how to expose verb_data as a function: #}

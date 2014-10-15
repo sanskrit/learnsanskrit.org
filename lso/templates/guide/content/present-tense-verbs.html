@@ -20,6 +20,12 @@ Verb table
 
 Verbs are often presented in tables, like this:
 
-{{ m.verb('gam', 'pres', 'P', vclass='1') }}
+{{ m.manual_verb(
+    root='gacCa',
+    forms=[['gacCati', 'gacCataH', 'gacCanti'],
+        ['gacCasi', 'gacCaTaH', 'gacCaTa'],
+        ['gacCAmi', 'gacCAvaH', 'gacCAmaH']],
+    caption='Present tense',
+    ) }}
 
 Tables like this one will appear throughout the guide. But you don't have to use them if you don't want to.

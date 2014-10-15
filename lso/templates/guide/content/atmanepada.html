@@ -91,4 +91,10 @@ But in two instances, there is no pattern at all:
 Verb table
 ----------
 
-{{ m.verb('laB', 'pres', 'A', vclass='1') }}
+{{ m.manual_verb(
+    root='laBa',
+    forms=[['laBate', 'laBete', 'laBante'],
+        ['laBase', 'laBeTe', 'laBaDve'],
+        ['laBe', 'laBAvahe', 'laBAmahe']],
+    caption='Present tense',
+    ) }}
