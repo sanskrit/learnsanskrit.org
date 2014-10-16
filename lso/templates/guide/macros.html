@@ -27,9 +27,9 @@
 {% endmacro %}
 
 {# link to a lesson #}
-{% macro lesson_url(slug) %}
-{{ url_for('guide.lesson', slug=slug)}}
-{% endmacro %}
+{% macro lesson_url(slug) -%}
+{{ url_for('guide.lesson', slug=slug) }}
+{%- endmacro %}
 
 {# <ul> in rows #}
 {% macro row_ul(items, callback=none) %}
