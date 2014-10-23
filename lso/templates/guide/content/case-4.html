@@ -1,0 +1,43 @@
+For review, here are the first three cases:
+
+!!! examples
+    - {{ m.x('gajaz carati', 'The elephant walks.') }}
+    - {{ m.x('gajaM pazyAmi', 'I see the elephant.') }}
+    - {{ m.x('gajair gacchanti', 'They go by means of the elephants.') }}
+
+Our next case, which we can call <dfn>case 4</dfn>, has several different senses that aren't worth analyzing in detail. Simply, we can say that it has the same meaning as the English word "for."
+
+!!! examples
+    - {{ m.x('[gajAya] pacAmi', 'I cook [for the elephant].') }}
+    - {{ m.x('naraH zocati [vIrAbhyAm] ', 'The man grieves [for the two heroes].') }}
+    - {{ m.x('grAmam azvAya [carAmi]', 'I walk to the village [for a horse].') }}
+
+
+## Ambiguities
+
+Like most languages, Sanskrit can be *ambiguous*. We have seen ambiguous behavior before:
+
+!!! examples
+    - {{ m.x('gajau labhete', '(a) The two of them obtain the two elephants.<br />(b) The two elephants obtain.') }}
+
+Words like {{ 'gajAbhyAm'|i }} and {{ 'narAbhyAm'|i }} are ambiguous, too:
+
+!!! examples
+    - {{ m.x('narAbhyAM pacanti', '(a) They cook for the two men.<br />(b) They cook with the two men.') }}
+
+
+Usually, common sense is enough to tell what a word should mean:
+
+!!! examples
+    - {{ m.x('gajAbhyAM pacanti', 'They cook for the two elephants.') }}
+
+
+## Noun table
+
+{{ m.manual_nominal(
+    stem='nara',
+    forms=[['naraH', 'narO', 'narAH'],
+        ['naram', 'narO', 'narAn'],
+        ['nareRa', 'narAByAm', 'narEH'],
+        ['narAya', 'narAByAm', 'nareByaH']]
+) }}
