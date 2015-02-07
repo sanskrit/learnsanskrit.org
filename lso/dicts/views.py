@@ -14,11 +14,13 @@ bp = LSOBlueprint('dicts', __name__, url_prefix='/dicts')
 
 @bp.route('/')
 def index():
+    """All dictionaries."""
     return render_template('dicts/index.html')
 
 
 @bp.route('/mw/')
 def mw():
+    """Monier-Williams index"""
     form = QueryForm(request.args, csrf_enabled=False)
 
     if form.validate():
@@ -41,6 +43,7 @@ def mw():
 
 @bp.route('/mw/q-<from_script>/<q>')
 def mw_pretty(from_script, q):
+    """MW results page"""
     form = QueryForm(csrf_enabled=False)
     to_script = S.DEVANAGARI
 
@@ -59,14 +62,16 @@ def mw_pretty(from_script, q):
 
 @bp.route('/mw/works-and-authors')
 def mw_works():
+    """MW works and authors"""
     return render_template('dicts/mw/works-and-authors.html')
 
 
 @api.route('/mw/<slp_query>')
 def mw_api(slp_query):
+    """API for MW queries. All Sanskrit is rendered in SLP1."""
     results = mw_results(slp_query)
     for key in results:
-        results[key] = [mw_transform(x, None) for x in results[key]]
+        results[key] = [mw_transform(x, to_script=None) for x in results[key]]
     return jsonify(results)
 
 
