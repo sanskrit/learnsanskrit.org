@@ -6,7 +6,8 @@
 <nav id="top">
     <a class="brand" href="{{ url_for('main.index') }}">learn<span class="y">sanskrit</span>.org</a>
     <ul class="main-nav">
-        {{ sec('Guide', 'guide.index', 'guide') }}
+        {# {{ sec('Guide', 'guide.index', 'guide') }} #}
+        <li><a id="nav-guide" href="http://old.learnsanskrit.org">Guide</a></li>
         {{ sec('Tools', 'tools.index', 'tools') }}
         {# {{ sec('Texts', 'texts.index', 'texts') }} #}
         {{ sec('Site', 'site.index', 'site') }}
