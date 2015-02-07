@@ -56,7 +56,7 @@ class TestData:
     def test_mostly_no_deps(self, graph_data):
         """Verify that only a few lessons have no dependencies."""
         no_deps = set(x['slug'] for x in graph_data if not x['deps'])
-        assert no_deps == {'simple-vowels'}
+        assert no_deps == {'introduction'}
 
 
 class TestAddLessons:
