@@ -14,16 +14,20 @@
     }
 }
 
+.admonition-title {
+    display: none;  // TODO: don't create HTML for this.
+}
+
 .note, .rule, .warning {
+    // TODO: play around with highlighting on margin
     border: 1px solid;
+    border-left-width: 7px;
     .border-radius(3px);
-    padding: 0 1em;
-    margin: 0 0 1em;
+    padding: 0 1em 0 2em;
 }
 
 .note {
-    background: @note-bg;
-    border-color: @note-border-color;
+    border-color: #fc0;
 }
 
 .rule {
@@ -40,15 +44,18 @@
     background: @off-white;
 
     p.sa1, span.sa1 {
-        font-size: 1.5em;
+        font-size: 2em;
+        line-height: 1em;
     }
 
     ul {
         list-style: none;
+        overflow: auto;
+        padding: 0em;
     }
 
     li {
-        margin: 0 0 1em;
+        margin: 1.5em;
     }
 
     p {
