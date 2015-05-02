@@ -12,7 +12,9 @@
 {%- set text = sanskrit.replace('->', '→').replace('[', '<mark>').replace(']', '</mark>') -%}
 {{- text|d(tag='p') -}}
 {{- text|i(tag='p') -}}
-{{ english }}
+{% if english -%}
+{{ english.replace('->', '→').replace('[', '<mark>').replace(']', '</mark>') | safe }}
+{%- endif %}
 {%- endmacro %}
 
 {% macro quiz(items) %}
