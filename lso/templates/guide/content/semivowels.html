@@ -25,6 +25,7 @@ And second, why can't we make compound vowels out of `R`, `RR`, or `lR`?
 
 Both questions are answered by using a new kind of sound.
 
+
 Compressed vowels
 -----------------
 Consider the combinations `i` + `a` and `u` + `a`. According to what we know so far, these vowels just sit next to each other and stay unchanged:
@@ -89,17 +90,22 @@ But why do `R`, `RR`, and `lR` go through this "fake" business at all? I'm not s
 Blending compound vowels
 ------------------------
 
-We have now seen three basic behaviors that the Sanskrit vowels have. Each example below shows a different rule:
+We have now seen three basic behaviors that the Sanskrit vowels can have:
 
-!!! examples
-    -   {{ m.x('sA Apnoti -> sApnoti') }}
-        Similar vowels combine and become long.
+1. Similar vowels combine and become long.
 
-    -   {{ m.x('mama icchA -> mamecchA') }}
-        Otherwise, `a/A` blends with the next vowel.
+    !!! examples
+        -   {{ m.x('sA Apnoti -> sApnoti') }}
 
-    -   {{ m.x('gacchati azvaH -> gacchaty azvaH') }}
-        And other simple vowels are "crushed" into semivowels.
+2. Otherwise, `a/A` blends with the next vowel.
+
+    !!! examples
+        -   {{ m.x('mama icchA -> mamecchA') }}
+
+3. And other simple vowels are "crushed" into semivowels.
+
+    !!! examples
+        -   {{ m.x('gacchati azvaH -> gacchaty azvaH') }}
 
 Only one case remains: what if the compound vowel comes first?
 
@@ -111,12 +117,12 @@ But we need no new rules. We just need to use the same simple behaviors that we'
 First, remember how the compound vowels are created (rule 2). `au` comes from `a/A` + `o`, and `o` comes from `a/A` + `u/U`. So let's rewrite the example in a strange way, to make this idea clearer:
 
 !!! examples
-    -   {{ m.x('azvau icchati -> azv [a/A a/A u/U] icchati') }}
+    -   {{ m.x('azvau icchati -> azv [a a u] icchati') }}
 
 Second, we know that simple vowels are *crushed* into semivowels (rule 3):
 
 !!! examples
-    -   {{ m.x('azvau icchati -> azv a/A a/A [v] icchati') }}
+    -   {{ m.x('azvau icchati -> azv a a [v] icchati') }}
 
 Finally, similar vowels *combine* (rule 1):
 
@@ -128,9 +134,7 @@ So we get our final result:
 !!! examples
     -   {{ m.x('azvau icchati -> azvAv icchati') }}
 
-Amazing! Our three simple rules explain a totally new kind of change. This is the approach that these lessons will use wherever possible. With basic ideas and some common sense, we can avoid a lot of headaches.
-
-And in addition, these three rules explain nearly all of the things that two Sanskrit vowels do when they're next to each other.
+Amazing! Our three simple rules explain a totally new kind of change. And in addition, these three rules explain **nearly all** of the things that two Sanskrit vowels do when they're next to each other.
 
 Now, try to blend the vowels in the phrases below:
 

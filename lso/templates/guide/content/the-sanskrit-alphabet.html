@@ -3,30 +3,112 @@
 {{ m.row_ul(data.split(), callback=as_sa2) }}
 {% endmacro %}
 
-We have seen every sound in ordinary Sanskrit.
+We have seen every sound in ordinary Sanskrit. Let's review these in the traditional alphabetical order.
 
-Let's review these in the traditional alphabetical order.
 
-First are the Sanskrit vowels:
+Vowels
+------
 
-{{ rows('a A i I u U R RR lR e ai o au') }}
+!!! note
+    Note that the compound vowels are in a different order. The guide introduced them as `e o ai au`, but the traditional order is `e ai o au`.
 
-Then the `anusvAra` and `visarga`:
+{{ m.sounds(
+    ('a', 'a', '"u" in "but"'),
+    ('A', 'aa', '"a" in "father"')
+)}}
+{{ m.sounds(
+    ('i', 'i', '"i" in "bit"'),
+    ('I', 'ii', '"ee" in "teeth"')
+)}}
+{{ m.sounds(
+    ('u', 'u', '"oo" in "mood" (short)'),
+    ('U', 'uu', '"oo" in "mood" (long)'),
+)}}
+{{ m.sounds(
+    ('R', 'r', '(no match)'),
+    ('RR', 'rr', '(no match)'),
+    ('lR', none, '(no match)')
+)}}
+{{ m.sounds(
+    ('e', 'e', '"a" in "mane"'),
+    ('ai', 'ai', '"i" in "fight"'),
+    ('o', 'o', '"o" in "go"'),
+    ('au', 'au', '"ow" in "cow"'),
+) }}
 
-{{ rows('aM aH') }}
 
-Next come the stops and nasals:
 
-{{ rows('ka kha ga gha Ga ca cha ja jha Ja Ta Tha Da Dha Na ta tha da dha na pa pha ba bha ma') }}
 
-Followed by the semivowels:
 
-{{ rows('ya ra la va') }}
+`anusvAra` and `visarga`
+------------------------
 
-the "s" consonants:
+{{ m.sounds(
+    ('aM', 'anusvara', '(no match)'),
+    ('aH', 'visarga', '(no match)'),
+) }}
 
-{{ rows('za Sa sa') }}
 
-and, finally, `ha`:
+Stops and nasals
+----------------
 
-{{ rows('ha') }}
+{{ m.sounds(
+    ('ka', 'ka', '"k" in "skill"'),
+    ('kha', 'kha', '"k" in "kill"'),
+    ('ga', 'ga', '"g" in "gill"'),
+    ('gha', 'gha', '(no match)'),
+    ('Ga', 'na_k', '"ng" in "lung"'),
+) }}
+{{ m.sounds(
+    ('ca', 'ca', '(no match)'),
+    ('cha', 'cha', '(no match)'),
+    ('ja', 'ja', '(no match)'),
+    ('jha', 'jha', '(no match)'),
+    ('Ja', 'na_j', '(no match)'),
+) }}
+{{ m.sounds(
+    ('Ta', 'ta1', '(no match)'),
+    ('Tha', 'tha1', '(no match)'),
+    ('Da', 'da1', '(no match)'),
+    ('Dha', 'dha1', '(no match)'),
+    ('Na', 'na1', '(no match)'),
+) }}
+{{ m.sounds(
+    ('ta', 'ta', '"th" in "thumb"'),
+    ('tha', 'tha', '(no match)'),
+    ('da', 'da', '"th" in "this"'),
+    ('dha', 'dha', '(no match)'),
+    ('na', 'na', '"n" in "nose"'),
+) }}
+{{ m.sounds(
+    ('pa', 'pa', '"p" in "spill"'),
+    ('pha', 'pha', '"p" in "pill"'),
+    ('ba', 'ba', '"b" in "bill"'),
+    ('bha', 'bha', '(no match)'),
+    ('ma', 'ma', '"m" in "mill"'),
+) }}
+
+
+Semivowels
+----------
+
+{{ m.sounds(
+    ('ya', 'ya', '"y" in "yellow"'),
+    ('ra', 'ra', '(no match)'),
+    ('la', 'la', '"l" in "loose"'),
+    ('va', 'va', '"v" in "vase"'),
+) }}
+
+
+"s" consonants and `ha`
+-----------------------
+
+!!! note
+    The tradition tends to group `ha` with the "s" consonants, even though `ha` is voiced and the others are not.
+
+{{ m.sounds(
+    ('za', 'sha', '(no match)'),
+    ('Sa', 'shha', '(no match)'),
+    ('sa', 'sa', '"s" in "snake"'),
+    ('ha', 'ha', '(no match)'),
+) }}
