@@ -7,31 +7,36 @@ Nouns can take different *roles* in some action. The simplest role just states *
 
 `pazyati` implies that **only one** thing sees. `gajaH` implies that **only one** elephant performs the action. Each word implies the same number of things (one), so they are used together.
 
-Since this is the first case we've seen, let's call this <dfn>case 1</dfn> for short.
+This role is expressed by the first of the eight cases. Since this is the first case we've seen, let's call this <dfn>case 1</dfn> for short.
 
 <section class="sandhi">
 {% filter markdown %}
 ## Blending the `visarga`
-Recall that the `visarga` blends with the unvoiced sounds that follow it. (For a refresher, see [this leson]({{ m.lesson_url('anusvara-and-visarga') }})). But what happens if it's followed by a `voiced` sound?
+Recall that the `visarga` blends with the unvoiced sounds that follow it. (For a refresher, see [this lesson]({{ m.lesson_url('anusvara-and-visarga') }})). But what happens if it's followed by a `voiced` sound?
 
 Unfortunately, it depends on which sound comes after the `visarga`. And it depends on which sounds come *before* the `visarga`, too. Here's what happens if the `visarga` comes after `a`:
 
-!!! examples
-    - {{ m.x('naraH dizati -> [naro] dizati', 'The man points.') }}
+1. `aH` followed by a voiced consonant:
 
-      This change happens before any voiced consonant.
+    !!! examples
+        - {{ m.x('naraH dizati -> [naro] dizati', 'The man points.') }}
 
-    - {{ m.x('naraH icchati -> [nara] icchati', 'The man wants.') }}
+2. `aH` followed by any vowels except `a`:
 
-      This change happens before any vowel except `a`.
+    !!! examples
+        - {{ m.x('naraH icchati -> [nara] icchati', 'The man wants.') }}
 
-    - {{ m.x('naraH asyati -> [naro \']syati', 'The man throws.') }}
+3. `aH` followed by `a`:
 
-      This change happens for `a` **only**.
+    !!! examples
+        - {{ m.x('naraH asyati -> [naro \']syati', 'The man throws.') }}
 
-I don't know of a simple explanation for these changes. It's easiest to just memorize them.
+    The `'` character is called the `avagraha` and it is not pronounced. The `avagraha` shows that `a` was removed from the sentence.
 
-If the `visarga` comes after `A`, the rule is much simpler: in front of voiced sounds, the `visarga` disappears.
+
+Unfortunately, I don't know of a simple explanation for these changes. It's easiest to just memorize them.
+
+If the `visarga` comes after `A`, the rules are much simpler. In front of voiced sounds, the `visarga` disappears.
 
 !!! examples
     - {{ m.x('narAH dizanti -> [narA] dizanti', 'The men point.') }}

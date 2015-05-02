@@ -1,11 +1,12 @@
 The parts of an action
 ----------------------
+
 Generally, every Sanskrit sentence describes an *action*. The simplest sentences are just actions and nothing else:
 
 !!! examples
     - {{ m.x('pazyati', 'He sees.')}}
 
-But these sentences don't tell us much. If we see just `pazyati`, how can we tell who sees, or what is seen? How and where does this "seeing" happen?
+But these sentences don't tell us much. If our sentence is just `pazyati`, how can we tell who sees, or what is seen? How and where does this "seeing" happen?
 
 To fill these gaps, we use <dfn>nouns</dfn>:
 
@@ -24,36 +25,68 @@ Just like verbs, nouns have a <dfn>stem</dfn>, which combines with an <dfn>endin
     - {{ m.x('gajaH pazyati', 'The elephant sees.') }}
     - {{ m.x('gajau pazyataH', 'The two elephants see.') }}
     - {{ m.x('gajAH pazyanti', 'The elephants see.') }}
-    - {{ m.x('naraH pacate', 'The man cooks for himself.') }}
-    - {{ m.x('narau pacete', 'The two men cook for themselves.') }}
-    - {{ m.x('narAH pacante', 'The men cook for themselves.') }}
+    - {{ m.x('naraz carati', 'The man walks.') }}
+    - {{ m.x('narau carataH', 'The two men walk.') }}
+    - {{ m.x('narAz caranti', 'The men walk.') }}
     - {{ m.x('azvas tiSThati (azvaH tiSThati)', 'The horse stands.') }}
     - {{ m.x('azvau tiSThataH', 'The two horses stand.') }}
     - {{ m.x('azvAs tiSThanti (azvAH tiSThanti)', 'The horses stand.') }}
 
-!!! note
-    Note the blending that occurs in `azvas tiSThati` and `azvAs tiSThati`. Now that our sentences have multiple words, we have to be mindful of how the sounds in the two words affect each other.
+And just as before, the ending contains some *extra information*. Two are especially important. The first is the *number*, which we've seen before. And the second is the <dfn>role</dfn>, which we'll look at now.
 
-And just as before, the ending contains some *extra information*. Two are especially important. the first is the *number*, which we've seen before. And the second is the <dfn>role</dfn>, which we'll study now.
+!!! note
+    Did you notice that the `visarga` blends in some of the examples above? Now that our sentences have multiple words, we have to be mindful of how the sounds in the two words affect each other.
+
 
 Noun roles
 ----------
 
-In each example above, the noun defines the thing that "does" the action. But nouns can define other parts of the action, too. With `pazyati`, for example, we can define what is seen:
+In the examples above, the noun defines the thing that "does" the action. But nouns can define other parts of the action, too. With `pazyati`, for example, we can define what is seen:
 
 !!! examples
-    - {{ m.x('gajaH pazyati [naram]', 'The elephant sees [the man].') }}
-
-Or where the elephant sees:
-
-!!! examples
-    - {{ m.x('[grAme] gajaH pazyati', 'The elephant sees [in the village].') }}
+    - {{ m.x('[bAlaM] gajaH pazyati', 'The elephant sees [the boy].') }}
 
 Or who the elephant sees with:
 
 !!! examples
-    - {{ m.x('[azvena] gajaH pazyati', 'The elephant sees [with the horse].') }}
+    - {{ m.x('[bAlena] gajaH pazyati', 'The elephant sees [with the boy].') }}
 
-When we change the noun ending, we change the role that the noun plays. This is part of the *extra information* that a noun ending contains.
+Or who the elephant sees for:
 
-More accurately, the noun ending shows the noun's <dfn>case</dfn>, where "case" is an English grammatical term that we'll define in a later lesson. There is a subtle distinction between a role and a case, but we can totally ignore for the time being. For now, treat "noun role" and "case" as identical concepts.
+!!! examples
+    - {{ m.x('[bAlAya] gajaH pazyati', 'The elephant sees [for the boy].') }}
+
+We can call this change in meaning a change in the noun's <dfn>role</dfn>. Just as the same character might have different roles in a story &mdash; sometimes the hero, sometimes the villain, sometimes a background character &mdash; the same noun can have different roles in a Sanskrit sentence. Sometimes it's the "thing that sees", sometimes it's the "thing that's seen", and sometimes it's something entirely different.
+
+These examples also show us that *when a noun's role changes, its ending changes too*. In other words, the ending contains some *extra information* that tells us about the noun's role.
+
+### How many roles?
+
+But there's a small problem here. A noun could play hundreds of different roles. Just look at the sorts of roles we could have in English:
+
+- with the boy
+- without the boy
+- for the boy
+- against the boy
+- on the boy
+- in the boy
+- out from the boy
+- through the boy
+- over the boy
+- under the boy
+- around the boy
+- including the boy
+- excluding the boy
+- near the boy
+- far from the boy
+
+... and the list goes on and on. Sanskrit has the same sorts of roles, too; does that mean we have to memorize hundreds of endings for hundreds of roles?
+
+No! Absolutely not! Instead, Sanskrit has endings for **eight** very general roles. These endings are usually called the eight <dfn>cases</dfn>. Once we know these eight cases, we can use them with other words to create more specific roles. For example, these three examples all use the same case, but each example expresses a different role.
+
+!!! examples
+    - {{ m.x('[azvena] gacchati naraH', 'The man goes by means of the horse') }}
+    - {{ m.x('azvena [saha] gacchati naraH', 'The man goes [together with] the horse.') }}
+    - {{ m.x('azvena [vinA] gacchati naraH', 'The man goes [without] the horse.') }}
+
+Our goal now is to learn the eight cases and the basic roles that each expresses. This basic knowledge is enough to explain most of the nouns you'll see.
