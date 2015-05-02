@@ -2,6 +2,7 @@ fabric
 flask >= 0.9
 flask-admin
 flask-assets
+flask-debugtoolbar
 flask-mail
 flask-markdown
 flask-restless

@@ -158,6 +158,11 @@ def create_app(name, override=None):
         simple_query = None
         simple_analyzer = None
 
+    # Debug toolbar
+    if app.debug:
+        from flask.ext.debugtoolbar import DebugToolbarExtension
+        toolbar = DebugToolbarExtension(app)
+
     # Blueprints
     if app.debug:
         import debug
