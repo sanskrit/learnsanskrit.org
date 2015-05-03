@@ -3,6 +3,7 @@
         "name": "Introduction",
         "deps": []
     },
+
     // ~~~~~~
     // Sounds
     // ~~~~~~
@@ -793,13 +794,14 @@
             "marks",
             "plain-vowels"
         ]
-    },
+    }
 
 
     // ~~~~~~~~~~~~~~
     // Vedic Sanskrit
     // ~~~~~~~~~~~~~~
     // Things outside the scope of classical Sanskrit.
+    /*
     {
         "name": "Vedic Sanskrit",
         "deps": [
@@ -824,5 +826,5 @@
             "vedic-sanskrit",
             "devanagari-consonants"
         ]
-    }
+    } */
 ]
