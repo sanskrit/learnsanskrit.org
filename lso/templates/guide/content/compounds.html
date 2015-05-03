@@ -1,0 +1,101 @@
+Review
+------
+
+In Sanskrit, we can apply some basic rules to **make our own words**. With enough practice, we can create words to describe almost any concept.
+
+
+Two words as one
+----------------
+
+Consider a simple sentence:
+
+!!! examples
+    - {{ m.x('grAmasya vIraM rakSAmi', 'I protect the hero of the village.') }}
+
+
+Often, the relationship between two nouns is clear from context. In that spirit, Sanskrit allows us to condense the two words above into something more compact:
+
+!!! examples
+    - {{ m.x('[grAmavIraM] rakSAmi', 'I protect the [village hero].') }}
+
+
+This is a <dfn>compound</dfn>, one of Sanskrit's most common and powerful features. By sacrificing the *freedom* and *clarity* of a noun ending, we obtain a *density* that allows to express complex ideas in an extremely small space.
+
+!!! note
+    English has compounds as well, such as "village hero." But the Sanskrit compound system is far more developed than the English one. Sanskrit compounds often have dozens of separate words, and they can express complex and subtle relationships that English compounds often cannot.{% filter foot(notes) %}For an example of a compound with well over 60 words, <a href="http://hellenisteukontos.blogspot.com/2010/03/what-is-longest-word-of-sanskrit.html">click here</a>.{% endfilter %}
+
+### Freedom
+By "freedom" I mean the ability to reorder the words in some sentence:
+
+!!! examples
+    - {{ m.x('vIraM pazyAmi grAmasya', 'I see the hero of the village.') }}
+
+
+We can reorder words because of the *extra information* contained in the noun ending. If this noun ending is lost, this information is lost; we cannot move words around so easily. And in a compound, **word order is vital**:
+
+!!! examples
+    - {{ m.x('grAmavIraM pazyAmi', 'I see the village hero ("hero of the village").') }}
+    - {{ m.x('vIragrAmaM pazyAmi', 'I see the hero village ("village of heroes").') }}
+
+
+### Clarity
+By "clarity" I mean the ability to perfectly understand what a sentence means:
+
+!!! examples
+    - {{ m.x('vIrasya gajo gacchati', "The hero's elephant goes.") }}
+    - {{ m.x('vIrayor gajo gacchati', "The two heroes' elephant goes.") }}
+    - {{ m.x('vIrANAm gajo gacchati', "The heroes' elephant goes.") }}
+
+
+Here the noun ending defines how many heroes are involved. If the noun ending is lost, this information is lost:
+
+!!! examples
+    - {{ m.x('vIrasya gajaH -> vIragajaH', "The hero's elephant -> hero elephant") }}
+    - {{ m.x('vIrayor gajaH -> vIragajaH', "The two heroes' elephant -> hero elephant") }}
+    - {{ m.x('vIrANAm gajaH -> vIragajaH', "The heroes' elephant -> hero elephant") }}
+
+
+Usually, we can make a reasonable guess about what the noun ending was before.
+
+### Density
+By "density" I mean the ability to express ideas quickly:
+
+!!! examples
+    - {{ m.x('naragrAmaM gacchAmi', 'I go to the village of men ("man village").') }}
+
+
+In a sentence like the one above, our common sense lets us know that `naragrAma` probably does not mean "village of the man" or "village of the two men." If we know more about the context of this sentence &mdash; where it is stated, who says it, and what ideas come before it &mdash; then we might interpret this sentence differently:
+
+!!! examples
+    - {{ m.x('narasya gajaM pazyAmi | naragrAmaM gacchAmi', 'I see the man\'s elephant. I go to the village of the man ("man village").') }}
+
+Although compounds sacrifice clarity and freedom, the gain in density is usually worthwhile, especially in Sanskrit poetry. This density is what gives much of Sanskrit poetry its exquisite expressive power. Here is a complex example from the poet Kalidasa:
+
+!!! examples
+    - {{ m.x('valkala-zikhA-niSyanda-rekha-aGkitAH', 'marked with the streaks (of water) dripping from the fringes of their bark garments') }}
+
+
+Compounds in compounds
+----------------------
+
+Compounds are formed from multiple words. But compounds are themselves words. So, we can put compounds in compounds! By doing so, we can quickly build up massive words.
+
+!!! examples
+    - {{ m.x('arjunasya grAmaH -> arjunagrAmaH', 'Arjuna\'s village') }}
+    - {{ m.x('arjunagrAmasya gajaH -> arjunagrAmagajaH', 'the elephant of Arjuna\'s village') }}
+    - {{ m.x('arjunagrAmagajayoH putrAH -> arjunagrAmagajaputrAH', 'the sons of the elephants of Arjuna\'s village') }}
+
+
+But as these compounds become longer, they become more difficult to understand. They trade clarity for density.
+
+
+Understanding compounds
+-----------------------
+
+Right now, it might seem difficult or impossible to split compounds up and determine what they mean, especially as the compounds become longer:
+
+!!! examples
+    - {{ m.x('jAyApratigrAhitagandhamAlyAm', 'made to accept perfumes and garlands by (his) wife') }}
+
+
+But like all parts of Sanskrit, this becomes easier with time. As you learn more Sanskrit and read more Sanskrit, you will become faster at splitting and understanding these compounds. And eventually, understanding them will be second nature. Have faith.
