@@ -1,0 +1,138 @@
+Review
+------
+
+When we studied the noun cases, we made a distinction between the *case* that a noun uses and the *role* that the noun plays in the sentence. Until now, we've assumed that these two ideas are roughly the same.
+
+
+Cases and roles
+---------------
+
+Consider this example:
+
+!!! examples
+    - {{ m.x('siMhA naraM khAdanti', 'The lions eat the man.') }}
+
+
+This sentence has a noun in case 1 and a noun in case 2. Usually, case 1 defines the agent (the one who sees) and case 2 defines the object (the one who is seen). But if we use a new verb, these definitions change:
+
+!!! examples
+    - {{ m.x('siMhair naro [khAdyate]', 'The man [is eaten] by the lions.') }}
+
+In this new sentence, we have a noun in case 3 and a noun in case 1. But the agent has moved from case 1 to case 3, and the object has moved from case 2 to case 1. A verb that causes this change is called <dfn>passive</dfn>: it focuses on the object instead of the agent.
+
+Why use passive verbs?
+----------------------
+
+Although every word in the example above has changed, the meaning of the sentence is still the same. We still have the act of seeing (`khAdanti / khAdyate`). The ones eating are still the lions (`siMhAH / siMhaiH`). And the one who is eaten is still the man (`naram / naraH`). So even though the *cases* of our nouns have changed, the *roles* that these nouns play are the same.
+
+So if the meaning is the same, why should we use passive verbs at all?
+
+### Convenience
+One reason is that passive verbs give us a convenient way to leave the agent out of the sentence. This is useful if we don't know or don't care about who performs the action. In the examples below, note that the verb stays the same regardless of the agent:
+
+!!! examples
+    - {{ m.x('azvo [gamyate] (gajena / siMhAbhyAm / mRgaiH)', 'The horse [is gone to] (by the elephant / by the two lions / by the deer).') }}
+    - {{ m.x('ratha [iSyate] (nareNa / vIrAbhyAm / putraiH)', 'The chariot [is desired] (by the man / by the two heroes / by the sons).') }}
+
+### Poetic style
+In later Sanskrit, passive verbs are often used just for poetic reasons. But regardless of how they are used, passive verbs are very common. The Bhagavad Gita has close to 100 of them overall:
+
+!!! examples
+    - {{ m.x('mucyante', 'They are released.') }}
+
+        <cite>Bhagavad Gita 3.13, 3.31</cite>
+
+    - {{ m.x('na lipyate', 'He is not tainted.') }}
+
+        <cite>BG 3.13, 3.31</cite>
+
+    - {{ m.x('sUyate') }}
+      <cite>BG 9.10</cite>
+
+    - {{ m.x("kriyate 'rjuna", 'It is done, Arjuna.') }}
+
+        <cite>BG 3.13, 3.31</cite>
+
+
+Making the passive stem
+-----------------------
+
+### Regular verbs
+For most verbs, it is easy to create the passive stem:
+
+!!! rule
+    If the root ends in a short vowel, make the vowel long. Then add `ya`.
+
+
+!!! examples
+    - {{ m.x('ji -> jIya', 'conquer -> be conquered') }}
+    - {{ m.x('zuc -> zucya', 'grieve -> be grieved') }}
+
+
+### The `aya` class
+
+Roots in this class are strengthened:
+
+!!! examples
+    - {{ m.x('cur -> corya', 'steal -> be stolen') }}
+
+
+### Roots ending in `R`
+
+We expect that a root like `kR` would form a stem like `kRya`. If you try to pronounce this stem, you'll notice that it sounds almost like `kriya`. And over time, this is how Sanskrit speakers started to pronounce it. Since <q><a href="{{ m.lesson_url('simple-vowels') }}">written Sanskrit is a perfect record of spoken Sanskrit</a></q>, we can just write the stem as `kriya`:
+
+!!! examples
+    - {{ m.x('kR -> kriya', 'do -> be done') }}
+
+If the root starts with multiple consonants, then a different change is made instead:
+
+!!! examples
+    - {{ m.x('smR -> smarya', 'remember -> be remembered') }}
+
+
+### Roots ending in `A`
+
+Roots that end in `A` have their `A` changed to `I`. This change occurs for complicated reasons that even Panini did not fully understand. So let's just remember it and move on:
+
+!!! examples
+    - {{ m.x('sthA -> sthI', 'stand -> be stood, be stationed') }}
+
+
+Passive endings
+---------------
+
+Once we have a passive stem, we use `Atmanepada` endings to create complete verbs. *All* roots use `Atmanepada` endings when they are passive, without exception.
+
+!!! examples
+    - {{ m.x('kRSNamRgAs tudyante zarair vIrANAm', "The black deer were struck by the heroes' arrows.") }}
+    - {{ m.x('dRzye grAme gRhe caiva', "I am seen in the village *and* in the house.") }}
+    - {{ m.x('vane dahyete grAmabAlaiH', 'The two forests are made to burn by the village boys.') }}
+    - {{ m.x('vane khAdye narasiMhena', 'I am eaten in the forest by Narasimha (or "by the man\'s lion").') }}
+    - {{ m.x('zrUyase gRhajanaiH', 'You are heard by the people of the house.') }}
+    - {{ m.x('jIye yodhakair yodhane', 'I am conquered by the warriors in battle.') }}
+    - {{ m.x("kriyate sundareNa", 'It is done by the beautiful one.') }}
+    - {{ m.x("sthIyase vIrair grAmeSu", 'You are stationed among the villages by the heroes.') }}
+
+
+## Using passive stems
+
+The passive stems above can replace the "ordinary" stem that we usually see in the present tense:
+
+!!! examples
+    - {{ m.x('haMsA nagaraM narAya gacchanti', 'The geese go to the city for the man.') }}
+    - {{ m.x('haMsair grAmo narAya gamyate', 'The village is gone to by the geese for the man.') }}
+
+
+But they **cannot** replace any other stems. For example, we cannot use this stem in the near future. Instead, we use the ordinary future stem and add `Atmanepada` endings:
+
+!!! examples
+    - {{ m.x('narebhyo khAdiSyate', 'It will be eaten by the men.') }}
+
+
+As you might imagine, this can be ambiguous:
+
+!!! examples
+    - {{ m.x('gajo ramate', 'The elephant enjoys.') }}
+    - {{ m.x('gajena ramyate', 'It is enjoyed by the elephant.') }}
+    - {{ m.x('gajo ramiSyate', 'The elephant will enjoy.') }}
+    - {{ m.x('gajena ramiSyate', 'It will be enjoyed by the elephant.') }}
