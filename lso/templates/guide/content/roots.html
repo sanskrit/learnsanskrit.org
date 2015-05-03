@@ -1,0 +1,142 @@
+Learning Sanskrit is like building a massive house. Our materials are the Sanskrit sounds, which we combine and blend to create stems, endings, words, and sentences. Our techniques are the rules of grammar. And our approach is still a practical one: build up the basics before expanding further.
+
+Now we have built our foundation, and there are many ways to expand. So let's return to the verb, where we started our journey into Sanskrit:
+
+!!! examples
+    - {{ m.x('khAdanti', 'They eat.') }}
+
+
+The verb is `khAdanti` and the stem is `khAda`. But there is more to see than just `khAda`:
+
+!!! examples
+    - {{ m.x('mRgAH [khAdanti]', 'The deer [eat].') }}
+    - {{ m.x('naraH [khAdiSyati]', 'The man [will eat].') }}
+    - {{ m.x('puruSaH [khAdyate]', 'The man [is eaten].') }}
+    - {{ m.x('pazyAmi mRgasya [khAdakam]', 'I see [the eater] of the deer.') }}
+    - {{ m.x('siMhaH [khAditaH]', 'The lion [has been eaten].') }}
+    - {{ m.x('gajaH [khAditvA] gacchati', 'The elephant goes [after eating].') }}
+
+
+In all of these examples, we can see something more basic than the verb stem. It is a core sound that seems to endure. This is the <dfn>root</dfn>:
+
+!!! examples
+    - {{ m.x('khAd -> khAda -> khAdati', 'He eats.') }}
+
+
+Creating roots
+--------------
+
+Just as a single tree trunk produces many branches and flowers, a single root produces many stems and words. But just as the base of the tree remains underground and hidden from view, so too is it difficult to tell what a root really is. In the examples above, the root is obviously `khAd`. But consider the examples below:
+
+!!! examples
+    - {{ m.x('vIrA [jayanti]', 'The heroes [conquer].') }}
+    - {{ m.x('putrau [jeSyataH]', 'The two sons [will conquer].') }}
+    - {{ m.x('grAmo [jIyate]', 'The village [is conquered].') }}
+    - {{ m.x('pazyAmi [jayakam]', 'I see [the victor].') }}
+    - {{ m.x('loko [jitaH]', 'The world [has been conquered].') }}
+    - {{ m.x('naro [jitvA] gacchati', 'The man goes [after conquering].') }}
+
+
+It is easy to think of a few possible roots. But consider the difficulties involved:
+
+1. We must choose a single root that can produce `jay`, `je`, `jI`, and `ji`.
+2. We should make rules to explain how our root transforms into `jay`, `je`, `jI`, and `ji`.
+3. And these rules must be as consistent as possible across all roots and all of the stems that those roots produce.
+
+This is an enormous task. But fortunately, the grammarian Panini completed it for us more than 2000 years ago.
+
+Panini defined a full list of verb roots, together with the rules that transform those roots into the words we really see. He did not describe how he *chose* his roots, but by studying his list, we can create some simple guidelines. Here is one of them:
+
+!!! rule
+    Roots should use simple and short vowels. We can then form stems by *strengthening* the vowel.
+
+    Here, we <dfn>strengthen</dfn> a vowel by <a href="{{ m.lesson_url('compound-vowels') }}">adding `a` to the front of it</a>.
+
+With this guideline in mind, we can find a root for `jayati`:
+
+!!! examples
+    - {{ m.x('[ji] -> jayati', 'He conquers.') }}
+
+
+Now consider the words below:
+
+!!! examples
+    - {{ m.x('azvA [nayanti]', 'The horses [lead].') }}
+    - {{ m.x('naro [neSyati]', 'The man [will lead].') }}
+    - {{ m.x('sundaro [nIyate]', 'The beautiful one [is led].') }}
+    - {{ m.x('rakSasi [nAyakam]', 'You protect [the leader].') }}
+    - {{ m.x('zvetagajo [nItaH]', 'The white elephant [has been led].') }}
+    - {{ m.x('naro [nItvA] mRgaM labhate', 'The man obtains a deer [after leading].') }}
+
+
+Here is another basic guideline:
+
+!!! rule
+    Roots should contain as much useful information as possible.
+
+With this guideline in mind, we can find a root for `nayati`:
+
+!!! examples
+    - {{ m.x('[nI] -> nayati', 'He leads.') }}
+
+
+Finally, consider the words below:
+
+!!! examples
+    - {{ m.x('gRhebhyo [gacchAmaH]', 'We go from the houses.') }}
+    - {{ m.x('naro [gamiSyati]', 'The man [will go].') }}
+    - {{ m.x('devo [gamyate]', 'The god [is gone to].') }}
+    - {{ m.x('pazyAvaH [gamakam]', 'The two of us see [the indicator].') }}
+    - {{ m.x('gRho [gataH]', 'The house [has been gone to].') }}
+    - {{ m.x('narA [gatvA] pacanti', 'The men cook [after going].') }}
+
+
+Here is one final guideline:
+
+!!! rule
+    When there's no clear or simple pattern, roots should be something common.
+
+With this in mind, we can find a root for `gacchati`:
+
+!!! examples
+    - {{ m.x('[gam] -> gacchati', 'He goes.') }}
+
+
+## Irregular roots
+Sometimes, the words involved are too difficult to explain:
+
+!!! examples
+    - {{ m.x('[tiSThanti] vinA naraiH', '[They stand] without the men.') }}
+    - {{ m.x('naraH [sthAsyati]', 'The man [will stand].') }}
+    - {{ m.x('naraH [sthIyate]', 'The man [is stationed].') }}
+    - {{ m.x('pazyAmi [sthAnam]', 'I see [the place].') }}
+    - {{ m.x('naraH [sthitaH]', 'The man [is standing].') }}
+    - {{ m.x('naro [sthitvA] zocati', 'The man grieves [after standing].') }}
+
+
+Forms like these exist because Sanskrit is an old language and we do not fully understand its early history. Panini coped with these forms by adding extra rules and exceptions. He defined the root of `tiSThati` like this:
+
+!!! examples
+    - {{ m.x('[sthA] -> tiSThati', 'stand -> He stands.') }}
+
+
+But it would take too long to explain why, so let's leave the discussion here for now.
+
+Some changes can also seem totally bizarre:
+
+!!! examples
+    - {{ m.x('kRSNAH [pazyanti]', 'The black ones [see].') }}
+    - {{ m.x('naro [drakSyati]', 'The man [will see].') }}
+    - {{ m.x('naro [dRzyate]', 'The man [is seen].') }}
+    - {{ m.x('corayAmi [darzakAya]', 'I steal for [the one who sees].') }}
+    - {{ m.x('naro [dRSTaH] zareSu', 'The man [has been seen] among the arrows.') }}
+    - {{ m.x('devAnAM gajaM [dRSTvA] manye', 'I think [after seeing] the elephant of the gods.') }}
+
+
+The roots here are `paz` and `dRz`. This is a strange case where two roots have started to complement each other. It's like two trees fusing into one. The convention is to refer to these two with just `dRz`:
+
+!!! examples
+    - {{ m.x('[dRz] -> pazyati', 'see -> He sees.') }}
+
+
+Panini's system has some flaws, and it is not the only system available. But regardless of its imperfections, it has been *extremely* successful for thousands of years. All Sanskrit texts use it, and this guide will do the same.
