@@ -767,7 +767,8 @@
     {
         "name": "Plain vowels",
         "deps": [
-            "devanagari"
+            "devanagari",
+            "marks"
         ]
     },
     {
