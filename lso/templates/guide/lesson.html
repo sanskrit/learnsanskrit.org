@@ -9,7 +9,7 @@
 {% block content %}
     <article>
     {% block article %}
-        <h1>{{ lesson.name }}</h1>
+        <h1>{% filter markdown %}{{ lesson.name }}{% endfilter %}</h1>
 
         {% set predecessors = lesson.predecessors() %}
         {% if predecessors %}

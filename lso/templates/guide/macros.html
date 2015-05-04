@@ -66,6 +66,15 @@
 </ul>
 {% endmacro %}
 
+
+{% macro svg(path) %}
+<div id="{{ path }}"></div>
+{% assets output="gen/d3/"+path+".js", "guide/d3/"+path+".js" %}
+    <script type="text/javascript" src="{{ ASSET_URL }}"></script>
+{% endassets %}
+{% endmacro %}j
+
+
 {# An alternative to `verb`, which still isn't working. #}
 {% macro manual_verb(root, forms, caption) %}
 <table class="paradigm">
@@ -88,7 +97,7 @@
 </table>
 {% endmacro %}
 
-{% macro manual_nominal(stem, forms) %}
+{% macro manual_nominal(stem, forms, colors=None) %}
 <table class="paradigm">
     <tr>
         <th>{{ stem|sa1 }}</th>
@@ -98,9 +107,16 @@
     </tr>
     {% for row in forms %}
     <tr>
-        <th>Case {{ loop.index }}</th>
+        {% set case = loop.index %}
+        <th>Case {{ case }}</th>
         {% for form in row %}
-        <td>{{ form|sa1 }}<br />{{ form|sa2 }}</td>
+            {% set number = loop.index %}
+            {% if colors %}
+                {% set class = colors[case - 1][number - 1] %}
+            {% else %}
+                {% set class="" %}
+            {% endif %}
+            <td class="{{ class }}">{{ form|sa1 }}<br />{{ form|sa2 }}</td>
         {% endfor %}
     </tr>
     {% endfor %}

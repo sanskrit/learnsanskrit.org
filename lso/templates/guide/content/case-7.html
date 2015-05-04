@@ -1,0 +1,63 @@
+Review
+------
+We have seen six cases so far. Five connect a noun to some action:
+
+!!! examples
+    - {{ m.x('gajaz carati', 'The elephant walks.') }}
+    - {{ m.x('gajaM pazyAmi', 'I see the elephant.') }}
+    - {{ m.x('gajair gacchanti', 'They go by means of the elephants.') }}
+    - {{ m.x('gajAya gacchanti', 'They go for the elephant.') }}
+    - {{ m.x('gajAd gacchanti', 'They go from the elephant.') }}
+
+and the sixth connects a noun to another noun:
+
+!!! examples
+    - {{ m.x('bAlasya gajaz carati', "The boy's elephant walks.") }}
+
+
+"in"
+----
+
+Our next case, which we can call <dfn>case 7</dfn>, has several different roles that aren't worth analyzing in detail. Simply, we can say that it has the same meaning as the English word "in."
+
+!!! examples
+    - {{ m.x('[loke] caranti mRgAH', 'The deer roam <mark>in the world</mark>.') }}
+    - {{ m.x('bhavanti siMhA [grAmayoH]', 'Lions are <mark>in the two villages</mark>.') }}
+    - {{ m.x('[gRheSu] jAyante putrAH', 'Sons are born <mark>in the houses</mark>.') }}
+
+
+As usual, we can use multiple cases at once:
+
+!!! examples
+    - {{ m.x('gRhe devaM pazyAmi', 'I see the god in the house.') }}
+    - {{ m.x('loke narA bhavanti', 'The men are in the world.') }}
+    - {{ m.x('grAme devAH putrAMz corayanti', 'The gods steal the sons in the village.') }}
+
+
+<section class="sandhi">
+{% filter markdown %}
+## Blending `-e`
+
+The letter `e` behaves simply enough:
+
+!!! examples
+    - {{ m.x('gRhe pacadhve', 'You all cook for yourselves in the house') }}
+    - {{ m.x('gRhe jAyete putrau', "The two sons are born in the house.") }}
+    - {{ m.x('gRhe manyAmahe', 'We think in the house.') }}
+
+
+Still, what happens when `e` is near vowels? This, too, is <a href="{{ m.lesson_url('semivowels') }}">familiar to us already</a>: a sentence like `grAme icchanti` will become `grAmayicchanti`. But when this blending occurred between two words, Sanskrit speakers went one step further. They thought `y` was a tiresome letter to have to say between these two words, so they removed it entirely:
+
+!!! examples
+    - {{ m.x('grAme icchanti -> grAma icchanti', 'They want in the village.') }}
+
+
+But consider a phrase like `kRSNaH azvaH`, which becomes `kRSNo 'zvaH`. `aH` overwhelms the `a`, and `e` does the same.
+
+!!! examples
+    - {{ m.x("gRhe azvaH bhavati -> gRhe 'zvo bhavati", 'The horse is in the house.') }}
+
+
+This change is unusual and against our Sanskrit intuition. But it is the sort of change that we must just accept.
+{% endfilter %}
+</section>

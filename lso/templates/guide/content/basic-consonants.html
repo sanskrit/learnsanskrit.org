@@ -154,16 +154,22 @@ Finally, we reach the lips:
 This arrangement of sounds -- from `ka` and `kha` to `ma` -- is over 2800 years old. It stands at the beginning of the Indian linguistic tradition.
 
 
-Blending stops and nasals
--------------------------
+<section class="sandhi">
+{% filter markdown %}
+Blending stops
+--------------
 
-Like vowels, consonants can blend together. Consonants blend according to some simple rules, but since this lesson is already quite long, let's look at just one rule:
+Like vowels, consonants can blend together. Consonants blend according to some simple rules. Let's look at just two of them.
+
+### Stops and nasals
+
+Consider these two sentences:
 
 !!! examples
     - {{ m.x('tat na Asyam', 'That is not a mouth.') }}
     - {{ m.x('rAT naraH', 'The king is a man.') }}
 
-Try reading the first sentence out loud ten times.
+Try reading the first sentence out loud a few times.
 
 As you might have noticed, it is tiresome to shift from `t` to `n` when pronouncing `tat na`. Because of clustered sounds like these, speaking Sanskrit can feel hard and slow.
 
@@ -172,14 +178,25 @@ The earliest Sanskrit speakers solved this problem by *blending stops and nasals
 !!! examples
     - {{ m.x('tat na Asyam -> tan nAsyam', 'That is not a mouth.') }}
 
-But notice that when a stop becomes a nasal, it keeps its point of sound:
+Notice that the new sound use the same point of sound as before:
 
 !!! examples
     - {{ m.x('rAT naraH -> rAN naraH', 'The king is a man.') }}
 
-We should note that too much blending can be a bad thing. Letters help to make one word **distinct** from another. This is the main job of the stop consonants. So, stops only blend **between words**, not inside them.
+### Voiced stops
 
-Try to blend the words in the phrases below:
+{# TODO: better intro #}
+
+A stop uses the same "voice" as the stop that follows it. If the stop is voiced, the stop is voiced; and if the stop is unvoiced, the stop is unvoiced:
+
+!!! examples
+    - {{ m.x('tat gacchati -> tad gacchati', 'That goes.') }}
+    - {{ m.x('tat asat -> tad asat', 'That is false.') }}
+
+!!! note
+    Too much blending can be a bad thing. Letters help to make one word **distinct** from another. This is the main job of the stop consonants. So, the changes above occur only **between words**, not inside them.
+
+Now, try to blend the words in the phrases below:
 
 !!! examples
     - {{ m.x('tasmAt na arhA vayaM hantum') }}
@@ -207,7 +224,8 @@ These phrases are from the <cite>Bhagavad Gita</cite>:
         My (delusion is gone, and I've come to wisdom,) by your favor, O Krishna.
 
         <cite>Bhagavad Gita</cite> 18.73
-
+{% endfilter %}
+</section>
 
 A handful of consonants
 -----------------------

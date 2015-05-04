@@ -1,0 +1,67 @@
+Review
+------
+
+We have seen four cases. Each corresponds to a different role.
+
+!!! examples
+    - {{ m.x('gajaz carati', 'The elephant walks.') }}
+    - {{ m.x('gajaM pazyAmi', 'I see the elephant.') }}
+    - {{ m.x('gajair gacchanti', 'They go by means of the elephants.') }}
+    - {{ m.x('gajAya gacchanti', 'They go for the elephant.') }}
+
+
+"from"
+------
+
+The fifth case (<dfn>case 5</dfn>) is slightly more abstract. It represents the abstract idea of **movement away from something**. Generally, we can translate it with the English word "from":
+
+!!! examples
+    - {{ m.x('mRgAz caranti [grAmAt]', 'The deer walk [from the village].') }}
+    - {{ m.x('putrau gacchato [gRhAbhyam]', 'The two sons go [from the two houses].') }}
+    - {{ m.x('zarAH patanti [cApebhyaH]', 'The arrows fly [from the bows].') }}
+
+
+Noun table
+----------
+
+{{ m.manual_nominal(
+    stem='gaja',
+    forms=[['gajaH', 'gajO', 'gajAH'],
+        ['gajam', 'gajO', 'gajAn'],
+        ['gajena', 'gajAByAm', 'gajEH'],
+        ['gajAya', 'gajAByAm', 'gajeByaH'],
+        ['gajAt', 'gajAByAm', 'gajeByaH']]
+) }}
+
+<section class="sandhi">
+{% filter markdown %}
+Blending `-t`
+-------------
+
+Some of the words in case 5 end in `-t`. Since `t` is a stop consonant, it follows the usual rules:
+
+!!! examples
+    - {{ m.x('tat na Asyam -> tan nAsyam', 'That is not a mouth.') }}
+    - {{ m.x('tat gacchati -> tad gacchati', 'That goes.') }}
+
+But `t` is an especially flexible sound. If the sound that follows it *uses the tongue*, then `t` will change to use the same point of sound:
+
+!!! examples
+    - {{ m.x('grAmAt carati -> grAmAc carati', 'He walks from the village.') }}
+    - {{ m.x("kRSNAt mRgAt jAyate -> kRSNAn mRgAj jAyate", 'It is born from the black deer.') }}
+    - {{ m.x('tat TIkAsu -> taT TIkAsu', 'That is in the commentaries.') }}
+    - {{ m.x('tat Damarau -> taD Damarau', 'That is in the drum.') }}
+
+When followed by `l`, `t` becomes `l`:
+
+!!! examples
+    - {{ m.x('gRhAt labhate -> gRhAl labhate', 'He obtains from the house.') }}
+
+And when followed by `z`, the two combine and become `cch`:
+{# TODO: clearer #}
+
+!!! examples
+    - {{ m.x('tat zreyaH -> tac chreyaH', 'That is better.') }}
+
+{% endfilter %}
+</section>

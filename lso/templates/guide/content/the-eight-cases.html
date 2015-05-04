@@ -1,0 +1,71 @@
+Meanings
+--------
+
+We have now studied all eight of the Sanskrit noun cases. Six cases connect a noun to some action:
+
+!!! examples
+    - {{ m.x('gajaz carati', 'The elephant walks. (case 1)') }}
+    - {{ m.x('gajaM pazyAmi', 'I see the elephant. (case 2)') }}
+    - {{ m.x('gajair gacchanti', 'They go by means of the elephants. (case 3)') }}
+    - {{ m.x('gajAya gacchanti', 'They go for the elephant. (case 4)') }}
+    - {{ m.x('gajAd gacchanti', 'They go from the elephant. (case 5)') }}
+    - {{ m.x('grAme tiSThasi', 'You stand in the village. (case 6)') }}
+
+
+One case connects a noun to another noun:
+
+!!! examples
+    - {{ m.x('narasya gajam pazyAmaH', "We see the man's elephant. (Case 6)") }}
+
+
+And the last describes the audience of the sentence:
+
+!!! examples
+    - {{ m.x('azvaM pazyAmi vIra', "O hero, I see a horse. (Case 8)") }}
+
+
+Table
+-----
+
+{{ m.manual_nominal(
+    stem='gaja',
+    forms=[['gajaH', 'gajO', 'gajAH'],
+        ['gajam', 'gajO', 'gajAn'],
+        ['gajena', 'gajAByAm', 'gajEH'],
+        ['gajAya', 'gajAByAm', 'gajeByaH'],
+        ['gajAt', 'gajAByAm', 'gajeByaH'],
+        ['gajasya', 'gajayoH', 'gajAnAm'],
+        ['gaje', 'gajayoH', 'gajezu'],
+        ['gaja', 'gajO', 'gajAH']],
+    colors=[['','c1','c5'],
+        ['', 'c1', ''],
+        ['', 'c2', ''],
+        ['', 'c2', 'c4'],
+        ['', 'c2', 'c4'],
+        ['', 'c3', ''],
+        ['', 'c3', ''],
+        ['', 'c1', 'c5']]
+) }}
+
+You know all of these forms already. But for the sake of practice, learn to recite these forms in order, from `gajaH` and `gajau` in case 1 all the way to `gajAH` in case 8. Doing so will fix these forms in your mind.
+
+### Ambiguities
+Tables are not a fun way to study Sanskrit, but they can make certain trends very clear. In the table above, forms with the same background color (except for white) are identical.
+
+As always, we should rely on context and common sense to help us solve these ambiguities. Note that some of these ambiguities occur because of how sounds blend:
+
+!!! examples
+    - {{ m.x('nara icchati', 'The man wants. (likely)<br />He wants in the man. (unlikely)') }}
+
+
+Common cases
+------------
+
+How often are the different noun cases used? Which are the most important ones to know? This answer can vary from text to text. But in the Bhagavad Gita, the results are quite clear:
+
+<figure>
+    {{ m.svg('case-distribution') }}
+    <figcaption>Distribution of cases in the Bhagavad Gita. Case 1 is by far the most common, followed by case 2. Cases 4 and 5 are by far the most rare.</figcaption>
+</figure>
+
+Of course, you should know the basics of each of the eight cases. But these cases all have subtleties and extra meanings, and it is difficult to study them all at once. So as you continue to study Sanskrit, whether here or elsewhere, be sure to focus on common concepts first!
