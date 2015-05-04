@@ -54,7 +54,7 @@
 
 {# Display Sanskrit sounds with links. #}
 {% macro sounds() %}
-<ul class="sounds sounds-{{ varargs|length }}">
+<ul class="sounds width-{{ varargs|length }}">
     {% for name, filename, desc in varargs %}
     <li>
         <a href="{{ url_for('guide.static', filename='audio/%s.mp3' | format(filename)) }}">

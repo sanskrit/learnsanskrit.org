@@ -1,6 +1,15 @@
 {% import 'guide/macros.html' as m %}
 
-{% macro dev(x) %}{{ x|d }}<br />{{ x|i }}{% endmacro %}
-{% macro rows(data) %}
-{{ m.row_ul(data.split(), callback=dev) }}
+{% macro rows() %}
+{% set first = varargs[0] %}
+<ul class="letters width-{{ first.split()|length }}">
+{% for row in varargs %}
+{% for item in row.split() %}
+    <li>
+        <span class="sounds-letter">{{ item|d }}</span><br />
+        {{ item|i }}
+    </li>
+{% endfor %}
+{% endfor %}
+</ul>
 {% endmacro %}
