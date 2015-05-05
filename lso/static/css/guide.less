@@ -50,18 +50,34 @@ section.sandhi {
     border-color: #ff9999;
 }
 
-.examples {
+section.exercises {
+    border-left: 10px #0bf solid;
+    padding-left: 20px;
+    // TODO: negative margin?
+
+    ol.quiz-questions, ol.quiz-answers {
+        p.sa1, span.sa1 {
+            font-size: 2em;
+            line-height: 1em;
+        }
+        li {
+            margin: 0 0 1em;
+        }
+        p {
+            margin: 0;
+        }
+    }
+}
+
+div.examples ul {
     background: @off-white;
+    list-style: none;
+    overflow: auto;
+    padding: 0;
 
     p.sa1, span.sa1 {
         font-size: 2em;
         line-height: 1em;
-    }
-
-    ul {
-        list-style: none;
-        overflow: auto;
-        padding: 0em;
     }
 
     li {

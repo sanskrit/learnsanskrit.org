@@ -1,6 +1,8 @@
-import jinja2.exceptions
+import json
+import os
 
-from flask import abort, redirect, render_template, url_for
+import jinja2.exceptions
+from flask import abort, current_app, redirect, render_template, url_for
 
 from lso.guide import util
 from lso.lib import LSOBlueprint
@@ -23,9 +25,18 @@ def lesson(slug):
     lesson = Lesson.query.filter(Lesson.slug == slug).first()
     if lesson is not None:
         try:
+            exercises_tail = 'guide/exercises/{}.json'.format(lesson.slug)
+            ex_path = os.path.join(current_app.template_folder, exercises_tail)
+            with open(ex_path) as f:
+                exercises = json.load(f)
+        except IOError:
+            exercises = None
+
+        try:
             kw = {
                 'lesson': lesson,
-                'content_path': 'guide/content/{}.html'.format(lesson.slug)
+                'content_path': 'guide/content/{}.html'.format(lesson.slug),
+                'exercises': exercises
             }
             return render_template('guide/lesson.html', **kw)
         except jinja2.exceptions.TemplateNotFound:

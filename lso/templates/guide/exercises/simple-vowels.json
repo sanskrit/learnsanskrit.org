@@ -1,0 +1,19 @@
+[
+  {
+    "name": "Simple blending",
+    "description": "Blend the highlighted sounds in each Sanskrit phrase.",
+    "example": { "question": "[na a]smi", "answer": "nA" },
+    "items": [
+      { "question": "pANDa[va a]nIkam", "answer": "vA" },
+      { "question": "buddhiM mohaya[si i]va me", "answer": "sI" },
+      { "question": "eSa [tu u]ddezataH", "answer": "tU" },
+      { "question": "[sva a]dhikArapramattaH", "answer": "svA" },
+      { "question": "ceta[na a]cetaneSu", "answer": "nA" },
+      { "question": "bhava[ti i]tyanuzuzruma", "answer": "tI" },
+      { "question": "[vi I]psati", "answer": "vI" },
+      { "question": "prA[Na a]pAna", "answer": "NA" },
+      { "question": "Atma[nA A]tmAnam", "answer": "nA" },
+      { "question": "[na A]pnoti", "answer": "nA" }
+    ]
+  }
+]

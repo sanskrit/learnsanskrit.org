@@ -17,8 +17,28 @@
 {%- endif %}
 {%- endmacro %}
 
-{% macro quiz(items) %}
-    {# TODO #}
+{# Prints a quiz with Sanskrit questions and Sanskrit answers. #}
+{% macro sa_sa_quiz(questions) %}
+<div class="quiz">
+<h3>Questions</h3>
+<ol class="quiz-questions">
+    {% for raw_question, answer in questions %}
+    <li class="question" data-question="{{ question }}">
+        {% set question = raw_question.replace('[', '<mark>').replace(']', '</mark>') %}
+        <p class="quiz-question">{{ question|d }}<br />{{ question|i }}</p>
+    </li>
+    {% endfor %}
+</ol>
+
+<h3>Answers</h3>
+<ol class="quiz-answers">
+    {% for _, answer in questions %}
+        <li class="answer" data-answer="{{ answer }}">
+        <p>{{ answer|d }}<br />{{ answer|i }}</p>
+    </li>
+    {% endfor %}
+</ol>
+</div>
 {% endmacro %}
 
 {# Print a list of lesson links #}

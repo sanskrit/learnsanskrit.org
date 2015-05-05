@@ -18,6 +18,47 @@
         {% endif %}
 
         {% filter markdown %}{% include content_path %}{% endfilter %}
+
+        {% if exercises %}
+        <section class="exercises">
+            {% for quiz in exercises %}
+            <h2>{{ quiz.name }}</h2>
+            {{ quiz.description }}
+            {% if quiz.example %}
+            <p>For example, given this:</p>
+            <div class="examples">
+                <ul>
+                    <li>{{ x(quiz.example.question) }}</li>
+                </ul>
+            </div>
+            <p>the answer is:</p>
+
+            <div class="examples">
+                <ul>
+                    <li>{{ x(quiz.example.answer) }}</li>
+                </ul>
+            </div>
+            {% endif %}
+            <h3>Questions</h3>
+            <ol class="quiz-questions">
+                {% for q in quiz['items'] %}
+                <li>{{ x(q.question) }}</li>
+                {% endfor %}
+            </ol>
+
+            <h3>Answers</h3>
+            <ol class="quiz-answers">
+                {% for q in quiz['items'] %}
+                <li>{{ x(q.answer) }}</li>
+                {% endfor %}
+            </ol>
+            {% endfor %}
+        </section>
+        {% endif %}
     {% endblock %}
     </article>
+
+{% assets output="gen/guide.js", "js/guide.js" %}
+    <script src="{{ ASSET_URL }}"></script>
+{% endassets %}
 {% endblock %}
