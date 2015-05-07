@@ -1,0 +1,19 @@
+[
+  {
+    "name": "Simple blending",
+    "description": "Blend the highlighted sounds in each Sanskrit phrase.",
+    "example": { "question": "[na i]cchati", "answer": "ne" },
+    "items": [
+        { "question": "pa[zya e]tAm", "answer": "zyai" },
+        { "question": "ha[tvA e]tAn", "answer": "tvai" },
+        { "question": "sa[khA i]ti matvA", "answer": "khe" },
+        { "question": "puSNAmi [ca o]SadhIH", "answer": "cau" },
+        { "question": "I[za u]paniSad", "answer": "zo" },
+        { "question": "pu[Nya u]dakeSu", "answer": "Nyo" },
+        { "question": "ma[hA i]SvAsAH", "answer": "he" },
+        { "question": "puruSa e[va i]daM sarvaM", "answer": "ve" },
+        { "question": "utAmRtatva[sya I]zAnaH", "answer": "sye" },
+        { "question": "bA[hya u]dyAnasthita", "answer": "hyo" }
+    ]
+  }
+]
