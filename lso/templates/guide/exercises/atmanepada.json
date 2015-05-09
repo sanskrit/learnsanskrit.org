@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Simple verbs",
+    "language": "en",
+    "numRequired": 7,
+    "description": "Translate into Sanskrit.",
+    "example": { "question": "He obtains.", "answer": "labhate" },
+    "items": [
+      { "question": "He thinks.", "answer": "manyate" },
+      { "question": "The two of them think.", "answer": "manyete" },
+      { "question": "They all think.", "answer": "manyante" },
+      { "question": "You think.", "answer": "manyase" },
+      { "question": "The two of you think.", "answer": "manyethe" },
+      { "question": "You all think.", "answer": "manyadhve" },
+      { "question": "I think.", "answer": "manye" },
+      { "question": "The two of us think.", "answer": "manyAvahe" },
+      { "question": "We all think.", "answer": "manyAmahe" }
+    ]
+  }
+]

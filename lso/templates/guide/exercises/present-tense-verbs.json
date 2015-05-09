@@ -2,7 +2,7 @@
   {
     "name": "Simple verbs",
     "language": "en",
-    "numRequired": 9,
+    "numRequired": 7,
     "description": "Translate into Sanskrit.",
     "example": { "question": "He goes.", "answer": "gacchati" },
     "items": [
