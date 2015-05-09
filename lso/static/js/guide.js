@@ -28,7 +28,11 @@
 
     // Template for the question.
     var questionTemplate = _.template(
-        '<%= exemplify(str) %>'
+        '<% if (data.language === "sa") { %>' +
+        '  <%= exemplify(data.curQuestion.question) %>' +
+        '<% } else { %>' +
+        '  <%= data.curQuestion.question %>' +
+        '<% } %>'
     );
 
     // Template for the answer preview
@@ -72,7 +76,6 @@
     var Quiz = Backbone.Model.extend({
         initialize: function() {
             this.set('numCorrect', 0);
-            this.set('numRequired', 5);  // TODO: don't hardcode
             this.set('curQuestion', null);
             // True iff the user has correctly answered the example.
             this.set('usedExample', false);
@@ -157,7 +160,7 @@
 
         render: function() {
             this.$question.html(
-                questionTemplate({ 'str': this.model.get('curQuestion').question,
+                questionTemplate({ 'data': this.model.attributes,
                                    'exemplify': exemplify }));
 
             var percentComplete = 100.0 * this.model.getFractionDone();

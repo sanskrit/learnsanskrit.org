@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Simple verbs",
+    "language": "en",
+    "numRequired": 9,
+    "description": "Translate into Sanskrit.",
+    "example": { "question": "He goes.", "answer": "gacchati" },
+    "items": [
+      { "question": "He sees.", "answer": "pazyati" },
+      { "question": "The two of them see.", "answer": "pazyataH" },
+      { "question": "They all see.", "answer": "pazyanti" },
+      { "question": "You see.", "answer": "pazyasi" },
+      { "question": "The two of you see.", "answer": "pazyathaH" },
+      { "question": "You all see.", "answer": "pazyatha" },
+      { "question": "I see.", "answer": "pazyAmi" },
+      { "question": "The two of us see.", "answer": "pazyAvaH" },
+      { "question": "We all see.", "answer": "pazyAmaH" }
+    ]
+  }
+]

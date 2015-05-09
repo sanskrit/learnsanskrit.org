@@ -1,6 +1,14 @@
 {% import 'guide/macros.html' as m %}
-{% from 'guide/macros.html' import examples, x %}
+{% from 'guide/macros.html' import examples %}
 {% extends 'base.html' %}
+
+{% macro quiz_question(quiz, q) %}
+    {% if quiz['language'] == 'sa' %}
+        {{ m.x(q.question) }}
+    {% else %}
+        {{ q.question }}
+    {% endif %}
+{% endmacro %}
 
 {% block title %}{{ lesson.name }} | learnsanskrit.org{% endblock %}
 
@@ -29,28 +37,28 @@
             <p>For example, given this:</p>
             <div class="examples">
                 <ul>
-                    <li>{{ x(quiz.example.question) }}</li>
+                    <li>{{ quiz_question(quiz, quiz.example) }}</li>
                 </ul>
             </div>
             <p>the answer is:</p>
 
             <div class="examples">
                 <ul>
-                    <li>{{ x(quiz.example.answer) }}</li>
+                    <li>{{ m.x(quiz.example.answer) }}</li>
                 </ul>
             </div>
             {% endif %}
             <h3>Questions</h3>
             <ol class="quiz-questions">
                 {% for q in quiz['items'] %}
-                <li>{{ x(q.question) }}</li>
+                <li>{{ quiz_question(quiz, q) }}</li>
                 {% endfor %}
             </ol>
 
             <h3>Answers</h3>
             <ol class="quiz-answers">
                 {% for q in quiz['items'] %}
-                <li>{{ x(q.answer) }}</li>
+                <li>{{ m.x(q.answer) }}</li>
                 {% endfor %}
             </ol>
             {% endfor %}

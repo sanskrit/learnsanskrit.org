@@ -1,6 +1,8 @@
 [
   {
     "name": "Simple blending",
+    "language": "sa",
+    "numRequired": 7,
     "description": "Blend the highlighted sounds in each Sanskrit phrase.",
     "example": { "question": "[na a]smi", "answer": "nA" },
     "items": [
