@@ -21,6 +21,7 @@
 
         {% if exercises %}
         <section class="exercises">
+            <div class="wrapper">
             {% for quiz in exercises %}
             <h2>{{ quiz.name }}</h2>
             {{ quiz.description }}
@@ -53,6 +54,7 @@
                 {% endfor %}
             </ol>
             {% endfor %}
+            </div>
         </section>
         {% endif %}
     {% endblock %}
