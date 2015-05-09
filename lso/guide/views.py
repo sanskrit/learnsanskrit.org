@@ -2,7 +2,7 @@ import json
 import os
 
 import jinja2.exceptions
-from flask import abort, current_app, redirect, render_template, url_for
+from flask import abort, current_app, Response, redirect, render_template, url_for
 
 from lso.guide import util
 from lso.lib import LSOBlueprint
@@ -43,3 +43,14 @@ def lesson(slug):
             return render_template('guide/placeholder.html', lesson=lesson)
     else:
         abort(404)
+
+@bp.route('/<slug>:exercises')
+def exercises(slug):
+    try:
+        exercises_tail = 'guide/exercises/{}.json'.format(slug)
+        ex_path = os.path.join(current_app.template_folder, exercises_tail)
+        with open(ex_path) as f:
+            exercises = json.load(f)
+            return Response(json.dumps(exercises), mimetype='application/json')
+    except IOError:
+        return Response('{}', mimetype='application/json')
