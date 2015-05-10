@@ -344,7 +344,8 @@
         "name": "`dvandva` compounds",
         "deps": [
             "compounds",
-            "ca-and-vaa"
+            "ca-and-vaa",
+            "neuter-and-feminine-nouns"
         ]
     },
     {
