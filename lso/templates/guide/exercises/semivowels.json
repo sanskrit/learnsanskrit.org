@@ -1,0 +1,21 @@
+[
+  {
+    "name": "Simple blending",
+    "language": "sa",
+    "numRequired": 7,
+    "description": "Blend the highlighted sounds in each Sanskrit phrase.",
+    "example": { "question": "i[ti a]bhavat", "answer": "tya" },
+    "items": [
+      { "question": "vizanti vaktrA[Ni a]bhivijvalanti", "answer": "Nya" },
+      { "question": "ya[di a]pyete na pazyanti", "answer": "dya" },
+      { "question": "rAmagi[ri A]zrameSu", "answer": "ryA" },
+      { "question": "na ca zakno[mi a]vasthAtum", "answer": "mya" },
+      { "question": "na [tu e]vAhaM jAtu nAsam", "answer": "tve" },
+      { "question": "mahe[Su A]sAH", "answer": "SvA" },
+      { "question": "na karma[su a]nusajjate", "answer": "sva" },
+      { "question": "tejasvi [nau a]dhItam astu", "answer": "nAva" },
+      { "question": "[dvau i]mau puruSau loke", "answer": "dvAvi" },
+      { "question": "avApya bhU[mau a]sapatnam Rddham", "answer": "mAva" }
+    ]
+  }
+]
