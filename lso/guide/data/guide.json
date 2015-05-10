@@ -661,8 +661,9 @@
     {
         "name": "Verbless sentences",
         "deps": [
-            "how-sanskrit-works",
-            "case-1"
+            "present-tense-verbs",
+            "the-eight-cases",
+            "adjectives"
         ]
     },
     {
