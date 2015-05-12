@@ -1,0 +1,93 @@
+Review
+------
+
+A noun stem combines with an *ending* to create a complete word. This ending has some *extra information* associated with it. Specifically, the ending shows both the *number of things* involved:
+
+!!! examples
+    - {{ m.x('gajo gacchati', 'The elephant goes.') }}
+    - {{ m.x('gajA gacchanti', 'The elephants go.') }}
+
+And the *role* that the noun plays in the sentence. This is shown by using one of the eight *cases*:
+
+!!! examples
+    - {{ m.x('gajo gacchati', 'The elephant goes.') }}
+    - {{ m.x('gajaM gacchati', 'He goes to the elephant.') }}
+
+
+Case, number, and ...
+---------------------
+
+Beyond case and number, there's a third quality that noun endings have. Consider these two examples:
+
+!!! examples
+    - {{ m.x('[bAlo] gacchati', 'The [boy] goes.') }}
+    - {{ m.x('[bAlA] gacchati', 'The [girl] goes.') }}
+
+`bAlaH` and `bAlA` both refer to young human beings. Both words use case 1, and both refer to one object. The difference is the *gender* of the two: boys are male, and girls are female.
+
+Just as human beings have male and female genders, Sanskrit nouns have male and female <dfn>gender</dfn> as well. Sanskrit also has a third gender for things that are neither male or female.
+
+... At least, that's what happens in theory. In practice, noun genders usually don't make sense:
+
+!!! examples
+    - {{ m.x('vRkSaH', 'tree (male gender)') }}
+    - {{ m.x('senA', 'army (female gender)') }}
+
+But if the noun refers to something alive, then the noun gender usually matches the biological gender:
+
+!!! examples
+    - {{ m.x('[gajo] gacchati', 'The [male elephant] goes.') }}
+    - {{ m.x('[gajA] gacchati', 'The [female elephant] goes.') }}
+
+To make the difference between biological gender and noun gender clear, let's use the following terms:
+
+- "Male" nouns will be called <dfn>masculine</dfn>. Biologically male things usually use masculine nouns, but not always.
+- "Female" nouns will be called <dfn>feminine</dfn>. Biologically female things usually use feminine nouns, but not always.
+- Other nouns will be called <dfn>neuter</dfn>. Inanimate objects usually use neuter nouns, but not always.
+
+
+!!! note
+    Gender has almost totally disappeared from modern English, but there are still some words that have it. "He" is male, "she" is female, and "it" is neither one. Sanskrit has these same three genders.
+
+
+Masculine nouns
+---------------
+
+The nouns that we have seen so far are all masculine nouns. For review, here are the endings for the masculine noun `gaja`:
+
+{% include 'guide/include/gaja-m.html' %}
+
+Feminine nouns
+--------------
+
+Feminine nouns deserve their own lesson. Let's skip them for now.
+
+
+Neuter nouns
+------------
+
+The neuter gender mostly uses the same endings as the masculine gender. The exceptions are cases 1, 2, and 8. But fortunately, there isn't much to memorize:
+
+{% include 'guide/include/phala-n.html' %}
+
+Although case 1 and case 2 use the same endings, the case is usually clear from context:
+
+!!! examples
+    - {{ m.x('nagaraM gacchati', 'He goes to the city.') }}
+    - {{ m.x('samudre pazyAvaH', 'The two of us see the two oceans.') }}
+    - {{ m.x('phalAnIcchAmi', 'I want the fruits.') }}
+
+<section class="sandhi">
+{% filter markdown %}
+
+Words referring to two things
+-----------------------------
+
+When a word's ending refers to **two things** and ends in a vowel, it never blends. In other words, it is **immune** to all blending changes:
+
+!!! examples
+    - {{ m.x('nagare icchasi', 'You want the two cities.') }}
+    - {{ m.x('nagara icchasi', 'You want in the city.') }}
+
+{% endfilter %}
+</section>
