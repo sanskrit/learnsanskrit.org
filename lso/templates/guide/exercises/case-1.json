@@ -1,0 +1,21 @@
+[
+  {
+    "name": "Case 1",
+    "language": "sa",
+    "numRequired": 7,
+    "description": "Fix the sentence by inflecting the noun. Blend where appropriate.",
+    "example": { "question": "(gaja) gacchati", "answer": "gajo gacchati" },
+    "items": [
+      { "question": "(nara) dizati", "answer": "naro dizati" },
+      { "question": "(gaja) dizataH", "answer": "gajau dizataH" },
+      { "question": "(azva) dizanti", "answer": "azvA dizanti" },
+      { "question": "(gaja) icchati", "answer": "gaja icchati" },
+      { "question": "(nara) icchanti", "answer": "narA icchanti" },
+      { "question": "(azva) tiSThati", "answer": "azvas tiSThati" },
+      { "question": "(gaja) tiSThanti", "answer": "gajAs tiSThanti" },
+      { "question": "(nara) asyati", "answer": "naro 'syati" },
+      { "question": "(azva) asyati", "answer": "azvo 'syati" },
+      { "question": "(gaja) asyanti", "answer": "gajA asyanti" }
+    ]
+  }
+]
