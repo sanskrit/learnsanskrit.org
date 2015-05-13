@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Simple blending",
+    "language": "sa",
+    "numRequired": 7,
+    "description": "Blend the highlighted sound in each Sanskrit phrase.",
+    "example": { "question": "ta[t] asat", "answer": "d" },
+    "items": [
+      { "question": "tasmA[t] nArhA vayaM hantum", "answer": "n" },
+      { "question": "tvatprasAdA[t] mayAcyuta", "answer": "n" },
+      { "question": "samya[k] vyavasito hi saH", "answer": "g" },
+      { "question": "pRtha[k] bAlAH pravadanti", "answer": "g" },
+      { "question": "avinAzi tu ta[t] viddhi", "answer": "d" },
+      { "question": "pApam evAzraye[t] asmAn", "answer": "d" },
+      { "question": "tva[k] caiva paridahyate", "answer": "k" },
+      { "question": "zaGkhAn dadhmuH pRtha[k] pRthak", "answer": "k" },
+      { "question": "na kazci[t] kartum arhati", "answer": "t" },
+      { "question": "ta[t] tvam asi", "answer": "t" }
+    ]
+  }
+]
+
