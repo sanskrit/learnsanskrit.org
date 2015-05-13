@@ -1,0 +1,23 @@
+[
+  {
+    "name": "What's the sound?",
+    "language": "sa",
+    "numRequired": 7,
+    "description": "Give the \"s\" consonant with the same point of sound.",
+    "example": { "question": "ta", "answer": "sa" },
+    "items": [
+      { "question": "ca", "answer": "za" },
+      { "question": "cha", "answer": "za" },
+      { "question": "ja", "answer": "za" },
+      { "question": "Ja", "answer": "za" },
+      { "question": "Ta", "answer": "Sa" },
+      { "question": "Dha", "answer": "Sa" },
+      { "question": "Na", "answer": "Sa" },
+      { "question": "tha", "answer": "sa" },
+      { "question": "da", "answer": "sa" },
+      { "question": "dha", "answer": "sa" },
+      { "question": "na", "answer": "sa" }
+    ]
+  }
+]
+
