@@ -1,0 +1,22 @@
+[
+  {
+    "name": "What's the sound?",
+    "language": "sa",
+    "numRequired": 7,
+    "description": "Change the consonant to use the same voice and aspiration as `ha`.",
+    "example": { "question": "ka", "answer": "gha" },
+    "items": [
+      { "question": "kha", "answer": "gha" },
+      { "question": "ga", "answer": "gha" },
+      { "question": "ca", "answer": "jha" },
+      { "question": "cha", "answer": "jha" },
+      { "question": "Ta", "answer": "Dha" },
+      { "question": "Da", "answer": "Dha" },
+      { "question": "tha", "answer": "dha" },
+      { "question": "da", "answer": "dha" },
+      { "question": "pa", "answer": "bha" },
+      { "question": "pha", "answer": "bha" }
+    ]
+  }
+]
+
