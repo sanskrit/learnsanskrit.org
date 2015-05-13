@@ -14,9 +14,31 @@ import filters
 bp = LSOBlueprint('guide', __name__, url_prefix='/guide')
 
 
+def exercises_path_for_slug(slug):
+    """Given `slug`, return the path where we expect to find exercises.
+
+    The path is not guaranteed to exist.
+
+    :param slug: a lesson slug
+    """
+    exercises_tail = 'guide/exercises/{}.json'.format(slug)
+    return os.path.join(current_app.template_folder, exercises_tail)
+
+
 @bp.route('/')
 def index():
-    sorted_lessons = util.lesson_sort(Lesson.query.all())
+    """This function checks whether a lesson has exercises by reading
+    a bunch of files. This is obviously hacky and slow. But it's good
+    enough for now.
+    """
+    sorted_lessons = []
+    for lesson in util.lesson_sort(Lesson.query.all()):
+        data = {
+            'name': lesson.name,
+            'slug': lesson.slug,
+            'has_exercises': os.path.exists(exercises_path_for_slug(lesson.slug))
+        }
+        sorted_lessons.append(data)
     return render_template('guide/index.html', lessons=sorted_lessons)
 
 
@@ -44,11 +66,11 @@ def lesson(slug):
     else:
         abort(404)
 
+
 @bp.route('/<slug>:exercises')
 def exercises(slug):
     try:
-        exercises_tail = 'guide/exercises/{}.json'.format(slug)
-        ex_path = os.path.join(current_app.template_folder, exercises_tail)
+        ex_path = exercises_path_for_slug(slug)
         with open(ex_path) as f:
             exercises = json.load(f)
             return Response(json.dumps(exercises), mimetype='application/json')

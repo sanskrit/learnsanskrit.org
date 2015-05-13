@@ -46,7 +46,12 @@
 {% if lessons %}
 <ul class="lesson-list">
     {%- for lesson in lessons %}
-    <li><a href="{{ url_for('guide.lesson', slug=lesson.slug) }}">{{ lesson.name }}</a></li>
+    <li>
+        <a class="lesson-link" href="{{ url_for('guide.lesson', slug=lesson.slug) }}">{{ lesson.name }}</a>
+        {% if lesson.has_exercises %}
+        <a class="ex-link" href="{{ url_for('.exercises', slug=lesson.slug) }}">Exercises</a>
+        {% endif %}
+    </li>
     {%- endfor %}
 </ul>
 {% endif %}
