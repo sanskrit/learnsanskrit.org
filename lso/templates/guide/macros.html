@@ -47,7 +47,7 @@
 <ul class="lesson-list">
     {%- for lesson in lessons %}
     <li>
-        <a class="lesson-link" href="{{ url_for('guide.lesson', slug=lesson.slug) }}">{{ lesson.name }}</a>
+        <a class="lesson-link" href="{{ url_for('guide.lesson', slug=lesson.slug) }}">{{ lesson.name|transliterate_backticks }}</a>
         {% if lesson.has_exercises %}
         <a class="ex-link" href="{{ url_for('.exercises', slug=lesson.slug) }}">Exercises</a>
         {% endif %}

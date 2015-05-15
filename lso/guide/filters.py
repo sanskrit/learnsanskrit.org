@@ -26,6 +26,20 @@ def inject_functions():
     }
 
 
+def transliterate_backticks(text, tag='span'):
+    """Transliterate text wrapped in backticks.
+
+    This is for printing titles and headers. Input strings are pulled
+    from some data source (either the database or some structured file).
+    """
+    items = text.split('`')
+    for index, s in enumerate(items):
+        # in backtick
+        if index % 2:
+            items[index] = i(s, tag=tag)
+    return Markup(''.join(items))
+
+
 def d(text, tag='span', to=sanscript.DEVANAGARI):
     """Transliterate Harvard-Kyoto (primary)."""
     return sa1(Markup(text), sanscript.HK, to, tag=tag, safe=True)

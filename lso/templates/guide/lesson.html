@@ -10,14 +10,14 @@
     {% endif %}
 {% endmacro %}
 
-{% block title %}{{ lesson.name }} | learnsanskrit.org{% endblock %}
+{% block title %}{{ lesson.name|transliterate_backticks(None) }} | learnsanskrit.org{% endblock %}
 
 {% block body_id %}guide{% endblock %}
 
 {% block content %}
     <article>
     {% block article %}
-        <h1>{% filter markdown %}{{ lesson.name }}{% endfilter %}</h1>
+        <h1>{{ lesson.name|transliterate_backticks }}</h1>
 
         {% set predecessors = lesson.predecessors() %}
         {% if predecessors %}

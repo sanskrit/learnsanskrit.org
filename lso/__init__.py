@@ -91,6 +91,7 @@ template_filters = [
     gf.d,
     gf.foot,
     gf.i,
+    gf.transliterate_backticks,
     gf.render,
     gf.verb_data,
 ]
