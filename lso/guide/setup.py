@@ -7,7 +7,7 @@ import re
 
 import lso.database
 import lso.util
-from .models import Lesson, LessonEdge
+from .models import Lesson, LessonEdge, Unit
 
 __all__ = ['run']
 
@@ -23,6 +23,12 @@ def build_graph():
             if 'slug' not in lesson:
                 lesson['slug'] = slugify(lesson['name'])
         return json_data
+
+
+def load_units():
+    """Load the lesson graph and populate any missing fields."""
+    with open(os.path.join(DATA_DIR, 'units.json')) as f:
+        return json.loads(lso.util.json_minify(f.read()))
 
 
 def slugify(title):
@@ -43,12 +49,13 @@ def slugify(title):
     return '-'.join(returned).lower()
 
 
-def add_lessons(graph_data, session):
+def add_lessons(graph_data, unit_data, session):
     """Store the lesson DAG in the database.
 
     :param graph_data: the lesson DAG, as Python data
     :param sessionclass: some session class
     """
+    # slug -> Lesson
     lesson_map = {}
 
     for datum in graph_data:
@@ -60,6 +67,13 @@ def add_lessons(graph_data, session):
         slug = datum['slug']
         deps = [lesson_map[dep] for dep in datum['deps']]
         lesson_map[slug].add_dependencies(*deps)
+
+    for datum in unit_data:
+        unit = Unit(name=datum['name'], description=datum['description'])
+        session.add(unit)
+        for i, slug in enumerate(datum['lessons']):
+            lesson_map[slug].unit = unit
+            lesson_map[slug].position = i
 
     session.commit()
 
@@ -73,16 +87,19 @@ def drop(app):
     with app.app_context():
         LessonEdge.__table__.drop(lso.database.db.engine)
         Lesson.__table__.drop(lso.database.db.engine)
+        Unit.__table__.drop(lso.database.db.engine)
 
 
 def seed(app):
     with app.app_context():
         assert not Lesson.query.count()
         graph_data = build_graph()
-        add_lessons(graph_data, lso.database.db.session)
+        unit_data = load_units()
+        add_lessons(graph_data, unit_data, lso.database.db.session)
 
 
 def delete(app):
     with app.app_context():
         LessonEdge.query.delete()
         Lesson.query.delete()
+        Unit.query.delete()

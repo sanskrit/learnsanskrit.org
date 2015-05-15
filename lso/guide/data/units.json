@@ -1,0 +1,53 @@
+[
+    {
+        "name": "About",
+        "description": "A bit of information about the guide.",
+        "lessons": [
+            "introduction"
+        ]
+    },
+    {
+        "name": "Sounds",
+        "description": "How to pronounce the sounds in Sanskrit. These lessons also show how different sounds relate to each other and why these relationships are vital to understanding Sanskrit.",
+        "lessons": [
+            "simple-vowels",
+            "compound-vowels",
+            "semivowels",
+            "basic-consonants",
+            "s-consonants",
+            "ha",
+            "anusvara-and-visarga",
+            "the-sanskrit-alphabet"
+        ]
+    },
+    {
+        "name": "Basic Sanskrit",
+        "description": "How to create simple Sanskrit sentences. These lessons lay the groundwork for the rest of the guide. Once you understand these, 90% of the battle is won.",
+        "lessons": [
+            "how-sanskrit-works",
+            "verbs",
+            "present-tense-verbs",
+            "atmanepada",
+            "nouns",
+            "case-1",
+            "case-2",
+            "case-3",
+            "case-4",
+            "case-5",
+            "case-6",
+            "case-7",
+            "case-8",
+            "the-eight-cases",
+            "uninflected-words",
+            "na",
+            "ca-and-vaa",
+            "iti",
+            "iva",
+            "neuter-and-feminine-nouns",
+            "adjectives",
+            "compounds",
+            "dvandva-compounds",
+            "tatpurusha-compounds"
+        ]
+    }
+]

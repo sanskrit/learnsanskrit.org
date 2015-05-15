@@ -11,6 +11,11 @@ def graph_data():
 
 
 @pytest.fixture(scope='session')
+def unit_data():
+    return setup.load_units()
+
+
+@pytest.fixture(scope='session')
 def lessons(graph_data, session):
     setup.add_lessons(graph_data, session)
     return Lesson.query.all()
@@ -57,6 +62,25 @@ class TestData:
         """Verify that only a few lessons have no dependencies."""
         no_deps = set(x['slug'] for x in graph_data if not x['deps'])
         assert no_deps == {'introduction'}
+
+    def test_unit_lessons_exist(self, graph_data, unit_data):
+        """Verify that all unit lessons exist."""
+        slugs = set(x['slug'] for x in graph_data)
+
+        for unit in unit_data:
+            for slug in unit['lessons']:
+                assert slug in slugs
+
+    def test_unit_lessons_well_ordered(self, graph_data, unit_data):
+        """Verify that all unit lessons are well ordered."""
+        lesson_map = {L['slug']: L for L in graph_data}
+        seen_slugs = set()
+
+        for unit in unit_data:
+            for slug in unit['lessons']:
+                for x in lesson_map[slug]['deps']:
+                    assert x in seen_slugs
+                seen_slugs.add(slug)
 
 
 class TestAddLessons:

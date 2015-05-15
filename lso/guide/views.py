@@ -6,7 +6,7 @@ from flask import abort, current_app, Response, redirect, render_template, url_f
 
 from lso.guide import util
 from lso.lib import LSOBlueprint
-from .models import Lesson
+from .models import Lesson, Unit
 
 import filters
 
@@ -31,15 +31,8 @@ def index():
     a bunch of files. This is obviously hacky and slow. But it's good
     enough for now.
     """
-    sorted_lessons = []
-    for lesson in util.lesson_sort(Lesson.query.all()):
-        data = {
-            'name': lesson.name,
-            'slug': lesson.slug,
-            'has_exercises': os.path.exists(exercises_path_for_slug(lesson.slug))
-        }
-        sorted_lessons.append(data)
-    return render_template('guide/index.html', lessons=sorted_lessons)
+    units = Unit.query.all()
+    return render_template('guide/index.html', units=units)
 
 
 @bp.route('/<slug>')

@@ -21,7 +21,7 @@ import lso.lib.converters
 # Assets (LESS CSS and assorted JavaScript)
 assets = Environment()
 assets.register('all-css', Bundle('css/base.less', filters='less',
-                                  output='gen/style.css', debug=False))
+                                  output='gen/style.css', debug=False, depends=['a']))
 assets.register('all-js', Bundle(
     # Plugins
     'js/jquery-plugins.js',

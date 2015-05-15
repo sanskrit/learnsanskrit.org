@@ -8,6 +8,11 @@
 {% block content %}
 <article>
 <h1>Sanskrit guide</h1>
-{{ m.lesson_list(lessons) }}
+{% for u in units %}
+    <h2>{{ u.name }}</h2>
+    {% filter markdown %}{{ u.description }}{% endfilter %}
+    {{ m.lesson_list(u.lessons) }}
+    </ul>
+{% endfor %}
 </article>
 {% endblock %}

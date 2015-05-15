@@ -5,12 +5,25 @@ from sqlalchemy.orm import relation, relationship
 from ..database import Base, SimpleBase
 
 
+class Unit(SimpleBase):
+
+    """A conceptual unit."""
+
+    name = Column(String)
+    description = Column(String, unique=True)
+
+    lessons = relationship('Lesson', order_by='Lesson.position')
+
+
 class Lesson(SimpleBase):
 
     """A single lesson."""
 
     name = Column(String)
     slug = Column(String, unique=True)
+    unit_id = Column(ForeignKey(Unit.id))
+    position = Column(Integer)
+
 
     def __repr__(self):
         return '<Lesson(%s,%s)>' % (self.id, self.slug)
