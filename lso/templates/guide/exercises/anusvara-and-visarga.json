@@ -1,0 +1,21 @@
+[
+  {
+    "name": "Simple blending",
+    "language": "sa",
+    "numRequired": 7,
+    "description": "The `visarga` will blend with the sound that follows. Give the new sound.",
+    "example": { "question": "naraH carati", "answer": "z" },
+    "items": [
+      { "question": "gajaH ca", "answer": "z" },
+      { "question": "pANDavAH ca", "answer": "z" },
+      { "question": "sUtrapadaiH caiva", "answer": "z" },
+      { "question": "AdiH ca", "answer": "z" },
+      { "question": "vepathuH ca", "answer": "z" },
+      { "question": "gajaH tudyate", "answer": "s" },
+      { "question": "bhaktAH te", "answer": "s" },
+      { "question": "yajJaiH te", "answer": "s" },
+      { "question": "jyotiH tamasaH", "answer": "s" },
+      { "question": "prAhuH tyAgam", "answer": "s" }
+    ]
+  }
+]
