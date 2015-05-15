@@ -1,0 +1,35 @@
+[
+  {
+    "name": "The eight cases",
+    "language": "en",
+    "numRequired": 15,
+    "description": "Translate to Sanskrit.",
+    "example": { "question": "the horse (case 1)", "answer": "azvaH" },
+    "items": [
+      { "question": "the man (case 1)", "answer": "naraH" },
+      { "question": "the two elephants (case 1)", "answer": "gajau" },
+      { "question": "the horses (case 1)", "answer": "azvAH" },
+      { "question": "the elephant (case 2)", "answer": "gajam" },
+      { "question": "the two horses (case 2)", "answer": "azvau" },
+      { "question": "the men (case 2)", "answer": "narAn" },
+      { "question": "with the horse", "answer": "azvena" },
+      { "question": "with the two men", "answer": "narAbhyAm" },
+      { "question": "with the elephants", "answer": "gajaiH" },
+      { "question": "for the man", "answer": "narAya" },
+      { "question": "for the two elephants", "answer": "gajAbhyAm" },
+      { "question": "for the horses", "answer": "azvebhyaH" },
+      { "question": "from the elephant", "answer": "gajAt" },
+      { "question": "from the two horses", "answer": "azvAbhyAm" },
+      { "question": "from the men", "answer": "narebhyaH" },
+      { "question": "of the horse", "answer": "azvasya" },
+      { "question": "of the two men", "answer": "narayoH" },
+      { "question": "of the elephants", "answer": "gajAnAm" },
+      { "question": "in the man", "answer": "nare" },
+      { "question": "in the two elephants", "answer": "gajayoH" },
+      { "question": "in the horses", "answer": "azveSu" },
+      { "question": "the elephant (case 8)", "answer": "gaja" },
+      { "question": "the two horses (case 8)", "answer": "azvau" },
+      { "question": "the men (case 8)", "answer": "narAH" }
+    ]
+  }
+]
