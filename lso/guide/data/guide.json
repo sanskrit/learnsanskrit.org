@@ -1,8 +1,10 @@
+// Describes the dependencies between different lessons.
 [
     {
         "name": "Introduction",
         "deps": []
     },
+
 
     // ~~~~~~
     // Sounds
@@ -278,6 +280,12 @@
         ]
     },
     {
+        "name": "`mad` and `tvad`",
+        "deps": [
+            "tad-and-etad"
+        ]
+    },
+    {
         "name": "`yad` and other relatives",
         "deps": [
             "tad-and-etad"
@@ -412,47 +420,53 @@
     },
 
 
-    // ~~~~~~~~~~~~~~~~~~~~
-    // Secondary verb stems
-    // ~~~~~~~~~~~~~~~~~~~~
-    // Everything other than the basic 10.
+    // ~~~~~~~~~~~~~~~~~~
+    // Derived verb roots
+    // ~~~~~~~~~~~~~~~~~~
+    // Causals, etc.
     {
-        "name": "Other verb stems",
+        "name": "Making verb roots",
         "deps": [
             "roots"
         ]
     },
     {
-        "name": "Causal verbs",
+        "name": "Causal roots",
         "deps": [
-            "other-verb-stems"
+            "making-verb-roots"
         ]
     },
     {
-        "name": "Desiderative verbs",
+        "name": "Desiderative roots",
         "deps": [
-            "other-verb-stems",
+            "making-verb-roots",
             "doubling"
         ]
     },
     {
-        "name": "Intensive verbs",
+        "name": "Intensive roots",
         "deps": [
-            "other-verb-stems"
+            "making-verb-roots"
         ]
     },
     {
-        "name": "Nominal verbs",
+        "name": "Nominal roots",
         "deps": [
-            "other-verb-stems"
+            "making-verb-roots"
         ]
     },
 
 
-    // ~~~~~~~~~~
-    // Noun stems
-    // ~~~~~~~~~~
-    // Everything other than -a
+    // ~~~~~~~~~~~~
+    // Verb classes
+    // ~~~~~~~~~~~~
+    // The ten verb classes
+    {
+        "name": "Verb classes",
+        "deps": [
+            "roots"
+        ]
+    },
     {
         "name": "The strong `a` class",
         "deps": [
@@ -602,49 +616,71 @@
     },
 
 
+    // ~~~~~~~~
+    // Prefixes
+    // ~~~~~~~~
+    // Noun and verb.
+    {
+        "name": "Verb prefixes",
+        "deps": [
+            "verbs"
+        ]
+    },
+    {
+        "name": "`cvi` prefixes",
+        "deps": [
+            "verb-prefixes"
+        ]
+    },
+    {
+        "name": "Noun prefixes",
+        "deps": [
+            "nouns"
+        ]
+    },
+
 
     // ~~~~~~~~~~~
     // Participles
     // ~~~~~~~~~~~
     // All the common participles.
     {
-        "name": "Participles",
+        "name": "Verbal adjectives",
         "deps": [
-            "roots",
-            "making-words"
+            "root-suffixes"
         ]
     },
     {
-        "name": "Past participles",
+        "name": "`-ta`  and `-tavat`",
         "deps": [
-            "participles"
+            "verbal-adjectives"
         ]
     },
     {
-        "name": "Present participles",
+        "name": "`-at` and `-Ana`",
         "deps": [
-            "participles"
+            "verbal-adjectives"
         ]
     },
     {
-        "name": "Future participles",
+        "name": "`-tavya`, `-anIya`, and `-ya`",
         "deps": [
-            "participles"
+            "verbal-adjectives"
         ]
     },
     {
-        "name": "Other participles",
+        "name": "`-vas`",
         "deps": [
-            "participles",
+            "verbal-adjectives",
             "the-distant-past"
         ]
     },
     {
-        "name": "Participles and \"simultaneous action\"",
+        "name": "Verbal adjectives and \"simultaneous action\"",
         "deps": [
-            "past-participles",
-            "present-participles",
-            "future-participles"
+            "ta-and-tavat",
+            "at-and-ana",
+            "tavya-aniya-and-ya"
         ]
     },
 
@@ -675,12 +711,6 @@
         ]
     },
     {
-        "name": "Verb classes",
-        "deps": [
-            "roots"
-        ]
-    },
-    {
         "name": "Making words",
         "deps": [
             "roots"
@@ -699,18 +729,30 @@
         ]
     },
     {
-        "name": "Infinitives",
+        "name": "`-tum`",
         "deps": [
             "root-suffixes"
         ]
     },
     {
-        "name": "Gerunds",
+        "name": "`-tvA` and `-ya`",
         "deps": [
             "root-suffixes"
         ]
     },
-
+    {
+        "name": "`saMprasAraNa`",
+        "deps": [
+            "tva-and-ya",
+            "ta-and-tavat"
+        ]
+    },
+    {
+        "name": "`nind`, `jIv`, and other roots",
+        "deps": [
+            "the-strong-a-class"
+        ]
+    },
 
 
     // ~~~~~~~
