@@ -1,13 +1,25 @@
-@button-border-radius: 5px;
+.button-colors(@color, @bg1, @bg2) {
+    background: @bg1;
+    color: @color;
+    transition: background 0.3s;
 
-.button-base(@color, @bg1, @bg2) {
-    .border-radius(@button-border-radius);
-    border: 1px solid;
+    &:hover {
+        background: @bg2;
+    }
+}
+
+input[type='button'], input[type='submit'], button, a.btn {
+    @button-border-radius: 5px;
+
+    border: 0;
     display: inline-block;
     font: inherit;
     font-family: sans-serif;
     text-align: center;
     text-decoration: none;
+
+    .border-radius(@button-border-radius);
+    .button-colors(#fff, @gray, darken(@gray, 10%));
 
     &:hover {
         cursor: pointer;
@@ -16,48 +28,25 @@
         position: relative;
         top: 1px;
     }
-
-    .button-colors(@color, @bg1, @bg2);
-}
-
-.button-colors(@color, @bg1, @bg2) {
-    #gradient.vertical(@bg1, @bg2);
-    border-color: @bg2 @bg2 darken(@bg2, 15%);
-    color: @color;
-
-    &:hover {
-        background: @bg2;
-        border-color: darken(@bg2, 10%);
-    }
-}
-
-.button-shadows() {
-    box-shadow: 0px 1px 3px rgba(0,0,0,0.3);
-    text-shadow: 0 1px 1px rgba(0,0,0,0.4);
-}
-
-input[type='button'], input[type='submit'], button, a.btn {
-    .button-base(#000, #fff, darken(@light-gray, 5%));
-
     &.right {
         border-radius: 0 @button-border-radius @button-border-radius 0;
     }
 }
 
 input[type='submit'], button.submit {
-    .button-colors(#fff, lighten(@orange, 15%), @orange);
+    .button-colors(#fff, lighten(@orange, 5%), darken(@orange, 5%));
 }
 
 a.btn.invitation {
     .button-colors(#fff, lighten(@green, 10%), @green);
 }
 
-p.call-to-action {
-    text-align: center;
-}
-
 .jumbo.btn {
     font-size: 1.5em;
     line-height: 2em;
     padding: 0 0.5em;
+}
+
+p.call-to-action {
+    text-align: center;
 }
