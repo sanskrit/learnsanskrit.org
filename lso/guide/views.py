@@ -47,15 +47,13 @@ def lesson(slug):
         except IOError:
             exercises = None
 
-        try:
-            kw = {
-                'lesson': lesson,
-                'content_path': 'guide/content/{}.html'.format(lesson.slug),
-                'exercises': exercises
-            }
-            return render_template('guide/lesson.html', **kw)
-        except jinja2.exceptions.TemplateNotFound:
-            return render_template('guide/placeholder.html', lesson=lesson)
+        kw = {
+            'lesson': lesson,
+            'content_path': 'guide/content/{}.html'.format(lesson.slug),
+            'exercises': exercises
+        }
+        return render_template('guide/lesson.html', **kw)
+
     else:
         abort(404)
 
