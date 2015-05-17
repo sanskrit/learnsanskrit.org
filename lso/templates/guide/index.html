@@ -8,6 +8,13 @@
 {% block content %}
 <article>
 <h1>Sanskrit guide</h1>
+
+<div class="note">
+    <p>This is the new version of the grammar guide. It's still under development. To see the old guide, go to <a href="http://old.learnsanskrit.org">old.learnsanskrit.org</a>.</p>
+
+    <p>You can follow the guide's progress by subscribing to the <a href="https://groups.google.com/forum/#!forum/learnsanskrit">mailing list</a>.</p>
+</diV>
+
 {% for u in units %}
     <h2>{{ u.name }}</h2>
     {% filter markdown %}{{ u.description }}{% endfilter %}
