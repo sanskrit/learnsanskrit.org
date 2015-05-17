@@ -16,8 +16,8 @@ def unit_data():
 
 
 @pytest.fixture(scope='session')
-def lessons(graph_data, session):
-    setup.add_lessons(graph_data, session)
+def lessons(graph_data, unit_data, session):
+    setup.add_lessons(graph_data, unit_data, session)
     return Lesson.query.all()
 
 

@@ -97,13 +97,13 @@ template_filters = [
 ]
 
 
-def create_app(name, override=None):
+def create_app(name, config_object):
     """App factory.
 
     The factory pattern makes unit testing much saner.
 
     :param name:
-    :param override: overrides for the app config.
+    :param config_object: path to config object
     """
     app = Flask(name)
 
@@ -116,14 +116,10 @@ def create_app(name, override=None):
     app.template_folder = os.path.join(LSO_PATH, 'templates')
     app.static_folder = os.path.join(LSO_PATH, 'static')
 
-    app.config.from_object('development.config')
-    if override is not None:
-        app.config.update(override)
-    else:
-        try:
-            app.config.from_object('server.config')
-        except ImportError:
-            pass
+    try:
+        app.config.from_object(config_object)
+    except ImportError:
+        pass
 
     # Template filters
     for filt in template_filters:

@@ -104,11 +104,18 @@ def init_monier(app):
     session.commit()
 
 
+def create(app):
+    with app.app_context():
+        lso.database.db.create_all()
+
+
 def run(app=None, force=False):
     app = app or lso.create_app(__name__)
     with app.app_context():
         if force:
             MonierEntry.query.delete()
+
+        create(app)
 
         if not MonierEntry.query.count():
             init_monier(app)

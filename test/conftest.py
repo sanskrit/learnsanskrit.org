@@ -16,7 +16,8 @@ def app(request):
         'SQLALCHEMY_DATABASE_URI': 'sqlite://',
         'TESTING': True
     }
-    app = lso.create_app(__name__, override)
+    app = lso.create_app(__name__, 'development.config')
+    app.config.update(override)
 
     ctx = app.app_context()
     ctx.push()
