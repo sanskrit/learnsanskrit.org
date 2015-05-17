@@ -1,13 +1,9 @@
-from chandas import Classifier
-from chandas.wrappers import iter_blocks
 from flask import render_template
 
 import forms
 from lso.lib import LSOBlueprint
 
 bp = LSOBlueprint('tools', __name__, url_prefix='/tools')
-classifier = Classifier.from_json_file(
-    '/home/akp/projects/chandas/data/data.json')
 
 
 @bp.route('/')
@@ -18,6 +14,7 @@ def index():
 @bp.route('/meter', methods=['GET', 'POST'])
 def meter():
     """Meter recognizer."""
+    # TODO: fix this view.
     form = forms.MeterForm()
     if form.validate_on_submit():
         blocks = list(iter_blocks(form.input.data))
