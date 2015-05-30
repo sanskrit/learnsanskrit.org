@@ -7,7 +7,6 @@ from flask.ext.mail import Mail
 from flask.ext.markdown import Markdown
 from flask.ext.security import Security, SQLAlchemyUserDatastore
 from flask.ext.sqlalchemy import SQLAlchemy
-
 import sanskrit
 import sanskrit.analyze
 import sanskrit.query
@@ -49,7 +48,7 @@ def do_logging(app):
     import logging
     from logging import FileHandler, getLogger
 
-    print app.config['LOGFILE']
+    print 'Logging to:', app.config['LOGFILE']
     handler = FileHandler(app.config['LOGFILE'])
     handler.setLevel(logging.WARNING)
     for L in [app.logger, getLogger('sqlalchemy')]:
@@ -102,29 +101,30 @@ def create_app(name, config_object):
 
     The factory pattern makes unit testing much saner.
 
-    :param name:
+    :param name: the name of the app
     :param config_object: path to config object
     """
     app = Flask(name)
 
-    # Basic config
-    LSO_PATH = os.path.dirname(__file__)
+    try:
+        app.config.from_object(config_object)
+    except ImportError:
+        print 'ImportError with config object:', config_object
+        pass
+
 
     # Needed to locate templates and assets in various contexts (runserver,
     # testing, ...)
     # TODO: surely there's a way to avoid this?
+    LSO_PATH = os.path.dirname(__file__)
     app.template_folder = os.path.join(LSO_PATH, 'templates')
     app.static_folder = os.path.join(LSO_PATH, 'static')
 
-    try:
-        app.config.from_object(config_object)
-    except ImportError:
-        pass
-
     # Template filters
-    for filt in template_filters:
-        app.add_template_filter(filt)
+    for _filter in template_filters:
+        app.add_template_filter(_filter)
 
+    # URL converters
     add_converters(app)
 
     # Extensions
