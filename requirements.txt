@@ -1,17 +1,14 @@
-fabric
-flask >= 0.9
-flask-admin
-flask-assets
-flask-debugtoolbar
-flask-mail
-flask-markdown
-flask-restless
-flask-security
-flask-weasyprint
-flask-wtf
-psycopg2
-py-bcrypt
-pytest
-pyyaml
-sqlalchemy
-sqlamp
+fabric                # Deployment
+flask >= 0.10         # Framework
+flask-admin           # "Texts" management
+flask-assets          # CSS, JS
+flask-debugtoolbar    # Profiling on local
+flask-mail            # Contact form
+flask-markdown        # Lightweight lesson content
+flask-security        # User management
+flask-sqlalchemy      # Database
+flask-wtf             # Forms
+psycopg2              # Postgres adapter
+py-bcrypt             # Flask-security crypto
+pytest                # Awesome unit testing
+sqlamp                # For trees. TODO: refactor and remove
