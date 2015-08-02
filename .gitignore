@@ -2,6 +2,7 @@
 *.db
 *.pdf
 *.py[cod]
+*~
 audio/
 env/
 gen/
