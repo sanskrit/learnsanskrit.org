@@ -1,21 +1,19 @@
 learnsanskrit.org
 =================
 
-This is the source code for [learnsanskrit.org](http://learnsanskrit.org). The
-site is built with [Flask](http://flask.pocoo.org/) and uses too many Python
-and JavaScript libraries to comfortably list here.
-
-All contributions are welcome!
+This is the source code for [learnsanskrit.org](http://learnsanskrit.org).
 
 
 Building learnsanskrit.org
 --------------------------
 
-**NOTE**: These instructions assume an Ubuntu system.
 
-1. Install necessary packages:
+1. Install necessary packages. If you use Ubuntu, you can use this script:
 
         sudo ./bin/install-ubuntu-packages.sh
+
+   If you're not using Ubuntu, you can examine
+   `./bin/install-ubuntu-packages.sh` to see which packages are required.
 
 2. Install necessary Python packages:
 
@@ -46,6 +44,12 @@ Building learnsanskrit.org
 6. Whenever you're done, kill the server and exit the virtualenv:
 
         deactivate
+
+
+Testing learnsanskrit.org
+-------------------------
+
+    py.test test/*.py
 
 
 Components
