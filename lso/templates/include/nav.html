@@ -15,11 +15,11 @@
     </ul>
     <ul class="user-nav">
         <li>
-            {% if current_user.is_authenticated() %}
+            {# {% if current_user.is_authenticated() %}
             <a href="{{ url_for('users.home') }}">{{ current_user.email }}</a>
             {% else %}
-                {# <a href="{{ url_for('users.login') }}">Sign in</a> #}
-            {% endif %}
+                <a href="{{ url_for('users.login') }}">Sign in</a>
+            {% endif %} #}
             <a id="settings-link" href="{{ url_for('site.settings') }}">⚙</a>
         </li>
     </ul>

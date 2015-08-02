@@ -5,7 +5,7 @@ from flask import Blueprint, Flask
 from flask.ext.assets import Bundle, Environment
 from flask.ext.mail import Mail
 from flask.ext.markdown import Markdown
-from flask.ext.security import Security, SQLAlchemyUserDatastore
+#from flask.ext.security import Security, SQLAlchemyUserDatastore
 from flask.ext.sqlalchemy import SQLAlchemy
 import sanskrit
 import sanskrit.analyze
@@ -56,9 +56,9 @@ def do_logging(app):
 
 
 # Security (for user accounts)
-from lso.users.models import User, Role
-datastore = SQLAlchemyUserDatastore(lso.database.db, User, Role)
-security = Security(datastore=datastore)
+#from lso.users.models import User, Role
+#datastore = SQLAlchemyUserDatastore(lso.database.db, User, Role)
+#security = Security(datastore=datastore)
 
 
 # Converters (for fancy dictionary queries)
@@ -143,7 +143,7 @@ def create_app(name, config_object):
     from ext_markdown import SanskritExtension
     md.register_extension(SanskritExtension)
 
-    security.init_app(app)
+    # security.init_app(app)
 
     # 'sanskrit' package
     ctx = sanskrit.Context(app.config)
@@ -176,7 +176,7 @@ def create_app(name, config_object):
         'site',
         'texts',
         'tools',
-        'users'
+        #'users'
     )
 
     with app.app_context():
