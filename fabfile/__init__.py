@@ -11,7 +11,6 @@ PROJECT_DIR = os.path.dirname(FABFILE_DIR)
 APP_DIR = 'lso'
 
 import db
-import pdf
 import sa
 
 
