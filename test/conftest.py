@@ -14,10 +14,10 @@ def app(request):
         'MONIER_DIR': os.path.join(os.path.dirname(__file__), 'data',
             'monier-williams'),
         'SQLALCHEMY_DATABASE_URI': 'sqlite://',
-        'TESTING': True
+        'TESTING': True,
+        'WTF_CSRF_ENABLED': False,
     }
-    app = lso.create_app(__name__, 'development.config')
-    app.config.update(override)
+    app = lso.create_app(__name__, 'development.config', override)
 
     ctx = app.app_context()
     ctx.push()

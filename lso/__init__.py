@@ -71,7 +71,7 @@ def register_blueprints(app, *blueprints):
     for bp in blueprints:
         m = importlib.import_module('lso.%s.views' % bp)
         try:
-            m.view_setup(app)
+            m.view_setup(bp)
         except AttributeError:
             pass
         for name in dir(m):
@@ -96,7 +96,7 @@ template_filters = [
 ]
 
 
-def create_app(name, config_object):
+def create_app(name, config_object, override=None):
     """App factory.
 
     The factory pattern makes unit testing much saner.
@@ -111,6 +111,9 @@ def create_app(name, config_object):
     except ImportError:
         print 'ImportError with config object:', config_object
         pass
+
+    if override:
+        app.config.update(override)
 
 
     # Needed to locate templates and assets in various contexts (runserver,
