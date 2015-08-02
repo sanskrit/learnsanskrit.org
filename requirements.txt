@@ -11,4 +11,5 @@ flask-wtf             # Forms
 psycopg2              # Postgres adapter
 py-bcrypt             # Flask-security crypto
 pytest                # Awesome unit testing
+git+git://github.com/sanskrit/sanskrit.git#egg=sanskrit
 sqlamp                # For trees. TODO: refactor and remove
