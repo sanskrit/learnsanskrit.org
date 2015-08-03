@@ -1,8 +1,9 @@
 import importlib
 
+import lso.database
 from flask.ext.script import Manager, prompt_bool
 from lso import create_app
-import lso.database
+from sanskrit import Context
 
 
 app = create_app(__name__, 'development.config')
@@ -10,6 +11,7 @@ manager = Manager(app)
 
 
 def _get_bp_setup(name):
+    """Returns a reference to `lso.{name}.setup`"""
     return importlib.import_module('lso.%s.setup' % name)
 
 
@@ -39,6 +41,28 @@ def db_drop_all_dangerous():
     """Drops the entire database."""
     if prompt_bool('This will drop the entire database. Proceed?'):
         lso.database.db.drop_all()
+
+
+@manager.command
+def sa_create_all(*tables):
+    """Creates tables for `sanskrit`."""
+    ctx = Context(app.config)
+    ctx.create_all()
+
+
+@manager.command
+def sa_seed_all(*blueprints):
+    """Seeds tables for `sanskrit`."""
+    ctx = Context(app.config)
+    ctx.build()
+
+
+@manager.command
+def sa_drop_all():
+    """Drops tables for `sanskrit`."""
+    if prompt_bool('This will drop all linguistic data. Proceed?'):
+        ctx = Context(app.config)
+        ctx.drop_all()
 
 
 if __name__ == '__main__':
