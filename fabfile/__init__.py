@@ -21,17 +21,6 @@ def blueprint(name):
     local(path + ' %s %s' % (APP_DIR, name))
 
 
-@task
-def server():
-    """Run the site locally."""
-    local('python runserver.py')
-
-
-@task
-def test():
-    """Run unit tests."""
-    local('python lso_tests.py')
-
 try:
     from production.fabfile import *
 except ImportError:

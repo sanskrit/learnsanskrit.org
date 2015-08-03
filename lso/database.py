@@ -28,18 +28,6 @@ class SimpleBase(Base):
         return cls.__name__.lower()
 
 
-def create(*names):
-    """Create blueprint tables in the database.
-
-    :param names: the tables to create. If blank, create all tables.
-    """
-    extant = {t.name for t in metadata.tables.values() if t.exists()}
-    metadata.create_all()
-    for name in [t.name for t in metadata.sorted_tables]:
-        if name not in extant:
-            print '  [ c ] {0}'.format(name)
-
-
 def drop(*names):
     """Drop blueprint tables from the database.
 

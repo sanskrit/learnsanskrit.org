@@ -4,17 +4,6 @@ from . import FIRM_YES
 
 
 @task
-def create(*blueprints):
-    """Create blueprint tables in the database.
-
-    :param blueprints: the blueprints to create. If blank, create all
-                       blueprints.
-    """
-    import lso
-    lso.database.create(*blueprints)
-
-
-@task
 def drop(*blueprints):
     """Drop the given blueprints.
 

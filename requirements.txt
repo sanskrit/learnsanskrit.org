@@ -6,6 +6,7 @@ flask-debugtoolbar    # Profiling on local
 flask-mail            # Contact form
 flask-markdown        # Lightweight lesson content
 flask-security        # User management
+flask-script          # Scripts
 flask-sqlalchemy      # Database
 flask-wtf             # Forms
 psycopg2              # Postgres adapter
