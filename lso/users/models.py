@@ -34,14 +34,3 @@ class Role(SimpleBase, RoleMixin):
     def __repr__(self):
         return '<Role(%s, %s)>' % (self.id, self.name)
 
-
-def drop():
-    """Drop the tables defined above."""
-
-    import sqlalchemy
-    order = [UserRoleAssoc, User, Role]
-    for o in order:
-        try:
-            o.__table__.drop()
-        except sqlalchemy.exc.ProgrammingError:
-            print '(table %s does not exist.)' % o.__tablename__

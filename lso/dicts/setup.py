@@ -104,18 +104,16 @@ def init_monier(app):
     session.commit()
 
 
-def create(app):
-    with app.app_context():
-        lso.database.db.create_all()
-
-
-def run(app=None, force=False):
+def run(app=None):
     app = app or lso.create_app(__name__)
     with app.app_context():
-        if force:
-            MonierEntry.query.delete()
-
-        create(app)
-
-        if not MonierEntry.query.count():
+        if MonierEntry.query.count():
+            print 'Queries already exist. Drop the table first.'
+        else:
             init_monier(app)
+
+
+def drop():
+    models = [MonierEntry]
+    for m in models:
+        m.__table__.drop()

@@ -198,14 +198,3 @@ Text.division = relationship(Division, single_parent=True,
 Division.segments = relationship(Segment,
                                  collection_class=ordering_list('position'),
                                  order_by=Segment.position)
-
-
-def drop():
-    """Drop the models defined above."""
-
-    order = [SegSegAssoc, Segment, Text, Division, Author, Language, Category]
-    for o in order:
-        try:
-            o.__table__.drop()
-        except sqlalchemy.exc.ProgrammingError:
-            print '(table %s does not exist.)' % o.__tablename__

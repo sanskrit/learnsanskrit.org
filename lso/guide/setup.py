@@ -78,11 +78,6 @@ def add_lessons(graph_data, unit_data, session):
     session.commit()
 
 
-def create(app):
-    with app.app_context():
-        lso.database.db.create_all()
-
-
 def drop(app):
     with app.app_context():
         LessonEdge.__table__.drop(lso.database.db.engine)
@@ -90,16 +85,12 @@ def drop(app):
         Unit.__table__.drop(lso.database.db.engine)
 
 
-def seed(app):
+def run(app=None):
+    app = app or lso.create_app(__name__)
     with app.app_context():
-        assert not Lesson.query.count()
-        graph_data = build_graph()
-        unit_data = load_units()
-        add_lessons(graph_data, unit_data, lso.database.db.session)
-
-
-def delete(app):
-    with app.app_context():
-        LessonEdge.query.delete()
-        Lesson.query.delete()
-        Unit.query.delete()
+        if Lesson.query.count():
+            print 'Lessons already exist. Drop the tables first.'
+        else:
+            graph_data = build_graph()
+            unit_data = load_units()
+            add_lessons(graph_data, unit_data, lso.database.db.session)

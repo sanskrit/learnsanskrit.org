@@ -18,10 +18,3 @@ class MonierEntry(SimpleBase):
 
     def __unicode__(self):
         return self.name
-
-
-def drop():
-    """Drop the models defined above."""
-    models = [MonierEntry]
-    for m in models:
-        m.__table__.drop()

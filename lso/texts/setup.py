@@ -18,11 +18,19 @@ def init_texts():
     session.commit()
 
 
-def run():
+def run(app=None):
     app = app or lso.create_app(__name__)
     with app.app_context():
-        if force:
-            Language.query.delete()
-
-        if not Language.query.count():
+        if Language.query.count():
+            print 'Texts already exist. Drop the tables first.'
+        else:
             init_texts()
+
+
+def drop():
+    order = [SegSegAssoc, Segment, Text, Division, Author, Language, Category]
+    for o in order:
+        try:
+            o.__table__.drop()
+        except sqlalchemy.exc.ProgrammingError:
+            print '(table %s does not exist.)' % o.__tablename__
