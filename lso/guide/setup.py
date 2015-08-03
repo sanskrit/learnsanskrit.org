@@ -89,7 +89,7 @@ def run(app=None):
     app = app or lso.create_app(__name__)
     with app.app_context():
         if Lesson.query.count():
-            print 'Lessons already exist. Drop the tables first.'
+            print '`guide` already has data. Exiting...'
         else:
             graph_data = build_graph()
             unit_data = load_units()
