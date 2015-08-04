@@ -21,14 +21,14 @@ def db_create():
     lso.database.db.create_all()
 
 
-@manager.option('-n', '--name', help='Blueprint name')
+@manager.option('-n', '--name', help='Blueprint name', required=True)
 def db_seed(name):
     """Seeds some blueprint with initial data."""
     _get_bp_setup(name).run(app)
     print 'Done.'
 
 
-@manager.option('-n', '--name', help='Blueprint name')
+@manager.option('-n', '--name', help='Blueprint name', required=True)
 def db_drop(name):
     """Drops all tables for some blueprint."""
     if prompt_bool('This will delete all data for `{}`. Proceed?'.format(name)):
