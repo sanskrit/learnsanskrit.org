@@ -33,6 +33,6 @@ ALLOWED_EXTENSIONS = {'xml'}
 
 # Large data
 # ----------
-DATA_PATH = os.path.expanduser('~/projects/sanskrit-data')
+DATA_PATH = os.path.expanduser('~/projects/sanskrit-data/all-data')
 MONIER_DIR = os.path.join(DATA_PATH, 'monier-williams')
 STATIC_DEST = 'lso/static'

@@ -53,8 +53,10 @@ def sa_create_all(*tables):
 @manager.command
 def sa_seed_all(*blueprints):
     """Seeds tables for `sanskrit`."""
-    ctx = Context(app.config)
-    ctx.build()
+    # TODO: fix this
+    if prompt_bool('This will drop then recreate all linguistic data. Proceed?'):
+        ctx = Context(app.config)
+        ctx.build()
 
 
 @manager.command
