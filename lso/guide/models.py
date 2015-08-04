@@ -12,7 +12,7 @@ class Unit(SimpleBase):
     name = Column(String)
     description = Column(String, unique=True)
 
-    lessons = relationship('Lesson', order_by='Lesson.position')
+    lessons = relationship('Lesson', order_by='Lesson.position', backref='unit')
 
 
 class Lesson(SimpleBase):
