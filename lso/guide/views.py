@@ -31,7 +31,8 @@ def index():
     a bunch of files. This is obviously hacky and slow. But it's good
     enough for now.
     """
-    units = Unit.query.all()
+    # lazy=joined, so we get the lessons too.
+    units = Unit.query.order_by(Unit.position).all()
     return render_template('guide/index.html', units=units)
 
 

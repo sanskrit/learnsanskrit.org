@@ -68,8 +68,9 @@ def add_lessons(graph_data, unit_data, session):
         deps = [lesson_map[dep] for dep in datum['deps']]
         lesson_map[slug].add_dependencies(*deps)
 
-    for datum in unit_data:
-        unit = Unit(name=datum['name'], description=datum['description'])
+    for u, datum in enumerate(unit_data):
+        unit = Unit(name=datum['name'], description=datum['description'],
+                    position=u)
         session.add(unit)
         for i, slug in enumerate(datum['lessons']):
             lesson_map[slug].unit = unit

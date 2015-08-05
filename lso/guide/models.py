@@ -11,8 +11,9 @@ class Unit(SimpleBase):
 
     name = Column(String)
     description = Column(String, unique=True)
+    position = Column(Integer)
 
-    lessons = relationship('Lesson', order_by='Lesson.position', backref='unit')
+    lessons = relationship('Lesson', order_by='Lesson.position', backref='unit', lazy='joined')
 
 
 class Lesson(SimpleBase):
@@ -21,7 +22,7 @@ class Lesson(SimpleBase):
 
     name = Column(String)
     slug = Column(String, unique=True)
-    unit_id = Column(ForeignKey(Unit.id))
+    unit_id = Column(ForeignKey(Unit.id), index=True)
     position = Column(Integer)
 
 
