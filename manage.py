@@ -6,7 +6,7 @@ from lso import create_app
 from sanskrit import Context
 
 
-app = create_app(__name__, 'development.config')
+app = create_app(__name__, 'config')
 manager = Manager(app)
 
 
@@ -16,7 +16,7 @@ def _get_bp_setup(name):
 
 
 @manager.command
-def db_create():
+def db_create_all():
     """Creates all tables."""
     lso.database.db.create_all()
 

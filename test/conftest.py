@@ -17,7 +17,7 @@ def app(request):
         'TESTING': True,
         'WTF_CSRF_ENABLED': False,
     }
-    app = lso.create_app(__name__, 'development.config', override)
+    app = lso.create_app(__name__, 'config', override)
 
     ctx = app.app_context()
     ctx.push()
