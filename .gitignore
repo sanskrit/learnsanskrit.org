@@ -1,13 +1,7 @@
-*.css
-*.db
-*.pdf
 *.py[cod]
 *~
 audio/
 env/
 gen/
-/lso/data/
-production/
-ignore/
-
+production.py
 lso/static/.webassets-cache
