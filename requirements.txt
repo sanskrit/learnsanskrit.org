@@ -2,6 +2,7 @@ fabric                # Deployment
 flask >= 0.10         # Framework
 flask-admin           # "Texts" management
 flask-assets          # CSS, JS
+flask-cache           # Nice caching
 flask-debugtoolbar    # Profiling on local
 flask-mail            # Contact form
 flask-markdown        # Lightweight lesson content

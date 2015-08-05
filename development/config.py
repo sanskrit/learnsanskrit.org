@@ -6,6 +6,13 @@ DATABASE_URI = 'postgresql:///learnsanskrit'
 DEBUG = True
 SECRET_KEY = 'development'
 
+# flask-debugtoolbar
+# DEBUG_TB_PROFILER_ENABLED = True
+
+# flask-cache
+CACHE_TYPE = 'filesystem'
+CACHE_DIR = '/tmp/lso_cache'
+
 # flask-mail
 # ----------
 DEFAULT_MAIL_SENDER = 'form@learnsanskrit.org'

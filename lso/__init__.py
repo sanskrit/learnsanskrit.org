@@ -3,6 +3,7 @@ import os
 
 from flask import Blueprint, Flask
 from flask.ext.assets import Bundle, Environment
+from flask.ext.cache import Cache
 from flask.ext.mail import Mail
 from flask.ext.markdown import Markdown
 #from flask.ext.security import Security, SQLAlchemyUserDatastore
@@ -37,6 +38,10 @@ assets.register('all-js', Bundle(
     # Setup
     'js/setup.js',
     output='gen/scripts.js'))
+
+
+# Caching
+cache = Cache()
 
 
 # Mail (for contact form)
@@ -137,6 +142,8 @@ def create_app(name, config_object, override=None):
     assets.app = app  # TODO: remove hack
     assets.url = '/static'
     assets.directory = app.config['STATIC_DEST']
+
+    cache.init_app(app)
 
     lso.database.db.init_app(app)
 

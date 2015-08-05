@@ -3,6 +3,7 @@
     <li><a id="nav-{{ id }}" href="{{ url }}">{{ name }}</a></li>
 {% endmacro %}
 
+{% cache 600 %}
 <nav id="top">
     <a class="brand" href="{{ url_for('main.index') }}">learn<span class="y">sanskrit</span>.org</a>
     <ul class="main-nav">
@@ -24,3 +25,4 @@
         </li>
     </ul>
 </nav>
+{% endcache %}

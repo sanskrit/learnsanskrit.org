@@ -4,6 +4,7 @@ import os
 import jinja2.exceptions
 from flask import abort, current_app, Response, redirect, render_template, url_for
 
+from lso import cache
 from lso.guide import util
 from lso.lib import LSOBlueprint
 from .models import Lesson, Unit
@@ -26,6 +27,7 @@ def exercises_path_for_slug(slug):
 
 
 @bp.route('/')
+@cache.cached(timeout=86400)
 def index():
     """This function checks whether a lesson has exercises by reading
     a bunch of files. This is obviously hacky and slow. But it's good
@@ -37,6 +39,7 @@ def index():
 
 
 @bp.route('/<slug>')
+@cache.cached(timeout=86400)
 def lesson(slug):
     lesson = Lesson.query.filter(Lesson.slug == slug).first()
     if lesson is not None:
