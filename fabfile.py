@@ -4,6 +4,9 @@ import production
 
 env.hosts = [production.host]
 
+def deploy_prod_config():
+    put('production.py', production.htdocs_dir)
+
 
 def deploy_static():
     """Deploy static assets (CSS, JS, ...)"""
