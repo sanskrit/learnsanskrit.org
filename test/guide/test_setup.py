@@ -1,8 +1,9 @@
 import pytest
 
+from flask import url_for
 from lso.database import Base
 from lso.guide import setup
-from lso.guide.models import Lesson
+from lso.guide.models import Lesson, Unit
 
 
 @pytest.fixture(scope='session')
@@ -16,8 +17,15 @@ def unit_data():
 
 
 @pytest.fixture(scope='session')
-def lessons(graph_data, unit_data, session):
+def units(graph_data, unit_data, session):
     setup.add_lessons(graph_data, unit_data, session)
+    return Unit.query.all()
+
+
+@pytest.fixture(scope='session')
+def lessons(units):
+    # `units` is so that we initialize in just one place.
+    # TODO: what's the right way to do this?
     return Lesson.query.all()
 
 
@@ -115,6 +123,8 @@ class TestAddLessons:
 
 class TestSlugify:
 
+    """Tests the `slugify` function."""
+
     def test_basic(self):
         assert setup.slugify('sanskrit') == 'sanskrit'
 
@@ -129,3 +139,15 @@ class TestSlugify:
 
     def test_whitespace(self):
         assert setup.slugify('Sanskrit grammar') == 'sanskrit-grammar'
+
+
+class TestLessons:
+
+    """Tests that all lessons can be loaded."""
+
+    def test_http_get_returns_200_code(self, app, test_app, units):
+        with app.test_request_context():
+            for unit in units:
+                for lesson in unit.lessons:
+                    r = test_app.get(url_for('guide.lesson', slug=lesson.slug))
+                    assert r.status_code == 200

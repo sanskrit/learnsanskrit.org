@@ -10,6 +10,7 @@ import lso.database
 @pytest.fixture(scope='session')
 def app(request):
     override = {
+        'CACHE_TYPE': 'null',
         'DATABASE_URI': 'sqlite://',
         'MONIER_DIR': os.path.join(os.path.dirname(__file__), 'data',
             'monier-williams'),
