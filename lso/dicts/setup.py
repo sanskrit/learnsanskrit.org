@@ -113,7 +113,8 @@ def run(app=None):
             init_monier(app)
 
 
-def drop():
-    models = [MonierEntry]
-    for m in models:
-        m.__table__.drop()
+def drop(app):
+    with app.app_context():
+        models = [MonierEntry]
+        for m in models:
+            m.__table__.drop(lso.database.db.engine)
