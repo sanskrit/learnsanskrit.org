@@ -11,7 +11,7 @@ def test_subject_email_and_message(app, test_app):
     subject = 'subject'
     reply_to = 'a@example.com'
     message_body = 'body'
-    sender = app.config['DEFAULT_MAIL_SENDER']
+    sender = app.config['MAIL_DEFAULT_SENDER']
 
     with lso.mail.record_messages() as outbox:
         result = contact(test_app, dict(subject=subject,
@@ -28,7 +28,7 @@ def test_subject_email_and_message(app, test_app):
 def test_subject_and_message(app, test_app):
     subject = 'subject'
     message_body = 'body'
-    sender = app.config['DEFAULT_MAIL_SENDER']
+    sender = app.config['MAIL_DEFAULT_SENDER']
 
     with lso.mail.record_messages() as outbox:
         result = contact(test_app, dict(subject=subject,
