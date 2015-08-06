@@ -16,6 +16,13 @@ def _get_bp_setup(name):
 
 
 @manager.command
+def cache_clear():
+    """Clears the flask-cache cache."""
+    from lso import cache
+    cache.clear()
+
+
+@manager.command
 def db_create_all():
     """Creates all tables."""
     lso.database.db.create_all()
