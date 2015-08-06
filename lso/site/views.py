@@ -17,8 +17,8 @@ def about():
 def contact():
     form = forms.ContactForm()
     if form.validate_on_submit():
-        default_sender = current_app.config['DEFAULT_MAIL_SENDER']
-        default_recipient = current_app.config['DEFAULT_MAIL_RECIPIENT']
+        default_sender = current_app.config['MAIL_DEFAULT_SENDER']
+        default_recipient = current_app.config['MAIL_DEFAULT_RECIPIENT']
 
         msg = Message(form.subject.data,
                       sender=default_sender,

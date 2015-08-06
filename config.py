@@ -15,8 +15,9 @@ CACHE_DIR = '/tmp/lso_cache'
 
 # flask-mail
 # ----------
-DEFAULT_MAIL_SENDER = 'form@learnsanskrit.org'
-DEFAULT_MAIL_RECIPIENT = 'info@learnsanskrit.org'
+# `recipient` is custom; not in flask-mail
+MAIL_DEFAULT_RECIPIENT = 'test@learnsanskrit.org'
+MAIL_DEFAULT_SENDER = 'contact-form@learnsanskrit.org'
 
 # flask-security
 # --------------
