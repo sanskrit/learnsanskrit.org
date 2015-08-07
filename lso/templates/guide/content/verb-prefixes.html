@@ -1,0 +1,77 @@
+Reusing old roots
+-----------------
+
+Sanskrit contains about 2000 verb roots. About 800 of them have been used in the existing literature. But there are more than 800 possible actions in the world. What should we do when 800 roots aren't enough?
+
+The answer: **create new actions** from old ones. We do so by using some special uninflected words. These words modify the basic sense of a root and create a new idea.
+
+For example, <dfn>`A`</dfn> modifies the basic meaning of the verb:
+
+!!! examples
+
+    -   {{ m.x('kam [A] janaM [carati] kAsu vikSu') }}
+
+        What people does he <mark>visit</mark>, and in what dwellings?
+
+        <cite>Rigveda 6.21.3</cite>
+
+
+But in later Sanskrit, such words are always stuck right at the beginning of the verb:
+
+!!! examples
+    - {{ m.x('A + car -> Acar -> Acarati', 'near + walk -> walk near; visit -> he visits') }}
+
+
+For now, let's just call these words <dfn>verb prefixes</dfn>. Just as "go out" and "go with" mean something different from just "go," a root used with a verb prefix usually means something different from a verb used without one.
+
+
+What do prefixes mean?
+----------------------
+
+Sometimes, prefixes refine the original root's basic meaning:
+
+!!! examples
+    - {{ m.x('vi + jJA -> vijJA', 'out/apart + know -> perceive, discern, discriminate, recognize') }}
+    - {{ m.x('ava + tRR -> avatRR', 'downward + cross -> descend, appear, become manifest') }}
+
+Sometimes, they produce entirely new meanings that are hard to predict:
+
+!!! examples
+    - {{ m.x('ava + gam -> avagam -> avagacchati', 'downward + go -> He understands.') }}
+
+      If this strange, note that "understand" has nothing to do with being "under" something or "standing" somewhere.
+
+
+And ometimes prefixes do almost nothing. Some say that the verb's meaning is made more intense:
+
+!!! examples
+    - {{ m.x('sam + jan -> saMjan -> saMjAyate', 'with/together + be born -> be born -> He is born.') }}
+
+
+Using multiple prefixes
+-----------------------
+
+We can stack these changes on top of each other to create more subtle meanings:
+
+!!! examples
+    - {{ m.x('upa + sam + gam -> upasaMgacchanti mRgAH', 'near/toward + with + go -> The deer approach (something) together.') }}
+    - {{ m.x('sam + upa + gam -> samupagacchanti mRgAH', 'with + near/toward + go -> The deer come together.') }}
+
+
+Sanskrit has about twenty different verb prefixes, each with its own basic meanings. For now, let's restrict ourselves to the five above:
+
+`Ar`:
+
+!!! examples
+    - {{ m.x('upa + R (Rcchati) -> upArcchati', 'near/toward + go -> He goes near.') }}
+
+
+## In the wild
+
+All of the prefixes above are very common. They are so common, in fact, that all of them appear in verse 2 of the Bhagavad Gita:
+
+!!! examples
+    - {{ m.x('dRSTvA tu pANDavAnIkaM [vi]UDhaM duryodhanas tadA', 'Having seen the army of the Pandavas [arrayed], Duryodhana then') }}
+    - {{ m.x('[A]cAryam [upa][saM]gamya rAjA vacanam abravIt', '[approached] his [master] and spoke this statement.') }}
+
+Here, `pAndavAnIkam` is a `tatpuruSa` (`pAndAvAnAm anIkam`, "army of the Pandavas"). How many other words can you recognize?

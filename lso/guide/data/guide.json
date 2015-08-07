@@ -128,7 +128,8 @@
         "name": "Passive verbs",
         "deps": [
             "atmanepada",
-            "the-eight-cases"
+            "the-eight-cases,
+            "roots"
         ]
     },
     {
@@ -653,7 +654,8 @@
     {
         "name": "`-ta`",
         "deps": [
-            "root-suffixes"
+            "root-suffixes",
+            "passive-verbs"
         ]
     },
     {
@@ -672,7 +674,9 @@
     {
         "name": "`-tavya`, `-anIya`, and `-ya`",
         "deps": [
-            "verbal-adjectives"
+            "root-suffixes",
+            "passive-verbs",
+            "ta"
         ]
     },
     {

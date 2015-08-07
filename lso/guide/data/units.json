@@ -21,13 +21,19 @@
         ]
     },
     {
-        "name": "Basic Sanskrit",
-        "description": "How to create simple Sanskrit sentences. These lessons lay the groundwork for the rest of the guide. Once you understand these, 90% of the battle is won.",
+        "name": "Verbs",
+        "description": "How to create our first Sanskrit sentences.",
         "lessons": [
             "how-sanskrit-works",
             "verbs",
             "present-tense-verbs",
-            "atmanepada",
+            "atmanepada"
+        ]
+    },
+    {
+        "name": "Nouns",
+        "description": "Who sees? Where? Here we learn new words to answer these questions.",
+        "lessons": [
             "nouns",
             "case-1",
             "case-2",
@@ -37,12 +43,25 @@
             "case-6",
             "case-7",
             "case-8",
-            "the-eight-cases",
+            "the-eight-cases"
+        ]
+    },
+    {
+        "name": "Uninflected words",
+        "description": "By using uninflected words, we can create slightly more complicated sentences.",
+        "lessons": [
             "uninflected-words",
             "na",
             "ca-and-vaa",
+            "eva-tu-and-hi",
             "iti",
-            "iva",
+            "iva"
+        ]
+    },
+    {
+        "name": "Compounds",
+        "description": "The easiest way to make new words out of the ones we know already.",
+        "lessons": [
             "neuter-and-feminine-nouns",
             "adjectives",
             "compounds",
@@ -60,10 +79,20 @@
             "the-weak-a-class",
             "the-ya-class",
             "the-aya-class",
+            "passive-verbs"
+        ]
+    },
+    {
+        "name": "Prefixes and suffixes",
+        "description": "How to rapidly create thousands of new words.",
+        "lessons": [
+            "noun-prefixes",
             "verb-prefixes",
             "root-suffixes",
             "tva-and-ya",
-            "ta"
+            "ta",
+            "tavya-aniya-and-ya",
+            "tum"
         ]
     }
 ]
