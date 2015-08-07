@@ -10,7 +10,7 @@ SECRET_KEY = 'development'
 # DEBUG_TB_PROFILER_ENABLED = True
 
 # flask-cache
-CACHE_TYPE = 'filesystem'
+CACHE_TYPE = 'null'
 CACHE_DIR = '/tmp/lso_cache'
 
 # flask-mail
