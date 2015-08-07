@@ -651,9 +651,16 @@
         ]
     },
     {
-        "name": "`-ta`  and `-tavat`",
+        "name": "`-ta`",
         "deps": [
-            "verbal-adjectives"
+            "root-suffixes"
+        ]
+    },
+    {
+        "name": "`-tavat`",
+        "deps": [
+            "ta",
+            "at-mat-and-vat-stems"
         ]
     },
     {
@@ -678,7 +685,7 @@
     {
         "name": "Verbal adjectives and \"simultaneous action\"",
         "deps": [
-            "ta-and-tavat",
+            "ta",
             "at-and-ana",
             "tavya-aniya-and-ya"
         ]
@@ -711,21 +718,15 @@
         ]
     },
     {
-        "name": "Making words",
+        "name": "Root suffixes",
         "deps": [
             "roots"
         ]
     },
     {
-        "name": "Root suffixes",
-        "deps": [
-            "making-words"
-        ]
-    },
-    {
         "name": "Stem suffixes",
         "deps": [
-            "making-words"
+            "nouns"
         ]
     },
     {
@@ -744,7 +745,7 @@
         "name": "`saMprasAraNa`",
         "deps": [
             "tva-and-ya",
-            "ta-and-tavat"
+            "ta"
         ]
     },
     {

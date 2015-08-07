@@ -49,5 +49,21 @@
             "dvandva-compounds",
             "tatpurusha-compounds"
         ]
+    },
+    {
+        "name": "Roots",
+        "description": "How to work with verbs at a deeper level.",
+        "lessons": [
+            "roots",
+            "verb-classes",
+            "the-strong-a-class",
+            "the-weak-a-class",
+            "the-ya-class",
+            "the-aya-class",
+            "verb-prefixes",
+            "root-suffixes",
+            "tva-and-ya",
+            "ta"
+        ]
     }
 ]
