@@ -14,9 +14,9 @@ LANGUAGES = None
 # Maps IDs to slugs
 CATEGORIES = None
 # Standard size of a segment page
-PAGE_SIZE = 5
+PAGE_SIZE = 1
 # Minimum size for a segment page
-MIN_PAGE_SIZE = 3
+MIN_PAGE_SIZE = 1
 
 
 # No URL prefix; this has '/texts' and '/authors'.
