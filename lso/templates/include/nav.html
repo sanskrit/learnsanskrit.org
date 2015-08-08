@@ -8,8 +8,8 @@
     <a class="brand" href="{{ url_for('main.index') }}">learn<span class="y">sanskrit</span>.org</a>
     <ul class="main-nav">
         {{ sec('Guide', 'guide.index', 'guide') }}
+        {{ sec('Texts', 'texts.index', 'texts') }}
         {{ sec('Tools', 'tools.index', 'tools') }}
-        {# {{ sec('Texts', 'texts.index', 'texts') }} #}
         {{ sec('Site', 'site.index', 'site') }}
         {# {% if current_user.has_role('admin') %}{{ sec('Admin',
         'admin.index', 'admin') }}{% endif %} #}
