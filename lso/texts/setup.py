@@ -22,7 +22,7 @@ def run(app=None):
     app = app or lso.create_app(__name__)
     with app.app_context():
         if Language.query.count():
-            print 'Texts already exist. Drop the tables first.'
+            print 'Texts already has data. Drop the tables first.'
         else:
             init_texts()
 

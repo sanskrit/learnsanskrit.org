@@ -24,8 +24,8 @@ bp = Blueprint('texts', __name__, static_folder='static',
                template_folder='templates')
 
 
-def view_setup(bp):
-    bp.before_first_request(load_data)
+def view_setup():
+    bp.before_app_first_request(load_data)
 
 
 def load_data():

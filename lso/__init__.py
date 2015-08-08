@@ -76,7 +76,7 @@ def register_blueprints(app, *blueprints):
     for bp in blueprints:
         m = importlib.import_module('lso.%s.views' % bp)
         try:
-            m.view_setup(bp)
+            m.view_setup()
         except AttributeError:
             pass
         for name in dir(m):
