@@ -330,7 +330,7 @@ def text(slug):
         pages.append(page_queries)
 
     return render_template('texts/text.html', text=text,
-                           divs=divs,
+                           divs=divisions,
                            pages=pages)
 
 

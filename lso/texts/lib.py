@@ -211,6 +211,7 @@ class DocumentTarget:
         # Give precedence to translators: Kale's translation of the
         # Meghaduta is by Kale, not Kalidasa.
         author_xml = field_xml['translator'] or field_xml['author']
+        author_id = None
         if author_xml is not None:
             author_slug = author_xml.attrib[XML_ID]
             author = Author.query.filter(Author.slug == author_slug).first()
@@ -222,9 +223,6 @@ class DocumentTarget:
                                 language_id=language_id)
                 session.add(author)
                 session.flush()
-                author_id = author.id
-        else:
-            author_id = None
 
         div = Division(slug='', parent_id=None)
         self.division_map[''] = div

@@ -3,6 +3,7 @@ import importlib
 import lso.database
 from flask.ext.script import Manager, prompt_bool
 from lso import create_app
+import lso.texts.lib
 from sanskrit import Context
 
 
@@ -48,6 +49,11 @@ def db_drop_all_dangerous():
     """Drops the entire database."""
     if prompt_bool('This will drop the entire database. Proceed?'):
         lso.database.db.drop_all()
+
+# TODO: better name than -n ?
+@manager.option('-n', '--name', help='Path to text', required=True)
+def upload_text(name):
+    lso.texts.lib.process_text_xml(name)
 
 
 @manager.command
