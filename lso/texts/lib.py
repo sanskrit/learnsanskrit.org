@@ -210,7 +210,8 @@ class DocumentTarget:
         # Create an :class:`Author` record as necessary.
         # Give precedence to translators: Kale's translation of the
         # Meghaduta is by Kale, not Kalidasa.
-        author_xml = field_xml['translator'] or field_xml['author']
+        author_xml = field_xml['translator'] \
+                if field_xml['translator'] is not None else field_xml['author']
         author_id = None
         if author_xml is not None:
             author_slug = author_xml.attrib[XML_ID]
