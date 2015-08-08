@@ -1,8 +1,12 @@
 // Describes the dependencies between different lessons.
 [
     {
-        "name": "Introduction",
+        "name": "Why?",
         "deps": []
+    },
+    {
+        "name": "How?",
+        "deps": ["why"]
     },
 
 
@@ -12,7 +16,7 @@
     // Pronouncing and labeling various Sanskrit sounds
     {
         "name": "Simple vowels",
-        "deps": ["introduction"]
+        "deps": ["how"]
     },
     {
         "name": "Compound vowels",

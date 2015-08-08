@@ -1,9 +1,10 @@
 [
     {
-        "name": "About",
+        "name": "Introduction",
         "description": "A bit of information about the guide.",
         "lessons": [
-            "introduction"
+            "why",
+            "how"
         ]
     },
     {
