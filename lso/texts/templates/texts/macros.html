@@ -4,7 +4,7 @@
 <h3>{{ name }}</h3>
 <ul class="text-list">
     {% for text in items %}
-    <li><a href="{{ url_for('texts.text', slug=text.slug) }}">{{ text.author.name }} <br /> <cite>{{ text.name }}</cite></a></li>
+    <li><a href="{{ url_for('texts.text', slug=text.slug) }}">{{ text.author.name or 'Unknown' }} (<cite>{{ text.name }}</cite>)</a></li>
     {% endfor %}
 </ul>
 {% endif %}
@@ -13,11 +13,11 @@
 {# For each text in `texts`, print the material associated with the text. #}
 {% macro text_blocks(texts, categorize) %}
 {% for text in texts %}
-<section class="inset text">
+<section class="text">
     <h2>
         <a href="{{ url_for('texts.text', slug=text.slug) }}">{{ text.name }}</a>
     </h2>
-    <small>By <a href="{{ url_for('texts.author', slug=text.author.slug) }}">{{ text.author.name }}</a></small>
+    <small>By <a href="{{ url_for('texts.author', slug=text.author.slug) }}">{{ text.author.name or 'Unknown' }}</a></small>
     {% set cat = categorize(text.children) %}
     {{ print_category('Translations', cat.translation) }}
     {{ print_category('Commentaries', cat.commentary) }}

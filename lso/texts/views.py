@@ -1,5 +1,3 @@
-from collections import defaultdict
-
 from flask import (Blueprint, flash, redirect, render_template, url_for,
                    jsonify)
 from sqlalchemy import and_
@@ -17,6 +15,17 @@ CATEGORIES = None
 PAGE_SIZE = 1
 # Minimum size for a segment page
 MIN_PAGE_SIZE = 1
+
+class Card:
+    def __init__(self, primary, translations, commentaries):
+        self.primary = primary
+        self.translations = translations
+        self.commentaries = commentaries
+
+class ChildCard:
+    def __init__(self, text_id, segments):
+        self.text_id = text_id
+        self.segments = segments
 
 
 # No URL prefix; this has '/texts' and '/authors'.
@@ -113,93 +122,73 @@ def categorize_texts(texts):
 # Data helpers
 # ~~~~~~~~~~~~
 
-def child_segments_data(child_slug, parent_ids):
-    """Get child segments of the given parent IDs.
+def make_cards(child_texts, parent_segments):
+    """Make cards by combining parent and child segments.
 
-    :param child_slug: slug for the child text
-    :param parent_ids: IDs of parent segments
+    :param child_texts: Child texts
+    :param parent_segments: Parent segments
+    :return: a list of `Card`s.
     """
-    data = defaultdict(lambda: defaultdict(list))
+    parent_segment_ids = {x.id : x for x in parent_segments}
+    child_text_ids = [x.id for x in child_texts]
+    results = SSA.query.filter(SSA.parent_id.in_(parent_segment_ids))\
+                       .filter(SSA.text_id.in_(child_text_ids)).all()
 
-    child = Text.query.filter(Text.slug == child_slug).one()
-    results = SSA.query.filter(SSA.parent_id.in_(parent_ids))\
-                       .filter(SSA.text_id == child.id).all()
-
-    # Clean up data for display
+    # Map from (parent segment, text) to a list of segments.
+    join = {}
     for r in results:
-        seg = r.child
-        xml_id = '.'.join((child.xmlid_prefix, seg.slug))
-        content = L.transform(seg.content)
-        datum = {
-            'id': seg.id,
-            'slug': seg.slug,
-            'xmlid': xml_id,
-            'content': content}
-        data[r.parent_id][child_slug].append(datum)
+        # TODO: don't query for each child.
+        key = (r.parent_id, r.child.text_id)
+        join.setdefault(key, []).append(r.child)
 
-    return data
+    cards = []
+    for s in parent_segments:
+        translations = []
+        commentaries = []
+        for t in child_texts:
+            child_card = ChildCard(text_id=t.id, segments=join.get((s.id, t.id), []))
+            if CATEGORIES[t.category_id] == 'translation':
+                translations.append(child_card)
+            elif CATEGORIES[t.category_id] == 'commentary':
+                commentaries.append(child_card)
+            else:
+                raise
+        cards.append(Card(primary=s,
+                          translations=translations,
+                          commentaries=commentaries))
+    return cards
 
 
-def segments_data(text, slug, query, related):
+def get_segments_for_text_and_query(text_id, query_groups):
+    """Get all segments in `text_id` that match `query_groups`.
+
+    :param text_id: the ID of the text
+    :param query_groups: a list of queries
     """
-    :param text:
-    :param slug:
-    :param query:
-    :param related:
-    """
-    # Find the segments specified by `query`
-    segments = []
-    base_query = Segment.query.filter(Segment.text_id == text.id)\
+    base_query = Segment.query.filter(Segment.text_id == text_id)\
                         .order_by(Segment.position.asc())
-    query_groups = query.split(',')
-    for g in query_groups:
-        pre, cur, post = g.partition('-')
-
-        # Slug range, e.g. '1.1-1.5'
-        if cur:
+    for group in query_groups:
+        pre, _, post = group.partition('-')
+        if pre and post:
             results = base_query.filter(Segment.slug.in_([pre, post])).all()
             try:
-                s1, s2 = results
-                results = base_query.filter(and_(
-                    Segment.position > s1.position,
-                    Segment.position < s2.position)).all()
-                segments.append(s1)
-                segments.extend(results)
-                segments.append(s2)
+                first, last = results
+                middle = base_query.filter(and_(
+                    Segment.position > first.position,
+                    Segment.position < last.position)).all()
+                return [first] + middle + [last]
+            # Only one result could be unpacked -> keep just the first
+            # TODO: return more than one result here.
             except ValueError:
                 if results:
-                    segments.append(results[0])
-
-        # Single slug, e.g. '1.2'
+                    return [results[0]]
         else:
-            s = base_query.filter(Segment.slug == g).first()
-            if s:
-                segments.append(s)
+            return [base_query.filter(Segment.slug == pre).first()]
 
-    # Clean up data for display
-    ids = [s.id for s in segments]
-    xmlids = ['.'.join((text.xmlid_prefix, s.slug)) for s in segments]
-    slugs = [s.slug for s in segments]
-    contents = map(L.transform, (s.content for s in segments))
 
-    clean_segments = [{'id': i, 'xmlid': x, 'slug': s, 'content': c}
-                      for i, x, s, c in zip(ids, xmlids, slugs, contents)]
-
-    # Find textual correspondences
-    id_to_slug = {s.id: s.slug for s in segments}
-    if related:
-        clean_corresp = defaultdict(lambda: defaultdict(list))
-        for grp in related:
-            data = child_segments_data(grp, ids)
-            for id in data:
-                clean_corresp[id_to_slug[id]][grp] = data[id][grp]
-
-    else:
-        clean_corresp = None
-
-    # Create "prev" and "next" links based on start, end of query
+def find_prev_and_next(query_groups, primary_segments, text):
     if len(query_groups) == 1:
-        first, last = segments[0], segments[-1]
+        first, last = primary_segments[0], primary_segments[-1]
 
         cur = first.division
         cur_pages = paginate_division(cur, PAGE_SIZE, MIN_PAGE_SIZE)
@@ -258,19 +247,51 @@ def segments_data(text, slug, query, related):
     else:
         prev = next = None
 
-    # Rewrite the query in a human-readable form
-    readable_query = query.replace('-', ' - ').replace(',', ', ')
-    readable_query = '%s %s' % (text.name, readable_query)
+    return prev, next
+
+
+def segments_data(text, slug, query, child_slugs):
+    """
+    :param text:
+    :param slug:
+    :param query:
+    :param related:
+    """
+    query_groups = query.split(',')
+    primary_segments = get_segments_for_text_and_query(text.id, query_groups)
+
+    if child_slugs:
+        child_texts = Text.query.filter(Text.slug.in_(child_slugs)).all()
+        active_children = [t.id for t in child_texts]
+    else:
+        child_texts = []
+        active_children = []
+
+    cards = make_cards(child_texts, primary_segments)
+
+    prev, next = find_prev_and_next(query_groups, primary_segments, text)
+
+    readable_range = query.replace('-', ' - ').replace(',', ', ')
+    readable_query = '%s %s' % (text.name, readable_range)
+
+    secondary_texts = {t.id: t for t in text.children}
+    all_translations = [t.id for t in text.children
+                        if CATEGORIES[t.category_id] == 'translation']
+    all_commentaries = [t.id for t in text.children
+                        if CATEGORIES[t.category_id] == 'commentary']
 
     return dict(
         text=text,
         query=query,
         readable_query=readable_query,
-        segments=clean_segments,
-        corresp=clean_corresp,
+        cards=cards,
+        active_children=active_children,
+        all_translations=all_translations,
+        all_commentaries=all_commentaries,
+        secondary_texts=secondary_texts,
         prev=prev,
         next=next,
-        related=related
+        related=child_slugs
     )
 
 
@@ -346,30 +367,22 @@ def segment(slug, query, related=None):
     :param related: if specified, a CSL of the slugs of related texts.
     """
 
-    # Main text
-    text = Text.query.filter(Text.slug == slug).first()
-    if text is None:
+    primary_text = Text.query.filter(Text.slug == slug).first()
+    if primary_text is None:
         _flash_missing_text(slug)
         return redirect(url_for('.index'))
 
     # Data
-    data = segments_data(text, slug, query, related)
+    data = segments_data(primary_text, slug, query, related)
 
-    # Child texts
-    data['translation'] = []
-    data['commentary'] = []
-
-    children = text.children
-    data.update(categorize_texts(children))
-
-    # 'related' of child texts
+    # Toggler links
     related = related or []
-    for c in children:
-        if c.slug in related:
-            c.related = [r for r in related if r != c.slug]
+    for child in primary_text.children:
+        if child.slug in related:
+            child.related = [r for r in related if r != child.slug]
         else:
-            c.related = related + [c.slug]
-        c.related = c.related or None
+            child.related = related + [child.slug]
+        child.related = child.related or None
 
     return render_template('texts/segment.html', **data)
 
@@ -391,7 +404,6 @@ def segment_api(slug, query, related=None):
         return jsonify({})
 
     data = segments_data(text, slug, query, related)
-    data['text'] = {'slug': text.slug}
     return jsonify(data)
 
 

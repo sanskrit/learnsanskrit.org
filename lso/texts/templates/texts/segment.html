@@ -1,7 +1,12 @@
 {% extends 'texts/layout.html' %}
 
 {% macro child_link(c) %}
-    <li><a data-id="{{ c.id }}" data-slug="{{ c.slug }}" class="child-link{% if c.slug not in (c.related or []) %} active{% endif %}" href="{{ url_for('.segment', slug=text.slug, query=query, related=c.related) }}">{{ c.author.name }} <br /> <cite>{{ c.name }}</cite></a></li>
+    <li>
+        <a data-id="{{ c.id }}" data-slug="{{ c.slug }}" class="child-link{% if c.slug not in (c.related or []) %} active{% endif %}" href="{{ url_for('.segment', slug=text.slug, query=query, related=c.related) }}">
+            {{ c.author.name or 'Unknown' }} <br />
+            <cite>{{ c.name }}</cite>
+        </a>
+    </li>
 {% endmacro %}
 
 {% macro page_link(q, id, t) %}
@@ -17,7 +22,9 @@
     <li class="dropdown">
         <a class="dropdown-toggle" href="#">{{ name }}</a>
         <ul class="dropdown-menu">
-            {% for child in items %}{{ child_link(child) }}{% endfor %}
+            {% for id in items %}
+                {{ child_link(secondary_texts[id]) }}
+            {% endfor %}
         </ul>
     </li>
 {% endmacro %}
@@ -29,19 +36,31 @@
 <h1 id="readable-query">{{ readable_query }}</h1>
 
 <div id="segments">
-    {% for segment in segments %}
-    <section id="{{ segment.xmlid }}" class="segment">
-        <a class="jump" href="#{{ segment.xmlid }}">#</a>
+    {% for card in cards %}
+    <section id="{{ card.primary.xmlid }}" class="segment">
+        {# <a class="jump" href="#{{ segment.xmlid }}">#</a> #}
+        {# <br /> #}
         <div class="primary">
-        {{ segment.content|safe }}
+        {{ card.primary.content|safe }}
         </div>
 
         <div class="translations">
-        {% for child_text in corresp[segment.slug] %}
+        {% for translation in card.translations %}
             <div class="translation">
-            {% for child in corresp[segment.slug][child_text] %}
-                {{ child.content|safe }}
+            {% for seg in translation.segments %}
+                {{ seg.content|safe }}
             {% endfor %}
+            {{ secondary_texts[translation.text_id].name }}
+            </div>
+        {% endfor %}
+        </div>
+        <div class="commentaries">
+        {% for commentary in card.commentaries %}
+            <div class="commentary">
+            {% for seg in commentary.segments %}
+                {{ seg.content|safe }}
+            {% endfor %}
+            {{ secondary_texts[commentary.text_id].name }}
             </div>
         {% endfor %}
         </div>
@@ -51,17 +70,16 @@
 
 <div id="text-panel">
     <ul id="child-links">
-        {% if translation %}{{ dropdown('Translations', translation) }}{% endif %}
-        {% if commentary %}{{ dropdown('Commentaries', commentary) }}{% endif %}
+        {% if all_translations %}{{ dropdown('Translations', all_translations) }}{% endif %}
+        {% if all_commentaries %}{{ dropdown('Commentaries', all_commentaries) }}{% endif %}
     </ul>
     <ul id="page-links">
         {{ page_link(prev, 'prev-link', '&laquo;') }}
         {{ page_link(next, 'next-link', '&raquo;') }}
     </ul>
 </div>
-</div>
 
-
+</div>  {# end #segment-view #}
 {% endblock %}
 
 {% block footer %}{% endblock %}
