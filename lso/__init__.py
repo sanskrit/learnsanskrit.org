@@ -16,6 +16,7 @@ import sqlalchemy
 import lso.admin
 import lso.database
 import lso.lib.converters
+from lso.lso_json_encoder import LSOJSONEncoder
 
 
 # Assets (LESS CSS and assorted JavaScript)
@@ -110,6 +111,7 @@ def create_app(name, config_object, override=None):
     :param config_object: path to config object
     """
     app = Flask(name)
+    app.json_encoder = LSOJSONEncoder
 
     try:
         app.config.from_object(config_object)
