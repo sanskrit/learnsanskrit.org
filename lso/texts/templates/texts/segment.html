@@ -41,14 +41,14 @@
         {# <a class="jump" href="#{{ segment.xmlid }}">#</a> #}
         {# <br /> #}
         <div class="primary">
-        {{ card.primary.content|safe }}
+        {{ xml_transform(card.primary.content)|safe }}
         </div>
 
         <div class="translations">
         {% for translation in card.translations %}
             <div class="translation">
             {% for seg in translation.segments %}
-                {{ seg.content|safe }}
+                {{ xml_transform(seg.content)|safe }}
             {% endfor %}
             {{ secondary_texts[translation.text_id].name }}
             </div>
@@ -58,7 +58,7 @@
         {% for commentary in card.commentaries %}
             <div class="commentary">
             {% for seg in commentary.segments %}
-                {{ seg.content|safe }}
+                {{ xml_transform(seg.content)|safe }}
             {% endfor %}
             {{ secondary_texts[commentary.text_id].name }}
             </div>

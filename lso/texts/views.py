@@ -16,13 +16,30 @@ PAGE_SIZE = 1
 # Minimum size for a segment page
 MIN_PAGE_SIZE = 1
 
+
 class Card:
+
+    """A segment with its associated children. The metaphor here is that this
+    is like an index card, i.e. a discrete unit of content.
+
+    I used my own class because Flask makes namedtuple JSON serialization hard
+    to modify.
+    """
+
     def __init__(self, primary, translations, commentaries):
         self.primary = primary
         self.translations = translations
         self.commentaries = commentaries
 
+
 class ChildCard:
+
+    """A child texts with associated segments.
+
+    I used my own class because Flask makes namedtuple JSON serialization hard
+    to modify.
+    """
+
     def __init__(self, text_id, segments):
         self.text_id = text_id
         self.segments = segments
@@ -47,7 +64,8 @@ def load_data():
 @bp.context_processor
 def inject_helpers():
     return {
-        'categorize_texts': categorize_texts
+        'categorize_texts': categorize_texts,
+        'xml_transform': L.transform
     }
 
 
