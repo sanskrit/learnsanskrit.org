@@ -130,10 +130,10 @@ def categorize_texts(texts):
 
     :param texts: a list of :class:`Text` objects.
     """
-    data = defaultdict(list)
+    data = {}
     for text in texts:
         key = CATEGORIES[text.category_id]
-        data[key].append(text)
+        data.setdefault(key, []).append(text)
     return data
 
 
