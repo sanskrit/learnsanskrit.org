@@ -55,31 +55,42 @@
     var State = Backbone.Model;
 
 
-    // Segments
+    // Cards
     // --------
 
-    var tSegment = [
-        '<section id="<%= xmlid %>" class="segment">',
-        '    <a class="jump" href="<%= slug %>">#</a>',
-        '    <div class="primary"><%= content %></div>',
+    var tCard = [
+        '<section id="<%= primary.slug %>" class="card">',
+        // '    <a class="jump" href="<%= slug %>">#</a>',
+        '    <div class="primary"><%= primary.content %></div>',
         '    <div class="translations">',
-        '        <% _.each(corresp, function(c_segs, c_slug) { %>',
-        '        <% _.each(c_segs, function(c_seg) { %>',
-        '        <div class="translation trans-<%= c_slug %>"><%= c_seg.content %></div>',
+        '        <% _.each(translations, function(t) { %>',
+        '        <div class="translation">',
+        '            <% _.each(t.segments, function(s) { %>',
+        '              <%= s.content %>',
+        '            <% }); %>',
+        '        </div>',
         '        <% }); %>',
+        '    </div>',
+        '    <div class="commentaries">',
+        '        <% _.each(commentaries, function(c) { %>',
+        '        <div class="commentary">',
+        '            <% _.each(c.segments, function(s) { %>',
+        '                <%= s.content %>',
+        '            <% }); %>',
+        '        </div>',
         '        <% }); %>',
         '    </div>',
         '</section>'
     ].join('');
 
-    var Segment = Backbone.Model;
+    var Card = Backbone.Model;
 
-    var Segments = Backbone.Collection.extend({
-        model: Segment
+    var Cards = Backbone.Collection.extend({
+        model: Card
     });
 
-    var SegmentView = TemplateView.extend({
-        template: _.template(tSegment)
+    var CardView = TemplateView.extend({
+        template: _.template(tCard)
     });
 
     // Child links
@@ -235,10 +246,10 @@
                 model: this.state
             });
 
-            this.segments = new Segments();
-            this.segments.on('all', this.render, this);
+            this.cards = new Cards();
+            this.cards.on('all', this.render, this);
 
-            this.$segments = $('#segments');
+            this.$cards = $('#segments');
         },
 
         events: {
@@ -262,11 +273,13 @@
 
         render: function() {
             var data = [];
-            this.segments.each(function(model) {
-                var view = new SegmentView({ model: model }).render();
+            this.cards.each(function(model) {
+                console.log(model);
+                console.log('rendering')
+                var view = new CardView({ model: model }).render();
                 data.push(view.$el.html());
             });
-            this.$segments
+            this.$cards
                 .hide()
                 .html(data.join(''))
                 .fadeIn(200);
@@ -292,20 +305,20 @@
                 self.prevLink.set(prev);
                 self.nextLink.set(next);
 
-                var segments = data['segments'],
+                var cards = data['cards'],
                     corresp = data['corresp'] || {};
-                segments = _.map(segments, function(x) {
+                cards = _.map(cards, function(x) {
                     x['corresp'] = corresp[x.slug] || {};
                     return x;
                 });
 
-                self.segments.reset(segments);
+                self.cards.reset(cards);
             });
         },
 
         // Fetch child segments from the server and store them appropriately.
         query_child_segments: function(slug) {
-            var parent_ids = this.segments.map(function(s) {
+            var parent_ids = this.cards.map(function(s) {
                 return s.get('id');
             }),
                 url = url_child_segments_api(slug, parent_ids);

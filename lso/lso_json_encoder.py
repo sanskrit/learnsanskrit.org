@@ -2,6 +2,7 @@ from flask.json import JSONEncoder
 
 from lso.texts.models import Segment, Text
 from lso.texts.views import Card, ChildCard
+from lso.texts.lib import transform as xml_transform
 
 class LSOJSONEncoder(JSONEncoder):
 
@@ -10,7 +11,7 @@ class LSOJSONEncoder(JSONEncoder):
             return {
                 'text_id': o.text_id,
                 'slug': o.slug,
-                'content': o.content,
+                'content': xml_transform(o.content),
             }
         elif isinstance(o, Text):
             return {
