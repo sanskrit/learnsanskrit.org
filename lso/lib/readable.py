@@ -50,12 +50,12 @@ class Readable(object):
             'inj': 'injunctive',
             'perf': 'perfect',
             'ben': 'benedictive',
-            'dfut': 'distant future',
+            'pfut': 'distant future',
         }
 
         voice = {
-            'P': 'P.',
-            'A': 'A',
+            'para': 'P.',
+            'atma': 'A',
             'passive': 'passive',
         }
 
@@ -78,7 +78,7 @@ class Readable(object):
     def form_abbr(self, form):
         pos_id = form.pos_id
 
-        if pos_id in (Tag.NOUN, Tag.ADJECTIVE, Tag.PRONOUN, Tag.PARTICIPLE):
+        if pos_id in (Tag.NOMINAL, Tag.PRONOUN, Tag.PARTICIPLE):
             if form.compounded:
                 return 'comp.'
             else:
@@ -107,11 +107,8 @@ class Readable(object):
 
     def stem_abbr(self, stem):
         pos_id = stem.pos_id
-        if pos_id == Tag.NOUN:
+        if pos_id == Tag.NOMINAL:
             return '{0}.'.format(self.genders[stem.genders_id])
-
-        elif pos_id == Tag.ADJECTIVE:
-            return 'adj.'
 
         elif pos_id == Tag.PRONOUN:
             return 'pronoun'

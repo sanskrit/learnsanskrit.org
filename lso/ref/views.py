@@ -13,7 +13,6 @@ from sanskrit import sanscript, schema as X, sounds
 
 from lso import ctx, simple_analyzer, simple_query
 from lso.lib.readable import Readable
-from ..database import session
 from ..forms import QueryForm
 
 bp = Blueprint('ref', __name__, static_folder='static',
@@ -68,7 +67,7 @@ def _stem_result(stem, results, lookup):
         'children': []
     }
 
-    if pos_id == X.Tag.NOUN:
+    if pos_id == X.Tag.NOMINAL:
         genders = gender_group[stem.genders_id]
         datum['url'] = url_for('.noun', from_script=sanscript.SLP1,
                                name=name, genders=genders)
@@ -77,10 +76,6 @@ def _stem_result(stem, results, lookup):
     elif pos_id == X.Tag.PRONOUN:
         datum['url'] = url_for('.pronoun', from_script=sanscript.SLP1,
                                name=name)
-        results.append(datum)
-
-    elif pos_id == X.Tag.ADJECTIVE:
-        datum['url'] = '#'
         results.append(datum)
 
     elif pos_id == X.Tag.PARTICIPLE:
@@ -109,7 +104,7 @@ def _form_result(form, results, lookup):
     }
 
     Tag = X.Tag
-    if pos_id in (Tag.NOUN, Tag.PRONOUN, Tag.ADJECTIVE, Tag.PARTICIPLE):
+    if pos_id in (Tag.NOMINAL, Tag.PRONOUN, Tag.PARTICIPLE):
         parent = _stem_result(form.stem, results, lookup)
         parent['children'].append(datum)
 
@@ -129,10 +124,10 @@ def query(q):
     """
     results = []
     lookup = {}
-    for r in session.query(X.Root).filter(X.Root.name == q):
+    for r in ctx.session.query(X.Root).filter(X.Root.name == q):
         _root_result(r, results, lookup)
 
-    for r in session.query(X.Stem).filter(X.Stem.name == q):
+    for r in ctx.session.query(X.Stem).filter(X.Stem.name == q):
         _stem_result(r, results, lookup)
 
     for r in simple_analyzer.analyze(q):

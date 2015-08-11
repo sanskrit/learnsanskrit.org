@@ -101,6 +101,10 @@ template_filters = [
     gf.verb_data,
 ]
 
+# Config for `sanskrit` packages
+# TODO: something smarter than making them all global
+ctx = simple_analyzer = simple_query = None
+
 
 def create_app(name, config_object, override=None):
     """App factory.
@@ -158,6 +162,7 @@ def create_app(name, config_object, override=None):
     # security.init_app(app)
 
     # 'sanskrit' package
+    global ctx, simple_query, simple_analyzer
     ctx = sanskrit.Context(app.config)
     ctx.connect()
     try:
@@ -184,7 +189,7 @@ def create_app(name, config_object, override=None):
     register_blueprints(app,
         'dicts',
         'guide',
-        # 'ref',
+        'ref',
         'site',
         'texts',
         'tools',
