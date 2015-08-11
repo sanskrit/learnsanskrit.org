@@ -115,9 +115,12 @@ class Readable(object):
 
         elif pos_id == Tag.PARTICIPLE:
             mode = self.mode[stem.mode_id]
-            voice = self.voice[stem.mode_id]
+            print stem.mode_id, stem.mode
+            voice = self.voice[stem.voice_id]
+            return 'participle ({}, {})'.format(mode, voice)
 
-        return '?'
+        else:
+            return '?'
 
     def root_abbr(self, root):
         return '(verb)'
