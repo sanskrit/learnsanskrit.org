@@ -9,6 +9,7 @@ class LSOJSONEncoder(JSONEncoder):
     def default(self, o):
         if isinstance(o, Segment):
             return {
+                'id': o.id,
                 'text_id': o.text_id,
                 'slug': o.slug,
                 'content': xml_transform(o.content),
