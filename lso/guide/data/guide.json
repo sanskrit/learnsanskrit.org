@@ -5,7 +5,7 @@
         "deps": []
     },
     {
-        "name": "How to use the guide",
+        "name": "How the guide works",
         "deps": ["why-learn-sanskrit"]
     },
 
@@ -16,7 +16,7 @@
     // Pronouncing and labeling various Sanskrit sounds
     {
         "name": "Simple vowels",
-        "deps": ["how-to-use-the-guide"]
+        "deps": ["how-the-guide-works"]
     },
     {
         "name": "Compound vowels",
