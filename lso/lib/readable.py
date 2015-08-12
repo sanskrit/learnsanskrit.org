@@ -51,6 +51,8 @@ class Readable(object):
             'perf': 'perfect',
             'ben': 'benedictive',
             'pfut': 'distant future',
+            'past': 'past',
+            'fut': 'future',
         }
 
         voice = {
@@ -115,7 +117,6 @@ class Readable(object):
 
         elif pos_id == Tag.PARTICIPLE:
             mode = self.mode[stem.mode_id]
-            print stem.mode_id, stem.mode
             voice = self.voice[stem.voice_id]
             return 'participle ({}, {})'.format(mode, voice)
 

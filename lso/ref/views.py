@@ -199,10 +199,8 @@ def pronoun(name, from_script, genders=None):
 @bp.route('/root-<from_script>/<name>')
 def root(name, from_script):
     """Display a summary of a root's forms"""
-    name = to_slp1(name, from_script)
+    slp_name = to_slp1(name, from_script)
     forms = simple_query.verb_summary(name)
-
-    print forms
 
     labels = {
         'pres': 'Present',
@@ -218,17 +216,17 @@ def root(name, from_script):
         'ben': 'Benedictive',
         'cond': 'Conditional',
         'perf': 'Perfect',
-        'P': 'Parasmaipada',
-        'A': u'Ātmanepada',
-        'passive': 'Passive',
+        'para': 'Parasmaipada',
+        'atma': u'Ātmanepada',
+        'pass': 'Passive',
     }
 
     verb_modes = 'pres impv ipft opt cond sfut dfut aor inj perf'.split()
     part_modes = 'fut pres past perf'.split()
-    voices = 'P A passive'.split()
+    voices = 'para atma pass'.split()
 
     data = {
-        'name': name,
+        'name': slp_name,
         'verb_modes': verb_modes,
         'part_modes': part_modes,
         'voices': voices,
