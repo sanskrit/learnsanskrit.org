@@ -69,7 +69,7 @@ class TestData:
     def test_mostly_no_deps(self, graph_data):
         """Verify that only a few lessons have no dependencies."""
         no_deps = set(x['slug'] for x in graph_data if not x['deps'])
-        assert no_deps == {'introduction'}
+        assert no_deps == {'why-learn-sanskrit'}
 
     def test_unit_lessons_exist(self, graph_data, unit_data):
         """Verify that all unit lessons exist."""
