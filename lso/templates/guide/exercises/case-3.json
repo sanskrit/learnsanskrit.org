@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Case 3",
+    "language": "sa",
+    "numRequired": 5,
+    "description": "Fix the sentence by changing the noun to case 3. Blend where appropriate.",
+    "example": { "question": "gajo gacchati", "answer": "gajena gacchati" },
+    "items": [
+      { "question": "gajAz caranti", "answer": "gajaiz caranti" },
+      { "question": "gajau dizataH", "answer": "gajAbhyAM dizataH" },
+      { "question": "azvA dizanti", "answer": "azvair dizanti" },
+      { "question": "gaja icchati", "answer": "gajenecchati" },
+      { "question": "narA icchanti", "answer": "narair icchanti" },
+      { "question": "gajAz caranti", "answer": "gajaiz caranti" },
+      { "question": "naro 'syati", "answer": "nareNAsyati" },
+      { "question": "azvo 'syati", "answer": "azvenAsyati" },
+      { "question": "gajA asyanti", "answer": "gajair asyanti" }
+    ]
+  }
+]
