@@ -608,7 +608,7 @@
         ]
     },
     {
-        "name": "`-at`, `-mat`, and `-vat` stems",
+        "name": "`-mat` and `-vat` stems",
         "deps": [
             "strong-and-weak-stems"
         ]
@@ -666,7 +666,7 @@
         "name": "`-tavat`",
         "deps": [
             "ta",
-            "at-mat-and-vat-stems"
+            "mat-and-vat-stems"
         ]
     },
     {
