@@ -71,7 +71,7 @@
         ]
     },
     {
-        "name": "Roots",
+        "name": "Verb roots",
         "description": "How to work with verbs at a deeper level.",
         "lessons": [
             "roots",
@@ -93,7 +93,22 @@
             "tva-and-ya",
             "ta",
             "tavya-aniya-and-ya",
-            "tum"
+            "tum",
+            "stem-suffixes"
+        ]
+    },
+    {
+        "name": "Noun stems",
+        "description": "New kinds of noun stems.",
+        "lessons": [
+            "consonant-stems",
+            "strong-and-weak-stems",
+            "an-man-and-van-stems",
+            "at-mat-and-vat-stems",
+            "in-min-and-vin-stems",
+            "r-stems",
+            "a-i-and-u-stems",
+            "i-and-u-stems"
         ]
     }
 ]
