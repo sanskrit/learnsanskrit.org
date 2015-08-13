@@ -1,0 +1,140 @@
+Other stems
+-----------
+
+All of the nouns we've studied have ended in `-a`:
+
+!!! examples
+    - {{ m.x('narAn pazyasi', 'You see the men.') }}
+
+But stems can end in many other ways. And each stem ending has its own set of
+endings. Here are just a few examples:
+
+!!! examples
+    - {{ m.x('agni -> agniH', 'fire') }}
+    - {{ m.x('vAyu -> vAyuH', 'wind') }}
+    - {{ m.x('bhagavat -> bhagavAn', 'The blessed one') }}
+    - {{ m.x('dhanus -> dhanuH', 'Bow') }}
+
+The natural reaction here is despair. But there's no need for it. Noun endings
+follow a few basic patterns. And by finding these patterns, we can quickly
+learn how to use a new stem.
+
+
+The basic patterns
+------------------
+
+In theory, we could look at thousands of nouns and try to figure out the basic patterns. But this would take too long. Thankfully, the grammarian Panini has done the work for us:
+
+### Masculine and feminine endings
+
+{{ m.manual_nominal(
+    stem='_',
+    forms=[['_', 'O', 'aH'],
+        ['am', 'O', 'aH'],
+        ['A', 'ByAm', 'BiH'],
+        ['e', 'ByAm', 'ByaH'],
+        ['aH', 'ByAm', 'ByaH'],
+        ['aH', 'oH', 'Am'],
+        ['i', 'oH', 'su'],
+        ['_', 'O', 'aH']],
+    colors=[['','c1','c5'],
+        ['', 'c1', 'c5'],
+        ['', 'c2', ''],
+        ['', 'c2', 'c4'],
+        ['c5', 'c2', 'c4'],
+        ['c5', 'c3', ''],
+        ['', 'c3', ''],
+        ['', 'c1', 'c5']]
+) }}
+
+Compare these to the endings you know already.
+
+
+### Neuter endings
+
+As usual, these are simple:
+
+{{ m.manual_nominal(
+    stem='_',
+    forms=[['_', 'I', 'i'],
+        ['_', 'I', 'i'],
+        ['_', 'I', 'i']],
+    colors=[['c2','c1','c5'],
+        ['c2', 'c1', 'c5'],
+        ['c2', 'c1', 'c5']]
+) }}
+
+When we use the plural ending, we also have to insert a nasal sound:
+
+!!! examples
+    - {{ m.x('manas + i -> manAMsi', 'Minds, spirits') }}
+
+
+Consonant stems
+---------------
+
+`marut` is a masculine noun that means "wind." It uses the endings above
+without any changes:
+
+{{ m.manual_nominal(
+    stem='marut',
+    forms=[['marut', 'marutO', 'marutaH'],
+        ['marut', 'marutI', 'marutaH'],
+        ['marutA', 'marudByAm', 'marudBiH'],
+        ['marute', 'marudByAm', 'marudByaH'],
+        ['marutaH', 'marudByAm', 'marudByaH'],
+        ['marutaH', 'marutoH', 'marutAm'],
+        ['maruti', 'marutoH', 'marutsu'],
+        ['marut', 'marutO', 'marutaH']],
+    colors=[['','c1','c5'],
+        ['', 'c1', 'c5'],
+        ['', 'c2', ''],
+        ['', 'c2', 'c4'],
+        ['c5', 'c2', 'c4'],
+        ['c5', 'c3', ''],
+        ['', 'c3', ''],
+        ['', 'c1', 'c5']]
+) }}
+
+There's also a subtle blending rule here. Do you remember the rule that turns `marut + bhiH` into `marudbhiH`? If not, here's a refresher:
+
+<section class="sandhi">
+{% filter markdown %}
+A stop uses the same "voice" as the sound that follows it. If the sound is voiced, the stop is voiced; and if the sound is unvoiced, the stop is unvoiced too:
+
+!!! examples
+    - {{ m.x('tat gacchati -> tad gacchati', 'That goes.') }}
+    - {{ m.x('tat asat -> tad asat', 'That is false.') }}
+{% endfilter %}
+</section>
+
+This was discussed in the lesson on [basic consonants]({{
+m.lesson_url('basic-consonants') }}). But what's strange is that this rule doesn't seem to apply everywhere:
+
+!!! examples
+    - {{ m.x('marut + A -> maru[tA] ???') }}
+
+Why does this happen?
+
+It's actually quite simple. *Between words*, it's easier to blend. But *inside
+a word*, blending can cause too many changes and make it hard to understand. So
+wherever possible, we don't blend when we're inside a word:
+
+!!! examples
+    - {{ m.x('marut + A -> marutA') }}
+
+But if that's true, why do we blend `marut + bhiH` together? As usual, the
+answer is that *written Sanskrit is a record of spoken Sanskrit*. When spoken,
+`marutbhiH` and `marudbhiH` sound almost identical. So we just write
+`marudbhiH` instead. If you're skeptical, try saying these words out loud:
+
+!!! examples
+    - {{ m.x('marutbhiH') }}
+    - {{ m.x('marudbhiH') }}
+
+Note that we can't do this with `marut + A`. The difference is easy to hear:
+
+!!! examples
+    - {{ m.x('marutA') }}
+    - {{ m.x('marudA') }}
+
