@@ -15,7 +15,15 @@
     <p>You can follow the guide's progress by subscribing to the <a href="https://groups.google.com/forum/#!forum/learnsanskrit">mailing list</a>.</p>
 </diV>
 
+<p>Jump to:</p>
+<ul class="lesson-list" style="font-variant: small-caps">
+    {% for u in units %}
+        <li><a href="#unit-{{ loop.index }}">{{ u.name }}</a></li>
+    {% endfor %}
+</ul>
+
 {% for u in units %}
+    <a id="unit-{{ loop.index }}"></a>
     <h2>{{ u.name }}</h2>
     {% filter markdown %}{{ u.description }}{% endfilter %}
     {{ m.lesson_list(u.lessons) }}
