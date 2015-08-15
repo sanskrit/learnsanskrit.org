@@ -94,7 +94,7 @@
 
 
 {# An alternative to `verb`, which still isn't working. #}
-{% macro manual_verb(root, forms, caption) %}
+{% macro manual_verb(root, forms, caption, colors=None) %}
 <table class="paradigm">
     <caption>{{ caption }}</caption>
     <tr>
@@ -106,9 +106,16 @@
     {% set labels=['He', 'You', 'I'] %}
     {% for row in forms %}
     <tr>
-        <th>{{ labels[loop.index0] }}</th>
+        {% set person = loop.index %}
+        <th>{{ labels[person - 1] }}</th>
         {% for form in row %}
-        <td>{{ form|sa1 }}<br />{{ form|sa2 }}</td>
+            {% set number = loop.index %}
+            {% if colors %}
+                {% set class = colors[person - 1][number - 1] %}
+            {% else %}
+                {% set class="" %}
+            {% endif %}
+            <td class="{{ class }}">{{ form|sa1 }}<br />{{ form|sa2 }}</td>
         {% endfor %}
     </tr>
     {% endfor %}
