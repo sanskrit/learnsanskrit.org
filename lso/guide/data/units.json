@@ -125,9 +125,10 @@
         ]
     },
     {
-        "name": "Other verb classes",
-        "description": "Five other verb classes",
+        "name": "Complex verb classes",
+        "description": "Six other verb classes",
         "lessons": [
+            "complex-verb-classes",
             "the-no-class",
             "the-o-class",
             "the-na-class",

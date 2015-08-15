@@ -476,6 +476,12 @@
         ]
     },
     {
+        "name": "Complex verb classes",
+        "deps": [
+            "verb-classes"
+        ]
+    },
+    {
         "name": "The strong `a` class",
         "deps": [
             "verb-classes"
@@ -484,14 +490,16 @@
     {
         "name": "The root class",
         "deps": [
-            "verb-classes"
+            "verb-classes",
+            "complex-verb-classes"
         ]
     },
     {
         "name": "The doubling class",
         "deps": [
             "verb-classes",
-            "doubling"
+            "doubling",
+            "complex-verb-classes"
         ]
     },
     {
@@ -503,7 +511,8 @@
     {
         "name": "The `no` class",
         "deps": [
-            "verb-classes"
+            "verb-classes",
+            "complex-verb-classes"
         ]
     },
     {
@@ -515,20 +524,23 @@
     {
         "name": "The nasal class",
         "deps": [
-            "verb-classes"
+            "verb-classes",
+            "complex-verb-classes"
         ]
     },
     {
         "name": "The `o` class",
         "ex": ["tanoti"],
         "deps": [
-            "verb-classes"
+            "verb-classes",
+            "complex-verb-classes"
         ]
     },
     {
         "name": "The `nA` class",
         "deps": [
-            "verb-classes"
+            "verb-classes",
+            "complex-verb-classes"
         ]
     },
     {
