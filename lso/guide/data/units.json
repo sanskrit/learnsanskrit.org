@@ -123,5 +123,43 @@
             "a-i-and-u-stems",
             "i-and-u-stems"
         ]
+    },
+    {
+        "name": "Other verb classes",
+        "description": "Five other verb classes",
+        "lessons": [
+            "the-no-class",
+            "the-o-class",
+            "the-na-class",
+            "the-nasal-class",
+            "the-root-class",
+            "doubling",
+            "the-doubling-class"
+        ]
+    },
+    {
+        "name": "Derived roots",
+        "description": "Other roots",
+        "lessons": [
+            "making-verb-roots",
+            "causal-roots",
+            "nominal-roots",
+            "desiderative-roots",
+            "intensive-roots"
+        ]
+    },
+    {
+        "name": "Devanagari",
+        "description": "How to read and write Devanagari.",
+        "lessons": [
+            "devanagari",
+            "marks",
+            "devanagari-consonants",
+            "plain-vowels",
+            "consonant-clusters",
+            "punctuation",
+            "numerals",
+            "om"
+        ]
     }
 ]

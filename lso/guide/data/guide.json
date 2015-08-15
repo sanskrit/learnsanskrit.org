@@ -526,13 +526,6 @@
         ]
     },
     {
-        "name": "`kR`",
-        "ex": ["karoti"],
-        "deps": [
-            "the-o-class"
-        ]
-    },
-    {
         "name": "The `nA` class",
         "deps": [
             "verb-classes"
