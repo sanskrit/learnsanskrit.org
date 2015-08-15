@@ -84,7 +84,7 @@
         ]
     },
     {
-        "name": "Prefixes and suffixes",
+        "name": "Making words",
         "description": "How to rapidly create thousands of new words.",
         "lessons": [
             "noun-prefixes",
@@ -95,6 +95,18 @@
             "tavya-aniya-and-ya",
             "tum",
             "stem-suffixes"
+        ]
+    },
+    {
+        "name": "Complex expressions",
+        "description": "Important tools for saying more complicated things.",
+        "lessons": [
+            "tad-and-etad",
+            "kim",
+            "yad-and-other-relatives",
+            "bahuvrihi-compounds",
+            "adverbs",
+            "avyayibhava-compounds"
         ]
     },
     {

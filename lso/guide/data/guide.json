@@ -362,6 +362,7 @@
         ]
     },
     {
+        // TODO: add 'yad' dependency?
         "name": "`bahuvrIhi` compounds",
         "deps": [
             "tatpurusha-compounds"
@@ -370,7 +371,9 @@
     {
         "name": "`avyayIbhAva` compounds",
         "deps": [
-            "tatpurusha-compounds"
+            "tatpurusha-compounds",
+            "verb-prefixes",
+            "adverbs"
         ]
     },
 
