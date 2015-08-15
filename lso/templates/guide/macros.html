@@ -1,12 +1,5 @@
 {% import 'macros/charts.html' as charts %}
 
-{# Print a list of examples #}
-{% macro examples() %}
-<ul class="examples">
-    {% for example in varargs %}{{ example }}{% endfor %}
-</ul>
-{% endmacro %}
-
 {# Print a single example #}
 {% macro x(sanskrit, english) -%}
 {%- set text = sanskrit.replace('->', '→').replace('[', '<mark>').replace(']', '</mark>') -%}
