@@ -87,7 +87,6 @@
         "name": "Making words",
         "description": "How to rapidly create thousands of new words.",
         "lessons": [
-            "noun-prefixes",
             "verb-prefixes",
             "root-suffixes",
             "tva-and-ya",
@@ -101,6 +100,7 @@
         "name": "Complex expressions",
         "description": "Important tools for saying more complicated things.",
         "lessons": [
+            "a-and-sa",
             "tad-and-etad",
             "kim",
             "yad-and-other-relatives",

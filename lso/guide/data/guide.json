@@ -641,7 +641,7 @@
         ]
     },
     {
-        "name": "Noun prefixes",
+        "name": "`a-` and `sa-`",
         "deps": [
             "nouns"
         ]
