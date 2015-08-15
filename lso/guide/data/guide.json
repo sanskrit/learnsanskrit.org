@@ -747,6 +747,15 @@
         ]
     },
     {
+        "name": "Blending with `-t`",
+        "deps": [
+            "tva-and-ya",
+            "ta",
+            "tavya-aniya-and-ya",
+            "tum"
+        ]
+    },
+    {
         "name": "`-tvA` and `-ya`",
         "deps": [
             "root-suffixes"
