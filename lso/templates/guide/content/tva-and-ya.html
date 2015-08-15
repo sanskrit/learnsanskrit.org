@@ -1,0 +1,111 @@
+And then...
+-----------
+
+We know quite a bit of Sanskrit now. But there are still basic things that we
+can't say. Suppose we want to say that Arjuna walks to the forest then sees an
+elephant. How can we do this?
+
+We could try:
+
+!!! examples
+    - {{ m.x('arjuno vanaM carati gajaM ca pazyati', 'Arjuna walks to the forest and he sees an elephant.') }}
+
+But this isn't quite right. We want to say that he does one thing *then* does
+another. But instead we said that he does one thing *and* does another. So what
+should we do?
+
+The answer is a new root suffix. When added to a root meaning X, the new word
+means "after doing X":
+
+!!! examples
+    - {{ m.x('arjuno vanaM [caritvA] gajaM pazyati', 'Arjuna [walks] to the forest [then] sees an elephant.') }}
+
+This <dfn>`-tvA`</dfn> suffix creates uninflected words. Sometimes it has an
+`i` before it, and sometimes it doesn't:
+
+!!! examples
+    - {{ m.x('duryodhano [mRtvA] svargaM gacchati', '[After dying], Duryodhana goes to heaven.') }}
+
+
+An uninflected verb
+-------------------
+
+A word ending in `-tvA` can be used with nouns in different cases (`vanaM
+caritvA`), just like an ordinary verb. But since these words are uninflected,
+they're always the same:
+
+!!! examples
+    - {{ m.x('azvaH [khAditvA] pibati', 'The horse [eats then] drinks.') }}
+    - {{ m.x('azvau [khAditvA] pibataH', 'The two horses [eat then] drink.') }}
+    - {{ m.x('[khAditvA] pibAmi', 'I [eat then] drink.') }}
+
+In other words, `-tvA` words are basically *uninflected verbs*.
+
+
+`-i-`
+-----
+
+Sometimes it's `-tvA` and sometimes it's `-itvA`. Knowing when to add this
+`-i-` is a tricky business. Here's the rule for it:
+
+!!! rule
+    There's no simple rule for it. Some roots *always* use it, some roots
+    *never* use it, and some roots *optionally* use it. Learn which are which
+    by reading a lot of Sanskrit.
+
+But the good news is that the root is usually easy to identify:
+
+!!! examples
+    - {{ m.x('khAditvA (khAd)', 'after eating (eat)') }}
+    - {{ m.x('caritvA (car)', 'after walking (walk)') }}
+    - {{ m.x('smRtvA (smR)', 'after remembering (remember)') }}
+    - {{ m.x('zucitvA (zuc)', 'after grieving (grieve)') }}
+
+
+Root changes
+------------
+
+### Roots that end in `-m` or `-n`
+
+Usually, these roots loose the `-m` or `-n`:
+
+!!! examples:
+    - {{ m.x('gam -> gatvA', 'go -> after going') }}
+    - {{ m.x('man -> matvA', 'think -> after thinking') }}
+
+But not always:
+
+!!! examples
+    - {{ m.x('jan -> janitvA', 'be born -> after being born') }}
+
+
+### Roots that end in `RR`
+
+`RR` is a rare sound in Sanskrit, and Panini uses it in his roots mainly as a
+sort of shorthand:
+
+!!! rule
+    If `RR` follows any of the stop consonants at the lips (`pa, pha, ba, bha,
+    ma`), it becomes `Ur`. Otherwise it becomes `Ir`:
+
+!!! examples:
+    - {{ m.x('tRR -> tIrtvA', 'cross -> after crossing') }}
+    - {{ m.x('pRR -> pUrtvA', 'fill -> after filling') }}
+
+
+### Other changes
+
+There are other changes that `-tvA` causes, but all the other suffixes that
+start with `-t` cause these changes too. So let's study these later, once we've
+seen some of the others.
+
+
+`-ya`
+-----
+
+When the root has a prefix, we use <dfn>`-ya`</dfn> instead. The root remains
+the same, but if the root ends in a short vowel, we use `-tya` instead:
+
+!!! examples
+    - {{ m.x('upasaM-gam -> upasaMgamya', 'come -> having come') }}
+    - {{ m.x('sam-i', 'come together -> having come together') }}
