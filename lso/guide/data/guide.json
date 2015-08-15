@@ -643,7 +643,8 @@
     {
         "name": "`a-` and `sa-`",
         "deps": [
-            "nouns"
+            "nouns",
+            "bahuvrihi-compounds"
         ]
     },
 

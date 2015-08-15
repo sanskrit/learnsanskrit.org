@@ -101,13 +101,13 @@
         "name": "Complex expressions",
         "description": "Important tools for saying more complicated things.",
         "lessons": [
-            "a-and-sa",
             "tad-and-etad",
             "kim",
             "yad-and-other-relatives",
             "bahuvrihi-compounds",
             "adverbs",
-            "avyayibhava-compounds"
+            "avyayibhava-compounds",
+            "a-and-sa"
         ]
     },
     {
