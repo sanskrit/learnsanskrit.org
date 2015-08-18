@@ -121,7 +121,10 @@
             "an-man-and-van-stems",
             "r-stems",
             "a-i-and-u-stems",
-            "i-and-u-stems"
+            "i-and-u-stems",
+            "ai-stems",
+            "o-stems",
+            "au-stems"
         ]
     },
     {
@@ -139,6 +142,68 @@
         ]
     },
     {
+        "name": "Stem verbs",
+        "description": "Stem verbs",
+        "lessons": [
+            "the-ordinary-past",
+            "commands",
+            "potential-verbs"
+        ]
+    },
+    {
+        "name": "Root verbs",
+        "description": "Root verbs",
+        "lessons": [
+            "the-recent-past",
+            "the-near-future",
+            "the-distant-future",
+            "conditional-verbs",
+            "benedictive-verbs",
+            "the-distant-past"
+        ]
+    },
+    {
+        "name": "Verbal adjectives",
+        "description": "Verbal adjectives",
+        "lessons": [
+            "verbal-adjectives",
+            "tavat",
+            "at-and-ana",
+            "vas",
+            "verbal-adjectives-and-simultaneous-action"
+        ]
+    },
+    {
+        "name": "Other pronouns",
+        "description": "Other pronouns",
+        "lessons": [
+            "mad-and-tvad",
+            "idam",
+            "ena",
+            "pronominal-adjectives"
+        ]
+    },
+    {
+        "name": "Meter",
+        "description": "meter",
+        "lessons": [
+            "syllables",
+            "meter",
+            "gana"
+        ]
+    },
+    {
+        "name": "Misc",
+        "description": "misc",
+        "lessons": [
+            "special-combinations",
+            "cvi-prefixes",
+            "verbless-sentences",
+            "samprasarana",
+            "nind-jiv-and-other-roots"
+        ]
+    },
+    {
         "name": "Derived roots",
         "description": "Other roots",
         "lessons": [
@@ -147,6 +212,16 @@
             "nominal-roots",
             "desiderative-roots",
             "intensive-roots"
+        ]
+    },
+    {
+        "name": "Numbers",
+        "description": "Numbers",
+        "lessons": [
+            "numbers",
+            "one-two-three",
+            "first-second-third",
+            "big-numbers"
         ]
     },
     {
