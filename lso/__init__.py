@@ -196,6 +196,4 @@ def create_app(name, config_object, override=None):
         #'users'
     )
 
-    with app.app_context():
-        lso.database.db.create_all()
     return app
