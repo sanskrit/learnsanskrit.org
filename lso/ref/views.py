@@ -13,7 +13,7 @@ from sanskrit import sanscript, schema as X, sounds
 
 from lso import ctx, simple_analyzer, simple_query
 from lso.lib.readable import Readable
-from ..forms import QueryForm
+from lso.forms import QueryForm
 
 bp = Blueprint('ref', __name__, static_folder='static',
                template_folder='templates', url_prefix='/ref')
