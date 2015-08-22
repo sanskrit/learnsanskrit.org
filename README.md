@@ -57,5 +57,6 @@ Components
 
 - grammar guide
 - dictionary
+- arbitrary word lookup
 - assorted tools (transliterator, meter recognizer)
 - "reading environment" with texts, translations, commentaries, and other data
