@@ -6,6 +6,10 @@ from lso.texts.lib import transform as xml_transform
 
 class LSOJSONEncoder(JSONEncoder):
 
+    """Extends :class:`flask.json.JSONEncoder` by adding support for
+    serializing certain SQLAlchemy objects.
+    """
+
     def default(self, o):
         if isinstance(o, Segment):
             return {
