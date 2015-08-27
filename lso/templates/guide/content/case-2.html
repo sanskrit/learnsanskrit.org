@@ -1,7 +1,8 @@
 Review
 ------
 
-Nouns can take different *roles* in some action. The simplest role just states *who performs the action*, and this is expressed by case 1.
+Nouns can take different *roles* in some action. The simplest role just states
+*who performs the action*. This role is expressed by case 1:
 
 !!! examples
     - {{ m.x('gajaz carati', 'The elephant walks.') }}
@@ -28,9 +29,9 @@ Of course, we can define more than one role at the same time:
 And we can even change the order of these words:
 
 !!! examples
-    - {{ m.x('gajo pazyati naram', 'The elephant sees the man.') }}
-    - {{ m.x('pazyati naraM gajaH', 'The elephant sees the man.') }}
-    - {{ m.x('naraM gajaH pazyati', 'The elephant sees the man.') }}
+    - {{ m.x('gajo pazyati [naram]', 'The elephant sees [the man].') }}
+    - {{ m.x('pazyati [naraM] gajaH', 'The elephant sees [the man].') }}
+    - {{ m.x('[naraM] gajaH pazyati', 'The elephant sees [the man].') }}
 
 !!! note
     In the examples above, `gajaM` and `naraM` are originally `gajam` and `naram`. But they [blend]({{ m.lesson_url('anusvara-and-visarga') }}) with the sounds that follow them.
@@ -73,7 +74,8 @@ Noun table
 Blending`-n`
 ------------
 
-At first, `-n` seems to blend in strange ways. But most of its odd changes are due to a few simple principles.
+At first, `-n` seems to blend in strange ways. But most of its odd changes are
+due to a few simple principles.
 
 ### `n` unchanged
 
@@ -85,7 +87,7 @@ At first, `-n` seems to blend in strange ways. But most of its odd changes are d
 
 ### A hidden `s`
 
-In front of certain unvoiced sounds, `-n` is replaced by `-Ms`. This `z` then
+In front of unvoiced stop consonants, `-n` is replaced by `-Ms`. This `s` then
 blends with the sounds that follow it.
 
 !!! examples
@@ -108,6 +110,10 @@ And in front of `l`, `n` does something slightly different.
     - {{ m.x('azvAn labhe -> azvA~l labhe', 'I obtain the horses.') }}
 
 `~` indicates a <dfn>nasal vowel</dfn>; it is **not** pronounced as `m` or any other letter. In ordinary Sanskrit, this is the only place where `~` is used.
+
+### Other changes
+
+This list of changes isn't complete, but it's good enough for now.
 {% endfilter %}
 </section>
 

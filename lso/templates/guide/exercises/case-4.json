@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Case 4",
+    "language": "sa",
+    "numRequired": 5,
+    "description": "Fix the sentence by changing the noun to case 4. Blend where appropriate.",
+    "example": { "question": "gajo gacchati", "answer": "gajAya gacchati" },
+    "items": [
+      { "question": "gajAz caranti", "answer": "gajebhyaz caranti" },
+      { "question": "gajau dizataH", "answer": "gajAbhyAM dizataH" },
+      { "question": "azvA dizanti", "answer": "azvebhyo dizanti" },
+      { "question": "gaja icchati", "answer": "gajAyecchati" },
+      { "question": "narA icchanti", "answer": "narebhya icchanti" },
+      { "question": "gajAz caranti", "answer": "gajebhyaz caranti" },
+      { "question": "naro 'syati", "answer": "narAyAsyati" },
+      { "question": "azvo 'syati", "answer": "azvAyAsyati" },
+      { "question": "gajA asyanti", "answer": "gajebhyo 'syanti" }
+    ]
+  }
+]

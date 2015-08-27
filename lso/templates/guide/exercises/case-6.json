@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Case 6",
+    "language": "sa",
+    "numRequired": 5,
+    "description": "Change the first noun to case 6. Blend where appropriate.",
+    "example": { "question": "bAlo gajaH", "answer": "bAlasya gajaH" },
+    "items": [
+      { "question": "naro 'zvaH", "answer": "narasyAzvaH" },
+      { "question": "narau azvau", "answer": "narayor azvau" },
+      { "question": "narAn vIraH", "answer": "narANAM vIraH" },
+      { "question": "gajenAzvau", "answer": "gajasyAzvau" },
+      { "question": "gajAbhyAM bAlaH", "answer": "gajayor bAlaH" },
+      { "question": "gajaiH putreNa", "answer": "gajAnAM putreNa" },
+      { "question": "azvAd vIraH", "answer": "azvasya vIraH" },
+      { "question": "azvau vIram", "answer": "azvayor vIram" },
+      { "question": "azvair grAmam", "answer": "azvAnAM grAmam" }
+    ]
+  }
+]
