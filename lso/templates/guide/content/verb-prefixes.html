@@ -1,17 +1,18 @@
 Reusing old roots
 -----------------
 
-Sanskrit contains about 2000 verb roots. About 800 of them have been used in the existing literature. But there are more than 800 possible actions in the world. What should we do when 800 roots aren't enough?
+Sanskrit contains about 2000 verb roots. But there are more than 2000 possible
+actions in the world. What should we do when 2000 roots aren't enough?
 
 The answer: **create new actions** from old ones. We do so by using some special uninflected words. These words modify the basic sense of a root and create a new idea.
 
-For example, <dfn>`A`</dfn> modifies the basic meaning of the verb:
+For example, <dfn>`A`</dfn> modifies the basic meaning of the verb `car` ("walk") in the sentence below:
 
 !!! examples
 
     -   {{ m.x('kam [A] janaM [carati] kAsu vikSu') }}
 
-        What people does he <mark>visit</mark>, and in what dwellings?
+        What people does he <mark>visit</mark>? In what dwellings?
 
         <cite>Rigveda 6.21.3</cite>
 
@@ -37,12 +38,9 @@ Sometimes, prefixes refine the original root's basic meaning:
 Sometimes, they produce entirely new meanings that are hard to predict:
 
 !!! examples
-    - {{ m.x('ava + gam -> avagam -> avagacchati', 'downward + go -> He understands.') }}
+    - {{ m.x('ava + gam -> avagam -> avagacchati', 'downward + go -> understand -> He understands.') }}
 
-      If this strange, note that "understand" has nothing to do with being "under" something or "standing" somewhere.
-
-
-And ometimes prefixes do almost nothing. Some say that the verb's meaning is made more intense:
+And sometimes prefixes do almost nothing. Some say that the verb's meaning is made more intense:
 
 !!! examples
     - {{ m.x('sam + jan -> saMjan -> saMjAyate', 'with/together + be born -> be born -> He is born.') }}
@@ -60,10 +58,14 @@ We can stack these changes on top of each other to create more subtle meanings:
 
 Sanskrit has about twenty different verb prefixes, each with its own basic meanings. For now, let's restrict ourselves to the five above:
 
+<section class="sandhi">
+{% filter markdown %}
 `Ar`:
 
 !!! examples
     - {{ m.x('upa + R (Rcchati) -> upArcchati', 'near/toward + go -> He goes near.') }}
+{% endfilter %}
+</section>
 
 
 ## In the wild
