@@ -20,6 +20,9 @@ def app(request):
     }
     app = lso.create_app(__name__, 'config', override)
 
+    with app.app_context():
+        lso.database.db.create_all()
+
     ctx = app.app_context()
     ctx.push()
 
