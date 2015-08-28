@@ -18,7 +18,12 @@ This sentence has a noun in case 1 and a noun in case 2. Usually, case 1 defines
 !!! examples
     - {{ m.x('siMhair naro [khAdyate]', 'The man [is eaten] by the lions.') }}
 
-In this new sentence, we have a noun in case 3 and a noun in case 1. But the agent has moved from case 1 to case 3, and the object has moved from case 2 to case 1. A verb that causes this change is called <dfn>passive</dfn>: it focuses on the object instead of the agent.
+In this new sentence, we have a noun in case 3 and a noun in case 1. But the
+agent has moved from case 1 to case 3, and the object has moved from case 2 to
+case 1. In English grammar, a verb that causes this change is called
+<dfn>passive</dfn>: it focuses on the object instead of the agent. These verbs
+are very slightly different in Sanskrit, but the distinction isn't worth making
+right now.
 
 
 Why use passive verbs?
@@ -102,18 +107,17 @@ Roots that end in `A` have their `A` changed to `I`. This change occurs for comp
 Passive endings
 ---------------
 
-Once we have a passive stem, we use `Atmanepada` endings to create complete verbs. *All* roots use `Atmanepada` endings when they are passive, without exception.
+Once we have a passive stem, we use `Atmanepada` endings to create complete verbs. *All* roots use `Atmanepada` endings when they are passive, without exception:
 
 !!! examples
     - {{ m.x('kRSNamRgAs tudyante zarair vIrANAm', "The black deer were struck by the heroes' arrows.") }}
-    - {{ m.x('dRzye grAme gRhe caiva', "I am seen in the village *and* in the house.") }}
-    - {{ m.x('vane dahyete grAmabAlaiH', 'The two forests are made to burn by the village boys.') }}
-    - {{ m.x('vane khAdye narasiMhena', 'I am eaten in the forest by Narasimha (or "by the man\'s lion").') }}
     - {{ m.x('zrUyase gRhajanaiH', 'You are heard by the people of the house.') }}
     - {{ m.x('jIye yodhakair yodhane', 'I am conquered by the warriors in battle.') }}
-    - {{ m.x("kriyate sundareNa", 'It is done by the beautiful one.') }}
-    - {{ m.x("sthIyase vIrair grAmeSu", 'You are stationed among the villages by the heroes.') }}
 
+
+
+
+{# TODO: where to put discussion of future passive stem?
 
 Using passive stems
 -------------------
@@ -138,3 +142,5 @@ As you might imagine, this can be ambiguous:
     - {{ m.x('gajena ramyate', 'It is enjoyed by the elephant.') }}
     - {{ m.x('gajo ramiSyate', 'The elephant will enjoy.') }}
     - {{ m.x('gajena ramiSyate', 'It will be enjoyed by the elephant.') }}
+
+#}

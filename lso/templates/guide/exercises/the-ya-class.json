@@ -1,0 +1,16 @@
+[
+  {
+    "name": "Creating stems",
+    "language": "sa",
+    "numRequired": 3,
+    "description": "Given the root, produce the stem for the `ya` class. Watch out for irregular verbs.",
+    "example": { "question": "man", "answer": "manya" },
+    "items": [
+      { "question": "muh", "answer": "muhya" },
+      { "question": "jan", "answer": "jAya" },
+      { "question": "yudh", "answer": "yudhya" },
+      { "question": "krudh", "answer": "krudhya" },
+      { "question": "tuS", "answer": "tuSya" }
+    ]
+  }
+]

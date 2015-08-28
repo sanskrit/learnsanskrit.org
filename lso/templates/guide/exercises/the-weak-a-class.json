@@ -1,0 +1,17 @@
+[
+  {
+    "name": "Creating stems",
+    "language": "sa",
+    "numRequired": 3,
+    "description": "Given the root, produce the stem for the weak `a` class. Watch out for irregular verbs.",
+    "example": { "question": "tud", "answer": "tuda" },
+    "items": [
+      { "question": "iS", "answer": "iccha" },
+      { "question": "prach", "answer": "pRccha" },
+      { "question": "sthA", "answer": "tiSTha" },
+      { "question": "kSip", "answer": "kSipa" },
+      { "question": "vind", "answer": "vinda" },
+      { "question": "lip", "answer": "limpa" }
+    ]
+  }
+]

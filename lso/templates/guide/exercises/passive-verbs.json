@@ -1,0 +1,16 @@
+[
+  {
+    "name": "Passive verbs",
+    "language": "sa",
+    "numRequired": 5,
+    "description": "Make each verb passive. Change the nouns appropriately.",
+    "example": { "question": "naraM pazyAmi", "answer": "naro dRzyate" },
+    "items": [
+      { "question": "sundaro jayati", "answer": "sundareNa jIyate" },
+      { "question": "phale khAdanti gajAH", "answer": "phale khAdyete gajaiH" },
+      { "question": "nagaraM smarAmi", "answer": "nagaraM smaryate" },
+      { "question": "narasya putraM gacchAmi", "answer": "narasya putro gamyate" },
+      { "question": "vIrA yudhyanti", "answer": "vIrair yudhyate" }
+    ]
+  }
+]

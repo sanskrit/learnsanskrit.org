@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Creating stems",
+    "language": "sa",
+    "numRequired": 5,
+    "description": "Given the root, produce the stem for the strong `a` class. Watch out for irregular verbs.",
+    "example": { "question": "nI", "answer": "naya" },
+    "items": [
+      { "question": "bhU", "answer": "bhava" },
+      { "question": "zuc", "answer": "zoca" },
+      { "question": "sthA", "answer": "tiSTha" },
+      { "question": "gam", "answer": "gaccha" },
+      { "question": "labh", "answer": "labha" },
+      { "question": "rakS", "answer": "rakSa" },
+      { "question": "dhR", "answer": "dhara" },
+      { "question": "vac", "answer": "vaca" },
+      { "question": "smR", "answer": "smara" }
+    ]
+  }
+]

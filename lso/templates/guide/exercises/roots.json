@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Finding roots",
+    "language": "sa",
+    "numRequired": 5,
+    "description": "Given the forms, find the most likely root. You might get som of these wrong on the first try, but it's still good practice.",
+    "example": { "question": "nayati, nItvA, nItaH", "answer": "nI" },
+    "items": [
+      { "question": "bhavati, bhUtvA, bhAvaH", "answer": "bhU" },
+      { "question": "zocati, zokaH, zucitvA", "answer": "zuc" },
+      { "question": "mriyate, mAraH, mRtaH", "answer": "mR" },
+      { "question": "karoti, kRtiH, kArakam", "answer": "kR" },
+      { "question": "bibheti, bhImah, bhayam", "answer": "bhI" },
+      { "question": "krodhaH, krudhyati, krudhitvA", "answer": "krudh" },
+      { "question": "jIvati, jIvaH, jIvakaH", "answer": "jIv" },
+      { "question": "muhyati, mohaH, mohanam", "answer": "muh" },
+      { "question": "sunoti, soma, prasavam", "answer": "su" }
+    ]
+  }
+]
