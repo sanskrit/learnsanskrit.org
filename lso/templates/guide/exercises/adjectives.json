@@ -1,0 +1,14 @@
+[
+  {
+    "name": "Adjectives",
+    "language": "sa",
+    "numRequired": 2,
+    "description": "Inflect the adjective to match the noun. Blend where appropriate.",
+    "example": { "question": "(kRSNa) azvaH", "answer": "kRSNo 'zvaH" },
+    "items": [
+      { "question": "(sundara) pazyAmi gajam", "answer": "sundaraM pazyAmi gajam" },
+      { "question": "phalAni (zveta)", "answer": "phalAni zvetAni" },
+      { "question": "(kRSNa) gajau labhate", "answer": "kRSNau gajau labhate" }
+    ]
+  }
+]

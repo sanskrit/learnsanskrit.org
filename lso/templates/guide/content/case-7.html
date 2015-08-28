@@ -1,5 +1,6 @@
 Review
 ------
+
 We have seen six cases so far. Five connect a noun to some action:
 
 !!! examples
@@ -18,7 +19,9 @@ and the sixth connects a noun to another noun:
 "in"
 ----
 
-Our next case, which we can call <dfn>case 7</dfn>, has several different roles that aren't worth analyzing in detail. Simply, we can say that it has the same meaning as the English word "in."
+The seventh case (<dfn>case 7</dfn>) has several different roles that aren't
+worth analyzing in detail. Simply, we can say that it has the same meaning as
+the English word "in":
 
 !!! examples
     - {{ m.x('[loke] caranti mRgAH', 'The deer roam <mark>in the world</mark>.') }}
@@ -38,21 +41,22 @@ As usual, we can use multiple cases at once:
 {% filter markdown %}
 ## Blending `-e`
 
-The letter `e` behaves simply enough:
+What happens when `e` is next to another vowel? The answer is [familiar to us
+already][semivowels]: a sentence like `grAme icchanti` will become
+`grAmayicchanti`.
 
-!!! examples
-    - {{ m.x('gRhe pacadhve', 'You all cook for yourselves in the house') }}
-    - {{ m.x('gRhe jAyete putrau', "The two sons are born in the house.") }}
-    - {{ m.x('gRhe manyAmahe', 'We think in the house.') }}
+[semivowels]: {{ m.lesson_url('semivowels') }}
 
-
-Still, what happens when `e` is near vowels? This, too, is <a href="{{ m.lesson_url('semivowels') }}">familiar to us already</a>: a sentence like `grAme icchanti` will become `grAmayicchanti`. But when this blending occurred between two words, Sanskrit speakers went one step further. They thought `y` was a tiresome letter to have to say between these two words, so they removed it entirely:
+But when this blending occurred between two words, Sanskrit speakers went one
+step further. They thought `y` was a tiresome letter to have to say between
+these two words, so they removed it entirely:
 
 !!! examples
     - {{ m.x('grAme icchanti -> grAma icchanti', 'They want in the village.') }}
 
 
-But consider a phrase like `kRSNaH azvaH`, which becomes `kRSNo 'zvaH`. `aH` overwhelms the `a`, and `e` does the same.
+`-e` also removes an `a-` sound that follows it. This is basically the same as
+the change that turns `kRSNaH azvaH` into `kRSNo 'zvaH`:
 
 !!! examples
     - {{ m.x("gRhe azvaH bhavati -> gRhe 'zvo bhavati", 'The horse is in the house.') }}

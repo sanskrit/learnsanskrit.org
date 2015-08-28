@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Case 7",
+    "language": "sa",
+    "numRequired": 5,
+    "description": "Fix the sentence by changing the noun to case 7. Blend where appropriate.",
+    "example": { "question": "grAmo gacchati", "answer": "grAme gacchati" },
+    "items": [
+      { "question": "gajAz caranti", "answer": "gajeSu caranti" },
+      { "question": "gajau dizataH", "answer": "gajayor dizataH" },
+      { "question": "azvA dizanti", "answer": "azveSu dizanti" },
+      { "question": "gaja icchati", "answer": "gaja icchati" },
+      { "question": "grAmA icchanti", "answer": "grAmeSv icchanti" },
+      { "question": "loko jAyate", "answer": "loke jAyate" },
+      { "question": "naro 'syati", "answer": "nare 'syati" },
+      { "question": "narau labhete", "answer": "narayor labhete" },
+      { "question": "gajA asyanti", "answer": "gajeSv asyanti" }
+    ]
+  }
+]

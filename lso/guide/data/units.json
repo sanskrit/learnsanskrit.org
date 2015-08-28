@@ -44,7 +44,8 @@
             "case-6",
             "case-7",
             "case-8",
-            "the-eight-cases"
+            "the-eight-cases",
+            "verbless-sentences"
         ]
     },
     {
@@ -66,8 +67,8 @@
             "neuter-and-feminine-nouns",
             "adjectives",
             "compounds",
-            "dvandva-compounds",
-            "tatpurusha-compounds"
+            "tatpurusha-compounds",
+            "dvandva-compounds"
         ]
     },
     {
@@ -198,7 +199,6 @@
         "lessons": [
             "special-combinations",
             "cvi-prefixes",
-            "verbless-sentences",
             "samprasarana",
             "nind-jiv-and-other-roots"
         ]

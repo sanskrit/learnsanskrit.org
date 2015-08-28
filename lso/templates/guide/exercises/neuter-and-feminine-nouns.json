@@ -1,0 +1,21 @@
+[
+  {
+    "name": "The eight cases",
+    "language": "sa",
+    "numRequired": 5,
+    "description": "Change the masculine ending to a neuter ending.",
+    "example": { "question": "phalaH", "answer": "phalam" },
+    "items": [
+      { "question": "phalau", "answer": "phale" },
+      { "question": "phalAH", "answer": "phalAni" },
+      { "question": "phalam", "answer": "phalam" },
+      { "question": "phalAn", "answer": "phalAni" },
+      { "question": "phalAya", "answer": "phalAya" },
+      { "question": "phalasya", "answer": "phalasya" },
+      { "question": "phalAnAm", "answer": "phalAnAm" },
+      { "question": "phale", "answer": "phale" },
+      { "question": "phaleSu", "answer": "phaleSu" },
+      { "question": "phala", "answer": "phala" }
+    ]
+  }
+]

@@ -4,7 +4,7 @@
     "language": "sa",
     "numRequired": 3,
     "description": "Convert each phrase into a `tatpuruSa` compound.",
-    "example": { "question": "[narasya gajena]", "answer": "naragajena" },
+    "example": { "question": "narasya gajena", "answer": "naragajena" },
     "items": [
         { "question": "trailokyasya rAjyasya", "answer": "trailokyarAjyasya" },
       { "question": "dharmasya kSetre", "answer": "dharmakSetre" },

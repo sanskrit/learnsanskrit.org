@@ -1,0 +1,16 @@
+[
+  {
+    "name": "Making compounds",
+    "language": "sa",
+    "numRequired": 3,
+    "description": "Convert each phrase into a `dvandva` compound.",
+    "example": { "question": "naraM gajaM ca", "answer": "naragajau" },
+    "items": [
+        { "question": "kRSNo 'rjunaz ca", "answer": "kRSNArjunau" },
+      { "question": "phalaM pattraM ca", "answer": "phalapattre" },
+      { "question": "azvena gajaiz ca", "answer": "azvagajaiH" },
+      { "question": "grAme nagare ca", "answer": "grAmanagarayoH" },
+      { "question": "narAd bAlebhyaz ca", "answer": "narabAlebhyaH" }
+    ]
+  }
+]

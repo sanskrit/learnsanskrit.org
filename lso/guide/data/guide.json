@@ -267,6 +267,13 @@
         ]
     },
     {
+        "name": "Verbless sentences",
+        "deps": [
+            "present-tense-verbs",
+            "the-eight-cases"
+        ]
+    },
+    {
         "name": "Neuter and feminine nouns",
         "deps": [
             "the-eight-cases"
@@ -717,14 +724,6 @@
         "name": "Doubling",
         "deps": [
             "roots"
-        ]
-    },
-    {
-        "name": "Verbless sentences",
-        "deps": [
-            "present-tense-verbs",
-            "the-eight-cases",
-            "adjectives"
         ]
     },
     {
