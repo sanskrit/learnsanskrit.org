@@ -29,7 +29,9 @@
     // Template for the question.
     var questionTemplate = _.template(
         '<% if (data.language === "sa") { %>' +
-        '  <%= exemplify(data.curQuestion.question) %>' +
+        '  <%= exemplify(data.curQuestion.question, true) %>' +
+        '<% } else if (data.language === "devanagari") { %>' +
+        '  <%= exemplify(data.curQuestion.question, false) %>' +
         '<% } else { %>' +
         '  <%= data.curQuestion.question %>' +
         '<% } %>'
@@ -53,13 +55,16 @@
     );
 
 
-    // Print `s` in both Devanagari and IAST.
-    function exemplify(s) {
+    // Print `s` in Devanagari. If `useBoth`, use IAST too.
+    function exemplify(s, useBoth) {
         var result = '<p class="sa1">' +
             Sanscript.t(s, 'hk', 'devanagari') +
-            '</p><p class="sa2" lang="sa">' +
-            Sanscript.t(s, 'hk', 'iast') +
             '</p>';
+        if (useBoth) {
+            result += '<p class="sa2" lang="sa">' +
+                Sanscript.t(s, 'hk', 'iast') +
+                '</p>';
+        }
         result = result.replace(/\[/g, '<mark>').replace(/]/g, '</mark>');
         return result;
     }

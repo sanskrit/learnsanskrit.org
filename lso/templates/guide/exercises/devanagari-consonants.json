@@ -1,0 +1,39 @@
+[
+  {
+    "name": "Reading",
+    "language": "devanagari",
+    "numRequired": 40,
+    "description": "Convert the Devanagari to Roman letters.",
+    "example": { "question": "ka", "answer": "ka" },
+    "items": [
+        { "question": "ka", "answer": "ka" },
+        { "question": "kha", "answer": "kha" },
+        { "question": "ga", "answer": "ga" },
+        { "question": "gha", "answer": "gha" },
+        { "question": "Ga", "answer": "Ga" },
+        { "question": "ca", "answer": "ca" },
+        { "question": "cha", "answer": "cha" },
+        { "question": "ja", "answer": "ja" },
+        { "question": "jha", "answer": "jha" },
+        { "question": "Ja", "answer": "Ja" },
+        { "question": "Ta", "answer": "Ta" },
+        { "question": "Tha", "answer": "Tha" },
+        { "question": "Da", "answer": "Da" },
+        { "question": "Dha", "answer": "Dha" },
+        { "question": "Na", "answer": "Na" },
+        { "question": "pa", "answer": "pa" },
+        { "question": "pha", "answer": "pha" },
+        { "question": "ba", "answer": "ba" },
+        { "question": "bha", "answer": "bha" },
+        { "question": "ma", "answer": "ma" },
+        { "question": "ya", "answer": "ya" },
+        { "question": "ra", "answer": "ra" },
+        { "question": "la", "answer": "la" },
+        { "question": "va", "answer": "va" },
+        { "question": "za", "answer": "za" },
+        { "question": "Sa", "answer": "Sa" },
+        { "question": "sa", "answer": "sa" },
+        { "question": "ha", "answer": "ha" }
+    ]
+  }
+]

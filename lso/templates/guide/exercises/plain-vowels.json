@@ -1,0 +1,23 @@
+[
+  {
+    "name": "Reading",
+    "language": "devanagari",
+    "numRequired": 15,
+    "description": "Convert the Devanagari to Roman letters.",
+    "example": { "question": "a", "answer": "a" },
+    "items": [
+        { "question": "a", "answer": "a" },
+        { "question": "A", "answer": "A" },
+        { "question": "i", "answer": "i" },
+        { "question": "I", "answer": "I" },
+        { "question": "u", "answer": "u" },
+        { "question": "U", "answer": "U" },
+        { "question": "R", "answer": "R" },
+        { "question": "RR", "answer": "RR" },
+        { "question": "e", "answer": "e" },
+        { "question": "ai", "answer": "ai" },
+        { "question": "o", "answer": "o" },
+        { "question": "au", "answer": "au" }
+    ]
+  }
+]
