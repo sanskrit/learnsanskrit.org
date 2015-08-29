@@ -1,7 +1,6 @@
 [
     {
         "name": "Introduction",
-        "description": "A bit of information about the guide.",
         "lessons": [
             "why-learn-sanskrit",
             "how-the-guide-works"
@@ -9,7 +8,6 @@
     },
     {
         "name": "Sounds",
-        "description": "How to pronounce the sounds in Sanskrit. These lessons also show how different sounds relate to each other and why these relationships are vital to understanding Sanskrit.",
         "lessons": [
             "simple-vowels",
             "compound-vowels",
@@ -23,7 +21,6 @@
     },
     {
         "name": "Verbs",
-        "description": "How to create our first Sanskrit sentences.",
         "lessons": [
             "how-sanskrit-works",
             "verbs",
@@ -33,7 +30,6 @@
     },
     {
         "name": "Nouns",
-        "description": "Who sees? Where? Here we learn new words to answer these questions.",
         "lessons": [
             "nouns",
             "case-1",
@@ -50,7 +46,6 @@
     },
     {
         "name": "Uninflected words",
-        "description": "By using uninflected words, we can create slightly more complicated sentences.",
         "lessons": [
             "uninflected-words",
             "na",
@@ -62,7 +57,6 @@
     },
     {
         "name": "Compounds",
-        "description": "The easiest way to make new words out of the ones we know already.",
         "lessons": [
             "neuter-and-feminine-nouns",
             "adjectives",
@@ -73,7 +67,6 @@
     },
     {
         "name": "Verb roots",
-        "description": "How to work with verbs at a deeper level.",
         "lessons": [
             "roots",
             "verb-classes",
@@ -86,7 +79,6 @@
     },
     {
         "name": "Making words",
-        "description": "How to rapidly create thousands of new words.",
         "lessons": [
             "verb-prefixes",
             "root-suffixes",
@@ -100,7 +92,6 @@
     },
     {
         "name": "Complex expressions",
-        "description": "Important tools for saying more complicated things.",
         "lessons": [
             "tad-and-etad",
             "kim",
@@ -113,7 +104,6 @@
     },
     {
         "name": "Noun stems",
-        "description": "New kinds of noun stems.",
         "lessons": [
             "consonant-stems",
             "strong-and-weak-stems",
@@ -130,7 +120,6 @@
     },
     {
         "name": "Complex verb classes",
-        "description": "Six other verb classes",
         "lessons": [
             "complex-verb-classes",
             "the-no-class",
@@ -144,7 +133,6 @@
     },
     {
         "name": "Stem verbs",
-        "description": "Stem verbs",
         "lessons": [
             "the-ordinary-past",
             "commands",
@@ -153,7 +141,6 @@
     },
     {
         "name": "Root verbs",
-        "description": "Root verbs",
         "lessons": [
             "the-recent-past",
             "the-near-future",
@@ -165,7 +152,6 @@
     },
     {
         "name": "Verbal adjectives",
-        "description": "Verbal adjectives",
         "lessons": [
             "verbal-adjectives",
             "tavat",
@@ -176,7 +162,6 @@
     },
     {
         "name": "Other pronouns",
-        "description": "Other pronouns",
         "lessons": [
             "mad-and-tvad",
             "idam",
@@ -186,7 +171,6 @@
     },
     {
         "name": "Meter",
-        "description": "meter",
         "lessons": [
             "syllables",
             "meter",
@@ -195,7 +179,6 @@
     },
     {
         "name": "Misc",
-        "description": "misc",
         "lessons": [
             "special-combinations",
             "cvi-prefixes",
@@ -205,7 +188,6 @@
     },
     {
         "name": "Derived roots",
-        "description": "Other roots",
         "lessons": [
             "making-verb-roots",
             "causal-roots",
@@ -216,7 +198,6 @@
     },
     {
         "name": "Numbers",
-        "description": "Numbers",
         "lessons": [
             "numbers",
             "one-two-three",
@@ -226,7 +207,6 @@
     },
     {
         "name": "Devanagari",
-        "description": "How to read and write Devanagari.",
         "lessons": [
             "devanagari",
             "marks",

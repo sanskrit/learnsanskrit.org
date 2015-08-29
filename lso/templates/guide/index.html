@@ -1,6 +1,16 @@
 {% import 'guide/macros.html' as m %}
 {% extends 'base.html' %}
 
+{% macro show_units(names) %}
+    {% for name in names %}
+        {% set u = units[name] %}
+        <a id="unit-{{ u.slug }}"></a>
+        <h2>{{ u.name }}</h2>
+        {{ m.lesson_list(u.lessons) }}
+        </ul>
+    {% endfor %}
+{% endmacro %}
+
 {% block title %}Sanskrit guide{% endblock %}
 
 {% block body_id %}guide{% endblock %}
@@ -15,19 +25,83 @@
     <p>You can follow the guide's progress by subscribing to the <a href="https://groups.google.com/forum/#!forum/learnsanskrit">mailing list</a>.</p>
 </diV>
 
-<p>Jump to:</p>
-<ul class="lesson-list" style="font-variant: small-caps">
-    {% for u in units %}
-        <li><a href="#unit-{{ loop.index }}">{{ u.name }}</a></li>
-    {% endfor %}
-</ul>
+<section class="book" id="guide-part-1">
+    <h1>Part 1: Foundations</h1>
 
-{% for u in units %}
-    <a id="unit-{{ loop.index }}"></a>
-    <h2>{{ u.name }}</h2>
-    {% filter markdown %}{{ u.description }}{% endfilter %}
-    {{ m.lesson_list(u.lessons) }}
-    </ul>
-{% endfor %}
+    <p>After reflecting on why we want to learn Sanskrit and learning how the
+        guide works, we dive into the foundations of the Sanskrit language.
+        Once we understand the concepts here, 90% of the battle is won.</p>
+
+    {{ show_units(['introduction', 'sounds', 'nouns',
+                   'uninflected-words', 'compounds']) }}
+</section>
+
+<section class="book" id="guide-part-2">
+    <h1>Part 2: Roots and sentences</h1>
+
+    <p>Now that we have a strong foundation, we can focus on extremes. First,
+        we zoom in on <em>verb roots</em>, the basic pieces of meaning that
+        give us verb stems and thousands of other words. Then, we zoom out to
+        <em>sentences</em> and the powerful words that help us maintain
+        them.</p>
+
+    <p>Together, parts 1 and 2 provide us with enough fundamental concepts to
+        start reading Sanskrit texts.</p>
+
+    {{ show_units(['verb-roots', 'making-words', 'complex-expressions',
+                   'noun-stems']) }}
+</section>
+
+<section class="book" id="guide-intermission">
+    <h1>Intermission: Start reading!</h1>
+
+    <p>Now we know enough to start reading texts like the Bhagavad
+        Gita, with some assistance from the guide. The lessons here show you
+        how.</p>
+
+    <p>Coming soon.</p>
+</section>
+
+<section class="book" id="guide-part-3">
+    <h1>Part 3: Filling the gaps</h1>
+
+    <p>By this point, we already know enough to start reading texts like the
+        Bhagavad Gita, with some small assistance from the guide. But there are
+        still a lot of little gaps that are worth filling in order to get a
+        clearer picture of how the different parts of the grammar interact.</p>
+
+    {{ show_units(['complex-verb-classes', 'stem-verbs', 'root-verbs',
+                   'verbal-adjectives', 'other-pronouns', 'derived-roots', 'numbers']) }}
+</section>
+
+<section class="book" id="guide-part-4">
+    <h1>Part 4: Putting it all together</h1>
+
+    <p>Here we refine and organize the knowledge that we've gained so far.</p>
+
+    <p>Coming soon.</p>
+</section>
+
+<section class="book" id="guide-part-5">
+    <h1>Part 5: Mastery</h1>
+
+    <p>At last, we have a powerful grasp of the main grammar and can easily
+        understand the grammatical functions of even the most complex
+        words. But for the sake of total mastery, we turn to the same tradition
+        that the masters have used for thousands of years.</p>
+
+    <p>Coming eventually.</p>
+</section>
+
+{#
+<section>
+    <h1 class="book">Part 4: </h1>
+
+    <p></p>
+
+    {{ show_units(['misc', 'meter', 'devanagari']) }}
+</section>
+#}
+
 </article>
 {% endblock %}

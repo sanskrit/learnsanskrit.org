@@ -10,7 +10,7 @@ class Unit(SimpleBase):
     """A conceptual unit."""
 
     name = Column(String)
-    description = Column(String, unique=True)
+    slug = Column(String, unique=True)
     position = Column(Integer)
 
     lessons = relationship('Lesson', order_by='Lesson.position', backref='unit', lazy='joined')

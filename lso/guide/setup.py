@@ -15,20 +15,25 @@ DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')
 _punct_re = re.compile(r'[\t !"#$%&\'()*\-/<=>?@\[\\\]^_`{|},.]+')
 
 
-def build_graph():
-    """Load the lesson graph and populate any missing fields."""
-    with open(os.path.join(DATA_DIR, 'guide.json')) as f:
+def load_and_add_slugs(filename):
+    """Load the given JSON file and add missing slugs."""
+    with open(os.path.join(DATA_DIR, filename)) as f:
         json_data = json.loads(lso.util.json_minify(f.read()))
-        for lesson in json_data:
-            if 'slug' not in lesson:
-                lesson['slug'] = slugify(lesson['name'])
+        for datum in json_data:
+            if 'slug' not in datum:
+                datum['slug'] = slugify(datum['name'])
         return json_data
 
 
-def load_units():
+
+def build_graph():
     """Load the lesson graph and populate any missing fields."""
-    with open(os.path.join(DATA_DIR, 'units.json')) as f:
-        return json.loads(lso.util.json_minify(f.read()))
+    return load_and_add_slugs('guide.json')
+
+
+def load_units():
+    """Load the units list and populate any missing fields."""
+    return load_and_add_slugs('units.json')
 
 
 def slugify(title):
@@ -69,7 +74,8 @@ def add_lessons(graph_data, unit_data, session):
         lesson_map[slug].add_dependencies(*deps)
 
     for u, datum in enumerate(unit_data):
-        unit = Unit(name=datum['name'], description=datum['description'],
+        unit = Unit(name=datum['name'],
+                    slug=datum['slug'],
                     position=u)
         session.add(unit)
         for i, slug in enumerate(datum['lessons']):

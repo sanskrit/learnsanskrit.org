@@ -1,5 +1,6 @@
 import json
 import os
+from collections import OrderedDict
 
 import jinja2.exceptions
 from flask import abort, current_app, Response, redirect, render_template, url_for
@@ -35,7 +36,8 @@ def index():
     """
     # lazy=joined, so we get the lessons too.
     units = Unit.query.order_by(Unit.position).all()
-    return render_template('guide/index.html', units=units)
+    unit_map = OrderedDict((u.slug, u) for u in units)
+    return render_template('guide/index.html', units=unit_map)
 
 
 @bp.route('/<slug>')

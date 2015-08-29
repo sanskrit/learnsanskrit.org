@@ -15,6 +15,42 @@
     hr {
         width: 50%;
     }
+
+    // A list of units
+    section.book {
+        border-left: 1em solid;
+        padding: 0.5em 1em;
+
+        h1 {
+            border: 0;
+            text-align: left;
+        }
+    }
+
+    @blue: #0bf;
+    @green: #0e0;
+    @red: #c00;
+    // yellow and gray are inherited from variables.less.
+
+    #guide-part-1 {
+        border-color: @blue;
+    }
+    #guide-part-2 {
+        border-color: @green;
+    }
+    #guide-intermission {
+        border-color: @gray;
+        background: @off-white;
+    }
+    #guide-part-3 {
+        border-color: @yellow;
+    }
+    #guide-part-4 {
+        border-color: @red;
+    }
+    #guide-part-5 {
+        border-color: #000;
+    }
 }
 
 section.sandhi {
