@@ -34,7 +34,6 @@ def index():
     a bunch of files. This is obviously hacky and slow. But it's good
     enough for now.
     """
-    # lazy=joined, so we get the lessons too.
     units = Unit.query.order_by(Unit.position).all()
     unit_map = OrderedDict((u.slug, u) for u in units)
     return render_template('guide/index.html', units=unit_map)
