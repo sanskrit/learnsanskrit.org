@@ -65,29 +65,28 @@
             "dvandva-compounds"
         ]
     },
+
+    // Part 2: Roots and sentences
     {
-        "name": "Verb roots",
+        "name": "Roots and classes",
         "lessons": [
             "roots",
             "verb-classes",
             "the-strong-a-class",
             "the-weak-a-class",
             "the-ya-class",
-            "the-aya-class",
-            "passive-verbs"
+            "the-aya-class"
         ]
     },
     {
-        "name": "Making words",
+        "name": "What roots can do",
         "lessons": [
-            "verb-prefixes",
             "root-suffixes",
-            "tva-and-ya",
+            "causal-roots",
+            "passive-verbs",
             "ta",
-            "tavya-aniya-and-ya",
             "tum",
-            "blending-with-t",
-            "stem-suffixes"
+            "verb-prefixes"
         ]
     },
     {
@@ -106,6 +105,7 @@
         "name": "Noun stems",
         "lessons": [
             "consonant-stems",
+            "stem-suffixes",
             "strong-and-weak-stems",
             "mat-and-vat-stems",
             "in-min-and-vin-stems",
@@ -157,6 +157,9 @@
             "tavat",
             "at-and-ana",
             "vas",
+            "tva-and-ya",
+            "tavya-aniya-and-ya",
+            "blending-with-t",
             "verbal-adjectives-and-simultaneous-action"
         ]
     },
@@ -189,8 +192,6 @@
     {
         "name": "Derived roots",
         "lessons": [
-            "making-verb-roots",
-            "causal-roots",
             "nominal-roots",
             "desiderative-roots",
             "intensive-roots"

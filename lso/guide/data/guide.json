@@ -440,34 +440,32 @@
     // ~~~~~~~~~~~~~~~~~~
     // Causals, etc.
     {
-        "name": "Making verb roots",
-        "deps": [
-            "roots"
-        ]
-    },
-    {
         "name": "Causal roots",
         "deps": [
-            "making-verb-roots"
+            "roots",
+            "root-suffixes"
         ]
     },
     {
         "name": "Desiderative roots",
         "deps": [
-            "making-verb-roots",
+            "roots",
+            "root-suffixes",
             "doubling"
         ]
     },
     {
         "name": "Intensive roots",
         "deps": [
-            "making-verb-roots"
+            "roots",
+            "root-suffixes",
+            "doubling"
         ]
     },
     {
         "name": "Nominal roots",
         "deps": [
-            "making-verb-roots"
+            "roots"
         ]
     },
 
