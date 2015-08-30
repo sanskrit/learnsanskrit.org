@@ -1,0 +1,73 @@
+Review
+------
+
+All verbs are created from verb *roots*. These roots are sorted into different
+verb *classes*, from which we make verb *stems*.
+
+
+Making someone do something
+---------------------------
+
+It's useful to say that you *made* someone do something or *caused* them to do
+something. In Sanskrit, we express this idea like so:
+
+!!! examples
+    - {{ m.x('gajaH khAdati -> vIro gajaM [khAdayati]', 'The elephant eats. -> The hero [makes] the elphant [eat].') }}
+
+We can call these verbs <dfn>causal</dfn> verbs, since they show the *cause* of
+something.
+
+In the example above, we see that the verb was changed somehow; `khAdati`
+becomes `khAdayati`. There are many rules that we could make to describe this
+change. Can you think of one?  Perhaps something like this:
+
+!!! rule
+    To create a causal verb, add `ya` after the stem then use the normal
+    endings.
+
+Now let's test this rule against other examples. Does the rule hold up?
+
+!!! examples
+    - {{ m.x('pazyati -> darzayati', 'He sees -> He makes (someone) see.') }}
+    - {{ m.x('gacchati -> gamayati', 'He goes -> He makes (someone) go.') }}
+    - {{ m.x('tiSThati -> sthApayati', 'He stands -> He makes (someone) stand.') }}
+    - {{ m.x('nayati -> nAyayati', 'He leads -> He makes (someone) lead.') }}
+
+Clearly the rule fails. So what's really going on?
+
+
+Causal roots
+------------
+
+The easiest way to think about these examples is that we're creating a new
+<dfn>causal root</dfn>. We create this causal root by adding `-i` to the end of
+a verb. Generally, this `-i` causes exactly the same changes as the `-a` and
+`-aka` root suffixes:
+
+!!! examples
+    - {{ m.x('gam -> gami', 'go -> make go') }}
+    - {{ m.x('dRz -> darzi', 'see -> make see') }}
+    - {{ m.x('nI -> nAyi', 'lead -> make lead') }}
+
+But occasionally, other changes are made instead. A common one is to put `p`
+between the root and `-i`:
+
+!!! examples
+    - {{ m.x('sthA -> sthApi', 'stand -> make stand') }}
+
+The best way to learn about these rarer changes is to read a lot of Sanskrit!
+Since causal roots have that distinctive `-aya` ending, it's usually easy to
+determine that a root is causal.
+
+
+Using causal roots
+------------------
+
+In almost all circumstances, we can treat a causal root as just another member
+of the `aya` class. The causal root has two vowels, so we strengthen just the last one:
+
+!!! examples
+    - {{ m.x('gami -> gamayati', 'make go -> He makes (somone) go.') }}
+    - {{ m.x('nAyi -> nAyayati', 'make lead -> He makes (somone) lead.') }}
+
+And the resulting stem can use both `paramsaipada` and `Atmanepada` endings.
