@@ -1,0 +1,23 @@
+[
+  {
+    "name": "Creating causal verbs",
+    "language": "sa",
+    "numRequired": 7,
+    "description": "Make each verb causative.",
+    "example": { "question": "nayati", "answer": "nAyayati" },
+    "items": [
+      { "question": "bhavati", "answer": "bhAvayati" },
+      { "question": "zocati", "answer": "zocayati" },
+      { "question": "tiSThAmi", "answer": "sthApayAmi" },
+      { "question": "smarAmaH", "answer": "smArayAmaH" },
+      { "question": "gacchati", "answer": "gamayati" },
+      { "question": "rakSanti", "answer": "rakSayanti" },
+      { "question": "dharAvaH", "answer": "dhArayAvaH" },
+      { "question": "muhyathaH", "answer": "mohayathaH" },
+      { "question": "vindasi", "answer": "vedayasi" },
+      { "question": "kSipati", "answer": "kSepayati" },
+      { "question": "tuSyati", "answer": "toSayati" }
+    ]
+  }
+]
+
