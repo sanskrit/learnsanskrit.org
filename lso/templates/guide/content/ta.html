@@ -44,7 +44,7 @@ A verbal adjective
 ------------------
 
 A word ending in `-ta` can be used with nouns in different cases (`kRSNo
-dRSTaH`), just like words with `-tvA` and just like ordinary verbs. But since
+dRSTaH`), just like ordinary verbs. But since
 these words are adjectives, they must have the same gender, case, and number as
 whatever's being seen, eaten, remembered, and so on:
 
@@ -60,28 +60,58 @@ by far.
 `-i-`
 -----
 
-Just like `-tvA`, `-ta` is sometimes `-ta` and sometimes `-ita`. As before,
-there's no simple rule for it.
+Sometimes it's `-ta` and sometimes it's `-ita`. Knowing when to add this
+`-i-` is a tricky business. Here's the rule for it:
 
-But the good news is that roots use it (or avoid it) consistently:
+!!! rule
+    There's no simple rule for it. Some roots *always* use it, some roots
+    *never* use it, and some roots *optionally* use it. Learn which are which
+    by reading a lot of Sanskrit.
+
+But the good news is that the root is usually easy to identify:
 
 !!! examples
-    - {{ m.x('khAd -> khAditvA, khAdita', 'eat -> after eating, eaten') }}
-    - {{ m.x('car -> caritvA, carita', 'walk -> after walking, walked (to)') }}
-    - {{ m.x('smR -> smRtvA, smRta', 'remember -> after remembering, remembered') }}
-    - {{ m.x('zuc -> zucitvA, zucita', 'grieve -> after grieving, grieved (for)') }}
+    - {{ m.x('khAd -> khAdita', 'eat -> eaten') }}
+    - {{ m.x('car -> carita', 'walk -> walked (to)') }}
+    - {{ m.x('smR -> smRta', 'remember -> remembered') }}
+    - {{ m.x('zuc -> zucita', 'grieve -> grieved (for)') }}
+
+
+Roots in the `aya` class and causal roots always use `-ita`. The root vowel is
+also strengthened, just as it is when we create the verb stem:
+
+!!! examples
+    - {{ m.x('cur -> corita', 'steal -> stolen') }}
+    - {{ m.x('dRz -> darzita', 'see -> made to be seen') }}
 
 
 Root changes
 ------------
 
-`-ta` causes all the same root changes as `-tvA`. Roots that end in `-m` or `-n` lose it:
+In general, `-ta` doesn't cause any changes to the root. However, there are a
+few exceptions:
+
+### Roots that end in `-m` or `-n`
+
+Usually, these roots loose the `-m` or `-n`:
 
 !!! examples:
-    - {{ m.x('gam -> gata', 'go -> gone to') }}
+    - {{ m.x('gam -> gata', 'go -> gone') }}
+    - {{ m.x('man -> mata', 'think -> thought') }}
+    - {{ m.x('jan -> jAti', 'be born -> born') }}
 
-And roots that have `RR` use `Ir` or `UR` as appropriate. But in this case,
-there's one extra change:
+Note that `jan` is irregular here.
+
+### Roots that end in `RR`
+
+`RR` is a rare sound in Sanskrit, and Panini uses it in his roots mainly as a
+sort of shorthand:
+
+!!! rule
+    If `RR` follows any of the stop consonants at the lips (`pa, pha, ba, bha,
+    ma`), it becomes `Ur`. Otherwise it becomes `Ir`:
+
+Usually, `-RR` roots use `-na` instead:
 
 !!! examples:
     - {{ m.x('tRR -> tIrNA', 'cross -> crossed') }}
@@ -94,4 +124,4 @@ few common ones, and they're easily recognized.
 
 There are other changes that `-ta` causes, but all the other suffixes that
 start with `-t` cause these changes too. So let's study these later, once we've
-seen more of the others.
+seen some of the others.
