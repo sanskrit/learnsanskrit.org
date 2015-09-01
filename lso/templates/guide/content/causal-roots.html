@@ -36,38 +36,58 @@ Now let's test this rule against other examples. Does the rule hold up?
 Clearly the rule fails. So what's really going on?
 
 
-Causal roots
-------------
+Return of the `-aya` class
+--------------------------
 
-The easiest way to think about these examples is that we're creating a new
-<dfn>causal root</dfn>. We create this causal root by adding `-i` to the end of
-a verb. Generally, this `-i` causes exactly the same changes as the `-a` and
-`-aka` root suffixes:
-
-!!! examples
-    - {{ m.x('gam -> gami', 'go -> make go') }}
-    - {{ m.x('dRz -> darzi', 'see -> make see') }}
-    - {{ m.x('nI -> nAyi', 'lead -> make lead') }}
-
-But occasionally, other changes are made instead. A common one is to put `p`
-between the root and `-i`:
+Simply, we make a root causal by treating it as a member of the `aya` class.
+Roots in the `aya` class are quite rare, actually; most of the verbs that use
+it are causal:
 
 !!! examples
-    - {{ m.x('sthA -> sthApi', 'stand -> make stand') }}
+    - {{ m.x('dRz -> darzayati', 'He makes (someone) see') }}
+    - {{ m.x('yudh -> yodhayati', 'He makes (someone) fight.') }}
+    - {{ m.x('nI -> nAyayati', 'He makes (someone) lead.') }}
+    - {{ m.x('bhU -> bhAvayati', 'He makes (something) be.') }}
+
+Note that we use the same vowel strengthening rules that were used for the `-a`
+and the `-aka` root suffixes.
+
+Curiously, roots that were in the `aya` class already stay the same when they
+become causal:
+
+!!! examples
+    - {{ m.x('cur -> corayati') }}
+
+        (a) He steals.<br />
+        (b) He makes (someone) steal.
+
+
+### Changing the root
+Occasionally, we first have to make changes to the original root. A common one
+is to put `p` after the root. Note that the root vowel changes too:
+
+!!! examples
+    - {{ m.x('gai -> gApayati', 'He makes (someone) sing.') }}
+    - {{ m.x('sthA -> sthApayati', 'He makes (someone) stand.') }}
+
+Also, some roots don't change at all:
+
+!!! examples
+    - {{ m.x('gam -> gamayati', 'He makes (someone) go.') }}
 
 The best way to learn about these rarer changes is to read a lot of Sanskrit!
-Since causal roots have that distinctive `-aya` ending, it's usually easy to
-determine that a root is causal.
+Since causal stems have that distinctive `-aya` ending, it's usually easy to
+determine if the verb is causal. And from there, it's usually possible to
+deduce the original root.
 
 
-Using causal roots
+Using causal verbs
 ------------------
 
-In almost all circumstances, we can treat a causal root as just another member
-of the `aya` class. The causal root has two vowels, so we strengthen just the last one:
+Causal verbs use both `paramsaipada` and `Atmanepada` endings, regardless of
+what the original root used. Whatevere was in case 1 *before* the verb became
+causal is changed to use case 2 instead:
 
 !!! examples
-    - {{ m.x('gami -> gamayati', 'make go -> He makes (somone) go.') }}
-    - {{ m.x('nAyi -> nAyayati', 'make lead -> He makes (somone) lead.') }}
+    - {{ m.x('naro grAmaM gacchati -> vIro naraM grAmaM gamayati', 'The man goes to the village. -> The hero makes the man go to the village.') }}
 
-And the resulting stem can use both `paramsaipada` and `Atmanepada` endings.
