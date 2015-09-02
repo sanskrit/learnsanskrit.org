@@ -298,7 +298,7 @@
         ]
     },
     {
-        "name": "`yad` and other relatives",
+        "name": "`yad`",
         "deps": [
             "tad-and-etad"
         ]

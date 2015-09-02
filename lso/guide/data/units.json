@@ -89,11 +89,18 @@
         ]
     },
     {
-        "name": "Complex expressions",
+        "name": "Pronouns",
         "lessons": [
+            "a-i-and-u-stems",
             "tad-and-etad",
             "kim",
-            "yad-and-other-relatives",
+            "yad",
+            "pronominal-adjectives"
+        ]
+    },
+    {
+        "name": "More compounds",
+        "lessons": [
             "bahuvrihi-compounds",
             "adverbs",
             "avyayibhava-compounds",
@@ -110,7 +117,6 @@
             "in-min-and-vin-stems",
             "an-man-and-van-stems",
             "r-stems",
-            "a-i-and-u-stems",
             "i-and-u-stems",
             "ai-stems",
             "o-stems",
@@ -168,8 +174,7 @@
         "lessons": [
             "mad-and-tvad",
             "idam",
-            "ena",
-            "pronominal-adjectives"
+            "ena"
         ]
     },
     {
