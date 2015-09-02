@@ -46,8 +46,21 @@ And sometimes prefixes do almost nothing. Some say that the verb's meaning is ma
     - {{ m.x('sam + jan -> saMjan -> saMjAyate', 'with/together + be born -> be born -> He is born.') }}
 
 
-Using multiple prefixes
------------------------
+Using prefixes
+--------------
+
+### Creating other words
+
+In general, we can treat a prefixed root just like an unprefixed root. This
+means we can add root suffixes to create new words:
+
+!!! examples
+    - {{ m.x('ava-tRR -> avatAra', 'cross down, descend -> one who has crossed down; an avatar') }}
+    - {{ m.x('saMs-kR -> saMskRta', 'make perfectly -> perfectly made; Sanskrit') }}
+    - {{ m.x('vi-jJA -> vijJApayati', 'recognize -> He causes to recognize.') }}
+
+
+### Multiple prefixes
 
 We can stack these changes on top of each other to create more subtle meanings:
 
@@ -55,12 +68,13 @@ We can stack these changes on top of each other to create more subtle meanings:
     - {{ m.x('upa + sam + gam -> upasaMgacchanti mRgAH', 'near/toward + with + go -> The deer approach (something) together.') }}
     - {{ m.x('sam + upa + gam -> samupagacchanti mRgAH', 'with + near/toward + go -> The deer come together.') }}
 
-
-Sanskrit has about twenty different verb prefixes, each with its own basic meanings. For now, let's restrict ourselves to the five above:
-
 <section class="sandhi">
 {% filter markdown %}
 `Ar`:
+Prefixes and roots blend using the usual rules. But if the prefix ends with `a`
+or `A`, and if the root starts with `R` or `RR`, then the two blend to form
+`Ar`. This helps to keep the prefix distinct from the root:
+
 
 !!! examples
     - {{ m.x('upa + R (Rcchati) -> upArcchati', 'near/toward + go -> He goes near.') }}
@@ -70,10 +84,13 @@ Sanskrit has about twenty different verb prefixes, each with its own basic meani
 
 ## In the wild
 
-All of the prefixes above are very common. They are so common, in fact, that all of them appear in verse 2 of the Bhagavad Gita:
+This lesson has used five different prefixes: `sam` ("with"), `vi` ("apart"),
+`ava` ("downward"), `upa` ("near"), and `A` ("toward"). There are other
+prefixes, too, but these are among the most common. They are so common, in
+fact, that four of them appear in the second verse of the Bhagavad Gita:
 
 !!! examples
     - {{ m.x('dRSTvA tu pANDavAnIkaM [vi]UDhaM duryodhanas tadA', 'Having seen the army of the Pandavas [arrayed], Duryodhana then') }}
-    - {{ m.x('[A]cAryam [upa][saM]gamya rAjA vacanam abravIt', '[approached] his [master] and spoke this statement.') }}
+    - {{ m.x('[A]cAryam [upa][saM]gamya rAjA vacanam abravIt', '[approached] his [master] then spoke this statement.') }}
 
 Here, `pAndavAnIkam` is a `tatpuruSa` (`pAndAvAnAm anIkam`, "army of the Pandavas"). How many other words can you recognize?
