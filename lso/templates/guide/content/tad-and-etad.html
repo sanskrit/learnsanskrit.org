@@ -1,2 +1,95 @@
+Review
+------
+
+A noun's ending tells us three things: the *case* of the noun, the *number* of
+things referred to, and the *gender* of the noun. We have seen nouns in all
+eight cases, all three numbers, and all three genders:
+
+!!! examples
+    - {{ m.x('naraH', 'a man (case 1)') }}
+    - {{ m.x('phalam', 'a fruit (case 1)') }}
+    - {{ m.x('senA', 'an army (case 1)') }}
+
+A vague stem
+------------
+
+The noun and adjective stems that we've seen are quite specific. A `nara` is a
+man. Something that's `kRSNa` is black. But there are other words that hardly
+have this meaning at all:
+
+!!! examples
+    - {{ m.x('saH', 'He.') }}
+    - {{ m.x('tena', 'With them.') }}
+    - {{ m.x('tAm', 'Her.') }}
+
+Such words are called <dfn>pronouns</dfn> in English grammar, and the term is
+useful here too. Unlike a noun or adjective stem, a pronoun stem is almost
+meaningless.
+
+I say *almost* meaningless because pronoun stems have a sort of vague and
+general meaning in Sanskrit. More precisely, the examples above mean the
+following:
+
+!!! examples
+    - {{ m.x('saH', 'That one. (masculine, case 1)') }}
+    - {{ m.x('taiH', 'With those ones.') }}
+    - {{ m.x('tAm', 'That one. (feminine, case 2)') }}
+
+But this meaning is subtle and often ignored.
+
+
+`tad`
+-----
+
+The most common pronoun by far is <dfn>`tad`</dfn>. In general, we use it as if
+its stem is `ta` and its feminine stem is `tA`. But there are some important
+differences.
+
+!!! note
+    Place your mouse over each table to show just the differences.
+
+<div class="fade-paradigm">
+{% filter markdown %}
+### Masculine
 {% include 'guide/include/tad-m.html' %}
-{% include 'guide/include/tad-m-difference.html' %}
+
+### Neuter
+{% include 'guide/include/tad-n.html' %}
+
+### Feminine
+{% include 'guide/include/tad-f.html' %}
+{% endfilter %}
+</div>
+
+<section class="sandhi">
+{% filter markdown %}
+### Blending `saH`
+
+In front of consonants, `saH` becomes `sa`:
+
+!!! examples
+    - {{ m.x('sa gacchati', 'He goes.') }}
+
+Otherwise, it's used normally:
+
+!!! examples
+    - {{ m.x('so \'zvaH', 'That is a horse.') }}
+    - {{ m.x('sa icchati', 'He wants.') }}
+
+
+{% endfilter %}
+</section>
+
+
+`etad`
+------
+
+<dfn>`etad`</dfn> is much rarer than `tad`. Whereas `tad` implies that
+something is far away, `etad` implies that something is very close by.
+
+To get the forms for `etad`, we simply stick `e` on the front of all the `tad`
+forms:
+
+!!! examples
+    - {{ m.x('tena -> etena', 'With him (far). -> With him (near).') }}
+    - {{ m.x('sA -> eSA', 'She (far). -> She (near).') }}

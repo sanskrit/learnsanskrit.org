@@ -72,6 +72,19 @@ table.paradigm {
     td.c7 {
     }
 }
+div.fade-paradigm table.paradigm {
+    td {
+        .transition(0.5s);
+    }
+    &:hover {
+        td {
+            opacity: 0;
+        }
+        td.v {
+            opacity: 1;
+        }
+    }
+}
 
 // Alternately colored rows
 table.zebra {
