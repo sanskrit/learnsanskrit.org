@@ -108,19 +108,14 @@
         ]
     },
     {
-        "name": "Noun stems",
+        "name": "Complex noun stems",
         "lessons": [
             "consonant-stems",
             "stem-suffixes",
             "strong-and-weak-stems",
             "mat-and-vat-stems",
             "in-min-and-vin-stems",
-            "an-man-and-van-stems",
-            "r-stems",
-            "i-and-u-stems",
-            "ai-stems",
-            "o-stems",
-            "au-stems"
+            "an-man-and-van-stems"
         ]
     },
     {
@@ -142,6 +137,16 @@
             "the-ordinary-past",
             "commands",
             "potential-verbs"
+        ]
+    },
+    {
+        "name": "Rarer nouns",
+        "lessons": [
+            "r-stems",
+            "i-and-u-stems",
+            "ai-stems",
+            "o-stems",
+            "au-stems"
         ]
     },
     {
