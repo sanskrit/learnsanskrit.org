@@ -1,0 +1,38 @@
+[
+  {
+    "name": "Change the gender",
+    "language": "sa",
+    "numRequired": 15,
+    "description": "Inflect `gaja` to use the same case and number as the given noun.",
+    "example": { "question": "senA", "answer": "gajaH" },
+    "items": [
+      { "question": "nadI", "answer": "gajaH" },
+      { "question": "nadyau", "answer": "gajau" },
+      { "question": "vadhvaH", "answer": "gajAH" },
+      { "question": "senAm", "answer": "gajam" },
+      { "question": "vadhvau", "answer": "gajau" },
+      { "question": "nadIH", "answer": "gajAn" },
+      { "question": "senayA", "answer": "gajena" },
+      { "question": "nadyA", "answer": "gajena" },
+      { "question": "vadhvA", "answer": "gajena" },
+      { "question": "nadIbhyAm", "answer": "gajAbhyAm" },
+      { "question": "vadhUbhiH", "answer": "gajaiH" },
+      { "question": "senAyai", "answer": "gajAya" },
+      { "question": "nadyai", "answer": "gajAya" },
+      { "question": "vadhvai", "answer": "gajAya" },
+      { "question": "vadhUbhyAm", "answer": "gajAbhyAm" },
+      { "question": "nadIbhyaH", "answer": "gajebhyaH" },
+      { "question": "senAbhyAm", "answer": "gajAbhyAm" },
+      { "question": "senAbhyaH", "answer": "gajebhyaH" },
+      { "question": "senayoH", "answer": "gajayoH" },
+      { "question": "vadhvAm", "answer": "gajAnAm" },
+      { "question": "senAnAm", "answer": "gajAnAm" },
+      { "question": "senAyAm", "answer": "gaje" },
+      { "question": "nadyoH", "answer": "gajayoH" },
+      { "question": "senAsu", "answer": "gajeSu" },
+      { "question": "nadISu", "answer": "gajeSu" },
+      { "question": "nadi", "answer": "gaja" },
+      { "question": "vadhu", "answer": "gaja" }
+    ]
+  }
+]
