@@ -1,0 +1,121 @@
+Review
+------
+
+We can use *pronouns* to refer to nouns in general:
+
+!!! examples
+    - {{ m.x('naro gacchati -> sa gacchati', 'The man goes. -> He goes.') }}
+
+
+Complex sentences
+-----------------
+
+So far, our sentences have been quite basic. We can describe the action of one
+subject, and we can chain several actions together with words like `ca` and
+`vA`, but we have no good way to relate two ideas to each other.
+
+There are simple sentences that we simply cannot say. Here's an example:
+
+!!! examples
+    - You see the man who goes.
+
+How do we express a sentence like this in Sanskrit?
+
+
+`yad`
+-----
+
+We can translate the sentence above by splitting the sentence into two parts
+and using some *new words* to connect them. First, let's split the sentence up
+into "The man goes" and "You see him." This is easy:
+
+!!! examples
+    - {{ m.x('naro gacchati', 'The man goes.') }}
+    - {{ m.x('taM pazyasi', 'You see him.') }}
+
+Now we can connect these two by using <dfn>`yad`</dfn>, a pronoun that means
+something like "who" or "which." `yad` is used just like `tad`, except it uses
+`yaH` instead of `saH` and `yA` instead of `sA`. Unlike `saH`, `yaH` blends
+like `naraH`:
+
+!!! examples
+    - {{ m.x('yo gacchati', 'The one who goes.') }}
+
+### `yad` and `tad`
+
+Usually, `yad` is used with `tad`; we use `yad` with the noun we want to
+explain, and we use `tad` to show what happens to that noun.
+
+Now let's see an example. We use `yad` in the same gender, case, and number as `naraH`:
+
+!!! examples
+    - {{ m.x('[yo] naro gacchati', 'The man [who] goes.') }}
+
+And `tad` uses the same gender and number as `yad`. But we can change the case to whatever we want:
+
+!!! examples
+    - {{ m.x('taM pazyasi', 'You see him.') }}
+
+Then we can combine these into a single sentence:
+
+!!! examples
+    - {{ m.x('[yo] naro gacchati taM pazyasi', 'You see the man [who] goes.') }}
+
+There are many other ways to phrase this, too:
+
+!!! examples
+    - {{ m.x('[yo] gacchati taM naraM pazyasi', 'You see the man [who] goes.') }}
+    - {{ m.x('naro gacchati [yo] taM pazyasi', 'You see the man [who] goes.') }}
+    - {{ m.x('gacchati [yo] taM naraM pazyasi', 'You see the man [who] goes.') }}
+
+
+
+### More examples
+Using `yad` correctly can be deeply confusing. When I was learning Sanskrit, I
+found that studying more examples helped tremendously.
+
+So consider a sentence like this:
+
+!!! examples
+    - You go with the man who conquers the horse.
+
+As before, we split the sentence into two parts:
+
+!!! examples
+    - {{ m.x('nareNa gacchasi', 'You go with the man.') }}
+    - {{ m.x("so \'zvAM jayati", 'He conquers the horse.') }}
+
+Now we use the appropriate version of `yad`:
+
+!!! examples
+    - {{ m.x("[yena] nareNa gacchasi so 'zvaM jayati", 'You go with the man [who] conquers the horse.') }}
+
+Or consider a sentence like this:
+
+!!! examples
+    - We see the the elephants with whom the lion eats.
+
+As before, we split the sentence into two parts:
+
+!!! examples
+    - {{ m.x('gajaiH siMhaH khAdati', 'The lion eats with the elephants.') }}
+    - {{ m.x('tAn pazyAmaH', 'We see them.') }}
+
+Again, we use the appropriate version of `yad`:
+
+!!! examples
+    - {{ m.x("[yair] gajaiH siMhaH khAdati tAn pazyAmaH", 'We see the elephants [with whom] the lion eats.') }}
+
+Note that small changes create an entirely different meaning:
+
+!!! examples
+    - {{ m.x("[tair] gajaiH siMhaH khAdati [yAn] pazyAmaH", 'The lion eats with the elephants [whom] we see.') }}
+    - {{ m.x("[yo] gajaiH siMhaH khAdati [taM] pazyAmaH", 'We see the lion [who] eats with the elephants.') }}
+
+
+Where to put `yad`
+------------------
+
+Generally, the `yad` part comes before the `tad` part, but this isn't always
+true. The best way to get a feel for where to put `yad` is, as usual, by
+reading lots of Sanskrit.
