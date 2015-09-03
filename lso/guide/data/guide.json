@@ -562,29 +562,37 @@
     // ~~~~~~~~~~
     // Everything other than -a
     {
+        "name": "Basic noun endings",
+        "deps": [
+            "the-eight-cases"
+        ]
+    },
+    {
         "name": "`-A`, `-I`, and `-U` stems",
         "ex": ["senA", "nadI", "vadhU"],
         "deps": [
-            "the-eight-cases"
+            "the-eight-cases",
+            "basic-noun-endings"
         ]
     },
     {
         "name": "`-i` and `-u` stems",
         "ex": ["agni", "vAyu"],
         "deps": [
-            "the-eight-cases"
+            "the-eight-cases",
+            "basic-noun-endings"
         ]
     },
     {
         "name": "Consonant stems",
         "deps": [
-            "the-eight-cases"
+            "the-eight-cases",
+            "basic-noun-endings"
         ]
     },
     {
         "name": "`-R` Stems",
         "deps": [
-            "the-eight-cases",
             "consonant-stems",
             "strong-and-weak-stems",
             "stem-suffixes"

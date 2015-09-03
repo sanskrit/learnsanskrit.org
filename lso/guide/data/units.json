@@ -62,7 +62,7 @@
             "adjectives",
             "compounds",
             "tatpurusha-compounds",
-            "dvandva-compounds"
+            "stem-suffixes"
         ]
     },
 
@@ -89,9 +89,20 @@
         ]
     },
     {
+        "name": "Complex noun stems",
+        "lessons": [
+            "basic-noun-endings",
+            "a-i-and-u-stems",
+            "consonant-stems",
+            "strong-and-weak-stems",
+            "mat-and-vat-stems",
+            "in-min-and-vin-stems",
+            "an-man-and-van-stems"
+        ]
+    },
+    {
         "name": "Pronouns",
         "lessons": [
-            "a-i-and-u-stems",
             "tad-and-etad",
             "kim",
             "yad",
@@ -102,20 +113,10 @@
         "name": "More compounds",
         "lessons": [
             "bahuvrihi-compounds",
+            "dvandva-compounds",
             "adverbs",
             "avyayibhava-compounds",
             "a-and-sa"
-        ]
-    },
-    {
-        "name": "Complex noun stems",
-        "lessons": [
-            "consonant-stems",
-            "stem-suffixes",
-            "strong-and-weak-stems",
-            "mat-and-vat-stems",
-            "in-min-and-vin-stems",
-            "an-man-and-van-stems"
         ]
     },
     {
