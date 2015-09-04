@@ -1,0 +1,24 @@
+[
+  {
+    "name": "The eight cases",
+    "language": "sa",
+    "numRequired": 15,
+    "description": "Replace each word with the correct form of `tad`.",
+    "example": { "question": "azvaH", "answer": "saH" },
+    "items": [
+      { "question": "naraH", "answer": "saH" },
+      { "question": "azvAH", "answer": "te" },
+      { "question": "narAya", "answer": "tasmai" },
+      { "question": "gajAt", "answer": "tasmAt" },
+      { "question": "azvasya", "answer": "tasya" },
+      { "question": "gajAnAm", "answer": "teSAm" },
+      { "question": "nare", "answer": "tasmin" },
+      { "question": "phalam", "answer": "tat" },
+      { "question": "senA", "answer": "sA" },
+      { "question": "senAyai", "answer": "tasyai" },
+      { "question": "senAyAH", "answer": "tasyAH" },
+      { "question": "senAyAm", "answer": "tasyAm" },
+      { "question": "senAnAm", "answer": "tAsAm" }
+    ]
+  }
+]
