@@ -104,12 +104,12 @@
         "part": "part-2",
         "lessons": [
             "basic-noun-endings",
-            "a-i-and-u-stems",
             "consonant-stems",
             "strong-and-weak-stems",
             "mat-and-vat-stems",
             "in-min-and-vin-stems",
-            "an-man-and-van-stems"
+            "an-man-and-van-stems",
+            "a-i-and-u-stems"
         ]
     },
     {
@@ -128,11 +128,11 @@
         "lessons": [
             "bahuvrihi-compounds",
             "dvandva-compounds",
-            "adverbs",
-            "avyayibhava-compounds",
             "a-and-sa"
         ]
     },
+
+    // Part 3
     {
         "name": "Complex verb classes",
         "part": "part-3",
@@ -234,7 +234,9 @@
             "special-combinations",
             "cvi-prefixes",
             "samprasarana",
-            "nind-jiv-and-other-roots"
+            "nind-jiv-and-other-roots",
+            "adverbs",
+            "avyayibhava-compounds"
         ]
     },
     {
