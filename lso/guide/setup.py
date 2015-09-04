@@ -75,7 +75,6 @@ def add_lessons(graph_data, unit_data, session):
 
     for u, datum in enumerate(unit_data):
         unit = Unit(name=datum['name'],
-                    slug=datum['slug'],
                     part_name=datum['part'],
                     position=u)
         session.add(unit)

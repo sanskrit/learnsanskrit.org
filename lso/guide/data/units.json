@@ -1,3 +1,7 @@
+// Whereas guide.json defines lesson dependencies, units.json defines a
+// reasonable default order and grouping. Without this, there are no conceptual
+// divisions between lessons, which (I believe) can make it hard to
+// contextualize a given lesson.
 [
     {
         "name": "Introduction",
@@ -96,7 +100,7 @@
         ]
     },
     {
-        "name": "Complex noun stems",
+        "name": "Other noun stems",
         "part": "part-2",
         "lessons": [
             "basic-noun-endings",

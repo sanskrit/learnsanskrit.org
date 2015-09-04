@@ -10,7 +10,6 @@ class Unit(SimpleBase):
     """A conceptual unit."""
 
     name = Column(String)
-    slug = Column(String, unique=True)
     part_name = Column(String, index=True)
     position = Column(Integer)
 
