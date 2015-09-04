@@ -133,7 +133,8 @@
         "deps": [
             "atmanepada",
             "the-eight-cases",
-            "roots"
+            "roots",
+            "root-suffixes"
         ]
     },
     {
@@ -157,13 +158,16 @@
     {
         "name": "The near future",
         "deps": [
-            "roots"
+            "roots",
+            "root-suffixes",
+            "passive-verbs"
         ]
     },
     {
         "name": "The distant future",
         "deps": [
-            "roots"
+            "roots",
+            "root-suffixes"
         ]
     },
     {
