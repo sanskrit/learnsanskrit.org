@@ -1,12 +1,11 @@
 {% import 'guide/macros.html' as m %}
 {% extends 'base.html' %}
 
-{% macro show_units(names) %}
-    {% for name in names %}
-        {% set u = units[name] %}
-        <a id="unit-{{ u.slug }}"></a>
-        <h2>{{ u.name }}</h2>
-        {{ m.lesson_list(u.lessons) }}
+{% macro show_part(part_name) %}
+    {% for unit in parts[part_name] %}
+        <a id="unit-{{ unit.slug }}"></a>
+        <h2>{% filter markdown %}{{ unit.name }}{% endfilter %}</h2>
+        {{ m.lesson_list(unit.lessons) }}
         </ul>
     {% endfor %}
 {% endmacro %}
@@ -32,8 +31,7 @@
         guide works, we dive into the foundations of the Sanskrit language.
         Once we understand the concepts here, 90% of the battle is won.</p>
 
-    {{ show_units(['introduction', 'sounds', 'verbs', 'nouns',
-                   'uninflected-words', 'compounds']) }}
+    {{ show_part('part-1') }}
 </section>
 
 <section class="book" id="guide-part-2">
@@ -48,8 +46,7 @@
     <p>Together, parts 1 and 2 provide us with enough fundamental concepts to
         start reading Sanskrit texts.</p>
 
-    {{ show_units(['roots-and-classes', 'what-roots-can-do',
-                   'pronouns', 'complex-noun-stems', 'more-compounds']) }}
+    {{ show_part('part-2') }}
 </section>
 
 <section class="book" id="guide-intermission">
@@ -70,8 +67,7 @@
         still a lot of little gaps that are worth filling in order to get a
         clearer picture of how the different parts of the grammar interact.</p>
 
-    {{ show_units(['complex-verb-classes', 'stem-verbs', 'root-verbs',
-                   'verbal-adjectives', 'other-pronouns', 'derived-roots', 'numbers']) }}
+    {{ show_part('part-3') }}
 </section>
 
 <section class="book" id="guide-part-4">

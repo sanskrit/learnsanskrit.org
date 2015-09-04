@@ -11,6 +11,7 @@ class Unit(SimpleBase):
 
     name = Column(String)
     slug = Column(String, unique=True)
+    part_name = Column(String, index=True)
     position = Column(Integer)
 
     lessons = relationship('Lesson', order_by='Lesson.position', backref='unit', lazy='joined')

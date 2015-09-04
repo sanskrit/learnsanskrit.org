@@ -71,6 +71,11 @@ class TestData:
         no_deps = set(x['slug'] for x in graph_data if not x['deps'])
         assert no_deps == {'why-learn-sanskrit'}
 
+    def test_unit_all_have_parts(self, unit_data):
+        """Verify that all units have part IDs."""
+        for unit in unit_data:
+            assert unit.get('part')
+
     def test_unit_lessons_exist(self, graph_data, unit_data):
         """Verify that all unit lessons exist."""
         slugs = set(x['slug'] for x in graph_data)

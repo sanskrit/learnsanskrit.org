@@ -1,6 +1,7 @@
 [
     {
         "name": "Introduction",
+        "part": "part-1",
         "lessons": [
             "why-learn-sanskrit",
             "how-the-guide-works"
@@ -8,6 +9,7 @@
     },
     {
         "name": "Sounds",
+        "part": "part-1",
         "lessons": [
             "simple-vowels",
             "compound-vowels",
@@ -21,6 +23,7 @@
     },
     {
         "name": "Verbs",
+        "part": "part-1",
         "lessons": [
             "how-sanskrit-works",
             "verbs",
@@ -30,6 +33,7 @@
     },
     {
         "name": "Nouns",
+        "part": "part-1",
         "lessons": [
             "nouns",
             "case-1",
@@ -46,6 +50,7 @@
     },
     {
         "name": "Uninflected words",
+        "part": "part-1",
         "lessons": [
             "uninflected-words",
             "na",
@@ -57,6 +62,7 @@
     },
     {
         "name": "Compounds",
+        "part": "part-1",
         "lessons": [
             "neuter-and-feminine-nouns",
             "adjectives",
@@ -66,9 +72,9 @@
         ]
     },
 
-    // Part 2: Roots and sentences
     {
         "name": "Roots and classes",
+        "part": "part-2",
         "lessons": [
             "roots",
             "verb-classes",
@@ -80,6 +86,7 @@
     },
     {
         "name": "What roots can do",
+        "part": "part-2",
         "lessons": [
             "root-suffixes",
             "causal-roots",
@@ -90,6 +97,7 @@
     },
     {
         "name": "Complex noun stems",
+        "part": "part-2",
         "lessons": [
             "basic-noun-endings",
             "a-i-and-u-stems",
@@ -102,6 +110,7 @@
     },
     {
         "name": "Pronouns",
+        "part": "part-2",
         "lessons": [
             "tad-and-etad",
             "kim",
@@ -111,6 +120,7 @@
     },
     {
         "name": "More compounds",
+        "part": "part-2",
         "lessons": [
             "bahuvrihi-compounds",
             "dvandva-compounds",
@@ -121,6 +131,7 @@
     },
     {
         "name": "Complex verb classes",
+        "part": "part-3",
         "lessons": [
             "complex-verb-classes",
             "the-no-class",
@@ -133,7 +144,17 @@
         ]
     },
     {
-        "name": "Stem verbs",
+        "name": "Other pronouns",
+        "part": "part-3",
+        "lessons": [
+            "mad-and-tvad",
+            "idam",
+            "ena"
+        ]
+    },
+    {
+        "name": "`sArvadhAtuka` verbs",
+        "part": "part-3",
         "lessons": [
             "the-ordinary-past",
             "commands",
@@ -141,7 +162,29 @@
         ]
     },
     {
+        "name": "`ArdhadhAtuka` verbs",
+        "part": "part-3",
+        "lessons": [
+            "the-near-future",
+            "the-distant-future",
+            "conditional-verbs",
+            "benedictive-verbs",
+            "the-distant-past",
+            "the-recent-past"
+        ]
+    },
+    {
+        "name": "Derived roots",
+        "part": "part-3",
+        "lessons": [
+            "nominal-roots",
+            "desiderative-roots",
+            "intensive-roots"
+        ]
+    },
+    {
         "name": "Rarer nouns",
+        "part": "part-3",
         "lessons": [
             "r-stems",
             "i-and-u-stems",
@@ -151,40 +194,29 @@
         ]
     },
     {
-        "name": "Root verbs",
+        "name": "Uninflected verbals",
+        "part": "part-3",
         "lessons": [
-            "the-recent-past",
-            "the-near-future",
-            "the-distant-future",
-            "conditional-verbs",
-            "benedictive-verbs",
-            "the-distant-past"
+            "tva-and-ya",
+            "tum"
         ]
     },
     {
         "name": "Verbal adjectives",
+        "part": "part-3",
         "lessons": [
             "verbal-adjectives",
             "tavat",
             "at-and-ana",
             "vas",
-            "tva-and-ya",
-            "tum",
             "tavya-aniya-and-ya",
             "blending-with-t",
             "verbal-adjectives-and-simultaneous-action"
         ]
     },
     {
-        "name": "Other pronouns",
-        "lessons": [
-            "mad-and-tvad",
-            "idam",
-            "ena"
-        ]
-    },
-    {
         "name": "Meter",
+        "part": "meter",
         "lessons": [
             "syllables",
             "meter",
@@ -193,6 +225,7 @@
     },
     {
         "name": "Misc",
+        "part": "part-3",
         "lessons": [
             "special-combinations",
             "cvi-prefixes",
@@ -201,15 +234,8 @@
         ]
     },
     {
-        "name": "Derived roots",
-        "lessons": [
-            "nominal-roots",
-            "desiderative-roots",
-            "intensive-roots"
-        ]
-    },
-    {
         "name": "Numbers",
+        "part": "part-3",
         "lessons": [
             "numbers",
             "one-two-three",
@@ -217,8 +243,10 @@
             "big-numbers"
         ]
     },
+
     {
         "name": "Devanagari",
+        "part": "devanagari",
         "lessons": [
             "devanagari",
             "marks",
