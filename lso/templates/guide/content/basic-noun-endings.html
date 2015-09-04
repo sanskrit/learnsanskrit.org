@@ -1,0 +1,73 @@
+Other stems
+-----------
+
+All of the nouns we've studied have ended in `-a`:
+
+!!! examples
+    - {{ m.x('narAn pazyasi', 'You see the men.') }}
+
+But stems can end in many other ways. And each stem ending has its own set of
+endings. Here are just a few examples:
+
+!!! examples
+    - {{ m.x('agni -> agniH', 'fire') }}
+    - {{ m.x('vAyu -> vAyuH', 'wind') }}
+    - {{ m.x('bhagavat -> bhagavAn', 'The blessed one') }}
+    - {{ m.x('dhanus -> dhanuH', 'Bow') }}
+
+The natural reaction here is despair. But there's no need for it. Noun endings
+follow a few basic patterns. And by finding these patterns, we can quickly
+learn how to use a new stem.
+
+
+The basic patterns
+------------------
+
+In theory, we could look at thousands of nouns and try to figure out the basic
+patterns. But this would take too long. Thankfully, the grammarian Panini has
+done the work for us:
+
+### Masculine and feminine endings
+
+{{ m.manual_nominal(
+    stem='_',
+    forms=[['_', 'O', 'aH'],
+        ['am', 'O', 'aH'],
+        ['A', 'ByAm', 'BiH'],
+        ['e', 'ByAm', 'ByaH'],
+        ['aH', 'ByAm', 'ByaH'],
+        ['aH', 'oH', 'Am'],
+        ['i', 'oH', 'su'],
+        ['_', 'O', 'aH']],
+    colors=[['','c1','c5'],
+        ['', 'c1', 'c5'],
+        ['', 'c2', ''],
+        ['', 'c2', 'c4'],
+        ['c5', 'c2', 'c4'],
+        ['c5', 'c3', ''],
+        ['', 'c3', ''],
+        ['', 'c1', 'c5']]
+) }}
+
+Compare these to the endings you know already.
+
+
+### Neuter endings
+
+As usual, these are simple:
+
+{{ m.manual_nominal(
+    stem='_',
+    forms=[['_', 'I', 'i'],
+        ['_', 'I', 'i'],
+        ['_', 'I', 'i']],
+    colors=[['c2','c1','c5'],
+        ['c2', 'c1', 'c5'],
+        ['c2', 'c1', 'c5']],
+    cases=['1', '2', '8']
+) }}
+
+When we use the plural ending, we also have to insert a nasal sound:
+
+!!! examples
+    - {{ m.x('manas + i -> manAMsi', 'Minds, spirits') }}

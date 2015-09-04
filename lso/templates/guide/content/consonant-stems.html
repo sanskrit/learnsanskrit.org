@@ -1,81 +1,20 @@
-Other stems
------------
+Review
+------
 
-All of the nouns we've studied have ended in `-a`:
-
-!!! examples
-    - {{ m.x('narAn pazyasi', 'You see the men.') }}
-
-But stems can end in many other ways. And each stem ending has its own set of
-endings. Here are just a few examples:
-
-!!! examples
-    - {{ m.x('agni -> agniH', 'fire') }}
-    - {{ m.x('vAyu -> vAyuH', 'wind') }}
-    - {{ m.x('bhagavat -> bhagavAn', 'The blessed one') }}
-    - {{ m.x('dhanus -> dhanuH', 'Bow') }}
-
-The natural reaction here is despair. But there's no need for it. Noun endings
-follow a few basic patterns. And by finding these patterns, we can quickly
-learn how to use a new stem.
-
-
-The basic patterns
-------------------
-
-In theory, we could look at thousands of nouns and try to figure out the basic patterns. But this would take too long. Thankfully, the grammarian Panini has done the work for us:
-
-### Masculine and feminine endings
-
-{{ m.manual_nominal(
-    stem='_',
-    forms=[['_', 'O', 'aH'],
-        ['am', 'O', 'aH'],
-        ['A', 'ByAm', 'BiH'],
-        ['e', 'ByAm', 'ByaH'],
-        ['aH', 'ByAm', 'ByaH'],
-        ['aH', 'oH', 'Am'],
-        ['i', 'oH', 'su'],
-        ['_', 'O', 'aH']],
-    colors=[['','c1','c5'],
-        ['', 'c1', 'c5'],
-        ['', 'c2', ''],
-        ['', 'c2', 'c4'],
-        ['c5', 'c2', 'c4'],
-        ['c5', 'c3', ''],
-        ['', 'c3', ''],
-        ['', 'c1', 'c5']]
-) }}
-
-Compare these to the endings you know already.
-
-
-### Neuter endings
-
-As usual, these are simple:
-
-{{ m.manual_nominal(
-    stem='_',
-    forms=[['_', 'I', 'i'],
-        ['_', 'I', 'i'],
-        ['_', 'I', 'i']],
-    colors=[['c2','c1','c5'],
-        ['c2', 'c1', 'c5'],
-        ['c2', 'c1', 'c5']],
-    cases=['1', '2', '8']
-) }}
-
-When we use the plural ending, we also have to insert a nasal sound:
-
-!!! examples
-    - {{ m.x('manas + i -> manAMsi', 'Minds, spirits') }}
+Not all noun stems end in `-a`. In fact, stems can end in a variety of letters.
+But these stems all share a basic set of endings, with the occasional tweak
+here and there.
 
 
 Consonant stems
 ---------------
 
-`marut` is a masculine noun that means "wind." It uses the endings above
-without any changes:
+Generally, the simplest noun stems are those that end in consonants. Let's call
+these <dfn>consonant stems</dfn>. They use the basic set of noun endings almost
+unchanged.
+
+As an example, `marut` is a masculine noun that means "wind." You can see its
+forms below:
 
 {% include 'guide/include/marut-m.html' %}
 
@@ -92,7 +31,8 @@ A stop uses the same "voice" as the sound that follows it. If the sound is voice
 </section>
 
 This was discussed in the lesson on [basic consonants]({{
-m.lesson_url('basic-consonants') }}). But what's strange is that this rule doesn't seem to apply everywhere:
+m.lesson_url('basic-consonants') }}). But what's strange is that this rule
+doesn't seem to apply everywhere:
 
 !!! examples
     - {{ m.x('marut + A -> maru[tA] ???') }}
@@ -106,18 +46,31 @@ wherever possible, we don't blend when we're inside a word:
 !!! examples
     - {{ m.x('marut + A -> marutA') }}
 
-But if that's true, why do we blend `marut + bhiH` together? As usual, the
-answer is that *written Sanskrit is a record of spoken Sanskrit*. When spoken,
-`marutbhiH` and `marudbhiH` sound almost identical. So we just write
-`marudbhiH` instead. If you're skeptical, try saying these words out loud:
+But if that's true, why do we blend `marut + bhiH` together? Unfortunately, I'm
+not sure. When the noun ending starts with a consonant, we follow all the
+normal blending rules.
+
+<section class="sandhi">
+{% filter markdown %}
+`-s` stems
+----------
+
+Many useful words end in `-s`. Below you see the forms for the word `manas`, a neuter noun that means "mind." But perhaps some of the forms might be surprising to you:
+
+{% include 'guide/include/manas-n.html' %}
+
+Why `manaH` and not `manas`? Why `manobhyAm` and not `manasbhyAm`?
+
+The answer: ordinarily, an `s` at the end of the word changes into the
+`visarga`. If the noun ending starts with a vowel, this is prevented, and we
+get words like `manasA` and `manase`. But otherwise, we make the change, and we
+get words like `manaH` and `manobhyAm`.
+
+In fact, most of the `visarga`s we've seen so far are originally from the
+letter `s`:
 
 !!! examples
-    - {{ m.x('marutbhiH') }}
-    - {{ m.x('marudbhiH') }}
-
-Note that we can't do this with `marut + A`. The difference is easy to hear:
-
-!!! examples
-    - {{ m.x('marutA') }}
-    - {{ m.x('marudA') }}
-
+    - {{ m.x('naras -> naraH', 'man') }}
+    - {{ m.x('gacchatas -> gacchataH', 'The two of them go.') }}
+{% endfilter %}
+</section>
