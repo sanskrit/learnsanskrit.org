@@ -822,6 +822,37 @@
     },
 
 
+    // ~~~~~~~~~~~~
+    // Meta-lessons
+    // ~~~~~~~~~~~~
+    // How to use the site
+    {
+        "name": "How to read Sanskrit",
+        "deps": [
+            "how-sanskrit-works"
+        ]
+    },
+    {
+        "name": "Reading and writing Sanskrit",
+        "deps": [
+            "how-sanskrit-works"
+        ]
+    },
+    {
+        "name": "Understanding words",
+        "deps": [
+            "the-eight-cases",
+            "verbs",
+            "reading-and-writing-sanskrit"
+        ]
+    },
+    {
+        "name": "The library",
+        "deps": [
+            "understanding-words"
+        ]
+    },
+
     // ~~~~~~~~~~
     // Devanagari
     // ~~~~~~~~~~

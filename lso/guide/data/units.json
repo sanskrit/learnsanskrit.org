@@ -140,6 +140,17 @@
         ]
     },
 
+    // Intermission
+    {
+        "name": "Reading texts",
+        "part": "intermission",
+        "lessons": [
+            "reading-and-writing-sanskrit",
+            "understanding-words",
+            "the-library"
+        ]
+    },
+
     // Part 3
     {
         "name": "Complex verb classes",
@@ -226,15 +237,6 @@
         ]
     },
     {
-        "name": "Meter",
-        "part": "meter",
-        "lessons": [
-            "syllables",
-            "meter",
-            "gana"
-        ]
-    },
-    {
         "name": "Misc",
         "part": "part-3",
         "lessons": [
@@ -257,6 +259,16 @@
         ]
     },
 
+    // Optional lessons
+    {
+        "name": "Meter",
+        "part": "meter",
+        "lessons": [
+            "syllables",
+            "meter",
+            "gana"
+        ]
+    },
     {
         "name": "Devanagari",
         "part": "devanagari",
