@@ -1,0 +1,190 @@
+Review
+------
+
+All verbs come from verb *roots*. We use this root to make a stem, and we use
+this stem to create actual words. Here are the stems we know so far:
+
+<figure>
+    {{ m.svg('bhu-present') }}
+    <figcaption>{{ 'bhU'|i }} in the present tense</figcaption>
+</figure>
+
+
+A new stem
+----------
+
+So let's start making this picture more interesting:
+
+<figure>
+    {{ m.svg('bhu-simple-future') }}
+    <figcaption>A new {{ 'bhU'|i }} stem</figcaption>
+</figure>
+
+Now we have a new stem to consider. It's similar to the ones we've seen
+already. And it even uses the same endings. But it creates verbs that mean
+something quite different:
+
+!!! examples
+    - {{ m.x('narasya putro vIro [bhaviSyati]', "The man's son [will be] a hero.") }}
+    - {{ m.x('vanAn nagaraM [gamiSyanti] bAlAH', "The boys [will go] from the forest to the city.") }}
+
+
+These verbs let us describe what *will happen*. Such verbs are called
+<dfn>future tense</dfn> verbs. But since Sanskrit has several verbs that
+describe the future tense, let's say that these verbs describe the <dfn>near
+    future</dfn>. That is, they describe **what will happen soon**.
+
+The near future appears almost 60 times in the Bhagavad Gita. Some of these
+verbs are below. These examples aren't very exciting, but they do show some of
+the variety that these forms have:
+
+!!! examples
+    - {{ m.x('jJAsyasi', 'You will know') }}
+
+        <cite>Bhagavad Gita 7.1</cite>
+
+    - {{ m.x('drakSyasi', 'You will see') }}
+
+        <cite>Bhagavad Gita 4.35</cite>
+
+    - {{ m.x('kariSye', 'I will do') }}
+
+        <cite>Bhagavad Gita 18.73</cite>
+
+
+Making the near future stem
+---------------------------
+
+It is easy to create the future stem:
+
+!!! rule
+    Strengthen the root and add the suffix `sya`.
+
+The future stem uses the same endings as the present tense. We use
+`parasmaipada` or `Atmanepada` endings depending on what the verb uses in the
+present tense. For example, `jJA` uses both `parasmaipada` (`jAnAti`) and
+`Atmanepada` (`jAnIte`), so it uses both in the near future as well:
+
+!!! examples
+    - {{ m.x('jJA -> jJAsyati', 'know -> He will know.') }}
+    - {{ m.x('jJA -> jJAsyate', 'know -> He will know.') }}
+
+
+{#
+But this description is incomplete. Several stems seem to do something else instead:
+
+!!! examples
+    - {{ m.x('corayiSyAmi', 'I will steal') }}
+    - {{ m.x('drakSyasi', 'You will see') }}
+    - {{ m.x('kariSye', 'I will do') }}
+
+
+Three different issues are involved here:
+
+### `aya` stems
+
+Roots in the `aya` class are strange. Even though all other roots form future
+stems *without* using information from their verb classes, roots in the `aya`
+class use this information anyway:
+
+!!! examples
+    - {{ m.x('cintayati', 'He thinks.') }}
+    - {{ m.x('cintayiSyanti', 'They will think.') }}
+
+
+### Sandhi
+
+`drakSya` is the future stem of `dRz`. `dRz` irregularly strengthens to `draz`
+instead of `*darz`. But even if that's the case, we would expect that the
+future stem would be `drazsya`. Why isn't this the case?
+
+The answer is that `drazsya` is just difficult to pronounce. The shift from `z`
+to `s` is tricky and unclear, especially when speaking quickly. The earliest
+Sanskrit speakers felt the same way, and they solved this problem by combining
+`z` and `s` into something simpler:
+
+!!! rule
+    Within a word, `z` and `s` combine to `kS`.
+
+`kS` is clearer than `zs` and does not require such a nimble tongue. The change
+from `s` to `S` is common throughout Sanskrit, and <a href="#">we have seen
+    examples of it already</a>.
+
+### Inserted `i`
+
+A significant number of future stems insert an `i` vowel between the root and
+`sya`. `isya` becomes `iSya` due to the same rule that turns `*gajesu` into
+`gajeSu`:
+
+!!! examples
+    - {{ m.x('car -> cariSyati', 'He will walk.') }}
+
+
+Why do some roots use this `i ` vowel? This is a difficult question and one
+that we don't need to consider.
+
+{#
+{%- filter foot(notes) %}
+This is certainly an interesting question, but the answer has less to do with Sanskrit and more to do with Indo-European languages overall. If you're interested in exploring this question further, you should read about <a href="http://en.wikipedia.org/wiki/Se%E1%B9%AD_and_ani%E1%B9%AD_roots">`seT` and `aniT` roots</a> and <a href="http://en.wikipedia.org/wiki/Laryngeal%20theory">laryngeal theory</a>.
+{% endfilter %} More imporantly, *how can we tell* which roots use it? It will take some time to create a good answer to this question. We'll revisit this question a few lessons from now.
+
+<section>
+<h2>`na`, `ca`, and `eva`</h2>
+As our grasp of Sanskrit becomes stronger, we will be able to understand more and more of the language. But some concepts are simple enough that we don't need to spend full lessons on them. Here, let's look at three simple uninflected words:
+
+<h3>`na`</h3>
+`na` is related to the English word "no," and it means nearly the same thing:
+
+!!! examples
+    - {{ m.x('na bhaviSyanti', 'They will not be') }}
+
+        <cite>BG 11.32</cite>
+
+
+<h3>`ca`</h2>
+`ca` means "and." It can connect nouns to nouns:
+
+!!! examples
+    - {{ m.x('naro vIro gajaz [ca] siMhaM zRNvanti', 'The man, the hero, [and] the elephant hear the lion.') }}
+
+
+and sentences to sentences:
+
+!!! examples
+    - {{ m.x('azvA gacchanti gamiSyanti [ca]', 'The horses go [and] will go.') }}
+
+
+Unlike the English "and," `ca` appears at the very end of the list of connected words. This means that `ca` can never start a sentence.
+
+<h3>`eva`</h3>
+In English, we emphasize words by speaking them differently:
+
+!!! examples
+    - The **man** will steal the hero's black chariot.
+
+
+In Sanskrit, we emphasize words by adding `eva` after them:
+
+!!! examples
+    - {{ m.x('nara [eva] kRSNaM vIrarathaM corayiSyati', "The [**man**] will steal the hero's black chariot.") }}
+
+
+`eva` is sometimes translated as "indeed" or "truly."
+
+In Sanskrit poetry, `eva` is often used to fill gaps in a verse's meter. When used in this way, it does not have any strong meaning:
+
+!!! examples
+    -   {{ m.x('mAmakAH pANDavAzcaiva', 'My (sons) and the Pandavas') }}
+
+        <cite>Bhagavad Gita 1.1</cite>
+
+
+<h3>`na`, `ca`, and `eva`</h3>
+These three words are all common. In fact, all of three of them appear in a single line from the Bhagavad Gita:
+
+!!! examples
+    - {{ m.x('na caiva na bhaviSyAmaH', 'And truly, we will always be. (Literally, "we will not not be.")') }}
+
+        <cite>Bhagavad Gita 2.12</cite>
+</section>
+#}
