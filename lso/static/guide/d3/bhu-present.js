@@ -1,6 +1,6 @@
 $(function() {
     var tree = LSO.d3.formTree()
-        .height(100)
+        .height(200)
         .data({
             name: 'bhU',
             children: [
@@ -9,6 +9,12 @@ $(function() {
                     children: [
                         { name: 'bhavati' },
                         { name: 'bhavate' }
+                    ],
+                },
+                {
+                    name: 'bhUya',
+                    children: [
+                        { name: 'bhUyate' }
                     ]
                 }
             ]
