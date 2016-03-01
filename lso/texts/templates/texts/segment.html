@@ -33,52 +33,6 @@
 
 {% block content %}
 <div id="segment-view">
-<h1 id="readable-query">{{ readable_query }}</h1>
-
-<div id="segments">
-    {% for card in cards %}
-    <section id="{{ card.primary.xmlid }}" class="card">
-        {# <a class="jump" href="#{{ segment.xmlid }}">#</a> #}
-        {# <br /> #}
-        <div class="primary">
-        {{ xml_transform(card.primary.content)|safe }}
-        </div>
-
-        <div class="translations">
-        {% for translation in card.translations %}
-            <div class="translation">
-            {% for seg in translation.segments %}
-                {{ xml_transform(seg.content)|safe }}
-            {% endfor %}
-            {{ secondary_texts[translation.text_id].name }}
-            </div>
-        {% endfor %}
-        </div>
-        <div class="commentaries">
-        {% for commentary in card.commentaries %}
-            <div class="commentary">
-            {% for seg in commentary.segments %}
-                {{ xml_transform(seg.content)|safe }}
-            {% endfor %}
-            {{ secondary_texts[commentary.text_id].name }}
-            </div>
-        {% endfor %}
-        </div>
-    </section>
-    {% endfor %}
-</div>
-
-<div id="text-panel">
-    <ul id="child-links">
-        {% if all_translations %}{{ dropdown('Translations', all_translations) }}{% endif %}
-        {% if all_commentaries %}{{ dropdown('Commentaries', all_commentaries) }}{% endif %}
-    </ul>
-    <ul id="page-links">
-        {{ page_link(prev, 'prev-link', '&laquo;') }}
-        {{ page_link(next, 'next-link', '&raquo;') }}
-    </ul>
-</div>
-
 </div>  {# end #segment-view #}
 {% endblock %}
 

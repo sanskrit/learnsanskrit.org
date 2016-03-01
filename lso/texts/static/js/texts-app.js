@@ -1,358 +1,251 @@
-(function(LSO) {
+import React from 'react';
+import ReactDOM from 'react-dom';
 
-    // Helper functions
-    // ----------------
+const P = React.PropTypes;
 
-    function is_segment(url) {
-        return url.match('^\/(.+)\/(.+)\/(.+)');
-    }
+// Util
+// ---------------------------------------------------------------------
 
-    function is_text(url) {
-        return url.match('/^\/(.+)\/(.+)\/$/g');
-    }
+function decodeURL(url) {
+  const parts = url.split('+');
+  if (parts.length === 1) {
+    return { prefix: parts[0], slugs: [] };
+  } else {
+    return { prefix: parts[0], slugs: parts[1].split(',') };
+  }
+}
 
-    function url_child_segments_api(child_slug, parent_ids) {
-        return '/api/texts-child/' + child_slug + '/' + parent_ids.join(',');
-    }
+function encodeURL(data) {
+  if (data.slugs.length) {
+    return data.prefix + '+' + data.slugs.join(',');
+  }
+  return data.prefix;
+}
 
-    function url_query_api(query) {
-        return '/api/texts/' + query;
-    }
+function toggleSecondaryText(slug) {
+  let pageState = decodeURL(window.location.pathname);
+  const index = pageState.slugs.indexOf(slug);
+  if (index === -1) {
+    pageState.slugs.push(slug);
+  } else {
+    pageState.slugs.splice(index, 1);
+  }
+  const newURL = encodeURL(pageState);
+  window.location.href = newURL;
+}
 
-    function url_segment(text, query, related) {
-        url = '/texts/' + text + '/' + query;
-        if (related && related.length) {
-            url += '+' + related.join(',');
-        }
-        return url;
-    }
+// Schema
+// ---------------------------------------------------------------------
 
-    function url_text(text) {
-        return '/texts/' + text;
-    }
+const PaginationState = P.shape({
+  query: P.string.isRequired,
+  readable: P.string.isRequired,
+});
 
-    // Helper classes
-    // --------------
+const SegmentSchema = P.shape({
+  id: P.number.isRequired,
+  content: P.string.isRequired,
+  slug: P.string.isRequired,
+  text_id: P.number.isRequired,
+});
 
-    var TemplateView = Backbone.View.extend({
-        render: function() {
-            this.$el.html(this.template(this.model.attributes));
-            return this;
-        }
-    });
+const TextSchema = P.shape({
+  id: P.number.isRequired,
+  name: P.string.isRequired,
+  slug: P.string.isRequired,
+  xmlid_prefix: P.string.isRequired,
+});
 
-    var ModelView = Backbone.View.extend({
-        initialize: function() {
-            this.model.on('change', this.render, this);
-        }
-    });
+const CardState = P.shape({
+  primary: SegmentSchema.isRequired,
+});
 
-    // State
-    // -----
-    // A high-lever represenation of the current page. This contains
-    // the current query, the active related texts, and the slug of the
-    // current text.
-    var State = Backbone.Model;
+// Components
+// ---------------------------------------------------------------------
 
+/** Shows the current query. */
+const Header = (props) => {
+  return <h1>{props.text}</h1>
+};
 
-    // Cards
-    // --------
+/** Shows a segment by dangerously dumping its raw HTML into the document. */
+const DangerousSegment = (props) => {
+  return (<div dangerouslySetInnerHTML={{__html: props.content}} />);
+};
 
-    var tCard = [
-        '<section id="<%= primary.slug %>" class="card">',
-        // '    <a class="jump" href="<%= slug %>">#</a>',
-        '    <div class="primary"><%= primary.content %></div>',
-        '    <div class="translations">',
-        '        <% _.each(translations, function(t) { %>',
-        '        <div class="translation">',
-        '            <% _.each(t.segments, function(s) { %>',
-        '              <%= s.content %>',
-        '            <% }); %>',
-        '        </div>',
-        '        <% }); %>',
-        '    </div>',
-        '    <div class="commentaries">',
-        '        <% _.each(commentaries, function(c) { %>',
-        '        <div class="commentary">',
-        '            <% _.each(c.segments, function(s) { %>',
-        '                <%= s.content %>',
-        '            <% }); %>',
-        '        </div>',
-        '        <% }); %>',
-        '    </div>',
-        '</section>'
-    ].join('');
+const SecondaryTextInCard = (props) => {
+  const segments = props.segments.map((s) => {
+    return <DangerousSegment key={s.id} {...s} />
+  });
+  return (
+    <div>
+      <h4>{props.text.name}</h4>
+      {segments}
+    </div>
+  );
+};
 
-    var Card = Backbone.Model;
+/** Secondary texts of some type, i.e. translations or commentaries. */
+const GenreForCard = (props) => {
+  const children = props.texts.map((t) => {
+    return <SecondaryTextInCard key={t.text.slug} {...t} />
+  });
+  if (children.length) {
+    return (
+      <div>
+        <h3>{props.title}</h3>
+        {children}
+      </div>
+    );
+  }
+  return <div />;
+};
 
-    var Cards = Backbone.Collection.extend({
-        model: Card
-    });
+/** Shows all of the information related to some segment in the text. */
+const Card = React.createClass({
+  propTypes: {
+    primary: SegmentSchema.isRequired,
+  },
+  render() {
+    return (
+      <div>
+        <DangerousSegment {...this.props.primary} />
+        <GenreForCard title="Commentaries" texts={this.props.commentaries} />
+        <GenreForCard title="Translations" texts={this.props.translations} />
+      </div>
+    );
+  }
+});
 
-    var CardView = TemplateView.extend({
-        template: _.template(tCard)
-    });
+/** Goes to the given url when clicked. */
+const CardNavButton = (props) => {
+  const url = props.query || '';
+  return <a href={url}>{props.text}</a>;
+};
+CardNavButton.PropTypes = PaginationState.isRequired;
 
-    // Child links
-    // -----------
+/** A text listed in the nav. When clicked, the page state is altered to
+ * show/hide content from this text. */
+const SecondaryTextListItem = React.createClass({
+  propTypes: {
+    text: TextSchema.isRequired,
+    onClick: P.func.isRequired,
+  },
+  onClick(e) {
+    e.preventDefault();
+    this.props.onClick(this.props.text.slug);
+  },
+  render() {
+    return (
+      <li><a href="#" onClick={this.onClick}>{this.props.text.name}</a></li>
+    );
+  },
+});
 
-    var ChildLink = Backbone.Model;
+/** List of secondary texts in the nav. This is used to toggle texts. */
+const SecondaryTextList = (props) => {
+  const items = props.active.map((textID) => {
+    const data = props.textMap[textID];
+    return (
+      <SecondaryTextListItem
+        key={textID}
+        text={data}
+        onClick={props.onClick}
+      />
+    );
+  });
+  return (
+    <div>
+      <h3>{props.title}</h3>
+      <ul>
+        {items}
+      </ul>
+    </div>
+  );
+};
 
-    var ChildLinks = Backbone.Collection.extend({
-        model: ChildLink,
+/** Everything that changes the page state. */
+const Nav = React.createClass({
+  render() {
+    const prevURL = (this.props.prev) ? this.props.prev.query : '';
+    return (
+      <nav>
+        <CardNavButton {...this.props.prev} text="&laquo;" />
+        <CardNavButton {...this.props.next} text="&raquo;" />
+        <SecondaryTextList
+          title="Translations"
+          active={this.props.all_translations}
+          textMap={this.props.textMap}
+          onClick={this.props.onClickText}
+        />
+        <SecondaryTextList
+          title="Commentaries"
+          active={this.props.all_commentaries}
+          textMap={this.props.textMap}
+          onClick={this.props.onClickText}
+        />
+      </nav>
+    );
+  }
+});
 
-        // Get a list of active slugs
-        actives: function() {
-            var activeList = this.where({ active: true });
-            return _.map(activeList, function(x) {
-                return x.get('slug');
-            });
-        }
-    });
+/** The main app. */
+const TextApp = React.createClass({
+  propTypes: {
+    active_secondary_texts: P.arrayOf(P.number).isRequired,
+    commentary_ids: P.arrayOf(P.number).isRequired,
+    translation_ids: P.arrayOf(P.number).isRequired,
+    cards: P.arrayOf(CardState).isRequired,
+    next: PaginationState,
+    prev: PaginationState,
+    readable_query: P.string.isRequired,
+    secondary_texts: P.arrayOf(TextSchema).isRequired,
+    text: TextSchema.isRequired,
 
-    var ChildLinksView = Backbone.View.extend({
-
-        initialize: function() {
-            var collection = this.collection = new ChildLinks();
-
-            // Initialize from source
-            $('a.child-link').each(function() {
-                var $this = $(this),
-                    datum = {
-                        id: $this.data('id'),
-                        slug: $this.data('slug'),
-                        active: $this.hasClass('active')
-                    };
-                collection.add(datum);
-                console.log(collection.models);
-            });
-        },
-
-        events: {
-            'click a.child-link': 'get_child_segments',
-            'mouseover a.child-link': 'hi_child_segments_on',
-            'mouseout a.child-link': 'hi_child_segments_off'
-        },
-
-        get_child_segments: function(e) {
-            e.preventDefault();
-            var $link = $(e.currentTarget),
-                slug = $link.data('slug'),
-                selector = '.trans-' + slug;
-
-            if ($link.hasClass('active')) {
-                $link.data('queried', true);
-            }
-            $link.toggleClass('active');
-            if ($link.data('queried')) {
-                $(selector).removeClass('hi').fadeToggle();
-            } else {
-                LSO.textApp.query_child_segments(slug);
-                $link.data('queried', true);
-            }
-
-            // Update model
-            var m = this.collection.findWhere({ 'slug': slug });
-            m.set('active', !m.get('active'));
-        },
-
-        hi_child_segments: function(e, leaving) {
-            var slug = $(e.currentTarget).data('slug'),
-                selector = '.trans-' + slug;
-            $(selector).toggleClass('hi', leaving);
-        },
-
-        hi_child_segments_on: function(e) {
-            this.hi_child_segments(e, true);
-        },
-
-        hi_child_segments_off: function(e) {
-            this.hi_child_segments(e, false);
-        }
-    });
-
-    // Page links
-    // ----------
-
-    var PageLink = Backbone.Model;
-
-    var PageLinkView = ModelView.extend({
-        render: function() {
-            var $el = this.$el,
-                a = this.model.attributes;
-
-            var url, readable;
-            if (a.query) {
-                url = url_segment(a.text, a.query, a.related);
-                readable = a.readable;
-            } else {
-                url = '/texts/' + a.text;
-                readable = '(title page)';
-            }
-            $el.attr('href', url);
-            $el.text(readable);
-            return this;
-        }
-    });
-
-    // Title
-    // -----
-
-    var TitleView = ModelView.extend({
-        render: function() {
-            var title = this.model.get('readable');
-            document.title = title;
-            this.$el.text(title);
-            return this;
-        }
-    });
-
-    // Router
-    // ------
-
-    window.TextRouter = Backbone.Router.extend({
-        routes: {
-            'texts/*query': 'page'
-        },
-
-        page: function(query) {
-            LSO.textApp.query(query);
-        }
-    });
-
-    // Application
-    // -----------
-
-    window.TextApp = Backbone.View.extend({
-        initialize: function() {
-            this.prevLink = new PageLink();
-            this.nextLink = new PageLink();
-            this.state = new State();
-
-            var childLinksView = new ChildLinksView({ el: $('#child-links') });
-            this.childLinks = childLinksView.collection;
-            this.childLinks.on('change', this.update_related, this);
-
-            this.prevLinkView = new PageLinkView({
-                el: $('#prev-link'),
-                model: this.prevLink
-            });
-            this.nextLinkView = new PageLinkView({
-                el: $('#next-link'),
-                model: this.nextLink
-            });
-            this.titleView = new TitleView({
-                el: $('#readable-query'),
-                model: this.state
-            });
-
-            this.cards = new Cards();
-            this.cards.on('all', this.render, this);
-
-            this.$cards = $('#segments');
-        },
-
-        events: {
-            'click a.jump': 'bookmark',
-            'click a.page-link': 'get_page'
-        },
-
-        // View a single segment by itself
-        bookmark: function(e) {
-            e.preventDefault();
-        },
-
-        // Get a page of segments
-        get_page: function(e) {
-            var url = $(e.currentTarget).attr('href');
-            if (is_segment(url)) {
-                e.preventDefault();
-                LSO.textRouter.navigate(url, {'trigger': true});
-            }
-        },
-
-        render: function() {
-            var data = [];
-            this.cards.each(function(model) {
-                console.log(model);
-                console.log('rendering')
-                var view = new CardView({ model: model }).render();
-                data.push(view.$el.html());
-            });
-            this.$cards
-                .hide()
-                .html(data.join(''))
-                .fadeIn(200);
-        },
-
-        // Fetch data from the server and store it in the appropriate models.
-        query: function(query) {
-            var self = this,
-                url = url_query_api(query);
-            $.getJSON(url, function(data) {
-
-                var prev = data['prev'] || {query: null},
-                    next = data['next'] || {query: null};
-                prev['text'] = next['text'] = data['text']['slug'];
-                prev['related'] = next['related'] = data['related'];
-
-                self.state.set({
-                    text: data['text'],
-                    query: data['query'],
-                    related: data['related'],
-                    readable: data['readable_query']
-                });
-                self.prevLink.set(prev);
-                self.nextLink.set(next);
-
-                var cards = data['cards'],
-                    corresp = data['corresp'] || {};
-                cards = _.map(cards, function(x) {
-                    x['corresp'] = corresp[x.slug] || {};
-                    return x;
-                });
-
-                self.cards.reset(cards);
-            });
-        },
-
-        // Fetch child segments from the server and store them appropriately.
-        query_child_segments: function(slug) {
-            var parent_ids = this.cards.map(function(s) {
-                return s.get('id');
-            }),
-                url = url_child_segments_api(slug, parent_ids);
-
-            var self = this;
-            $.getJSON(url, function(data) {
-                var segments2 = self.segments.map(function(s) {
-                    var corresp = s.get('corresp');
-                    _.extend(corresp, data[s.id]);
-                    return s;
-                });
-                self.segments.reset(segments2);
-            });
-        },
-
-        update_related: function() {
-            var related = this.childLinks.actives();
-            this.state.set('related', related);
-            this.prevLink.set('related', related);
-            this.nextLink.set('related', related);
-
-            var a = this.state.attributes;
-            var url = url_segment(a.text.slug, a.query, a.related);
-            LSO.textRouter.navigate(url);
-        }
-    });
-
-}(LSO = window.LSO || {}));
+    // Constructed client-side
+    textMap: P.object.isRequired,
+  },
+  render() {
+    // FIXME: better key.
+    const cards = this.props.cards.map((data, i) => <Card key={i} {...data} />);
+    return (
+      <div>
+        <Header text={this.props.readable_query} />
+        {cards}
+        <Nav
+          all_commentaries={this.props.commentary_ids}
+          all_translations={this.props.translation_ids}
+          textMap={this.props.textMap}
+          prev={this.props.prev}
+          next={this.props.next}
+          onClickText={toggleSecondaryText}
+        />
+      </div>
+    );
+  }
+});
 
 $(function() {
-    // Remove autoscroll for same-page links
-    $(document).off('click', 'a[href^="#"]');
-
-    LSO.textApp = new TextApp({ el: $('article') });
-    LSO.textRouter = new TextRouter();
-    Backbone.history.start({ pushState: true });
+  const url = '/api' + window.location.pathname;
+  $.getJSON(url, function(data) {
+    const textMap = {};
+    data.cards.forEach((card) => {
+      data.secondary_texts.forEach((t) => {
+        textMap[t.id] = t;
+      });
+      // Translate foreign keys so the downstream code is simpler.
+      card.commentaries.forEach((x) => {
+        x.text = textMap[x.text_id];
+      });
+      card.translations.forEach((x) => {
+        x.text = textMap[x.text_id];
+      });
+    });
+    console.log(data);
+    ReactDOM.render(
+      <TextApp {...data} textMap={textMap} />,
+      document.getElementById('segment-view')
+    );
+  });
 });
+

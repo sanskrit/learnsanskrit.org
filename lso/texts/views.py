@@ -34,7 +34,7 @@ class Card:
 
 class ChildCard:
 
-    """A child texts with associated segments.
+    """A child text with associated segments.
 
     I used my own class because Flask makes namedtuple JSON serialization hard
     to modify.
@@ -73,6 +73,7 @@ def inject_helpers():
 # ~~~~~~~~~~~~~~~~
 
 def _flash_missing_text(slug):
+    # FIXME: is this an XSS? This site leaves a lot to be desired.
     flash("We can't find text \"%s\" in the collection." % slug)
 
 
@@ -292,24 +293,22 @@ def segments_data(text, slug, query, child_slugs):
     readable_range = query.replace('-', ' - ').replace(',', ', ')
     readable_query = '%s %s' % (text.name, readable_range)
 
-    secondary_texts = {t.id: t for t in text.children}
-    all_translations = [t.id for t in text.children
+    translation_ids = [t.id for t in text.children
                         if CATEGORIES[t.category_id] == 'translation']
-    all_commentaries = [t.id for t in text.children
+    commentary_ids = [t.id for t in text.children
                         if CATEGORIES[t.category_id] == 'commentary']
 
     return dict(
-        text=text,
-        query=query,
         readable_query=readable_query,
-        cards=cards,
-        active_children=active_children,
-        all_translations=all_translations,
-        all_commentaries=all_commentaries,
-        secondary_texts=secondary_texts,
+        text=text,
+        secondary_texts=text.children,
+        # For indicating the genre client-side.
+        translation_ids=translation_ids,
+        commentary_ids=commentary_ids,
+        active_secondary_texts=active_children,
         prev=prev,
         next=next,
-        related=child_slugs
+        cards=cards,
     )
 
 
@@ -423,9 +422,3 @@ def segment_api(slug, query, related=None):
 
     data = segments_data(text, slug, query, related)
     return jsonify(data)
-
-
-@api.route('/texts-child/<slug>/<list:ids>')
-def child_segment_api(slug, ids):
-
-    return jsonify(child_segments_data(slug, ids))

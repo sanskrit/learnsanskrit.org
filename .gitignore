@@ -3,5 +3,6 @@
 audio/
 env/
 gen/
+node_modules/
 production.py
 lso/static/.webassets-cache
