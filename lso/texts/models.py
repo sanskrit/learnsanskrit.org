@@ -5,7 +5,7 @@
 
     Models for handling a collection of segmented texts
 
-    :license: MIT and BSD
+    :license: MIT
 """
 
 import sqlalchemy.exc

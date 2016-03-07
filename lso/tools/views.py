@@ -2,7 +2,7 @@ from flask import render_template
 
 import forms
 from lso import cache
-from lso.lib import LSOBlueprint
+from lso.util import LSOBlueprint
 
 bp = LSOBlueprint('tools', __name__, url_prefix='/tools')
 

@@ -6,7 +6,7 @@ from flask import abort, current_app, Response, redirect, render_template, url_f
 
 from lso import cache
 from lso.guide import util
-from lso.lib import LSOBlueprint
+from lso.util import LSOBlueprint
 from .models import Lesson, Unit
 
 import filters

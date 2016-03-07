@@ -1,7 +1,7 @@
 from flask import Blueprint, render_template, request, current_app
 from flask.ext.mail import Message
 from lso import mail
-from lso.lib import LSOBlueprint
+from lso.util import LSOBlueprint
 
 import forms
 

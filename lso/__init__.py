@@ -15,8 +15,8 @@ import sqlalchemy
 
 import lso.admin
 import lso.database
-import lso.lib.converters
-from lso.lso_json_encoder import LSOJSONEncoder
+import lso.util.converters
+from lso.util.lso_json_encoder import LSOJSONEncoder
 
 
 # Assets (LESS CSS and assorted JavaScript)
@@ -69,7 +69,7 @@ def do_logging(app):
 
 # Converters (for fancy dictionary queries)
 def add_converters(app):
-    app.url_map.converters['list'] = lso.lib.converters.ListConverter
+    app.url_map.converters['list'] = lso.util.converters.ListConverter
 
 
 # Blueprints

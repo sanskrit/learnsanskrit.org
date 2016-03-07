@@ -3,7 +3,7 @@ from flask.ext.security import login_required, current_user
 
 import forms
 from lso import security
-from lso.lib import LSOBlueprint
+from lso.util import LSOBlueprint
 
 
 bp = LSOBlueprint('users', __name__, url_prefix='')

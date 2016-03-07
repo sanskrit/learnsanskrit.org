@@ -5,7 +5,7 @@ import re
 import xml.etree.cElementTree as ET
 from sanskrit import sanscript as S, betacode as B
 
-from lso.lib.xml_transform import Rule, TextRule, translate
+from lso.util.xml_transform import Rule, TextRule, translate
 
 paren_rule = Rule('span', {'class': 'paren'}, '(', ')')
 

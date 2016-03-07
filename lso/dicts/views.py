@@ -2,7 +2,7 @@ from collections import OrderedDict
 from flask import redirect, render_template, request, url_for, jsonify
 from sanskrit import sanscript as S
 
-from lso.lib import LSOBlueprint
+from lso.util import LSOBlueprint
 from lso.views import api
 from ..forms import QueryForm
 from .lib import mw_transform

@@ -12,7 +12,7 @@ from flask import Blueprint, g, render_template, request, url_for
 from sanskrit import sanscript, schema as X, sounds
 
 from lso import ctx, simple_analyzer, simple_query
-from lso.lib.readable import Readable
+from lso.util.readable import Readable
 from lso.forms import QueryForm
 
 bp = Blueprint('ref', __name__, static_folder='static',

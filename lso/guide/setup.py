@@ -6,7 +6,7 @@ import os
 import re
 
 import lso.database
-import lso.util
+from lso.util.json import json_minify
 from .models import Lesson, LessonEdge, Unit
 
 __all__ = ['run']
@@ -18,7 +18,7 @@ _punct_re = re.compile(r'[\t !"#$%&\'()*\-/<=>?@\[\\\]^_`{|},.]+')
 def load_and_add_slugs(filename):
     """Load the given JSON file and add missing slugs."""
     with open(os.path.join(DATA_DIR, filename)) as f:
-        json_data = json.loads(lso.util.json_minify(f.read()))
+        json_data = json.loads(json_minify(f.read()))
         for datum in json_data:
             if 'slug' not in datum:
                 datum['slug'] = slugify(datum['name'])
