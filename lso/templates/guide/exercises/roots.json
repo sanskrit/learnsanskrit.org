@@ -2,8 +2,8 @@
   {
     "name": "Finding roots",
     "language": "sa",
-    "numRequired": 5,
-    "description": "Given the forms, find the most likely root. You might get som of these wrong on the first try, but it's still good practice.",
+    "numRequired": 7,
+    "description": "Given the forms, find the most likely root. You might get some of these wrong on the first try, but it's still good practice.",
     "example": { "question": "nayati, nItvA, nItaH", "answer": "nI" },
     "items": [
       { "question": "bhavati, bhUtvA, bhAvaH", "answer": "bhU" },
