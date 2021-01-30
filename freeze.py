@@ -36,9 +36,6 @@ def all_pages():
                         if lesson.has_exercises:
                             yield lesson.url + '-e/'
 
-    yield '/tools/ocr/'
-    yield '/tools/sanscript/'
-
 
 if __name__ == '__main__':
     freezer.freeze()

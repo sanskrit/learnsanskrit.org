@@ -1,2 +1,4 @@
 build/
 production/
+lso/static/gen/
+lso/static/.webassets-cache/

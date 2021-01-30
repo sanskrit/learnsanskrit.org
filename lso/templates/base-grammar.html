@@ -3,7 +3,7 @@
 {% block full_title %}{% block title %} {% endblock %} | Learn Sanskrit Online{% endblock %}
 
 {% block body %}
-<div class="bar">
+<div class="bar f6">
     <p class="links">
         <a href="{{ prev }}">← previous</a> | <a href="{{ next }}">next →</a>
     </p>
@@ -11,22 +11,16 @@
     {% endblock %}
 </div>
 
-<form action="http://www.google.com/cse" id="cse">
-	<input type="hidden" name="cx" value="013021609329506570655:hoi0363vwwc" />
-	<input type="hidden" name="ie" value="UTF-8" />
-	<input type="text" name="q" />
-	<input type="submit" name="sa" value="Search" />
-</form>
-
-<div id="content">
+<article>
 {% block content %}
 {% endblock %}
+</article>
+
+<div class="bar">
+    <p class="links">
+    <a href="{{ prev }}">← previous</a> | <a href="{{ next }}">next →</a>
+    </p>
+    {{ self.grammar_nav() }}
 </div>
-		<div class="bar">
-			<p class="links">
-            <a href="{{ prev }}">← previous</a> | <a href="{{ next }}">next →</a>
-			</p>
-            {{ self.grammar_nav() }}
-		</div>
-        {% include 'include/footer.html' %}
+{% include 'include/footer.html' %}
 {% endblock %}
