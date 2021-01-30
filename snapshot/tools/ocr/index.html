@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<title>SanskritOCR | Learn Sanskrit Online</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<link rel="shortcut icon" href="https://learnsanskrit.org/favicon.ico" />
+		<link rel="stylesheet" type="text/css" href="https://learnsanskrit.org/css/style.css" />
+		<link rel="stylesheet" type="text/css" href="https://learnsanskrit.org/css/print.css" media="print" />
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+		<script type="text/javascript" src="https://learnsanskrit.org/scripts/functions.js"></script>
+	</head>
+	<body>
+<div class="blocky bar">
+	<ul>
+		<li><a href="https://learnsanskrit.org/">Index</a></li>
+		<li><a href="https://learnsanskrit.org/grammar">Grammar guide</a></li>
+		<li><a href="https://learnsanskrit.org/resources">Resources</a></li>
+		<li><a href="https://learnsanskrit.org/tools">Tools</a></li>
+		<li><a href="https://learnsanskrit.org/contact" class="special">Contact</a></li>
+		<li><a href="https://learnsanskrit.org/preferences" class="special">Preferences</a></li>
+		<!-- <li><a href="http://nakula.learnsanskrit.org">→ Nakula</a></li> -->
+		<form action="http://www.google.com/cse" id="cse">
+			<input type="hidden" name="cx" value="013021609329506570655:hoi0363vwwc" />
+			<input type="hidden" name="ie" value="UTF-8" />
+			<input type="text" name="q" />
+			<input type="submit" name="sa" value="Search" />
+		</form>
+	</ul>
+</div>
+
+<div id="content">
+<h1>Sanskrit, OCR, and SanskritOCR</h1>
+
+<h2>Introduction</h2>
+<p>Almost every Greek and Latin text is freely available on the Internet, but the same can hardly be said for Sanskrit. However, Sanskrit's online presence has slowly increased over the past few years, and it is set to increase more and more in the years to come. This "online presence" is directly related to <strong>how many Sanskrit texts are available</strong> on the Internet. Texts, though, are of two kinds: <dfn>scanned</dfn> text, which exists as a collection of large images, and <dfn>digitized</dfn> text, which exists as a "text" file (just like this web page). Scanned text is OK, but it is often difficult to use. Digitized text, meanwhile, can be searched and processed more easily.</p>
+
+<p>In order to quickly and easily turn scanned text into digitized text, we need a tool that can perform <dfn>optical character recognition</dfn> (or <dfn>OCR</dfn> for short). This page is a short guide to <strong>using OCR yourself.</strong> If you have a copy of a text that is not freely available on the web, please consider using an OCR program to spread it and make it more usable for everybody.</p>
+
+<h2>SanskritOCR</h2>
+<p>Only a few Devanagari OCR programs are available for public use. The most useful one is <dfn>SanskritOCR</dfn>. The software is difficult to find these days, but a few copies still survive on the web. You can download a copy of the software by clicking the link below:</p>
+
+<p class="notice"><a href="/file/SanskritOcrSetup.zip">Click here to download SanskritOCR.</a></p>
+
+<p>Once you've installed and run SanskritOCR, you might notice that half of the program's menus and options are in German, which can make the program difficult to use. This guide is here to help you navigate these German menus and use the program as intended.</p>
+
+<p class="note box">The homepage for SanskritOCR can be found <a href="http://www.sanskritreader.de/">here</a>. The program was created by <a href="http://www.geschkult.fu-berlin.de/e/indologie/mitarbeiter/drittmittel/hellwig/index.html">Dr. Oliver Hellwig</a>, who is still developing it.</p>
+
+<h2>Using SanskritOCR</h2>
+
+<h3>Creating a new project</h3>
+<p>Before you can start processing a text, you need to create and save a new project file. You can do so by clicking either <code>File -&gt; New Document</code> or the white page button:</p>
+
+<div class="centered image" style="width: 111px"><img src="https://learnsanskrit.org/img/ocr/new.png" alt="New document" /><p></p></div>
+<p>Save the file in the <code>.sat (Stapel-Datei)</code> format. <strong>You must save before you start OCR.</strong></p>
+
+<p>Now that you have your project space set up, it's time to bring in some material to process. </p>
+
+<h3>Importing files</h3>
+
+<p>You can import files either by <strong>scanning directly</strong> into the program or using <strong>saved images</strong> on your computer. I only have experience with using saved images, so I will describe that here. To load any number of image files, select <code>File -&gt; Open Image Files</code>. You can import any number of image files at once. The program, however, recognizes only <strong>three image formats</strong>: <code>.bmp</code>, <code>.jpg</code>, and <code>.png</code>.</p>
+
+<p>Your imported files will be listed in the <code>Tools</code> window. Use this window to view the different pages in your project.</p>
+
+<div class="centered image" style="width: 209px"><img src="https://learnsanskrit.org/img/ocr/tools.png" alt="Tools window" /><p>If you do not see the <code>Tools</code> window anywhere, click <code>Ansicht -&gt; Werkzeugfenster</code> to display it.</p></div><h3>Preparing the image</h3>
+
+<p>You can rotate the image by 90 degree increments:</p>
+
+<div class="centered image" style="width: 89px"><img src="https://learnsanskrit.org/img/ocr/rotate.png" alt="Rotate" /><p></p></div>
+<p>Do not worry if your image is slightly tilted. SanskritOCR will still be able to read it.</p>
+
+<p>Once your image has the right orientation, you must mark the Devanagari portions of the image so that SanskritOCR will be able to scan more effectively. <strong>You are required to do this</strong>; SanskritOCR will not let you proceed if you do not. To do so, click the markup tool:</p>
+
+<div class="centered image" style="width: 73px">
+<img src="https://learnsanskrit.org/img/ocr/markup.png" alt="Markup tool" /></div>
+
+<p>Using this tool, click and drag on the document to create boxes. If your image is at an uncomfortable size, you can use the zoom tools to adjust the image:</p>
+
+<div class="centered image" style="width: 318px">
+<img src="https://learnsanskrit.org/img/ocr/zoom.png" alt="Zoom in and out" /></div>
+
+<p>If the page consists only of Devanagari, you can put everything in one large box:</p>
+
+<div class="centered image" style="width: 242px">
+<img src="https://learnsanskrit.org/img/ocr/text1.png" alt="Everything in one box" /></div>
+
+<p>But otherwise, it's best to draw multiple boxes around the separate blocks of Devanagari:</p>
+
+<div class="centered image" style="width: 208px">
+<img src="https://learnsanskrit.org/img/ocr/text2.jpg" alt="Multiple boxes" /></div>
+
+<p>Your text output will be presented in the order in which the boxes are numbered. You can use the tools next to the markup tool to delete and renumber the boxes in the image. You can also drag the edges of a box to better fit the text.</p>
+
+<h3>Cleaning and scanning</h3>
+
+<p>Before the scanning begins, you are required to <strong>clean</strong> the image. To do so, click the <code>Clean image</code> tool:</p>
+
+<div class="centered image" style="width: 71px">
+<img src="https://learnsanskrit.org/img/ocr/clean.png" alt="Clean tool" /></div>
+
+<p>SanskritOCR will automatically clean, realign, and pre-process your text:</p>
+
+<div class="centered image" style="width: 332px">
+<img src="https://learnsanskrit.org/img/ocr/clean-result.png" alt="Cleaned text" /></div>
+
+<p>All that's left is the final scan, which you can run by clicking the <code>Start recognition</code> tool:</p>
+
+<div class="centered image" style="width: 92px">
+<img src="https://learnsanskrit.org/img/ocr/recognition.png" alt="Recognition tool" /></div>
+
+<p>Results will depend on the quality of your scan. In the best case, the text is represented perfectly. In the worst, odd or unlikely combinations will appear. If the scanned text is faded, patchy, blurry, or so on, complete gibberish could be the result as well.</p>
+
+<p class="warning box">Watch out for <strong>gray boxes</strong>, which mark areas that could not be processed. Using more and smaller boxes in your markup may help. Oddly enough, you can also try using fewer and larger boxes.</p>
+
+<h3>Saving, processing, and using your output</h3>
+
+<p>The output from the scan cannot be saved directly. To copy your output to your computer's clipboard, click <code>Recognised text -&gt; --&gt; Clipboard</code>. For general-purpose processing, leave the <code>Transcription</code> mode on <code>program transcription</code>. The <code>Range</code> box will likely be grayed out. Click OK, then click OK again to close the dialog box that pops up.</p>
+
+<p>Your text can now be pasted into a separate file, where it can be saved. Try pasting it in your favorite text program. If you do, you will probably get data like this:</p>
+
+<blockquote>
+<p>kï¸catkåntåvirahagu?½å svådhikåråtpramattaµ
+¸åpenåstaºgamitamadvimå var¹abhogye½a bhartuµ /
+yak¹a¸cadh÷?ï janakatanayåsnånapu½yodake¹u
+snigdhacchåyåtaru¹u vasatiº råmagiryå¸rame¹u // 1 //</p>
+</blockquote>
+
+<p>You must process the text one more time. To do so, you can use the <a href="sanscript">Sanscript</a> tool provided on this site. Set your input scheme to <code>SanskritOCR</code>, and set your output scheme to whatever you like.</p>
+
+<p class="warn box">Your final product may still have artifacts or strange characters from SanskritOCR's raw output. Certain vowels or consonant groups may have been converted in odd ways. For these and many other reasons, <strong>proofreading is very important!</strong></p>
+
+<p>Now you have some raw text! Feel free to format and use this text however you like. If you have made a clean copy of the text, I encourage you to share it with sites like <a href="http://sanskritdocuments.org">Sanskrit Documents</a> or <a href="http://gretil.sub.uni-goettingen.de/gretil.htm">GRETIL</a> so that people all over the world can have access to the fruits of your labor.</p>
+
+<h2>Common Questions</h2>
+
+<ul>
+	<li><p class="bold g"><i>How do I save my project?</i></p>
+	<p><strong>SanskritOCR saves automatically.</strong> You can just close the program when you're done. Your work will also be saved if SanskritOCR crashes. If SanskritOCR freezes or starts acting strangely, don't be afraid to close the program and start it up again.</p></li>
+	
+	<li><p class="bold g"><i>My results are terrible! What am I doing wrong?</i></p>
+<p><strong>Use large <a href="http://en.wikipedia.org/wiki/Grayscale">grayscale</a> images</strong>. If your image is not grayscale already, SanskritOCR will convert it for you, but this conversion seems to <strong>severely</strong> affect program output.</p></li>
+	<li><p class="bold g"><i>Can I process more than one page at a time?</i></p>
+	<p><strong>No</strong>, unfortunately.</p></li>
+	
+	<li><p class="bold g"><i>I have an image file that SanskritOCR does not recognize. What should I do?</i></p>
+	<p><strong>Use an image processing program</strong> to change the file format. <a href="http://www.irfanview.com/">Irfanview</a> is a good choice: it's lightweight, fast, free, and extremely powerful.</p></li>
+	
+	<li><p class="bold g"><i>I have a PDF/TIFF/DJVU file that I would like to split into separate pages. How can I do this?</i></p>
+	<p>As before, <strong>use an image processing program</strong> to split the file up. Irfanview does not have much support for these files built-in, but if you download some <a href="http://www.irfanview.com/plugins.htm">plugins</a> the program will be able to handle all of these file types. If you <em>are</em> using Irfanview, try opening your file and selecting <code>View -&gt; Multipage images -&gt; Extract all pages</code>.</p></li>
+	
+	<li><p class="bold g"><i>Is SanskritOCR still under development?</i></p>
+	<p><strong>Yes.</strong> Dr. Hellwig is working specifically on Hindi OCR, but the software will likely be able to deal with Sanskrit as well. The official website for SanskritOCR can be found <a href="http://www.sanskritreader.de/">here</a>. The site mentions a <q>major relaunch</q> for the program, but there is no date provided.</p></li>
+</ul>
+
+<p>If you have more questions, you can <a href="http://www.geschkult.fu-berlin.de/e/indologie/mitarbeiter/drittmittel/hellwig/index.html">try emailing Dr. Hellwig</a>.</p></div>
+
+		<div id="footer">
+			<p style="font-size: 1.3em;">Go to: <a href="https://learnsanskrit.org/">Index</a> | <a href="https://learnsanskrit.org/grammar">Grammar guide</a> | <a href="https://learnsanskrit.org/resources">Resources</a> | <a href="/tools">Tools</a></p>
+			<p>Or: <a href="/about">About</a> | <a href="https://learnsanskrit.org/contact">Contact</a> | <a href="https://learnsanskrit.org/preferences">Preferences</a> | <a href="/use">Using the Site</a></p>
+			<br />
+			<p>All unsourced content is licensed under a <a href="http://creativecommons.org/licenses/nc-sa/1.0/">Creative Commons NonCommercial 
+		ShareAlike 1.0</a> license.</p>
+			<p>This page was last edited on December 30, 2020.</p>
+			<div style="padding: 1em;">
+				<img src="https://learnsanskrit.org/img/ibiblio.png" alt="Hosted by ibiblio.org." />			</div>
+		</div>
+                <script>
+                  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                  })(window,document,'script','https://www.google-analytics.com/analytic.s.js','ga');
+                
+                  ga('create', 'UA-78373984-11', 'auto');
+                  ga('send', 'pageview');
+                
+                </script>
+	</body>
+</html>

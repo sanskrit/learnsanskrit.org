@@ -1,0 +1,58 @@
+ol.chapter { padding: 20px; counter-reset: rule; padding: 40px;}
+li > dl > dt:before {
+      content: counter(rule) " ";
+      counter-increment: rule;
+}
+ol.chapter dl {padding: 5px 20px;}
+ol.chapter dt {font-size: 1.7em; line-height: 30px;}
+ol.chapter dd {margin: 0; padding-top: 5px;}
+ol.chapter dt, #content h1.title { font-family: "Sanskrit 2003";}
+#content h1.title {
+	font-size: 3.0em;
+	display: block;
+	text-align: center;
+	border-bottom: 1px #007 solid;
+	margin-bottom: 20px;
+	display: block;
+}
+#content {position: static;}
+
+/* atideza adhikAra niyama pariBASA vidhi saMjJA */
+
+ol.chapter li {display: block; padding: 5px 20px;}
+ol.chapter > li, ol.chapter li[t="2"] > ol > li {-moz-border-radius: 10px; border: 1px #DDD solid; margin: 3px 0;}
+li[u] > li {border: 0;}
+
+ol.chapter li[t="2"] {border-left: 4px #06F solid;}
+ol.chapter li[t="2"] li[t="2"] {border-left: 4px #0AA solid;}
+ol.chapter li[t="2"] li[t="2"] li[t="2"] {border-left: 4px #F70 solid;}
+ol.chapter li[t="2"] li[t="2"] li[t="2"] li[t="2"] {border-left: 4px #C00 solid;}
+
+li[t="1"], li[u="1"] {background: #FDF;}
+li[t="3"] {background: #FDD; border-color: #FAA;}
+li[t="4"], li[u="4"]  {background: #DFD;}
+li[t="5"], li[u="5"]  {background: #FFF;}
+li[t="6"], li[u="6"]  {background: #FFC;}
+li[t="?"], li[u="?"]  {background: #FFF;}
+
+ghost d:before {content: ""; counter-increment: rule 0;}
+#content ol.chapter span[lang="sa"] {font-weight: bold; color: #00A;}
+#content ol.chapter span.pan {color: #F00;}
+#content ol.chapter span.me {color: #666;}
+
+ghost, ghost *{color: #777;}
+
+
+
+	span.pan {border-bottom: 1px solid;}
+	span.pan:hover {background: #FF0; -moz-border-radius: 3px; padding: 2px 0;}
+	dl.tt {border: 2px #06B solid; background: #FEFEFC; width: 300px; padding: 15px; position: absolute;
+		-moz-box-shadow: 2px 2px 4px #000;
+		-moz-border-radius: 5px;
+		box-shadow: 2px 2px 4px #000;
+		color: #000; font-weight: normal;
+	}
+	dl.tt dt {
+		color: #F00; font-size: 1.5em; font-weight: bold;
+		border-bottom: 1px #CCC solid; margin-bottom: 10px;}
+	dl.tt dd {margin: 0;}

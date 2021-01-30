@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<title>Preferences | Learn Sanskrit Online</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<link rel="shortcut icon" href="https://learnsanskrit.org/favicon.ico" />
+		<link rel="stylesheet" type="text/css" href="https://learnsanskrit.org/css/style.css" />
+		<link rel="stylesheet" type="text/css" href="https://learnsanskrit.org/css/print.css" media="print" />
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+		<script type="text/javascript" src="https://learnsanskrit.org/scripts/functions.js"></script>
+	</head>
+	<body>
+<div class="blocky bar">
+	<ul>
+		<li><a href="https://learnsanskrit.org/">Index</a></li>
+		<li><a href="https://learnsanskrit.org/grammar">Grammar guide</a></li>
+		<li><a href="https://learnsanskrit.org/resources">Resources</a></li>
+		<li><a href="https://learnsanskrit.org/tools">Tools</a></li>
+		<li><a href="https://learnsanskrit.org/contact" class="special">Contact</a></li>
+		<li><a href="https://learnsanskrit.org/preferences" class="special">Preferences</a></li>
+		<!-- <li><a href="http://nakula.learnsanskrit.org">→ Nakula</a></li> -->
+		<form action="http://www.google.com/cse" id="cse">
+			<input type="hidden" name="cx" value="013021609329506570655:hoi0363vwwc" />
+			<input type="hidden" name="ie" value="UTF-8" />
+			<input type="text" name="q" />
+			<input type="submit" name="sa" value="Search" />
+		</form>
+	</ul>
+</div>
+
+<div id="content">
+<h1>Preferences</h1>
+<p>This page is functional, but it is a work in progress.</p>
+
+<p>To start, you can choose how you want Sanskrit text to be represented:</p>
+
+<div class="preference">
+	<div class="options">
+		<label for="primary">Primary script:</label>
+		<br />
+		<select id="sa1" name="primary">
+			<option value="dev">Devanagari</option>
+			<option value="rIast">Roman Unicode (IAST)</option>
+			<option value="guj">Gujarati</option>
+			<option value="kan">Kannada</option>
+			<option value="mal">Malayalam</option>
+			<option value="ori">Orissa</option>
+			<option value="tel">Telugu</option>
+		</select>
+		<br />
+		<label for="secondary">Secondary script:</label>
+		<br />
+		<select id="sa2" name="secondary">
+			<option value="dev">Devanagari</option>
+			<option value="rIast" selected="selected">Roman Unicode (IAST)</option>
+			<option value="guj">Gujarati</option>
+			<option value="kan">Kannada</option>
+			<option value="mal">Malayalam</option>
+			<option value="ori">Orissa</option>
+			<option value="tel">Telugu</option>
+		</select>
+	</div>
+	<div class="explanation">
+		<p>This website shows Sanskrit in two different scripts. The first is a larger <dfn>primary</dfn> script, which is used for passages and headings:</p> 
+		<blockquote> 
+			<p class="dev">धर्मक्षेत्रे कुरुक्षेत्रे समवेता युयुत्सवः ।</p> 
+		</blockquote>	
+		<p>The second is a smaller <dfn>secondary</dfn> script, which is used to show extra information or mark Sanskrit terms when used with English.</p> 
+		<blockquote> 
+			<p>The Bhagavad Gita (<span lang="sa">bhagavadgītā</span>) makes a distinction
+			between <span lang="sa">karmayoga</span> and <span lang="sa">jñānayoga</span>.</p> 
+		</blockquote> 
+		<p>By default, this site uses <dfn>Devanagari</dfn> for the primary script and <dfn>IAST</dfn> for the secondary script. However, you can use the selectors on the left to choose whatever options you find most comfortable.</p> 
+	</div>
+</div>
+
+<p>You can also choose a color profile for the site:</p>
+<div class="preference"> 
+	<div class="options"> 
+		<label for="theme">Scheme:</label> 
+		<select id="theme" name="theme"> 
+			<option value="default">Default</option>
+			<option value="dark">Dark</option>
+			<option value="blue">Blue</option> 
+		</select> 
+	</div> 
+	<div class="explanation"> 
+	<p>Although the standard color scheme has been designed to be readable and easy on the eye, it cannot meet everyone's needs. If you want to change the colors of the items on the page, try selecting another scheme. You can do so by using the menu to the left.</p> 
+	</div> 
+</div>
+
+<script type="text/javascript">
+// Change preference "theme"
+function changeTheme(menu) {
+	alert('yo');
+}
+
+// Save preferences.
+function savePreferences() {
+	$.cookie('lso', JSON.stringify(settings), {expires: 7});
+}
+
+$(function() {
+	// Load old preferences.
+	if ($.cookie('lso')) {
+		window.settings = JSON.parse($.cookie('lso'));
+		if (settings.sa1) {
+			$('#sa1').val(settings.sa1);
+		}
+		if (settings.sa2) {
+			$('#sa2').val(settings.sa2);
+		}
+		if (settings.theme) {
+			$('#theme').val(settings.theme);
+		}
+	} else {
+		window.settings = {};
+	}
+	
+	// Add functionality for updating preferences.
+	$('#sa1, #sa2').change(function() {
+		var $obj = $(this),
+			id = $obj.attr('id'),
+			selected = $obj.val();
+		var $other = (id == 'sa1') ? $('#sa2') : $('#sa1'),
+			other_id = $other.attr('id'),
+			other_sel = $other.val();
+			
+		$('body').html(HTML_BACKUP);
+		$('#'+id).val(selected);
+		$('#'+other_id).val(other_sel);
+		if (id == 'sa1') {
+			transliteratePage(selected, other_sel);
+		} else {
+			transliteratePage(other_sel, selected);
+		}
+		settings[id] = selected;
+		savePreferences();
+	});
+	
+	$('#theme').change(function() {
+		var theme = $(this).val(),
+			hrefStr = globals['base_path'] + 'css/style',
+			link = $('<link>');
+			
+		$('#secondStylesheet').remove();
+		$('#secondStylesheet').remove(); // why twice?
+		
+		if (theme == 'default') {
+			hrefStr += '.css';
+		}
+		else {
+			hrefStr += '-' +theme+ '.css'
+		}
+		link.attr({
+			type: 'text/css',
+			id: 'secondStylesheet',
+			rel: 'stylesheet',
+			href: hrefStr,
+		});
+		$('head').append(link);
+		settings.theme = theme;
+		savePreferences();
+		return false;
+	});
+});
+</script></div>
+
+		<div id="footer">
+			<p style="font-size: 1.3em;">Go to: <a href="https://learnsanskrit.org/">Index</a> | <a href="https://learnsanskrit.org/grammar">Grammar guide</a> | <a href="https://learnsanskrit.org/resources">Resources</a> | <a href="/tools">Tools</a></p>
+			<p>Or: <a href="/about">About</a> | <a href="https://learnsanskrit.org/contact">Contact</a> | <a href="https://learnsanskrit.org/preferences">Preferences</a> | <a href="/use">Using the Site</a></p>
+			<br />
+			<p>All unsourced content is licensed under a <a href="http://creativecommons.org/licenses/nc-sa/1.0/">Creative Commons NonCommercial 
+		ShareAlike 1.0</a> license.</p>
+			<p>This page was last edited on December 30, 2020.</p>
+			<div style="padding: 1em;">
+				<img src="https://learnsanskrit.org/img/ibiblio.png" alt="Hosted by ibiblio.org." />			</div>
+		</div>
+                <script>
+                  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                  })(window,document,'script','https://www.google-analytics.com/analytic.s.js','ga');
+                
+                  ga('create', 'UA-78373984-11', 'auto');
+                  ga('send', 'pageview');
+                
+                </script>
+	</body>
+</html>

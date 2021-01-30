@@ -1,0 +1,409 @@
+/* Redefinitions
+ * --------------------------------------------------------------- */
+:lang(sa), [lang="la"] {
+	font-style: italic;
+} :lang(sa) {
+	font-family: GentiumAlt;
+	font-size: 1.1em;
+} [lang="en"] {
+	font-style: normal;
+} table.inflection td div {
+	font-family: GentiumAlt;
+	font-size: 0.6em;
+}
+
+a {
+	color: #06F;
+} blockquote {
+	color: #269;
+} body {
+	background: #fff;
+	color: #000;
+	font-family: Georgia,Utopia,Palatino,'Palatino Linotype',serif;
+	font-size: 12pt;
+	padding: 0;
+	margin: 0;
+} cite {
+	display: block;
+} cite:before {
+	content: "â ";
+} cite.inline {
+	display: inline;
+} cite.inline:before {
+	content: "";
+} code {
+	background: #DDD;
+	padding: 3px;
+} dfn {
+	color: #009; text-decoration: none; font-weight: bold; font-style: normal;
+} h1, h2, h3 {
+	font-weight: normal;
+	color: #610;
+	overflow: hidden;
+} h1 {
+	font-size: 24pt;
+	margin: 0.2em 0.4em; /* 1em margin on the left */
+} h2 {
+	font-size: 20pt;
+	margin: 0.8em 0.64em 0.3em ; /* 1em margin on the left */
+	border-bottom: 1px #CCA dotted;
+} h3 {
+	font-size: 16pt;
+	margin: 0.2em 0.833em;
+} p {
+	margin: 0 1em 1em;
+	line-height: 18pt;
+} select {
+	height: 3em;
+	line-height: 2em;
+	padding: 5px;
+	border: 0;
+}
+
+select, .round, .contents a:hover {
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+}
+
+/* Structure
+ * --------------------------------------------------------------- */
+.bar {
+	display: none;
+}
+
+#footer {
+	display: none;
+}
+
+/* General display
+ * --------------------------------------------------------------- */
+
+.dev, th.stem {
+	font-family: "Sanskrit 2003", serif;
+	font-style: normal;
+	font-size: 1.9em;
+} 
+ 
+.r { color: #C03; }
+.o { color: #F70; }
+.y { color: #EA0; }
+.g { color: #0A0; }
+.b { color: #07F; }
+.p { color: #A0A; }
+.bold {font-weight: bold;}
+
+p.alternatives {
+	text-align: right;
+	color: #743;
+}
+
+.mangala {
+	text-shadow: 0;
+	font-weight: bold;
+	color: #500;
+}
+
+/* Exercise pages
+ * --------------------------------------------------------------- */
+.exercises {
+	padding: 0 5% 1em;
+	overflow: hidden;
+	list-style-type: decimal;
+	font-size: 0.92em;
+} .exercises li {
+	margin-bottom: 6px;
+} .exercises.drill li {
+	float: left;
+	padding: 0.5em 0;
+	margin-right: 8%;
+	width: 37%;
+} .exercises.drill li:nth-of-type(odd) {
+	clear: left;
+} .exercises p {
+	margin: 0 0 5px 2%;
+} .exercises p.desc {
+	margin: 0.5em 0 0.5em 2%;
+} .exercises:lang(sa), .exercises:lang(sa) p.dev {
+	font-style: normal;
+} .exercises p:lang(sa) {
+	font-style: italic;
+}
+
+.vocab, .vocab * {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+} .vocab {
+	background: #f7f7f7;
+	line-height: 3.3em;
+	overflow: hidden;
+	margin: 1em 0;
+} .vocab dl {
+	overflow: hidden;
+} .vocab dt, .vocab dd {
+	margin: 0;
+	float: left;
+} .vocab dt {
+	width: 23%;
+	padding-left: 2%;
+	clear: left;
+	font: 2.0em/1.5em "Sanskrit 2003", serif;
+} .vocab dt+dd {
+	width: 25%;
+	font: 2.0em/1.5em "Sanskrit 2003", serif;
+} .vocab dt+dd+dd {
+	width: 49%;
+	text-align: right;
+} .vocab dl {
+	background: #f0f0f0;
+} .vocab dl dt {
+	padding-left: 3%;
+	width: 22%;
+} .vocab dl dl {
+	background: #e7e7e7;
+} .vocab dl dl dt {
+	padding-left: 4%;
+	width: 21%;
+} .vocab dl dl dl {
+	background: #e0e0e0;
+} .vocab dl dl dl dt {
+	padding-left: 5%;
+	width: 20%;
+} .vocab dl dl dl dl {
+	background: #d7d7d7;
+} .vocab dl dl dl dl dt {
+	padding-left: 6%;
+	width: 19%;
+} .vocab dd.desc {
+	line-height: 1.3em;
+	width: 90%;
+	margin: 0 5% 1em;
+} .vocab dd.desc p {
+	margin-top: 1em;
+}.vocab div:lang(sa) {
+	font-size: 0.6em;
+}
+
+/* Content dividers
+ * --------------------------------------------------------------- */
+.contents {
+	font-size: 1.563em;
+	list-style: none;
+	border-color: #CA7;
+	margin: 0 2% 0 0;
+} .contents ul {
+	font-size: 0.8em;
+	list-style: none;
+} .contents li {
+	line-height: 1.6em;
+	border-top: 1px #cca solid;
+} .contents li li, .contents li:first-child {
+	border-top: 0;
+	margin: 0;
+} .contents a {
+	color: #c60;
+	text-decoration: none;
+} .contents ul a {
+	color: #060;
+} .contents ul ul a {
+	color: #058;
+} .contents a:hover {
+	background: #058;
+	color: #fff;
+	padding: 6px;
+	margin: 0 -6px;
+} .contents a+a {
+	font-weight: bold;
+	padding-left: 5px;
+}
+ 
+.examples, .inflection, .inflection caption, .vocab {
+	background: #fff;
+} .inflection {
+	border: 1px #ccc solid;
+} .examples {
+	background: #fff;
+	border-left: 3px #000 solid;
+	padding: 1em;
+	box-shadow: 0;
+	margin: 1em 0.2em;
+} .examples li {
+	margin-left: 1em;
+	list-style-type: none;
+	margin-bottom: 1em;
+} .examples p {
+	margin: 0;
+} .examples strong {
+	color: red;
+}
+
+.box {
+	border: 2px transparent solid;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-khtml-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-box-shadow: 0;
+	-webkit-box-shadow: 0;
+	padding: 1em;
+	overflow: hidden;
+} .rule.box { /* 2s11Tw0w0w0w0 */
+	border-color: #5a9800;
+} .note.box { /* 1k11Tw0w0w0w0 */
+	border-color: #e0b000;
+} .fact.box { /* 3j11Tw0w0w0w0 */
+	border-color: #01939a;
+} .warn.box, .warning.box { /*0211Tw0w0w0w0*/
+	border-color: #ff4940;
+} .ling.box {
+	border-color: #999;
+} div.box {
+	margin: 0 1em 1em;
+} div.box * {
+	margin: 0 0 inherit;
+} div.box blockquote {
+	margin: inherit;
+}
+
+/* Tables and Charts
+ * --------------------------------------------------------------- */
+.inflection {
+	width: 100%;
+	margin: 0 0 2em;
+	background: #f7f7f7;
+	border-top: 0;
+	font-size: 0.95em;
+} .inflection caption {
+	width: 100%;
+	font-size: 1.5em;
+	background: #f7f7f7;
+	color: #444;
+	border-bottom: 0;
+} .inflection th.stem {
+	font-size: 2.3em;
+	font-weight: bold;
+	color: #06F;
+}.inflection th, .inflection td {
+	padding: 0;
+	width: 25%;
+	height: 20px;
+	text-align: center;
+} .inflection td {
+	font: 2.0em/1.3em "Sanskrit 2003", serif;
+} .inflection td.s {
+	font-weight: bold;
+	font-size: 2.6em;
+} .inflection div {
+	font: 0.5em sans-serif;
+	font-style: italic;
+} .hideDouble td.d {
+	visibility: hidden;
+	color: #F00;
+}
+
+.blue {
+	border: 1px #7AD solid;
+	width:70%;
+	padding: 0;
+	margin: 1em 15% 2em;
+	background: #FFF;
+} .blue [lang="sa"] {
+	font-size: 1.0em;
+	font-family: Georgia;
+} table.blue {
+	padding: 0;
+	width: 70%;
+	font-size: 0.95em;
+} .blue dt, .blue dd, .blue td, .blue th {
+	border-top: 1px #DDD dotted;
+	padding: 0.4em 0.5em;
+	margin: 0;
+} .blue dt {
+	float: left;
+	clear: left;
+	padding: 0.4em 2% 0.4em 1%;
+	width: 37%;
+} .blue dd {
+	margin: 0 0 0 40%;
+} .blue td {
+	text-align: center;
+} .blue .title, .blue th {
+	border-top: 0;
+	font-size: 1.2em;
+	font-weight: bold;
+	padding: 0.5em;
+} .blue dt.title {
+	padding: 0.5em 2% 0.5em 1%;
+} .blue th {
+	border: 0;
+} .blue.letters dt, .blue.letters dd {
+	line-height: 50px;
+	padding: 0;
+	margin: 0;
+	text-align: center;
+} .blue.letters dt {
+	font: 2.0em/50px "Sanskrit 2003", serif;
+	font-style: normal;
+} .blue.letters dd {
+	font-size: 1.5em;
+} .blue.letters .title {
+	color: #037;
+}
+
+/* Other
+ * --------------------------------------------------------------- */
+ 
+.image {
+	margin: 1em;
+	background: #ddd;
+	border: 2px #bbb solid;
+} .image p {
+	font-size: 0.8em;
+	text-align: center;
+} .floating.image {
+	float: right;
+} .centered.image {
+	margin: 1em auto;
+}
+
+
+
+
+.clear {
+	clear: both;
+}
+
+.rule {
+	background: #CFC;
+} .ling {
+	background: #DDD;
+} .note {
+	background: #FD0;
+} .fact {
+	background: #DDF;
+}
+
+p.notice {
+	text-align: center;
+	font-size: 1.1em;
+	font-weight: bold;
+} p.notice a {
+	background: #444;
+	color: #fff;
+	border-radius: 4px;
+	box-shadow: 0;
+	padding: 7px;
+	text-decoration: none;
+} p.notice a:hover {
+	background: #744;
+	color: #fc0;
+}
+
+.letterchart {
+	border: 1px #777 solid;
+	width: 90%;
+	margin: 1em 5%;
+	text-align: center;
+	border-spacing: 0;
+}

@@ -1,0 +1,8 @@
+AddDefaultCharset UTF-8
+AddCharset UTF-8 .php
+
+RewriteEngine on
+RewriteCond $1 !^(index\.php|img|audio|css|scripts|file|include|robots\.txt)
+RewriteRule ^(.*).php$ /$1 [R=301,L]
+RewriteCond $1 !^(index\.php|img|audio|css|scripts|file|include|robots\.txt)
+RewriteRule ^(.*)$ /index.php/$1 [L]

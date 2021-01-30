@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<title>Sanscript | Learn Sanskrit Online</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<link rel="shortcut icon" href="https://learnsanskrit.org/favicon.ico" />
+		<link rel="stylesheet" type="text/css" href="https://learnsanskrit.org/css/style.css" />
+		<link rel="stylesheet" type="text/css" href="https://learnsanskrit.org/css/print.css" media="print" />
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+		<script type="text/javascript" src="https://learnsanskrit.org/scripts/functions.js"></script>
+	</head>
+	<body>
+<div class="blocky bar">
+	<ul>
+		<li><a href="https://learnsanskrit.org/">Index</a></li>
+		<li><a href="https://learnsanskrit.org/grammar">Grammar guide</a></li>
+		<li><a href="https://learnsanskrit.org/resources">Resources</a></li>
+		<li><a href="https://learnsanskrit.org/tools">Tools</a></li>
+		<li><a href="https://learnsanskrit.org/contact" class="special">Contact</a></li>
+		<li><a href="https://learnsanskrit.org/preferences" class="special">Preferences</a></li>
+		<!-- <li><a href="http://nakula.learnsanskrit.org">→ Nakula</a></li> -->
+		<form action="http://www.google.com/cse" id="cse">
+			<input type="hidden" name="cx" value="013021609329506570655:hoi0363vwwc" />
+			<input type="hidden" name="ie" value="UTF-8" />
+			<input type="text" name="q" />
+			<input type="submit" name="sa" value="Search" />
+		</form>
+	</ul>
+</div>
+
+<div id="content">
+<script type="text/javascript">
+	var link = $('<link>');
+	link.attr({
+		rel: 'stylesheet',
+		type: 'text/css',
+		href: 'https://learnsanskrit.org/css/sanscript.css'
+	});
+	$('head').append(link);
+  transliteratePage = function(){};
+</script>
+
+<h1>Sanscript</h1>
+
+<noscript>
+<p class="error box">To use the Sanscript transliterator, you must have Javascript enabled.</p>
+</noscript>
+
+<div id="sanscript" class="round">
+<p id="status">Last updated on December 5, 2010</p>
+<form name="sanscript" autocomplete="off">
+<ul id="sansSelect">
+	<li id="sansSel1">
+		<label>From:</label>
+		<select name="inputSelect" title="Choose the format of the text you'd like to transliterate." onchange="SanscriptSetFrom(this,true)">
+			<optgroup label="Indian">
+				<option value="dev">Devanagari (अ)</option>
+				<option value="ben">Bengali (অ)</option>
+				<option value="pun">Gurmukhi (ਅ)</option>
+				<option value="guj">Gujarati (અ)</option>
+				<option value="ori">Oriya (ଅ)</option>
+				<option value="tam">Tamil (அ)</option>
+				<option value="tel">Telugu (అ)</option>
+				<option value="kan">Kannada (ಅ)</option>
+				<option value="mal">Malayalam (അ)</option>
+			</optgroup>
+			<optgroup label="Roman">
+				<option value="rIast">IAST</option>
+				<option value="rKol">Kolkata</option>
+				<option value="rItrans" selected="selected">ITRANS</option>
+				<option value="rHk">Harvard-Kyoto</option>
+				<option value="rSanskritocr">SanskritOCR</option>
+				<option value="rSlp">SLP</option>
+			</optgroup>
+		</select>
+	</li>
+	<li id="sansSel2">
+		<label>To:</label>
+		<select name="outputSelect" title="Choose which format Sanscript should produce." onchange="SanscriptSetTo(this, true)">
+			<optgroup label="Indian">
+				<option value="dev" selected="selected">Devanagari (अ)</option>
+				<option value="ben">Bengali (অ)</option>
+				<option value="pun">Gurmukhi (ਅ)</option>
+				<option value="guj">Gujarati (અ)</option>
+				<option value="ori">Oriya (ଅ)</option>
+				<option value="tam">Tamil (அ)</option>
+				<option value="tel">Telugu (అ)</option>
+				<option value="kan">Kannada (ಅ)</option>
+				<option value="mal">Malayalam (അ)</option>
+			</optgroup>
+			<optgroup label="Roman">
+				<option value="rIast">IAST</option>
+				<option value="rKol">Kolkata</option>
+				<option value="rItrans">ITRANS</option>
+				<option value="rHk">Harvard-Kyoto</option>
+				<option value="rSanskritocr">SanskritOCR</option>
+				<option value="rSlp">SLP</option>
+			</optgroup>
+		</select>
+	</li>
+</ul>
+<div id="sansText">
+<textarea name="input" rows="20" cols="50" title="Enter your text here."></textarea>
+<ul>
+	<li><input type="button" value="➠" title="Click to transliterate!" class="run" onclick="Sanscript()" /></li>
+	<li><input type="button" value="↔" title="Click to swap the left and right sides." class="swap" onclick="SwapSides()"/></li>
+</ul>
+<textarea name="output" rows="20" cols="50" title="This is where your output will appear!" onclick="Sanscript()"></textarea>
+</div>
+<div class="clear"></div>
+<div id="sansFooter">
+
+    <ul id="tabs">
+      <li><a href="#intro">Introduction</a></li>
+	  <li><a href="#details">Details</a></li>
+	  <li><a href="#map" style="background: #FF0;">Transliteration Map</a></li>
+	  <li><a href="#options">Options</a></li>
+	  <li><a href="#faq">FAQ/Contact</a></li>
+	  <li><a href="#code">Code</a></li>
+	 </ul>
+
+    </ul>
+	<div class="tabContent" id="intro">
+	<h2>Introduction</h2>
+	<p><dfn>Sanscript</dfn> is an online transliterator. All modern Indian scripts are supported. Sanscript supports the full ITRANS standard for Sanskrit and Devanagari.</p>
+	
+	<h3>Using the Program</h3>
+	<p>Here's how you start. Choose a source script in the "From:" field and a destination script in the "To:" field. Put the text you want to transliterate into the left box. Then, click the blue arrow <span class="textBlueArrow">➠</span>  to run the program. If you click the double arrows <span style="font-size: 1.2em; font-family: Sans-Serif; line-height: 0.83em;">↔</span>, the left and right sides are switched.</p>
+	
+	<h3>Notes</h3>
+	<p>The quality of your result depends on your computer's font support.
+	<ul>
+		<li>For Devanagari, the best script available to you is <a href="http://www.omkarananda-ashram.org/Sanskrit/itranslator2003.htm#dls">Sanskrit 2003</a>.</li>
+		<li>For Roman type, the best script available to you is <a href="http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=Gentium_download">Gentium</a>. Download the "Gentium 1.02" package at the bottom of the page.</li>
+	</ul>
+	</div>
+	
+	<div class="tabContent" id="details">
+	<h2>Details</h2>
+	<h3>Disabling Transliteration</h3>
+	<p>If you are translating from a Roman rendition, you can tell Sanscript to transliterate only certain parts of your input text. When you want to disable transliteration, type <dfn>##</dfn>. You can enable transliteration by typing ## again. Below is a sample transliteration from ITRANS to Devanagari.</p>
+	
+	<ul class="examples">
+		<li>bhagavad ##(divine one)## gItA ##(song) <span class="textBlueArrow">➠</span> भगवद् (divine one) गीता (song)</li>
+	</ul>
+	
+	<p>You can also disable transliteration on just one character by using the backslash character <dfn>\</dfn>. The backslash is used in many programs to take special letters and make them normal. If you've never used the backslash like this before, I recommend just using ##.</p>
+	<ul class="examples">
+		<li>bhagavad . gItA\. <span class="textBlueArrow">➠</span> भगवद् । गीता.</li>
+		<li>dharmakShetre \## kurukShetre <span class="textBlueArrow">➠</span> धर्मक्षेत्रे ## कुरुक्षेत्रे</li>
+		<li>a \a \\ A \A <span class="textBlueArrow">➠</span> अ a \ आ A</li>
+	</ul>
+	
+	<h3>Separating Letters</h3>
+	<p>Some scripts, like Devanagari, can produce complex symbols that are combinations of many other letters. These symbols can be quite confusing, and some of them are not used in modern Devanagari. Fortunately, there's an easy way to prevent them: we use a special "invisible character." This character tells your computer to make text look a certain way. When transliterating from ITRANS, you can insert this character by typing <dfn>{}</dfn>. You can also insert it with <dfn>_</dfn>. Below are some examples from ITRANS-to-Devanagari transliteration.</p>
+	<ul class="examples">
+		<li>kShetra k{}Shetra <span class="textBlueArrow">➠</span> क्षेत्र क्‍षेत्र</li>
+		<li>barau bara_u <span class="textBlueArrow">➠</span> बरौ बर‍उ</li>
+	</ul>
+	
+	</div>
+	
+	<div class="tabContent" id="map">
+	<h2>Transliteration Map</h2>
+	<h3>Vowels and Marks</h3>
+	<ul id="tVowels">
+		<li></li><li></li><li></li><li></li>
+		<li></li><li></li><li></li><li></li>
+		<li></li><li></li><li></li><li></li>
+		<li></li><li></li><li></li><li></li>
+		<li></li><li></li><li></li>
+	</ul>
+	<h3>Consonants</h3>
+	<h4>Stops and Nasals</h4>
+	<ul id="tStops">
+		<li></li><li></li><li></li><li></li><li></li>
+		<li></li><li></li><li></li><li></li><li></li>
+		<li></li><li></li><li></li><li></li><li></li>
+		<li></li><li></li><li></li><li></li><li></li>
+		<li></li><li></li><li></li><li></li><li></li>
+	</ul>
+	<h4>Other Consonants</h4>
+	<ul id="tOther">
+		<li></li><li></li><li></li><li></li>
+		<li></li><li></li><li></li><li></li>
+		<li></li>
+	</ul>
+	<h4>Conjunct Consonants</h4>
+	<ul id="tConjuncts">
+		<li></li><li></li><li></li><li></li>
+	</ul>
+	
+	<h3>Symbols and Punctuation</h3>
+	<ul id="symbols">
+		<li></li><li></li><li></li>
+		<li></li><li></li><li></li>
+	</ul>
+	<h3>Numbers</h3>
+	<ul id="numbers">
+		<li></li><li></li><li></li><li></li><li></li>
+		<li></li><li></li><li></li><li></li><li></li>
+	</ul>
+	<h3>Non-Sanskrit Letters</h3>
+	<ul id="special">
+		<li></li><li></li><li></li><li></li><li></li>
+		<li></li><li></li><li></li><li></li><li></li>
+	</ul>
+	</div>
+	
+	<div class="tabContent" id="options">
+	<h2>Options</h2>
+	<h3>Devanagari</h3>
+	<p>How should Sanscript transliterate to Devanagari? Choose an option below:</p>
+	<ul>
+	<li><input type="radio" name="oHind" value="1" checked="checked"/> ajay <span class="textBlueArrow">➠</span> <span class="big">अजय् &nbsp;</span> (Sanskrit)</li>
+	<li><input type="radio" name="oHind" value="0" /> ajay <span class="textBlueArrow">➠</span> <span class="big">अजय &nbsp;</span> (Hindi/Marathi)</li>
+	</ul>
+	<p>Regardless of your choice, you can always type <dfn>.h</dfn> in ITRANS to do "Sanskrit-style" transliteration.</p>
+	</div>
+	
+	<div class="tabContent" id="faq">
+	<h2>FAQ</h2>
+	<ul>
+		<li>
+		<p><i>Q: Why doesn't Sanscript transliterate as I type?</i></p>
+		<p><strong>Sanscript is meant to do one thing well.</strong> Its purpose is to be a small but speedy transliteration tool for people dealing with Sanskrit texts and documents (although by happy coincidence Hindi and some other languages are fully supported). In fact, Sanscript was designed under the guidance of the owner of <a href="http://sanskritdocuments.org/">sanskritdocuments.org</a> to be a fast program for processing Sanskrit text. Live transliteration would require some additions to the code, and these additions would become major if Sanscript also had to account for approximate transliterations.</p>
+		<p>If you're still looking for live transliteration tools, <strong>there are plenty of other programs</strong> you can use, including <a href="http://www.google.com/transliterate/">Google's own transliteration software</a>. But Sanscript is meant for a different kind of transliteration.</p>
+		</li>
+		<li>
+		<p><i>Q: Will you add full support for other Indic scripts, like Telugu?</i></p>
+		<p>The short answer: <strong>yes, eventually</strong>.</p>
+		<p>As in the case of live translation I hadn't thought about implementing this feature. In truth, <strong>Sanscript was meant for Sanskrit</strong> from the start. However, I think it would be nice if Sanscript could better live up to its name. The original name was a simple pun on "Sanskrit" and "script" &mdash; as in "web script" or "Javascript" &mdash; but at the risk of sounding like a <a href="http://en.wikipedia.org/wiki/Nirukta">nairukta</a>, I'll say that it could also be seen as "sans script," i.e. a tool that seamlessly converts the whole of one script into the next. (An even better name might be "Transcript" !)</p>
+		<p>I think that <strong>it wouldn't be too hard to update the code</strong> to support sounds like the short vowels that feature so commonly in South Indian scripts like Telugu, <strong>but these days I'm short on time</strong>. As of December 5 2010, I still need to finish the grammar guide and make it more usable and user-friendly. For me, that is a bigger priority.</p>
+		</li>
+	</ul>
+	<h2>Contact</h2>
+	<p>You can contact me either through the <a href="/contact">contact form</a> or at <img src="https://learnsanskrit.org/img/email.png" alt="this email address, which I have hidden from spambots. If you cannot see the image, use the contact form." />.</p>
+	
+	</div>
+	
+	<div class="tabContent" id="code">
+	<h2>Code</h2>
+	<p>I use a Javascript compressor/obfuscator to minimize the file size. So, the current code will be almost indecipherable. You can view the original code <a href="https://github.com/sanskrit/sanscript">here</a>. The code is licensed under a <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/us/">Creative Commons Attribution-Noncommercial-Share Alike License</a>.
+	</div>
+
+</div>
+<div class="clear"></div>
+</form>
+</div>
+
+<script type="text/javascript" src="/scripts/tabs.js"></script>
+<script type="text/javascript" src="/scripts/sanscript.js"></script>
+</div>
+
+		<div id="footer">
+			<p style="font-size: 1.3em;">Go to: <a href="https://learnsanskrit.org/">Index</a> | <a href="https://learnsanskrit.org/grammar">Grammar guide</a> | <a href="https://learnsanskrit.org/resources">Resources</a> | <a href="/tools">Tools</a></p>
+			<p>Or: <a href="/about">About</a> | <a href="https://learnsanskrit.org/contact">Contact</a> | <a href="https://learnsanskrit.org/preferences">Preferences</a> | <a href="/use">Using the Site</a></p>
+			<br />
+			<p>All unsourced content is licensed under a <a href="http://creativecommons.org/licenses/nc-sa/1.0/">Creative Commons NonCommercial 
+		ShareAlike 1.0</a> license.</p>
+			<p>This page was last edited on December 30, 2020.</p>
+			<div style="padding: 1em;">
+				<img src="https://learnsanskrit.org/img/ibiblio.png" alt="Hosted by ibiblio.org." />			</div>
+		</div>
+                <script>
+                  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                  })(window,document,'script','https://www.google-analytics.com/analytic.s.js','ga');
+                
+                  ga('create', 'UA-78373984-11', 'auto');
+                  ga('send', 'pageview');
+                
+                </script>
+	</body>
+</html>
