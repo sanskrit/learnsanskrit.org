@@ -1,6 +1,6 @@
 import os
 
-from flask import Flask, after_this_request, request
+from flask import Flask, after_this_request, render_template, request
 
 
 app = Flask(__name__, static_url_path='/static', static_folder='snapshot/static')
@@ -15,29 +15,58 @@ def get_folder(url_rule) -> str:
 
 @app.route('/')
 def index():
-    path = os.path.join('snapshot', 'index.html') 
-    with open(path) as f:
-        return f.read()
+    return render_template('index.html')
 
 
 @app.route('/about/')
+def about():
+    return render_template('about.html')
+
+
 @app.route('/contact/')
+def contact():
+    return render_template('contact.html')
+
+
+@app.route('/preferences/')
+def preferences():
+    return render_template('preferences.html')
+
+
+@app.route('/resources/')
+def resources():
+    return render_template('resources.html')
+
+
+@app.route('/supp/')
+def supp():
+    return render_template('supp.html')
+
+
+@app.route('/tools/')
+def tools():
+    return render_template('tools.html')
+
+
+@app.route('/use/')
+def use():
+    return render_template('use.html')
+
+
 @app.route('/ends/')
 @app.route('/grammar/')
 @app.route('/introduction/')
 @app.route('/monier/')
 @app.route('/nouns/')
+@app.route('/nouns/')
 @app.route('/panini/')
-@app.route('/preferences/')
 @app.route('/prosody/')
 @app.route('/references/')
-@app.route('/resources/')
 @app.route('/sounds/')
 @app.route('/start/')
 @app.route('/supp/')
 @app.route('/texts/')
 @app.route('/tools/')
-@app.route('/use/')
 @app.route('/verbs/')
 def indices():
     folder = get_folder(request.url_rule)
@@ -46,24 +75,19 @@ def indices():
         return f.read()
 
 
-@app.route('/about/<path:filepath>')
-@app.route('/contact/<path:filepath>')
 @app.route('/ends/<path:filepath>')
 @app.route('/grammar/<path:filepath>')
 @app.route('/introduction/<path:filepath>')
 @app.route('/monier/<path:filepath>')
 @app.route('/nouns/<path:filepath>')
 @app.route('/panini/<path:filepath>')
-@app.route('/preferences/<path:filepath>')
 @app.route('/prosody/<path:filepath>')
 @app.route('/references/<path:filepath>')
-@app.route('/resources/<path:filepath>')
 @app.route('/sounds/<path:filepath>')
 @app.route('/start/<path:filepath>')
 @app.route('/supp/<path:filepath>')
 @app.route('/texts/<path:filepath>')
 @app.route('/tools/<path:filepath>')
-@app.route('/use/<path:filepath>')
 @app.route('/verbs/<path:filepath>')
 def all_pages(filepath):
     folder = get_folder(request.url_rule)

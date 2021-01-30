@@ -1,34 +1,7 @@
-<!doctype html>
-<html lang="en">
-	<head>
-		<title>Preferences | Learn Sanskrit Online</title>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-		<link rel="shortcut icon" href="/static/favicon.ico" />
-		<link rel="stylesheet" type="text/css" href="/static/css/style.css" />
-		<link rel="stylesheet" type="text/css" href="/static/css/print.css" media="print" />
-		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
-		<script type="text/javascript" src="/static/scripts/functions.js"></script>
-	</head>
-	<body>
-<div class="blocky bar">
-	<ul>
-		<li><a href="/">Index</a></li>
-		<li><a href="/grammar">Grammar guide</a></li>
-		<li><a href="/resources">Resources</a></li>
-		<li><a href="/tools">Tools</a></li>
-		<li><a href="/contact" class="special">Contact</a></li>
-		<li><a href="/preferences" class="special">Preferences</a></li>
-		<!-- <li><a href="http://nakula.learnsanskrit.org">→ Nakula</a></li> -->
-		<form action="http://www.google.com/cse" id="cse">
-			<input type="hidden" name="cx" value="013021609329506570655:hoi0363vwwc" />
-			<input type="hidden" name="ie" value="UTF-8" />
-			<input type="text" name="q" />
-			<input type="submit" name="sa" value="Search" />
-		</form>
-	</ul>
-</div>
+{% extends 'base-main-nav.html' %}
 
-<div id="content">
+{% block title %}Preferences{% endblock %}
+{% block content %}
 <h1>Preferences</h1>
 <p>This page is functional, but it is a work in progress.</p>
 
@@ -74,27 +47,7 @@
 	</div>
 </div>
 
-<p>You can also choose a color profile for the site:</p>
-<div class="preference"> 
-	<div class="options"> 
-		<label for="theme">Scheme:</label> 
-		<select id="theme" name="theme"> 
-			<option value="default">Default</option>
-			<option value="dark">Dark</option>
-			<option value="blue">Blue</option> 
-		</select> 
-	</div> 
-	<div class="explanation"> 
-	<p>Although the standard color scheme has been designed to be readable and easy on the eye, it cannot meet everyone's needs. If you want to change the colors of the items on the page, try selecting another scheme. You can do so by using the menu to the left.</p> 
-	</div> 
-</div>
-
 <script type="text/javascript">
-// Change preference "theme"
-function changeTheme(menu) {
-	alert('yo');
-}
-
 // Save preferences.
 function savePreferences() {
 	$.cookie('lso', JSON.stringify(settings), {expires: 7});
@@ -164,27 +117,5 @@ $(function() {
 		return false;
 	});
 });
-</script></div>
-
-		<div id="footer">
-			<p style="font-size: 1.3em;">Go to: <a href="/">Index</a> | <a href="/grammar">Grammar guide</a> | <a href="/resources">Resources</a> | <a href="/tools">Tools</a></p>
-			<p>Or: <a href="/about">About</a> | <a href="/contact">Contact</a> | <a href="/preferences">Preferences</a> | <a href="/use">Using the Site</a></p>
-			<br />
-			<p>All unsourced content is licensed under a <a href="http://creativecommons.org/licenses/nc-sa/1.0/">Creative Commons NonCommercial 
-		ShareAlike 1.0</a> license.</p>
-			<p>This page was last edited on December 30, 2020.</p>
-			<div style="padding: 1em;">
-				<img src="/static/img/ibiblio.png" alt="Hosted by ibiblio.org." />			</div>
-		</div>
-                <script>
-                  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-                  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-                  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-                  })(window,document,'script','https://www.google-analytics.com/analytic.s.js','ga');
-                
-                  ga('create', 'UA-78373984-11', 'auto');
-                  ga('send', 'pageview');
-                
-                </script>
-	</body>
-</html>
+</script>
+{% endblock %}

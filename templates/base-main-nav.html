@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+	<head>
+        <title>{% block title %}{% endblock %} | Learn Sanskrit Online</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<link rel="shortcut icon" href="/static/favicon.ico" />
+		<link rel="stylesheet" type="text/css" href="/static/css/style.css" />
+		<link rel="stylesheet" type="text/css" href="/static/css/print.css" media="print" />
+		<meta name="description" content="A comprehensive guide to the Sanskrit language, with over one hundred lessons and over one thousand exercises." />
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+		<script type="text/javascript" src="/static/scripts/functions.js"></script>
+	</head>
+	<body>
+<div class="blocky bar">
+	<ul>
+		<li><a href="/">Index</a></li>
+		<li><a href="/grammar">Grammar guide</a></li>
+		<li><a href="/resources">Resources</a></li>
+		<li><a href="/tools">Tools</a></li>
+		<li><a href="/contact" class="special">Contact</a></li>
+		<li><a href="/preferences" class="special">Preferences</a></li>
+		<!-- <li><a href="http://nakula.learnsanskrit.org">→ Nakula</a></li> -->
+		<form action="http://www.google.com/cse" id="cse">
+			<input type="hidden" name="cx" value="013021609329506570655:hoi0363vwwc" />
+			<input type="hidden" name="ie" value="UTF-8" />
+			<input type="text" name="q" />
+			<input type="submit" name="sa" value="Search" />
+		</form>
+	</ul>
+</div>
+
+<div id="content">
+{% block content %}
+{% endblock %}
+</div>
+
+{% include 'include/footer.html' %}
+	</body>
+</html>
+

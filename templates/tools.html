@@ -1,0 +1,26 @@
+{% extends 'base-main-nav.html' %}
+
+{% block title %}Tools{% endblock %}
+{% block content %}
+<h1>Tools</h1>
+
+<p>Below is a collection of tools meant to help you read, transcribe, or process Sanskrit texts.</p>
+
+<h2>Transliteration</h2>
+<p><dfn>Transliteration</dfn> is the task of converting digitized Sanskrit text from one scheme to another. For instance, a person might type up some Sanskrit text with ordinary Roman letters and convert it to Devanagari. Thus a phrase like <code>mAmakAH pANDavAzcaiva</code> could be converted to <span class="dev">मामकाः पाण्डवाश्चैव</span>. Some tools to help with transliteration include the following:</p>
+<ul>
+	<li><p><a href="/tools/sanscript">Sanscript</a>. Sanscript was developed by this site to offer extremely fast transliteration for all normal Sanskrit scripts. It is capable of processing large texts like the <i>Bhagavad Gita</i> within one second, and it has support for rarer schemes like SLP and the National Library at Kolkata romanization. The tool is meant for Sanskrit; it has poor to nonexistent support for other languages.</p></li>
+	<li><p>The <a href="http://www.aczoom.com/itrans/online/">Online Interface to ITRANS</a>, though slow, has full support for all Indian languages. It can generate image files and PDFs. It </p></li>
+</ul>
+
+<h2>Optical character recognition</h2>
+<p><a href="/tools/ocr">Sanskrit, OCR, and SanskritOCR</a> is a short guide to getting started with optical character recognition and document processing. Learn how to convert scanned books into more readable and usable text. Apart from SanskritOCR, there are no free and high-quality OCR programs. If you know of one, please let us know about it <a href="/contact">through the  contact page</a>.</p>
+
+<h2>Word generators and sentence processors</h2>
+<ul>
+	<li><p><a href="http://sanskrit.inria.fr/">The Sanskrit Heritage Site</a> &mdash; This site contains several grammar tools, all of which are quite robust and powerful. It also contains large lists of different Sanskrit words. Most of these lists are available for download, which is especially useful if you plan to write a Sanskrit parser.</p></li>
+	
+	<li><p><a href="http://sanskritlibrary.org/">Sanskrit Library</a> &mdash; This site includes tools that take a basic Sanskrit word and inflect it for you. In this way, it is comparable to the Sanskrit Heritage Site. The site contains other resources as well, including a fairly large text collection.</p></li>
+</ul>
+</div>
+{% endblock %}
