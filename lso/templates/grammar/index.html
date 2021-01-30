@@ -1,68 +1,45 @@
-<!doctype html>
-<html lang="en">
-	<head>
-		<title>Sanskrit Grammar | Learn Sanskrit Online</title>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-		<link rel="shortcut icon" href="/static/favicon.ico" />
-		<link rel="stylesheet" type="text/css" href="/static/css/style.css" />
-		<link rel="stylesheet" type="text/css" href="/static/css/print.css" media="print" />
-		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
-		<script type="text/javascript" src="/static/scripts/functions.js"></script>
-	</head>
-	<body>
-		<div class="bar">
-			<p class="links">
-				<a href="/">← previous</a>
-				|
-				<a href="/i">next →</a>
-			</p>
-			<ul>
-				<li><a href="/">Index</a> &raquo;</li>
-				<li>Sanskrit Grammar</li>
-			</ul>
-		</div>
-<div id="content">
-<form action="http://www.google.com/cse" id="cse">
-	<input type="hidden" name="cx" value="013021609329506570655:hoi0363vwwc" />
-	<input type="hidden" name="ie" value="UTF-8" />
-	<input type="text" name="q" />
-	<input type="submit" name="sa" value="Search" />
-</form>
+{% extends 'base-grammar.html' %}
+
+{% block title %}Sanskrit Grammar{% endblock %}
+
+{% block grammar_nav %}
+<ul>
+    <li><a href="/">Index</a> &raquo;</li>
+    <li>Sanskrit Grammar</li>
+</ul>
+{% endblock %}
+
+{% block content %}
 <h1>Sanskrit Grammar</h1>
 
 <ul class="contents">
-<li><a href="/introduction">0 &nbsp;Introduction</a></li><li><a href="/sounds">1 &nbsp;Sounds</a><ul><li><a href="/sounds/vowels">1.1 &nbsp;Vowels</a><ul><li><a href="/sounds/vowels/simple">1.1.1 &nbsp;Simple Vowels</a></li><li><a href="/sounds/vowels/compound">1.1.2 &nbsp;Compound Vowels</a> <a href="/sounds/vowels/compound-e">(+e)</a></li></ul></li><li><a href="/sounds/consonants">1.2 &nbsp;Consonants</a><ul><li><a href="/sounds/consonants/stops">1.2.1 &nbsp;Stops and Nasals</a></li><li><a href="/sounds/consonants/voice">1.2.2 &nbsp;Voice and Aspiration</a></li><li><a href="/sounds/consonants/other">1.2.3 &nbsp;Other Consonants</a> <a href="/sounds/consonants/other-e">(+e)</a></li><li><a href="/sounds/consonants/anusvara">1.2.4 &nbsp;Anusvara and Visarga</a></li><li><a href="/sounds/consonants/combinations">1.2.5 &nbsp;Combinations</a><!-- !!! --></li></ul></li><li><a href="/sounds/syllables">1.3 &nbsp;Syllables</a></li><li><a href="/sounds/reading">1.4 &nbsp;Reading</a></li><li><a href="/sounds/review">1.5 &nbsp;Review</a><!-- !!! --></li></ul></li><li><a href="/start">2 &nbsp;Starting Out</a><ul><li><a href="/start/verbs">2.1 &nbsp;Verb Basics</a><ul><li><a href="/start/verbs/present">2.1.1 &nbsp;Present Tense Verbs</a> <a href="/start/verbs/present-e">(+e)</a></li><li><a href="/start/verbs/roots">2.1.2 &nbsp;Roots and Classes</a> <a href="/start/verbs/roots-e">(+e)</a></li><li><a href="/start/verbs/atmanepada">2.1.3 &nbsp;Atmanepada</a> <a href="/start/verbs/atmanepada-e">(+e)</a></li></ul></li><li><a href="/start/nouns">2.2 &nbsp;Noun Basics</a><ul><li><a href="/start/nouns/case1">2.2.1 &nbsp;Case 1: The Subject</a> <a href="/start/nouns/case1-e">(+e)</a></li><li><a href="/start/nouns/sandhi">2.2.2 &nbsp;An Introduction to Sandhi</a> <a href="/start/nouns/sandhi-e">(+e)</a></li><li><a href="/start/nouns/verbless">2.2.3 &nbsp;Verbless Sentences</a> <a href="/start/nouns/verbless-e">(+e)</a></li><li><a href="/start/nouns/pronouns">2.2.4 &nbsp;Pronouns</a> <a href="/start/nouns/pronouns-e">(+e)</a></li><li><a href="/start/nouns/case2">2.2.5 &nbsp;Case 2: The Object</a> <a href="/start/nouns/case2-e">(+e)</a></li><li><a href="/start/nouns/adjectives">2.2.6 &nbsp;Adjectives</a> <a href="/start/nouns/adjectives-e">(+e)</a></li><li><a href="/start/nouns/case8">2.2.7 &nbsp;Case 8: Direct Address</a> <a href="/start/nouns/case8-e">(+e)</a></li><li><a href="/start/nouns/neuter">2.2.8 &nbsp;Neuter Nouns</a> <a href="/start/nouns/neuter-e">(+e)</a></li><li><a href="/start/nouns/case6">2.2.9 &nbsp;Case 6: "of"</a> <a href="/start/nouns/case6-e">(+e)</a></li><li><a href="/start/nouns/other">2.2.10 &nbsp;The Other Cases</a> <a href="/start/nouns/other-e">(+e)</a></li></ul></li><li><a href="/start/words">2.3 &nbsp;Making Words</a><ul><li><a href="/start/words/prefixes">2.3.1 &nbsp;Verb Prefixes</a> <a href="/start/words/prefixes-e">(+e)</a></li><li><a href="/start/words/primary">2.3.2 &nbsp;Primary Suffixes</a> <a href="/start/words/primary-e">(+e)</a></li><li><a href="/start/words/secondary">2.3.3 &nbsp;Secondary Suffixes</a> <a href="/start/words/secondary-e">(+e)</a></li><li><a href="/start/words/tatpurusha">2.3.4 &nbsp;The tatpurusha</a> <a href="/start/words/tatpurusha-e">(+e)</a></li><li><a href="/start/words/asa">2.3.5 &nbsp;"Not" and "With"</a> <a href="/start/words/asa-e">(+e)</a></li></ul></li><li><a href="/start/uninflected">2.4 &nbsp;Uninflected Words</a><ul><li><a href="/start/uninflected/adverbs">2.4.1 &nbsp;Adverbs</a> <a href="/start/uninflected/adverbs-e">(+e)</a></li><li><a href="/start/uninflected/andornot">2.4.2 &nbsp;"And," "Or," and "Not"</a> <a href="/start/uninflected/andornot-e">(+e)</a></li><li><a href="/start/uninflected/emphasis">2.4.3 &nbsp;Adding Emphasis</a> <a href="/start/uninflected/emphasis-e">(+e)</a></li><li><a href="/start/uninflected/itiva">2.4.4 &nbsp;iti and iva</a> <a href="/start/uninflected/itiva-e">(+e)</a></li></ul></li><li><a href="/start/roots">2.5 &nbsp;Gerunds and "Real" Roots</a><ul><li><a href="/start/roots/regular">2.5.1 &nbsp;Regular Roots</a> <a href="/start/roots/regular-e">(+e)</a></li><li><a href="/start/roots/gerunds">2.5.2 &nbsp;Gerunds</a> <a href="/start/roots/gerunds-e">(+e)</a></li><li><a href="/start/roots/samprasarana">2.5.3 &nbsp;Samprasarana</a> <a href="/start/roots/samprasarana-e">(+e)</a></li><li><a href="/start/roots/nind">2.5.4 &nbsp;Roots like nind and jiv</a> <a href="/start/roots/nind-e">(+e)</a></li></ul></li><li><a href="/start/reading">2.6 &nbsp;Reading</a></li><li><a href="/start/review">2.7 &nbsp;Review</a><!-- !!! --></li></ul></li><li><a href="/nouns">3 &nbsp;Nouns</a><ul><li><a href="/nouns/ppp">3.1 &nbsp;The PPP</a><ul><li><a href="/nouns/ppp/case3">3.1.1 &nbsp;Case 3: "with"</a> <a href="/nouns/ppp/case3-e">(+e)</a></li><li><a href="/nouns/ppp/passive">3.1.2 &nbsp;Passive Verbs</a> <a href="/nouns/ppp/passive-e">(+e)</a></li><li><a href="/nouns/ppp/future">3.1.3 &nbsp;The Ordinary Future Tense</a> <a href="/nouns/ppp/future-e">(+e)</a></li><li><a href="/nouns/ppp/ppp">3.1.4 &nbsp;The PPP</a> <a href="/nouns/ppp/ppp-e">(+e)</a></li><li><a href="/nouns/ppp/vowels">3.1.5 &nbsp;Vowel Stems, Part 1</a> <a href="/nouns/ppp/vowels-e">(+e)</a></li></ul></li><li><a href="/nouns/compounds">3.2 &nbsp;Other Compounds</a><ul><li><a href="/nouns/compounds/dvandva">3.2.1 &nbsp;The dvandva</a> <a href="/nouns/compounds/dvandva-e">(+e)</a></li><li><a href="/nouns/compounds/clauses">3.2.2 &nbsp;Relative Clauses</a> <a href="/nouns/compounds/clauses-e">(+e)</a></li><li><a href="/nouns/compounds/avyayibhava">3.2.3 &nbsp;The avyayibhava</a> <a href="/nouns/compounds/avyayibhava-e">(+e)</a></li><li><a href="/nouns/compounds/bahuvrihi">3.2.4 &nbsp;The bahuvrihi</a> <a href="/nouns/compounds/bahuvrihi-e">(+e)</a></li></ul></li><li><a href="/nouns/cases">3.3 &nbsp;Three Cases</a><ul><li><a href="/nouns/cases/bits">3.3.1 &nbsp;Verb Bits</a> <a href="/nouns/cases/bits-e">(+e)</a></li><li><a href="/nouns/cases/case4">3.3.2 &nbsp;Case 4: "for"</a> <a href="/nouns/cases/case4-e">(+e)</a></li><li><a href="/nouns/cases/case5">3.3.3 &nbsp;Case 5: "from"</a> <a href="/nouns/cases/case5-e">(+e)</a></li><li><a href="/nouns/cases/case7">3.3.4 &nbsp;Case 7: "in"</a> <a href="/nouns/cases/case7-e">(+e)</a></li></ul></li><li><a href="/nouns/consonant">3.4 &nbsp;Consonant Stems</a><ul><li><a href="/nouns/consonant/one">3.4.1 &nbsp;One-Stem Nouns</a> <a href="/nouns/consonant/one-e">(+e)</a></li><li><a href="/nouns/consonant/two">3.4.2 &nbsp;Two-Stem Nouns</a> <a href="/nouns/consonant/two-e">(+e)</a></li><li><a href="/nouns/consonant/three">3.4.3 &nbsp;Three-Stem Nouns</a> <a href="/nouns/consonant/three-e">(+e)</a></li></ul></li><li><a href="/nouns/pronouns">3.5 &nbsp;More Pronouns</a><ul><li><a href="/nouns/pronouns/short">3.5.1 &nbsp;Short Pronouns, etad, and ena</a> <a href="/nouns/pronouns/short-e">(+e)</a></li><li><a href="/nouns/pronouns/adjectives">3.5.2 &nbsp;Pronominal Adjectives</a> <a href="/nouns/pronouns/adjectives-e">(+e)</a></li><li><a href="/nouns/pronouns/questions">3.5.3 &nbsp;Asking Questions</a> <a href="/nouns/pronouns/questions-e">(+e)</a></li><li><a href="/nouns/pronouns/bits">3.5.4 &nbsp;Pronoun Bits: idam</a> <a href="/nouns/pronouns/bits-e">(+e)</a></li></ul></li><li><a href="/nouns/reading">3.6 &nbsp;Reading</a><ul><li><a href="/nouns/reading/pancha">3.6.1 &nbsp;Panchatantra</a></li><li><a href="/nouns/reading/bg">3.6.2 &nbsp;Bhagavad Gita</a><!-- !!! --></li></ul></li><li><a href="/nouns/review">3.7 &nbsp;Review</a><!-- !!! --></li></ul></li><li><a href="/verbs">4 &nbsp;Verbs</a><ul><li><a href="/verbs/derived">4.1 &nbsp;Derived Verbs</a><ul><li><a href="/verbs/derived/aya">4.1.1 &nbsp;The -aya Class</a> <a href="/verbs/derived/aya-e">(+e)</a></li><li><a href="/verbs/derived/causal">4.1.2 &nbsp;Causal Verbs</a> <a href="/verbs/derived/causal-e">(+e)</a></li><li><a href="/verbs/derived/nouns">4.1.3 &nbsp;Verbs From Nouns</a> <a href="/verbs/derived/nouns-e">(+e)</a></li><li><a href="/verbs/derived/prefixes">4.1.4 &nbsp;Noun Prefixes</a> <a href="/verbs/derived/prefixes-e">(+e)</a></li></ul></li><li><a href="/verbs/participles">4.2 &nbsp;Other Participles</a><ul><li><a href="/verbs/participles/present">4.2.1 &nbsp;Present Participles</a> <a href="/verbs/participles/present-e">(+e)</a></li><li><a href="/verbs/participles/future">4.2.2 &nbsp;Future Participles</a> <a href="/verbs/participles/future-e">(+e)</a></li><li><a href="/verbs/participles/past">4.2.3 &nbsp;Past Participles</a> <a href="/verbs/participles/past-e">(+e)</a></li></ul></li><li><a href="/verbs/classes">4.3 &nbsp;Verb Classes</a><ul><li><a href="/verbs/classes/complex">4.3.1 &nbsp;Complex Classes</a> <a href="/verbs/classes/complex-e">(+e)</a></li><li><a href="/verbs/classes/past">4.3.2 &nbsp;The Ordinary Past Tense</a> <a href="/verbs/classes/past-e">(+e)</a></li><li><a href="/verbs/classes/option">4.3.3 &nbsp;The Option Mood</a> <a href="/verbs/classes/option-e">(+e)</a></li><li><a href="/verbs/classes/command">4.3.4 &nbsp;The Command Mood</a> <a href="/verbs/classes/command-e">(+e)</a></li></ul></li><li><a href="/verbs/nouns">4.4 &nbsp;Vowel Nouns, Part 2</a><ul><li><a href="/verbs/nouns/aiu">4.4.1 &nbsp;-a, -i, and -u Nouns</a> <a href="/verbs/nouns/aiu-e">(+e)</a></li><li><a href="/verbs/nouns/iu">4.4.2 &nbsp;-i and -u Nouns</a> <a href="/verbs/nouns/iu-e">(+e)</a></li><li><a href="/verbs/nouns/r">4.4.3 &nbsp;-ṛ Nouns</a> <a href="/verbs/nouns/r-e">(+e)</a></li></ul></li><li><a href="/verbs/roots">4.5 &nbsp;Verb Roots</a><ul><li><a href="/verbs/roots/infinitives">4.5.1 &nbsp;Infinitives</a> <a href="/verbs/roots/infinitives-e">(+e)</a></li><li><a href="/verbs/roots/conditional">4.5.2 &nbsp;Conditional Verbs</a> <a href="/verbs/roots/conditional-e">(+e)</a></li><li><a href="/verbs/roots/distant">4.5.3 &nbsp;The Distant Future Tense</a> <a href="/verbs/roots/distant-e">(+e)</a></li></ul></li><li><a href="/verbs/doubling">4.6 &nbsp;Doubling</a><ul><li><a href="/verbs/doubling/rules">4.6.1 &nbsp;General Rules</a> <a href="/verbs/doubling/rules-e">(+e)</a></li><li><a href="/verbs/doubling/doubling">4.6.2 &nbsp;Doubling Class</a> <a href="/verbs/doubling/doubling-e">(+e)</a></li><li><a href="/verbs/doubling/desiderative">4.6.3 &nbsp;The Desiderative</a> <a href="/verbs/doubling/desiderative-e">(+e)</a></li><li><a href="/verbs/doubling/intensive">4.6.4 &nbsp;The Intensive</a></li><li><a href="/verbs/doubling/distant-1">4.6.5 &nbsp;Distant Past Tense Verbs</a></li><li><a href="/verbs/doubling/distant-2">4.6.6 &nbsp;Distant Past Tense 2: Irregular Verbs</a></li><li><a href="/verbs/doubling/distant-3">4.6.7 &nbsp;Distant Past Tense 3: vid and ah</a><!-- !!! --></li></ul></li></ul></li><li><a href="/ends">5 &nbsp;Odds and Ends</a><ul><li><a href="/ends/verbs">5.1 &nbsp;Verbs and Participles</a><ul><li><a href="/ends/verbs/three">5.1.1 &nbsp;Three Missing Endings</a> <a href="/ends/verbs/three-e">(+e)</a></li><li><a href="/ends/verbs/recent">5.1.2 &nbsp;The Recent Past Tense</a> <a href="/ends/verbs/recent-e">(+e)</a></li><li><a href="/ends/verbs/benedictive">5.1.3 &nbsp;The Benedictive</a> <a href="/ends/verbs/benedictive-e">(+e)</a></li><li><a href="/ends/verbs/perfect">5.1.4 &nbsp;Perfect Participles</a> <a href="/ends/verbs/perfect-e">(+e)</a></li><li><a href="/ends/verbs/prefixes">5.1.5 &nbsp;Separable Verb Prefixes</a><!-- !!! --></li></ul></li><li><a href="/ends/sounds">5.2 &nbsp;Sounds</a><ul><li><a href="/ends/sounds/l">5.2.1 &nbsp;ḷ and ḻ</a> <a href="/ends/sounds/l-e">(+e)</a></li><li><a href="/ends/sounds/accent">5.2.2 &nbsp;Vedic Accent</a> <a href="/ends/sounds/accent-e">(+e)</a></li></ul></li><li><a href="/ends/nouns">5.3 &nbsp;Nouns</a><ul><li><a href="/ends/nouns/aioau">5.3.1 &nbsp;-ai, -o, and -au Nouns</a> <a href="/ends/nouns/aioau-e">(+e)</a></li><li><a href="/ends/nouns/idam">5.3.2 &nbsp;More on idam</a> <a href="/ends/nouns/idam-e">(+e)</a></li><li><a href="/ends/nouns/adas">5.3.3 &nbsp;adas</a> <a href="/ends/nouns/adas-e">(+e)</a></li></ul></li><li><a href="/ends/numbers">5.4 &nbsp;Numbers</a><ul><li><a href="/ends/numbers/one">5.4.1 &nbsp;One to One Hundred</a> <a href="/ends/numbers/one-e">(+e)</a></li><li><a href="/ends/numbers/first">5.4.2 &nbsp;First, Second, etc.</a></li><li><a href="/ends/numbers/use">5.4.3 &nbsp;Using Numbers</a></li><li><a href="/ends/numbers/big">5.4.4 &nbsp;Big Numbers</a><!-- !!! --></li></ul></li><li><a href="/ends/reading">5.5 &nbsp;Reading: The Purusha Sukta</a><!-- !!! --></li></ul></li><li><a href="/references">6 &nbsp;References</a><ul><li><a href="/references/lists">6.1 &nbsp;Lists</a><ul><li><a href="/references/lists/terms">6.1.1 &nbsp;Grammatical Terms</a></li><li><a href="/references/lists/prefixes">6.1.2 &nbsp;Prefixes</a></li><li><a href="/references/lists/primary">6.1.3 &nbsp;Primary Suffixes</a></li><li><a href="/references/lists/secondary">6.1.4 &nbsp;Secondary Suffixes</a></li><li><a href="/references/lists/vocabulary">6.1.5 &nbsp;Vocabulary</a><!-- !!! --></li></ul></li><li><a href="/references/devanagari">6.2 &nbsp;Devanagari</a><ul><li><a href="/references/devanagari/letters">6.2.1 &nbsp;Letters and Vowel Marks</a></li><li><a href="/references/devanagari/numbers">6.2.2 &nbsp;Numbers in Devanagari</a></li><li><a href="/references/devanagari/conjunct">6.2.3 &nbsp;Conjunct Consonants</a></li><li><a href="/references/devanagari/vedic">6.2.4 &nbsp;Basic Vedic Devanagari</a></li><li><a href="/references/devanagari/old">6.2.5 &nbsp;Old Devanagari</a><!-- !!! --></li></ul></li><li><a href="/references/nouns">6.3 &nbsp;Nouns</a><ul><li><a href="/references/nouns/vowels">6.3.1 &nbsp;Vowel Nouns</a></li><li><a href="/references/nouns/consonants">6.3.2 &nbsp;Consonant Nouns</a></li><li><a href="/references/nouns/pronouns">6.3.3 &nbsp;Pronouns</a><!-- !!! --></li></ul></li><li><a href="/references/verbs">6.4 &nbsp;Verbs</a><ul><li><a href="/references/verbs/simple">6.4.1 &nbsp;Simple Verb Classes</a></li><li><a href="/references/verbs/complex">6.4.2 &nbsp;Complex Verb Classes</a><!-- !!! --></li></ul></li><li><a href="/references/sandhi">6.5 &nbsp;Sandhi</a><ul><li><a href="/references/sandhi/vowel">6.5.1 &nbsp;Vowel Sandhi</a></li><li><a href="/references/sandhi/internal">6.5.2 &nbsp;Internal Consonant Sandhi</a></li><li><a href="/references/sandhi/external">6.5.3 &nbsp;External Consonant Sandhi</a></li><li><a href="/references/sandhi/visarga">6.5.4 &nbsp;Visarga Sandhi</a><!-- !!! --></li></ul></li></ul></li></ul>
-</div>
-
-		<div class="bar">
-			<p class="links">
-				<a href="/">← previous</a>
-				|
-				<a href="/i">next →</a>
-			</p>
-			<ul>
-				<li><a href="/">Index</a> &raquo;</li>
-				<li>Sanskrit Grammar</li>
-			</ul>
-		</div>		<div id="footer">
-			<p style="font-size: 1.3em;">Go to: <a href="/">Index</a> | <a href="/grammar">Grammar guide</a> | <a href="/resources">Resources</a> | <a href="/tools">Tools</a></p>
-			<p>Or: <a href="/about">About</a> | <a href="/contact">Contact</a> | <a href="/preferences">Preferences</a> | <a href="/use">Using the Site</a></p>
-			<br />
-			<p>All unsourced content is licensed under a <a href="http://creativecommons.org/licenses/nc-sa/1.0/">Creative Commons NonCommercial 
-		ShareAlike 1.0</a> license.</p>
-			<p>This page was last edited on December 30, 2020.</p>
-			<div style="padding: 1em;">
-				<img src="/static/img/ibiblio.png" alt="Hosted by ibiblio.org." />			</div>
-		</div>
-                <script>
-                  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-                  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-                  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-                  })(window,document,'script','https://www.google-analytics.com/analytic.s.js','ga');
-                
-                  ga('create', 'UA-78373984-11', 'auto');
-                  ga('send', 'pageview');
-                
-                </script>
-	</body>
-</html>
+{% for section in toc %}
+    {% set section_id = loop.index0 %}
+    <li><a href="{{ section.url }}">{{ section_id }} &nbsp;{{ section.title }}</a>
+    {% if section.children %}
+        <ul>
+        {% for chapter in section.children %}
+            {% set chapter_id = loop.index %}
+            <li><a href="{{ chapter.url }}">{{ section_id }}.{{ chapter_id }} &nbsp;{{ chapter.title }}</a>
+            {% if chapter.children %}
+                <ul>
+                {% for lesson in chapter.children %}
+                    {% set lesson_id = loop.index %}
+                    <li>
+                        <a href="{{ lesson.url }}">{{ section_id }}.{{ chapter_id}}.{{ lesson_id }} &nbsp;
+                            {{ lesson.title }}
+                        </a>
+                        {% if lesson.has_exercises %}
+                        <a href="{{ lesson.url + '-e' }}">(+e)</a>
+                        {% endif %}
+                {% endfor %}
+                </ul>
+            {% endif %}
+            </li>
+        {% endfor %}
+        </ul>
+    {% endif %}
+    </li>
+{% endfor %}
+</ul>
+{% endblock %}

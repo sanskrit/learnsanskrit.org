@@ -2,6 +2,8 @@ import os
 
 from flask import Blueprint, after_this_request, render_template, request
 
+from lso import data
+
 
 bp = Blueprint('site', __name__)
 
@@ -55,7 +57,8 @@ def use():
 
 @bp.route('/grammar/')
 def grammar():
-    return render_template('grammar/index.html')
+    toc = data.TABLE_OF_CONTENTS
+    return render_template('grammar/index.html', toc=toc)
 
 
 @bp.route('/ends/')
