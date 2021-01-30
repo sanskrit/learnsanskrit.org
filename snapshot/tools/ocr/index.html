@@ -3,11 +3,11 @@
 	<head>
 		<title>SanskritOCR | Learn Sanskrit Online</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-		<link rel="shortcut icon" href="/favicon.ico" />
-		<link rel="stylesheet" type="text/css" href="/css/style.css" />
-		<link rel="stylesheet" type="text/css" href="/css/print.css" media="print" />
+		<link rel="shortcut icon" href="/static/favicon.ico" />
+		<link rel="stylesheet" type="text/css" href="/static/css/style.css" />
+		<link rel="stylesheet" type="text/css" href="/static/css/print.css" media="print" />
 		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
-		<script type="text/javascript" src="/scripts/functions.js"></script>
+		<script type="text/javascript" src="/static/scripts/functions.js"></script>
 	</head>
 	<body>
 <div class="blocky bar">
@@ -39,7 +39,7 @@
 <h2>SanskritOCR</h2>
 <p>Only a few Devanagari OCR programs are available for public use. The most useful one is <dfn>SanskritOCR</dfn>. The software is difficult to find these days, but a few copies still survive on the web. You can download a copy of the software by clicking the link below:</p>
 
-<p class="notice"><a href="/file/SanskritOcrSetup.zip">Click here to download SanskritOCR.</a></p>
+<p class="notice"><a href="/static/file/SanskritOcrSetup.zip">Click here to download SanskritOCR.</a></p>
 
 <p>Once you've installed and run SanskritOCR, you might notice that half of the program's menus and options are in German, which can make the program difficult to use. This guide is here to help you navigate these German menus and use the program as intended.</p>
 
@@ -50,7 +50,7 @@
 <h3>Creating a new project</h3>
 <p>Before you can start processing a text, you need to create and save a new project file. You can do so by clicking either <code>File -&gt; New Document</code> or the white page button:</p>
 
-<div class="centered image" style="width: 111px"><img src="/img/ocr/new.png" alt="New document" /><p></p></div>
+<div class="centered image" style="width: 111px"><img src="/static/img/ocr/new.png" alt="New document" /><p></p></div>
 <p>Save the file in the <code>.sat (Stapel-Datei)</code> format. <strong>You must save before you start OCR.</strong></p>
 
 <p>Now that you have your project space set up, it's time to bring in some material to process. </p>
@@ -61,32 +61,32 @@
 
 <p>Your imported files will be listed in the <code>Tools</code> window. Use this window to view the different pages in your project.</p>
 
-<div class="centered image" style="width: 209px"><img src="/img/ocr/tools.png" alt="Tools window" /><p>If you do not see the <code>Tools</code> window anywhere, click <code>Ansicht -&gt; Werkzeugfenster</code> to display it.</p></div><h3>Preparing the image</h3>
+<div class="centered image" style="width: 209px"><img src="/static/img/ocr/tools.png" alt="Tools window" /><p>If you do not see the <code>Tools</code> window anywhere, click <code>Ansicht -&gt; Werkzeugfenster</code> to display it.</p></div><h3>Preparing the image</h3>
 
 <p>You can rotate the image by 90 degree increments:</p>
 
-<div class="centered image" style="width: 89px"><img src="/img/ocr/rotate.png" alt="Rotate" /><p></p></div>
+<div class="centered image" style="width: 89px"><img src="/static/img/ocr/rotate.png" alt="Rotate" /><p></p></div>
 <p>Do not worry if your image is slightly tilted. SanskritOCR will still be able to read it.</p>
 
 <p>Once your image has the right orientation, you must mark the Devanagari portions of the image so that SanskritOCR will be able to scan more effectively. <strong>You are required to do this</strong>; SanskritOCR will not let you proceed if you do not. To do so, click the markup tool:</p>
 
 <div class="centered image" style="width: 73px">
-<img src="/img/ocr/markup.png" alt="Markup tool" /></div>
+<img src="/static/img/ocr/markup.png" alt="Markup tool" /></div>
 
 <p>Using this tool, click and drag on the document to create boxes. If your image is at an uncomfortable size, you can use the zoom tools to adjust the image:</p>
 
 <div class="centered image" style="width: 318px">
-<img src="/img/ocr/zoom.png" alt="Zoom in and out" /></div>
+<img src="/static/img/ocr/zoom.png" alt="Zoom in and out" /></div>
 
 <p>If the page consists only of Devanagari, you can put everything in one large box:</p>
 
 <div class="centered image" style="width: 242px">
-<img src="/img/ocr/text1.png" alt="Everything in one box" /></div>
+<img src="/static/img/ocr/text1.png" alt="Everything in one box" /></div>
 
 <p>But otherwise, it's best to draw multiple boxes around the separate blocks of Devanagari:</p>
 
 <div class="centered image" style="width: 208px">
-<img src="/img/ocr/text2.jpg" alt="Multiple boxes" /></div>
+<img src="/static/img/ocr/text2.jpg" alt="Multiple boxes" /></div>
 
 <p>Your text output will be presented in the order in which the boxes are numbered. You can use the tools next to the markup tool to delete and renumber the boxes in the image. You can also drag the edges of a box to better fit the text.</p>
 
@@ -95,17 +95,17 @@
 <p>Before the scanning begins, you are required to <strong>clean</strong> the image. To do so, click the <code>Clean image</code> tool:</p>
 
 <div class="centered image" style="width: 71px">
-<img src="/img/ocr/clean.png" alt="Clean tool" /></div>
+<img src="/static/img/ocr/clean.png" alt="Clean tool" /></div>
 
 <p>SanskritOCR will automatically clean, realign, and pre-process your text:</p>
 
 <div class="centered image" style="width: 332px">
-<img src="/img/ocr/clean-result.png" alt="Cleaned text" /></div>
+<img src="/static/img/ocr/clean-result.png" alt="Cleaned text" /></div>
 
 <p>All that's left is the final scan, which you can run by clicking the <code>Start recognition</code> tool:</p>
 
 <div class="centered image" style="width: 92px">
-<img src="/img/ocr/recognition.png" alt="Recognition tool" /></div>
+<img src="/static/img/ocr/recognition.png" alt="Recognition tool" /></div>
 
 <p>Results will depend on the quality of your scan. In the best case, the text is represented perfectly. In the worst, odd or unlikely combinations will appear. If the scanned text is faded, patchy, blurry, or so on, complete gibberish could be the result as well.</p>
 
@@ -161,7 +161,7 @@ snigdhacchåyåtaru¹u vasatiº råmagiryå¸rame¹u // 1 //</p>
 		ShareAlike 1.0</a> license.</p>
 			<p>This page was last edited on December 30, 2020.</p>
 			<div style="padding: 1em;">
-				<img src="/img/ibiblio.png" alt="Hosted by ibiblio.org." />			</div>
+				<img src="/static/img/ibiblio.png" alt="Hosted by ibiblio.org." />			</div>
 		</div>
                 <script>
                   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
