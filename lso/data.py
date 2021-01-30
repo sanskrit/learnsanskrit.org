@@ -143,11 +143,11 @@ TABLE_OF_CONTENTS = [
             Page('/ends/verbs/recent', 'The Recent Past Tense', True),
             Page('/ends/verbs/benedictive', 'The Benedictive', True),
             Page('/ends/verbs/perfect', 'Perfect Participles', True),
-            Page('/ends/verbs/prefixes', 'Separable Verb Prefixes', True)
+            Page('/ends/verbs/prefixes', 'Separable Verb Prefixes')
         ]),
         Page('/ends/sounds', 'Sounds', children=[
-            Page('/ends/sounds/l', 'ḷ and ḻ', True),
-            Page('/ends/sounds/accent', 'Vedic Accent', True),
+            Page('/ends/sounds/l', 'ḷ and ḻ'),
+            Page('/ends/sounds/accent', 'Vedic Accent'),
         ]),
         Page('/ends/nouns', 'Nouns', children=[
             Page('/ends/nouns/aioau', '-ai, -o, and -au Nouns', True),

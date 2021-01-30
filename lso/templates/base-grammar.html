@@ -12,9 +12,7 @@
 	<body>
 		<div class="bar">
 			<p class="links">
-				<a href="/sci">← previous</a>
-				|
-				<a href="/scv">next →</a>
+                <a href="{{ prev }}">← previous</a> | <a href="{{ next }}">next →</a>
 			</p>
             {% block grammar_nav %}
             {% endblock %}
@@ -34,9 +32,7 @@
 
 		<div class="bar">
 			<p class="links">
-				<a href="/sci">← previous</a>
-				|
-				<a href="/scv">next →</a>
+            <a href="{{ prev }}">← previous</a> | <a href="{{ next }}">next →</a>
 			</p>
             {{ self.grammar_nav() }}
 		</div>

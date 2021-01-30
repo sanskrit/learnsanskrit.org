@@ -1,3 +1,4 @@
+import functools
 import os
 
 from flask import Blueprint, after_this_request, render_template, request
@@ -61,47 +62,66 @@ def grammar():
     return render_template('grammar/index.html', toc=toc)
 
 
-@bp.route('/ends/')
-@bp.route('/grammar/')
-@bp.route('/introduction/')
-@bp.route('/monier/')
-@bp.route('/nouns/')
-@bp.route('/panini/')
-@bp.route('/prosody/')
-@bp.route('/references/')
-@bp.route('/sounds/')
-@bp.route('/start/')
-@bp.route('/supp/')
-@bp.route('/texts/')
-@bp.route('/tools/')
-@bp.route('/verbs/')
-def grammar_index_pages():
-    folder = get_folder(request.url_rule)
-    path = os.path.join('grammar', folder, 'index.html')
-    return render_template(path)
+@functools.cache
+def get_inorder_urls():
+    toc = data.TABLE_OF_CONTENTS
+    urls = []
+    for section in toc:
+        urls.append(section.url)
+        for chapter in section.children:
+            urls.append(chapter.url)
+            for lesson in chapter.children:
+                urls.append(lesson.url)
+    return urls
 
 
-@bp.route('/ends/<path:filepath>')
-@bp.route('/grammar/<path:filepath>')
-@bp.route('/introduction/<path:filepath>')
-@bp.route('/monier/<path:filepath>')
-@bp.route('/nouns/<path:filepath>')
-@bp.route('/panini/<path:filepath>')
-@bp.route('/prosody/<path:filepath>')
-@bp.route('/references/<path:filepath>')
-@bp.route('/sounds/<path:filepath>')
-@bp.route('/start/<path:filepath>')
-@bp.route('/supp/<path:filepath>')
-@bp.route('/verbs/<path:filepath>')
-def all_pages(filepath):
-    folder = get_folder(request.url_rule)
-    path = os.path.join('grammar', folder, filepath, 'index.html')
-    return render_template(path)
+def get_prev_and_next(url: str):
+    urls = get_inorder_urls()
+
+    for i, cur in enumerate(urls):
+        if cur == url:
+            break
+    prev = urls[i-1] if i > 0 else None
+    next = urls[i+1] if i < len(urls) - 1 else None
+
+    return prev, next
 
 
-@bp.route('/tools/<name>/')
-def tools_legacy(name):
-    return render_template(f'tools/{name}.html')
+@bp.route('/<section>/')
+def grammar_section(section):
+    path = os.path.join('grammar', section, 'index.html')
+
+    url = '/'.join(('', section))
+    prev, next = get_prev_and_next(url)
+    return render_template(path, prev=prev, next=next)
+
+
+@bp.route('/<section>/<chapter>/')
+def grammar_chapter(section, chapter):
+    path = os.path.join('grammar', section, chapter, 'index.html')
+
+    url = '/'.join(('', section, chapter))
+    prev, next = get_prev_and_next(url)
+    return render_template(path, prev=prev, next=next)
+
+
+@bp.route('/<section>/<chapter>/<lesson>/')
+def grammar_lesson(section, chapter, lesson):
+    path = os.path.join('grammar', section, chapter, lesson, 'index.html')
+
+    url = '/'.join(('', section, chapter, lesson))
+    prev, next = get_prev_and_next(url)
+    return render_template(path, prev=prev, next=next)
+
+
+@bp.route('/tools/sanscript/')
+def tools_sanscript():
+    return render_template(f'tools/sanscript.html')
+
+
+@bp.route('/tools/ocr/')
+def tools_ocr():
+    return render_template(f'tools/ocr.html')
 
 
 @bp.route('/texts/ashtadhyayi/book1-1/')
