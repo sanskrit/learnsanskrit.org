@@ -9,7 +9,7 @@ import os
 
 from flask_frozen import Freezer
 
-from application import app
+from lso import app
 
 
 PROJECT_DIR = os.path.abspath(os.path.dirname(__file__))
@@ -25,22 +25,15 @@ app.config['FREEZER_IGNORE_404_NOT_FOUND'] = False
 
 @freezer.register_generator
 def all_pages():
-    for path in glob.glob('templates/grammar/**/*', recursive=True):
+    for path in glob.glob('lso/templates/grammar/**/*', recursive=True):
         if not os.path.isdir(path):
             if path.endswith('/index.html'):
                 path = path[:-len('index.html')]
-            path = path[len('/templates/grammar'):]
+            path = path[len('/lso/templates/grammar'):]
             yield f'/{path}'
 
-
-@freezer.register_generator
-def legacy_pages():
-    for path in glob.glob('snapshot/**/*', recursive=True):
-        if not os.path.isdir(path):
-            if path.endswith('/index.html'):
-                path = path[:-len('index.html')]
-            path = path[len('/snapshot'):]
-            yield f'/{path}'
+    yield '/tools/ocr/'
+    yield '/tools/sanscript/'
 
 
 if __name__ == '__main__':
