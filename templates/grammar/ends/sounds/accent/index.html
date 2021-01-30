@@ -1,0 +1,41 @@
+{% extends 'base-grammar.html' %}
+
+{% block title %}Vedic Accent{% endblock %}
+
+{% block grammar_nav %}
+<ul>
+<li><a href="/">Index</a> »</li>
+<li><a href="/grammar">Sanskrit Grammar</a> »</li> <li><a href="/ends">Odds and Ends</a> »</li>
+<li><a href="/ends/sounds">Sounds</a> »</li>
+<li>Vedic Accent</li>
+</ul>
+{% endblock %}
+
+{% block content %}
+
+<h1>Vedic Accent</h1>
+<p class="note box">This lesson discusses some features of Vedic Sanskrit. You can skip this lesson if you like.</p>
+<p>Vedic Sanskrit has a peculiar property called <dfn>pitch accent</dfn>. In languages that have pitch accent, certain syllables are at a higher musical tone than others. Because of pitch accent, some of the ambiguities that exist in Classical Sanskrit disappear in Vedic Sanskrit. Thus a word like <span lang="sa">rājaputra</span>, which could be either a <span lang="sa">tatpuruṣa</span> or a <span lang="sa">bahuvrīhi</span> and must be interpreted by context alone, is perfectly clear in Vedic Sanskrit.</p>
+<p>Classical Sanskrit texts do not have accent marked. However, accent is technically a part of the language; the grammarian Panini took great pains to define the accent rules that apply to Sanskrit.</p>
+<p>Sanskrit has three distinct accents, although some others may appear depending on the context or the style of the work. You can see all three of these accents below.</p>
+<h2><span lang="sa">udātta</span></h2>
+<p>A high tone is called <dfn lang="sa">udātta</dfn>. Thus Panini writes: <q lang="sa">uccair udāttaḥ</q>. In Devanagari, the accent is not marked. In IAST, the letter uses what is called the <dfn>acute</dfn> accent.</p>
+<dl class="blue letters">
+<dt class="title">देवनागरी</dt><dd class="title">IAST</dd>
+<dt>क</dt><dd lang="sa-iast">ká</dd>
+</dl>
+<h2><span lang="sa">anudātta</span></h2>
+<p>A low tone is called <dfn lang="sa">anudātta</dfn>, or "not <span lang="sa">udātta</span>." Thus Panini writes: <q lang="sa">nīcair anudāttaḥ</q>. In Devanagari, the accent is marked with a horizontal line below the letter. In IAST, the letter is not marked.</p>
+<dl class="blue letters">
+<dt class="title">देवनागरी</dt><dd class="title">IAST</dd>
+<dt>क॒</dt><dd lang="sa-iast">ka</dd>
+</dl>
+<h2><span lang="sa">svarita</span></h2>
+<p>A mix of <span lang="sa">udātta</span> and <span lang="sa">anudātta</span> is called <dfn lang="sa">svarita</dfn>. Thus Panini writes: <q lang="sa">samāhāraḥ svaritaḥ</q>. In Devanagari, the accent is marked with a vertical line above the letter. In IAST, the letter uses what is called the <dfn>grave</dfn> accent.</p>
+<dl class="blue letters">
+<dt class="title">देवनागरी</dt><dd class="title">IAST</dd>
+<dt>क॑</dt><dd lang="sa-iast">kà</dd>
+</dl>
+<p>But the <span lang="sa">svarita</span> is not an arbitrary mix of these two accents. The first part is <span lang="sa">udātta</span> and lasts for half the length of a short vowel. Thus Panini writes: <q lang="sa">tasyādita udāttam ardhahrasvam</q>. The rest is <span lang="sa">anudātta</span>.</p>
+{% endblock %}
+

@@ -53,11 +53,14 @@ def use():
     return render_template('use.html')
 
 
-@app.route('/ends/')
 @app.route('/grammar/')
+def grammar():
+    return render_template('grammar/index.html')
+
+
+@app.route('/ends/')
 @app.route('/introduction/')
 @app.route('/monier/')
-@app.route('/nouns/')
 @app.route('/nouns/')
 @app.route('/panini/')
 @app.route('/prosody/')
@@ -68,11 +71,10 @@ def use():
 @app.route('/texts/')
 @app.route('/tools/')
 @app.route('/verbs/')
-def indices():
+def grammar_index_pages():
     folder = get_folder(request.url_rule)
-    abspath = os.path.join('snapshot', folder, 'index.html')
-    with open(abspath) as f:
-        return f.read()
+    path = os.path.join('grammar', folder, 'index.html')
+    return render_template(path)
 
 
 @app.route('/ends/<path:filepath>')
@@ -86,16 +88,19 @@ def indices():
 @app.route('/sounds/<path:filepath>')
 @app.route('/start/<path:filepath>')
 @app.route('/supp/<path:filepath>')
-@app.route('/texts/<path:filepath>')
-@app.route('/tools/<path:filepath>')
 @app.route('/verbs/<path:filepath>')
 def all_pages(filepath):
     folder = get_folder(request.url_rule)
-    abspath = os.path.join('snapshot', folder, filepath)
-    if os.path.isdir(abspath):
-        abspath = os.path.join(abspath, 'index.html')
+    path = os.path.join('grammar', folder, filepath, 'index.html')
+    return render_template(path)
 
-    with open(abspath) as f:
+
+@app.route('/texts/<path:filepath>')
+@app.route('/tools/<path:filepath>')
+def legacy_pages(filepath):
+    folder = get_folder(request.url_rule)
+    path = os.path.join('snapshot', folder, filepath, 'index.html')
+    with open(path) as f:
         return f.read()
 
 

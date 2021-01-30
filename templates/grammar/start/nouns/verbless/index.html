@@ -1,0 +1,123 @@
+{% extends 'base-grammar.html' %}
+
+{% block title %}Verbless Sentences{% endblock %}
+
+{% block grammar_nav %}
+<ul>
+<li><a href="/">Index</a> »</li>
+<li><a href="/grammar">Sanskrit Grammar</a> »</li> <li><a href="/start">Starting Out</a> »</li>
+<li><a href="/start/nouns">Noun Basics</a> »</li>
+<li>Verbless Sentences</li>
+</ul>
+{% endblock %}
+
+{% block content %}
+
+<h1>Verbless sentences</h1>
+<p class="alternatives">Also known as: nominal sentences, <span lang="sa">???</span>, ???</p>
+<h2>Introduction</h2>
+<p>In Sanskrit, it is possible to make sentences that don't have any verbs at all. Let's call these sentences <dfn>verbless sentences</dfn>. Verbless sentences directly equate one noun with another. That is, they take two nouns A and B and say "A is B."</p>
+<ul class="examples">
+<li><p class="dev">नरः वीरः</p>
+<p lang="sa">naraḥ vīraḥ</p>
+<p>The man is a hero.</p>
+</li>
+<li><p class="dev">शिष्याः पुत्राः</p>
+<p lang="sa">śiṣyāḥ putrāḥ</p>
+<p>The students are sons.</p>
+</li>
+</ul>
+<h2>Formation</h2>
+<p>Each noun is in case 1. A verb that means "be" or "exist" is optionally added, but it is not usually used.</p>
+<ul class="examples">
+<li><p class="dev">नरः वीरः (भवति)</p>
+<p lang="sa">naraḥ vīraḥ (bhavati)</p>
+<p>The man is a hero.</p>
+</li>
+<li><p class="dev">शिष्याः पुत्राः (भवन्ति)</p>
+<p lang="sa">śiṣyāḥ putrāḥ (bhavanti)</p>
+<p>The students are sons.</p>
+</li>
+</ul>
+<h2><span lang="sa">visarga</span> sandhi</h2>
+<p>In the previous lesson, I mentioned that most sandhi rules are quite simple. That's true; they really are quite simple! However, there <em>are</em> some rules that seem to make little sense. These rules include <dfn><span lang="sa">visarga</span> sandhi</dfn>, which we'll start studying now.</p>
+<p>To the beginner, <span lang="sa">visarga</span> sandhi seems to have dozens of separate and unrelated rules. This misapprehension makes the entire set of <span lang="sa">visarga</span> changes seem too complex to understand. (It certainly doesn't help that the vowel in frontt of the <span lang="sa">visarga</span> can change the way the rules are applied.) But apart from a single odd change, the rules of <span lang="sa">visarga</span> sandhi are almost as easy as the vowel sandhi rules we studied in the previous lesson.</p>
+<p>Before we start studying these rules, consider the two principles below. These two principles account for all of the changes we'll study here:</p>
+<div class="rule box">
+<ul>
+<li>The <span lang="sa">visarga</span> cannot be between two voiced sounds.</li>
+<li>The <span lang="sa">visarga</span> will match the consonant that follows it as much as possible.</li>
+</ul>
+</div>
+<p>Below, you will find the rules of <span lang="sa">-aḥ</span> sandhi. After we study these rules, we'll take a look at the rules of <span lang="sa">-āḥ</span> sandhi, which are only slightly different.</p>
+<h3>Loss of <span lang="sa">ḥ</span></h3>
+<p class="rule box">In front of any vowel except <span lang="sa">a</span>, the <span lang="sa">-ḥ</span> is dropped. No other change occurs, and the two remaining vowels do not combine.</p>
+<ul class="examples">
+<li><p class="dev">नरः इच्छति → नर इच्छति</p>
+<p lang="sa">naraḥ icchati → nara icchati</p>
+<p>The man wants.</p></li>
+</ul>
+<p>The <span lang="sa">visarga</span>, which is an unvoiced puff of air, comes between two voiced vowels. The tiny <span lang="sa">visarga</span> is a less powerful sound, so it's dropped.</p>
+<p>Notice that the syllable <span lang="sa">ic</span> starts with a vowel. This is one of the rare circumstances in which a syllable can start with a vowel. More importantly, note the exception for <span lang="sa">a</span>. Why is this here? For the answer, we'll have to look to the next rule.</p>
+<h3>Change to <span lang="sa">o</span></h3>
+<p>This is the one and only odd part of visarga sandhi. If you master this, you'll have no trouble with the rest of the rules.</p>
+<p class="rule box">In front of a <a href="/sounds/review">voiced consonant</a>, <span lang="sa">-aḥ</span> becomes <span lang="sa">o</span>. The same change occurs in front of the vowel <span lang="sa">a</span>, except that the <span lang="sa">a</span> disappears.</p>
+<p>Before we get to the examples, let's get to the rule itself. Why does the <span lang="sa">visarga</span>, which is an unvoiced "h" sound, become the voiced vowel <span lang="sa">o</span>? I don't know, and I don't think anybody knows for sure. Take a moment to memorize it, take a deep breath, and keep reading.</p>
+<p>The change to <span lang="sa">o</span> is odd enough; but why does <span lang="sa">a</span> disappear, and why does <span lang="sa">a</span> behave differently from every other vowel? The answer is subtle. <span lang="sa">a</span> is an extremely simple vowel that takes almost no effort to produce. Remember, <span lang="sa">a</span> is so fundamental that it is often considered to be the "basis of speech." So, when the complicated <span lang="sa">visarga</span> appears, the puny <span lang="sa">a</span> is squished away to nothing! But since <span lang="sa">a</span> is still a voiced sound, the <span lang="sa">visarga</span> reacts as if the consonant that follows the <span lang="sa">a</span> is voiced.</p>
+<ul class="examples">
+<li><p class="dev">नरः गच्छति → नरो गच्छति</p>
+<p lang="sa">naraḥ gacchati → naro gacchati</p>
+<p>The man goes.</p></li>
+<li><p class="dev">नरः हसति → नरो हसति</p>
+<p lang="sa">naraḥ hasati → naro hasati</p>
+<p>The man smiles.</p></li>
+<li><p class="dev">नरः अश्वः → नरो ऽश्वः</p>
+<p lang="sa">naraḥ aśvaḥ → naro 'śvaḥ</p>
+<p>The man is a horse.</p>
+<p class="aside">This is a nonsense sentence, but it illustrates the sandhi rule. Note that <span lang="sa">ś</span> is treated like a voiced sound because of <span lang="sa">a</span>.</p></li>
+</ul>
+<p>In the third example, you can see a new Devanagari symbol: <dfn class="dev">ऽ</dfn>, which is represented as <dfn>'</dfn> in IAST. This symbol is called the <dfn lang="sa">avagraha</dfn> ("separator"), and it is used to show that the letter <span lang="sa">a</span> is lost due to sandhi. The actual use of the <span lang="sa">avagraha</span> varies from text to text, but this particular sandhi rule almost always uses it.</p>
+<h3>Change to an "s"-sound</h3>
+<p>Now we're left with all of the unvoiced consonants. How does the <span lang="sa">visarga</span> react when it's in front of an unvoiced sound? The principle here is very simple: the <span lang="sa">visarga</span> will blend as much as possible with the sound that follows it. The <span lang="sa">visarga</span> remains unvoiced, and it keeps its "hissing" quality. For example, if the <span lang="sa">visarga</span> is followed by a sound like <span lang="sa">t</span>, it will become the closest "hissing" sound we have: the letter <span lang="sa">s</span>. We can sum up this change as follows:</p>
+<p class="rule box">When <span lang="sa">-aḥ</span> is in front of an unvoiced consonant, the <span lang="sa">visarga</span> will change to the "s"-sound that matches it the most, if that "s"-sound exists. This "matching" is based on the point of pronunciation. In most texts, the change is not written if the unvoiced consonant is itself an "s"-sound.</p>
+<ul class="examples">
+<li><p class="dev">नरः चरति → नरश् चरति</p>
+<p lang="sa">naraḥ carati → naraś carati</p>
+<p>The man walks.</p></li>
+<li><p class="dev">नरः तिष्ठति → नरस् तिष्ठति</p>
+<p lang="sa">naraḥ tiṣṭhati → naras tiṣṭhati</p>
+<p>The man stands.</p></li>
+<li><p class="dev">नरः पृच्छति → नरः पृच्छति</p>
+<p lang="sa">naraḥ pṛcchati → naraḥ pṛcchati</p>
+<p>The man asks.</p></li>
+<li><p class="dev">नरः स्मरति → नरः स्मरति</p>
+<p lang="sa">naraḥ smarati → naraḥ smarati</p>
+<p>The man remembers.</p></li>
+</ul>
+<p class="fact box">In Vedic Sanskrit, "s"-sounds actually do exist for <span lang="sa">kavarga</span> and <span lang="sa">pavarga</span>. The <span lang="sa">kavarga</span> sound, called <span lang="sa">jihvāmūlīya</span>, is a more violent <span lang="sa">visarga</span>, and it's similar to some of the "ch" sounds in German. The <span lang="sa">pavarga</span> sound, called <span lang="sa">upadhmānīya</span>, is similar to the English "f." Some people use these sounds when pronouncing the Classical Sanskrit that we're studying here.</p>
+<h3>Summary</h3>
+<p>You can see the changes below. The dash (<dfn>—</dfn>) means that the original letter remains. The apostrophe (<dfn>'</dfn>), which was mentioned above, is the IAST version of the <span lang="sa">avagraha</span>, and it shows that the vowel <span lang="sa">a</span> is removed due to sandhi.</p>
+<dl class="blue">
+<dt class="title">Second Letter</dt><dd class="title">Combination</dd>
+<dt lang="sa">a</dt><dd lang="sa">o '</dd>
+<dt>other vowel</dt><dd lang="sa">a —</dd>
+<dt>voiced consonant</dt><dd lang="sa">o —</dd>
+<dt lang="sa">c, ch</dt><dd lang="sa">aś —</dd>
+<dt lang="sa">ṭ, ṭh</dt><dd lang="sa">aṣ —</dd>
+<dt lang="sa">t, th</dt><dd lang="sa">as —</dd>
+<dt>other consonant</dt><dd lang="sa">aḥ —</dd>
+</dl>
+<h3><span lang="sa">-āḥ</span> sandhi</h3>
+<p>The rules of <span lang="sa">-āḥ</span> sandhi are simpler than the rules above:</p>
+<dl class="blue">
+<dt class="title">Second Letter</dt><dd class="title">Combination</dd>
+<dt>any vowel</dt><dd lang="sa">ā —</dd>
+<dt>voiced consonant</dt><dd lang="sa">ā —</dd>
+<dt lang="sa">c, ch</dt><dd lang="sa">āś —</dd>
+<dt lang="sa">ṭ, ṭh</dt><dd lang="sa">āṣ —</dd>
+<dt lang="sa">t, th</dt><dd lang="sa">ās —</dd>
+<dt>other consonant</dt><dd lang="sa">āḥ —</dd>
+</dl>
+<p>These rules are similar to the ones above, except that <span lang="sa">a</span> is replaced by <span lang="sa">ā</span>. Note that the first two rules — "<span lang="sa">a</span>" and "other vowel" — have both combined into a more general "any vowel" rule. This is because <span lang="sa">ā</span>, which is a more powerful vowel sound than <span lang="sa">a</span>, is strong enough to resist being changed to <span lang="sa">o</span>.</p>
+{% endblock %}
+

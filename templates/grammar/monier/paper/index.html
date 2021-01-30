@@ -1,0 +1,70 @@
+{% extends 'base-grammar.html' %}
+
+{% block title %}The MW Dictionary in Print{% endblock %}
+
+{% block grammar_nav %}
+<ul>
+<li><a href="/">Index</a> »</li>
+<li><a href="/grammar">Sanskrit Grammar</a> »</li> <li><a href="/monier">The Monier-Williams Sanskrit-English Dictionary</a> »</li>
+<li>The MW Dictionary in Print</li>
+</ul>
+{% endblock %}
+
+{% block content %}
+
+<h1>The MW Dictionary in Print</h1>
+<p>This page is a summary of the structure of the M-W dictionary and also contains some information on how to use it.</p>
+<p class="note box">The material here is largely drawn from lesson 12 of Charles Wikner's <a href="http://www.danam.co.uk/Sanskrit/Sanskrit%20Introductory/Sanskrit%20Introductory.html">A Practical Sanskrit Introductory</a>, and it some cases it may be copied word-for-word. I am indebted to that work for this presentation.</p>
+<h2>Introduction</h2>
+<p>In the M-W dictionary, words are listed in their most basic form: nouns are given by their noun stem, verbs are given by their verb root, and uninflected words are left as they are.</p>
+<h3>Accent</h3>
+<p>The M-W dictionary is meant to include the older Sanskrit used in the Vedas, and for that reason its words are marked with a feature that is mostly found only in Vedic Sanskrit: <dfn>accent</dfn>. In Vedic Sanskrit, some words are pronounced at a higher pitch than others, and these differences in pitch can mark differences between different words. Since accent does not appear in the Sanskrit we have studied throughout the guide, we can ignore it for now.</p>
+<h3>Transliteration</h3>
+<p>The M-W dictionary uses a custom transliteration scheme that few other dictionaries use. For the most part, this scheme follows the IAST convention. Here are the major differences:</p>
+<dl class="blue" lang="sa">
+<dt class="title" lang="en">IAST</dt><dd class="title" lang="en">M
+	W</dd>
+<dt>ṛ</dt><dd>ṛi</dd>
+<dt>ṝ</dt><dd>ṛī</dd>
+<dt>ḷ</dt><dd>ḷi</dd>
+<dt>ḹ</dt><dd>ḷī</dd>
+<dt>ḻ</dt><dd>ḹ</dd>
+<dt>ṣ</dt><dd>sh</dd>
+<dt>ṃ</dt><dd>ṃ <span lang="en">or</span> ṉ</dd>
+</dl>
+<p>As of <a href="/start">Starting Out</a>, we have not studied any of the "l" letters yet. These letters are all extremely rare, and you can ignore them for now. Note, however, that the anusvara appears in one of two forms. The second form is used when the anusvara sound doesn't come from an original letter <span lang="sa">m</span>:</p>
+<ul class="examples">
+<li lang="sa">siṃha → siṉha</li>
+<li lang="sa">saṃskṛta → saṃskṛta</li>
+</ul>
+<p>You can ignore this behavior and treat both letters the same way.</p>
+<h3>Organizational Scheme</h3>
+<p>Unlike other dictionaries, <strong>the M-W dictionary is not a simple list of words.</strong> Moreover, the words within the dictionary are not in alphabetical order. (For example, the word <span lang="sa">bilvala</span> appears before the word <span lang="sa">bilāla</span>.) Instead, the dictionary is a <strong>list of lists</strong>. The entire dictionary is one long list, which we could call the <dfn>base list</dfn>, and the words inside this list can each start their own lists, which we could call <dfn>derivation lists</dfn>. All words appear in Monier-Williams's special transliteration scheme, and all of the words in the base list also appear in Devanagari.</p>
+<div class="floating image" style="width: 284px"><img alt="Monier-Williams Sanskrit-English Dictionary, p. 732 column 1 excerpt. The excerpt starts at 'birAla' and stops at 'bilma'." src="/static/img/monier-p732.png"/><p>Page 732, column 1 excerpt. If you prefer, you can <a href="http://www.sanskrit-lexicon.uni-koeln.de/cgi-bin/monier/serveimg.pl?file=/scans/MWScan/MWScanjpg/mw0732-birAla.jpg">load the whole page</a>, but be warned that the image is more than 500 kilobytes in size.</p></div>
+<p>Within a single list, words are arranged alphabetically. Across two lists, however, words may not follow their usual order. In the example below, <span lang="sa">bilvala</span> is inside a derivation list and <span lang="sa">bilāla</span> is inside the base list. The start of the derivation list, however, is <span lang="sa">bila</span>, which comes before <span lang="sa">bilāla</span> in the alphabet. Here is a copy of the list in the first column of page 732:</p>
+<ul lang="sa">
+<li><span class="dev">बिराल</span> birāla</li>
+<li><span class="dev">बिल्</span> bil</li>
+<ul>
+<li>bila</li>
+<li>bilasa</li>
+<li>bilma</li>
+<li>bilmin</li>
+<li>billa</li>
+<li>bilva</li>
+<li>bilvaka</li>
+<li>bilvak</li>
+<li>bilvala</li>
+</ul>
+<li><span class="dev">बिलाल</span> bilāla</li>
+<li><span class="dev">बिलिन्थ</span> bilintha</li>
+<li><span class="dev">बिलिश</span> biliśa</li>
+<li><span class="dev">बिल्हण</span> bilhaṇa</li>
+</ul>
+<p>Note that these words are sorted alphabetically <strong>within their own lists</strong>. If we try to compare words in two separate lists, then we might find that the alphabetical order doesn't hold.</p>
+<p>Now we are ready to look at the actual dictionary. Look to the right: you will find a small scanned piece of page 732 of the Monier-Williams dictionary. As you can see, the words in the dictionary are arranged into separate <dfn>levels</dfn>. These levels show the number of steps that separates a word from its origin. For example, <span lang="sa">bil</span> is in the first level; this means that it does not derive from any other Sanskrit word. <span lang="sa">bila</span> is in the third level, and <span lang="sa">bilasvarga</span> is in the third level. Generally, you must know a word's origin before you can look it up.</p>
+<h2>Conclusions</h2>
+<p>With this knowledge in hand, you are ready to start using the M-W dictionary to look up Sanskrit words. This process can be immensely rewarding; by looking up a word and looking at the related words placed nearby, you can expand your vocabulary and better understand the meaning of the word's root. But if you're just interested in checking one word, or if you want to search the dictionary for certain types of words, the dictionary is less useful.</p>
+<p>Fortunately, the M-W dictionary has been "digitized" into a searchable online form. If you have a computer and steady internet access, you can use the dictionary's online version and find words much faster. For details, turn to the next lesson in the guide.</p>
+{% endblock %}
+

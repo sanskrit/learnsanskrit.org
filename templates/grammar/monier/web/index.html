@@ -1,0 +1,22 @@
+{% extends 'base-grammar.html' %}
+
+{% block title %}The MW Dictionary on the Web{% endblock %}
+
+{% block grammar_nav %}
+<ul>
+<li><a href="/">Index</a> »</li>
+<li><a href="/grammar">Sanskrit Grammar</a> »</li> <li><a href="/monier">The Monier-Williams Sanskrit-English Dictionary</a> »</li>
+<li>The MW Dictionary on the Web</li>
+</ul>
+{% endblock %}
+
+{% block content %}
+
+<h1>The MW Dictionary on the Web</h1>
+<p>The <dfn>University of Cologne</dfn> has created a digital version of the Monier-Williams dictionary, which can be found <a href="http://www.sanskrit-lexicon.uni-koeln.de/monier">here</a>. For help with formatting the words you want to search for, you can visit their helpful <a href="http://www.sanskrit-lexicon.uni-koeln.de/monier/help.html">help page</a>. The help page, however, is not exhaustive; for that reason, this page is here to point out two neat features of the dictionary.</p>
+<h2>Viewing the original page</h2>
+<p>To view the original dictionary page, click the link next to the word. This function is useful if you want to see words close to the one you have looked up. Since the digital dictionary is not quite perfect, this feature is useful; you can search for a word that is alphabetically close to the one you are looking for and manually search for it on just a few pages.</p>
+<div class="centered image" style="width: 284px"><img alt="Click the link next to the word." src="/static/img/monier-select-page.png"/><p>Click the link next to the word to load a copy of the dictionary page. Dictionary meanings are not displayed in this image, but they <em>are</em> displayed normally.</p></div><h2>Searching for partial words</h2>
+<p>You can search for pieces of words by using the <a href="http://www.sanskrit-lexicon.uni-koeln.de/mwquery/">advanced search</a> option available in the upper right. You can also search for English meanings.</p>
+{% endblock %}
+

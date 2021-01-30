@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+	<head>
+        <title>{% block title %} {% endblock %} | Learn Sanskrit Online</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<link rel="shortcut icon" href="/static/favicon.ico" />
+		<link rel="stylesheet" type="text/css" href="/static/css/style.css" />
+		<link rel="stylesheet" type="text/css" href="/static/css/print.css" media="print" />
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+		<script type="text/javascript" src="/static/scripts/functions.js"></script>
+	</head>
+	<body>
+		<div class="bar">
+			<p class="links">
+				<a href="/sci">← previous</a>
+				|
+				<a href="/scv">next →</a>
+			</p>
+            {% block grammar_nav %}
+            {% endblock %}
+		</div>
+
+<div id="content">
+{% block content %}
+{% endblock %}
+</div>
+
+		<div class="bar">
+			<p class="links">
+				<a href="/sci">← previous</a>
+				|
+				<a href="/scv">next →</a>
+			</p>
+            {{ self.grammar_nav() }}
+		</div>
+        {% include 'include/footer.html' %}
+	</body>
+</html>
