@@ -1,35 +1,8 @@
-<!doctype html>
-<html lang="en">
-	<head>
-		<title>Learn Sanskrit Online</title>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-		<link rel="shortcut icon" href="/static/favicon.ico" />
-		<link rel="stylesheet" type="text/css" href="/static/css/style.css" />
-		<link rel="stylesheet" type="text/css" href="/static/css/print.css" media="print" />
-		<meta name="description" content="A comprehensive guide to the Sanskrit language, with over one hundred lessons and over one thousand exercises." />
-		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
-		<script type="text/javascript" src="/static/scripts/functions.js"></script>
-	</head>
-	<body>
-<div class="blocky bar">
-	<ul>
-		<li><a href="/">Index</a></li>
-		<li><a href="/grammar">Grammar guide</a></li>
-		<li><a href="/resources">Resources</a></li>
-		<li><a href="/tools">Tools</a></li>
-		<li><a href="/contact" class="special">Contact</a></li>
-		<li><a href="/preferences" class="special">Preferences</a></li>
-		<!-- <li><a href="http://nakula.learnsanskrit.org">→ Nakula</a></li> -->
-		<form action="http://www.google.com/cse" id="cse">
-			<input type="hidden" name="cx" value="013021609329506570655:hoi0363vwwc" />
-			<input type="hidden" name="ie" value="UTF-8" />
-			<input type="text" name="q" />
-			<input type="submit" name="sa" value="Search" />
-		</form>
-	</ul>
-</div>
+{% extends 'base-main-nav.html' %}
 
-<div id="content">
+{% block full_title %}Learn Sanskrit Online{% endblock %}
+
+{% block content %}
 <h1><i>learnsanskrit.org</i></h1>
 
 <p class="mangala"><dfn>learnsanskrit.org</dfn> aims to explore how the unique qualities of the Internet can facilitate the task of learning and teaching Sanskrit. To some extent this site is iconoclastic, for although it owes much to both traditional Sanskrit grammar and classical Western philology, it does away with both whenever they make the task of learning Sanskrit needlessly complicated.</p>
@@ -43,11 +16,4 @@
 <hr style="width: 80%; margin: 1em auto; border: 0; background: #cba; height: 1px;">
 
 <p>You can read more about the site itself on the <a href="about">about page</a>. To see what sort of software can enhance your use of the site, consult <a href="use">this page</a>.</p>
-
-<!--
-<p>A sister project of the site is <a href="http://nakula.learnsanskrit.org">Nakula</a>, an experimental Sanskrit <strong>reading environment</strong> that takes inspiration from the Perseus Digital Library (for Greek). Nakula aims to improve on the already excellent Peresus by offering a tighter integration of primary texts, dictionary entries, translations, and commentaries.</p> -->
-</div>
-
-    {% include 'include/footer.html' %}
-	</body>
-</html>
+{% endblock %}
