@@ -31,19 +31,7 @@
 <p>Now, let's study the formation of the distant future tense.</p>
 <h2>Formation</h2>
 <p>The examples above might have reminded you of the <span lang="sa">-tṛ</span> noun <span lang="sa">gantṛ</span>. Indeed, that's where the distant future tense comes from: it's a combination of a <span lang="sa">-tṛ</span> noun and the verb <span lang="sa">as</span>. Even though this tense is based on a noun, you should consider it to be a real verb form.</p>
-<div style="border:1px solid #990000;padding-left:20px;margin:0 0 10px 0;">
-<h4>A PHP Error was encountered</h4>
-<p>Severity: Warning</p>
-<p>Message:  include(/public/vhost/l/learnsanskrit/html/include/c-bhu-dfut-p.html): failed to open stream: No such file or directory</p>
-<p>Filename: helpers/general_helper.php</p>
-<p>Line Number: 6</p>
-</div><div style="border:1px solid #990000;padding-left:20px;margin:0 0 10px 0;">
-<h4>A PHP Error was encountered</h4>
-<p>Severity: Warning</p>
-<p>Message:  include(): Failed opening '/public/vhost/l/learnsanskrit/html/include/c-bhu-dfut-p.html' for inclusion (include_path='.:/usr/share/php')</p>
-<p>Filename: helpers/general_helper.php</p>
-<p>Line Number: 6</p>
-</div>
+{% include 'include/charts/c-bhu-dfut-p.html' %}
 <p>In the first and second person, we use the case 1 singular of the masculine <span lang="sa">-tṛ</span> noun. This inflected noun is followed by <span lang="sa">as</span>, which is inflected to show the number and person of the verb. The third person, however, is different. Instead of using <span lang="sa">as</span>, we use the case 1 endings for the <span lang="sa">-tṛ</span> noun, with no extra verb. As you can imagine, this can create some ambiguity:</p>
 <ul class="sa examples">
 <li><p class="dev">स हन्ता</p>
@@ -54,20 +42,12 @@
 <p>He will kill.</p></li>
 </ul>
 <p>You'll have to rely on context to understand whether the word is a noun or a verb.</p>
+
+{#
 <h2>The distant future tense in <span lang="sa">ātmanepada</span></h2>
 <p>The distant future tense is quite rare, and most of its forms are in <span lang="sa">parasmaipada</span>. But there <strong>are</strong> distinct forms for <span lang="sa">ātmanepada</span>, which you can see below:</p>
-<div style="border:1px solid #990000;padding-left:20px;margin:0 0 10px 0;">
-<h4>A PHP Error was encountered</h4>
-<p>Severity: Warning</p>
-<p>Message:  include(/public/vhost/l/learnsanskrit/html/include/c-bhu-dfut-a.html): failed to open stream: No such file or directory</p>
-<p>Filename: helpers/general_helper.php</p>
-<p>Line Number: 6</p>
-</div><div style="border:1px solid #990000;padding-left:20px;margin:0 0 10px 0;">
-<h4>A PHP Error was encountered</h4>
-<p>Severity: Warning</p>
-<p>Message:  include(): Failed opening '/public/vhost/l/learnsanskrit/html/include/c-bhu-dfut-a.html' for inclusion (include_path='.:/usr/share/php')</p>
-<p>Filename: helpers/general_helper.php</p>
-<p>Line Number: 6</p>
-</div>
+{% include 'include/charts/c-bhu-dfut-a.html' %}
+#}
+
 {% endblock %}
 
