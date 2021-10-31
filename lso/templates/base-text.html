@@ -1,0 +1,28 @@
+{# For simple text-heavy pages. #}
+{% extends 'base.html' %}
+
+{% block full_title %}
+{% block title %}{% endblock %} | Learn Sanskrit Online
+{% endblock %}
+
+{% block body %}
+
+{% block header %}
+{% include 'include/header.html' %}
+{% endblock %}
+
+<main>
+{% block main %}
+{# width 100% to counteract flexbox column direction -- otherwise,
+   small articles will be centered horizontally.
+#}
+<div style="width: 100%">
+  <article class="mt5 mb5 pa2 readable">
+    {% block article %}{% endblock %}
+  </article>
+</div>
+{% endblock %}
+</main>
+
+{% include 'include/footer.html' %}
+{% endblock %}

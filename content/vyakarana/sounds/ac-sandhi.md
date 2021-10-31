@@ -1,0 +1,309 @@
+{title {s ac} sandhi}
+
+{dfn {s ac} sandhi} is the general name for sandhi changes that involve two
+vowels. For example, the rule we studied in the previous lesson is an example
+of {s ac} sandhi:
+
+{rule
+
+iko yaNaci | 6.1.77
+ikaH yaN aci
+An `ik vowel is replaced by its respective `yaN sound when a vowel follows [in
+`saMhitA].
+
+}
+
+{s ac} sandhi has many rules of varying importance. Some are truly minor, and
+others are important general patterns. Here, we will focus on the important
+general patterns and complete our basic picture of {s ac} sandhi.
+
+But there is also an important issue we should address: rule 6.1.77 has a
+serious flaw. In Sanskrit, two similar vowels should combine and become long:
+
+{ex
+
+draupadI indram apazyat > draupadIndram apazyat
+Draupadi saw Indra.
+
+}
+
+But rule 6.1.77 will produce an error:
+
+{ex
+
+* draupadI indram apazyat > [draupadyindram] apazyat
+Draupadi saw Indra.
+
+}
+
+So in addition to completing our basic picture of {s ac} sandhi, we will also 
+ensure that our system handles the example above correctly.
+
+As in the previous lesson, the rules below will borrow context from the {s
+adhikAra} rule 6.1.72:
+
+{rule
+
+saMhitAyAm | 6.1.72
+_
+In `saMhitA, &hellip;
+
+}
+
+
+{h {s ec} as first vowel}
+
+Once we understand rule {a-cite 6.1.77}, we can easily understand 6.1.78:
+
+{rule
+
+eco 'yavAyAvaH | 6.1.78
+ecaH ay-av-Ay-AvaH
+An `ec vowel becomes `ay, `av, `Ay, or `Av, respectively [when a vowel follows
+in `saMhitA].
+
+}
+
+So we get sandhi changes like this:
+
+{ex
+
+ne + a > naya
+lead
+
+bho + a > bhava
+become
+
+}
+
+Rule 6.1.78 is nice and simple. Now let's turn to the rules where {s a} is
+first:
+
+
+{h {s a} as first vowel}
+
+In Sanskrit, {s a} will combine with most vowels to form a compound vowel:
+
+{ex
+
+sItA indram apazyat > sItendram apazyat
+Sita saw Indra.
+
+}
+
+Here, one vowel ({s e}) replaces two vowels ({s A} and {s i}). How might we
+model this behavior with our rules?
+
+Pāṇini approaches this problem by creating a new {s adhikAra} rule:
+
+{rule
+
+ekaH pUrvaparayoH | 6.1.84
+ekaH pUrva-parayoH
+A single [term] is substituted for the previous and following.
+
+}
+
+What does this rule mean? Recall that we represent "previous" terms with the
+fifth case and "following" terms with the seventh. So, this rule means that in
+the scope of this {s adhikAra} rule, terms in the fifth and seventh case are
+both replaced by a single term.
+
+With this context in place, we can model what happens when {s a} is the first
+vowel. In general, the change is simple. With the help of a new term:
+
+{rule
+
+adeGguNaH | 1.1.2
+at-eG guNaH
+The vowels `a, `e`, and `o are called `guNa.
+
+}
+
+we can define our rule:
+
+{rule
+
+AdguNaH | 6.1.87
+At guNaH
+`a [and the following vowel] become [a single] `guNa [in `saMhitA].
+
+}
+
+But if the second vowel is a compound vowel, we use a slightly different rule.
+Again, we define a new term:
+
+{rule
+
+vRddhirAdaic | 1.1.1
+vRddhiH At-aic
+The vowels `A, `ai, and `au are called `vRddhi.
+
+}
+
+And use it in our rule:
+
+{rule
+
+vRddhireci | 6.1.88
+vRddhiH eci
+[`a and the following] `ec vowel become [a single] `vRddhi [in `saMhitA].
+
+}
+
+The terms {s guNa} and {s vRddhi} are important and will be used throughout the
+grammar. We will return to them later on.
+
+{aside
+{h Some notes on rule 1.1.1}
+
+Let's pause on rule 1.1.1 for a moment. This is the first rule of the entire
+{cite Aṣṭādhyāyī}. And to understand it, we must understand all of the
+following:
+
+{ul
+    {li the Shiva Sutras}
+    {li the definition of a {s pratyAhAra}}
+    {li the fact that {s a} (in the {s pratyAhAra}) refers to both short {s a}
+    and long {s A}}
+    {li the definition of {s t} when it follows a vowel}
+}
+
+This is part of why it is so difficult to enter into the Pāṇinian system and
+understand how it works. (If we have made it easier, please do
+{url[r=site.contact] let us know}.)
+}
+
+
+{h Substitution with the closest option}
+
+Unfortunately, rules 6.1.87 and 6.1.88 have a problem that we've seen before:
+these rules don't tell us which specific vowel to use. We know what the correct
+result should be, but the rule allows some clearly incorrect results:
+
+{ex
+
+sItA indram apazyat > [sItondram] apazyat
+Sita saw Indra.
+
+}
+
+So Pāṇini offers this rule to help us perform the correct substitution:
+
+{rule
+
+sthAne 'ntaratamaH | 1.1.50
+sthAne antaratamaH
+In substitution, the closest [is preferred].
+
+}
+
+Roughly, "closeness" refers to properties like points of articulation,
+semantics, and so on. Since these rules are about sounds, the closest
+replacement is the one that matches the points of articulation of the sounds
+being replaced.
+
+If we return to our example above, {s A} is pronounced at the soft palate and
+{s i} is pronounced at the hard palate. {s e} uses both of these points of
+articulation, so it is a good match. {s o} uses the soft palate, but it does
+not use the hard palate; it uses the lips instead. So {s o} is not a good
+match.  {s e} is a closer substitute than {s o}, so we should choose {s e}:
+
+
+{ex
+
+a + i > e
+
+}
+
+And likewise, {s o} is better if the combination is {s a} and {s u}:
+
+{ex
+
+a + u > o
+
+}
+
+
+{h Addition of {s r}}
+
+The rules above seem to work as intended. But if we test this rule against our
+Sanskrit knowledge, we find another problem. In Sanskrit, {s R} has no compound
+vowel. Instead, it combines with {s a} with some help from the semivowel {s r}:
+
+{ex
+
+sItA Rcchati > sItarcchati
+Sita goes.
+
+}
+
+But with our current system, rule {a-cite 6.1.87} can hardly function. {s at}
+seems like the closest {s guNa} vowel, but this produces a bad result:
+
+{ex
+
+* sItA Rcchati > [sItacchati]
+Sita goes.
+
+}
+
+The fix is another {s paribhASA} about how to perform a substitution:
+
+{rule
+
+uraNraparaH | 1.1.51
+uH aN ra-paraH
+[In substitution,] an `aN vowel that replaces an `R is followed by `r.
+
+}
+
+And with this rule in hand, we can perform the substitution correctly and get
+the desired result.
+
+
+{h Two similar vowels}
+
+Finally, we can return to the example from the start of this lesson and
+complete our basic picture of vowel sandhi. Recall the example we wish to
+model:
+
+{ex
+
+draupadI indram > draupadIndram
+
+}
+
+To handle this special case, we just need a new rule:
+
+{rule
+
+akaH savarNe dIrghaH | 6.1.101
+_
+`ak and a following `savarNa [vowel] become a `dIrgha (long) [in `saMhitA].
+
+}
+
+The meaning of this rule is clear. And with rule {a-cite 1.1.50}, it is also
+clear what the result should be for each vowel:
+
+{ex
+
+a + a > A
+
+i + i > I
+
+u + u > U
+
+R + R > RR
+
+}
+
+
+{h Review}
+
+With just a few short rules, we have fully characterized the basic patterns of
+{s ac} sandhi. This is the power the Pāṇinian system gives us.
+
+In the next lesson, we explore a critical problem with our current system and
+learn how Pāṇini decides to solve it.

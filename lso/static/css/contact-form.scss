@@ -1,0 +1,27 @@
+// Wrap to avoid interfering with Sanscript
+.contact {
+    padding: 1rem;
+    background: #f7f7f7;
+
+    input[type="email"] {
+        font-family: inherit;
+        width: 100%;
+        line-height: 1.5rem;
+    }
+    textarea {
+        font-family: inherit;
+        width: 100%;
+        min-height: 200px;
+    }
+    button {
+        background: #06b;
+        font-family: inherit;
+        color: #fff;
+        border: 0;
+        border-radius: 5px;
+    }
+}
+
+.faq {
+    dt {font-style: italic;}
+}

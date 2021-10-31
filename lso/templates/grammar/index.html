@@ -9,8 +9,18 @@
 </ul>
 {% endblock %}
 
+{% block aside %}{% endblock %}
+
 {% block content %}
 <h1>Sanskrit Grammar</h1>
+
+<aside class="note">
+    <p>Please see <a href="/guide">our latest grammar guide</a> and <a
+                     href="/">our home page</a> for our best and latest content.</p>
+
+    <p>Some of the links here will redirect to our new guide, which presents
+    the same content in a clearer way.</p>
+</aside>
 
 <ul class="contents">
 {% for section in toc %}

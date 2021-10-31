@@ -1,0 +1,12 @@
+<nav class="main dn db-ns">
+  <ul>
+    <li><a href="{{ url_for('site.index') }}">Home</a></li>
+    <li><a href="{{ url_for('guide.index') }}">Grammar</a></li>
+    <li><a href="{{ url_for('site.tools') }}">Tools</a></li>
+    <li><a href="{{ url_for('site.resources') }}">Resources</a></li>
+    <li><a href="{{ url_for('site.contact') }}" class="special">Contact</a></li>
+  </ul>
+</nav>
+<nav class="main db dn-ns">
+  <a href="{{ url_for('site.mobile_menu') }}">Menu</a>
+</nav>

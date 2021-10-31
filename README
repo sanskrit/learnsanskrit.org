@@ -1,1 +1,54 @@
-python3 -m http.server 8000 --directory snapshot
+learnsanskrit.org
+~~~~~~~~~~~~~~~~~
+
+Source code for `learnsanskrit.org`.
+
+
+Audience
+--------
+
+`learnsanskrit.org` is the top result on Google for "learn sanskrit" and
+similar queries. Here is an approximate traffic breakdown by locale:
+
+- India: 55%
+- United States: 20%
+- United Kingdom and Canada: 5%
+
+Leaving aside tools, our most popular content is our beginner-friendly grammar
+guide. Based on our analytics and the emails we receive from readers, our
+community is primarily one of "informal learners" who study outside of a
+traditional or university setting.
+
+
+Technical design
+----------------
+
+`learnsanskrit.org` is served as a static website. Static websites are fast,
+stable, and don't require any monitoring, so they're perfect for a project like
+ours.
+
+Internally, the site is a Flask app and has access to normal Flask features. At
+deployment time, however, we use flask-freeze to convert all output to flat
+files.
+
+All of the site content is written in SML, a custom markup language that is
+lightweight and simple. For details, see `lso/sml`.
+
+
+Directories
+-----------
+
+    build                       # Output directory when freezing
+        sml                     # Markup language implementation
+        static                  # Static resources
+        templates               # HTML templates
+        view                    # Routes and view logic
+    content                     # /guide and /vyakarana content
+    data                        # various linguistic data
+    lso                         # main application logic
+
+
+Site commands
+-------------
+
+See `Makefile` for build, lint, and test commands.

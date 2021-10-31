@@ -1,0 +1,28 @@
+{% extends 'base-book.html' %}
+{% import 'guide/macros.html' as m %}
+
+{% block title %}{{ m.title(lesson.title_no_html) }}{% endblock %}
+
+{% block breadcrumbs %}{{ m.breadcrumbs(
+    'guide.index',
+    'Sanskrit',
+    'Sanskrit for beginners',
+    topic, prev, lesson, next
+) }}{% endblock %}
+
+{#
+<aside class="sidebar">
+<nav>
+{{ m.sidebar_toc(topic, lesson) }}
+</nav>
+
+<nav class="flex tc">
+{{ paginate_link(prev, '&laquo;') }}
+{{ paginate_link(next, '&raquo;') }}
+</nav>
+
+</aside>
+#}
+{% block article %}
+{{ lesson.content|safe }}
+{% endblock %}

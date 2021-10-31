@@ -1,0 +1,27 @@
+{% extends 'base-text.html' %}
+
+{% block full_title %}Learn Sanskrit Online{% endblock %}
+
+{% block article %}
+{% set om_url = url_for('static', filename='img/om-new.png') %}
+<img src="{{ om_url }}" style="display: block; margin: auto; width: 100px;" />
+<h1 class="tc">learnsanskrit.org</h1>
+
+{% set url = url_for('site.contact') %}
+<p>Sorry, we couldn't find the page you were looking for. Perhaps you followed
+a link that is out of date. If you think you've found a problem with the site,
+please <a href="{{ url }}">let us know about it</a> and we'll fix it as soon as
+we can.</p>
+
+{% set url = url_for('site.index') %}
+<p>Maybe you can find what you're looking for by checking <a href="{{ url
+    }}">our main page.</a></p>
+
+<aside class="note">
+    {% set subscribe=config.MAILING_LIST_URL %}
+<p>Our site is going through some wonderful changes. Please <a href="{{
+    subscribe }}">subscribe for updates</a>, and please <a
+    href="/contact">email us</a> if you want to help us test our new
+    content.</p>
+</aside>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends 'base-book.html' %}
+{% import 'guide/macros.html' as m %}
+
+{% block title %}Sanskrit for beginners{% endblock %}
+
+{% block breadcrumbs %}{% endblock %}
+
+{% block article %}
+{% for topic in guide.topics %}
+    {% for lesson in topic.lessons %}
+        {{ lesson.content|safe }}
+    {% endfor %}
+{% endfor %}
+{% endblock %}
+

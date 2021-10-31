@@ -1,0 +1,63 @@
+{% extends 'base-book.html' %}
+{% import 'guide/macros.html' as m %}
+
+{% macro breadcrumbs() %}
+<nav class="breadcrumbs">
+{% set u_home = url_for('site.index') %}
+{% set u_index = url_for('vyakarana.index') %}
+<a href="{{ u_home }}">Home</a> &raquo;
+<b>{{ 'vyAkaraNa-pravezaH'|sa2 }}</b>
+</nav>
+{% endmacro %}
+
+{% block title %}{{ m.title('vyākaraṇa-praveśaḥ') }}{% endblock %}
+
+{% block meta_description %}
+<meta name="description" content="A clear and simple introduction to traditional Sanskrit grammar (vyākaraṇa)." />
+{% endblock %}
+
+{% block breadcrumbs %}{{ breadcrumbs () }}{% endblock %}
+
+{% block article %}
+{% set om_url = url_for('static', filename='img/om-new.png') %}
+<img src="{{ om_url }}" style="display: block; margin: auto; width: 100px;" />
+
+<h1 class="tc mb0">{{ 'vyAkaraNa-pravezaH'|sa2 }}</h1>
+<p class="tc f6 mt0">An introduction to traditional Sanskrit grammar</p>
+
+<p>This series describes the fundamentals of traditional Sanskrit grammar ({{
+'vyAkaraNa'|sa2 }}) as defined by the ancient grammarian Pāṇini. The Pāṇinian
+system has wide appeal, so we assume no prior knowledge of Sanskrit. That said,
+knowing some Sanskrit will certainly help.</p>
+
+<p>The heart of the system, which was created sometime around the 5th century
+BCE, is a list of around 4000 rules, most of which are composed in a formal
+metalanguage. Together, these rules define an algorithm that generates
+grammatically valid Sanskrit expressions.
+
+<p>Our series takes a concrete and pragmatic view of this system. We first
+explain the rules that define the system's formal structure. Then, we use
+the system to derive a variety of Sanskrit expressions. Although we hide some
+minor details, we expose the core of the system and explain why it has the
+design it does.</p>
+
+<p>If you have any questions, comments, or ideas, or if you just want to say
+hello, please <a href="{{ url_for('site.contact') }}">contact us</a>. We always
+feel very happy to receive emails from readers, even if we are slow to reply
+sometimes.</p>
+
+<p>This series is a work in progress. It was last updated on {{
+last_updated }}.</p>
+
+
+{% set mailing_list = config.MAILING_LIST_URL %}
+<aside class="note tc">
+<p>We are still improving this series.
+<a href="{{ mailing_list }}" target="_blank">Join our mailing list</a> for updates.
+</p>
+</aside>
+
+{% for topic in guide.topics %}
+{{ m.topic(topic, loop.index0) }}
+{% endfor %}
+{% endblock %}

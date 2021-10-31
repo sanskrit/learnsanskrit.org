@@ -1,32 +1,41 @@
-{% extends 'base-main-nav.html' %}
+{% extends 'base-text.html' %}
 
 {% block full_title %}Learn Sanskrit Online{% endblock %}
 
-{% block content %}
-<h1 class="f2"><i>learnsanskrit.org</i></h1>
+{% block header %}
+<header class="tc index pb3">
+{% include 'include/top-nav.html' %}
+<p class="logo sa1 mb0 mt4">{{ 'OM'|d }}</p>
+<h1 class="ma0 f3">learnsanskrit.org</h1>
+<p class="mt0 f6">Sanskrit lessons and tools for all levels</p>
+</header>
+{% endblock %}
 
-<img src="/static/img/om-new.png" style="display: block; margin: auto; width: 200px;" />
+{% block main %}
+<div style="width: 100%">
+<article class="mt4 mb5 pa2 readable">
 
-<p>For over ten years, <i>learnsanskrit.org</i> has been one of the most
-popular online resources for learning Sanskrit. As we enter our next decade, we
-will revise the site and its content in light of advances both in technology
-and in Sanskrit education.</p>
+{% set u = url_for('guide.index') %}
+<p><a class="book-link" href="{{ u }}">Sanskrit for Beginners</a> &mdash;
+Our complete guide to Sanskrit uses clear and simple language. Learn Sanskrit
+from the beginning without any busywork.</p>
 
-<p>Our goal, as always, is to make it easy for anyone to learn and teach
-Sanskrit. Thank you for your support for all these years, and we look forward to
-seeing what the next decade will bring.</p>
+{% set u = url_for('vyakarana.index') %}
+<p><a class="book-link" href="{{ u }}">{{ 'vyAkaraNa-pravezaH'|sa2 }}</a> 
+&mdash; The <cite>Aṣṭādhyāyī</cite> is the foundational work of Sanskrit
+grammar ({{ 'vyAkaraNa'|sa2 }}). This series explains its core components so
+that you can explore it for yourself.</p>
 
-<p style="text-align: right;"><i>&mdash; learnsanskrit.org, January 2021</i></p>
+<p><b>Sanskrit tools</b> &mdash; Use <a href="/tools/sanscript">Sanscript</a>
+to convert Sanskrit text to whatever script you like. And we have plenty of
+other tools gathered <a href="{{ url_for('site.tools') }}">on our Tools
+page</a>.</p>
 
-<hr style="width: 50%; border-color: #ddd;" />
+<aside class="note tc">
+    {% set subscribe=config.MAILING_LIST_URL %}
+<p><a href="{{ subscribe }}">Please subscribe for updates.</a> Thank you!</p>
+</aside>
 
-<p>The heart of our site is the <strong>grammar guide</strong>, which has
-stalled in recent years but which is under revision. Featuring thousands of
-exercises, more than one hundred lessons, and dozens of images and audio clips,
-the guide presents Sanskrit grammar in a fresh way without sacrificing clarity,
-depth, or its enthusiastic spirit!</p>
-
-<p class="notice"><a href="grammar">Click here to go to the grammar guide!</a></p>
-
-<p>To better enable Sanskrit's growth on the Internet, the site also has a collection of <strong>tools</strong>. The most popular of these tools is <a href="tools/sanscript">Sanscript</a>, a transliteration program that is hosted on this site. Also hosted here is an old copy of Dr. Oliver Hellwig's <a href="tools/ocr">SanskritOCR</a>, which is not readily available elsewhere.</p>
+</article>
+</div>
 {% endblock %}

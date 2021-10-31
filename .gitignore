@@ -1,4 +1,6 @@
 build/
+node_modules/
 production/
 lso/static/gen/
 lso/static/.webassets-cache/
+*.pdf

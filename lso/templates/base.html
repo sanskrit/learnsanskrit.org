@@ -10,18 +10,27 @@
 	  gtag('config', 'UA-78373984-1');
 	</script>
 	<head>
-        <title>{% block full_title %}{% endblock %}</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-		<link rel="shortcut icon" href="/static/favicon.ico" />
+        <title>
+		{% block full_title %}
+            {% block title %}{% endblock %} | Learn Sanskrit Online
+		{% endblock %}
+		</title>
+		{% block meta_description %}
+        <meta name="description" content="{% block meta %}A simple and complete guide to Sanskrit. Includes useful tools and resources for all levels.{% endblock %}" />
+		{% endblock %}
+
+		<link rel="shortcut icon" href="/static/favicon.png" />
         {% assets "css_all" %}
         <link rel="stylesheet" type="text/css" href="{{ ASSET_URL }}" />
         {% endassets %}
 		<link rel="stylesheet" type="text/css" href="/static/css/print.css" media="print" />
-		<meta name="description" content="A comprehensive guide to the Sanskrit language, with over one hundred lessons and over one thousand exercises." />
-		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
-		<script type="text/javascript" src="/static/scripts/functions.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 	</head>
 	<body>
         {% block body %}{% endblock %}
+        {% assets "js_all" %}
+        <script type="text/javascript" src="{{ ASSET_URL }}"></script>
+        {% endassets %}
 	</body>
 </html>

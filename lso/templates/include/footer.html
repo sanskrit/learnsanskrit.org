@@ -1,8 +1,10 @@
-<footer class="f5">
-    <p>Go to: <a href="/">Index</a> | <a href="/grammar">Grammar guide</a> | <a href="/resources">Resources</a> | <a href="/tools">Tools</a></p>
-    <p>Or: <a href="/about">About</a> | <a href="/contact">Contact</a> | <a href="/preferences">Preferences</a> | <a href="/use">Using the Site</a></p>
+<footer class="f6 tc pa1">
+    <p>
+    <a href="{{ url_for('site.index') }}">Home</a> |
+    <a href="{{ url_for('guide.index') }}">Grammar</a> |
+    <a href="{{ url_for('site.tools') }}">Tools</a> |
+    <a href="{{ url_for('site.resources') }}">Resources</a> |
+    <a href="{{ url_for('site.contact') }}">Contact</a>
     <br />
-    <p>All unsourced content is licensed under a <a href="http://creativecommons.org/licenses/nc-sa/1.0/">Creative Commons NonCommercial 
-ShareAlike 1.0</a> license.</p>
-    <p>This page was last edited on January 29, 2021.</p>
+    <p>This page is available under a <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0 International</a> license.</p>
 </footer>

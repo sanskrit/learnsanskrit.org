@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}Pandit{% endblock %}
+
+{% block body %}
+{% include 'include/header.html' %}
+
+
+<main>
+{# width 100% to counteract flexbox column direction -- otherwise,
+   small articles will be centered horizontally.
+#}
+<div style="width: 100%">
+  <article class="mt5 mb5 pa2 readable">
+    <h1>Pandit</h1>
+
+    <form>
+      <input name="q" class="pa2" type="text" />
+      <input class="pa2" type="submit" value="Search" />
+    </form>
+
+  </article>
+</div>
+</main>
+
+{% include 'include/footer.html' %}
+{% endblock %}

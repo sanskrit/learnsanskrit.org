@@ -13,31 +13,40 @@ from lso import app, data
 
 
 PROJECT_DIR = os.path.abspath(os.path.dirname(__file__))
-OUTPUT_DIR = os.path.join(PROJECT_DIR, 'build')
+OUTPUT_DIR = os.path.join(PROJECT_DIR, "build")
 
 
 app.debug = False
 freezer = Freezer(app)
-app.config['FREEZER_DESTINATION'] = OUTPUT_DIR
-app.config['FREEZER_RELATIVE_URLS'] = False
-app.config['FREEZER_IGNORE_404_NOT_FOUND'] = False
+app.config["FREEZER_DESTINATION"] = OUTPUT_DIR
+app.config["FREEZER_RELATIVE_URLS"] = False
+app.config["FREEZER_IGNORE_404_NOT_FOUND"] = False
 
 
 @freezer.register_generator
 def all_pages():
     for section in data.TABLE_OF_CONTENTS:
-        yield section.url + '/'
+        yield section.url + "/"
         if section.children:
             for chapter in section.children:
-                yield chapter.url + '/'
+                yield chapter.url + "/"
                 if chapter.children:
                     for lesson in chapter.children:
-                        yield lesson.url + '/'
+                        yield lesson.url + "/"
                         if lesson.has_exercises:
-                            yield lesson.url + '-e/'
+                            yield lesson.url + "-e/"
 
 
-if __name__ == '__main__':
+@freezer.register_generator
+def static_assets():
+    yield "/static/fonts/Sanskrit2003.ttf"
+
+
+@freezer.register_generator
+def site_404():
+    yield "/errors/404.html"
+
+
+if __name__ == "__main__":
     freezer.freeze()
-    print('Written to: ' + OUTPUT_DIR)
-
+    print("Written to: " + OUTPUT_DIR)

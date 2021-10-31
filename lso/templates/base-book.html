@@ -1,0 +1,21 @@
+{# Used for the grammar guide and the vyakarana guide #}
+{% extends 'base.html' %}
+
+{% block body %}
+<div class="top">
+{% block breadcrumbs %}{% endblock %}
+</div>
+
+<main style="margin-top: 3em;">
+  {% block main %}
+  {# div for flex targeting #}
+  <div>
+    {% include 'include/script-switch.html' %}
+    <article class="mt5 mb5 pa2 readable">
+    {% block article %}{% endblock %}
+    </article>
+  </div>
+  {% endblock %}
+</main>
+{% include 'include/footer.html' %}
+{% endblock %}

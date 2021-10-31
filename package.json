@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "sass": "^1.42.1",
+    "sass-dart": "^1.0.0-alpha.1"
+  }
+}

@@ -1,0 +1,75 @@
+// experimental
+.index {
+    background: #b51700;
+    color: #fff;
+    .logo {
+        font-size: 6rem;
+        line-height: 1em;
+    }
+}
+.default .main {
+    background: #f7f7f7;
+    border-bottom: 3px #ddd double;
+}
+
+.main ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    line-height: 1rem;
+}
+.main a {
+    text-decoration: none;
+    display: block;
+    padding: 1rem;
+    transition: 0.2s;
+
+    &:hover {
+        color: #222;
+        text-decoration: underline;
+    }
+}
+.index a {
+    color: #fff;
+}
+.default a {
+    color: #666;
+}
+
+// For guide and vyak lessons
+.breadcrumbs {
+    padding: 1em;
+    background: #f7f7f7;
+
+	a, a:visited {
+		color: inherit;
+		text-decoration: none;
+	}
+	a:hover {
+		text-decoration: underline;
+	}
+
+	.cur {
+		font-weight: bold;
+	}
+}
+.top .breadcrumbs {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    border-bottom: 3px #ddd double;
+}
+.bottom .breadcrumbs {
+    border-top: 3px #ddd double;
+}
+.bottom + footer {
+    border-top: 1px #ddd solid;
+}
+
+// Jump list, table of contents
+.scroll-list, .unit {
+	line-height: 1.6em;
+}

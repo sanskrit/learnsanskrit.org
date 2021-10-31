@@ -1,0 +1,120 @@
+{% extends 'base-book.html' %}
+{% import 'guide/macros.html' as m %}
+
+{% macro breadcrumbs() %}
+<nav class="breadcrumbs">
+{% set u_home = url_for('site.index') %}
+{% set u_index = url_for('guide.index') %}
+<a href="{{ u_home }}">Home</a> &raquo;
+<span class="cur">Sanskrit for Beginners</span>
+</nav>
+{% endmacro %}
+
+{% block title %}{{ m.title('Sanskrit for Beginners') }}{% endblock %}
+
+{% block breadcrumbs %}
+{{ breadcrumbs () }}
+{% endblock %}
+
+{% block main %}
+{# div for flex targeting #}
+<div>
+{% include 'include/script-switch.html' %}
+
+<article class="mt5 mb5">
+<div class="readable pa2">
+{% set om_url = url_for('static', filename='img/om-new.png') %}
+<img src="{{ om_url }}" style="display: block; margin: auto; width: 100px;" />
+
+<h1 class="tc mb0">Sanskrit for Beginners</h1>
+<p class="tc f6 mt0">A simple and comprehensive guide</p>
+
+<p>Our complete guide to Sanskrit grammar uses clear and simple language that
+anyone can understand. We focus on core concepts and principles, <em>not</em>
+on dull busywork.</p>
+
+{% set ml = config.MAILING_LIST_URL %}
+<p>Last updated on {{ last_updated }}. <a href="{{ ml }}" target="_blank">Join
+    our mailing list</a> for updates.</p>
+</div>
+
+<section class="pa2 mt4 part2">
+<div class="readable">
+{% set intro = url_for('guide.lesson', topic='introduction', slug='for-beginners') %}
+{% set url = url_for('site.contact') %}
+<h1 class="tc">Before you begin</h1>
+<p>You can learn Sanskrit <em>without</em> studying grammar. <a href="{{ intro
+    }}"> Our introduction</a> will show you how. If you have questions about
+this approach or about our guide, <a href="{{ url }}">write to us</a> and we
+will reply as soon as we can.</p>
+</div>
+</section>
+
+
+<section class="pa2">
+<div class="readable">
+<h1 class="tc">Part I: Fundamentals</h1>
+
+<p>Our introduction explains our guide's philosophy and design. Then, our core
+lessons teach the essential parts of Sanskrit grammar.</p>
+
+{{ m.topic(guide.topic('introduction')) }}
+{{ m.topic(guide.topic('core')) }}
+</div>
+</section>
+
+<section class="pa2 part2">
+<div class="readable">
+<h1 class="tc">Intermission</h1>
+<p>Now is a good time to <a href="{{ url_for('site.resources') }}">use our
+    acquisition resources</a> and focus on interesting content. Remember: we
+acquire Sanskrit through content, <em>not</em> through rules!</p>
+</div>
+</section>
+
+<a id="part-ii" style="display: block; position: relative; top: -3em; visibility: hidden;"></a>
+<section class="pa2">
+<div class="readable">
+<h1 class="tc">Part II: Major topics</h1>
+
+<p>Each topic below is like its own small book. You can read these topics in
+any order. Earlier topics tend to focus on details, and later topics tend to
+focus on meaning.</p>
+
+{% for topic in guide.topics[2:-3] %}
+{{ m.topic(topic) }}
+{% endfor %}
+</div>
+</section>
+
+<section class="pa2 part2">
+<div class="readable">
+<h1 class="tc">For further study</h1>
+{% set u = url_for('vyakarana.index') %}
+{% set r = url_for('site.resources') %}
+{% set c = url_for('site.contact') %}
+<p>If you want to learn more about Sanskrit's rules, we recommend our <a
+    href="{{ u }}">{{ 'vyAkaraNa-pravezaH'|sa2 }}</a> series, which is a gentle
+introduction to traditional Sanskrit grammar. You can also read our
+<a href="{{ r }}">site resources page</a> for texts, dictionaries, grammar
+references, and other helpful resources.</p>
+
+<p>If you feel stuck, <a href="{{ c }}">write to us</a> and we'll see if we
+can help. </p>
+</section>
+
+
+<section class="pa2">
+<div class="readable">
+<h1 class="tc">Appendices</h1>
+
+<p>These appendices discuss other topics that are useful for beginners.</p>
+
+{{ m.topic(guide.topic('devanagari')) }}
+{{ m.topic(guide.topic('other-scripts')) }}
+{{ m.topic(guide.topic('sanskrit-software')) }}
+</div>
+</section>
+
+</div>
+{% endblock %}

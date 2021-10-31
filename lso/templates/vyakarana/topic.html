@@ -1,0 +1,16 @@
+{% extends 'base-book.html' %}
+{% import 'guide/macros.html' as m %}
+
+{% block title %}{{ m.title(topic.title_no_html)|safe }}{% endblock %}
+
+{% block breadcrumbs %}{{ m.breadcrumbs(
+    'vyakarana.index',
+    'vyAkaraNa'|sa2,
+    'vyAkaraNa-pravezaH'|sa2,
+    topic, prev, none, next
+) }}{% endblock %}
+
+
+{% block article %}
+{{ m.topic(topic) }}
+{% endblock %}

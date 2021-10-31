@@ -1,0 +1,25 @@
+{% extends 'base-book.html' %}
+{% import 'guide/macros.html' as m %}
+
+{% macro breadcrumbs() %}
+<nav class="breadcrumbs">
+<div style="float: right;">
+{{ m.paginate_link(prev.url, '&larr; prev') }}
+|
+{{ m.paginate_link(next.url, 'next &rarr;') }}
+</div>
+
+{% set u_home = url_for('site.index') %}
+{% set u_index = url_for('guide.index') %}
+{% set u_topic = url_for('guide.topic', slug=topic.slug) %}
+<a href="{{ u_home }}">Home</a> &raquo;
+<a href="{{ u_index }}">Sanskrit</a> &raquo;
+<b>{{ topic.title|safe }}</b>
+</nav>
+{% endmacro %}
+
+{% block title %}{{ m.title(topic.title) }}{% endblock %}
+
+{% block breadcrumbs %}{{ breadcrumbs() }}{% endblock %}
+
+{% block article %}{{ m.topic(topic) }}{% endblock %}

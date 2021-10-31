@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-78373984-1"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+	  gtag('config', 'UA-78373984-1');
+	</script>
+	<head>
+        <title>{% block full_title %}{% endblock %}</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<link rel="shortcut icon" href="/static/favicon.ico" />
+        {% assets "css_legacy_all" %}
+        <link rel="stylesheet" type="text/css" href="{{ ASSET_URL }}" />
+        {% endassets %}
+		<link rel="stylesheet" type="text/css" href="/static/css/print.css" media="print" />
+		<meta name="description" content="A comprehensive guide to the Sanskrit language, with over one hundred lessons and over one thousand exercises." />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+		<script type="text/javascript" src="/static/scripts/functions.js"></script>
+	</head>
+	<body>
+        {% block body %}{% endblock %}
+	</body>
+</html>

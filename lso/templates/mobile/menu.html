@@ -1,0 +1,19 @@
+{% extends "base-text.html" %}
+
+{% block title %}Menu{% endblock %}
+
+{% block body %}
+<main>
+<div style="width: 100%">
+  <article class="mt5 mb5 pa2">
+    <ul>
+    {% for title, route in items %}
+    <li class="pt2 pb2"><a href="{{ url_for(route) }}">{{ title }}</a></li>
+    {% endfor %}
+    </ul>
+  </article>
+</div>
+</main>
+
+{% include 'include/footer.html' %}
+{% endblock %}

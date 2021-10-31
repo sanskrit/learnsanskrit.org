@@ -1,0 +1,80 @@
+{% macro title(s) -%}
+{{ s }} | Learn Sanskrit Online
+{%- endmacro %}
+
+{# table of contents for a topic #}
+{% macro topic(t, number=none) %}
+<div class="unit">
+{% if false and number is not none %}
+<h1>{{ number }} {{ t.title|sml }}</h1>
+{% else %}
+<h1>{{ t.title|sml }}</h1>
+{% endif %}
+<ol>
+    {% for lesson in t.lessons %}
+    <li>
+  		<a href="{{ lesson.url }}">{{ lesson.title|safe }}</a>
+    </li>
+    {% endfor %}
+</ol>
+</div>
+{% endmacro %}
+
+{# table of contents for a topic #}
+{% macro sidebar_toc(t, cur) %}
+<section>
+<h1>{{ t.title }}</h1>
+<ol class="table-of-contents">
+    {% for lesson in t.lessons %}
+    <li>
+		{% if lesson.slug == cur.slug %}
+		<b><span class="active">{{ lesson.title|safe }}</span></b>
+		{% else %}
+		<a href="{{ lesson.url }}">{{ lesson.title|safe }}</a>
+		{% endif %}
+    </li>
+    {% endfor %}
+</ol>
+</section>
+{% endmacro %}
+
+{# Pagination/breadcrumbs link #}
+{% macro paginate_link(url, text) %}
+{% if url %}
+<a href="{{ url }}">{{ text|safe }}</a>
+{% else %}
+<span>&nbsp;</span>
+{% endif %}
+{% endmacro %}
+
+{% macro breadcrumbs(index, title_short, title_long, topic, prev, cur, next) %}
+{% set u_home = url_for('site.index') %}
+{% set u_index = url_for(index) %}
+<nav class="breadcrumbs">
+{# mobile view #}
+<div class="db dn-ns">
+    <a href="{{ u_index }}">{{ title_long }}</a>
+    <div style="float: right">
+    {{ paginate_link(prev.url, '&larr;') }} |
+    {{ paginate_link(next.url, '&rarr;') }}
+    </div>
+</div>
+
+{# desktop view #}
+<div class="dn db-ns">
+    <a href="{{ u_home }}">Home</a> &raquo;
+    <a href="{{ u_index }}">{{ title_short }}</a> &raquo;
+    {% if cur %}
+        <a href="{{ topic.url }}">{{ topic.short_title|sml|safe }}</a> &raquo;
+        <b>{{ cur.title|safe }}</b>
+    {% else %}
+        <b>{{ topic.title|sml|safe }}</b>
+    {% endif %}
+
+    <div style="float: right;">
+    {{ paginate_link(prev.url, '&larr; previous') }} |
+    {{ paginate_link(next.url, 'next &rarr;') }}
+    </div>
+</div>
+</nav>
+{% endmacro %}

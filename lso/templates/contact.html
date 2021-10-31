@@ -1,11 +1,65 @@
-{% extends 'base-main-nav.html' %}
+{% extends 'base-text.html' %}
 
 {% block title %}Contact{% endblock %}
-{% block content %}
-<h1>Contact</h1>
 
-<p><i>We are aware of some ongoing issues with the site and are working on them currently. (Last updated 2021-01-29.)</i></p>
+{% block meta %}Get in touch with the learnsanskrit.org team!{% endblock %}
 
-<p>Please send all emails to <img src="/static/img/email.png" alt="this email address. The address is shown as an image to deter spambots, so if you are visually impaired, please use the contact form instead." />.</p>
+{% block article %}
+<h1>Contact learnsanskrit.org</h1>
+
+<p>We love receiving emails from our readers, even if we are sometimes slow to
+reply. If you don't hear back soon, we may have lost track of your email, so
+please do write again.</p>
+
+<p>For common questions, please scroll down past the contact form.  And if you
+would rather send a regular email, you can write to us at <img
+src="/static/img/email.png" alt="this email address. The address is shown as an
+image to deter spambots, so if you are visually impaired, please use the
+contact form instead." />.</p>
+
+<form class="contact" action="https://formspree.io/f/xpzknbnq" method="POST">
+  <label class="f6">
+    Email address:
+    <input type="email" name="_replyto">
+  </label>
+  <label class="f6">
+    Message:
+    <textarea name="message" required></textarea>
+  </label>
+  <input type="text" name="_gotcha" style="display:none" />
+
+  <p class="f6">This form uses a third-party website called Formspree. So if
+you are redirected there after you hit <code>Send</code>, don't be
+surprised &mdash; it just means that your message was sent correctly.</p>
+
+  <button class="f6 pa3" type="submit">Send my message</button>
+</form>
+
+<h2>Common questions</h2>
+
+<dl class="faq">
+
+<dt>Do you offer courses?</dt>
+
+<dd><p>No, we do not. If you want to take a Sanskrit course, we strongly
+recommend <a
+href="https://www.sanskritfromhome.org/" target="_blank">sanskritfromhome.org</a>.</p></dd>
+
+<dt>Can I use your material for my project?</dt>
+
+<dd><p>Yes! See the license details at the bottom of each page. But if
+you plan to use our material, we would appreciate a courtesy email.</p></dd>
+
+<dt>Can you help me learn Sanskrit?</dt>
+
+<dd><p>Yes, that's what we're here for! Please read our <a href="{{
+url_for('guide.index') }}">Sanskrit for beginners</a> series. If you have any
+specific questions, please send us an email.</p></dd>
+
+<dt>Are you interested in selling your website?</dt>
+
+<dd><p>No.</p></dd>
+
+</dl>
 
 {% endblock %}
