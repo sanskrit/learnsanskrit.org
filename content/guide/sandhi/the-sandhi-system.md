@@ -2,12 +2,8 @@
 
 When we speak quickly, we make many kinds of small and subconscious changes to
 the way we speak. In Sanskrit, these sound changes are called {dfn sandhi},
-which means "joining" or "junction."
-
-In this topic, we will study the different types of sandhi in more detail.
-
-
-{h Vowel, {s visarga}, and consonant sandhi}
+which means "joining" or "junction." In this topic, we will study the different
+types of sandhi in more detail.
 
 There are many different kinds of sandhi changes. If a vowel comes first, it is
 called {dfn vowel sandhi}:
@@ -37,9 +33,6 @@ Hanuman wants water.
 
 }
 
-
-{h Within a word and between words}
-
 When we learn a bout sandhi changes, we should also know {em where} whey occur.
 Some sandhi changes occur between the different parts of a {em single word}:
 
@@ -65,3 +58,4 @@ Sita wants water.
 Sandhi changes {em within} a single word must always be followed, and sandhi
 changes {em between} words occur optionally. But although these changes are
 optional, most Sanskrit texts will use them.
+

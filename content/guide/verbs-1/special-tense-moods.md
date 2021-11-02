@@ -17,7 +17,7 @@ lead > will lead > I will lead.
 }
 
 We also learned that Sanskrit verbs express five basic kinds of information.
-These five are called person:
+These five are called {dfn person}, which expresses the verb's perspective:
 
 {ex
 
@@ -29,7 +29,7 @@ I lead.
 
 }
 
-number:
+{dfn number}, which expresses how many of something there are:
 
 {ex
 
@@ -41,7 +41,8 @@ They lead.
 
 }
 
-tense-mood:
+{dfn tense-mood}, which expresses the verb's {dfn tense} (time period) and {dfn
+mood} (manner):
 
 {ex
 
@@ -51,9 +52,12 @@ nayati.
 neSyati
 (Someone) will lead.
 
+nayet
+(Someone) might lead.
+
 }
 
-{s prayoga}:
+{s-dfn prayoga}, which is hard to explain but easy to understand:
 
 {ex
 
@@ -67,8 +71,8 @@ nIyate
 
 }
 
-and {s pada}, which is meaningful only for certain roots. We will discuss {s
-pada} more in a later lesson:
+and {s-dfn pada}, which is meaningful only for certain roots. We will discuss
+{s pada} more in a later lesson, but here is a simple example of it:
 
 {ex
 
@@ -147,8 +151,8 @@ Since roots change in ten different ways, we can sort these roots into ten
 different {dfn verb classes}. Each verb class has its own characteristic
 change.
 
-In this topic, we will learn about verb classes and the four tense-moods that
-use them.
+In this topic, we will learn about verb classes and the four special
+tense-moods that use them.
 
 
 {h Review}

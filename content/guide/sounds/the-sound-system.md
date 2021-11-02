@@ -1,12 +1,8 @@
 {title The sound system}
 
-The study of Sanskrit speech sounds {sa-opt akSarANi "sounds, syllables"} is
-called {s-dfn zikSA} ("learning, training"). Traditionally, speech sounds are
-the first subject that Sanskrit students study.
-
 Our core lessons already discussed the various Sanskrit sounds in detail.
 Here, we will complete the basic picture those lessons painted. We will provide
-much more detail about how these sounds are pronounced and described. Where
+much more detail about how to pronounce and describe these sounds. Where
 appropriate, we will also provide the standard English and Sanskrit terms.
 
 Traditionally, Sanskrit has these main points of pronunciation:
@@ -43,5 +39,5 @@ labio-dental} {sa-opt dantoSThya}. And since {s o} and {s au} are pronounced
 with both the soft palate and the lips, they are called {dfn labio-velar}
 {sa-opt kanThoSThya}.
 
-None of these new terms need to be remembered. They are simply listed here for
+You do not need to remember any of these new terms. We list them here just for
 your reference.

@@ -1,6 +1,9 @@
 // Paradigm charts
 .paradigm {
     background: #f7f7f7;
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
 }
 .paradigm .sa1 {
     font-size: 1.5em;
@@ -10,8 +13,12 @@
     color: rgba(0,0,0,0.5);
     font-weight: normal;
 }
+.paradigm tr th:first-child {
+	width: 16%;
+}
 .paradigm td {
     padding: 0.5em;
+	width: 28%;
 }
 .paradigm .s {
     color: #b93434;

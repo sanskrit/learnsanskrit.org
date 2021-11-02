@@ -1,13 +1,9 @@
 {title Consonants}
 {aka {s vyaJjanAni} ("embellishments"), {s hal}}
 
-{dfn Consonants} are pronounced by modifying the basic flow of air through the
-mouth.
-
-
-{h Modifying the flow of air}
-
-There are three basic kinds of modifications:
+{dfn Consonants} are sounds that we pronounce by changing the basic flow of air
+through the mouth. In Sanskrit, consonants use three different kinds of air
+flow:
 
 {ul
     {li {s-dfn spRSTam}: full contact at the points of pronunciation. Air no
@@ -15,14 +11,11 @@ There are three basic kinds of modifications:
     through {s ma}.}
     {li {s-dfn ISatspRSTam}: slight contact at the points of pronunciation. Air
     flows through the mouth in a highly constricted way. This applies for the
-    semivowels ({s ya} through {s va}).}
+    sounds {s ya} through {s va}.}
     {li {s-dfn ISadvivRtam}: loose contact at the points of pronunciation. Air
     flows through the mouth in a less constricted way. This applies for the
     sounds {s za} through {s ha}.}
 }
-
-And as we saw in the previous lesson, vowels are generally {s vivRta}. That is,
-we pronounce them with little to no contact at the points of articulation.
 
 
 {h {s ka} through {s ma}}
@@ -37,11 +30,10 @@ The first twenty-five consonants are often arranged in a square with 5 rows and
 {sounds-dr ta-4 tha-4 da-4 dha-4 na-4}
 {sounds-dr pa-5 pha-5 ba-5 bha-5 ma-5}
 
-All of these consonants are called {s-dfn sparzAH} ("contacts") in
-Sanskrit, because the points of pronunciation make full contact with each
-other. In English grammar, the nasal sounds are called {dfn nasals}, and the
-rest are called {dfn stops}.
-
+For all of these sounds, the points of pronunciation make full contact with
+each other. Thus they are called {s-dfn sparzAH} ("contacts"). In English
+grammar, the nasal sounds are called {dfn nasals}, and the rest are called {dfn
+stops}.
 
 As a reminder, here is how these sounds are usually described:
 
@@ -60,7 +52,8 @@ As a reminder, here is how these sounds are usually described:
 {aka {s antaHsthAH} ("in-between (sounds)")}
 
 In Sanskrit, the four semivowels are called {s-dfn antaHstha} ("in-between"),
-perhaps because these consonants are similar to vowels:
+perhaps because these consonants are pronounced in a way that is in-between
+vowels and other consonants:
 
 {sounds-dr ya-2 ra-3 la-4 va-5}
 

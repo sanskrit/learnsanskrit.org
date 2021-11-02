@@ -70,8 +70,8 @@ Rama (as the object of the sentence)
 
 }
 
-Each of these words has two parts. First, there is a simple "core" that
-expresses the main idea of "Rama":
+Each of these words has two parts. First, there is a simple core that expresses
+the main idea of "Rama":
 
 {ex
 
@@ -108,7 +108,7 @@ He gives a fruit [to Rama].
 }
 
 Specifically, a nominal ending shows {em three} basic kinds of information in
-Sanskrit.  Let's learn more about what these three kinds of information are.
+Sanskrit. Let's learn more about what these three kinds of information are.
 
 
 {h Gender}
@@ -212,37 +212,26 @@ The third kind of information we get from a nominal ending is its {dfn case}.
 "Case" is a technical word that is hard to define. Roughly, a word's {em case}
 is the role that the word plays in the sentence.
 
-Sanskrit uses eight different cases. Let's see some examples of these eight
-cases. (Don't worry about memorizing what these cases mean. We will revisit
-all eight of them later.)
-
-{dfn Case 1} is usually the subject of the action:
+Sanskrit uses eight different cases. {dfn Case 1} is usually the subject of the
+action:
 
 {ex
 
 [siMhaH] pazyati.
 [The lion] sees.
 
-[siMho] gacchati.
-[The lion] goes.
-(Note the sandhi change here. The voiced sound `g changes `siMhaH to `siMho.
-This type of change is very common.)
-
 }
 
-{dfn Case 2} is usually the object or destination:
+{dfn Case 2} is usually the object:
 
 {ex
 
 siMho [grAmaM] pazyati.
 The lion sees [a village].
 
-siMho [grAmaM] gacchati.
-The lion goes [to the village].
-
 }
 
-{dfn Case 3} usually means "with" or "by means of":
+{dfn Case 3} usually means "by means of":
 
 {ex
 
@@ -264,8 +253,8 @@ The lion goes to the village [for meat].
 
 {ex
 
-naro [vanAd] grAmaM gacchati.
-A man goes [from the forest] to the village.
+siMho [vanAd] grAmaM gacchati.
+The lion goes [from the forest] to the village.
 
 }
 
@@ -273,21 +262,14 @@ A man goes [from the forest] to the village.
 
 {ex
 
-siMho [narasya] gRhaM gacchati.
-The lion goes to the house [of the man] (or, [the man's] house).
-
-siMho [narasya] mAMsaM khAdati.
-The lion eats the meat [of the man] (or, [the man's] meat).
-
+siMho [grAmasya] narAn khAdati.
+The lion eats the men [of the village] (or, [the village's] men).
 
 }
 
 {dfn Case 7} usually means "on" or "in":
 
 {ex
-
-naraH [siMhe] 'sti.
-The man is [in the lion].
 
 siMho [grAme] carati.
 The lion walks [in the village].

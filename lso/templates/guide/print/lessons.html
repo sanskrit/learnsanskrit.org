@@ -3,6 +3,12 @@
 
 {% block title %}Sanskrit for beginners{% endblock %}
 
+{% block extrahead %}
+{% assets "css_print" %}
+<link rel="stylesheet" type="text/css" href="{{ ASSET_URL }}" />
+{% endassets %}
+{% endblock %}
+
 {% block breadcrumbs %}{% endblock %}
 
 {% block article %}

@@ -78,7 +78,7 @@ kRSNaH sarpaH > kRSNasarpaH
 black snake
 
 megha iva zyAmaH > meghazyAmaH
-cloud dark (as dark as a claud)
+cloud dark (as dark as a cloud)
 
 zuklaH kRSNaH > zuklakRSNaH
 (something that is) white and black

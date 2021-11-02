@@ -4,6 +4,9 @@
         "sentence-structure",
         "agreement",
         "verbless-sentences",
+        "questions",
+        "relative-phrases",
+        "participles",
         "the-eight-cases"
     ]
 }

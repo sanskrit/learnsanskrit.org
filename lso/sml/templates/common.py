@@ -126,6 +126,30 @@ class SanskritDefinition(View):
         return "</dfn>"
 
 
+class SanskritTableCell(SanskritDefinition):
+    @staticmethod
+    def to_node(s):
+        return Node("s-td", [Text(s)])
+
+    def enter(self):
+        return "<td>"
+
+    def exit(self):
+        return "</td>"
+
+
+class SanskritTableCellList(View):
+    def children(self):
+        assert len(self.node.children) == 1
+        text = self.node.children[0].value
+
+        ret = []
+        for td in text.split("|"):
+            td = td.strip()
+            ret.append(SanskritTableCell.to_node(td))
+        return ret
+
+
 class SoundsView(View):
     def enter(self):
         return f'<ul class="sounds">'
@@ -271,6 +295,18 @@ class FlaskRoute(View):
         args = dict(self.node.attr)
         route = args.pop("r")
         url = url_for(route, **args)
+        return f'<a href="{url}">'
+
+    def exit(self):
+        return "</a>"
+
+
+class LessonLink(View):
+    def enter(self):
+        args = dict(self.node.attr)
+        route = args.pop("r")
+        topic, slug = route.strip().split("/")
+        url = url_for("guide.lesson", topic=topic, slug=slug)
         return f'<a href="{url}">'
 
     def exit(self):

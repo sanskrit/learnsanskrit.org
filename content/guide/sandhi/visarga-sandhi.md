@@ -29,29 +29,57 @@ mother!
 
 }
 
-Most of the {s visarga}s you see will come from {s s}. A very small number will
-come from {s r}. If the {s visarga} comes from {s r}, its sandhi rules have
-some small differences. So it is important for us to know which sound the {s
-visarga} comes from.
+Most of the {s visarga}s you hear and see will come from {s s}. A very small
+number will come from {s r}. If the {s visarga} comes from {s r}, its sandhi
+rules have some small differences. So it is important for us to know which
+sound the {s visarga} comes from.
+
+
+{h Table of changes}
+
+Some learners find it helpful to see these sandhi changes in a table. So, here
+is a basic summary of {s visarga} sandhi:
+
+{sandhi-table
+{tr {th {s -as}} {th {s -As}} {th {s -s}} {th {s -r}}}
+{tr {s-tds o ' | A  | r | r} {th {s a}}}
+{tr {s-tds a   | A  | r | r} {th other vowels}}
+{tr {s-tds o   | A  | r | r} {th voiced consonants}}
+{tr {s-tds az  | Az | z | z} {th {s c, ch}}}
+{tr {s-tds aS  | AS | S | S} {th {s T, Th}}}
+{tr {s-tds as  | As | s | s} {th {s t, th}}}
+{tr {s-tds aH  | AH | H | H} {th other consonants}}
+}
+
+To use this table, find the ending of the word on the top row. Then find the
+second sound on the right column. The corresponding cell in the table is the
+result. For example, if the first term ends in {s -As} and the next one starts
+with {s c} or {s ch}, then the result is {s -Az}.
 
 
 {h Common changes}
 
 Some changes are common and apply to all {s visarga} sounds.
 
-If the second sound is unvoiced, the {s visarga} will match its point of pronunciation, if possible:
+If the second sound is unvoiced, the {s visarga} can become {s z}, {s S}, or
+{s s} to match the second sound's point of pronunciation. Here are some
+examples:
 
 {ex
 
 bAlaH carati > [bAlaz] carati
 The boy walks.
 
+bAlaH TippaNIm paThati > [bAlaS] TippaNIM paThati
+The boy reads the commentary.
+
 bAlaH tiSThati > [bAlas] tiSThati
 The boy stands.
 
 }
 
-These changes may even occur in front of {s za}, {s Sa}, and {s sa}. But these changes are usually not written down:
+These changes may even occur in front of {s za}, {s Sa}, and {s sa}. But these
+changes are usually not written down:
 
 {ex
 
@@ -64,7 +92,6 @@ The man goes to the thicket.
 naraH sAgaraM gacchati (narassAgaraM gacchati)
 The man goes to the ocean.
 
-
 }
 
 {comm todo jihva upadhm}
@@ -72,8 +99,8 @@ The man goes to the ocean.
 
 {h {s -As} sandhi}
 
-The rules here are about words that originally end in {s -As}. In this context,
-the {s visarga} disappears before any voiced sound:
+If the {s visarga} ends a term that originally ended in {s -As}, then it
+disappears if any voiced sound follows:
 
 {ex
 
@@ -91,8 +118,8 @@ The men vomit.
 
 {h {s -as} sandhi}
 
-The rules here are about words that originally end in {s -as}. In this context,
-{s -aH} becomes {s -o} in front of voiced consonants:
+If the {s visarga} ends a term that originally ended in {s -as}, then it
+becomes {s o} if any voiced {em consonant} follows:
 
 {ex
 
@@ -123,7 +150,6 @@ The man drinks water.
 
 naraH odanam icchati > [nara] odanam icchati
 The man wants rice.
-
 
 }
 
@@ -197,13 +223,9 @@ He sees.
 
 {h Review}
 
-Many Sanskrit words end with a {s visarga}, and the {s visarga} changes often
-due to sandhi. You do not need to memorize the rules above, but it is important
-to recognize them so that you can tell where one word ends and another begins.
-
-As you read more Sanskrit, you will eventually understand {s visarga} sandhi
-instinctively. But if you would like to practice, you can try applying the
-correct {s visarga} sandhi changes to the examples below:
+You do not need to memorize the rules above. But if you would like to practice
+using them, you can try to apply the correct {s visarga} sandhi changes to the
+examples below:
 
 {ex
 

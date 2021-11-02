@@ -1,0 +1,51 @@
+$color: #f4f9ff;
+$bc: darken($color, 7%);
+$border: 1px $bc solid;
+
+.default, .sandhi {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+
+    th {
+        background: #e2ecf9;
+        color: darken($color, 70%);
+    }
+
+    tr:nth-of-type(even) {
+        background: $color;
+    }
+}
+
+// Sandhi rules.
+.sandhi {
+    border-bottom: $border;
+
+    td, th {
+        padding: 0.5em;
+        border: $border;
+        border-width: 1px 1px 0 0;
+    }
+    tr > :first-child {
+        border-left: $border;
+    }
+    tr:first-child th {
+        border-bottom: 3px $bc solid;
+    }
+    td + th {
+        text-align: left;
+        border-left: 3px $bc solid;
+    }
+}
+
+// Default table, often like a definition list.
+.default th {
+    padding: 0.5rem;
+}
+.default td {
+    padding: 0.25em;
+}
+.default .sa1 {
+	font-size: 1.5em;
+}
+

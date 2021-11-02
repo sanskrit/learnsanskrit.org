@@ -72,13 +72,13 @@ gajAn gajAnAm
 }
 
 
-Feminine stems follow the same pattern as the masculine stems. But in cases 4
+Feminine stems follow a pattern similar to the masculine stems. But in cases 4
 through 7, they can optionally behave as if they end with {s -I}:
 
 {nominal
 
 1 zuciH zucI zucayaH
-2 zucim zucI zucIn
+2 zucim zucI zucIH
 3 zucinA zucibhyAm zucibhiH
 4 zucaye,zucyai zucibhyAm zucibhyaH
 5 zuceH,zucyAH zucibhyAm zucibhyaH
@@ -87,6 +87,9 @@ through 7, they can optionally behave as if they end with {s -I}:
 8 zuce zucI zucayaH
 
 }
+
+Note that the case 2 feminine plural is {s zucIH} as opposed to the masculine
+{s zucIn}.
 
 The neuter stem uses the basic nominal endings. But if an ending starts with a
 vowel, we add an extra {s n} sound. We also use {s -InAm} with a long {s -I},
@@ -128,14 +131,14 @@ The masculine endings are similar to the {s -i} endings we saw above. Where {s
 
 {nominal
 
-1 madhuH madhu madhavaH
-2 madhum madhu madhun
+1 madhuH madhU madhavaH
+2 madhum madhU madhUn
 3 madhunA madhubhyAm madhubhiH
 4 madhave madhubhyAm madhubhyaH
 5 madhoH madhubhyAm madhubhyaH
 6 madhoH madhvoH madhUnAm
 7 madhau madhvoH madhuSu
-8 madho madhu madhavaH
+8 madho madhU madhavaH
 
 }
 
@@ -158,16 +161,19 @@ stems:
 
 {nominal
 
-1 madhuH madhu madhavaH
-2 madhum madhu madhun
+1 madhuH madhU madhavaH
+2 madhum madhU madhUH
 3 madhunA madhubhyAm madhubhiH
 4 madhave madhubhyAm madhubhyaH
 5 madhoH,madhvAH madhubhyAm madhubhyaH
 6 madhoH,madhvAH madhvoH madhUnAm
 7 madhau,madhvAm madhvoH madhuSu
-8 madho madhu madhavaH
+8 madho madhU madhavaH
 
 }
+
+Like before, note that the case 2 feminine plural is {s madhUH} as opposed to
+the masculine {s madhUn}.
 
 The neuter endings are again similar to what we saw above:
 

@@ -33,6 +33,10 @@
 anyone can understand. We focus on core concepts and principles, <em>not</em>
 on dull busywork.</p>
 
+{% set url = url_for('static', filename='pdf/guide.pdf') %}
+<p>You can download this guide as a PDF <a href="{{url}}">here</a>. This PDF
+has a few technical issues, but it should still be usable on most devices.</p>
+
 {% set ml = config.MAILING_LIST_URL %}
 <p>Last updated on {{ last_updated }}. <a href="{{ ml }}" target="_blank">Join
     our mailing list</a> for updates.</p>

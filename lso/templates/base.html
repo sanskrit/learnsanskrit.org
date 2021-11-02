@@ -24,13 +24,15 @@
         {% assets "css_all" %}
         <link rel="stylesheet" type="text/css" href="{{ ASSET_URL }}" />
         {% endassets %}
-		<link rel="stylesheet" type="text/css" href="/static/css/print.css" media="print" />
+        {% block extrahead %}{% endblock %}
         <meta name="viewport" content="width=device-width, initial-scale=1">
 	</head>
 	<body>
         {% block body %}{% endblock %}
+        {% block extra_scripts %}
         {% assets "js_all" %}
         <script type="text/javascript" src="{{ ASSET_URL }}"></script>
         {% endassets %}
+        {% endblock %}
 	</body>
 </html>

@@ -4,6 +4,7 @@
         "the-sandhi-system",
         "vowel-sandhi",
         "visarga-sandhi",
-        "consonant-sandhi-between-words"
+        "consonant-sandhi-between-words",
+        "consonant-sandhi-within-a-word"
     ]
 }

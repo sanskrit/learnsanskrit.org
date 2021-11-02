@@ -5,33 +5,41 @@
 
 {sounds-dr a-1}
 
-By changing the basic sound {s a} in different ways, we can create the full set
-of Sanskrit vowels.
+By changing {s a} in different ways, we can create the full set of Sanskrit
+vowels. In this lesson, we will learn about all of the ways we can modify this
+vowel.
 
 
-{h Simple vowels}
-{aka {s samAnAkSarANi} ("uniform sounds")}
+{h Point of pronunciation}
+{aka {s uccAraNa-sthAna} ("pronunciation place")}
 
 First, we can change the vowel's point of pronunciation. Sanskrit vowels use
-five basic points of pronunciation. Vowel that use just one point of
-pronunciation are called {dfn simple vowels}:
+five basic points of pronunciation:
+
+{ul
+    {li the soft palate}
+    {li the hard palate}
+    {li the edge of the roof of the mouth}
+    {li the base of the teeth}
+    {li the lips}
+}
+
+By using these five points of pronunciation, we can create five basic vowels:
 
 {ul
     {li {s a} with the soft palate}
     {li {s i} with the hard palate}
-    {li {s R} with the top of the roof of the mouth}
+    {li {s R} with the edge of the roof of the mouth}
     {li {s L} with the base of the teeth}
     {li {s u} with the lips}
 }
 
 {sounds-dr a-1 i-2 R-3 L-4 u-5}
 
-{h Compound vowels}
-{aka diphthongs, complex vowels, {s sandhyakSarANi} ("joined sounds")}
-
-
-If we use multiple points of pronunciation, we can create these {dfn compound
-vowels}:
+Vowel that use just one point of pronunciation are called {dfn simple vowels}
+{sa-opt samAnAkSarAni "simple vowels"}. If we use multiple points of
+pronunciation, we create {dfn compound vowels} {sa-opt sandhyakSarANI "joined
+vowels"}:
 
 {ul
     {li {s e} and {s ai} with the soft palate and the hard palate}
@@ -42,20 +50,21 @@ vowels}:
 
 
 {h Length}
+{aka {s kAla} ("time")}
 
-Second, we can change the vowel's {dfn length}. Normally, Sanskrit vowels have
-two lengths: {dfn short} {sa-opt hrasva} and {dfn long} {sa-opt dIrgha}. Short
+Second, we can change the vowel's {dfn length}. Most Sanskrit vowels are
+either {dfn short} {sa-opt hrasva} and {dfn long} {sa-opt dIrgha}. Short
 vowels are pronounced for one unit of time {sa-opt eka-mAtra "with one
 measure"}, and long vowels are pronounced for twice as long as short vowels
 {sa-opt dvi-mAtra "with two measures"}.
 
-All of the simple vowels, except for {s L}, can become long:
+All of the short vowels, except for {s L}, have a long version:
 
 {sounds-dr A-1 I-2 RR-3 U-5}
 
 All of the compound vowels are already long, and they have no short form.
 
-There is also a third length, {dfn protracted} {sa-opt pluta} that is mainly
+There is also a third length, {dfn protracted} {sa-opt pluta}, that is mainly
 used in Vedic Sanskrit. All of the simple and compound vowels can be
 {s pluta}. {s pluta} vowels are written like so: {s A3 I3 U3 RR3 L3 e3 ai3 o3
 au3}:
@@ -64,6 +73,7 @@ au3}:
 
 
 {h Nasality}
+{aka {s AnunAsikyam} ("nasality")}
 
 Third, we can make the vowel {dfn nasal} {sa-opt anunAsika} or non-nasal
 {sa-opt an-anunAsika}. Nasal vowels are rarely used in normal Sanskrit.
@@ -72,6 +82,7 @@ Third, we can make the vowel {dfn nasal} {sa-opt anunAsika} or non-nasal
 
 
 {h Accent}
+{aka {s svara} ("tone")}
 
 Fourth, we can change the vowel's accent {sa-opt svara}. In Vedic compositions,
 accent is used extensively, but it does not appear anymore in standard
@@ -109,19 +120,24 @@ Of sounds, I am the letter `a.
 
 }
 
-We can also give names to certain vowel families. For example, {s a} has three
-possible lengths (short, long, and protacted), three possible accents ({s
-udAtta}, {s anudAtta}, and {s svarita}), and two kinds of nasality (nasal and
-non-nasal).  So in total, this gives us 3 &times; 3 &times; 2 = 18 different
-variations on the vowel {s a}:
+We can also give names to certain vowel families. For example, {s a} has:
+
+{ul
+    {li three possible lengths (short, long, and protacted)}
+    {li three possible accents ({s udAtta}, {s anudAtta}, and {s svarita})}
+    {li two kinds of nasality (nasal and non-nasal)}
+}
+
+In total, this gives us 3 &times; 3 &times; 2 = 18 different variations on the
+vowel {s a}. You can see all of them below:
 
 {sounds-d a_-1 a-1 a^-1 a~_-1 a~-1 a~^-1}
 {sounds-d A_-1 A-1 A^-1 A~_-1 A~-1 A~^-1}
 {sounds-d A_3-1 A3-1 A^3-1 A~_3-1 A~3-1 A~^3-1}
 
 We can refer to all 18 of these variations by the name {s-dfn avarNa} ("the {s
-a} class"). And sounds of the same {s varNa} are called {dfn similar} ({s-dfn
-savarNa}, "of the same {s varNa}").
+a} class"). Two sounds in the same {s varNa} are called {dfn similar} ({s-dfn
+sa-varNa}, "of the same {s varNa}").
 
 Just as we have {s avarNa}, we also have:
 
@@ -132,7 +148,7 @@ Just as we have {s avarNa}, we also have:
     {li {s-dfn LvarNa} for the 12 variations of {s L}}
 }
 
-Note that {s LvarNa} has only 12 variations because {s L} has no long version.
+{s LvarNa} has only 12 variations because {s L} has no long version.
 
 
 {h {s vivRta} and {s saMvRta}}
@@ -145,13 +161,13 @@ different from the other vowels?
 and {s LvarNa}. But although {s a} and {s A} are part of the same {s varNa},
 {s a} is actually slightly different from {s A} and the other vowels.
 
-Except for {s a}, all the vowels are called {s-dfn vivRta} ("uncovered",
-"open") because they are pronounced with the vowel cords uncontracted. {s a},
-however, is called {s-dfn saMvRta} ("covered," "contracted") because it is
-pronounced with the vocal cords in a more contracted position.
+Except for {s a}, all vowels are called {s-dfn vivRta} ("uncovered", "open")
+because they are pronounced with the vowel cords uncontracted. {s a}, however,
+is called {s-dfn saMvRta} ("covered," "contracted") because it is pronounced
+with the vocal cords in a more contracted position.
 
 To compare these sounds to English, we can say that all the sounds in {s
-ivarNa} sound like the "ee" in "teeth," just with different modifications. But
+ivarNa} sound like the "ee" in "teeth" but with different modifications. But
 although {s A} sounds like the "a" in "father," {s a} does not have that sound.
 Instead, {s a} sounds like the "u" in "mud."
 

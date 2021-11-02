@@ -168,6 +168,20 @@ kakup ha > kaku[b bha]
 
 }
 
+Some learners find it helpful to see these changes in a table:
+
+{sandhi-table
+{tr {th {s k}} {th {s T}} {th {s p}}}
+{tr {s-tds G | N | m} {th nasal sounds}}
+{tr {s-tds g* | D* | b*} {th {s h}}}
+{tr {s-tds g | D | b} {th other voiced sounds}}
+{tr {s-tds k | T | p} {th unvoiced sounds}}
+}
+
+In the table above, * {comm *} means that the following {s h} shifts its point
+of pronunciation to match the first sound.
+
+
 
 {h Extra rules for {s -t}}
 
@@ -200,19 +214,20 @@ tat zocanti > [tac cho]canti
 
 }
 
-Some students find it helpful to see these changes in a table:
+As before, some learners find it helpful to see these changes in a table:
 
-{table
-{tr {th Second sound} {th Result}}
-{tr {td {s G, J, N, n, m}} {td {s n}}}
-{tr {td {s c, ch}} {td {s c}}}
-{tr {td {s j, jh}} {td {s j}}}
-{tr {td {s T, Th}} {td {s T}}}
-{tr {td {s D, Dh}} {td {s D}}}
-{tr {td {s l}} {td {s l}}}
-{tr {td {s z}} {td {s c} ({s z} becomes {s ch})}}
-{tr {td {s h}} {td {s d} ({s h} becomes {s dh})}}
-{tr {td other voiced sounds} {td {s d}}}
+{sandhi-table
+{tr {th {s t}}}
+{tr {s-td n} {th nasal sound}}
+{tr {s-td c} {th {s c, ch}}}
+{tr {s-td j} {th {s j, jh}}}
+{tr {s-td T} {th {s T, Th}}}
+{tr {s-td D} {th {s D, Dh}}}
+{tr {s-td l} {th {s l}}}
+{tr {td {s c} ({s z} becomes {s ch})} {th {s z}}}
+{tr {td {s d} ({s h} becomes {s dh})} {th {s h}}}
+{tr {td {s d}} {th other voiced sounds}}
+{tr {td {s t}} {th other sounds}}
 }
 
 
@@ -259,17 +274,18 @@ tAn zocanti > [tAJ cho]canti
 
 }
 
-Again, some students find it helpful to see these changes in a table:
+Again, some learners find it helpful to see these changes in a table:
 
-{table
-{tr {th Second sound} {th Result}}
-{tr {td {s c, ch}} {td {s Mz}}}
-{tr {td {s j, jh}} {td {s J}}}
-{tr {td {s T, Th}} {td {s MS}}}
-{tr {td {s D, Dh}} {td {s N}}}
-{tr {td {s t, th}} {td {s Ms}}}
-{tr {td {s l}} {td nasal {s l}}}
-{tr {td {s z}} {td {s J} ({s z} optionally becomes {s ch})}}
+{sandhi-table
+{tr {th {s n}}}
+{tr {s-td Mz} {th {s c, ch}}}
+{tr {s-td J} {th {s j, jh}}}
+{tr {s-td MS} {th {s T, Th}}}
+{tr {s-td N} {th {s D, Dh}}}
+{tr {s-td Ms} {th {s t, th}}}
+{tr {td nasal {s l}} {th {s l}}}
+{tr {td {s J} ({s z} optionally becomes {s ch})} {th {s z}}}
+{tr {s-td n} {th other sounds}}
 }
 
 {aside

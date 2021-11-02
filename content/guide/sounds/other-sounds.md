@@ -18,8 +18,8 @@ Rama kills Ravana.
 }
 
 How is the {s anusvAra} pronounced? The {s anusvAra} is a "pure nasal" sound
-that has no equivalent in English. We are not sure how to describe it
-correctly.
+that has no equivalent in English. You can approximate it by pronouncing {s m}
+while pressing your tongue against the roof of your mouth.
 
 However, the {s anusvAra} often becomes many other sounds due to sandhi. If it
 is followed by any consonant except for the ones in {s zavarga} ({s za Sa sa
@@ -43,6 +43,12 @@ semivowel.
 In general, people don't like writing these nasal sounds out, so they use the
 {s anusvAra} as a shorthand.
 
+{note
+If you would like to read more about the {s anusvAra}, we recommend
+{a[href=http://www.sanskritweb.net/sansdocs/anusvara.pdf] this short monograph}
+by Shriramana Sharma.
+}
+
 
 {h {s visarga}}
 
@@ -64,6 +70,8 @@ has essentially the same meaning as the word {s visarga}.
 
 
 {h {s jihvAmUlIya} and {s upadhmAnIya}}
+
+{comm todo show in devanagari}
 
 There are two variants of the {s visarga} that are worth knowing. These
 variants are often used in spoken Sanskrit, but they are not usually written

@@ -2,7 +2,7 @@
 {aka the gerund, the absolutive, the indeclinable or adverbial participle}
 
 We will start this topic by learning about the root suffixes {s -tvA} and {s
--ya}, and {s -tum}. Both of these suffixes create uninflected words. 
+-ya}. Both of these suffixes create uninflected words. 
 
 
 {h {s -tvA}}
@@ -33,16 +33,15 @@ Rama, [after going] to Lanka, sees Ravana.
 
 }
 
-{s -tvA} causes many sound changes. You can learn more about these sound
-changes further below.
+{s -tvA} can cause many sandhi changes. We will discuss these sandhi changes
+further below.
 
 
 {h {s -ya}}
 {aka {s lyap}}
 
-{s-dfn -ya} has the same meaning as {s -tvA}. When do we use {s -tvA}, and when
-do we use {s -ya}? If the root uses a verb prefix, we always use {s -ya}.
-Otherwise, we use {s -tvA}.
+{s-dfn -ya} has the same meaning as {s -tvA}. If the root uses a verb prefix,
+we always use {s -ya}. Otherwise, we use {s -tvA}.
 
 For example, if we have these two simple sentences:
 
@@ -92,7 +91,8 @@ do > after doing
 
 }
 
-As usual, some roots the connecting {s iT} sounds and others do not:
+As usual, some roots use the connecting {s iT} sounds and others do not. Here
+are some roots that use {s iT}:
 
 {ex
 

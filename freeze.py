@@ -40,6 +40,8 @@ def all_pages():
 @freezer.register_generator
 def static_assets():
     yield "/static/fonts/Sanskrit2003.ttf"
+    yield "/static/favicon.png"
+    yield "/static/pdf/guide.pdf"
 
 
 @freezer.register_generator

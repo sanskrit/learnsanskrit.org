@@ -111,9 +111,9 @@ simple and clear language that ordinary people can understand. And for each
 concept we discuss, we include plenty of examples to make the discussion clear
 and concrete.
 
-But in case it is useful to you, lessons after the core lessons will also
-include the standard English and Sanskrit terms for each concept. These terms
-will let you more easily use other resources outside of our guide.
+In case it is useful to you, lessons after the core lessons will also include
+the standard English and Sanskrit terms for each concept. These terms will help
+you more easily use other resources outside of our guide.
 
 
 {h How to use our guide}
@@ -125,8 +125,8 @@ crumble, but a tree with a strong trunk will endure and thrive.
 
 Once you understand the core lessons, read whatever topic you like. Feel free
 to jump from topic to topic, and go wherever your needs and interests take you.
-But within each topic, you should read the lessons in order, since each lesson
-in a topic builds on the previous ones.
+But within each topic, you should read the lessons in order. This is because
+each lesson in a topic builds on the previous ones.
 
 Learning Sanskrit is easier and more fun when you have friends to help you.
 So please {url[r=site.contact] write to us} with questions, comments, or
@@ -169,18 +169,14 @@ page}.
 Sanskrit is like a massive and beautiful forest. Many of the people who enter
 this forest get tangled in a jungle of complicated explanations. And a few
 unlucky travelers are eaten by the tigers of anxiety, boredom, doubt, and
-frustration. 
-
-I created this guide to give ordinary people a clear and enjoyable path through
-that forest. With a clear path, everyone who wants to explore and savor
-Sanskrit can do so.
+frustration. I created this guide to give ordinary people a clear and enjoyable
+path through that forest. 
 
 I used to believe that grammar was the only way to learn Sanskrit. I now
 believe that most Sanskrit learners should focus on {em acquiring} Sanskrit
-rather than {em studying} it. But there will always be those who love and
+rather than {em studying} it. But there will always be people who love and
 appreciate grammar, just as I do. And there is certainly a need for a resource
-that explains Sanskrit clearly, simply, and completely (and with some good
-humor).
+that explains Sanskrit clearly, simply, and completely.
 
 I dedicate this guide to my grandparents: B. Raghavachari, Mohana Raghavachari,
 the late S. Rangaswamy, and the late Malathi Rangaswamy. I also decidate it to

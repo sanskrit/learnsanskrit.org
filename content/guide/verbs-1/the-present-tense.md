@@ -24,12 +24,15 @@ leading." In Sanskrit, we describe both of these with the same verb form.
 Context makes the specific sense clear.
 
 In general, the present tense is seen as a "default" tense. So we can also use
-it to describe habitual actions or actions that always or regularly occur:
+it to describe actions that regularly occur:
 
 {ex
 
 ahaM pratidinaM [pacAmi].
-I cook every day.
+I [cook] every day.
+
+saMjayaH prativarSaM nagaraM [gacchati].
+Sanjaya [goes] to the city every year.
 
 }
 
@@ -72,7 +75,6 @@ Here are the endings we use in the present tense as used with the stem {s
 naya}:
 
 {verb
-
     nayati nayataH nayanti
     nayasi nayathaH nayatha
     nayAmi nayAvaH nayAmaH
@@ -93,5 +95,5 @@ Here are some patterns that stand out to us:
 {ul
     {li All of the first-person forms have a long {s A} sound in their ending.}
     {li All of the singular forms end in {s -i}.}
-    {li {s tha} appears in the endings of the second person.}
+    {li The sound {s tha} is used only in the second person.}
 }

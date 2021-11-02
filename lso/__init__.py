@@ -39,6 +39,14 @@ css = Bundle(
 )
 assets.register("css_all", css)
 
+css = Bundle(
+    "css/print.scss",
+    filters="sass-dart",
+    output="gen/print.css",
+)
+assets.register("css_print", css)
+
+
 js = Bundle("scripts/sanscript.js", "scripts/main.js", output="gen/main.js")
 assets.register("js_all", js)
 

@@ -10,32 +10,50 @@ from flask import Blueprint, render_template
 bp = Blueprint("guide", __name__, url_prefix="/guide")
 
 
+def get_update_date():
+    guide = API.guide()
+    latest_mtime = guide.latest_mtime
+
+    latest = datetime.fromtimestamp(latest_mtime).strftime("%d %B %Y")
+    # Cross-platform hack to remove leading 0.
+    if latest.startswith("0"):
+        latest = latest[1:]
+    return latest
+
+
 @bp.route("/")
 def index():
     guide = API.guide()
-    latest_mtime = guide.latest_mtime
-    latest = datetime.fromtimestamp(latest_mtime).strftime("%d %B %Y")
     next = guide.topics[0].lessons[0]
+    last_updated = get_update_date()
+
     return render_template(
-        "guide/index.html", guide=guide, last_updated=latest, next=next
+        "guide/index.html", guide=guide, last_updated=last_updated, next=next
     )
 
 
-@bp.route("/print/cover/")
-def print_cover():
-    return "Sanskrit for beginners"
-
-
-@bp.route("/print/all/")
-def print_all():
-    """For debugging. The entire guide at once."""
+@bp.route("/print/")
+def print():
     guide = API.guide()
-    latest_mtime = guide.latest_mtime
-    latest = datetime.fromtimestamp(latest_mtime).strftime("%d %B %Y")
-    next = guide.topics[0].lessons[0]
+    last_updated = get_update_date()
     return render_template(
-        "guide/all.html",
+        "guide/print/book.html",
         guide=guide,
+        topics=guide.topics,
+        last_updated=last_updated,
+    )
+
+
+@bp.route("/print-debug/")
+def print_debug():
+    """Special endpoint to quickly test print styles."""
+    guide = API.guide()
+    last_updated = get_update_date()
+    return render_template(
+        "guide/print/book.html",
+        guide=guide,
+        topics=guide.topics[:1],
+        last_updated=last_updated,
     )
 
 

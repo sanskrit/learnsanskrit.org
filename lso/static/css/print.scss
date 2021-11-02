@@ -1,0 +1,99 @@
+// Type and layout
+@page {
+    margin: 3cm;
+}
+html {
+    font-size: 12pt;
+}
+.justify p {
+    text-align: justify;
+    hyphens: auto;
+}
+
+// Page numbers
+@page:left {
+    @top-left {
+        content: counter(page);
+    }
+}
+@page:right {
+    @top-right {
+        content: counter(page);
+    }
+}
+
+// No page numbers
+@page:first {
+    @top-right {
+        content: "";
+    }
+    @top-left {
+        content: "";
+    }
+}
+@page no-numbers {
+    @top-right {
+        content: "";
+    }
+    @top-left {
+        content: "";
+    }
+}
+
+// Page types
+.page-break {
+    page-break-before: always;
+}
+
+.table-of-contents, .table-of-contents ol {
+    list-style: none;
+    padding: 0;
+}
+.table-of-contents {
+    a {
+        text-decoration: none;
+        color: black;
+    }
+    a::after {
+        content: leader(' .') target-counter(attr(href url), page);
+    }
+    .code {
+        color: #777;
+        font-size: 0.8em;
+        display: inline-block;
+        padding-right: 2mm;
+    }
+    ol {
+        margin-left: 1cm;
+    }
+}
+
+// Bookmarks
+.topic h1 {
+    bookmark-level: 1;
+}
+.lesson h1 {
+    bookmark-level: 2;
+}
+.lesson h2 {
+    bookmark-level: 3;
+}
+
+// Hidden elements
+nav, .call-to-action, footer {
+    display: none;
+}
+
+.examples, .paradigm {
+    background: transparent;
+}
+table, .examples li, .sounds {
+    page-break-inside: avoid;
+}
+.examples {
+    padding: 0;
+}
+.examples li {
+    margin: 0.25cm;
+    margin-left: 1cm;
+}

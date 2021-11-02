@@ -18,7 +18,7 @@ but we do not expect any background knowledge in grammar, linguistics, or
 related fields.
 
 Too often, resources for teaching Sanskrit (especially those written in
-English) use a highly technical, highly academic style. This is fine {it per
+English) use an academic and highly technical style. This is fine {it per
 se}, but as a whole, this technical style carries an implicit message:
 "Sanskrit is something only an elite person can know and learn. If you are not
 an elite, Sanskrit is not for you."
@@ -69,11 +69,11 @@ ball's trajectory. Knowing the calculus of kinematics has some incidental
 relationship to throwing a ball, but in a pragmatic sense, neither provides
 much insight into the other.
 
-Here is a small example of what we mean. A person {em rides} a horse or a
-bicycle or a skateboard or a scooter but {em drives} a car and {em pilots} a
-boat or an airplane. The semantics of all three words are similar, but it is
-difficult to articulate a specific, explicit rule that accounts for the
-difference. Such is the actual, real-world behavior of human language.
+Here is a small example of what we mean. A person {em rides} a bicycle or
+skateboard or scooter or motorcycle but {em drives} a car or truck and {em
+pilots} a boat or airplane. The semantics of these three words are similar, but
+it is difficult to articulate a specific and explicit rule that accounts for
+the difference. Such is the real-world behavior of human language.
 
 Given this divergence between implicit and explicit representations of language
 and the approaches necessary to cultivate them, we have focused solely on
@@ -132,9 +132,10 @@ acquisition, such as:
 That said, there will always be those who find anything other than ancient
 literature to be a waste of time. Now that our grammar guide has matured, we
 are building an assisted reading environment for such learners. Assisted
-reading is not an optimal acquisition environment, since the material involved
-is far too complex for beginning and intermediate learners; but we see it as a
-pragmatic compromise.
+reading is not an optimal acquisition environment because the material involved
+is far too complex for beginning and intermediate learners. But we see such an
+approach as a pragmatic compromise for those who insist on grammar-based
+approaches.
 
 {comm
 

@@ -239,7 +239,7 @@ function exportSanscriptSingleton(global){
             "other_marks": ["M", "H", "~"],
             "virama": [""],
             "consonants": ["k", "kh", "g", "gh", "G", "c", "ch", "j", "jh", "J", "T", "Th", "D", "Dh", "N", "t", "th", "d", "dh", "n", "p", "ph", "b", "bh", "m", "y", "r", "l", "v", "z", "S", "s", "h", "L", "kS", "jJ"],
-            "symbols": ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "OM", "'", "|", "||"]
+            "symbols": ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "OM", "'", "|", "||"],
         },
 
         /* National Library at Kolkata
@@ -292,7 +292,7 @@ function exportSanscriptSingleton(global){
     romanSchemes = {},
 
     // Map of alternate encodings.
-    allAlternates = {
+    allAlternates = Sanscript.allAlternates = {
         "itrans": {
             "A": ["aa"],
             "I": ["ii", "ee"],

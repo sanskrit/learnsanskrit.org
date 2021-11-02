@@ -6,6 +6,7 @@
 
 {% set names = {
     'acquiring': 'Acquiring Sanskrit',
+    'writing': 'Writing Sanskrit',
     'reference-books': 'Reference books',
     'texts': 'Text collections',
     'dictionaries': 'Dictionaries',
@@ -14,9 +15,6 @@
     'typefaces': 'Fonts and typefaces',
 } %}
 
-{% macro link(s) %}
-<li><a href="#{{ s }}">{{ names[s] }}</a></li>
-{% endmacro %}
 
 {% macro head(s) %}
 <h2 id="{{ s }}">{{ names[s] }}</h2>
@@ -28,13 +26,11 @@
 <p>Click to scroll down:</p>
 
 <ul class="scroll-list">
-    {{ link('acquiring') }}
-    {{ link('reference-books') }}
-    {{ link('dictionaries') }}
-    {{ link('texts') }}
-    {{ link('tools') }}
-    {{ link('software') }}
+{% for name in names %}
+    <li><a href="#{{ name }}">{{ names[name] }}</a></li>
+{% endfor %}
 </ul>
+
 
 {{ head('acquiring') }}
 
@@ -49,6 +45,14 @@
         Sanskrit.</p></li>
     <li><p><a href=https://www.sanskritfromhome.in/">Vyoma-Saṃskṛta-Pāṭhaśālā</a>
         offers online Sanskrit lectures in a classroom format.</li>
+</ul>
+
+
+{{ head('writing') }}
+
+{% set comp = "https://archive.org/details/StudentsGuideToSanskritComposition-VsApte1925" %}
+<ul>
+    <li><a href="{{ comp }}"><cite>The Student's Guide to Sanskrit Composition</cite></a> by V. S. Apte.</li>
 </ul>
 
 {{ head('reference-books') }}

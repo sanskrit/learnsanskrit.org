@@ -14,11 +14,11 @@ When vowels do not follow consonants, they are written like this:
 We include the long vowel {d LL} here for the sake of being complete, but it is 
 never used in real Sanskrit.
 
-In general, short and long vowels are written in a similar way: {d a} and {d
-A}, {d i} and {d I}, {d u} and {d U}, {d R} and {d RR}, and {d L} and {d LL}.
-This pattern also applies to {d e} and {d ai}, as well as {d o} and {d au}. In
-each pair, notice that the second symbol adds some mark or extra feature to the
-first.
+In general, short and long vowels are written in a similar way. Notice the
+similarities between {d a} and {d A}, {d i} and {d I}, {d u} and {d U}, {d R}
+and {d RR}, and {d L} and {d LL}. This pattern also applies to {d e} and {d
+ai}, as well as {d o} and {d au}. In each pair, notice that the second symbol
+adds some mark or extra feature to the first.
 
 
 {h Consonants}

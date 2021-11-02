@@ -168,7 +168,7 @@ The irregular stems in this class usually have an extra nasal sound:
     {tr {td {s-dr muc}} {td {s-dr muJca}} {td release}}
     {tr {td {s-dr kRt}} {td {s-dr kRntati}} {td cut}}
     {tr {td {s-dr lip}} {td {s-dr limpati}} {td anoint or smear}}
-    {tr {td {s-dr sic}} {td {s-dr ziJcati}} {td sprinkle}}
+    {tr {td {s-dr sic}} {td {s-dr siJcati}} {td sprinkle}}
 }
 
 {aside
