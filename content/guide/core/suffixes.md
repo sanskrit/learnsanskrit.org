@@ -89,6 +89,7 @@ conquer > (has been) conquered
 
 yuj > yukta
 yoke, join, unite > (has been) yoked, joined, or united
+(`yuj becomes `yuk due to sandhi)
 
 kR + ta > kRta
 do, make > (has been) done, (has been) made
@@ -131,11 +132,13 @@ create a word that means "characterized by X":
 
 yoga + in > yogin
 yoga > characterized by yoga; a yogi
+(Note that the `-in suffix removes the final `-a of `yoga.)
 
 }
 
+
 Next is the suffix {s -tva}. When we add {s -tva} to a word that means "X," we
-creates a word that means "X-ness":
+create a word that means "X-ness":
 
 {ex
 
@@ -147,9 +150,8 @@ yoga > "yoga-ness"; the state of yoga
 
 {h Review}
 
-Sanskrit has many different root and nominal suffixes. We can use these
-suffixes to quickly and simply create a variety of complex and expressive
-words.
+Sanskrit has many different root and nominal suffixes, and we can use these
+suffixes to create a variety of complex and expressive words.
 
 {ol
     {li What does "vowel strengthening" mean?}

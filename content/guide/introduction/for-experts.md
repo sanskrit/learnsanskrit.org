@@ -7,7 +7,7 @@ introduction for beginners, but it does so in a deeper and more sophisticated
 way. 
 
 If you are already satisfied by our introduction for beginners, you can skip
-this page and move on to the next one.
+this section and move on to the next one.
 
 
 {h Our intended audience}
@@ -55,7 +55,7 @@ confidence is that the neurolinguistic processes involved are different enough
 to treat implicit (acquisition) and explicit (studying) approaches to language
 as two different activities.
 
-{note In the future, we'll add some links the literature here. For now, we
+{note In the future, we'll add some links to the literature here. For now, we
 recommend the works of Bill VanPatten and Susan Gass.}
 
 

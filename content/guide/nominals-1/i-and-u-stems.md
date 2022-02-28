@@ -6,8 +6,8 @@ which is the family of {s -A}, {s -I}, and {s -U} stems, mostly contains
 feminine stems.
 
 Now we will learn about the family of {s-dfn -i} and {s-dfn -u} stems. These
-stems can be masculine, feminine, or neuter. So they can appear in any of the
-three genders.
+stems can be masculine, feminine, or neuter. That is,  they can appear in any
+of the three genders.
 
 
 {h Basic {s -i} stems}
@@ -126,8 +126,9 @@ zuci + i > zucIni
 In the examples below, we will use the adjective stem {s madhu}, which means
 "sweet." If used in the neuter gender, it can also mean "honey."
 
-The masculine endings are similar to the {s -i} endings we saw above. Where {s
--i} becomes {s y} or {s ay} or {s e}, {s -u} becomes {s v} or {s av} or {s o}:
+The masculine endings follow the same pattern as the {s -i} endings we saw
+above. Where {s -i} becomes {s y} or {s ay} or {s e}, {s -u} becomes {s v} or
+{s av} or {s o}:
 
 {nominal
 

@@ -4,9 +4,18 @@
 
 {% block meta %}Get in touch with the learnsanskrit.org team!{% endblock %}
 
-{% block article %}
-<h1>Contact learnsanskrit.org</h1>
+{% block header %}
+<header class="tc index bg-purple pb3">
+{% include 'include/top-nav.html' %}
+<p class="logo sa1 mb0 mt4">{{ 'OM'|d }}</p>
+<h1 class="ma0 f3">Contact</h1>
+<p class="mt0 f6">Send us your questions and comments!</p>
+</header>
+{% endblock %}
 
+{% block main %}
+<div style="width: 100%">
+  <article class="mt4 mb5 pa2 readable">
 <p>We love receiving emails from our readers, even if we are sometimes slow to
 reply. If you don't hear back soon, we may have lost track of your email, so
 please do write again.</p>
@@ -53,7 +62,7 @@ you plan to use our material, we would appreciate a courtesy email.</p></dd>
 <dt>Can you help me learn Sanskrit?</dt>
 
 <dd><p>Yes, that's what we're here for! Please read our <a href="{{
-url_for('guide.index') }}">Sanskrit for beginners</a> series. If you have any
+url_for('guide.index') }}">Sanskrit for Beginners</a> series. If you have any
 specific questions, please send us an email.</p></dd>
 
 <dt>Are you interested in selling your website?</dt>
@@ -62,4 +71,6 @@ specific questions, please send us an email.</p></dd>
 
 </dl>
 
+  </article>
+</div>
 {% endblock %}

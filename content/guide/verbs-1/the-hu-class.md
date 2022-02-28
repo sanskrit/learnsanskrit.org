@@ -25,6 +25,10 @@ juhutaH.
 
 }
 
+{note
+The {s hu} class is rare, but doubling is not. Many different kinds of Sanskrit
+verbs use doubling, and we will see more examples of it in other lessons.
+}
 
 {h Basic rules of doubling}
 
@@ -69,7 +73,7 @@ weak stem {s dad}:
 rAmaH phalaM sItAyai dadAti.
 Rama gives the fruit to Sita.
 
-te phalAni rAmAya dadanti.
+te phalAni rAmAya dadati.
 They give the fruits to Rama.
 
 }
@@ -100,16 +104,17 @@ complex classes. In the present tense, we use {s -ati} instead of {s -anti}:
 The command mood is normal, but we use the ending {s -dhi} instead of {s -hi}:
 
 {verb
-    juhotu-s juhutAm juhvantu
+    juhotu-s juhutAm juhvatu
     juhudhi juhutam juhuta
     juhavAni-s juhavAva-s juhavAma-s
 }
 
 The ordinary past tense is normal, but we use the ending {s -uH} instead of {s
--an}:
+-an}. This ending causes a vowel change, so we get {s ajuhavuH} instead of *{s
+ajuhuvuH}:
 
 {verb
-    ajuhot-s ajuhutAm ajuhuvuH
+    ajuhot-s ajuhutAm ajuhavuH
     ajuhoH-s ajuhutam ajuhuta
     ajuhavam-s ajuhuva ajuhuma
 }

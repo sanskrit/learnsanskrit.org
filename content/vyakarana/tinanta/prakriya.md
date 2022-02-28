@@ -11,7 +11,7 @@ of {s nI} in {s kartari prayoga} with {s laT-lakAra}.
 Our intended semantics are of {em leading} someone. We want to express this for
 some third-party agent and express a sense of the present tense.
 
-Based on those semantics, we select a root. We start with the {s dhAtu} {s NIJ}
+Based on those semantics, we select a root. We start with the {s dhAtu NIJ}
 as given in the {cite Dhātupāṭha}:
 
 {dhatu
@@ -88,6 +88,21 @@ nayati | 6.1.78
 
 }
 
+A more experienced grammarian will skip the low-level steps and use something
+like this:
+
+{prakriya
+
+NIJ | 1.3.1
+nI la~T | 3.2.123
+nI ti | 3.4.78
+nI zap ti | 3.1.68
+ne a ti | 7.3.84
+nayati | 6.1.78
+
+}
+
+
 {h Some miscellaneous rules}
 
 Here are a few miscellaneous rules that we will refer to further below. First,
@@ -115,7 +130,7 @@ Next, a rule that depends on several terms from {s anuvRtti}:
 
 ato guNe | 6.1.97
 ataH guNe
-[Non-word-final] `a when followed by a `guNa [vowel] are both replaced with the
+[Non-word-final] `a and a following `guNa [vowel] are both replaced with the
 `guNa (i.e. the `a is deleted).
 
 }

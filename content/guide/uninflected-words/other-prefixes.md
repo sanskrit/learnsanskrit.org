@@ -42,11 +42,11 @@ nominal stem. Usually, we use this prefix with the words {s kR} ("do, make") or
 
 {ex
 
-karoti > bhasmasAtkaroti
-does, makes > turns (something else) to ash
+bhasma > bhasmasAtkaroti
+ash > turns (something else) to ash
 
-bhavati > bhasmasAdbhavati
-is, becomes > becomes ash
+bhasma > bhasmasAdbhavati
+ash > becomes ash
 
 }
 

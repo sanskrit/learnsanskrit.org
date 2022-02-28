@@ -73,7 +73,7 @@ Third, it might intensify the root's basic meaning or leave it unchanged:
 
 {ex
 
-jayati > [vi]jayati
+jayati > [saM]jayati
 they conquer > they (intensely or fully) conquer
 
 }
@@ -90,8 +90,8 @@ they lead > they gather ("lead [together here]")
 
 }
 
-Many Sanskrit verbs use the prefix {s a-}. When we use an {s upasarga}, we
-place it {em before} this {s a-}:
+Many Sanskrit verbs use the prefix {s a-}, which usually indicates the past
+tense. When we use an {s upasarga}, we place it {em before} this {s a-}:
 
 {ex
 
@@ -120,9 +120,13 @@ examples.
 rAmo vanaM gacchati. lakSmaNo ['pi] vanaM gacchati.
 Rama goes to the forest. Lakshmana [also] goes to the forest.
 
+rAmo na rAvaNAd [api] bhItaH.
+Rama is not [even] afraid of Ravana.
+
 }
 
-{s api} can also be used to ask simple yes/no questions:
+{s api} can also be used to ask simple yes/no questions. If it is used this
+way, it appears at the beginning of the sentence:
 
 {ex
 

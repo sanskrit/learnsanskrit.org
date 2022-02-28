@@ -1,9 +1,9 @@
 {title The sound system}
 
 Our core lessons already discussed the various Sanskrit sounds in detail.
-Here, we will complete the basic picture those lessons painted. We will provide
-much more detail about how to pronounce and describe these sounds. Where
-appropriate, we will also provide the standard English and Sanskrit terms.
+Here, provide much more detail about how to pronounce and describe these
+sounds. Where appropriate, we will also provide the standard English and
+Sanskrit terms.
 
 Traditionally, Sanskrit has these main points of pronunciation:
 

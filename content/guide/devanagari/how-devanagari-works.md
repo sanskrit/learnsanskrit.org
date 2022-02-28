@@ -1,6 +1,7 @@
 {title How Devanagari works}
 
-{note If you can read Hindi, please see our note at the bottom.}
+{note If you can already read another language that uses Devanagari, please see
+our note at the bottom of this lesson.}
 
 {dfn Devanagari} ({d devanAgarI}) is a script that is used to write languages
 like Hindi, Marathi, and Nepali. In modern times, it is the script most
@@ -27,7 +28,8 @@ Sanskrit
 Each syllable has at most one vowel. And where possible, syllables should not
 end with consonants.
 
-By default, the symbols for consonants have the vowel sound {s a} pronounced after them:
+By default, the symbols for consonants have the vowel sound {s a} pronounced
+after them:
 
 {ex
 
@@ -67,7 +69,7 @@ s + ka > ska
 
 Sanskrit has many consonant clusters, so when we write Sanskrit in
 Devanagari, we must use many different consonant combinations. For details, see
-the section below.
+the lesson on consonant clusters later in this topic.
 
 Finally, the traditional practice when writing Sanskrit texts is to write words
 continuously, especially if words end with consonants:
@@ -82,15 +84,17 @@ This is the basic idea of how Devanagari works.
 
 {aside
 
-{h Devanagari for Hindi speakers}
+{h Devanagari for Sanskrit}
+
+(This note is for those who can read another language in Devanagari.)
 
 In Sanskrit, {d ka} is always pronounced as {s ka}, {strong never} as {s k}.
 Likewise for all consonant sounds. So, words like {d rAma}, {d arjuna}, and {d
 yoga} are pronounced as {s rAma}, {s arjuna}, and {s yoga}, {strong never} as
 {s rAm} or {s arjun} or {s yog}.
 
-Sanskrit uses many consonant clusters that don't often appear in Hindi. So even
-if you are comfortable reading Devanagari already, please see our lesson on
-consonant clusters.
+Sanskrit uses many consonant clusters that don't often appear in Hindi or other
+modern Indian languages. So even if you are comfortable reading Devanagari
+already, please see our lesson on consonant clusters.
 
 }

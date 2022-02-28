@@ -55,7 +55,7 @@ seen already:
 
 kR > kurvate
 They all make.
-(Note that this is not `kurvante, as we might otherwise expect)
+(Note that this is not *`kurvante, as we might otherwise expect)
 
 }
 
@@ -75,7 +75,7 @@ They press out.
 
 }
 
-One of its important irregular verbs is {s zru} ("hear"). Its strong stems is
+One of its important irregular verbs is {s zru} ("hear"). Its strong stem is
 {s zRNo}, and its weak stem is {s zRNu}:
 
 {ex
@@ -147,7 +147,7 @@ First, we have the present tense:
 
 {verb
     sunoti-s sunutaH sunvanti
-    sunoSi-s sunutaH sunvanti
+    sunoSi-s sunuthaH sunutha
     sunomi-s sunuvaH sunumaH
 }
 

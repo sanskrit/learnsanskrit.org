@@ -33,7 +33,7 @@ below:
 {ul
     {li {a[href=https://en.amarahasa.com] Amarahāsa}: free online stories written
     especially for acquiring Sanskrit.}
-    {li Samskrita Bharati ({a[href=samskritabharati.in/] India},
+    {li Samskrita Bharati ({a[href=https://www.samskritabharati.in/] India},
     {a[href=https://samskritabharatiusa.org] US}): Conversational Sanskrit.
     Includes workshops, classes, correspondence courses, and in-person events.}
     {li {a[href=https://www.sanskritfromhome.in/] Vyoma-Saṃskṛta-Pāṭhaśālā}:
@@ -118,15 +118,20 @@ you more easily use other resources outside of our guide.
 
 {h How to use our guide}
 
-First, read the core lessons and answer all of the review questions they
-contain. These core lessons are the foundation for the rest of the guide, so it
-is important to study them well. A tree with a weak trunk will wither and
-crumble, but a tree with a strong trunk will endure and thrive.
+It's simple:
 
-Once you understand the core lessons, read whatever topic you like. Feel free
-to jump from topic to topic, and go wherever your needs and interests take you.
-But within each topic, you should read the lessons in order. This is because
-each lesson in a topic builds on the previous ones.
+{ol
+
+{li {p {strong Read the core lessons and answer all of their review questions.}
+These core lessons are the foundation for the rest of the guide, so it is
+important to study them well. A tree with a weak trunk will wither and crumble,
+but a tree with a strong trunk will endure and thrive.}}
+
+{li {p {strong Once you understand the core lessons, read any topic you like.}
+Choose any topic you like. When reading a topic, make sure to read its lessons
+in order. This is because each lesson in a topic builds on the previous ones.}
+
+}}
 
 Learning Sanskrit is easier and more fun when you have friends to help you.
 So please {url[r=site.contact] write to us} with questions, comments, or

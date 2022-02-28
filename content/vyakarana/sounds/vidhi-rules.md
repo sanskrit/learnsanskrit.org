@@ -84,7 +84,7 @@ difficult to understand:
 
 iko yaNaci | 6.1.77
 ikaH yaN aci
-Of `ik, there is `yaN in `ac [in `saMhItA].
+Of `ik, there is `yaN in `ac [in `saMhitA].
 
 }
 
@@ -168,7 +168,7 @@ An `ik vowel is replaced with `yaN when a vowel follows [in `saMhItA].
 
 {h Substitution with two lists}
 
-There is still a subtle problems with rule 6.1.77 above: which {s yaN} sound do
+There is still a subtle problem with rule 6.1.77 above: which {s yaN} sound do
 we use? We know that {s y} is the right choice, but the rule does not say so
 explicitly. So it would be legal to do this:
 

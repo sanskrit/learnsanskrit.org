@@ -1,26 +1,29 @@
 {title Compounds}
 
-{dfn Compounds} are words that we make by combining multiple words. Usually,
-we combine two words at a time. In English, we have compounds like:
+This is our last core lesson. Here, we will learn about {em compounds}, one of
+Sanskrit's most notable features.
 
-{ul
-{li "Indochina" (India and China)}
-{li "wallpaper" (paper for a wall)}
-{li "graybeard" (someone whose beard is gray)}
-{li "songwriter" (writer of songs)}
+{dfn Compounds} are words that we make by combining multiple words. Compounds
+are short and simple, and they save time for both the speaker and the listener:
+
+{ex
+
+gajAnAM vanam > gajavanam
+the forest of elephants
+
 }
 
-Compounds are short and simple, and they save time for both the speaker and the
-listener. This is part of the reason they are so common in Sanskrit.
+Sanskrit uses compounds extensively. In some styles of Sanskrit, almost every
+sentence will have a compound. And these compounds can also be quite long and
+intricate.
 
-In this lesson, which is our last core lesson, we will learn about two basic
-types of Sanskrit compounds.
+In this lesson, we will learn about two basic types of compounds.
 
 
 {h {s dvandva}}
 
 In our first type of compound, we have two words that are in a list together.
-Here are some English examples:
+Here are some English examples of this type:
 
 {ul
     {li Indochina (India and China)}
@@ -45,7 +48,7 @@ Rama, Sita, [and] Lakshmana
 {h {s tatpuruSa}}
 
 In our second type of compound, the first word describes the second in some
-way. Here are some English examples:
+way. Here are some English examples of this type:
 
 {ul
 {li "wallpaper" (paper for a wall)}
@@ -67,8 +70,8 @@ Rama's mother
 rAmasya putraH > rAmaputraH
 Rama's son
 
-tasya puruSaH > tatpuruSaH
-his man
+rAmasya patnI > rAmapatnI
+Rama's wife
 
 }
 
@@ -86,29 +89,32 @@ his man
 
 {h Understanding compounds}
 
-Someone who doesn't know what the word "wallpaper" means might interpret it in
-an unusual way:
+Compounds are easy to understand if we know their context. For example, the
+word "wallpaper" probably has a clear meaning to you, and you might have even
+seen or felt wallpaper before. But someone from another culture might create
+interpretations like:
 
 {ul
     {li "paper that is also a wall," as in "I built this house with wallpaper."}
     {li "paper that is on a wall," as in "I hung my diploma next to my other wallpapers."}
-    {li "a wall and some paper," as in "I bought a wall-paper but sold the paper."}
 }
 
-You probably know that these interpretations of "wallpaper" don't make sense.
-This is because you know the cultural context: you know what wallpaper is.
+These interpretations don't occur to you because you know the cultural context.
+You know what wallpaper is.
 
 Many Sanskrit compounds are the same way. If you know their cultural context
-and are familiar with them, they are easy to understand.  If not, they can be
-difficult.
+and are familiar with them, they are easy to understand. If not, they can be
+difficult to understand.
 
-Thankfully, there are some basic rules of thumb that we can use to tell
-compounds apart. For example, if the words in a compound are all names, or all
-foods, or all flowers -- that is, if they all have the same "type" -- then the
-compound is probably a {s dvandva}.
+But what do we do if we don't understand the culture at all? Thankfully, there
+are some basic rules of thumb that we can use to tell compounds apart. For
+example, if the words in a compound are all names, or all foods, or all flowers
+-- that is, if they all have the same "type" -- then the compound is probably a
+{s dvandva}.
 
 There are other basic rules we can use for the other types of compounds. We'll
-discuss these rules in a later lesson.
+discuss these rules in a later lesson. (But as always, the best way is to read
+a lot of Sanskrit!)
 
 
 {h Review}

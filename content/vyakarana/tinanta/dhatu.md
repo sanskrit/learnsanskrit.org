@@ -224,8 +224,9 @@ Roots that are `idit take `nu~m as a substitute.
 
 }
 
-Once we apply {a-cite 1.3.2} and {a-cite 1.3.3}, all that we are left with is
-{s n}. {s u~} has no special purpose, but {s m} does:
+{s nu~m} is stated as an {s upadeza}. Once we apply {a-cite 1.3.2} and {a-cite
+1.3.3} to it, all that we are left with is {s n}. {s u~} has no special
+meaning here, but {s m} does:
 
 {rule
 

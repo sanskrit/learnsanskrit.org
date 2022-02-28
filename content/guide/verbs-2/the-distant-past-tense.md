@@ -12,10 +12,15 @@ lead > led (long ago)
 
 Certain types of Sanskrit literature use the distant past tense often. For
 example, the {cite Rāmāyaṇa} and the {cite Mahābhārata} both use the distant
-past tens extensively.
+past tense extensively.
 
 The distant past tense uses many irregular forms. So in this lesson, we will
 focus just on its most common patterns.
+
+{note
+If the information here is overwhelming, skip to the Review at the bottom to
+see just the essential information.
+}
 
 
 {h Strong and weak stems}
@@ -44,9 +49,15 @@ they led (long ago, `Atmanepada)
 
 
 {h Rules of doubling}
+{aka {s dvitva}}
 
 Generally, we make the stem of this tense-mood by doubling the root. Then we
 apply some basic rules to simplify the {em first} copy of the root.
+
+Although each of these rules is basic, there are quite a few of them. As usual,
+we recommend that you don't waste time memorizing these rules. Instead, simply
+get a feel for the kinds of changes that occur. As you read more Sanskrit, you
+will naturally start to assimilate and internalize them.
 
 When doubling, long vowels become short:
 
@@ -69,7 +80,7 @@ place
 
 }
 
-All consonants after the root vowel are removed:
+All consonants after the double's vowel are removed:
 
 {ex
 
@@ -153,7 +164,7 @@ Finally, here is a common exception:
 
 {ex
 
-bhU > babhU
+bhU > [ba]bhU
 become
 
 }
@@ -223,8 +234,9 @@ The specific conditions are:
     {li The doubled root starts with the same sound as the original root.}
 }
 
-To make these conditions clear, here are roots that violate these conditions.
-Note that each of these roots uses the standard stem:
+To make these conditions clear, here are some examples of roots that violate
+these conditions.  Since they violate these conditions, they use the normal
+weak stem we described above:
 
 {ex
 
@@ -259,15 +271,29 @@ Then, we use this result with the roots {s kR}, {s bhU}, or {s as}:
 
 {ex
 
+bodhayAJcakAra
+woke (someone) up
+
+bodhayAmbabhUva
+woke (someone) up
+
+bodhayAmAsa
+woke (someone) up
+
+}
+
+You might also see these results written as separate words:
+
+{ex
+
 bodhayAM cakAra
 woke (someone) up
 
 bodhayAM babhUva
 woke (someone) up
 
-bodhayAmAsa
+bodhayAm Asa
 woke (someone) up
-
 
 }
 
@@ -379,8 +405,18 @@ tense.
 {h Review}
 
 The distant past tense has many complicated patterns. The best way to get used
-to them, as usual, is to read a lot of Sanskrit.
+to it, as usual, is to read a lot of Sanskrit.
+
+But if you are feeling overwhelmed by the number of details here, here are the
+simple essentials you can remember and use:
 
 {ol
-    {li What is the weak stem of {s zak}?}
+    {li You can usually recognize this tense by its doubled sound. You don't
+    need to remember the details of how the stem is formed or how the doubling
+    is done, as long as you can recognize that {em something} has been
+    doubled.}
+    {li This tense is almost always used in the third person, and its singular
+    and plural forms are by far the most common. You can ignore the other
+    endings for now.}
+    {li The context of the sentence will help make the meaning of the verb clear.}
 }

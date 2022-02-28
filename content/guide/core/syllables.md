@@ -53,11 +53,11 @@ last syllable:
 
 {ex
 
-sukham > su kham
+sukham > su [kham]
 ease, pleasure
 
-vRkSaH > vR kSaH
-tree
+vRkSAt > vR [kSAt]
+from the tree
 
 }
 

@@ -1,7 +1,7 @@
 {% extends 'base-book.html' %}
 {% import 'guide/macros.html' as m %}
 
-{% block title %}{{ m.title(lesson.title_no_html) }}{% endblock %}
+{% block title %}{{ lesson.title_no_html }}{% endblock %}
 
 {% block breadcrumbs %}{{ m.breadcrumbs(
     'vyakarana.index',

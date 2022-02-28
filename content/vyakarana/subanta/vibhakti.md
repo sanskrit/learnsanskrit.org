@@ -1,9 +1,8 @@
 {title {s vibhakti}}
 
-English resources that describe Sanskrit grammar often say that Sanskrit
-nominals use eight different {dfn cases}. Roughly, the English concept of {em
-case} is like a combination of two Sanskrit categories: {s kAraka} and {s
-vibhakti}.
+Sanskrit resources written in English often say that Sanskrit nominals use
+eight different {dfn cases}. Roughly, the English concept of {em case} is like
+a combination of two Sanskrit categories: {s kAraka} and {s vibhakti}.
 
 {s-dfn vibhakti} is simply a group of three endings, as we saw previously. The
 {s sup pratyAhAra} has twenty-one endings, so it has seven {s vibhakti}s in
@@ -46,9 +45,9 @@ of `karma.
 }
 
 Suppose the verb in our sentence is {s gacchati} ("goes"). {s gacchati} is in
-{s kartari prayoga}, so it expresses the {s kAraka} of {s kartR}. {s gacchati}
-does not express any information about the {s karma}, so we can apply rule
-2.3.2 and create a valid sentence:
+{s kartari prayoga}, which means that expresses the {s kAraka} of {s kartR}. {s
+gacchati} does not express any information about the {s karma}, so we can apply
+rule 2.3.2 and create a valid sentence:
 
 {ex
 
@@ -58,10 +57,10 @@ He goes to the village.
 }
 
 But suppose that the verb in our sentence is {s gamyate} ("is gone to"). {s
-gamyate} is in {s karmaNi prayoga}, so it expresses the {s kAraka} of {s
-karma}. Since {s karma} is already expressed, we cannot apply rule 2.3.2. So we
-are prevented from saying {s grAmaM gamyate}, which would be an error. This is
-the purpose of rule {a-cite 2.3.1}.
+gamyate} is in {s karmaNi prayoga}, which means that it expresses the {s
+kAraka} of {s karma}. Since {s karma} is already expressed, we cannot apply
+rule 2.3.2. So we are prevented from saying {s grAmaM gamyate}, which would be
+an error. This is the purpose of rule {a-cite 2.3.1}.
 
 
 {h The fourth {s vibhakti}}

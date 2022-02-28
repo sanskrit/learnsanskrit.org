@@ -1,43 +1,30 @@
-{% extends 'base-book.html' %}
+{% extends 'base-text.html' %}
 {% import 'guide/macros.html' as m %}
-
-{% macro breadcrumbs() %}
-<nav class="breadcrumbs">
-{% set u_home = url_for('site.index') %}
-{% set u_index = url_for('guide.index') %}
-<a href="{{ u_home }}">Home</a> &raquo;
-<span class="cur">Sanskrit for Beginners</span>
-</nav>
-{% endmacro %}
 
 {% block title %}{{ m.title('Sanskrit for Beginners') }}{% endblock %}
 
-{% block breadcrumbs %}
-{{ breadcrumbs () }}
+{% block header %}
+<header class="tc index bg-blue pb3">
+{% include 'include/top-nav.html' %}
+<p class="logo sa1 mb0 mt4">{{ 'OM'|d }}</p>
+<h1 class="ma0 f3">Sanskrit for Beginners</h1>
+<p class="mt0 f6">A simple and comprehensive guide</p>
+</header>
 {% endblock %}
 
 {% block main %}
 {# div for flex targeting #}
 <div>
-{% include 'include/script-switch.html' %}
-
-<article class="mt5 mb5">
+<article class="mt4 mb5">
 <div class="readable pa2">
-{% set om_url = url_for('static', filename='img/om-new.png') %}
-<img src="{{ om_url }}" style="display: block; margin: auto; width: 100px;" />
-
-<h1 class="tc mb0">Sanskrit for Beginners</h1>
-<p class="tc f6 mt0">A simple and comprehensive guide</p>
-
 <p>Our complete guide to Sanskrit grammar uses clear and simple language that
 anyone can understand. We focus on core concepts and principles, <em>not</em>
 on dull busywork.</p>
 
 {% set url = url_for('static', filename='pdf/guide.pdf') %}
-<p>You can download this guide as a PDF <a href="{{url}}">here</a>. This PDF
-has a few technical issues, but it should still be usable on most devices.</p>
-
 {% set ml = config.MAILING_LIST_URL %}
+<p>You can download this guide as a PDF <a href="{{url}}">here</a>.</p>
+
 <p>Last updated on {{ last_updated }}. <a href="{{ ml }}" target="_blank">Join
     our mailing list</a> for updates.</p>
 </div>
@@ -67,7 +54,7 @@ lessons teach the essential parts of Sanskrit grammar.</p>
 </div>
 </section>
 
-<section class="pa2 part2">
+<section id="part-ii" class="pa2 part2">
 <div class="readable">
 <h1 class="tc">Intermission</h1>
 <p>Now is a good time to <a href="{{ url_for('site.resources') }}">use our
@@ -76,7 +63,7 @@ acquire Sanskrit through content, <em>not</em> through rules!</p>
 </div>
 </section>
 
-<a id="part-ii" style="display: block; position: relative; top: -3em; visibility: hidden;"></a>
+<a style="display: block; position: relative; top: -3em; visibility: hidden;"></a>
 <section class="pa2">
 <div class="readable">
 <h1 class="tc">Part II: Major topics</h1>
@@ -120,5 +107,6 @@ can help. </p>
 </div>
 </section>
 
+</article>
 </div>
 {% endblock %}

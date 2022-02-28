@@ -7,14 +7,15 @@ this is the first tense-mood that Sanskrit students learn.
 
 {h Basic meaning}
 
-The present tense describes actions that are happening right now:
+The present tense has different meanings in different contexts. Most commonly,
+it what is happening right now:
 
 {ex
 
-nayati
+nayati.
 (Someone) leads or is leading.
 
-carati
+carati.
 (Someone) walks or is walking.
 
 }
@@ -36,13 +37,19 @@ Sanjaya [goes] to the city every year.
 
 }
 
-The present tense also expresses actions that have just finished or are just
-about to occur:
+The present tense also expresses actions that have just finished:
 
 {ex
 
 tvam kadA grAmam [Agacchasi].
-When [have you come] to the village?
+When [did you come] to the village?
+(It is implied that the person has come very recently.)
+
+}
+
+or are just about to occur:
+
+{ex
 
 ahaM vanam [gacchAmi].
 I [(am just about to) go] to the forest.
@@ -55,6 +62,9 @@ In the first person, it can also have the sense of "let's":
 
 gacchAmaH.
 Let's (all) go.
+
+rAjAnaM pRcchAvaH.
+Let's (both) ask the king.
 
 }
 
@@ -71,8 +81,8 @@ The lion [lived (or, was living)] in the cave.
 
 {h Endings}
 
-Here are the endings we use in the present tense as used with the stem {s
-naya}:
+Here are the endings we use in the present tense. The examples below use the
+stem {s naya}:
 
 {verb
     nayati nayataH nayanti
@@ -97,3 +107,9 @@ Here are some patterns that stand out to us:
     {li All of the singular forms end in {s -i}.}
     {li The sound {s tha} is used only in the second person.}
 }
+
+
+{h Review}
+
+The present tense is simple and straightforward. In the next lesson, we will
+learn about the command mood, which uses similar endings to the present tense.

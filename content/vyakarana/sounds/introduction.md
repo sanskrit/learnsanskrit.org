@@ -6,11 +6,12 @@ from one class to another. And even more extensive transformations are
 possible. Together, these sound changes are called {dfn sandhi}.
 
 Many Sanskrit students learn a basic version of sandhi in the course of their
-studies. But Pāṇini is not content with modeling the basics; his goal is to
-model {em all} of Sanskrit's sandhi rules as fully as he can. And to do so, he
-creates several devices that let him express these rules clearly and concisely.
+studies. But Pāṇini is not content with modeling the basics. Instead, his goal
+is to model {em all} of Sanskrit's sandhi rules as fully as he can. And to do
+so, he creates several devices that let him express these rules clearly and
+concisely.
 
-In this section, we will learn about the specific techniques and devices that
+In this unit, we will learn about the specific techniques and devices that
 Pāṇini uses to model Sanskrit's sounds and sandhi rules. Starting from scratch,
 we will build up his core system step by step. And by the end, we will have a
 simple but complete system that contains most of the {cite Aṣṭādhyāyī}'s
@@ -46,9 +47,9 @@ points of articulation other than the five above, are left black.
 
 {note
 
-The colors below are different from the ones used in the image. The image uses
-red, orange, yellow, green, and blue. Respectively, we use red, orange, green,
-blue, and purple below.
+The colors below differ from the ones used in the image. The image uses red,
+orange, yellow, green, and blue. Respectively, we use red, orange, green, blue,
+and purple below.
 
 }
 
@@ -138,5 +139,5 @@ such as:
     {li at the end of a verb prefix}
 }
 
-In other words, sandhi changes are not purely phonetic; we must also understand
-{em what} is being said to apply them correctly.
+In other words, sandhi changes are not purely phonetic. We must also understand
+{em what} is being said so that we can apply sandhi changes correctly.

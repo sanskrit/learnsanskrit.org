@@ -31,6 +31,7 @@ of Indra
 
 
 {h {s -in}}
+{aka {s ini~}}
 
 {s-dfn -in} (feminine: {s -inI}) creates adjectives that mean "characterized by
 X." If the stem ends in {s -a}, we remove the last {s -a}.
@@ -142,6 +143,7 @@ jaw > characterized by (prominent) jaws; Hanuman
 
 
 {h {s -maya}}
+{aka {s mayaT}}
 
 {s-dfn -maya} (feminine: {s -mayI}) creates adjectives that mean "made of X":
 

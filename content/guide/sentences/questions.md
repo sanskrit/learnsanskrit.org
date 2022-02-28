@@ -80,7 +80,7 @@ To learn more about the specific endings that the {s kim} pronoun uses, see our
 
 {h Yes-no questions}
 
-{dfn Yes-no question} are questions whose answers are usually "yes" or "no."
+{dfn Yes-no questions} are questions whose answers are usually "yes" or "no."
 
 In Sanskrit, we can ask yes-no questions in many different ways. One common way
 is to put the word {s-dfn api} at the beginning of the sentence:
@@ -108,9 +108,9 @@ Are you happy?
 
 {note
 
-Note that {s kim} might indicate either a yes-no question or "why?" depending
-on the context and style. In newer styles of Sanskrit, it usually indicates a
-yes-no question.
+Note that {s kim} could indicate either a yes-no question or a "why?" question.
+The specific meaning depending on the context and style. In newer styles of
+Sanskrit, it usually indicates a yes-no question.
 
 }
 
@@ -140,6 +140,13 @@ I am not happy.
 Or in informal settings, we can use the words {s-dfn Am} ("yes") or {s-dfn na}
 ("no"):
 
+{ex
+
+[Am], ahaM sukhI.
+[Yes], I am happy.
+
+}
+
 
 {h {s kutra}, {s kadA}, and others}
 
@@ -153,9 +160,13 @@ common uninflected words:
     {tr {td {s-dr kimartham}} {td for what reason? why?}}
     {tr {td {s-dr kutaH}} {td from what? for what reason?}}
     {tr {td {s-dr kutra}} {td where?}}
+    {tr {td {s-dr kva}} {td where?}}
 }
 
-And some common adjectives:
+Note that {s kutra} and {s kva} have the same meaning. {s kutra} is moer common
+in older Sanskrit.
+
+Finally, here are some common adjectives:
 
 {table
     {tr {th Word} {th Meaning}}

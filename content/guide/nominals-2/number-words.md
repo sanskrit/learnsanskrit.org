@@ -6,21 +6,24 @@
 {ex
 
 [paJca] pANdavAH
-The [five] sons of Pandu
+the [five] sons of Pandu
 
 }
 
 Sanskrit's number words generally follow the patterns of the stems we have seen
-already. Many of these number words have no gender. That is, they are the same
-regardless of the gender of the noun they describe:
+already. Many of these number words are the same regardless of the gender of
+the noun they describe:
 
 {ex
 
+paJca pANdavAH
+the five sons of Pandu (masculine)
+
 paJca phalAni
-five fruits
+five fruits (neuter)
 
 paJca nadyaH
-five rivers
+five rivers (feminine)
 
 }
 
@@ -50,9 +53,9 @@ Here are the forms of {s eka} in the masculine gender:
 
 {h {s dvi}}
 
-{s-dfn dvi} ("two") is used only in the dual. Even though the stem is usually
-known as {s dvi}, we actully use the stem {s dva} stem (or {s dvA} for the
-feminine) when we add endings.
+{s-dfn dvi} ("two") is used only in the dual. The stem {s dvi} is used in
+compounds and certain suffixes, but when we add endings, we actully use the
+stem {s dva} stem (or {s dvA} for the feminine) instead.
 
 Here are the masculine endings for {s dvi}:
 

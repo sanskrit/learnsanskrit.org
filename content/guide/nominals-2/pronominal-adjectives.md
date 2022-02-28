@@ -1,7 +1,7 @@
 {title Pronominal adjectives}
 
 There are many adjectives that use the same endings as pronouns like {s tad}.
-We can call these adjectives {dfn promoninal adjectives} since they are
+We can call these adjectives {dfn pronominal adjectives} since they are
 adjectives that behave like pronouns.
 
 Here are some common examples:

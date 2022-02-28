@@ -204,7 +204,7 @@ _
 
 taGAnAvAtmanepadam | 1.4.100
 taG-Anau Atmanepadam
-The `taG suffixes and `Ana are called `Atmanepada.
+The `taG suffixes and (the suffix) `Ana are called `Atmanepada.
 
 }
 

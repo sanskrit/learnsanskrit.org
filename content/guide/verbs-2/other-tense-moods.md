@@ -7,9 +7,9 @@ read {it Verbs 1} until the end of the lesson on {s Atmanepada} endings.
 }
 
 In the core lessons, we learned that we can change a verb {em root} into a
-verb {em stem}. And once we have a verb stem, we can add {em endings} to that
-stem to create a complete verb. In the examples below, note the progression
-from root to stem to verb:
+verb {em stem}. And once we have a verb stem, we can add endings to that
+stem to create a complete {em verb}. In the examples below, note the
+progression from root to stem to verb:
 
 {ex
 
@@ -36,13 +36,15 @@ nI > [naya] > nayati
 su > [sunu] > sunoti
 (`su class)
 
-rudh > [ruNadh] > ruNaddhi
-(`rudh class)
+krI > [krINA] > krINAti
+(`krI class)
 
 }
 
 But the other six tense-moods form their stems in a more general way. We apply
-the same steps regardless of which verb class a root belongs to:
+the same steps regardless of which verb class a root belongs to. For example,
+consider the three verbs below. They each use verbs from different verb
+classes, but they form their stems in an identical way:
 
 {ex
 
@@ -50,7 +52,7 @@ nI > neSyati
 
 su > soSyati
 
-rudh > rotsyati
+krI > kreSyati
 
 }
 
@@ -59,8 +61,8 @@ In this topic, we will explore these six tense-moods.
 
 {h Common behavior for the six tense-moods}
 
-For the special tense-moods, we use a special stem in {s karmaNi prayoga} and
-{s bhAve prayoga}:
+Recall that for the special tense-moods, we use a special stem in {s karmaNi
+prayoga} and {s bhAve prayoga}. This special stem uses the suffix {s -ya}:
 
 {ex
 
@@ -79,7 +81,7 @@ a different stem:
 
 {ex
 
-neSyati
+neSyati.
 You will lead.
 
 neSyate.

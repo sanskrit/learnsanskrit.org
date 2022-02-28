@@ -26,7 +26,8 @@ how to use it.
 {h IAST}
 
 The {dfn International Alphabet for Sanskrit Transliteration}, or {dfn IAST}
-for short, became common among Western scholars in the 19th century.
+for short, became common among Western scholars in the 19th century. You can
+see the IAST letters below:
 
 {sounds-iast a A i I u U R RR L LL}
 {sounds-iast e ai o au aM aH}
@@ -42,8 +43,8 @@ for short, became common among Western scholars in the 19th century.
 {h ISO-15919}
 
 {dfn ISO-15919} is the modern standard for romanizing all Indian languages,
-including Sanskrit. ISO stands for the International Standards Organization,
-and 15919 is a numeric code associated with the standard.
+including Sanskrit. "ISO" stands for the International Standards Organization,
+and "15919" is a numeric code associated with the standard.
 
 IAST and ISO-15919 are largely similar. But they differ in a few letters:
 
@@ -56,4 +57,3 @@ IAST and ISO-15919 are largely similar. But they differ in a few letters:
 {sounds-iso pa pha ba bha ma}
 {sounds-iso ya ra la va}
 {sounds-iso za Sa sa ha}
-

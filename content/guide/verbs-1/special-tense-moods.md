@@ -1,8 +1,8 @@
 {title Special tense-moods}
 
 In the core lessons, we learned that we can change a verb {em root} into a
-verb {em stem}. And once we have a verb stem, we can add {em endings} to that
-stem to create a complete verb.
+verb {em stem}. And once we have a verb stem, we can add endings to that
+stem to create a complete {em verb}.
 
 In the examples below, note the progression from root to stem to verb:
 
@@ -22,7 +22,7 @@ These five are called {dfn person}, which expresses the verb's perspective:
 {ex
 
 nayati.
-(Someone) leads
+(Someone) leads.
 
 nayAmi.
 I lead.
@@ -49,10 +49,10 @@ mood} (manner):
 nayati.
 (Someone) leads.
 
-neSyati
+neSyati.
 (Someone) will lead.
 
-nayet
+nayet.
 (Someone) might lead.
 
 }

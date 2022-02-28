@@ -1,70 +1,12 @@
-{% extends 'base.html' %}
+{% extends 'print-layout.html' %}
+{% import 'print-layout.html' as m %}
 
 {% block title %}Sanskrit for Beginners{% endblock %}
 
-{% block extrahead %}
-{% assets "css_print" %}
-<link rel="stylesheet" type="text/css" href="{{ ASSET_URL }}" />
-{% endassets %}
-{% endblock %}
+{% block cover %}{% include 'guide/print/include-cover.html' %}{% endblock %}
 
-{% block body %}
-<article>
-{% include 'guide/print/include-cover.html' %}
+{% block toc %}{{ m.print_toc(topics) }}{% endblock %}
 
-<div class="page-break">
-    <h1>Contents</h1>
+{% block preface %}{% include 'guide/print/include-preface.html' %}{% endblock %}
 
-    <ol class="table-of-contents">
-        <li>
-            <a href="#anchor-pref">
-                <span class="code">&nbsp;</span>
-                Preface to the print edition
-            </a>
-        </li>
-        {# not guide.topics -- see view for details #}
-        {% for topic in topics %}
-        {% set t = loop.index0 %}
-        {% set code = "anchor-{}".format(t) %}
-        <li>
-            <a href="#{{ code }}">
-                <span class="code">{{ t }}</span>
-                {{ topic.title|safe }}
-            </a>
-            <ol>
-            {% for lesson in topic.lessons %}
-                {% set L = loop.index %}
-                {% set code = "anchor-{}-{}".format(t, L) %}
-                <li>
-                    <a href="#{{ code }}">
-                        <span class="code">{{ t }}.{{ L }}</span>
-                        {{ lesson.title|safe }}
-                    </a>
-                </li>
-            {% endfor %}
-            </ol>
-        </li>
-        {% endfor %}
-    </ul>
-</div>
-
-<div id="anchor-pref" class="page-break justify">
-{% include 'guide/print/include-preface.html' %}
-</div>
-
-{# not guide.topics -- see view for details #}
-{% for topic in topics %}
-    {% set t = loop.index0 %}
-    <div id="anchor-{{ t }}" class="topic page-break justify">
-        <h1 class="tc f2">{{ topic.title|safe }}</h1>
-    </div>
-
-    {% for lesson in topic.lessons %}
-        {% set L = loop.index %}
-        <div id="anchor-{{ t }}-{{ L }}" class="lesson page-break justify">
-            {{ lesson.content|safe }}
-        </div>
-    {% endfor %}
-{% endfor %}
-</article>
-{% endblock %}
+{% block lessons %}{{ m.print_lessons(topics) }}{% endblock %}

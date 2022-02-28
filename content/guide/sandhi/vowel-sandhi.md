@@ -230,7 +230,8 @@ summary of its most common patterns. As you read more Sanskrit, you will
 understand vowel sandhi instinctively.
 
 We do not recommend memorizing the rules above. But if you would like to
-practice these, you can try applying sandhi changes to the examples below:
+practice these rules, you can try applying sandhi changes to the examples
+below:
 
 {ex
 

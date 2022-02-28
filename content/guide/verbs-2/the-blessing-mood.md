@@ -16,6 +16,9 @@ May there be welfare (to all).
 
 }
 
+Like the recent past tense, the blessing mood is rare.
+
+
 {h Making the stem}
 
 Roots that use {s parasmaipada} endings generally use the same {s -ya} stem

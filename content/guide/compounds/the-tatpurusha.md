@@ -2,8 +2,8 @@
 {aka the determinative compound}
 
 {dfn {s tatpuruSa}} literally means "his man" or "his servant." In a {s
-tatpuruSa} compound, one word is the main idea and the other word describes it
-in some way:
+tatpuruSa} compound, the second word is the main idea and the first word
+describes it in some way:
 
 {ex
 
@@ -38,27 +38,27 @@ in some way:
 {ex
 
 nagaraM gataH > nagaragataH
-gone to the city
+gone to the city > city-gone
 (case 2)
 
 nakhair bhinnaH > nakhabhinnaH
-torn by (one's) nails
+torn by (one's) nails > nail-torn
 (case 3)
 
 gave hitam > gohitam
-good for a cow
+good for a cow > cow-good
 (case 4)
 
 caurAt bhayam > caurabhayam
-fear of a thief
+fear of a thief > thief fear
 (case 5)
 
 rAjJaH putraH > rAjaputraH
-son of a king; prince
+son of a king, prince > king son
 (case 6)
 
 Atape zuSkaH > AtapazuSkaH
-dried in the heat
+dried in the heat > heat dried
 (case 7)
 
 }
@@ -110,9 +110,18 @@ classic example:
 kumbhaM karoti > kumbha[kAraH]
 someone who makes pots > pot-[maker]
 
-jalaM dhIyate asmin > jala[dhiH]
-water is borne in this > water-[bearing], ocean
-
 }
 
 The word {s kAra} that you see here generally exists only as part of a compound. 
+
+Here are a few more examples of {s upapada} compounds:
+
+{ex
+
+jalaM dhIyate asmin > jala[dhiH]
+water is borne in this > water-[bearing], ocean
+
+jalaM muJcati > jala[muk]
+it releases water > water-[releasing], cloud
+
+}

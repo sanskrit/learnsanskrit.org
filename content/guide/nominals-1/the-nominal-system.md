@@ -146,11 +146,11 @@ in each sentence is very different:
 
 [siMhaH] khAdati.
 [The lion] eats.
-(`kartari `prayoga. The lion is the subject of the sentence.)
+(`kartari `prayoga. The lion is the subject (`kartA) of the sentence.)
 
 [siMhaH] khAdyate.
 [The lion] is eaten.
-(`karmaNi `prayoga. The lion is the object of the sentence.)
+(`karmaNi `prayoga. The lion is the object (`karma) of the sentence.)
 
 }
 
@@ -282,9 +282,8 @@ We can group these stems based on the last sound they use. So we can talk about
 use this grouping because stems with different final sounds tend to use
 different endings.
 
-For example, compare the endings we use for {s siMha}, (which ends in a short
-{s -a}) to the endings we use for {s siMhA} (which ends in a long {s -A}).
-These two stems use endings that are quite different:
+For example, compare the endings we use for {s siMha} (which ends in a short
+{s -a}) to the endings we use for {s siMhA} (which ends in a long {s -A}):
 
 {ex
 

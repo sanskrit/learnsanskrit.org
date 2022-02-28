@@ -9,8 +9,8 @@ The elephant walks [slowly].
 
 }
 
-We can change any adjective into an adverb by using it in its case 1 singular
-form:
+We can change any adjective into an adverb by using it in its neuter case 1
+singular form:
 
 {ex
 

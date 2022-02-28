@@ -39,13 +39,14 @@ outcomes we might have:
 
 anudAttaGita Atmanepadam | 1.3.12 
 anudAtta-GitaH Atmanepadam
-`Atmanepada is used [after a `dhAtu that is] either `anudAtta or `Git.
+`Atmanepada is used [after a `dhAtu that is] either `anudAttet (i.e. having
+`anudAtta on an `it vowel) or `Git.
 
 }
 
 {s anudAtta} is one of the three vowel accents, along with {s udAtta} and {s
-svarita}. Here, it refers to the accent the vowel has in its {s upadeza}. {s
-Git}, meanwhile, refers to roots with {s G} as an {s it}.
+svarita}. Here, it refers to the accent an {s it} vowel has in the {s upadeza}.
+{s Git}, meanwhile, refers to roots with {s G} as an {s it}.
 
 {aside
 
@@ -129,8 +130,9 @@ so, they express extra semantics:
 
 svaritaJitaH kartrabhiprAye kriyAphale | 1.3.72 
 svarita-JitaH kartR-abhiprAye kriyA-phale
-`Atmanepada is used [after a `dhAtu that is either] `svarita or `Jit when the
-fruit of the action serves the intention of the `kartR (agent).
+`Atmanepada is used [after a `dhAtu that is either] `svaritet (i.e. having
+`svarita on an `it vowel) or `Jit when the fruit of the action serves the
+intention of the `kartR (agent).
 
 }
 

@@ -3,7 +3,7 @@
 Now that our suffixes are in place, it is time to apply any rules that are
 conditioned by these suffixes. For {s sArvadhAtuka} suffixes specifically,
 there is one particular operation we should learn about: the replacement of the
-root vowel with its {s guNa} form:
+root vowel with its {s guNa} form. Here is an example:
 
 {ex
 
@@ -70,7 +70,7 @@ kta} is {s kit}, it will not cause {s guNa} or {s vRddhi} changes.
 
 The traditional interpretation of rule 1.1.5 is that it refers not only to {s
 kit} and {s Git} but also to {s git}, which is hidden by sandhi. This
-interpretation is part of a series of small changes that fix one of the
+interpretation is part of a series of small changes that fixes one of the
 incorrect words that the {cite Aṣṭādhyāyī} would otherwise produce.
 
 Here, we use the more straightforward interpretation. {s git} is a minor point,
@@ -82,7 +82,7 @@ here.
 
 {h {s Gittva}}
 
-There are also several terms that are treated {em as if} they are {s Git}
+There are also several suffixes that are treated {em as if} they are {s Git}
 suffixes.  Those suffixes are defined in the following four {s atideza}
 ("analogy", "extension") rules. All of these rules are useful, but rule 1.2.4
 is our focus here:
@@ -170,7 +170,8 @@ yena vidhiH tat-antasya
 
 }
 
-In other words, the rule applies to the final sound of the {s aGga}. If we use rules 1..1.3 and 1.1.72, we can properly understand rule 7.3.84:
+In other words, the rule applies to the final sound of the {s aGga}. If we use
+rules 1.1.3 and 1.1.72, we can properly understand rule 7.3.84:
 
 {rule
 
@@ -181,7 +182,7 @@ sArvadhAtuka-ArdhadhAtukayoH
 
 }
 
-And we can continue with our {s prakriyA}:
+Then we can continue with our {s prakriyA}:
 
 {prakriya
 
@@ -226,11 +227,11 @@ The sound before the last sound is called `upadhA (penultimate).
 
 }
 
-Then we can understand rule 7.3.85, which follows rule {a-cite 7.3.84}:
+Then we can understand rule 7.3.86, which follows rule {a-cite 7.3.84}:
 
 {rule
 
-pugantalaghUpadhasya ca | 7.3.85
+pugantalaghUpadhasya ca | 7.3.86
 pu~k-anta-laghu-upadhasya ca
 And [the last `ik vowel of an `aGga] ending with `pu~k or whose `upadhA
 (penultimate sound) is `laghu (a light syllable) [is replaced with `guNa].
@@ -258,10 +259,10 @@ and leave others alone:
 {ex
 
 nind + zap > nind a
-(Penultimate is not a vowel.)
+(`upadhA is not a vowel.)
 
 jIv + zap > jIv a
-(Penultimate is long.)
+(`upadhA is long.)
 
 }
 

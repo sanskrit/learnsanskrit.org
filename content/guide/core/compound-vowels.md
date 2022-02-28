@@ -1,7 +1,7 @@
 {title Compound vowels}
 
 In the previous lesson, we learned how vowels combine if the first vowel is not
-{s a} or {s A}. In those cases, the first vowel becomes a semivowel:
+{s a} or {s A}. In those situations, the first vowel becomes a semivowel:
 
 {ex
 
@@ -44,14 +44,15 @@ o} are new sounds:
 
 {sounds-dr e o}
 
-{s e} and {s o} are called {dfn compound vowels}, since they are combinations
-of two different vowel sounds. All of the other vowels we've seen are called
-{dfn simple vowels}. Compound vowels are always {em long} vowels.
+{s e} and {s o} are called {dfn compound vowels}, since they are compounds of
+two different vowel sounds. Compound vowels are always {em long} vowels. All of
+the other vowels we've seen are called {dfn simple vowels}, and these simple
+vowels can be either short (like {s a}) or long (like {s A}).
 
 
 {h {s ai} and {s au}}
 
-Can we combine {s a} with these sounds again? Yes, we can:
+Can we combine {s a} with these new sounds again? Yes, we can:
 
 {ex
 
@@ -69,7 +70,7 @@ Can we combine {s a} with these sounds again? Yes, we can:
 
 {sounds-dr ai au}
 
-Can we combine {s a} with these sounds again? We can, but the result is the
+Can we combine {s a} with these sounds once more? We can, but the result is the
 same. There are no more sounds we can create:
 
 {ex

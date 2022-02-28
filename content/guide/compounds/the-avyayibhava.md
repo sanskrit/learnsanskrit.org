@@ -12,7 +12,8 @@ according to + power > according to one's power
 [prati] + padam > pratipadam
 against, regarding > at every word, for each word
 
-[yAvat] + jIvam > yAavjjIvam
+[yAvat] + jIvam > yAvajjIvam
 as much as + life > throughout one's life
 
 }
+

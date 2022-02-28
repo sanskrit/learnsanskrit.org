@@ -85,7 +85,7 @@ def render(raw: str, ctx=None) -> Dict[str, str]:
     return {"title": title, "content": content}
 
 
-def render_inline(raw: str, ctx=None) -> Dict[str, str]:
+def render_inline(raw: str, ctx=None) -> str:
     tree = parser.parse(raw)
     buf = render_buf(tree, ctx or {}, TEMPLATES)
     content = "".join(buf)

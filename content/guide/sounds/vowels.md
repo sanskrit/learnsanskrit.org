@@ -65,11 +65,13 @@ All of the short vowels, except for {s L}, have a long version:
 All of the compound vowels are already long, and they have no short form.
 
 There is also a third length, {dfn protracted} {sa-opt pluta}, that is mainly
-used in Vedic Sanskrit. All of the simple and compound vowels can be
-{s pluta}. {s pluta} vowels are written like so: {s A3 I3 U3 RR3 L3 e3 ai3 o3
-au3}:
+used in Vedic Sanskrit. All of the simple and compound vowels can be {s pluta}.
+{s pluta} vowels are written with a {s 3} added to the end of them:
 
 {sounds-dr a-1 A-1 A3-1}
+
+So, we have the {s pluta} vowels {s A3}, {s I3}, {s U3}, {s RR3}, {s L3}, {s
+e3}, {s ai3}, {s o3}, and {s au3}.
 
 
 {h Nasality}
@@ -93,10 +95,10 @@ Sanskrit. There are three basic accents:
     {li {dfn {s udAtta}} ("raised") or {dfn acute}, which is a high tone}
     {li {dfn {s svarita}} ("voiced") or {dfn circumflex}, which is mix of the
     high and low tones. But in many styles of Vedic chanting, the {s svarita}
-    is instead an extra high tone.}
+    is instead a plain high tone that is higher than the {s udAtta}.}
 }
 
-Here are the three actions as they are written in Devanagari. From left to
+Here are the three accents as they are written in Devanagari. From left to
 right, we have {s anudAtta}, {s udAtta}, and {s svarita}:
 
 {sounds-dr a_-1 a-1 a^-1}

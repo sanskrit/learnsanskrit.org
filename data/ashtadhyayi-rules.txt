@@ -444,14 +444,14 @@
 2.2.22 ktvA ca
 2.2.23 zeSo bahuvrIhiH
 2.2.24 anekamanyapadArthe
-2.2.25 saMkhyayA'vyayAsannAdUrAdhikasaMkhyAH saMkhyeye
+2.2.25 saMkhyayAvyayAsannAdUrAdhikasaMkhyAH saMkhyeye
 2.2.26 diGnAmAnyantarAle
 2.2.27 tatra tenedamiti sarUpe
 2.2.28 tena saheti tulyayoge
-2.2.29 cArthe dvaMdvaH
+2.2.29 cArthe dvandvaH
 2.2.30 upasarjanaM pUrvam
 2.2.31 rAjadantAdiSu param
-2.2.32 dvaMdve ghi
+2.2.32 dvandve ghi
 2.2.33 ajAdyadantam
 2.2.34 alpActaram
 2.2.35 saptamIvizeSaNe bahuvrIhau
@@ -565,7 +565,7 @@
 2.4.32 idamo'nvAdeze'zanudAttastRtIyA''dau
 2.4.33 etadastratasostratasau cAnudAttau
 2.4.34 dvitIyATaussvenaH
-2.4.35 ArddhadhAtuke
+2.4.35 ArdhadhAtuke
 2.4.36 ado jagdhirlyapti kiti
 2.4.37 luGsanorghaslR
 2.4.38 ghaJapozca
@@ -628,7 +628,7 @@
 3.1.10 upamAnAdAcAre
 3.1.11 kartuH kyaG salopazca
 3.1.12 bhRzAdibhyo bhuvyacverlopazca halaH
-3.1.13 lohitAdiDAjbhyaH kyaS|
+3.1.13 lohitAdiDAjbhyaH kyaS
 3.1.14 kaSTAya kramaNe
 3.1.15 karmaNaH romanthatapobhyAM varticaroH
 3.1.16 bASpoSmAbhyAM udvamane
@@ -689,7 +689,7 @@
 3.1.71 yaso'nupasargAt
 3.1.72 saMyasazca
 3.1.73 svAdibhyaH znuH
-3.1.74 zruvaH za‍R ca
+3.1.74 zruvaH zR ca
 3.1.75 akSo'nyatarasyAm
 3.1.76 tanUkaraNe takSaH
 3.1.77 tudAdibhyaH zaH
@@ -710,7 +710,7 @@
 3.1.92 tatropapadaM saptamIstham
 3.1.93 kRdatiG
 3.1.94 vA'sarUpo'striyAm
-3.1.95 kRtyAH prAG NvulaH
+3.1.95 kRtyAH
 3.1.96 tavyattavyAnIyaraH
 3.1.97 aco yat
 3.1.98 poradupadhAt
@@ -1201,7 +1201,7 @@
 3.4.69 laH karmaNi ca bhAve cAkarmakebhyaH|
 3.4.70 tayoreva kRtyaktakhalarthAH
 3.4.71 adikarmaNi ktaH kartari ca
-3.4.72 gatyarthAkarmakazliSazIGsthA''savasajanaruhajIryatibhyazca
+3.4.72 gatyarthAkarmakazliSazIGsthAsavasajanaruhajIryatibhyazca
 3.4.73 dAzagoghnau sampradAne
 3.4.74 bhImAdayo'pAdAne
 3.4.75 tAbhyAmanyatroNAdayaH
@@ -1243,7 +1243,7 @@
 3.4.111 laGaH zAkaTAyanasyaiva
 3.4.112 dviSazca
 3.4.113 tiGzitsArvadhAtukam
-3.4.114 ArddhadhAtukaM zeSaH
+3.4.114 ArdhadhAtukaM zeSaH
 3.4.115 liT ca
 3.4.116 liGAziSi
 3.4.117 chandasyubhayathA

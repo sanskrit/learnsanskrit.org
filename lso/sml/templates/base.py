@@ -26,6 +26,7 @@ class TextView(View):
         s = re.sub(r'([ (])"', r"\1&ldquo;", s)
         s = re.sub(r'"([ )])', r"&rdquo;\1", s)
         s = re.sub(r'^"', r"&ldquo;", s)
+        s = re.sub(r'\n"', r" &ldquo;", s)
         s = re.sub(r'"', r"&rdquo;", s)
         return s
 

@@ -4,7 +4,7 @@
 
 {ex
 
-aham apazyam naraM [yo gajam acorayat].
+aham apazyaM naraM [yo gajam acorayat].
 I saw the man [who stole the elephant].
 
 sa naro gacchati [yatra bahavo gajA vasanti].

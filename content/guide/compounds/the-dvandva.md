@@ -46,8 +46,6 @@ But if all of the members imply some more complete collection of concepts, we
 have a second type called {s-dfn samAhAra-dvandva} ("collection {s dvandva}").
 The {s samAhAra-dvandva} is always in the neuter singular:
 
-We can better understand the {s samAhAra-dvandva} with some examples:
-
 {ex
 
 AhAra-nidrA-bhayam
@@ -66,18 +64,18 @@ limbs of the body.
 
 {h Other small changes}
 
-For a few {s dvandva}s, the individual words undergo many small changes. Here
-are some common examples:
+For a few {s dvandva}s, the individual words might undergo some small changes.
+Here are some common examples:
 
 {ex
 
-mAtA pitA ca > mAtApitarau
+mAtA pitA ca > [mAtA]pitarau
 mother and father
 
-mitro varuNaH ca > mitrAvaruNau
+mitro varuNaH ca > [mitrA]varuNau
 Mitra and Varuna (names of Vedic gods)
 
-dyauH pRthivI ca > dyAvApRthivI
+dyauH pRthivI ca > [dyAvA]pRthivI
 heaven and earth
 
 }

@@ -1,11 +1,16 @@
 @import "tachyons.scss";
 
+@import "fonts.scss";
 @import "elements.scss";
+@import "components.scss";
+@import "misc.scss";
+
 @import "navigation.scss";
 @import "contact-form.scss";
-@import "sounds.scss";
-@import "paradigms.scss";
 @import "tables.scss";
-@import "forms.scss";
 
+// Mobile-only
 @import "mobile.scss";
+
+// print.scss hides navigation elements, so it should be used only for
+// non-public pages meant for PDF printing.

@@ -204,7 +204,9 @@ AziSi liG-loTau
 
 }
 
-In the sense of {s AzIH}, {s liG} uses special forms:
+In the sense of {s AzIH}, {s liG} uses special forms. Usually, we say that
+these forms use {s-dfn AzIr-liG} ("{s liG} in the sense of {s AzIH}") as
+opposed to the regular {s-dfn vidhi-liG} ("{s liG} in the sense of {s vidhi}"):
 
 {ex
 

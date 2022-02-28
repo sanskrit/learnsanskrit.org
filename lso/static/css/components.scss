@@ -1,0 +1,162 @@
+// {note}
+.note {
+    padding: 1rem;
+    background: #fff1ba;
+}
+.note p {
+    margin: 0;
+}
+
+// {aside}
+// These are called "blue boxes" in the lessons, so they should stay blue for
+// consistency.
+.true-aside {
+    background: #d5e6ff;
+    padding: 1em;
+}
+.true-aside :first-child {
+    margin-top: 0;
+}
+.true-aside :last-child {
+    margin-bottom: 0;
+}
+
+// {ex}
+.examples {
+    background: #f7f7f7;
+    padding: 1em;
+    list-style: none;
+}
+.examples li + li {
+    margin-top: 1em;
+}
+.examples .sa1 {
+	font-size: 1.5em;
+}
+.examples.vyakarana {
+    background: #f0eae8;
+}
+
+// {nominal}, {verb}
+.paradigm {
+    background: #f7f7f7;
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+}
+.paradigm .sa1 {
+    font-size: 1.5em;
+}
+.paradigm th {
+    padding: 1em 0;
+    color: rgba(0,0,0,0.5);
+    font-weight: normal;
+}
+.paradigm tr th:first-child {
+	width: 16%;
+}
+.paradigm td {
+    padding: 0.5em;
+	width: 28%;
+}
+.paradigm .s {
+    color: #b93434;
+}
+
+// {prakriya}
+.prakriya {
+    display: table;
+    table-layout: fixed;
+
+    background: #f0eae8;
+    width: 100%;
+    margin: 0;
+    padding: 1em;
+
+    a {
+        color: inherit;
+        font-style: italic;
+
+        &:hover {
+            color: #000;
+        }
+    }
+
+    li {
+        display: table-row;
+    }
+
+    .sa1 {
+        font-size: 1.25em;
+    }
+
+    .result, .rule {
+        display: table-cell;
+    }
+    .result {
+        width: 30%;
+    }
+    .rule {
+        color: rgba(0,0,0,0.5);
+
+        display: block;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        // padding-left: 3em;
+    }
+}
+
+// {sounds}
+.sounds {
+    list-style: none;
+    padding: 0;
+    margin: 2em 0;
+    display: flex;
+}
+.sa-iso {
+    // Need to use because Charter has poor support for rings.
+    font-family: sans-serif;
+}
+
+.sounds li {
+    text-align: center;
+    flex: 1;
+}
+
+.sounds .sa1 {
+    font-size: 3rem;
+}
+.sounds .sa2 {
+    font-size: 1.25rem;
+}
+
+// No idea what "sth" stands for.
+.sth-1 { color: #c00; }
+.sth-2 { color: #ec9e05; }
+.sth-3 { color: #5bb310; }
+.sth-4 { color: #007cff; }
+.sth-5 { color: #8359a7; } 
+
+// For e.g. the "Start learning" button at the end of the introduction
+.call-to-action {
+    display: inline-block;
+    margin: auto;
+    background: #51d385;
+    text-decoration: none;
+    font-family: inherit;
+    border-radius: 5px;
+    color: #fff;
+    border: 0;
+
+    &:visited {
+        color: #fff;
+    }
+
+    &:hover {
+        color: #fff;
+        background: lighten(#51d385, 20%);
+        cursor: pointer;
+    }
+}
+

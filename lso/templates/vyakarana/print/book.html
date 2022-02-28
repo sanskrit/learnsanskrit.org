@@ -1,0 +1,12 @@
+{% extends 'print-layout.html' %}
+{% import 'print-layout.html' as m %}
+
+{% block title %}{{ "vyAkaraNa-pravezaH"|i }}{% endblock %}
+
+{% block cover %}{% include 'vyakarana/print/include-cover.html' %}{% endblock %}
+
+{% block toc %}{{ m.print_toc(topics) }}{% endblock %}
+
+{% block preface %}{% include 'vyakarana/print/include-preface.html' %}{% endblock %}
+
+{% block lessons %}{{ m.print_lessons(topics) }}{% endblock %}

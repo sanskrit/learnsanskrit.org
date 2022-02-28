@@ -53,7 +53,7 @@ Here we notice something else. When Rama is the person seeing, we use the word
 {s rAmaH}. But when Rama is the person being seen, we use the word {s rAmam}.
 ({s rAmam} becomes {s rAmaM} due to sandhi.)
 
-Every language expresses meaning in its own way. In Sanskrit, one of the
+All languages express meaning in their own ways. In Sanskrit, one of the
 important ways we express different meanings is by changing a word. And
 usually, we change a word by changing its ending.
 
@@ -65,6 +65,9 @@ entirely:
 
 sItA [rAmAya] pazyati.
 Sita sees [for Rama].
+
+sItA [rAmeNa] saha nagaraM pazyati.
+Sita sees the city [with Rama].
 
 sItA [rAmasya] pitaraM pazyati.
 Sita sees [Rama's] father.
@@ -131,10 +134,10 @@ understand depending on the order they appear in.
 
 {h Review}
 
-Our {topic Sentences} topic will teach you much more about Sanskrit sentences
-and how they work. But for now, let's change focus and learn more about the
-different kinds of Sanskrit words. In the next three lessons, we will learn
-about the three main word types that Sanskrit uses.
+Our {topic Sentences} topic contains more about Sanskrit sentences and how they
+work. But for now, let's change focus and learn more about the different kinds
+of Sanskrit words. In the next three lessons, we will learn about the three
+main word types that Sanskrit uses.
 
 {ol
     {li What order does Sanskrit tend to use for its subjects, verbs, and

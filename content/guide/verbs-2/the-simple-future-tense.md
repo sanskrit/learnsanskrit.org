@@ -17,7 +17,7 @@ tense-mood that refers specifically to {em distant} future events.
 {h Making the stem}
 
 To make the stem of the simple future tense, we strengthen the root's vowel and
-add {s-dfn -sya} to the end of the root. Some roots will not use {s iT}:
+add {s-dfn -sya} to the end of the root. Some roots don't use {s iT}:
 
 {ex
 
@@ -26,7 +26,7 @@ lead > will lead
 
 }
 
-and others will:
+and others do:
 
 {ex
 
@@ -36,7 +36,7 @@ venerate > will venerate
 }
 
 {note
-In those examples, note that {s -sya} becomes {s -Sya} due to a sandhi rule.
+In these examples, note that {s -sya} becomes {s -Sya} due to a sandhi rule.
 {s s} becomes {s S} after most vowels and after {s r} and {s k} sounds. For
 details, see our lessons on consonant sandhi.
 }

@@ -52,7 +52,7 @@ is a basic summary of {s visarga} sandhi:
 }
 
 To use this table, find the ending of the word on the top row. Then find the
-second sound on the right column. The corresponding cell in the table is the
+second sound in the right column. The corresponding cell in the table is the
 result. For example, if the first term ends in {s -As} and the next one starts
 with {s c} or {s ch}, then the result is {s -Az}.
 

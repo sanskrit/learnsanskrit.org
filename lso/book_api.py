@@ -72,9 +72,17 @@ class Lesson:
 
 class Topic:
 
+    #: The full topic title (e.g. "Nominals 1: Normal stems")
     title: str
+    #: A shortened version of the title that can fit in UI elements like
+    #: breadcrumbs (e.g. "Nominals 1"). If not provided explicitly, this
+    #: defaults to `title`.
     short_title: str
+    #: The URL encoding of this topic (e.g. "nominals-1")
     slug: str
+    #: Ordered list of lesson slugs for this topic. For each slug
+    #: `lesson_slug`, we #: expect to find a file
+    #: `{topic_slug}/{lesson_slug}.md`.
     lesson_slugs: List[str]
 
     def __init__(self, directory, slug):

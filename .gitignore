@@ -4,3 +4,5 @@ production/
 lso/static/gen/
 lso/static/.webassets-cache/
 *.pdf
+*.db
+db_data/

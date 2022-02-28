@@ -37,17 +37,18 @@ your fingers to your throat and pronounce the sounds "sss" and "zzz," you can
 feel your throat and vocal cords vibrate. This vibration is called {dfn
 voicing}.
 
-Sounds like "s," {s ka}, and {s kha} are called {dfn unvoiced} sounds, and
-sounds like "z" are called {dfn voiced} sounds. All of the vowels we have seen
-are also voiced sounds. And just as we have the {em unvoiced} consonants {s ka}
-and {s kha}, we have the {em voiced} consonants {s ga} and {s gha}:
+Sounds like "s" don't use voicing, so they are called {dfn unvoiced}
+sounds. Meanwhile, sounds like "z" {em do} use voicing, so they are likewise
+called {dfn voiced} sounds. All of the vowels we have seen are also voiced
+sounds. And just as we have the {em unvoiced} consonants {s ka} and {s kha}, we
+have the {em voiced} consonants {s ga} and {s gha}:
 
 {sounds-dr ga-1 gha-1}
 
-Instead of just stopping the flow of air through our mouth, we can instead {em
-redirect} that flow of air through our nose to create the sound {s Ga}. {s Ga}
-is called a {dfn nasal} consonant because it is pronounced with the help of the
-nose:
+We can also make sounds by {em redirecting} the flow of air. If we redirect
+this flow of air through our nose, we create the sound {s Ga}. Since we
+pronounce {s Ga} with the help of the nose, it is called a {dfn nasal}
+consonant:
 
 {sounds-dr Ga-1}
 
@@ -82,7 +83,7 @@ consonant sounds. Let's consider all 25 of these sounds together:
 {sounds-dr ta-4 tha-4 da-4 dha-4 na-4}
 {sounds-dr pa-5 pha-5 ba-5 bha-5 ma-5}
 
-These sounds forrm a grid with five rows and five columns. The sounds in each
+These sounds form a grid with five rows and five columns. The sounds in each
 row use the same point of pronunciation. And the sounds in each column have
 similar properties:
 
@@ -129,6 +130,11 @@ their traditional order:
 {sounds-dr pa-5 pha-5 ba-5 bha-5 ma-5} {sounds-dr ya-2 ra-3 la-4 va-5} {sounds-dr
 za-2 Sa-3 sa-4 ha-1}
 
+{note
+In Devanagari, consecutive consonants are written in an unusual way. For
+details, see our {lesson[r=devanagari/consonant-clusters] lesson on consonant
+clusters}.
+}
 
 {h Review}
 

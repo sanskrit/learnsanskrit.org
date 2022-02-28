@@ -19,12 +19,13 @@ words in a compound.
 {h Reducing consonants}
 
 Sanskrit has many consonants. But Sanskrit words end only in specific consonant
-sounds. So we must apply a few rules to convert a word's final consonants into
-a valid ending.
+sounds. So we must first apply a few rules to make sure that our word ends in a
+valid consonant sound.
 
 Before we study the specific rules, let's first see some examples of what these
 rules do. In the examples below, the words on the left don't follow the rules
-and are not valid words. After applying the rules, we get the correct results:
+and are not valid words. After applying the rules, we get the correct results
+on the right:
 
 {ex
 
@@ -122,13 +123,15 @@ door
 
 }
 
-By the end of this process, we are left with eight final sounds: {s k}, {s T},
-{s t}, {s p}, {s G}, {s n}, {s m}, and the {s visarga}.
+Sanskrit words do not usually end in semivowels ({s ya ra la va}). So by the
+end of this process, we are left with eight possible final sounds: {s k}, {s
+T}, {s t}, {s p}, {s G}, {s n}, {s m}, and the {s visarga}.
 
 
 {h Rules for {s k}, {s T}, {s t}, and {s p}}
 
-{s k}, {s T}, {s t}, and {s p} use the same voicing as the following sound:
+{s k}, {s T}, {s t}, and {s p} use the same voicing as the sound that follows
+them:
 
 {ex
 
@@ -140,7 +143,7 @@ tat phalam > tat phalam
 
 }
 
-They also become nasal when the following sound is nasal:
+They also become nasal when the sound that follows them is nasal:
 
 {ex
 

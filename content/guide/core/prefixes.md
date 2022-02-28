@@ -2,39 +2,56 @@
 
 So far, our core lessons have covered two major areas:
 
-{ul
-    {li First, we studied the Sanskrit sounds: how they are pronounced, what
-    they are like, and how they interact with each other through sandhi.}
-    {li Next, we studied the basics of Sanskrit sentences: what they're like,
-    what kinds of words they use, and how these words behave.}
+{ol
+    {li Sanskrit {em sounds}: how they are pronounced, what they are like, and
+    how they interact with each other through sandhi.}
+    {li Sanskrit {em sentences}: what they're like, what kinds of words they
+    use, and how these words behave.}
 }
 
 As we come to the end of our core lessons, we will study the third and final
 major area of Sanskrit grammar: how to make new Sanskrit words.
 
-We'll start by learning about prefixes. {dfn Prefixes} are small groups of
-sounds that we add to the beginning of something else. Most prefixes are
-uninflected words. By adding prefixes to a word, we can change its basic
-meaning.
+Let's start by learning about prefixes. {dfn Prefixes} are small groups of
+sounds that we add to the beginning of something else:
+
+{ex
+
+gacchanti > [A]gacchanti
+they go > they come ("go [here]")
+
+}
+
+Most prefixes are uninflected words. By adding prefixes to a word, we can
+change its basic meaning.
 
 
 {h Verb prefixes}
 
-Prefixes usually change a verb's basic meaning in one of three different ways:
+{dfn Verb prefixes} are prefixes that we add to a verb root. These prefixes
+usually change a root's basic meaning in one of three different ways. Often,
+the prefix changes the root's meaning in a straightforward way:
 
-{ul
-    {li Often, the prefix changes the verbs's meaning in a straightforward way.
-    For example, if you know what "use" means, then you can probably guess what
-    "overuse" and "underuse" mean.}
+{ex
 
-    {li Sometimes, the prefix creates a more idiomatic change. For example, if
-    we {em understand} something, we don't literally {em stand under}
-    something.}
+[A] + gacchanti > [A]gacchanti
+here/toward + they go > they come ("go [here]")
 
-    {li And sometimes, the prefix intensifies the word's basic meaning or
-    produces essentially no change. For example, "flammable" and "inflammable"
-    mean essentially the same thing.}
 }
+
+Sometimes, the prefix creates a more idiomatic change:
+
+{ex
+
+[ava] + gacchanti > [ava]gacchanti
+down + they go > they understand
+
+}
+
+And sometimes, the prefix intensifies the word's basic meaning or
+produces essentially no change.
+
+{comm todo add example here}
 
 Let's learn about two prefixes here. First is the prefix {s-dfn A-}. (We add
 "-" to emphasize that this is a prefix.) {s A-} has the basic sense of "here"
@@ -81,13 +98,19 @@ they lead > they gather ("lead [together here]")
 
 {h Nominal prefixes}
 
-Prefixes often change a verb's meaning, but they can also change a nominal's
-basic meaning.
+{dfn Nominal prefixes} are prefixes that we add to a nominal stem. These
+prefixes usually modify the stem's meaning in a straightforward way:
+
+{ex
+
+zoka > [a]zoka
+grief, sorrow > without grief or sorrow
+
+}
 
 Again, let's learn about two prefixes here. First is the prefix {s-dfn a-}. {s
 a-} has different meanings in different contexts. But when attached to a
-nominal, {s a-} has the basic meaning of "not." Or if the nominal starts with a
-vowel, we use {s an-} instead.
+nominal, {s a-} has the basic meaning of "not":
 
 {ex
 
@@ -95,7 +118,17 @@ hiMsA > [a]hiMsA
 violence > [non-]violence
 
 bala > [a]bala
-strength > [without] strength; powerless
+strength > [without] strength; weak, powerless
+
+
+}
+
+If the stem starts with a vowel, we use {s an-} instead:
+
+{ex
+
+iSTa > aniSTa ([an]-iSTa)
+wanted > [un]wanted
 
 }
 

@@ -59,6 +59,9 @@ bodh + sya > bhotsya
 (aspiration moves to the first consonant)
 
 dah + sya > dhakSya
+
+dah > dhak
+burning
 (aspiration moves to the first consonant)
 
 }
@@ -70,16 +73,6 @@ instances, we remove the aspiration completely:
 
 muh > mokSyati
 be deluded > will be deluded
-
-}
-
-These kinds of changes can occur even at the end of an expression:
-
-{ex
-
-dah > dhak
-burning
-(`d becomes `dh)
 
 muh > muk
 deluding

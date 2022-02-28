@@ -2,13 +2,32 @@
 
 {% block title %}Tools{% endblock %}
 
+{% block meta %}Programs and software for working with Sanskrit{% endblock %}
+
+{% block header %}
+<header class="tc index bg-gray pb3">
+{% include 'include/top-nav.html' %}
+<p class="logo sa1 mb0 mt4">{{ 'OM'|d }}</p>
+<h1 class="ma0 f3">Tools</h1>
+<p class="mt0 f6">Programs and software for working with Sanskrit</p>
+</header>
+{% endblock %}
+
+
+{% set names = {
+    'transliteration': 'Transliteration',
+    'writing': 'Optical character recognition',
+    'dictionaries': 'Dictionaries',
+    'analyzers': 'Analysis tools',
+    'dictionaries': 'Dictionaries',
+    'software': 'Code and software',
+    'tools': 'Online tools',
+    'typefaces': 'Fonts and typefaces',
+} %}
+
+
 {% block article %}
-<h1>Tools</h1>
-
-<aside class="note"><p>This page is a work in progress.</p></aside>
-
-<p>Below is a collection of tools meant to help you read, transcribe, or process Sanskrit texts.</p>
-
+<p></p>
 <h2>Transliteration</h2>
 <p><dfn>Transliteration</dfn> is the task of converting digitized Sanskrit text from one scheme to another. For instance, a person might type up some Sanskrit text with ordinary Roman letters and convert it to Devanagari. Thus a phrase like <code>mAmakAH pANDavAzcaiva</code> could be converted to <span class="dev">मामकाः पाण्डवाश्चैव</span>. Some tools to help with transliteration include the following:</p>
 <ul>

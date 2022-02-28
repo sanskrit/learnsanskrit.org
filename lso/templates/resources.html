@@ -4,6 +4,16 @@
 
 {% block meta %}The best resources for Sanskrit learners and teachers.{% endblock %}
 
+{% block header %}
+<header class="tc index bg-green pb3">
+{% include 'include/top-nav.html' %}
+<p class="logo sa1 mb0 mt4">{{ 'OM'|d }}</p>
+<h1 class="ma0 f3">Resources</h1>
+<p class="mt0 f6">Everything you need to keep learning Sanskrit</p>
+</header>
+{% endblock %}
+
+
 {% set names = {
     'acquiring': 'Acquiring Sanskrit',
     'writing': 'Writing Sanskrit',
@@ -20,9 +30,9 @@
 <h2 id="{{ s }}">{{ names[s] }}</h2>
 {% endmacro %}
 
-{% block article %}
-<h1>Resources</h1>
-
+{% block main %}
+<div style="width: 100%">
+  <article class="mt4 mb5 pa2 readable">
 <p>Click to scroll down:</p>
 
 <ul class="scroll-list">
@@ -99,7 +109,7 @@ offers spelling corrections if you make a mistake.</p></li>
 {{ head('texts') }}
 
 <ul>
-	<li><p><a href="http://sanskritdocuments.org/">Sanskrit Documents</a> is home to hundreds of different Sanskrit texts. Texts are available as PDF files, but by using this site's <a href="tools/sanscript">Sanscript</a> tool, you can convert the ITX versions into any script you like.</p></li>
+	<li><p><a href="http://sanskritdocuments.org/">Sanskrit Documents</a> is home to hundreds of different Sanskrit texts. Texts are available as PDF files, but by using this site's <a href="/tools/sanscript">Sanscript</a> tool, you can convert the ITX versions into any script you like.</p></li>
     <li><p><a href="http://www.sub.uni-goettingen.de/ebene_1/fiindolo/gretil.htm">GRETIL</a> (Göttingen Register of Electronic Texts in Indian Languages) contains a large number of Sanskrit texts. These texts are in IAST, but you can convert them to Devanagari or another script by using this site's <a href="{{ url_for('tools.sanscript') }}">Sanscript</a> tool.</p></li>
 	<li><p><a href="http://www.archive.org/details/freeindological">The Free Indological Connection</a> contains more than fifty rarer and more unusual Sanskrit texts, including a few copies of the Bhagavad Gita, a list of Sanskrit verb roots, and a translation of the <a href="http://en.wikipedia.org/wiki/New_Testament">New Testament</a> into Sanskrit. Some texts are more interesting than others.</p></li>
 </ul>
@@ -112,7 +122,9 @@ offers spelling corrections if you make a mistake.</p></li>
 
 {{ head('software') }}
 
-<p>Coming soon.<?p>
+<p>Coming soon.</p>
 
+  </article>
+</div>
 {% endblock %}
 

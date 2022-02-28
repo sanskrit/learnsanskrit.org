@@ -1,8 +1,8 @@
 {title Other sounds}
 
-In this last lesson, we will revisit the {s anusvAra} and the {s visarga}. We
-will also learn about two variants of the {s visarga}: the {s upadhmAnIya} and
-the {s jihvAmUlIya}.
+In this lesson, we will revisit the {s anusvAra} and the {s visarga}. We will
+also learn about two variants of the {s visarga}: the {s upadhmAnIya} and the
+{s jihvAmUlIya}.
 
 
 {h {s anusvAra}}
@@ -23,7 +23,7 @@ while pressing your tongue against the roof of your mouth.
 
 However, the {s anusvAra} often becomes many other sounds due to sandhi. If it
 is followed by any consonant except for the ones in {s zavarga} ({s za Sa sa
-ha}), it becomes the closest matching nasal sound:
+ha}), it usually becomes the closest matching nasal sound:
 
 {ex
 

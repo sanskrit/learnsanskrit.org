@@ -125,10 +125,10 @@ But vowels and consonants are not [`savarNa with each other].
 
 }
 
-Notice how much context we pull from rule 1.1.9. This extension of context from
-one rule to another is called {s-dfn anuvRtti}. There are specific principles
-that we can use to define {s anuvRtti}. But for now, let's just focus on
-understanding this rule.
+Notice thas the phrase "{s savarNa} with each other" is inferred from the
+context of rule 1.1.9 above. This extension of context from one rule to another
+is called {s-dfn anuvRtti}. There are specific principles that we can use to
+define {s anuvRtti}. But for now, let's just focus on understanding this rule.
 
 Rule 1.1.10 refers to {s ac} and {s hal}, which we learned about in the previous
 lesson: {s ac} refers to all vowels, and {s hal} refers to all consonants.
@@ -161,8 +161,8 @@ they are not `pratyaya (suffixes).
 
 Rule 1.1.68 does not define a term or counteract a rule. Instead, it is an
 instruction for {em us} as we read the grammar. Such rules are called {s-dfn
-paribhASA} ("interpretation") rules. {s paribhASA} rules usually apply
-throughout the entire system, so it's important to understand them well.
+paribhASA} ("explanation") rules. {s paribhASA} rules usually apply throughout
+the entire system, so it's important to understand them well.
 
 What does rule 1.1.68 actually mean? We can make the rule clear with an
 example. Suppose that we see some rule about the word {s agni}, which means

@@ -4,12 +4,8 @@
 
 {# table of contents for a topic #}
 {% macro topic(t, number=none) %}
-<div class="unit">
-{% if false and number is not none %}
-<h1>{{ number }} {{ t.title|sml }}</h1>
-{% else %}
+<section class="unit">
 <h1>{{ t.title|sml }}</h1>
-{% endif %}
 <ol>
     {% for lesson in t.lessons %}
     <li>
@@ -17,7 +13,7 @@
     </li>
     {% endfor %}
 </ol>
-</div>
+</section>
 {% endmacro %}
 
 {# table of contents for a topic #}

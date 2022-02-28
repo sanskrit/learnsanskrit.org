@@ -11,14 +11,14 @@ while doing
 kariSyan
 about to do
 
-kRta
+kRtam
 (has been) done
 
 kRtavAn
 (has) done
 
-kartavya
-should or must do
+kartavyam
+should or must be done
 
 }
 
@@ -29,6 +29,9 @@ is related to another:
 
 ahaM [gAyan] carAmi.
 I walk [while singing].
+
+rAmaz [caran] cakhAda.
+Rama ate [while walking].
 
 }
 
@@ -46,7 +49,7 @@ ahaM [nRtyan] gAyAmi.
 I sing [while dancing].
 
 ahaM [khAdantaM] siMhaM pazyAmi.
-I see a lion (who is) [eating].
+I see a lion [(who is) eating].
 
 }
 
@@ -56,10 +59,10 @@ So, we can use them with other nominal words:
 {ex
 
 ahaM [rAjJe nRtyan] gAyAmi.
-I sing while [dancing for the king].
+I sing [while dancing for the king].
 
 aham [mAMsam khAdantaM] siMhaM pazyAmi.
-I see a lion (who is) [eating meat].
+I see a lion [(who is) eating meat].
 
 }
 
@@ -89,14 +92,16 @@ Then we can connect them like so:
 {ex
 
 [dazarathe zocati] rAmo vanaM gacchati.
-[As Dasharatha grieves], Rama goes to the forest.
+[In Dasharatha grieving], Rama goes to the forest. (literal translation)
+[As Dasharatha grieves], Rama goes to the forest. (natural translation)
 
 }
 
 {note
-The word {s zocati} here is an adjective in the case 7 singular. It is {em
-not} the normal verb {s zocati}. See our {lesson[r=nominals-1/consonant-stems]
-lesson on consonant stems} for details.
+The word {s zocati} here is an adjective in the case 7 singular. It is easily
+confused with the normal verb {s zocati}. See our
+{lesson[r=nominals-1/consonant-stems] lesson on consonant stems} for details on
+why this word looks the way it does.
 }
 
 We can use this same structure with other participles too:

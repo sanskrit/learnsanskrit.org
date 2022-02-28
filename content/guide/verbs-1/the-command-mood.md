@@ -20,14 +20,23 @@ nayata
 
 }
 
-But in the first and third persons, it has slightly different meanings:
+But in other persons, the command mood has many more subtle meanings. In the
+third person, it can have the sense of a suggestion, a demand, or a request:
 
 {ex
 
-rAmo vanaM [gacchatu]
-[May] Rama [go] to the forest.
+rAmo vanaM [gacchatu].
+Rama [could go] to the forest. (suggestion)
+[Send] Rama to the forest. (demand or request)
 
-kim [karavANi] te?
+}
+
+The command mood is rarely used in the first person. When it is used, it
+usually has the sense of fulfilling another's need:
+
+{ex
+
+kiM [karavANi] te?
 What [may I do] for you?
 
 }
@@ -43,9 +52,10 @@ Here are the endings of the command mood as used with the stem {s naya}:
     nayAni nayAva nayAma
 }
 
-Notice that the first-person endings still use a long {s A}. There are other
-similarities as well: {s nayati} is replaced by {s nayatu}, and {s nayanti}
-by {s nayantu}.
+Let's take a moment to compare these endings to the ones used in the present
+tense. Notice that the first-person endings still use a long {s A}. There are
+other similarities as well: {s nayati} is replaced by {s nayatu}, and {s
+nayanti} by {s nayantu}.
 
 But there are also some major differences. In particular, notice these five
 endings:
@@ -57,4 +67,3 @@ endings:
 }
 
 These five endings will repeat in the next two tense-moods.
-

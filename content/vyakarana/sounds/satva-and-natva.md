@@ -8,22 +8,21 @@ Here, we will take a quick look at two common changes that we will use
 repeatedly throughout our series. These are:
 
 {ul
-    {li the change of {s s} to {s S}. This is commonly called {s-dfn Satvam} ({s
+    {li the change of {s s} to {s S}. This is commonly called {s-dfn Satva} ({s
     Sa}-ness).}
-    {li the change of {s n} to {s N}. This is commonly called {s-dfn Natvam} ({s
+    {li the change of {s n} to {s N}. This is commonly called {s-dfn Natva} ({s
     Na}-ness).}
 }
 
-Both {s Satvam} and {s Natvam} have many exceptions and minor rules. So as
+Both {s Satva} and {s Natva} have many exceptions and minor rules. So as
 usual, we will focus on just the common patterns.
 
 
 {h Change of {s s} to {s S}}
 
 The consonant {s s} can become {s S} in several different circumstances. Here
-we'll look at just one. In the five rules below, the first four rules are
-either {s adhikAra} rules or rules that establish {s anuvRtti}. Rule 8.3.59 is
-our focus:
+we'll look at just one. To understand this rule, we must first consider four
+rules that are either {s adhikAra} rules or rules that establish {s anuvRtti}:
 
 {rule
 
@@ -43,6 +42,12 @@ After the letters `iN (`i, `u) or `ku~ (`k, `kh, `g, `gh, `G), &hellip;
 numvisarjanIyazarvyavAye'pi | 8.3.58
 nu~m-visarjanIya-zar-vyavAye api
 Even if separated by `nu~m, the `visarjanIya, or `zar, &hellip;
+
+}
+
+Rule 8.3.59 is our focus:
+
+{rule
 
 AdezapratyayoH | 8.3.59
 Adeza-pratyayoH
@@ -83,7 +88,7 @@ vAk + su > vAkSu
 
 }
 
-Even if another sound intervenes:
+Even if certain other sounds intervene:
 
 {ex
 

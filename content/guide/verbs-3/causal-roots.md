@@ -7,7 +7,7 @@ Once we have a derived root, we can use it the same way we would use any verb
 root.
 
 One of the most common derived roots is the {dfn causal root}. You can see some
-examples of it below:
+examples of causal roots below:
 
 {ex
 
@@ -19,12 +19,12 @@ walk > make walk > they make (someone) walk
 
 }
 
-Some causal roots might have a more idiomatic meaning:
+Some causal roots might also have a more idiomatic meaning:
 
 {ex
 
 gamayati
-makes go; passes (time)
+makes go; passes (time), leads (someone)
 
 }
 
@@ -88,7 +88,7 @@ kill, strike > make strike
 
 {h Using the root}
 
-We treat this root like a member of the {s cur} class and can use either {s
+We treat this root like a member of the {s bhU} class and can use either {s
 parasmaipada} or {s Atmanepada} endings:
 
 {ex

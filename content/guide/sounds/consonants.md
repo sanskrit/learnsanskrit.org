@@ -62,14 +62,14 @@ like a nasal {s y} when {s y} follows it.
 
 
 {h {s za} through {s ha}}
-{aka {s USmANaH} ("in-between (sounds)")}
+{aka {s USmANaH} ("vapor (sounds)")}
 
 The last four sounds are called {dfn sibilants} in English grammar and {s-dfn
 USmANaH} in Sanskrit:
 
 {sounds-dr za-2 Sa-3 sa-4 ha-1}
 
-As a reminder, {s ha} is voiced. The other sounds here are not.
+As a reminder, {s ha} is voiced. But {s za}, {s Sa}, and {s sa} are not.
 
 
 {h {s LLLa}}
@@ -88,16 +88,13 @@ As with the vowels, we can add {s-dfn -kAra} to the end of any consonant to
 give it a more usable name. But {s ra} is called {s-dfn repha} ("snarl,"
 "burr") instead:
 
-{comm TODO unsupported ka in example English text due to expecting one node}
-
 {ex
 
 ka > kakAraH
-ka > The letter ka
+ka > The letter `ka
 
 ra > rephaH
-ra > The letter ra
-
+ra > The letter `ra
 
 }
 

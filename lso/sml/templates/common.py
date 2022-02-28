@@ -305,8 +305,12 @@ class LessonLink(View):
     def enter(self):
         args = dict(self.node.attr)
         route = args.pop("r")
-        topic, slug = route.strip().split("/")
-        url = url_for("guide.lesson", topic=topic, slug=slug)
+        try:
+            topic, slug = route.strip().split("/")
+            url = url_for("guide.lesson", topic=topic, slug=slug)
+        except ValueError:
+            slug = route.strip()
+            url = url_for("guide.topic", slug=slug)
         return f'<a href="{url}">'
 
     def exit(self):

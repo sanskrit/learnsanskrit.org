@@ -133,13 +133,13 @@ as much as possible in as little space as possible.
 
 na vibhaktau tusmAH | 1.3.4
 na vibhaktau tu-s-mAH
-The `tu sounds, `s, and `m are not [called `it in `upadeza] when they are in a
-`vibhakti (nominal case ending).
+The `tu~ sounds, `s, and `m are not [called `it in `upadeza] when they are in a
+`vibhakti (verb or nominal ending).
 
 }
 
-This rule applies to the inflectional endings that appear at the end of nominal
-stems. It will be useful later, but not right now.
+This rule applies to the inflectional endings that we use for verbs and
+nominals. It will be useful later, but not right now.
 
 {rule
 
@@ -195,8 +195,8 @@ on rule 1.3.5.
 {rule
 
 lazakvataddhite | 1.3.8
-la-za-ku a-taddhite
-The [initial] `l, `z, and the `ku sounds [of a `pratyaya are called `it in
+la-za-ku~ a-taddhite
+The [initial] `l, `z, and the `ku~ sounds [of a `pratyaya are called `it in
 `upadeza] when not in a `taddhita (nominal suffix).
 
 }
@@ -232,7 +232,7 @@ notation. They are not "real" Sanskrit and have no meaning outside the
 technical world of the Pāṇinian system. In our clothing store, a tag's role
 is to tell us something about the clothes it is attached to; and in the world
 of grammar, an {s it} letter's role is to tell us something about the terms
-it attaches to.
+it is attached to.
 
 
 {h Review}

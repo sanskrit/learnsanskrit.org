@@ -43,8 +43,7 @@ bhU + la~T
 }
 
 Here, {s la~T} is an abstract suffix that usually expresses the present tense.
-Based on our semantic conditions, we can then choose a specific verb ending to
-use:
+Based on our semantic conditions, we then replace with a specific ending:
 
 {ex
 
@@ -53,7 +52,7 @@ bhU + ti
 }
 
 This suffix allows other operations to apply. For example, here we should
-introduce a new affix:
+introduce a new affix {s a} between the root and the ending:
 
 {ex
 

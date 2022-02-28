@@ -44,7 +44,7 @@ become > you have become
 
 }
 
-Others use a {s -a} vowel:
+Others use a connecting {s -a} vowel:
 
 {ex
 
@@ -63,7 +63,7 @@ perish, be destroyed > it has perished
 
 }
 
-A fourth group strengthens with the suffix {s siS}:
+A fourth group strengthens with the suffix {s -siS}:
 
 {ex
 
@@ -72,7 +72,7 @@ bow > I have bowed
 
 }
 
-A fifth group uses {s sa}:
+A fifth group uses {s -sa}:
 
 {ex
 
@@ -89,7 +89,7 @@ And there are other minor patterns, too.
 Generally, these stems use the endings of the ordinary past tense.
 
 
-{h The recent past tense withouth {s a-}}
+{h The recent past tense without {s a-}}
 
 Here is a common pattern worth knowing. We can use the forms of the recent past
 tense with a word like {s mA} ("don't") to state commands:

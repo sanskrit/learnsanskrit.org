@@ -109,7 +109,6 @@ Rather, {s yad} lets us join sentences together.
 
 This idea is difficult to explain but easy to understand. In the examples
 below, the first two sentences are simple. Then we use {s yad} to connect them.
-Note that we pair {s yad} with another pronoun:
 
 {ex
 
@@ -122,6 +121,7 @@ She is Rama's wife.
 [yA] pRcchati [sA] rAmasya patnI.
 [Who] asks, [she] is Rama's wife. (literal translation)
 The person [who] asks is Rama's wife. (natural translation)
+(Note that we pair `yad with another pronoun here.)
 
 }
 
@@ -156,9 +156,6 @@ Her father is Janaka.
 The father of the one [to whom] Rama gives a fruit is Janaka. (natural)
 
 }
-
-Note how difficult these sentences are to translate to English but how
-naturally they flow in Sanskrit.
 
 {s yad} uses the same endings as {s tad}, but it follows normal sandhi rules.
 Here are the forms of {s yad} with masculine endings:

@@ -113,17 +113,13 @@ vA pada-antasya
 }
 
 {s yay} includes all consonants except for the sibilants ({s z, S, s, h}). So
-the following changes are mandatory, by rule 8.4.58:
+the following changes are mandatory by rule 8.4.58:
 
 {ex
 
-saMgacchati > saGgacchati
+aMkita > aGkita
 
-saMjaya > saJjaya
-
-saMtuSTa > santuSTa
-
-saMbhava > sambhava
+ruMdhanti > rundhanti
 
 }
 
@@ -142,13 +138,13 @@ seen where we can choose whether to apply the rule or not. Many rules in the
 {cite Aṣṭādhyāyī} are optional, though certain choices do tend to become
 conventions over time.
 
-Second, notice how the word {s sambhava} is treated by these rules. Since we
+Second, notice how the word {s rundhanti} is treated by these rules. Since we
 must apply these rules in order, we have a derivation like this, where {s
-saMbhava} is first changed by rule 8.3.23:
+rundhanti} is first changed by rule 8.3.23:
 
 {ex
 
-sambhava > saMbhava
+rundhanti > ruMdhanti
 
 }
 
@@ -156,21 +152,20 @@ and then converted back to its original form by rule 8.4.58:
 
 {ex
 
-saMbhava > sambhava
+ruMdhanti > rundhanti
 
 }
 
-This kind of behavior is not uncommon in this section of the {cite
-Aṣṭādhyāyī}.
+This kind of behavior is common in the {s asiddha} section.
 
 
 {aside
 
-{h A notice on {s anusvAra} usage}
+{h A note on {s anusvAra} usage}
 
 The {cite Aṣṭādhyāyī} is clear that rule 8.4.58 is mandatory. Printed texts,
-however, will routinely use the {s anusvAra} in words like {s saMjaya} and {s
-saMtuSTa} rather than laboriously write out the correct nasal sound.
+however, will occasionally use the {s anusvAra} rather than laboriously write
+out the correct nasal sound.
 
 }
 

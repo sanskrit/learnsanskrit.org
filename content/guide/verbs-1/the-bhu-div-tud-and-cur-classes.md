@@ -10,16 +10,16 @@ Four of these verb classes are quite simple to create and use:
 {ex
 
 bhU > bhava
-become
+be, become > (someone) is or becomes
 
 div > dIvya
-gamble
+gamble > (someone) gambles
 
 tud > tuda
-strike
+strike (someone) strikes
 
 cur > coraya
-steal
+steal (someone) steals
 
 }
 
@@ -33,6 +33,9 @@ The {dfn {s bhU} class} is the largest of the ten verb classes and contains
 almost half of all verb roots. Here are some examples of this class:
 
 {ex
+
+bhU > bhavati
+be, become > (someone) is or becomes
 
 nI > nayati
 lead > (someone) leads
@@ -74,25 +77,33 @@ laugh
 
 }
 
-But if a root's syllable would be heavy even after we add {s -a}, then we don't
-strengthen the root:
+And if a root's syllable would be heavy even after we add {s -a}, then we don't
+strengthen the root. Or to put it another way, there is no change if the root
+ends in multiple consonants:
 
 {ex
 
 nind > ninda
 blame
 
+}
+
+Or if the root has a long vowel followed by a consonant:
+
+{ex
+
 jIv > jIva
 live
 
 }
+
 
 There are also several roots that form their stems in an unpredictable way.
 Such stems are called {dfn irregular} stems. Here are some common examples of
 irregular stems:
 
 {table
-{tr {th Root} {th Verb} {th Meaning}}
+{tr {th Root} {th Verb} {th Basic meaning}}
 {tr {td {s-dr sthA}} {td {s-dr tiSThati}} {td stand}}
 {tr {td {s-dr pA}} {td {s-dr pibati}} {td drink}}
 {tr {td {s-dr dRz}} {td {s-dr pazyati}} {td see}}
@@ -101,8 +112,8 @@ irregular stems:
 
 The roots that use irregular stems are all common, and you will see and hear
 them many times as you engage with real Sanskrit content. So although you might
-be tempted to memorize these forms, you will likely acquire them naturally as
-you continue to read and listen to Sanskrit.
+be tempted to memorize these forms, you will acquire them naturally as you
+continue to read and listen to Sanskrit.
 
 {aside
 
@@ -140,7 +151,7 @@ This class has a few irregular stems. Usually, these irregular stems lengthen
 the root's vowel. Here are a few examples:
 
 {table
-    {tr {th Root} {th Verb} {th Meaning}}
+    {tr {th Root} {th Verb} {th Basic meaning}}
     {tr {td {s-dr div}} {td {s-dr dIvyati}} {td gamble}}
     {tr {td {s-dr jan}} {td {s-dr jAyate}} {td be born}}
     {tr {td {s-dr zam}} {td {s-dr zAmyati}} {td be tired or calm}}
@@ -164,7 +175,7 @@ strike
 The irregular stems in this class usually have an extra nasal sound:
 
 {table
-    {tr {th Root} {th Stem} {th Meaning}}
+    {tr {th Root} {th Stem} {th Basic meaning}}
     {tr {td {s-dr muc}} {td {s-dr muJca}} {td release}}
     {tr {td {s-dr kRt}} {td {s-dr kRntati}} {td cut}}
     {tr {td {s-dr lip}} {td {s-dr limpati}} {td anoint or smear}}
@@ -181,12 +192,11 @@ vowel accents} in Sanskrit.
 
 Old Sanskrit has a feature called {em pitch accent}, where some vowels are
 spoken with a higher pitch than others. This pitch accent can still be heard in
-Vedic recitation. And even the spoken Sanskrit around that time used pitch
-accent extensively.
+Vedic recitation.
 
 The roots in the {s tud} class generally have a high accent on their {s -a}
-suffix, and the roots in the {s bhU} class generally do not. This is part of
-the reason {s nind} is in the {s bhU} class.
+suffix, and the roots in the {s bhU} class have a low accent. {s nind} uses a
+low accent for this {s -a} sound, so it in the {s bhU} class.
 
 }
 
@@ -200,15 +210,23 @@ examples:
 {ex
 
 cur > coraya
-steal
+steal > (someone) steals
+
+cint > cintayati
+think > (someone) thinks
 
 }
 
-The irregular stems in this class usually have extra sounds between the roots
-and the {s -aya} suffix:
+Notice that the stem of {s cint} is {s cintayati}, not {err}{s centayati}. (We
+use the {err} symbol to show that this word is not correct Sanskrit.) Since {s
+cint} ends in multiple consonants, its vowel does not strengthen. So it behaves
+in the same way as {s nindati} above.
+
+The irregular stems in the {s cur} class usually have extra sounds between the
+roots and the {s -aya} suffix:
 
 {table
-    {tr {th Root} {th Stem} {th Meaning}}
+    {tr {th Root} {th Stem} {th Basic meaning}}
     {tr {td {s-dr prI}} {td {s-dr prINayati}} {td please}}
     {tr {td {s-dr dhU}} {td {s-dr dhUnayati}} {td shake}}
 }

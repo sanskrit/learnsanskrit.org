@@ -2,13 +2,27 @@
 
 Sanskrit sentences use three basic types of words: verbs like {s pazyati},
 nominals like {s rAmaH}, and a third category that we can call {dfn uninflected
-words}.
+words}. For example, the common word {s na} ("not") is an uninflected word:
+
+{ex
+
+gajo [na] gacchati.
+The elephant does [not] go.
+
+}
 
 What does {em uninflected} mean? In Sanskrit, we can change a word to express
-different meanings. The technical name for these kinds of word changes is {dfn
-inflection}.
+different meanings:
 
-Many Sanskrit words are inflected. Many Sanskrit words are {em uninflected}.
+{ex
+
+nI > nayanti
+lead > they lead
+
+}
+
+The technical name for these kinds of word changes is {dfn inflection}.  Many
+Sanskrit words are inflected, and many Sanskrit words are {em uninflected}.
 Uninflected words can still be changed by sandhi, but otherwise, they always
 stay the same.
 
@@ -144,7 +158,7 @@ Rama goes to the city.
 rAmaH sItAM pazyati.
 Rama sees Sita.
 
-rAmo nagaraM [gatvA] sItAm pazyati.
+rAmo nagaraM [gatvA] sItAM pazyati.
 Rama, [after going] to the city, sees Sita.
 
 }

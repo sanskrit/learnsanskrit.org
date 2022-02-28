@@ -203,12 +203,28 @@ semantics, and so on. Since these rules are about sounds, the closest
 replacement is the one that matches the points of articulation of the sounds
 being replaced.
 
-If we return to our example above, {s A} is pronounced at the soft palate and
-{s i} is pronounced at the hard palate. {s e} uses both of these points of
-articulation, so it is a good match. {s o} uses the soft palate, but it does
-not use the hard palate; it uses the lips instead. So {s o} is not a good
-match.  {s e} is a closer substitute than {s o}, so we should choose {s e}:
+If we return to our example above:
 
+{ex
+
+sItA indram apazyat > ???
+Sita saw Indra.
+
+}
+
+We must choose which {s guNa} vowel to use, per {a-cite 6.1.87}. Since {s A} is
+pronounced at the soft palate and {s i} is pronounced at the hard palate, we
+just need to find which sound is the best match:
+
+{ul
+  {li {s at} uses just one of these points of articulation, so it is not a good
+  match.}
+  {li {s e} uses both of these points of articulation, so it is a good match.}
+  {li {s o} uses the soft palate, but it uses the lips instead of the hard
+  palate. So {s o} is not a good match.}
+}
+
+Thus {s e} is the best option:
 
 {ex
 
@@ -303,7 +319,29 @@ R + R > RR
 {h Review}
 
 With just a few short rules, we have fully characterized the basic patterns of
-{s ac} sandhi. This is the power the Pāṇinian system gives us.
+{s ac} sandhi. This is the power the Pāṇinian system gives us. As a quick
+review, here are the main rules of vowel sandhi:
 
-In the next lesson, we explore a critical problem with our current system and
-learn how Pāṇini decides to solve it.
+{rule
+
+iko yaNaci | 6.1.77
+ikaH yaN aci
+An `ik vowel is replaced by its respective `yaN sound when a vowel follows [in
+`saMhitA].
+
+AdguNaH | 6.1.87
+At guNaH
+`a [and the following vowel] become [a single] `guNa [in `saMhitA].
+
+vRddhireci | 6.1.88
+vRddhiH eci
+[`a and the following] `ec vowel become [a single] `vRddhi [in `saMhitA].
+
+akaH savarNe dIrghaH | 6.1.101
+_
+`ak and a following `savarNa [vowel] become a `dIrgha (long) [in `saMhitA].
+
+}
+
+In the next lesson, we will explore a critical problem with our current system
+and learn how Pāṇini decides to solve it.

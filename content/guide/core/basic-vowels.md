@@ -1,7 +1,7 @@
 {title Basic vowels}
 
-Sanskrit students traditionally begin their studies by learning about
-Sanskrit's sounds. We will start our core lessons in the same way.
+Sanskrit students traditionally begin their studies by learning about the
+different Sanskrit sounds. We will start our core lessons in the same way.
 
 Why is it so important to study Sanskrit's sounds? It is because Sanskrit
 sounds often transform due to {em sound change rules}. If we study Sanskrit's
@@ -19,9 +19,10 @@ the West, many people also use {dfn romanized} Sanskrit, which uses an extended
 version of the Latin alphabet.
 
 Most of the Sanskrit in our guide is written in both Devanagari and in
-romanized Sanskrit. You can also change which scripts this lesson uses by
-using the dropdown menu at the very top of the page. (You might have to scroll
-up to see the menu.)
+romanized Sanskrit. {web-only You can also change which scripts this lesson
+uses by using the dropdown menu at the very top of the page. (You might have to
+scroll up to see the menu.)} {print-only You can use a different script by
+accessing our online guide at {code learnsanskrit.org/guide}.}
 
 If you don't know Devanagari and want to learn it, see the {url[r=guide.topic
 slug=devanagari] Devanagari topic} in our guide. But before you do, we

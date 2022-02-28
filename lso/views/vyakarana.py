@@ -13,6 +13,17 @@ from flask import Blueprint, render_template
 bp = Blueprint("vyakarana", __name__, url_prefix="/vyakarana")
 
 
+def get_update_date():
+    guide = API.vyakarana()
+    latest_mtime = guide.latest_mtime
+
+    latest = datetime.fromtimestamp(latest_mtime).strftime("%d %B %Y")
+    # Cross-platform hack to remove leading 0.
+    if latest.startswith("0"):
+        latest = latest[1:]
+    return latest
+
+
 @bp.route("/")
 def index():
     guide = API.vyakarana()
@@ -44,4 +55,16 @@ def lesson(topic, slug):
     next = guide.next(t.slug, lesson.slug)
     return render_template(
         "vyakarana/lesson.html", topic=t, lesson=lesson, prev=prev, next=next
+    )
+
+
+@bp.route("/print/")
+def print():
+    guide = API.vyakarana()
+    last_updated = get_update_date()
+    return render_template(
+        "vyakarana/print/book.html",
+        guide=guide,
+        topics=guide.topics,
+        last_updated=last_updated,
     )

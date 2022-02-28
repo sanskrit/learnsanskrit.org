@@ -1,14 +1,8 @@
 {title A summary of Sanskrit}
 
-{note If you know some Sanskrit already, feel free to skip this lesson.}
-
 If you know {strong zero} Sanskrit, you can still follow along with our series.
-But it certainly does help to have a basic sense of what Sanskrit is like and
-how it works. That's what we hope to give you here.
-
-As you read this page, we recommend that you focus on the high-level ideas. We
-also suggest that you keep this page open in a new browser tab, so that you can
-refer back to it as needed.
+But it certainly helps to have a basic sense of what Sanskrit is like and how
+it works. That's what we hope to give you here.
 
 
 {h The alphabet}
@@ -26,7 +20,7 @@ Devanagari script ({d saMskRtam}) and in romanized Sanskrit ({s saMskRtam}).
 All Devanagari in our lessons will be displayed next to its romanized version.
 
 These sounds are colored according to where in the mouth they are pronounced.
-We will explain this system in a few lessons.
+We will explain this system in the lessons to come.
 
 {sounds-dr a-1 A-1 i-2 I-2 u-5 U-5}
 {sounds-dr R-3 RR-3 L-4}
@@ -41,8 +35,8 @@ We will explain this system in a few lessons.
 {sounds-dr za-2 Sa-3 sa-4 ha-1}
 
 Given all of these sounds, we have the first question that the {cite
-Aṣṭādhyāyī} aims to answer: {em which phonetic distinctions are relevant and
-important in grammar?}
+Aṣṭādhyāyī} aims to answer: {em which phonetic distinctions are relevant to
+grammar?}
 
 
 {h Sandhi}
@@ -54,8 +48,10 @@ native English speakers might drop the final "g" of words like "running" or
 
 Sanskrit sandhi changes are extensive, and they are almost always written down.
 These changes occur both within words and between words, and they depend both
-on specific sounds and on the semantics of different words and suffixes. This
-prompts another question: {em which sandhi changes apply in which contexts?}
+on specific sounds and on the semantics of different words and suffixes.
+
+Given these sandhi changes, we have a second question: {em which sandhi changes
+apply in which contexts?}
 
 
 {h Basic words}
@@ -75,9 +71,8 @@ Rama didn't go.
 Sanskrit also relies on something called {dfn inflection}. Inflection is when
 we change part of a word to express a new meaning. English uses inflection in a
 limited way: we have one {em cat} but two {em cats}. Or perhaps you {em ate}
-yesterday but will {em eat} today.
-
-But Sanskrit nominals and verbs use inflection much more extensively:
+yesterday but will {em eat} today. But Sanskrit nominals and verbs use
+inflection much more extensively:
 
 {ex
 
@@ -113,7 +108,7 @@ I obstruct.
 
 }
 
-This raises the vital question: {em Which inflectional patterns apply in which
+This raises a third question: {em Which inflectional patterns apply in which
 contexts, and with what semantics?}
 
 
@@ -133,15 +128,16 @@ Rama kills Ravana.
 
 }
 
-Rather than word order, the {cite Aṣṭādhyāyī} focuses on a more general
-question: {em how do words with different semantics combine to express
-sentence-level semantics?}
+Since word order is relatively unimportant in Sanskrit, the {cite Aṣṭādhyāyī}
+focuses instead on a fourth question: {em how do words with different semantics
+combine to express sentence-level semantics?}
 
 
 {h The human constraint}
 
 Finally, we should remember that the {cite Aṣṭādhyāyī} is part of a culture
-that values oral tradition and memorization. So another important question it
-tries to address is a pragmatic one: {em how can this system be compressed to
-the smallest possible form, so that it is easy to memorize and easy to recall?}
+that values oral tradition and memorization. So a fifth question it tries to
+address is a pragmatic one: {em how can this system be compressed to the
+smallest possible form, so that it is easy to memorize and easy to recall?}
 
+With this basic framing, we are ready to begin.

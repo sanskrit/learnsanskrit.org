@@ -9,7 +9,11 @@ that make it easy to type Sanskrit on a computer.
 
 {dfn Transliteration} is when we convert one script into another. With the help
 of transliteration software, we can first write Sanskrit using English letters
-then use the program to convert our work into the script we want:
+then use the program to convert our work into the script we want.
+
+For example, we can use the Harvard-Kyoto system that we learned about in the
+previous lesson. By writing in Harvard-Kyoto and using a transliteration
+program, we can convert our text into the script we want:
 
 <ul class=examples>
 <li>{code saMskRtA bhASA} &rarr; {d saMskRtA bhASA}</li>

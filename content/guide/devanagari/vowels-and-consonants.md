@@ -58,8 +58,8 @@ va ba
 
 }
 
-As you start to learn these symbols, it may help to make mnemonics to keep them
-distinct in your head. For example:
+As you learn these symbols, it may help to make mnemonics to keep them distinct
+in your head. For example:
 
 {ul
 {li {d gha} is a "g" sound, and it looks like a {em gut} full of {em gas.}}

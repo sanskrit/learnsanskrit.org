@@ -65,24 +65,31 @@ kRSNA sarpI
 
 }
 
-In each example above, one word is the subject {s sarpaH} and the other word
-describes it {s kRSNaH}, If the sentence uses a word like {s ca} ("and"), the
-describing word should match the number of all of the subjects combined:
+In each example above, one word is the subject ({s sarpaH}) and the other word
+describes it ({s kRSNaH}). The genders, cases, and numbers of these words
+completely match.
+
+If the sentence uses a word like {s ca} ("and") to connect multiple nominals,
+the describing word should match the number of all of its described words
+together:
 
 {ex
 
 rAmo yodhaH.
 Rama is a warrior.
+(singular number)
 
 rAmo lakSmaNaz ca [yodhau].
 Rama and Lakshmana are [warriors].
+(dual number)
 
 rAmo lakSmaNo bharataz ca [yodhAH].
 Rama, Lakshmana, and Bharata are [warriors].
+(plural number)
 
 }
 
-If the sentence uses a word like {s vA} ("or"), the describing word usually
+But if the sentence uses a word like {s vA} ("or"), the describing word usually
 matches the number of the last word:
 
 {ex
@@ -90,11 +97,13 @@ matches the number of the last word:
 rAmaH satyavAn.
 Rama is truthful.
 
-rAmo lakSmaNo vA satyavAn.
+rAmo lakSmaNo vA [satyavAn].
 Rama or Lakshmana is truthful.
+(masculine case 1 singular to match `lakSmaNa)
 
-rAmo lakSmaNaH sItA vA satyavatI.
+rAmo lakSmaNaH sItA vA [satyavatI].
 Rama, Lakshmana, or Sita is truthful.
+(feminine case 1 singular to match `sItA)
 
 }
 
@@ -142,7 +151,7 @@ nareNa gajaz caryate
 The elephant is walked to by the man.
 
 nareNa gajau caryete
-The two elephant are walked to by the man.
+The two elephants are walked to by the man.
 
 nareNa gajAz caryante
 The elephants are walked to by the man.

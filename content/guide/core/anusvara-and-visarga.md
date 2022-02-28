@@ -93,7 +93,7 @@ like {s pa} and the others.}
 
 {h Review}
 
-We have now seen all of the sounds used in normal Sanskrit. Our kitchen of
+Now we have seen all of the sounds used in normal Sanskrit. Our kitchen of
 sounds is well-stocked and ready for use.
 
 {ol

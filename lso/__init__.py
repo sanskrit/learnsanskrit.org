@@ -20,6 +20,11 @@ app = Flask(__name__)
 # ------
 
 app.config["MAILING_LIST_URL"] = consts.MAILING_LIST_URL
+app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///test.db"
+
+
+# Database (API only)
+# -------------------
 
 
 # Static assets
@@ -39,15 +44,18 @@ css = Bundle(
 )
 assets.register("css_all", css)
 
-css = Bundle(
-    "css/print.scss",
-    filters="sass-dart",
-    output="gen/print.css",
+for name in ["print", "pandit"]:
+    css = Bundle(
+        f"css/{name}.scss",
+        filters="sass-dart",
+        output=f"gen/{name}.css",
+    )
+    assets.register(f"css_{name}", css)
+
+
+js = Bundle(
+    "scripts/sanscript.js", "scripts/detect.js", "scripts/main.js", output="gen/main.js"
 )
-assets.register("css_print", css)
-
-
-js = Bundle("scripts/sanscript.js", "scripts/main.js", output="gen/main.js")
 assets.register("js_all", js)
 
 # Sass configuration

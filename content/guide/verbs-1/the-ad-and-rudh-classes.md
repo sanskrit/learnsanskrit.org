@@ -11,7 +11,7 @@ In the previous lesson, we learned about three of the six complex verb classes:
 
 In this lesson, we will learn about two more complex verb classes. Both of
 these classes can create stems that end with consonant sounds. And since many
-verb endings {em start} with consonants, these classes may cause all kinds of
+verb endings {em start} with consonants, these classes might cause various
 sandhi changes:
 
 {ex
@@ -44,11 +44,11 @@ They hate.
 }
 
 For the word {s dveSTi}, notice that the root ends with a consonant ({s S}) and
-the ending begins with a consonant ({s t}). When two consonants are next to
-each other, many different sandhi changes might occur.
+the ending begins with a consonant ({s t}). By a sandhi change, a {s t} after
+{s S} becomes {s T}, so we get the result {s dveSTi}.
 
-The {s as} class has many irregular roots. The most important irregular root of
-the {s ad} class is {s as}, which means "be" or "exist." Its strong stems is {s
+The {s ad} class has many irregular roots. The most important irregular root of
+the {s ad} class is {s as}, which means "be" or "exist." Its strong stem is {s
 as}, and its weak stem is {s s}:
 
 {ex
@@ -89,8 +89,8 @@ ruNadh + ti > ruNaddhi
 }
 
 And as a reminder, {s r} generally causes nearby {s n} sounds to become {s N}.
-Hence we have {s ruNaddhi} and not *{s runaddhi}. (We use the * symbol to show
-that this word is not correct Sanskrit.) {comm a*}
+Hence we have {s ruNaddhi} and not {err}{s runaddhi}. (We use the {err} symbol
+to show that this word is not correct Sanskrit.)
 
 
 {h Endings of the {s ad} class}
@@ -178,7 +178,7 @@ the ordinary past tense:
 and the potential mood:
 
 {verb
-    dviSIyAt dviSIyAtAm dviSIran
+    dviSIta dviSIyAtAm dviSIran
     dviSIthAH dviSIyAthAm dviSIDhvam
     dviSIya dviSIvahi dviSImahi
 }

@@ -5,7 +5,7 @@
 {h Basic meaning}
 
 The {dfn ordinary past tense} technically refers to past actions that occurred
-before today. But in practice, it refers to any past action.
+before today. But in practice, it refers to any past action:
 
 {ex
 
@@ -26,7 +26,8 @@ goes > went
 
 }
 
-Many of the tense-moods that describe past events will use this {s a-} sound.
+Many of the tense-moods that describe past events will add this {s a-} sound to
+the beginning of the stem.
 
 
 {h Endings}

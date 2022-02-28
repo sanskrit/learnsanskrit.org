@@ -76,16 +76,22 @@ html {
     bookmark-level: 2;
 }
 .lesson h2 {
-    bookmark-level: 3;
+    bookmark-level: none;
 }
 
 // Hidden elements
-nav, .call-to-action, footer {
+nav, .call-to-action, footer, .web-only {
     display: none;
 }
+.print-only {
+    display: inline;
+}
 
-.examples, .paradigm {
+.examples, .paradigm, .vyakarana, .prakriya {
     background: transparent;
+}
+.vyakarana {
+    border-left: 2px solid;
 }
 table, .examples li, .sounds {
     page-break-inside: avoid;

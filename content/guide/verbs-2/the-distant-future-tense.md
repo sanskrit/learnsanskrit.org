@@ -35,8 +35,8 @@ Rama is a leader.
 
 }
 
-We can decide on the correct interpretation by considering the context of
-the sentence.
+Usually, we can choose the correct interpretation if we consider the sentence's
+context.
 
 
 {h Making the stem}

@@ -1,6 +1,7 @@
 {title {s -ta} and {s -tavat}}
 
-In this lesson, we will learn about two more common suffixes.
+In this lesson, we will learn about two more common suffixes. Both of these
+suffixes create adjectives.
 
 
 {h {s -ta}}

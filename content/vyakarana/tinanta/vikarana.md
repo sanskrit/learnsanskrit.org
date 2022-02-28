@@ -89,12 +89,6 @@ _
 Rule 3.1.68 is a restriction on rule 3.1.67. We use {s zap} by default in {s
 kartari prayoga}, and we use {s yak} in the other {s prayoga}s.
 
-Let's set aside {s yak} for now and focus on {s zap}. By rules {a-cite 1.3.3}
-and {a-cite 1.3.8}, we know that the actual suffix is {s a}. By rule {a-cite
-3.4.113}, we know that this {s a} is called {s sArvadhAtuka}. Since {s zap} has
-{s p} as an {s it} letter, it can cause a certain sound change. We'll learn
-more about that change in the next lesson.
-
 The rules that follow add further restrictions to the rules above. For example,
 this rule defines the correct {s vikaraNa} for {s div} and some other roots:
 
@@ -113,11 +107,8 @@ fourth major list ({s-dfn gaNa}):
 
 {dhatu
 
-NIJ prApaNe | 1.1049
-`nI in the sense of obtaining or leading
-
 divu~ krIDAvijigISAvyavahAradyutistutimodamadasvapnakAntigatiSu | 4.1
-`div in the senses of: `krIDA (play), `vijiGISA (desire to win), `vyavahAra
+`div in the senses of: `krIDA (play), `vijigISA (desire to win), `vyavahAra
 (transaction), `dyuti (glowing or shining), `stuti (praising), `moda (pleasing),
 `mada (boasting), `svapna (sleeping), `kAnti (desiring), or `gati (motion)
 
@@ -207,7 +198,7 @@ the rule below, {s luk} is available through {s anuvRtti} from a previous rule:
 
 adi-prabhRtibhyaH zapaH | 2.4.72 
 adi-prabhRtibhyaH zapaH
-[`luk] replaces `zap when it follows [the `dhAtu_s] in the list starting with
+[`luk] replaces `zap when it follows [the `dhAtu_s in the list] starting with
 `ad.
 
 }
@@ -219,8 +210,8 @@ causes the root sound to be doubled ({s hu} &rarr; {s juhu}):
 
 juhotyAdibhyaH zluH | 2.4.75 
 juhoti-adibhyaH zluH
-[The deletion suffix] `zlu replaces `zap when it follows [the `dhAtu_s] in the
-list starting with `ad.
+[The deletion suffix] `zlu replaces `zap when it follows [the `dhAtu_s in the
+list] starting with `hu.
 
 }
 
@@ -232,7 +223,7 @@ before {s zap}. This is the same suffix used by causal verbs:
 satyApapAzarUpavINAtUlazlokasenAlomatvacavarmavarNacUrNacurAdibhyo Nic | 3.1.25 
 satyApa~-pAza-rUpa-vINA-tUla-zloka-senA-loma-tvaca-varma-varNa-cUrNa-curAdibhyaH Nic
 [The suffix] `Nic is added after `satyApa~, `pAza, `rUpa, `vINA, `tUla, `zloka,
-`senA, `loma, `tvaca~, `varma, `varNa, `cUrNa, and [the `dhAtu_s in] the list
+`senA, `loma, `tvaca~, `varma, `varNa, `cUrNa, and [the `dhAtu_s in the list]
 starting with `cur;
 
 hetumati ca | 3.1.26
@@ -244,7 +235,7 @@ and likewise in the sense of causal action.
 
 {h Review}
 
-We can now contiue our {s prakriyA} a few more steps:
+We can now continue our {s prakriyA} a few more steps:
 
 {prakriya
 
@@ -256,9 +247,12 @@ nI l | 1.3.2; 1.3.3; 1.3.9
 nI tip | 3.4.78
 nI ti | 1.3.3; 1.3.9
 nI zap ti | 3.4.113; 3.1.68
-nI a ti | 1.3.3; 1.3.8; 1.3.9
+nI a ti | 1.3.3; 1.3.8; 1.3.9; 3.4.113
 
 }
+
+(Note that {s zap} is called {s sArvadhAtuka} by rule 3.4.113 because it has {s
+z} as an {s it}.)
 
 Our verb is almost ready. In the next lesson, we will learn the last few rules
 we need to complete the {s prakriyA} and get our finished verb.

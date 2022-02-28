@@ -3,6 +3,17 @@
 Vowels that follow consonants are written as small "marks" around the consonant
 they follow:
 
+{ex
+
+ka + A > kA
+
+ka + u > kU
+
+}
+
+Here are the marks that we use when writing Sanskrit:
+
+
 {sounds-dr ka kA ki kI ku kU}
 {sounds-dr kR kRR kL kLL}
 {sounds-dr ke kai ko kau}
@@ -34,7 +45,7 @@ nasally. It is usually used for nasal vowels:
 {sounds-dr ka~}
 
 Finally, the {dfn {s virAma}} ("cessation") blocks the default {s a} sound that
-a consonant would have otherwise:
+a consonant has otherwise:
 
 {sounds-dr k}
 

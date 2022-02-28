@@ -65,6 +65,7 @@ O doer, go to the city.
 
 }
 
+Here are the neuter endings for the {s -r} stems:
 
 {nominal
 
@@ -73,6 +74,9 @@ O doer, go to the city.
 8 kartR kartRNI kartRRNi
 
 }
+
+These follow the same kinds of patterns we've seen before.
+
 
 {h Family words}
 
@@ -95,9 +99,7 @@ Rama doesn't have a [sister].
 
 }
 
-Most of these words use {s -ar} instead of {s -Ar} for their strong stem. In
-the tables below, notice the case 2 feminine plural is {s mAtRRH}. Otherwise,
-the endings are the same:
+Most of these words use {s -ar} instead of {s -Ar} for their strong stem:
 
 {nominal
 
@@ -111,6 +113,9 @@ the endings are the same:
 8 pitaH-s pitarau-s pitaraH-s
 
 }
+
+The feminine stem {s mAtR} uses {s mAtRRH} in the case 2 plural. Otherwise,
+it uses the same endings as {s pitR}:
 
 {nominal
 

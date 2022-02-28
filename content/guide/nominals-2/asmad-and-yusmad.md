@@ -26,7 +26,7 @@ nagaraM gacchati.
 
 }
 
-But even so, pronouns express many kinds of useful information.
+But even so, pronouns are still expressive and useful words.
 
 In this topic, we will learn about the common Sanskrit pronouns. Pronouns use
 many of the same endings as other nominals. But generally, they follow very

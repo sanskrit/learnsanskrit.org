@@ -30,7 +30,7 @@ would lead, would have led
 
 }
 
-You can compare the conditional and the ordinary past in teh examples below.
+You can compare the conditional and the ordinary past in the examples below.
 In each example, the right side has two results. The first result uses the
 ordinary past and the second uses the conditional:
 

@@ -1,0 +1,93 @@
+{#
+
+PDF template for "Sanskrit for Beginners" and "vyakarana-praveza." This
+template is converted into a final PDF with Weasyprint.
+
+Includes:
+- cover page
+- preface
+- table of contents
+- topics and lessons
+
+#}
+
+{% extends 'base.html' %}
+
+{# --- Macros --- #}
+
+{% macro print_toc(topics) %}
+    <h1>Contents</h1>
+
+    <ol class="table-of-contents">
+        <li>
+            <a href="#anchor-pref">
+                <span class="code">&nbsp;</span>
+                Preface to the print edition
+            </a>
+        </li>
+        {# not guide.topics -- see view for details #}
+        {% for topic in topics %}
+        {% set t = loop.index0 %}
+        {% set code = "anchor-{}".format(t) %}
+        <li>
+            <a href="#{{ code }}">
+                <span class="code">{{ t }}</span>
+                {{ topic.title|sml|safe }}
+            </a>
+            <ol>
+            {% for lesson in topic.lessons %}
+                {% set L = loop.index %}
+                {% set code = "anchor-{}-{}".format(t, L) %}
+                <li>
+                    <a href="#{{ code }}">
+                        <span class="code">{{ t }}.{{ L }}</span>
+                        {{ lesson.title|safe }}
+                    </a>
+                </li>
+            {% endfor %}
+            </ol>
+        </li>
+        {% endfor %}
+    </ul>
+{% endmacro %}
+
+{% macro print_lessons(topics) %}
+    {% for topic in topics %}
+        {% set t = loop.index0 %}
+        <div id="anchor-{{ t }}" class="topic page-break justify">
+            <h1 class="tc f2">{{ topic.title|safe }}</h1>
+        </div>
+
+        {% for lesson in topic.lessons %}
+            {% set L = loop.index %}
+            <div id="anchor-{{ t }}-{{ L }}" class="lesson page-break justify">
+                {{ lesson.content|safe }}
+            </div>
+        {% endfor %}
+    {% endfor %}
+{% endmacro %}
+
+{# --- Layout --- #}
+
+{% block extrahead %}
+{% assets "css_print" %}
+<link rel="stylesheet" type="text/css" href="{{ ASSET_URL }}" />
+{% endassets %}
+{% endblock %}
+
+{% block body %}
+<article>
+    {% block cover %}{% endblock %}
+
+    <div class="page-break">
+        {% block toc %}{% endblock %}
+    </div>
+
+    <div id="anchor-pref" class="page-break justify">
+        {% block preface %}{% endblock %}
+    </div>
+
+    {% block lessons %}{% endblock %}
+</article>
+{% endblock %}
+

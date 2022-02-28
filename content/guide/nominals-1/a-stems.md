@@ -86,7 +86,7 @@ phala + i > phalAni
 
 }
 
-However, one small change is that the singular of cases 1 and 2 use the ending
+However, one small change is that the singular of cases 1 and 2 uses the ending
 {s -m}:
 
 {ex

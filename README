@@ -28,7 +28,7 @@ stable, and don't require any monitoring, so they're perfect for a project like
 ours.
 
 Internally, the site is a Flask app and has access to normal Flask features. At
-deployment time, however, we use flask-freeze to convert all output to flat
+deployment time, however, we use `flask-freeze` to convert all output to flat
 files.
 
 All of the site content is written in SML, a custom markup language that is
@@ -38,6 +38,7 @@ lightweight and simple. For details, see `lso/sml`.
 Directories
 -----------
 
+    api                         # All logic related to the API
     build                       # Output directory when freezing
         sml                     # Markup language implementation
         static                  # Static resources

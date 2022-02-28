@@ -32,6 +32,7 @@ TEMPLATES = {
     "dhatu": Dhatupatha,
     "document": wrap("", ""),
     "em": wrap("<em>", "</em>"),
+    "err": wrap("*", ""),
     "ex": Examples,
     "f5": wrap('<span class="f1">', "</span>"),
     "h": wrap("<h2>", "</h2>"),
@@ -63,7 +64,7 @@ TEMPLATES = {
     "sounds-iast": SoundsIAST,
     "sounds-hk": SoundsHK,
     "sounds-iso": SoundsISO,
-    "aka": wrap('<p class="aka f6">Also known as: ', "</p>"),
+    "aka": wrap('<p class="gray mt0 f6">Also known as: ', "</p>"),
     "strong": wrap("<strong>", "</strong>"),
     "table": wrap('<table class="default">', "</table>"),
     "sandhi-table": wrap('<table class="sandhi">', "</table>"),
@@ -76,4 +77,6 @@ TEMPLATES = {
     "ul": wrap("<ul>", "</ul>"),
     "url": FlaskRoute,
     "verb": VerbParadigm,
+    "print-only": wrap('<span class="print-only">', "</span>"),
+    "web-only": wrap('<span class="web-only">', "</span>"),
 }

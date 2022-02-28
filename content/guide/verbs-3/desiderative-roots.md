@@ -32,7 +32,8 @@ think > investigates
 
 {h Making the root}
 
-We double the root and add {s -s} or {s -iS} depending on the root.
+We double the root and add {s -s} to the root. Some roots will use the
+connecting {s iT} vowel as well.
 
 When we studied the distant past tense, we learned some of the basic rules of
 doubling. The desideradive root follows similar rules but with a few small

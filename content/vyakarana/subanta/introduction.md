@@ -15,8 +15,8 @@ That which ends in `sup or `tiG [is called] a `pada (word).
 
 We know already that {s tiG} is a {s pratyAhAra} that refers to different verb
 endings. {s-dfn sup}, meanwhile, is a {s pratyAhAra} that refers to different
-nominal endings. So in the Pāṇinian system, verbs are called {s-dfn sub-anta}
-("ending in a {s sup} suffix").
+nominal endings. So in the Pāṇinian system, nominals are called {s-dfn
+sub-anta} ("ending in a {s sup} suffix").
 
 In this unit, we will learn how the {cite Aṣṭādhyāyī} creates {s subanta}s. We
 will also create complete {s prakriyA}s for a variety of basic nominal words.
@@ -103,10 +103,10 @@ Sanskrit nominals are highly expressive. They can express three different
 {dfn genders} (masculine, feminine, and neuter) and three different {dfn
 numbers} (singular, dual, plural). In Western terms, they also express eight
 different {dfn cases} (nominative, accusative, instrumental, dative, genitive,
-ablative, locative, vocative).
+ablative, locative, and vocative).
 
 Sanskrit nouns generally use a single fixed gender. So for a given noun, we
-have 3 numbers &times; 8 cases = 24 different forms.
+usually have 3 numbers &times; 8 cases = 24 different forms.
 
 {aside
 

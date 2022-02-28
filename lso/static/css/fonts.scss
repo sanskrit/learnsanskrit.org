@@ -1,0 +1,16 @@
+:root {
+    --body-color: #222;
+}
+
+// Universal support for Sanskrit 2003
+@font-face {
+	font-family: "Sanskrit 2003";
+    font-display: swap;
+	src: url(/static/fonts/Sanskrit2003.ttf);
+}
+
+// Use Sanskrit 2003 due to e.g. "y + halant" bug
+// Also for Devanagari conjuncts, good look and feel
+.sa1, .dev { font-family: "Sanskrit 2003", sans-serif; }
+.sa2 { font-style: italic; }
+.sa-reset { font-style: normal; }

@@ -41,8 +41,8 @@ Generally, roots that start with vowels and roots in the {s cur} class cannot
 make intensive roots. But most other roots can.
 
 To make the intensive root, we use a special kind of doubling. First, we add
-the suffix {s -ya}, which causes the same changes as the {s karmaNi prayoga ya}
-suffifx we used for the special tense-moods:
+the suffix {s -ya}, which causes the same changes as the {s karmaNi prayoga} {s
+-ya} suffifx we used for the special tense-moods:
 
 {ex
 

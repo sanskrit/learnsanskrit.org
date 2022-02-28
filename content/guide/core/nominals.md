@@ -48,7 +48,7 @@ and {dfn numerals}, which tell us how many of something we have:
     [One] sleeps.
 
     [trayo] gajAH pibanti.
-    [Three] elephants eat.
+    [Three] elephants drink.
 
 }
 
@@ -104,6 +104,10 @@ endings can show other kinds of information too:
 
 sa [rAmAya] phalaM dadAti.
 He gives a fruit [to Rama].
+
+sa [rAmAd] balavattaraH.
+He is stronger [than Rama].
+
 
 }
 

@@ -20,7 +20,7 @@ For example, it can show what someone is capable of doing:
 
 {ex
 
-aham idam vanaM sarvaM [daheyam].
+aham idaM vanaM sarvaM [daheyam].
 I [could burn] all of this forest.
 
 }

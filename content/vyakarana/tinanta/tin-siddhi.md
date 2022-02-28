@@ -2,8 +2,8 @@
 
 In the previous lesson, we noticed a small problem with one of our {s
 prakriyA}s. When using an {s Atmanepada} suffix, what we expect is {s te}, but
-what we actually receive is {s ta}. This ending will give us the incorrect {s
-nayata} instead of the correct {s nayate}.
+what we actually receive is {s ta}. This ending will give us the incorrect *{s
+nayata} instead of the correct {s nayate}. {comm *}
 
 How do we ensure that our ending is correct?  The answer is a set of rules near
 the end of {s adhyAya} 3 of the {cite Aṣṭādhyāyī}. These rules transform the
@@ -101,7 +101,7 @@ saMjJA}s to our endings:
 tiGzitsArvadhAtukam | 3.4.113 
 tiG-zit sArvadhAtukam
 `tiG suffixes and `zit (with `z as an `it) `kRt suffixes are called
-`sArvadhAtukam.
+`sArvadhAtuka.
 
 ArdhadhAtukaM zeSaH | 3.4.114 
 ArdhadhAtukam zeSaH

@@ -1,6 +1,6 @@
 {title The {s asiddha} section}
 
-Most of the {cite Aṣṭādhyāyī}'s sandhi rules are an an unusual section of the
+Most of the {cite Aṣṭādhyāyī}'s sandhi rules are in an unusual section of the
 text. To understand that section, we must first understand how the Pāṇinian
 system works at a high level. We'll then discuss a major problem with its
 approach and how Pāṇini solves it.
@@ -92,18 +92,11 @@ So it {em must} and {em will} apply, which gives us a bad result:
 
 }
 
-More abstractly, the problem is as follows. Suppose we have a good rule {code
-GOOD} that will give us a good result and a bad rule {code BAD} that will give
-us a bad one. {code GOOD} matches the input, so we are able to apply it. {code
-BAD} does not match the input, so we cannot apply it.
-
-We want to apply rule {code GOOD} so that we can get a good result. But if we
-do, then rule {code BAD} might match the output of {code GOOD}. Then we might
-be forced to apply {code BAD}, which will give us a bad result. This is what
-happened in our example above.
-
-We need to ensure that once {code GOOD} is applied, {code BAD} will {em never}
-be applied. If we can do that, then we can solve this serious problem.
+It is as if a good man and a thief both come to us to ask for food. We want to
+give our food to the good man and not to the thief. But if we give our food
+to the good man, the thief will beat him and steal it. We must ensure that once
+we give our food to the good man, the thief will not be able to take it from
+him.
 
 
 {h Pāṇini's solution}
@@ -145,17 +138,14 @@ pUrvatra a-siddham
 
 }
 
-What does this mean? Suppose we have our two rules {code GOOD} and {code BAD}
-as before.  If we put {code GOOD} after rule 8.2.1, then it is "disabled with
-respect to prior rules." So, no prior rule can use the result of {code GOOD}.
-And if {code BAD} is a prior rule, then it cannot use the result of {code GOOD}
-and will not be able to apply. Our problem is solved.
+What does this mean? Let's return to the example of the good man and the thief.
+Once we give our food to the good man, it is as if he becomes invisible. Try as
+he might, the thief cannot find him.
 
-But rule 8.2.1 also has an interesting implication. Suppose that {code GOOD}
-and {code BAD} are {em both} listed after rule 8.2.1. Does the basic idea still
-hold? Yes: If {code BAD} comes before {code GOOD}, then once we apply {code
-GOOD}, we cannot go back and apply {code BAD} to the result of {code GOOD}. Our
-problem is still solved.
+But rule 8.2.1 also has an interesting implication: we must apply the rules
+of the {s asiddha} section in order. If we have two rules {code A} and {code
+B}, and if {code A} comes before {code B}, then once we apply {code A}, we can
+no longer apply {code B}.
 
 {aside
 

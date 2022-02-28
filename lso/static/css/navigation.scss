@@ -1,6 +1,5 @@
 // experimental
 .index {
-    background: #b51700;
     color: #fff;
     .logo {
         font-size: 6rem;
@@ -55,18 +54,13 @@
 		font-weight: bold;
 	}
 }
-.top .breadcrumbs {
+
+.breadcrumbs {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     border-bottom: 3px #ddd double;
-}
-.bottom .breadcrumbs {
-    border-top: 3px #ddd double;
-}
-.bottom + footer {
-    border-top: 1px #ddd solid;
 }
 
 // Jump list, table of contents

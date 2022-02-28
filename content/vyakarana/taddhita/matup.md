@@ -1,0 +1,76 @@
+{title {s matu~p}}
+
+The {s-dfn matu~p-pratyaya} creates common words like {s hanumAn} and {s
+bhagavAn}. It has many specific use cases, but here is the general pattern:
+
+{rule
+
+tadasyAstyasminniti matup | 5.2.94
+tat asya asti asmin iti matu~p
+[The `taddhita-pratyaya] `matu~p [is optionally introduced after a `prAtipadika
+or the `GI and `Ap `pratyaya_s after a term denoting] that which one possesses
+or contains.
+
+}
+
+
+{h Sound changes}
+
+{s matu~p} generally causes no sound changes. The major exception is that {s
+mat} becomes {s vat} when it follows certain sounds.
+
+Here is the specific rule from the {s asiddha} section of the {cite
+Aṣṭādhyāyī}:
+
+{rule
+
+mAdupadhAyAzca matorvo'yavAdibhyaH | 8.2.9
+m-At upadhAyAH ca matoH vaH a-yavAdibhyaH
+After the sounds `m, `a, and `A, even if penultimate, [the first letter of the
+`pratyaya] `matu~ becomes `v if not following an item in the `yavAdi list.
+
+}
+
+And some examples:
+
+{ex
+
+bhaga + mat > bhaga[vat]
+(final `a)
+
+lakSmI + mat > lakSmI[vat]
+(penultimate `m)
+
+}
+
+
+{h Sample {s prakriyA}s}
+
+With {s mat}:
+
+{prakriya
+
+mati | 1.2.46
+matimat | 5.2.94
+
+}
+
+With {s vat} and a penultimate {s a}:
+
+{prakriya
+
+yazas | 1.2.46
+yazas mat | 5.2.94
+yazasvat | 8.2.9
+
+}
+
+With {s vat} and a final {s a}:
+
+{prakriya
+
+bhaga | 1.2.46
+bhaga mat | 5.2.94
+bhagavat | 8.2.9
+
+}

@@ -1,7 +1,7 @@
 {title The compound system}
 
-{dfn Compounds} {sa-opt samAsa} are words that we make by combining multiple
-words together. Usually, we combine two words at a time:
+{dfn Compounds} {sa-opt samAsa} are combinations of multiple words. Usually, we
+combine two words at a time:
 
 {ex
 
@@ -10,27 +10,36 @@ Rama's mother
 
 }
 
-Since compounds are also words, we can combine compounds with other words to
-make a new compound. And we can repeat that process again and again. Some
-styles of Sanskrit literature use {em very} long compounds.
-from the {cite Meghadūta} by Kālidāsa:
+We can even combine compounds with other words to make new compounds:
 
-Why do we use compounds? After all, compounds are ambiguous and lose
-information:
+{ex
+
+rAmamAtur gRham > rAmamAtRgRham
+Rama's mother's house
+
+}
+
+And we can repeat this process again and again. Some styles of Sanskrit
+literature use {em very} long compounds.
+
+Compared to using separate words, compounds are ambiguous and lose information:
 
 {ex
 
 gajasya phalam > gajaphalam
-The elephant's fruit > Elephant fruit
+The elephant's fruit > elephant fruit
 
 gajAnAM phalam > gajaphalam
-The elephants' fruit > Elephant fruit
+The elephants' fruit > elephant fruit
 
 }
 
-But although compounds lose information, they are compact and short. If the
-context is clear, they save a lot of time. And if a sentence is very complex,
-compounds can even make the sentence clearer and easier to follow.
+But although compounds lose information, compounds are compact and short. If
+the context is clear, they save a lot of time. And if a sentence is very
+complex, compounds can even make the sentence clearer and easier to follow.
+
+For this reason, compounds are common in Sanskrit, especially in later
+compositions.
 
 
 {h Four types of compounds}
@@ -122,10 +131,10 @@ The first word of an {s avyayIbhAva} is usually an uninflected word:
 }
 
 
-A {s bahuvrIhi} and a {s tatpuruSa} are very similar. But a {s bahuvrIhi} is an
-adjective. For example, a {s bahuvrIhi} might describe a {em masculine} noun,
-but its second word might come from a {em feminine} noun. This happens in the
-example below:
+The {s bahuvrIhi} and the {s tatpuruSa} are sometimes difficult to tell apart.
+But a {s bahuvrIhi} is an adjective. For example, a {s bahuvrIhi} might
+describe a {em masculine} noun, but its second word might come from a {em
+feminine} noun. This happens in the example below:
 
 {ex
 
@@ -135,10 +144,11 @@ whose discernment is stable > "stable-discernmented"
 }
 
 When you see this mismatch, then you know that the compound is a {s
-bahuvrIhi}. Otherwise, notice what other words the compound {em agrees} with --
-that is, what other words it matches in gender, case, and number. For example,
-consider the compound in the sentence below:
+bahuvrIhi}.
 
+Otherwise, notice what other words the compound {em agrees} with -- that is,
+what other words it matches in gender, case, and number. For example, consider
+the compound in the sentence below:
 {ex
 
 dRDha-vrato rAmo gacchati.
@@ -146,11 +156,21 @@ Firm-vow Rama goes.
 
 }
 
-This compound has two interpretations:
+Here, the compound {s dRDha-vrataH} has two interpretations:
 
 {ul
     {li Rama, who is a firm vow, goes. ({s tatpuruSa})}
-    {li Rama, who is a person of firm vows, goes. ({s bahuvrIhi})}
+    {li Rama, who is firm-vowed, goes. ({s bahuvrIhi})}
 }
 
 But only the {s bahuvrIhi} option makes sense here.
+
+{aside
+
+{h The {s bahuvrIhi} in older Sanskrit}
+
+In older Sanskrit, the {s bahuvrIhi} and the {s tatpuruSa} have different
+accent patterns, so they are much easier to tell apart. Sadly, these accent
+patterns are not made clear in later Sanskrit.
+
+}

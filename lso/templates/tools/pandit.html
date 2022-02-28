@@ -2,26 +2,162 @@
 
 {% block title %}Pandit{% endblock %}
 
+{% block extrahead %}
+{% assets "css_pandit" %}
+<link rel="stylesheet" type="text/css" href="{{ ASSET_URL }}" />
+{% endassets %}
+{% endblock %}
+
+{% macro q(s) %}
+<code>{{ s }}</code>
+{% endmacro %}
+
 {% block body %}
 {% include 'include/header.html' %}
-
-
 <main>
 {# width 100% to counteract flexbox column direction -- otherwise,
    small articles will be centered horizontally.
 #}
 <div style="width: 100%">
-  <article class="mt5 mb5 pa2 readable">
+  <article class="mt3 mb5 pa2 mw8 m-auto">
     <h1>Pandit</h1>
 
-    <form>
-      <input name="q" class="pa2" type="text" />
-      <input class="pa2" type="submit" value="Search" />
+    <form id="pandit">
+      <div class="df">
+        <input name="q" class="pa2" type="text"
+          placeholder="Enter a Sanskrit word, root, or stem" />
+        <input class="pa2" type="submit" value="Search" />
+      </div>
+      <fieldset class="f6">
+        <label>Output:</label>
+        <select name="output-scheme">
+          <option value="devanagari">Devanagari</option>
+          <option value="kannada">Kannada</option>
+          <option value="telugu">Telugu</option>
+          <option value="iast">Roman</option>
+        </select>
+      </fieldset>
     </form>
 
+    <div id="results" class="readable">
+        <p><dfn>Pandit</dfn> defines and explains Sanskrit words. It is simple,
+        fast, and powerful. To see what Pandit can do, try one of the queries
+        below:</p>
+
+        <ul>
+            <li>Roots and stems: {{ q('bhU') }}, {{ q('nara') }}, {{ q('ca') }}</li>
+            <li>Verbs: {{ q('bhavati') }}, {{ q('corayAmAsa') }}, {{ q('vijigISanti') }}, {{ q('saMcaskAra') }}</li>
+            <li>Nominals: {{ q('narasya') }}, {{ q('sakhyuH') }}, {{ q('kriyamANAya') }}</li>
+        </ul>
+
+        {% set cdsl = "https://www.sanskrit-lexicon.uni-koeln.de/" %}
+        {% set gh = "https://github.com/sanskrit/vyakarana/" %}
+        <p>Pandit uses dictionary data from <a href="{{ cdsl }}"> Cologne
+            Digital Sanskrit Dictionaries</a> and linguistic data from our <a
+            href="{{ gh }}">vyakarana</a> library.</p>
+    </div>
   </article>
 </div>
 </main>
+
+<script type="text/javascript">
+    const form = document.querySelector('#pandit');
+    const inputField = document.querySelector('input[name=q]');
+    const outputSelect = document.querySelector('select[name=output-scheme]');
+
+    function personText(s) {
+        if (s === '3') return '3rd';
+        if (s === '2') return '2nd';
+        if (s === '1') return '1st';
+    }
+    function numberText(s) {
+        if (s === 's') return 'singular';
+        if (s === 'd') return 'dual';
+        if (s === 'p') return 'plural';
+    }
+    function lakaraText(s) {
+        if (s === 'law') return 'present';
+        if (s === 'liw') return 'perfect';
+        if (s === 'luw') return 'periphrastic future';
+        if (s === 'lfw') return 'simple future';
+        if (s === 'low') return 'imperative';
+        if (s === 'laN') return 'imperfect';
+        if (s === 'viDiliN') return 'optative';
+        if (s === 'ASIrliN') return 'benedictive';
+        if (s === 'luN') return 'aorist';
+        if (s === 'lfN') return 'conditional';
+    }
+    function padaText(s) {
+        if (s === 'p') return 'parasmaipada';
+        if (s === 'a') return 'atmanepada';
+    }
+
+    function interpretParse(word, outputScheme) {
+        const parse = word.parse;
+        let text = '';
+        const head = Sanscript.t(word.headword, 'slp1', outputScheme);
+
+        if (parse.type === 'v') {
+            const p = personText(parse.p);
+            const n = numberText(parse.n);
+            const l = lakaraText(parse.l);
+            const a = padaText(parse.a);
+            text = `<li>${head} &mdash; verb, ${p} ${n} ${l} <span lang="sa" class="sa2">${a}</span></li>`;
+        }
+        return text;
+    }
+
+    function displayData(json) {
+        const results = document.querySelector('#results');
+        const outputScheme = outputSelect.value;
+
+        const buf = [];
+        const rawKey = json.key;
+        const displayKey = Sanscript.t(rawKey, 'slp1', outputScheme);
+        buf.push(`<h1>${displayKey}</h1>`);
+
+        // Dhaval
+        const parses = json.parses;
+        if (parses.length) {
+            buf.push('<ul class="p-parses">');
+            for (let j = 0; j < parses.length; j++) {
+                buf.push(interpretParse(parses[j], outputScheme));
+            }
+            buf.push('</ul>');
+        }
+
+        // MW
+        const mw = json.mw;
+        if (mw.length) {
+            buf.push('<p>Definitions from the Monier-Williams dictionary:</p>');
+            buf.push('<ul>');
+            for (let j = 0; j < mw.length; j++) {
+                buf.push(mw[j].content);
+            }
+            buf.push('</ul>');
+        }
+        if (parses.length === 0 && mw.length === 0) {
+            buf.push('<p>Sorry, Pandit could not understand this word.</p>');
+        }
+        results.innerHTML = buf.join('');
+    }
+
+    function submitQuery(e) {
+        e.preventDefault();
+
+        // Convert to SLP1 for database
+        const rawQuery = inputField.value;
+        const inputEncoding = sanskrit.detect(rawQuery);
+        const apiQuery = Sanscript.t(rawQuery, inputEncoding, 'slp1');
+
+        const url = `/api/pandit/${apiQuery}`
+        fetch(url)
+            .then(response => response.json())
+            .then(displayData);
+    }
+
+    form.addEventListener('submit', submitQuery);
+</script>
 
 {% include 'include/footer.html' %}
 {% endblock %}

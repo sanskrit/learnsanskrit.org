@@ -1,0 +1,47 @@
+#pandit {
+    width: 100%;
+
+    input[name=q] {
+        margin-right: 0.25em;
+        flex: 1;
+    }
+    input[type=submit]:hover {
+        cursor: pointer;
+    }
+    input[type=submit] {
+        background: #83d905;
+    }
+    fieldset {
+        border: 0;
+        padding: 0.5rem 0;
+        text-align: right;
+        color: #777;
+    }
+}
+
+.p-parses {
+    background: #f7f7f7;
+    list-style: none;
+    margin: 0;
+    padding: 1rem;
+}
+
+// Monier-Williams annotations
+.mw-entry {
+    .lex {
+        color: #a00;
+    }
+    [lang="sa"] {
+        font-style: italic;
+    }
+    .paren {
+        color: #777;
+    }
+    cite {
+        color: #555;
+        background: #f7f7f7;
+        border-radius: 3px;
+        font-size: 0.8rem;
+        padding: 0.2rem;
+    }
+}

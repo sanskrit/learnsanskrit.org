@@ -28,21 +28,26 @@ sells the following:
 
 Suppose that we want to buy mangoes, coconuts, jackfruit, and oranges. One way
 to ask for these would be to just name each fruit we want. That would be fine,
-but it would take a long time to say. But if the sellers at the market know the
-list above, we can just say "mangoes to oranges" to get the fruits we want.
+but it would take a long time to say each fruit.
 
-Now suppose we want to buy just mangoes, jackfruit, and papayas. These items
-are spread out far apart in our list. We can't say something like "mangoes to
-papayas" because that includes too many fruits that we don't want.
+If the sellers at the market know the list above, however, we can just say
+"mangoes to oranges" to get the fruits we want. Doing so is faster and more
+convenient.
 
-What we learn from this is that the {em ordering} of fruits in our list is
-important. If we order our list well, we ensure that common orders can be made
-quickly. If we order it poorly, we create extra work for ourselves.
+Now suppose that we want to buy just mangoes, jackfruit, and papayas. These
+items are spread out far apart in our list. Now we can't say something like
+"mangoes to papayas" because that would include too many fruits that we don't
+want.
+
+What we see from this exercise is that the {em ordering} of fruits in our list
+is important. If we order our list well, we ensure that we can quickly make
+the requests we care about. If we order it poorly, we create extra work for
+ourselves.
 
 Pāṇini organizes the Sanskrit sounds in a similar way to this list of fruits.
 By ordering the Sanskrit sounds carefully, he can easily and efficiently
 make the groups he needs. And if we know how to use his list, we can use it to
-concisely and precisely refer to different groups of Sanskrit sounds.
+concisely refer to different groups of Sanskrit sounds.
 
 First, here is the list:
 

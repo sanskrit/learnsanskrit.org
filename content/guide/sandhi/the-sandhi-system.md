@@ -33,7 +33,7 @@ Hanuman wants water.
 
 }
 
-When we learn a bout sandhi changes, we should also know {em where} whey occur.
+When we learn about sandhi changes, we should also know {em where} they occur.
 Some sandhi changes occur between the different parts of a {em single word}:
 
 {ex

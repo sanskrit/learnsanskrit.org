@@ -33,20 +33,8 @@ lead > make lead > makes lead
 }
 
 But in this topic, we'll focus on all of the {em other} suffixes that Sanskrit
-has. These suffixes usually make new nominal words:
-
-{ex
-
-man + tra > mantra
-think + (means) > "means of thinking," mantra, counsel
-
-}
-
-
-{h Root and nominal suffixes}
-
-We can sort these suffixes into two big groups. First are {dfn root suffixes},
-which we add to a verb root:
+has. We can sort these suffixes into two big groups. First are {dfn root
+suffixes}, which we add to a verb root:
 
 {ex
 
