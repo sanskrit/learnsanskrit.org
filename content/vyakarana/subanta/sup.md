@@ -58,8 +58,9 @@ them:
 
 {ul
     {li Some of these {s it} letters are for the sake of making {s pratyAhAra}s.
-    Thus {s suT} refers to just the first five of these endings, and {s sup} (as we
-    know already) refers to all of them.}
+    For example, {s suT} uses the {s T} of {s auT} to refer to just the first
+    five of these endings. Likewise, {s sup} uses the {s su} from {s su~} and
+    the {s p} of the final {s sup} to refer to all twenty-one of these endings.}
 
     {li Some are labeled systematically. For example, the {s Git} endings --
     that is, the endings with {s G} as an {s it} -- are often replaced,

@@ -22,7 +22,7 @@ Final consonants [are called `it in `upadeza].
 na vibhaktau tusmAH | 1.3.4
 na vibhaktau tu-s-mAH
 The `tu sounds, `s, and `m are not [called `it in `upadeza] when they are in a
-`vibhakti (nominal case ending).
+`vibhakti (verb or nominal case ending).
 
 AdirJiTuDavaH | 1.3.5
 AdiH Ji-Tu-DavaH

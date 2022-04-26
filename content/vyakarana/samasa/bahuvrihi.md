@@ -24,7 +24,7 @@ anekam anya-pada-arthe
 Many related (`pada_s) denoting a separate `pada [optionally become a
 `bahuvrIhi].
 
-tena saheta tulyayoge | 2.2.28
+tena saheti tulyayoge | 2.2.28
 tena saha iti tulya-yoge
 The word `saha [with a `subanta] that has the same relation to the action (as
 the word it describes) [optionally becomes a `bahuvrIhi].

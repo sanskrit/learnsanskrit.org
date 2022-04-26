@@ -13,9 +13,9 @@ while obtaining
 
 }
 
-{s zatR~} and {s zAnac} are {s sArvadhAtuka pratyaya}s, so they cause slightly
-different changes from the {s ArdhadhAtuka kRt-pratyaya}s that we have seen so
-far.
+{s zatR~} and {s zAnac} are {s sArvadhAtuka pratyaya}s, so the changes they
+cause differ slightly from the changes caused by the {s ArdhadhAtuka
+kRt-pratyaya}s that we have seen so far.
 
 
 {h Defining the {s pratyaya}s}
@@ -24,7 +24,7 @@ far.
 
 {rule
 
-vartamAne laT | 3.3.123
+vartamAne laT | 3.2.123
 _
 [The `pratyaya] `la~T [is added after a `dhAtu] in the sense of present action.
 
@@ -111,12 +111,13 @@ Otherwise, these {s pratyaya}s cause the standard sound changes.
 {prakriya
 
 bhU | 1.3.1
-bhU la~T | 1.3.3; 1.3.5; 1.3.9
-bhU la~T | 1.3.78
+bhU la~T | 3.2.123
+bhU l | 1.3.2; 1.3.3; 1.3.9
+bhU l | 1.3.78
 bhU zatR~ | 3.2.124
 bhU at | 1.3.2; 1.3.8; 1.3.9
 bhU zap at | 3.1.68
-bhU a at | 1.3.2; 1.3.8; 1.3.9
+bhU a at | 1.3.3; 1.3.8; 1.3.9
 bho a at | 7.3.84
 bhav a at | 6.1.78
 bhavat | 6.1.97
@@ -138,8 +139,9 @@ ataH guNe
 {prakriya
 
 zru | 1.3.1
-zru la~T | 1.3.3; 1.3.5; 1.3.9
-zru la~T | 1.3.78
+zru la~T | 3.2.123
+zru l | 1.3.2; 1.3.3; 1.3.9
+zru l | 1.3.78
 zru zatR~ | 3.2.124
 zru at | 1.3.2; 1.3.8; 1.3.9
 zR znu at | 3.1.74

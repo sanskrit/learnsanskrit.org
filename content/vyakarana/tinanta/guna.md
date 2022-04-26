@@ -56,7 +56,7 @@ are minor, so we can set them aside as well. That leaves us with rules 1.1.3
 and 1.1.5.
 
 Rule 1.1.3 defines the basic function of {s guNa} and {s vRddhi} vowels: they
-replace the {s ik} vowels ({s i, u, R, L}). And rule 1.1.4 restricts this
+replace the {s ik} vowels ({s i, u, R, L}). And rule 1.1.5 restricts this
 substitution: the substitution is blocked if the following term is {s Git} or
 {s kit}.
 
@@ -157,9 +157,9 @@ sArvadhAtuka-ArdhadhAtukayoH
 }
 
 But to properly understand this rule, we must refer to two other rules.
-First, we know from rule {a-cite 1.1.3} that {s guNa} can replace only an
-{s ik} vowel. But which {s ik} vowel do we replace? We can decide which vowel
-to replace by referring to a new {s paribhASA}:
+First, we know from rule {a-cite 1.1.3} that {s guNa} and {s vRddhi} sounds can
+replace only an {s ik} vowel. But which {s ik} vowel do we replace? We can
+decide which vowel to replace by referring to a new {s paribhASA}:
 
 {rule
 
@@ -242,7 +242,7 @@ Let's set aside {s pu~k}, since it is a minor point. Then the rule has a plain
 meaning: if the penultimate sound of the {s aGga} is {s laghu}, then we can
 replace that sound with its {s guNa}.
 
-Together, rules 7.3.84 and 7.3.85 cause {s guNa} in a variety of roots:
+Together, rules 7.3.84 and 7.3.86 cause {s guNa} in a variety of roots:
 
 {ex
 

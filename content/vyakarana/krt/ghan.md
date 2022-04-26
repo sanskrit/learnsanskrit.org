@@ -1,7 +1,7 @@
 {title {s ghaJ}}
 
 In the previous lesson, we learned about {s kRtya-pratyaya}s, which cause
-relatively simple sound changes in the {s dhAtu}. Here will learn about a
+relatively simple sound changes in the {s dhAtu}. Here we will learn about a
 slightly more complicated suffix: the {s-dfn ghaJ-pratyaya}.
 
 

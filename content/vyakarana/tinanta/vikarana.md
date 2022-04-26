@@ -128,7 +128,7 @@ in the list beginning with `su [when a `sArvadhAtuka suffix follows].
 
 zruvaH zR ca | 3.1.74 
 _
-And [likewise] of `zru [which becomes `zR].
+And [likewise] of `zru [which becomes] `zR.
 
 }
 

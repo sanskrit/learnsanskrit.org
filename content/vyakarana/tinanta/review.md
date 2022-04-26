@@ -10,7 +10,7 @@ verbs. We saw that the process has a few basic steps:
     endings.}
     {li Replace the {s lakAra} with the appropriate {s tiG} ending.}
     {li Add a {s vikaraNa} as needed.}
-    {li Apply {s guNa} changes ar needed.}
+    {li Apply {s guNa} changes as needed.}
     {li Apply sandhi rules.}
 }
 

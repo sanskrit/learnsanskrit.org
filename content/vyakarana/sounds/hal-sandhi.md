@@ -182,7 +182,7 @@ first rule is still in the scope of 8.1.16 ({s padasya}) above:
 {rule
 
 sasajuSo ruH | 8.2.66
-sa-sajuSaH ru~H
+sa-sajuSoH ru~H
 The `s [at the end of a `pada] and the [last letter of the word] `sajuS are
 replaced with `ru~.
 
@@ -190,7 +190,7 @@ replaced with `ru~.
 
 {s sajuS} is a rare word that we can set aside. {s-dfn ru~}, meanwhile, is a
 temporary symbol that we will replace in later rules. For example, it might be
-replaced by rule 8.1.15 below:
+replaced by rule 8.3.15 below:
 
 {rule
 

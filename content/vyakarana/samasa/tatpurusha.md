@@ -40,7 +40,7 @@ tatpuruSa}.
 {h The {s tatpuruSa} with different {s vibhakti}s}
 
 Generally, the first word of the {s tatpuruSa} can appear in any {s vibhakti}
-in relation the second. But some of these {s vibhakti}s are more restricted
+in relation to the second. But some of these {s vibhakti}s are more restricted
 than others:
 
 {rule

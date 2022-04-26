@@ -239,5 +239,5 @@ intuition for what it represents. Even so, we're still left with two questions:
     {li What if we want to express something that isn't a {s kAraka}?}
 }
 
-In the next lesson, we will answer this question and finally select a {s
+In the next lesson, we will answer these questions and finally select a {s
 vibhakti}.

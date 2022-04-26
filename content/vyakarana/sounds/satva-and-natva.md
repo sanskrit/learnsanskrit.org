@@ -49,8 +49,8 @@ Rule 8.3.59 is our focus:
 
 {rule
 
-AdezapratyayoH | 8.3.59
-Adeza-pratyayoH
+AdezapratyayyaoH | 8.3.59
+Adeza-pratyayayoH
 [The non-word-final `s that follows `iN or `ku~ becomes a retroflex `Sa in
 `samhitA] when it is of an `Adeza (substitution) or `pratyaya (suffix) [even
 if separated by `nu~m, the `visarjanIya, or a `zar sound].

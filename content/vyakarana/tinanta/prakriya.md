@@ -5,14 +5,27 @@ learned in the previous lessons, we can now fully derive the word {s nayati}.
 And with the help of three new rules, we can derive all eighteen of the forms
 of {s nI} in {s kartari prayoga} with {s laT-lakAra}.
 
+Here are the basic steps we will follow:
+
+{ol
+    {li Choose a {s dhAtu} from the {cite Dhātupāṭha}.}
+    {li Choose the right {s lakAra}.}
+    {li Determine whether the root uses {s parasmaipada} or {s Atmanepada}
+    endings.}
+    {li Replace the {s lakAra} with the appropriate {s tiG} ending.}
+    {li Add a {s vikaraNa} as needed.}
+    {li Apply {s guNa} changes as needed.}
+    {li Apply sandhi rules.}
+}
+
 
 {h Our first {s prakriyA}}
 
-Our intended semantics are of {em leading} someone. We want to express this for
-some third-party agent and express a sense of the present tense.
+We wish to express the idea of {em leading} someone. We want to express this
+for some third-party agent and express a sense of the present tense.
 
-Based on those semantics, we select a root. We start with the {s dhAtu NIJ}
-as given in the {cite Dhātupāṭha}:
+Based on these meaning conditions, we select a root. We start with the {s dhAtu
+NIJ} as given in the {cite Dhātupāṭha}:
 
 {dhatu
 
@@ -290,7 +303,7 @@ nayase | 6.1.87
 }
 
 {s nayethe} is like {s nayete}, and {s nayadhve} is like {s nayate}. {s naye}
-is a little tricker and requires the application of rule {a-cite 6.1.97}: 
+is a little trickier and requires the application of rule {a-cite 6.1.97}: 
 
 {prakriya
 

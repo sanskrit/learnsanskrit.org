@@ -102,8 +102,8 @@ meaning to create a complete word.
 Sanskrit nominals are highly expressive. They can express three different
 {dfn genders} (masculine, feminine, and neuter) and three different {dfn
 numbers} (singular, dual, plural). In Western terms, they also express eight
-different {dfn cases} (nominative, accusative, instrumental, dative, genitive,
-ablative, locative, and vocative).
+different {dfn cases} (nominative, accusative, instrumental, dative, ablative,
+genitive, locative, and vocative).
 
 Sanskrit nouns generally use a single fixed gender. So for a given noun, we
 usually have 3 numbers &times; 8 cases = 24 different forms.

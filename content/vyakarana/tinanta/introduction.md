@@ -113,7 +113,7 @@ Here are some examples:
 {ex
 
 neSyati
-(Someone) leads.
+(Someone) will lead.
 
 kuryAm
 I might do.
@@ -133,7 +133,7 @@ prayoga} ("stative usage", used only by intransitive verbs).
 
 For a given {s prayoga}, we have 3 persons &times; 3 numbers &times; 10
 tense-moods = 90 standard forms. But in addition, we can use certain verb
-suffixes to create create derived roots:
+suffixes to create derived roots:
 
 {ex
 

@@ -121,7 +121,7 @@ aGgasya | 6.4.1
 _
 Of an `aGga (the base before a suffix), &hellip;
 
-miderguNaH | 7.3.83
+miderguNaH | 7.3.82
 mideH guNaH
 The `i of `mid [as an `aGga] becomes `guNa.
 
@@ -215,7 +215,7 @@ But if the {s dhAtu} has an {s anudAtta} accent in its {s upadeza} form, then
 {rule
 
 ekAca upadeze'nudAttAt | 7.2.10
-eka-acakaH upadeze anudAttAt
+eka-acaH upadeze anudAttAt
 After [a `dhAtu] that has exactly one vowel and that has an `anudAtta accent in
 `upadeza, [`iT is not used].
 

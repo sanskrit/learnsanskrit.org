@@ -36,7 +36,7 @@ Sandhi occurs only in specific circumstances:
 
 paraH saMnikarSaH saMhitA | 1.4.109
 _
-Close contact [of sounds] is called `saMhitA.
+Extremely close contact [of sounds] is called `saMhitA.
 
 saMhitAyAm | 6.1.72
 _
@@ -170,11 +170,11 @@ An `ik vowel is replaced with `yaN when a vowel follows [in `saMhItA].
 
 There is still a subtle problem with rule 6.1.77 above: which {s yaN} sound do
 we use? We know that {s y} is the right choice, but the rule does not say so
-explicitly. So it would be legal to do this:
+explicitly. So it would be legal to produce this incorrect result:
 
 {ex
 
-* draupadI azvam icchati > [draupadrazvam] icchati
+draupadI azvam icchati > * [draupadrazvam] icchati
 Draupadi wants a horse.
 
 }

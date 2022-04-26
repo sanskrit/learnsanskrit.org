@@ -35,7 +35,7 @@ The two starting with vowels (i.e. `iSThan and `Iyasu~n) are used only after
 changes.
 
 {s Iyasu~n} and {s iSThan} cause {s lopa} of the {s prAtipadika}'s last
-segment. First, let's define a new term:
+segment. First, recall the definition of the term {s Ti}:
 
 {rule
 
@@ -51,7 +51,7 @@ With this term, we can define the relevant {s lopa} rules:
 
 turiSThemeyassu | 6.4.154
 tuH iStha-iman-Iyassu
-The final `tR [`pratyaya] [of an `aGga] undergoes `lopa when followed by [the
+The final `tR [`pratyaya] [of an `aGga undergoes `lopa] when followed by [the
 `pratyaya_s] `iSTha, `iman, or `Iyas.
 
 TeH | 6.4.155

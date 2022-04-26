@@ -104,7 +104,7 @@ Our first example uses {s aN} and rule {a-cite 6.4.146}:
 {prakriya
 
 upagoH apatyam |
-upagoH aN | 4.1.120
+upagoH aN | 4.1.92
 upagu aN | 2.4.71
 upagu a | 1.3.3; 1.3.9
 aupagu a | 7.2.117
@@ -119,7 +119,7 @@ Our next uses {s iJ} and rule {a-cite 6.4.148}:
 {prakriya
 
 dazarathasya apatyam |
-dazarathasya iJ | 4.1.120
+dazarathasya iJ | 4.1.95
 dazaratha iJ | 2.4.71
 dazaratha i | 1.3.3; 1.3.9
 dAzaratha i | 7.2.117

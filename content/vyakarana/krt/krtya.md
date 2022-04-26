@@ -40,7 +40,9 @@ After `R, `RR, or a consonant, `Nyat.
 }
 
 All of these {s pratyaya}s are stated in their {s upadeza} form. Here, the last
-{s t} on {s tavyat}, {s yat}, and {s Nyat} controls accent.
+{s t} on {s tavyat}, {s yat}, and {s Nyat} is stated for accent purposes; by
+rule {a-cite 6.1.185}, all three of these {s pratyaya}s will have a {s svarita}
+on their first vowels.
 
 Meanwhile, the meaning of the {s kRtya-pratyaya}s is defined later in chapter
 3:
@@ -69,8 +71,8 @@ below:
 
 laH karmaNi ca bhAve cAkarmakebhyaH | 3.4.69
 laH karmaNi ca bhAve ca akarmakebhyaH
-The `lakAra_s also denote `karmaNi `prayoga, or also `bhAve `prayoga when the
-verb is `akarmaka (intransitive).
+The `lakAra_s denote [`kartari `prayoga] as well as `karmaNi and `bhAve
+`prayoga when the verb is `akarmaka (intransitive).
 
 tayoreva kRtyaktakhalarthAH | 3.4.70
 tayoH eva kRtya-kta-khalarthAH

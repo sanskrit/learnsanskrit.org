@@ -97,11 +97,40 @@ a descendant of Upagu
 
 }
 
-Then we can use a {s taddhita} to express the same idea:
+Then we can replace the helping word with a {s taddhita}:
 
 {ex
 
-upagu + [aN] > aupagava
+upagoH + apatyam > upagoH + [aN]
+a descendant of Upagu
+
+}
+
+By using rule 2.4.71, we can delete the {s sup-pratyaya} in {s upagoH}:
+
+{rule
+
+supo dhAtuprAtipadikayoH | 2.4.71
+supaH dhAtu-prAtipadikayoH
+A `sup followed by a `dhAtu or a `prAtipadika [is replaced by `luk].
+
+}
+
+to create the following result:
+
+{ex
+
+upagoH + aN > [upagu] + aN
+a descendant of Upagu
+
+}
+
+Then we apply the normal sound change rules for {s taddhita}s to get our final
+result:
+
+{ex
+
+upaguH + aN > [aupagavaH]
 a descendant of Upagu
 
 }
@@ -145,24 +174,25 @@ Likewise if [the `taddhita-pratyaya] is `kit.
 }
 
 Additionally, {s taddhita}s might cause some small changes to the vowel they
-follow:
+follow. The three rules below use a {s saMjJA} called {s bha}, which roughly
+refers to an {s aGga} followed by a vowel or {s y}:
 
 {rule
 
 orguNaH | 6.4.146
 oH guNaH
-[The last sound of an `aGga followed by a `taddhita], if it is `u, is replaced
+[The last sound of a `bha followed by a `taddhita], if it is `u, is replaced
 with its `guNa.
 
 Dhe lopo'kadrvAH | 6.4.147
 Dhe lopaH a-kadrvAH
-Except for `kadrU, [the last `u of an `aGga followed by a `taddhita] undergoes
+Except for `kadrU, [the last `u of a `bha followed by a `taddhita] undergoes
 `lopa when followed by [a `pratyaya beginning with] `Dha.
 
 yasyeti ca | 6.4.148
 i-a-sya Iti ca
-The last `i and `a [of an `aGga followed by a `taddhita] undergoes `lopa when
-followed by [a `pratyaya beginning with] `I.
+The last `i and `a [of a `bha followed by a `taddhita] undergoes `lopa, [and
+likewise] when followed by [a `pratyaya beginning with] `I.
 
 }
 

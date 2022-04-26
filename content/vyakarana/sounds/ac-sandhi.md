@@ -31,7 +31,7 @@ But rule 6.1.77 will produce an error:
 
 {ex
 
-* draupadI indram apazyat > [draupadyindram] apazyat
+draupadI indram apazyat > * [draupadyindram] apazyat
 Draupadi saw Indra.
 
 }
@@ -183,7 +183,7 @@ result should be, but the rule allows some clearly incorrect results:
 
 {ex
 
-sItA indram apazyat > [sItondram] apazyat
+sItA indram apazyat > * [sItondram] apazyat
 Sita saw Indra.
 
 }
@@ -217,9 +217,9 @@ pronounced at the soft palate and {s i} is pronounced at the hard palate, we
 just need to find which sound is the best match:
 
 {ul
-  {li {s at} uses just one of these points of articulation, so it is not a good
+  {li short {s a} uses just one of these points of articulation, so it is not a good
   match.}
-  {li {s e} uses both of these points of articulation, so it is a good match.}
+  {li {s et} uses both of these points of articulation, so it is a good match.}
   {li {s o} uses the soft palate, but it uses the lips instead of the hard
   palate. So {s o} is not a good match.}
 }
@@ -259,7 +259,7 @@ seems like the closest {s guNa} vowel, but this produces a bad result:
 
 {ex
 
-* sItA Rcchati > [sItacchati]
+sItA Rcchati > * [sItacchati]
 Sita goes.
 
 }

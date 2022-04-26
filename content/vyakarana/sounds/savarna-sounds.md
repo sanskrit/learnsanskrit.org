@@ -60,7 +60,7 @@ introducing this rule:
 {rule
 
 tulyAsyaprayatnaM savarNam | 1.1.9
-tulya-Asya-prayatnam savarnam
+tulya-Asya-prayatnam savarNam
 [Sounds with] the same `Asya (place of articulation) and `prayatna
 (articulatory effort) are called `savarNa (similar).
 
@@ -113,7 +113,7 @@ problems later. Has Pāṇini made a mistake?
 
 {h Counteracting a rule}
 
-Pāṇini has not make a mistake. In the {cite Aṣṭādhyāyī}, it is common for one
+Pāṇini has not made a mistake. In the {cite Aṣṭādhyāyī}, it is common for one
 rule to state a general principle and for another to counteract it. To
 counteract the overapplication of 1.1.9, we have rule 1.1.10:
 
@@ -125,7 +125,7 @@ But vowels and consonants are not [`savarNa with each other].
 
 }
 
-Notice thas the phrase "{s savarNa} with each other" is inferred from the
+Notice that the phrase "{s savarNa} with each other" is inferred from the
 context of rule 1.1.9 above. This extension of context from one rule to another
 is called {s-dfn anuvRtti}. There are specific principles that we can use to
 define {s anuvRtti}. But for now, let's just focus on understanding this rule.

@@ -1,10 +1,14 @@
 {title Forms of {s nau}}
 
-{s nau} is called {s prAtipadika} by rule {a-cite 1.2.45}, so we can add
-{s sup} endings to it. By studying {s nau} and its endings, we can consolidate
-what we have learned so far.
+To consolidate what we've learned so far, let's see how the rules we've learned
+so far will let us generate the various forms of the stem {s nau}, which means
+"boat."
 
-If we have a verb that expresses {s kartari prayoga}, then we can use {s prathamA-vibhakti} by rule {a-cite 2.3.46}. Then we can create our {s pada}:
+{s nau} is called {s prAtipadika} by rule {a-cite 1.2.45}, so we can add
+{s sup} endings to it. If we have a verb that expresses {s kartari prayoga},
+then we can use {s prathamA-vibhakti} by rule {a-cite 2.3.46}.
+
+Once we have applied these rules, we can create our {s pada}:
 
 {prakriya
 

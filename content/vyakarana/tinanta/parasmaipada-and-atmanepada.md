@@ -130,7 +130,7 @@ so, they express extra semantics:
 
 svaritaJitaH kartrabhiprAye kriyAphale | 1.3.72 
 svarita-JitaH kartR-abhiprAye kriyA-phale
-`Atmanepada is used [after a `dhAtu that is either] `svaritet (i.e. having
+[`Atmanepada is used after a `dhAtu that is either] `svaritet (i.e. having
 `svarita on an `it vowel) or `Jit when the fruit of the action serves the
 intention of the `kartR (agent).
 
@@ -190,7 +190,7 @@ NIJ
 NI | 1.3.3; 1.3.9
 nI | 6.1.65
 nI la~T | 3.2.123
-nI tip | 1.3.78
+nI tip | 1.3.78; 3.4.78
 nI ti | 1.3.3; 1.3.9
 
 }
@@ -203,7 +203,7 @@ NIJ
 NI | 1.3.3; 1.3.9
 nI | 6.1.65
 nI la~T | 3.2.123
-nI ta | 1.3.72
+nI ta | 1.3.72; 3.4.78
 
 }
 

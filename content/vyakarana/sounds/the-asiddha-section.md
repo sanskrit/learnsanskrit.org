@@ -88,7 +88,7 @@ So it {em must} and {em will} apply, which gives us a bad result:
 
 {ex
 
-* ta icchanti > tecchanti
+ta icchanti > * tecchanti
 
 }
 

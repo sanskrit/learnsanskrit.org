@@ -12,7 +12,9 @@ That which ends in `sup or `tiG [is called] a `pada (word).
 
 }
 
-To understand how this works, let'
+Although it may seem strange that an {s avyaya} is treated as a {s subanta},
+doing so simplifies some other aspects of the grammar. Let's see how the system
+models {s avyaya}s.
 
 
 {h What is an {s avyaya}?}
@@ -89,7 +91,7 @@ Disappearance is [called] `lopa.
 
 pratyayasya lukzlulupaH | 1.1.61
 pratyayasya luk-zlu-lupaH
-`lopa of a `pratyaya by the words `luk, `zlu, and `lup is referred to by those
-terms, respectively.
+[`lopa of] a `pratyaya by (the words) `luk, `zlu, and `lup (is referred to by those
+terms, respectively).
 
 }

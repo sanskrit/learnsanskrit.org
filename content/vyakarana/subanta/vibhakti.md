@@ -59,7 +59,7 @@ He goes to the village.
 But suppose that the verb in our sentence is {s gamyate} ("is gone to"). {s
 gamyate} is in {s karmaNi prayoga}, which means that it expresses the {s
 kAraka} of {s karma}. Since {s karma} is already expressed, we cannot apply
-rule 2.3.2. So we are prevented from saying {s grAmaM gamyate}, which would be
+rule 2.3.2. So we are prevented from saying *{s grAmaM gamyate}, which would be
 an error. This is the purpose of rule {a-cite 2.3.1}.
 
 
@@ -123,7 +123,7 @@ kartR}:
 
 {ex
 
-nareNa grAmaH gamyate.
+nareNa grAmo gamyate.
 The man goes to the village. ("The village is gone to by the man.")
 
 }

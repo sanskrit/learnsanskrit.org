@@ -93,9 +93,9 @@ ashtadhyayi.com}.
 
 The root {s kR} has the {s it} sounds {s Du} and {s J}. In other words, we can
 say that it is {s-dfn Dvit} ("having {s Du} as an {s it}") and {s-dfn Jit}.
-{s Dvit} roots can use a special suffix that we will study in a later unit. And
-{s Jit} roots have a special function that we will study in our lesson on {s
-parasmaipada} and {s Atmanepada} endings.
+{s Dvit} roots are allowed to use the {s -tri} nominal suffix, which is minor
+and rare. And {s Jit} roots have a special function that we will study in our
+lesson on {s parasmaipada} and {s Atmanepada} endings.
 
 Not all {s it} letters have some special meaning. For example:
 
@@ -275,19 +275,23 @@ Terms ending with [the suffixes] `san etc. are [also] called `dhAtu.
 
 }
 
-This rule refers to various suffixes listed from rules 3.1.5 to rules 3.1.31,
-starting with the suffix {s san}.  {s san} is the suffix that creates verbs
-like this:
+This rule refers to various "derived" {s dhAtu}s that we create by adding
+suffixes to the basic {s dhAtu}s we discussed above. Specifically, the rule
+refers to various suffixes listed from rules 3.1.5 to rules 3.1.31. These
+suffixes include {s san}, which usually creates verbs that express "wanting" to
+do something:
 
 {ex
 
 nI + san > ninISa > ninISati
 He wants to lead.
 
+pA + san > pipAs > pipAsati
+He wants to drink.
+
 }
 
-But perhaps the most common of these is the suffix {s Nic}, which often creates
-causal roots:
+and {s Nic}, which usually creates causal verbs:
 
 {ex
 

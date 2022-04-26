@@ -100,11 +100,11 @@ One change is that certain roots ending in a nasal sound lose that nasal sound:
 
 {rule
 
-gamahanajanakhanaghasAM lopaH kGityanaGi | 6.4.98
-gama~-hana~-jana~-khana~-ghasAm lopaH k-Giti an-aGi
-The roots `gam, `han, `jan, `khan, and `ghas undergo `lopa [of their last
-letter] when followed by a `kit or `Git [`pratyaya] that is not [the `pratyaya]
-`aG.
+anudAttopadezavanatitanotyAdInAmanunAsikalopo jhali kGiti | 6.4.37
+anudAtta-upadeza-vanati-tanoti-AdInAm anunAsika-lopaH jhali k-Giti
+A `dhAtu with an `anudAtta vowel in `upadeza, as well as [the `dhAtu`] `van and
+[the `dhAtu_s]in the list starting with `tan, lose their final `anunAsika when
+followed by a `kit or `Git [`pratyaya] starting with a `jhal consonant.
 
 }
 
@@ -163,7 +163,7 @@ vaci~-svapi~-yajAdInAm kiti
 `samprasAraNa] when followed by a `kit [`pratyaya].
 
 grahijyAvayivyadhivaSTivicativRzcatipRcchatibhRjjatInAM Giti ca | 6.1.16
-grahi~-jyA-vayi~-vyadhi~-vaSTi-vicati-vRzcati-pRcchati-bhRjjatInAm Gita ca
+grahi~-jyA-vayi~-vyadhi~-vaSTi-vicati-vRzcati-pRcchati-bhRjjatInAm Giti ca
 This applies to `grah, `jyA, `vay as a substitution for `veJ, `vyadh, `vaz,
 `vyac, `vrasc, `pracch, and `bhrasj as well, which all also make the same
 change when followed by a `Git [`pratyaya].
