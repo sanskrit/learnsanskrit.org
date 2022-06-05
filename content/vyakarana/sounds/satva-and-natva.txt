@@ -34,6 +34,7 @@ saheH sADaH saH | 8.3.56
 _
 [The non-word-final] `s [of `sah in the form `sAD] becomes a retroflex [`Sa in
 `saMhitA].
+(This rule is minor, but the term `saH will continue through `anuvRtti.)
 
 iNkoH | 8.3.57
 iN-koH
@@ -49,7 +50,7 @@ Rule 8.3.59 is our focus:
 
 {rule
 
-AdezapratyayyaoH | 8.3.59
+AdezapratyayayoH | 8.3.59
 Adeza-pratyayayoH
 [The non-word-final `s that follows `iN or `ku~ becomes a retroflex `Sa in
 `samhitA] when it is of an `Adeza (substitution) or `pratyaya (suffix) [even
@@ -68,8 +69,8 @@ likewise for {s nu~m}. So, let's work with this simplified version of the rule:
 
 {rule
 
-AdezapratyayoH | 8.3.59
-Adeza-pratyayoH
+AdezapratyayayoH | 8.3.59
+Adeza-pratyayayoH
 In `saMhitA, the non-final `s of a `pratyaya (suffix) becomes `S when it
 follows `iN or `ku~, even if separated by the `vizarga or a `zar sound.
 

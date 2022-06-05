@@ -30,7 +30,7 @@ class Lesson:
 
     @staticmethod
     def load(directory, topic, lesson) -> Dict[str, str]:
-        lesson_file = os.path.join(directory, f"{topic}/{lesson}.md")
+        lesson_file = os.path.join(directory, f"{topic}/{lesson}.txt")
         mtime = os.path.getmtime(lesson_file)
         cache_key = (topic, lesson)
         try:
@@ -81,8 +81,8 @@ class Topic:
     #: The URL encoding of this topic (e.g. "nominals-1")
     slug: str
     #: Ordered list of lesson slugs for this topic. For each slug
-    #: `lesson_slug`, we #: expect to find a file
-    #: `{topic_slug}/{lesson_slug}.md`.
+    #: `lesson_slug`, we expect to find a file:
+    #: `{topic_slug}/{lesson_slug}.txt`.
     lesson_slugs: List[str]
 
     def __init__(self, directory, slug):

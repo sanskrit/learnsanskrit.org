@@ -27,7 +27,8 @@ Aṣṭādhyāyī}:
 mAdupadhAyAzca matorvo'yavAdibhyaH | 8.2.9
 m-At upadhAyAH ca matoH vaH a-yavAdibhyaH
 After the sounds `m, `a, and `A, even if penultimate, [the first letter of the
-`pratyaya] `matu~ becomes `v if not following an item in the `yavAdi list.
+`pratyaya] `matu~ becomes `v if not following an item in the list beginning
+with `yava.
 
 }
 

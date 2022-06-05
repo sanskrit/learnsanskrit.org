@@ -55,7 +55,7 @@ Includes:
     {% for topic in topics %}
         {% set t = loop.index0 %}
         <div id="anchor-{{ t }}" class="topic page-break justify">
-            <h1 class="tc f2">{{ topic.title|safe }}</h1>
+            <h1 class="tc f2">{{ topic.title|sml|safe }}</h1>
         </div>
 
         {% for lesson in topic.lessons %}

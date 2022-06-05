@@ -1,0 +1,90 @@
+{title An overview of the {cite Aṣṭādhyāyī}}
+
+{note Feel free to skip this lesson and come back to it later.}
+
+{h The shape of the text}
+
+Adult learners of the {cite Aṣṭādhyāyī} often think that the text's rules have
+an unusual or unintuitve ordering. Why do the rules of the {cite Aṣṭādhyāyī}
+have the ordering that they do? There are two basic factors that are
+responsible.
+
+The first factor is that the {cite Aṣṭādhyāyī} is part of a long oral
+tradition. This fact has several important implications:
+
+{ul
+  {li In traditional Sanskrit education, students chant and memorize several
+  works by rote. Many students don't even understand what they're chanting! So
+  there is less reason to make the rules follow an intuitive order.}
+  {li Older students begin to study and unlock the {it contents} of what they
+  have memorized with the help of a skilled teacher. At every point in the
+  education process, the student can rely on an expert who has memorized and
+  understood the entire text.}
+  {li A memorized rule can be recalled at a moment's notice regardless of where
+  it is in the text, so there is less pressure to rearrange rules into a
+  specific order.}
+  {li Oral compositions tend to be more fluid than written compositions: they
+  borrow heavily from past works, and they generally change over the
+  generations.}
+}
+
+The second factor is that the {cite Aṣṭādhyāyī} aims for overall concision ({s
+lAghava}) in its total length. Again, this fact has several important
+implications:
+
+{ul
+  {li Two rules that share a similar context might be grouped together even if
+  the operations they describe are conceptually different.}
+  {li Two rules that are conceptually quite similar might be split apart if
+  their contexts are different enough.}
+  {li Some interpretations of the text would make a rule purposeless ({s
+  vyartha}), which contradicts the general spirit of {s lAghava}. On this
+  basis, an interpretation of the system is invalid if it makes a rule
+  purposeless.}
+  {li Likewise, rules are usually stated the way they are for a specific
+  reason. Often, that reason is an indicator ({s jJApaka}) of a critical
+  principle of interpretation.}
+}
+
+To some extent, these factors are in tension. The {cite Aṣṭādhyāyī}'s origin in
+an oral tradition means that a particular rule's ordering is relatively less
+important. But the {cite Aṣṭādhyāyī}'s emphasis on overall concision means that
+a rule's ordering can be vitally important.
+
+
+{h Sections of rules}
+
+In practice, the result is that the {cite Aṣṭādhyāyī} is a set of {dfn
+sections}, where the specific ordering of sections is not very important but the
+ordering of rules {it within} a section is highly important.
+
+Likewise, the eight chapters of the {cite Aṣṭādhyāyī} generally follow a
+logical flow:
+
+{ol
+  {li Definitions and rules of interpretation.}
+  {li The compound system.}
+  {li Root suffixes: verb endings, derived roots ({s sanAdi}), suffixes that
+  make nominal bases ({s kRt}), and auxiliary suffixes ({s vikaraNa}) inserted
+  between the root and the verb suffix.}
+  {li Nominal suffixes (part 1).}
+  {li Nominal suffixes (part 2).}
+  {li Duplication ({s dvitva}), vowel sandhi, and accent.}
+  {li Various suffix substitutions, as well as sound changes caused by suffixes.}
+  {li Various sandhi rules.}
+}
+
+So although there are some exceptions, the derivation of a specific word
+usually flows smoothly from book 1 to book 8.
+
+More specifically, the derivation often follows this basic structure:
+
+{ol
+  {li Add and define the base of the derivation. For verbs,
+  this is a verb root. For nominals, this is a nominal stem. (Chapters 1 and 2)}
+  {li Add any suffixes needed in the derivation. (Chapters 3, 4, and 5)}
+  {li Apply sound changes caused by the specific suffixes. (Chapters 6 and 7)}
+  {li Apply sandhi changes to merge all terms together into a single
+  expression. (Chapter 8)}
+}
+

@@ -132,9 +132,9 @@ or `ArdhadhAtuka suffix.
 
 pugantalaghUpadhasya ca | 7.3.86
 pu~k-anta-laghu-upadhasya ca
-A `laghu (prosodically light) penultimate or a vowel followed by [the augment]
-`pu~k [in an `aGga is replaced with `guNa when followed by a `sArvadhAtuka or
-`ArdhadhAtuka suffix].
+And [the last `ik vowel of an `aGga] ending with `pu~k or whose `upadhA
+(penultimate sound) is `laghu (a light syllable) [is replaced with `guNa
+when followed by a `sArvadhAtuka or `ArdhadhAtuka` suffix].
 
 }
 

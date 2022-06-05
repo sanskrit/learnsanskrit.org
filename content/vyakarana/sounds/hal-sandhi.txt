@@ -196,7 +196,7 @@ replaced by rule 8.3.15 below:
 
 ro ri | 8.3.14
 raH ri
-The `r [at the end of a `pada] is replaced with `lopa when `r follows.
+The `r [at the end of a `pada is replaced with `lopa] when `r follows.
 
 kharavasAnayorvisarjanIyam | 8.3.15
 khar-avasAnayoH visarjanIyam

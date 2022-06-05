@@ -92,12 +92,12 @@ on it for a moment:
 Now, what does this rule actually mean?
 
 {ul
-    {li {s Asya} refers to one of the points of articulation in the mouth: the soft
+    {li {s Asya} refers to one of the places of articulation in the mouth: the soft
     palate (where we pronounce {s ka}), the hard palate ({s ca}), the alveolar
     ridge ({s Ta}), the teeth ({s ta}), or the lips ({s pa}).}
 
     {li {s prayatna} refers to how these sounds are pronounced: with full
-    contact between points of articulation (as with {s ka}), with partial
+    contact between places of articulation (as with {s ka}), with partial
     contact ({s ya}), or with no contact ({s a}).}
 }
 

@@ -113,7 +113,7 @@ More plainly: a {s sArvadhAtuka} affix that is not {s pit} will be treated as
 {s guNa} changes to the root sound.
 
 Since {s zap} is {s pit}, rule 1.2.4 will not apply to it, and it will still be
-able to cause {s guNa} changes.
+able to cause {s guNa} changes by rule 7.3.84, which we discuss further below.
 
 
 {h {s adhikAra} rules}
@@ -234,7 +234,8 @@ Then we can understand rule 7.3.86, which follows rule {a-cite 7.3.84}:
 pugantalaghUpadhasya ca | 7.3.86
 pu~k-anta-laghu-upadhasya ca
 And [the last `ik vowel of an `aGga] ending with `pu~k or whose `upadhA
-(penultimate sound) is `laghu (a light syllable) [is replaced with `guNa].
+(penultimate sound) is `laghu (a light syllable) [is replaced with `guNa
+when followed by a `sArvadhAtuka or `ArdhadhAtuka` suffix].
 
 }
 

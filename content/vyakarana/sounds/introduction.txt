@@ -26,7 +26,7 @@ The notes below provide a summary of the Sanskrit sound system. If you know
 Sanskrit already, you can continue to the next lesson.
 }
 
-Most Sanskrit sounds are pronounced with five {dfn points of articulation}
+Most Sanskrit sounds are pronounced with five {dfn places of articulation}
 within the mouth. You can see these five points marked in the image below:
 
 {img[src=points_of_pronunciation.png]}
@@ -41,9 +41,9 @@ From right to left, these five points are:
     {li the lips}
 }
 
-All of the sounds below are colored according to which point of articulation
-they use. Sounds that use multiple points of articulation, or that use
-points of articulation other than the five above, are left black.
+All of the sounds below are colored according to which place of articulation
+they use. Sounds that use multiple places of articulation, or that use
+places of articulation other than the five above, are left black.
 
 {note
 
@@ -83,7 +83,7 @@ Next, we have the first twenty-five consonants.
 {sounds-dr pa-5 pha-5 ba-5 bha-5 ma-5}
 
 This is a grid with five rows and five columns. Each row in the grid uses a different
-point of articulation, and each column encodes different properties:
+place of articulation, and each column encodes different properties:
 
 {ul
   {li The first two columns ({s ka, kha}) are {dfn unvoiced} sounds, meaning

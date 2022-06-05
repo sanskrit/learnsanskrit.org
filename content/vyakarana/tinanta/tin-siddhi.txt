@@ -3,12 +3,12 @@
 In the previous lesson, we noticed a small problem with one of our {s
 prakriyA}s. When using an {s Atmanepada} suffix, what we expect is {s te}, but
 what we actually receive is {s ta}. This ending will give us the incorrect *{s
-nayata} instead of the correct {s nayate}. {comm *}
+nayata} instead of the correct {s nayate}.
 
 How do we ensure that our ending is correct?  The answer is a set of rules near
-the end of {s adhyAya} 3 of the {cite Aṣṭādhyāyī}. These rules transform the
-basic endings in the {s tiG pratyAhAra} to suit the specific semantics we wish
-to express. We can call the process of applying these rules {s-dfn tiG-siddhi}
+the end of chapter 3 of the {cite Aṣṭādhyāyī}. These rules transform the basic
+endings in the {s tiG pratyAhAra} to suit the specific semantics we wish to
+express. We can call the process of applying these rules {s-dfn tiG-siddhi}
 ("{s tiG} completion").
 
 As you read the rules below, keep this critical {s paribhASA} in mind:

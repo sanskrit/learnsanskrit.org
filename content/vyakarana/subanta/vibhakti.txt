@@ -76,7 +76,8 @@ of `sampradAna.
 
 tumarthAcca bhAvavacanAt | 2.3.15
 tum-arthAt ca bhAva-vacanAt
-And after words that express `bhAva (state) in the sense of `tum.
+And after words that express `bhAva (state) in the sense of (the `pratyaya)
+`-tum.
 
 }
 
@@ -171,7 +172,7 @@ makes clear the difference between case and {s vibhakti}:
 prAtipadikArthaliGgaparimANavacanamAtre prathamA | 2.3.46
 prAtipadika-artha-liGga-parimANa-vacana-mAtre prathamA
 [When not otherwise expressed,] the first [`vibhakti] is used only to express
-its `prAtipadika meaning, gender, measure, and number.
+the `prAtipadika meaning, gender, measure, and number.
 
 }
 

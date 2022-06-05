@@ -179,7 +179,8 @@ understand how it works. (If we have made it easier, please do
 
 Unfortunately, rules 6.1.87 and 6.1.88 have a problem that we've seen before:
 these rules don't tell us which specific vowel to use. We know what the correct
-result should be, but the rule allows some clearly incorrect results:
+result should be, but these rules allow some clearly incorrect results. For
+example, we could apply rule 6.1.87:
 
 {ex
 
@@ -188,7 +189,8 @@ Sita saw Indra.
 
 }
 
-So Pāṇini offers this rule to help us perform the correct substitution:
+To prevent such results, Pāṇini offers this rule to help us perform the correct
+substitution:
 
 {rule
 
@@ -198,9 +200,9 @@ In substitution, the closest [is preferred].
 
 }
 
-Roughly, "closeness" refers to properties like points of articulation,
+Roughly, "closeness" refers to properties like places of articulation,
 semantics, and so on. Since these rules are about sounds, the closest
-replacement is the one that matches the points of articulation of the sounds
+replacement is the one that matches the places of articulation of the sounds
 being replaced.
 
 If we return to our example above:
@@ -217,9 +219,9 @@ pronounced at the soft palate and {s i} is pronounced at the hard palate, we
 just need to find which sound is the best match:
 
 {ul
-  {li short {s a} uses just one of these points of articulation, so it is not a good
+  {li short {s a} uses just one of these places of articulation, so it is not a good
   match.}
-  {li {s et} uses both of these points of articulation, so it is a good match.}
+  {li {s et} uses both of these places of articulation, so it is a good match.}
   {li {s o} uses the soft palate, but it uses the lips instead of the hard
   palate. So {s o} is not a good match.}
 }

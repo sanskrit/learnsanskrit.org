@@ -177,8 +177,8 @@ answer that question, let's return to a rule from the previous unit:
 
 {rule
 
-AdezapratyayoH | 8.3.59
-Adeza-pratyayoH
+AdezapratyayayoH | 8.3.59
+Adeza-pratyayayoH
 [The non-word-final `s that follows `iN or `ku~ becomes a retroflex `Sa in
 `samhitA] when it is of an `Adeza (substitution) or `pratyaya (suffix) [even
 if separated by `nu~m, the `visarjanIya, or a `zar sound].
@@ -270,7 +270,7 @@ about:
 {rule
 
 sanAdyantA dhAtavaH | 3.1.32
-san-Adi-antAH dhAtataH
+san-Adi-antAH dhAtavaH
 Terms ending with [the suffixes] `san etc. are [also] called `dhAtu.
 
 }
@@ -286,7 +286,7 @@ do something:
 nI + san > ninISa > ninISati
 He wants to lead.
 
-pA + san > pipAs > pipAsati
+pA + san > pipAsa > pipAsati
 He wants to drink.
 
 }

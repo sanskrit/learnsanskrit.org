@@ -47,6 +47,9 @@ But perhaps more surprisingly, it also refers to indeclinable words:
 api
 also
 
+ca
+and
+
 mandam
 slowly
 

@@ -25,7 +25,7 @@ the two into a single word:
 {ex
 
 gajasya vanam > [gajavanam]
-the elephant's forest > [gajavanam]
+the elephant's forest > [elephant forest]
 
 }
 
