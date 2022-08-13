@@ -17,7 +17,7 @@ work.
 {note
 If you have never studied grammar before, or if you just want a general
 overview of Sanskrit grammar, please use our {url[r=guide.index] Sanskrit for
-Beginners} guide instead.)
+Beginners} guide instead.
 }
 
 
