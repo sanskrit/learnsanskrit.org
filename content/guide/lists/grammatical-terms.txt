@@ -1,0 +1,125 @@
+{title Grammatical Terms}
+
+This page contains almost all of the technical terms we use on
+learnsanskrit.org. Each row in the table below contains four items:
+
+{ul
+{li The term as it appears on our website}
+{li The standard English term, which you will generally see used in Western resources}
+{li The standard Sanskrit term}
+{li Specialist terms used in Paninian grammar}
+}
+
+{h General terms}
+
+{table
+{tr {th learnsanskrit.org} {th English} {th Sanskrit} {th Paninian}}
+
+{tr {td adjective} {td —} {td {s vizeSaNa}} {td —}}
+{tr {td adverb} {td —} {td } {td }}
+{tr {td agreement} {td —} {td } {td }}
+{tr {td aspirated} {td —} {td {s mahAprANa}} {td —}}
+{tr {td {s Atmanepada}} {td middle voice} {td {s Atmanepada}} {td —}}
+{tr {td case} {td —} {td {s vibhakti}} {td —}}
+{tr {td case 1 (subject)} {td nominative case} {td {s prathamA}} {td —}}
+{tr {td case 2 (object)} {td accusative case} {td {s dvitIyA}} {td —}}
+{tr {td case 3 ("with")} {td instrumental case} {td {s tRtIyA}} {td —}}
+{tr {td case 4 ("for")} {td dative case} {td {s caturthI}} {td —}}
+{tr {td case 5 ("from")} {td ablative case} {td {s paJcamI}} {td —}}
+{tr {td case 6 ("of")} {td genitive case} {td {s SaSThI}} {td —}}
+{tr {td case 7 ("in")} {td locative case} {td {s saptamI}} {td —}}
+{tr {td case 8 (address)} {td vocative case} {td {s sambodhana}} {td —}}
+{tr {td causal verb} {td causative} {td } {td {s Nijanta}}}
+{tr {td command mood} {td imperative mood} {td {s AjJA}} {td {s loT}}}
+{tr {td compound (word)} {td —} {td {s samAsa}} {td —}}
+{tr {td compound vowel} {td diphthong} {td {s saMdhyakSara}} {td {s ec}}}
+{tr {td conditional mood} {td —} {td {s saMketa}} {td {s lRG}}}
+{tr {td consonant} {td —} {td {s vyaJjana}} {td {s hal}}}
+{tr {td desiderative} {td —} {td } {td {s sannanta}}}
+{tr {td distant future tense} {td periphrastic future} {td {s anadyatana-bhaviSyat}} {td {s luT}}}
+{tr {td distant past tense} {td perfect} {td {s parokSa-bhūta}} {td {s liT}}}
+{tr {td doubling} {td reduplication} {td {s dvitva}} {td —}}
+{tr {td dual (number)} {td —} {td {s dvivacana}} {td —}}
+{tr {td dvandva} {td copulative compound} {td {s dvandva}} {td —}}
+{tr {td feminine gender} {td —} {td {s strIliGga}} {td —}}
+{tr {td first person} {td —} {td {s uttama}} {td —}}
+{tr {td gender} {td —} {td {s liGga}} {td —}}
+{tr {td {s -tvA}} {td gerund} {td } {td {s ktvAnta}}}
+<tr><td>grammatical case</td><td colspan=3 style='background: #eee;'>(see "case")</td></tr>
+{tr {td grammar} {td —} {td {s vyAkaraNa}} {td }}
+{tr {td hard palate} {td —} {td {s tAlu}} {td —}}
+{tr {td heavy (syllable)} {td —} {td {s guru}} {td —}}
+{tr {td intensive} {td —} {td } {td {s yaGanta}}}
+{tr {td light (syllable)} {td —} {td {s laghu}} {td —}}
+{tr {td lip} {td —} {td {s oSTha}} {td —}}
+{tr {td long vowel} {td —} {td {s dIrgha}} {td —}}
+{tr {td masculine gender} {td —} {td {s puMliGga}} {td —}}
+{tr {td medium vowel} {td full grade vowel} {td {s guNa}} {td —}}
+{tr {td nasal} {td —} {td {s anunAsika}} {td —}}
+{tr {td neuter gender} {td —} {td {s napuMsakaliGga}} {td }}
+{tr {td noun ending} {td —} {td } {td {s sup}}}
+{tr {td noun from verb} {td denominative} {td {s nAmadhAtu}} {td }}
+{tr {td noun} {td —} {td {s nAma}} {td {s subanta}}}
+{tr {td number} {td —} {td {s vacana}} {td &mdash;}}
+{tr {td object} {td —} {td {s karman}} {td —}}
+{tr {td option mood} {td present optative} {td {s vidhi}} {td {s vidhi-liG}}}
+{tr {td ordinary future tense} {td simple future} {td {s bhaviSyat}} {td }}
+{tr {td ordinary past tense} {td imperfect} {td {s anadyatana-bhUta}} {td {s laG}}}
+{tr {td parasmaipada} {td active voice} {td {s parasmaipada}} {td —}}
+{tr {td participle} {td —} {td } {td }}
+{tr {td person} {td —} {td {s puruSa}} {td {s puruSa}}}
+{tr {td plural (number)} {td —} {td {s bahuvacana}} {td }}
+{tr {td point of pronunciation} {td point of articulation} {td {s uccAraNa-sthAna}} {td }}
+<tr><td>prefix</td><td colspan=3 style='background: #eee;'>(see "verb prefix")</td></tr>
+{tr {td present tense} {td present indicative} {td {s vartamAna}} {td {s laT}}}
+{tr {td primary (suffix)} {td —} {td {s kRt}} {td }}
+{tr {td pronoun} {td —} {td {s sarvanAman}} {td —}}
+{tr {td recent past tense} {td aorist} {td {s bhUta}} {td {s luG}}}
+{tr {td sibilant} {td &mdash;} {td {s USman}} {td {s zal}}}
+{tr {td sandhi} {td —} {td —} {td —}}
+{tr {td second person} {td —} {td {s madhyama}} {td &mdash;}}
+{tr {td secondary (suffix)} {td —} {td {s taddhita}} {td —}}
+{tr {td semivowel} {td —} {td {s antaḥstha}} {td }}
+{tr {td short vowel} {td } {td {s hrasva}} {td —}}
+{tr {td simple vowel} {td —} {td {s samAnAkSara}} {td —}}
+{tr {td singular (number)} {td —} {td {s ekavacana}} {td —}}
+{tr {td soft palate} {td —} {td {s kaNTha}} {td }}
+{tr {td stem (of a noun)} {td —} {td {s prAtipadika}} {td —}}
+{tr {td stem (of any word)} {td —} {td {s aGga}} {td —}}
+{tr {td stop} {td —} {td {s sparza}} {td }}
+{tr {td strong vowel} {td lengthened grade vowel} {td {s vRddhi}} {td }}
+{tr {td subject} {td —} {td {s kartR}} {td }}
+{tr {td suffix} {td —} {td {s pratyaya}} {td —}}
+{tr {td syllable} {td —} {td {s akSara}} {td }}
+{tr {td third person} {td —} {td {s prathama}} {td —}}
+{tr {td tooth} {td —} {td {s danta}} {td }}
+{tr <tr lang="sa">{td {s ubhayapada}} {td } {td {s ubhayapada}} {td }}
+{tr {td unaspirated} {td —} {td {s alpaprANa}} {td }}
+{tr {td uninflected word} {td } {td {s avyaya}} {td {s avyaya}}}
+{tr {td unvoiced} {td —} {td {s aghoSa}} {td }}
+{tr {td verb class} {td —} {td {s gaNa}} {td —}}
+{tr {td verb ending} {td —} {td } {td {s tiG}}}
+{tr {td verb prefix} {td —} {td {s upasarga, gati, cvi, &hellip;}} {td {s upasarga, gati, cvi, &hellip;}}}
+{tr {td verb root} {td —} {td {s dhAtu}} {td —}}
+{tr {td verb} {td —} {td } {td {s tiGanta}}}
+{tr {td verbless sentence} {td nominal sentence} {td } {td }}
+{tr {td voiced} {td —} {td {s ghoSavat}} {td —}}
+{tr {td vowel} {td —} {td {s svara}} {td {s ac}}}
+}
+
+{h Other terms}
+
+{table
+{tr {th learnsanskrit.org} {th English} {th Sanskrit} {th Paninian}}
+
+{tr {td {s bhU} class} {td Class 1} {td {s bhvAdigaNa}} {td —}}
+{tr {td {s tud} class} {td Class 6} {td {s adAdigaNa}} {td —}}
+{tr {td {s cur} class} {td Class 10} {td {s curAdigaNa}} {td —}}
+{tr {td {s krI} class} {td Class 9} {td {s kryAdigaNa}} {td —}}
+{tr {td {s rudh} class} {td Class 7} {td {s rudhAdigaNa}} {td —}}
+{tr {td {s su} class} {td Class 5} {td {s svAdigaN}} {td —}}
+{tr {td {s tan} class} {td Class 8} {td {s tanAdigaNa}} {td —}}
+{tr {td {s div} class} {td Class 4} {td {s divAdigaNa}} {td —}}
+{tr {td {s hu} class} {td Class 3} {td {s juhotyAdigaNa}} {td —}}
+{tr {td {s ad} class} {td Class 2} {td {s adAdigaNa}} {td —}}
+}

@@ -15,6 +15,7 @@
         "sentences",
 		"devanagari",
 		"other-scripts",
-		"sanskrit-software"
+		"sanskrit-software",
+		"lists"
     ]
 }
