@@ -73,6 +73,7 @@ virtualenv==20.15.1
 virtualfish==2.5.5
 watchdog==2.1.9
 wcwidth==0.2.5
+weasyprint==56.1
 webassets==2.0
 Werkzeug==2.2.0
 wrapt==1.14.1
