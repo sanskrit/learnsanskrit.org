@@ -1,7 +1,11 @@
 <h1 align="center">LearnSanskrit.org</h1>
 
-🌐 [LearnSanskrit.org](https://learnsanskrit.org)  is an open-source website dedicated to helping people learn Sanskrit grammar, pronunciation, and vocabulary. It includes structured lessons, grammar guides, and tools to support learners at all levels.
-With the aim for sanskrit literacy. Learners from all over the world can learn and get efficient in sanskrit through a single tool.
+🌐 [LearnSanskrit.org](https://learnsanskrit.org) is a free and open-source platform dedicated to making Sanskrit learning accessible, structured, and engaging.  
+It offers guided lessons, grammar explanations, vocabulary builders, and pronunciation tools — all designed to support learners from beginner to advanced levels.
+
+📚 Whether you're a student, language enthusiast, or curious mind, LearnSanskrit.org empowers you to gain fluency in Sanskrit through a single, streamlined learning tool — anytime, anywhere.
+
+🌍 With the vision of promoting Sanskrit literacy across the world, this project aims to revive and spread the beauty of one of the oldest languages through technology.
 
 ---
 
@@ -15,6 +19,21 @@ With the aim for sanskrit literacy. Learners from all over the world can learn a
 
 ---
 
+## 🗂️ Project Directory Overview
+
+| Folder        | Purpose |
+|---------------|---------|
+| `api/`        | Backend logic and API handling |
+| `build/`      | Output folder for static site builds |
+| `sml/`        | Markup language implementation used for content |
+| `static/`     | Static files like CSS, JavaScript, and images |
+| `templates/`  | HTML page templates |
+| `view/`       | Routes and view logic for rendering content |
+| `content/`    | Core learning materials like grammar guides and lessons |
+| `data/`       | Linguistic datasets (e.g. roots, declensions) |
+| `lso/`        | Main application logic and structure |
+
+---
 
 ## 💡 For Contributors
 
@@ -29,21 +48,11 @@ Feel free to open an issue first if you want to discuss your idea! <br>
 
 ---
 
-Directories
------------
+## 🚀 Getting Started
 
-    api                         # All logic related to the API
-    build                       # Output directory when freezing
-    sml                         # Markup language implementation
-    static                      # Static resources
-    templates                   # HTML templates
-    view                        # Routes and view logic
-    content                     # /guide and /vyakarana content
-    data                        # various linguistic data
-    lso                         # main application logic
+If you'd like to contribute:
 
-
-Site commands
--------------
-
-See `Makefile` for build, lint, and test commands.
+1. **Fork** this repository
+2. **Clone** your fork:
+   ```bash
+   git clone https://github.com/YOUR_USERNAME/learnsanskrit.org.git
